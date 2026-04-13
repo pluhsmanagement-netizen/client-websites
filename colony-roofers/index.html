@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colony Roofers — Expert Roofing Services</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --accent: #E85D04; }
+  body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #f0ede8; }
+  .font-display { font-family: 'Bebas Neue', cursive; }
+  .accent { color: #E85D04; }
+  .bg-accent { background: #E85D04; }
+  .border-accent { border-color: #E85D04; }
+
+  /* Nav shrink */
+  nav { transition: all 0.3s ease; }
+  nav.scrolled { background: rgba(10,10,10,0.97) !important; box-shadow: 0 2px 30px rgba(0,0,0,0.5); padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; }
+
+  /* Fade in */
+  .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  /* Accordion */
+  .faq-item input[type="checkbox"] { display: none; }
+  .faq-item label { cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
+  .faq-item input:checked ~ .faq-answer { max-height: 300px; }
+  .faq-item label .chevron { transition: transform 0.3s ease; display: inline-block; }
+  .faq-item input:checked ~ label .chevron { transform: rotate(180deg); }
+
+  /* Tab active */
+  .tab-btn.active { background: #E85D04; color: #fff; }
+  .tab-pane { display: none; }
+  .tab-pane.active { display: grid; }
+
+  /* Glow image */
+  .img-glow { box-shadow: 0 0 40px rgba(232,93,4,0.18), 0 8px 32px rgba(0,0,0,0.5); }
+
+  /* Stats counter */
+  .stat-num { font-family: 'Bebas Neue', cursive; }
+
+  /* Mobile menu */
+  #mobile-menu { transition: all 0.3s ease; }
+
+  /* Smooth scroll */
+  html { scroll-behavior: smooth; }
+
+  /* Pill hover */
+  .city-pill:hover { background: #E85D04; color: #fff; }
+  .city-pill { transition: all 0.2s ease; }
+</style>
+</head>
+<body class="bg-[#0a0a0a]">
+
+<!-- NAV -->
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-md px-6 py-4 transition-all duration-300">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <a href="#hero" class="flex items-center gap-2">
+      <span class="font-display text-3xl tracking-widest text-white">COLONY<span class="accent">.</span></span>
+      <span class="text-xs font-medium tracking-[0.2em] uppercase text-gray-400 mt-1">Roofers</span>
+    </a>
+    <ul class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+      <li><a href="#services" class="text-gray-300 hover:text-white transition">Services</a></li>
+      <li><a href="#why-us" class="text-gray-300 hover:text-white transition">Why Us</a></li>
+      <li><a href="#how-it-works" class="text-gray-300 hover:text-white transition">Process</a></li>
+      <li><a href="#reviews" class="text-gray-300 hover:text-white transition">Reviews</a></li>
+      <li><a href="#faq" class="text-gray-300 hover:text-white transition">FAQ</a></li>
+      <li><a href="#contact" class="bg-accent text-white px-5 py-2 rounded-full hover:opacity-90 transition font-semibold tracking-wide">Free Quote</a></li>
+    </ul>
+    <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
+      <span class="w-6 h-0.5 bg-white transition-all" id="bar1"></span>
+      <span class="w-6 h-0.5 bg-white transition-all" id="bar2"></span>
+      <span class="w-6 h-0.5 bg-white transition-all" id="bar3"></span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="md:hidden overflow-hidden max-h-0">
+    <ul class="flex flex-col gap-4 px-4 py-6 text-sm font-medium border-t border-gray-800 mt-3">
+      <li><a href="#services" class="text-gray-300 hover:text-white block">Services</a></li>
+      <li><a href="#why-us" class="text-gray-300 hover:text-white block">Why Us</a></li>
+      <li><a href="#how-it-works" class="text-gray-300 hover:text-white block">Process</a></li>
+      <li><a href="#reviews" class="text-gray-300 hover:text-white block">Reviews</a></li>
+      <li><a href="#faq" class="text-gray-300 hover:text-white block">FAQ</a></li>
+      <li><a href="#contact" class="bg-accent text-white px-5 py-2.5 rounded-full text-center block font-semibold">Free Quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="min-h-screen flex items-center pt-24 pb-16 px-6 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#111] to-[#1a0a00] z-0"></div>
+  <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 z-0" style="background: radial-gradient(ellipse at top right, #E85D04 0%, transparent 70%)"></div>
+  <div class="max-w-6xl mx-auto w-full relative z-10">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-block bg-accent/10 border border-accent/30 text-[#E85D04] text-xs font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6">Licensed & Insured Roofers</span>
+        <h1 class="font-display text-7xl md:text-8xl lg:text-9xl leading-none text-white mb-6">
+          ROOFS<br><span class="accent">BUILT</span><br>TO LAST.
+        </h1>
+        <p class="text-gray-400 text-lg leading-relaxed mb-8 max-w-md">From full replacements to storm damage repairs — Colony Roofers delivers quality craftsmanship that protects your home for decades, not just seasons.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#contact" class="bg-accent text-white px-8 py-4 rounded-full font-semibold text-sm tracking-wide hover:opacity-90 transition inline-flex items-center gap-2">
+            Get a Free Estimate
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="#services" class="border border-gray-700 text-gray-300 px-8 py-4 rounded-full font-semibold text-sm tracking-wide hover:border-gray-500 hover:text-white transition">Our Services</a>
+        </div>
+        <div class="flex items-center gap-6 mt-10 pt-8 border-t border-gray-800">
+          <div class="flex -space-x-2">
+            <div class="w-9 h-9 rounded-full bg-accent/20 border-2 border-[#0a0a0a] flex items-center justify-center text-xs font-bold text-accent">JM</div>
+            <div class="w-9 h-9 rounded-full bg-orange-900/30 border-2 border-[#0a0a0a] flex items-center justify-center text-xs font-bold text-orange-300">SR</div>
+            <div class="w-9 h-9 rounded-full bg-yellow-900/30 border-2 border-[#0a0a0a] flex items-center justify-center text-xs font-bold text-yellow-300">TK</div>
+          </div>
+          <div>
+            <div class="flex text-yellow-400 text-sm">★★★★★</div>
+            <p class="text-gray-500 text-xs mt-0.5">Trusted by 500+ homeowners</p>
+          </div>
+        </div>
+      </div>
+      <div class="relative flex justify-center">
+        <div class="relative w-full max-w-sm">
+          <img src="https://loremflickr.com/600/700/roofing" alt="Professional roofing work" class="w-full h-auto rounded-2xl img-glow object-cover" style="max-height: 480px; object-fit: cover;">
+          <div class="absolute -bottom-4 -left-4 bg-[#111] border border-gray-800 rounded-xl px-5 py-4 shadow-2xl">
+            <p class="text-xs text-gray-500 uppercase tracking-widest font-medium mb-1">Response Time</p>
+            <p class="font-display text-2xl text-white">SAME DAY<span class="accent">.</span></p>
+          </div>
+          <div class="absolute -top-4 -right-4 bg-accent rounded-xl px-5 py-4 shadow-2xl">
+            <p class="text-xs text-white/70 uppercase tracking-widest font-medium mb-1">Warranty</p>
+            <p class="font-display text-2xl text-white">25 YEARS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<section id="stats" class="py-16 px-6 bg-[#111] border-y border-gray-800 fade-in">
+  <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div>
+      <p class="stat-num text-5xl md:text-6xl text-white" data-target="500">0</p>
+      <p class="text-gray-500 text-sm mt-1 uppercase tracking-widest">Roofs Replaced</p>
+    </div>
+    <div>
+      <p class="stat-num text-5xl md:text-6xl accent" data-target="15">0</p>
+      <p class="text-gray-500 text-sm mt-1 uppercase tracking-widest">Years Experience</p>
+    </div>
+    <div>
+      <p class="stat-num text-5xl md:text-6xl text-white" data-target="100">0</p>
+      <p class="text-gray-500 text-sm mt-1 uppercase tracking-widest">% Satisfaction</p>
+    </div>
+    <div>
+      <p class="stat-num text-5xl md:text-6xl accent" data-target="25">0</p>
+      <p class="text-gray-500 text-sm mt-1 uppercase tracking-widest">Year Warranty</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-24 px-6 fade-in">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-14">
+      <span class="text-accent text-xs font-semibold uppercase tracking-[0.25em]">What We Do</span>
+      <h2 class="font-display text-5xl md:text-6xl text-white mt-3">OUR SERVICES</h2>
+      <p class="text-gray-400 mt-3 max-w-md">Every roofing challenge is different. We bring the right solution for every situation.</p>
+    </div>
+    <div class="flex flex-wrap gap-3 mb-10">
+      <button class="tab-btn active px-5 py-2.5 rounded-full text-sm font-semibold border border-gray-700 text-gray-300 transition-all" data-tab="residential">Residential</button>
+      <button class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold border border-gray-700 text-gray-300 transition-all" data-tab="commercial">Commercial</button>
+      <button class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold border border-gray-700 text-gray-300 transition-all" data-tab="repairs">Repairs</button>
+    </div>
+    <div id="tab-residential" class="tab-pane active grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="bg-[#111] border border-gray-800 rounded-2xl p-6 hover:border-accent/40 transition-all group">
+        <span class="text-3xl mb-4 block">🏠</span>
+        <h3 class="font-semibold text-white text-lg mb-2">Full Roof Replacement</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">We strip your old roof down to the deck and install premium architectural shingles built for 30+ years. Every nail, every layer done right.</p>
+      </div>
+      <div class="bg-[#111] border border-gray-800 rounded-2xl p-6 hover:border-accent/40 transition-all group">
+        <span class="text-3xl mb-4 block">🪟</span>
+        <h3 class="font-semibold text-white text-lg mb-2">Skylight Installation</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Bring natural light into any room with a properly flashed, weatherproof skylight. We handle everything from cutting to waterproofing.</p>
+      </div

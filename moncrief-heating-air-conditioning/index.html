@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moncrief Heating & Air Conditioning | Atlanta, GA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#1a3a6b',
+                            lightblue: '#2563eb',
+                            orange: '#f97316',
+                            gray: '#f1f5f9'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-bg {
+            background: linear-gradient(135deg, #0f2044 0%, #1a3a6b 50%, #1e4d8c 100%);
+        }
+        .wave-divider {
+            position: relative;
+            overflow: hidden;
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #f97316;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.7s ease forwards;
+        }
+        .fade-delay-1 { animation-delay: 0.1s; }
+        .fade-delay-2 { animation-delay: 0.3s; }
+        .fade-delay-3 { animation-delay: 0.5s; }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="bg-brand-blue rounded-lg p-2">
+                        <i class="fas fa-wind text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-brand-blue text-base lg:text-lg leading-tight">Moncrief</div>
+                        <div class="text-xs text-gray-500 leading-tight">Heating & Air Conditioning</div>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 font-medium hover:text-brand-blue transition-colors">Home</a>
+                    <a href="#services" class="nav-link text-gray-700 font-medium hover:text-brand-blue transition-colors">Services</a>
+                    <a href="#about" class="nav-link text-gray-700 font-medium hover:text-brand-blue transition-colors">About</a>
+                    <a href="#contact" class="nav-link text-gray-700 font-medium hover:text-brand-blue transition-colors">Contact</a>
+                    <a href="tel:4709645141" class="bg-brand-orange hover:bg-orange-600 text-white font-bold px-5 py-2.5 rounded-lg transition-colors flex items-center space-x-2">
+                        <i class="fas fa-phone text-sm"></i>
+                        <span>(470) 964-5141</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#home" class="block text-gray-700 font-medium py-2 hover:text-brand-blue" onclick="closeMenu()">Home</a>
+                <a href="#services" class="block text-gray-700 font-medium py-2 hover:text-brand-blue" onclick="closeMenu()">Services</a>
+                <a href="#about" class="block text-gray-700 font-medium py-2 hover:text-brand-blue" onclick="closeMenu()">About</a>
+                <a href="#contact" class="block text-gray-700 font-medium py-2 hover:text-brand-blue" onclick="closeMenu()">Contact</a>
+                <a href="tel:4709645141" class="block bg-brand-orange text-white font-bold px-5 py-3 rounded-lg text-center mt-2">
+                    <i class="fas fa-phone mr-2"></i>(470) 964-5141
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg bg-pattern min-h-screen flex items-center pt-16 lg:pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <div class="inline-flex items-center bg-brand-orange/20 border border-brand-orange/40 text-orange-300 px-4 py-2 rounded-full text-sm font-semibold mb-6 fade-in-up">
+                        <i class="fas fa-star mr-2 text-yellow-400"></i>
+                        Atlanta's Trusted HVAC Experts
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 fade-in-up fade-delay-1">
+                        Stay Comfortable
+                        <span class="text-brand-orange block">Year Round</span>
+                    </h1>
+                    <p class="text-blue-100 text-lg lg:text-xl leading-relaxed mb-8 max-w-xl fade-in-up fade-delay-2">
+                        Professional heating and air conditioning services for Atlanta homes and businesses. Fast, reliable, and affordable HVAC solutions from a trusted local team.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 fade-in-up fade-delay-3">
+                        <a href="tel:4709645141" class="bg-brand-orange hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-xl text-lg transition-all transform hover:scale-105 text-center flex items-center justify-center space-x-2 shadow-lg">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>Call Now</span>
+                        </a>
+                        <a href="#services" class="border-2 border-white/40 hover:border-white text-white font-bold px-8 py-4 rounded-xl text-lg transition-all text-center hover:bg-white/10">
+                            Our Services
+                        </a>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-6 mt-10 pt-8 border-t border-white/20">
+                        <div class="text-center">
+                            <div class="text-3xl font-extrabold text-brand-orange">30+</div>
+                            <div class="text-blue-200 text-sm">Years Experience</div>
+                        </div>
+                        <div class="w-px h-10 bg-white/20 hidden sm:block"></div>
+                        <div class="text-center">
+                            <div class="text-3xl font-extrabold text-brand-orange">5K+</div>
+                            <div class="text-blue-200 text-sm">Happy Customers</div>
+                        </div>
+                        <div class="w-px h-10 bg-white/20 hidden sm:block"></div>
+                        <div class="text-center">
+                            <div class="text-3xl font-extrabold text-brand-orange">24/7</div>
+                            <div class="text-blue-200 text-sm">Emergency Service</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Card -->
+                <div class="hidden lg:flex justify-center">
+                    <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8 max-w-sm w-full">
+                        <div class="text-center mb-6">
+                            <div class="inline-block bg-brand-orange/20 rounded-full p-6 mb-4">
+                                <i class="fas fa-snowflake text-5xl text-brand-orange"></i>
+                            </div>
+                            <h3 class="text-white text-xl font-bold">Request a Free Estimate</h3>
+                            <p class="text-blue-200 text-sm mt-2">Quick response guaranteed</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3 bg-white/10 rounded-xl px-4 py-3">
+                                <i class="fas fa-thermometer-half text-brand-orange text-lg"></i>
+                                <div>
+                                    <div class="text-white font-semibold text-sm">AC Repair & Installation</div>
+                                    <div class="text-blue-300 text-xs">Same-day service available</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-white/10 rounded-xl px-4 py-3">
+                                <i class="fas fa-fire text-brand-orange text-lg"></i>
+                                <div>
+                                    <div class="text-white font-semibold text-sm">Heating Systems</div>
+                                    <div class="text-blue-300 text-xs">All brands serviced</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-white/10 rounded-xl px-4 py-3">
+                                <i class="fas fa-tools text-brand-orange text-lg"></i>
+                                <div>
+                                    <div class="text-white font-semibold text-sm">Maintenance Plans</div>
+                                    <div class="text-blue-300 text-xs">Preventative care packages</div>
+                                </div>
+                            </div>
+                            <a href="tel:4709645141" class="block w-full bg-brand-orange hover:bg-orange-600 text-white font-bold text-center py-3.5 rounded-xl transition-colors mt-2">
+                                <i class="fas fa-phone mr-2"></i>(470) 964-5141
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom wave -->
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 60L1440 60L1440 20C1200 60 960 0 720 20C480 40 240 0 0 20L0 60Z" fill="#f1f5f9"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Features Bar -->
+    <section class="bg-brand-gray py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-brand-blue/10 rounded-xl p-3 flex-shrink-0">
+                        <i class="fas fa-certificate text-brand-blue text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-800 text-sm">Licensed &amp; Insured</div>
+                        <div class="text-gray-500 text-xs">Certified technicians</div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <div class="bg-brand-blue/10 rounded-xl p-3 flex-shrink-0">
+                        <i class="fas fa-clock text-brand-blue text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-800 text-sm">24/7 Emergency</div>
+                        <div class="text-gray-500 text-xs">Always available</div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <div class="bg-brand-blue/10 rounded-xl p-3 flex-shrink-0">
+                        <i class="fas fa-dollar-sign text-brand-blue text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-800 text-sm">Fair Pricing</div>
+                        <div class="text-gray-500 text-xs">No hidden fees</div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <div class="bg-brand-blue/10 rounded-xl p-3 flex-shrink-0">
+                        <i class="fas fa-shield-alt text-brand-blue text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-800 text-sm">Satisfaction Guaranteed</div>
+                        <div class="text-gray-500 text-xs">100% committed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px

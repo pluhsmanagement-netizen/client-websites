@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Northside Tree Professionals — Expert Tree Care</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --accent: #2d6a2d; --accent-light: #3d8f3d; --accent-pale: #e8f5e8; }
+  body { font-family: 'Inter', sans-serif; }
+  h1, h2, h3, .editorial { font-family: 'Playfair Display', serif; }
+  .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .nav-shrink { padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; box-shadow: 0 2px 24px rgba(0,0,0,0.08); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: grid; }
+  .tab-btn.active { background: #2d6a2d; color: #fff; }
+  details summary { list-style: none; cursor: pointer; }
+  details summary::-webkit-details-marker { display: none; }
+  details[open] .faq-icon { transform: rotate(45deg); }
+  .faq-icon { transition: transform 0.3s ease; }
+  .stat-num { font-family: 'Playfair Display', serif; }
+  @media(max-width:768px) { .hero-img { display: none; } }
+  .accent-bg { background-color: #2d6a2d; }
+  .accent-text { color: #2d6a2d; }
+  .accent-border { border-color: #2d6a2d; }
+</style>
+</head>
+<body class="bg-white text-gray-900 overflow-x-hidden">
+
+<!-- NAV -->
+<nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 bg-white py-4 px-6 lg:px-12 transition-all duration-300">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-full accent-bg flex items-center justify-center">
+        <span class="text-white text-lg">🌲</span>
+      </div>
+      <div>
+        <span class="font-bold text-gray-900 text-base leading-tight block" style="font-family:'Playfair Display',serif;">Northside Tree</span>
+        <span class="text-xs text-gray-500 tracking-widest uppercase">Professionals</span>
+      </div>
+    </div>
+    <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
+      <li><a href="#services" class="hover:text-green-700 transition-colors">Services</a></li>
+      <li><a href="#about" class="hover:text-green-700 transition-colors">About</a></li>
+      <li><a href="#reviews" class="hover:text-green-700 transition-colors">Reviews</a></li>
+      <li><a href="#faq" class="hover:text-green-700 transition-colors">FAQ</a></li>
+      <li><a href="#contact" class="hover:text-green-700 transition-colors">Contact</a></li>
+      <li><a href="#contact" class="accent-bg text-white px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity">Get a Quote</a></li>
+    </ul>
+    <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu">
+      <span class="block w-6 h-0.5 bg-gray-900 transition-all"></span>
+      <span class="block w-6 h-0.5 bg-gray-900 transition-all"></span>
+      <span class="block w-6 h-0.5 bg-gray-900 transition-all"></span>
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden md:hidden mt-4 border-t border-gray-100 pt-4">
+    <ul class="flex flex-col gap-4 text-sm font-medium text-gray-700 pb-4">
+      <li><a href="#services" class="hover:text-green-700 transition-colors">Services</a></li>
+      <li><a href="#about" class="hover:text-green-700 transition-colors">About</a></li>
+      <li><a href="#reviews" class="hover:text-green-700 transition-colors">Reviews</a></li>
+      <li><a href="#faq" class="hover:text-green-700 transition-colors">FAQ</a></li>
+      <li><a href="#contact" class="hover:text-green-700 transition-colors">Contact</a></li>
+      <li><a href="#contact" class="accent-bg text-white px-5 py-2 rounded-full text-sm font-semibold inline-block hover:opacity-90 transition-opacity">Get a Quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="min-h-screen flex items-center pt-24 pb-16 px-6 lg:px-12 bg-white">
+  <div class="max-w-6xl mx-auto w-full">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="fade-in">
+        <span class="inline-block text-xs font-semibold tracking-widest uppercase accent-text mb-4 border accent-border border-opacity-40 px-3 py-1 rounded-full">Licensed & Insured Arborists</span>
+        <h1 class="text-5xl lg:text-7xl font-black leading-none text-gray-900 mb-6" style="font-family:'Playfair Display',serif;">
+          Trees Cared<br/>
+          <span class="accent-text">The Right Way.</span>
+        </h1>
+        <p class="text-gray-500 text-lg leading-relaxed mb-8 max-w-md">
+          From dangerous removals to precise crown work, we bring two decades of certified expertise to every job. Your property, protected.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#contact" class="accent-bg text-white px-8 py-4 rounded-full font-semibold text-base hover:opacity-90 transition-opacity shadow-lg">Get a Free Estimate</a>
+          <a href="#services" class="border border-gray-300 text-gray-700 px-8 py-4 rounded-full font-semibold text-base hover:border-green-700 hover:text-green-700 transition-colors">Our Services</a>
+        </div>
+        <div class="flex items-center gap-6 mt-10">
+          <div class="flex -space-x-2">
+            <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-xs font-bold accent-text border-2 border-white">JK</div>
+            <div class="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center text-xs font-bold accent-text border-2 border-white">SM</div>
+            <div class="w-8 h-8 rounded-full bg-green-300 flex items-center justify-center text-xs font-bold accent-text border-2 border-white">TR</div>
+          </div>
+          <div>
+            <div class="flex text-yellow-400 text-sm">★★★★★</div>
+            <span class="text-xs text-gray-500 font-medium">200+ five-star reviews</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-img fade-in relative">
+        <div class="absolute -top-6 -left-6 w-32 h-32 bg-green-50 rounded-full -z-10"></div>
+        <div class="absolute -bottom-4 -right-4 w-48 h-48 bg-green-50 rounded-full -z-10"></div>
+        <div class="grid grid-cols-2 gap-4">
+          <img src="https://loremflickr.com/600/700/tree-removal" alt="Tree removal" class="w-full h-64 object-cover rounded-2xl shadow-md">
+          <div class="flex flex-col gap-4 mt-8">
+            <img src="https://loremflickr.com/600/400/tree-trimming" alt="Tree trimming" class="w-full h-40 object-cover rounded-2xl shadow-md">
+            <img src="https://loremflickr.com/600/400/arborist-work" alt="Arborist work" class="w-full h-32 object-cover rounded-2xl shadow-md">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="py-16 px-6 lg:px-12 bg-gray-950">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 fade-in">
+      <div class="text-center">
+        <div class="stat-num text-5xl font-black text-white mb-1" data-target="20">0</div>
+        <span class="text-green-400 font-semibold text-xs tracking-widest uppercase">+ Years Experience</span>
+      </div>
+      <div class="text-center">
+        <div class="stat-num text-5xl font-black text-white mb-1" data-target="3000">0</div>
+        <span class="text-green-400 font-semibold text-xs tracking-widest uppercase">+ Trees Removed</span>
+      </div>
+      <div class="text-center">
+        <div class="stat-num text-5xl font-black text-white mb-1" data-target="200">0</div>
+        <span class="text-green-400 font-semibold text-xs tracking-widest uppercase">+ 5-Star Reviews</span>
+      </div>
+      <div class="text-center">
+        <div class="stat-num text-5xl font-black text-white mb-1" data-target="100">0</div>
+        <span class="text-green-400 font-semibold text-xs tracking-widest uppercase">% Satisfaction</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-24 px-6 lg:px-12 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="max-w-xl mb-14 fade-in">
+      <span class="text-xs font-semibold tracking-widest uppercase accent-text">What We Do</span>
+      <h2 class="text-4xl lg:text-5xl font-black mt-2 mb-4" style="font-family:'Playfair Display',serif;">Complete Tree Care, Start to Finish</h2>
+      <p class="text-gray-500">From emergency storm damage to scheduled maintenance — one call covers every tree need on your property.</p>
+    </div>
+    <!-- Tabs -->
+    <div class="fade-in">
+      <div class="flex flex-wrap gap-3 mb-10">
+        <button class="tab-btn active px-6 py-2.5 rounded-full text-sm font-semibold border border-gray-200 transition-colors" data-tab="removal">Removal & Clearing</button>
+        <button class="tab-btn px-6 py-2.5 rounded-full text-sm font-semibold border border-gray-200 text-gray-600 hover:border-green-700 transition-colors" data-tab="care">Tree Health & Care</button>
+        <button class="tab-btn px-6 py-2.5 rounded-full text-sm font-semibold border border-gray-200 text-gray-600 hover:border-green-700 transition-colors" data-tab="emergency">Emergency Services</button>
+      </div>
+      <!-- Panels -->
+      <div id="tab-removal" class="tab-panel active grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="border border-gray-100 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+          <div class="text-3xl mb-4">🪵</div>
+          <h3 class="font-bold text-lg mb-2">Full Tree Removal</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We safely remove trees of any size, from tight residential lots to wide commercial properties. All debris is hauled away, leaving your yard spotless.</p>
+        </div>
+        <div class="border border-gray-100 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+          <div class="text-3xl mb-4">🪚</div>
+          <h3 class="font-bold text-lg mb-2">Stump Grinding</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">That leftover stump is a tripping hazard and a pest magnet. Our grinders take it below grade so you can seed, plant, or pave right over it.</p>
+        </div>
+        <div class="border border-gray-100 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+          <div class="text-3xl mb-4">🌿</div>
+          <h3 class="font-bold text-lg mb-2">Lot Clearing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Building a new space? We clear overgrown lots and wooded areas efficiently, preparing the land exactly as your plans require.</p>
+        </div>
+      </div>
+      <div id="tab-care" class="tab-panel grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="border border-gray-100 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+          <div class="text-3xl mb-4">✂️</div>
+          <h3 class="font-bold text-lg mb-2">Crown Trimming & Pruning</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Proper pruning promotes healthy growth and reduces wind resistance. We shape crowns to ISA standards — never topping, always preserving structure.</p>
+        </div>
+        <div class="border border-gray-100 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+          <div class="text-3xl mb-4">🌱</div>
+          <h3 class="font-bold text-lg mb-2">Deep Root Fertilization</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Urban soils are nutrient-poor. Our pressurized injection feeds roots where they live, dramatically improving vigor and disease resistance season after season.</p>

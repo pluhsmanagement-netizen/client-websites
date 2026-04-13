@@ -1,152 +1,186 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FenceWorks of Georgia - Professional Fencing Solutions</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': '#2D5016',
-                        'secondary': '#4A7C59'
-                    }
-                }
-            }
-        }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FenceWorks of Georgia | Premium Fence Installation & Repair</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', sans-serif; background: #0d0d0d; color: #f0ede8; }
+  h1, h2, .display-font { font-family: 'Bebas Neue', cursive; }
+  .accent { color: #c8a84b; }
+  .accent-bg { background: #c8a84b; }
+  .accent-border { border-color: #c8a84b; }
+  .glow { box-shadow: 0 0 30px rgba(200,168,75,0.15); }
+  .glow-strong { box-shadow: 0 0 50px rgba(200,168,75,0.25); }
+  .nav-shrink { padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; background: rgba(13,13,13,0.98) !important; }
+  .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .tab-content { display: none; }
+  .tab-content.active { display: grid; }
+  .tab-btn.active-tab { background: #c8a84b; color: #0d0d0d; }
+  details summary { cursor: pointer; list-style: none; }
+  details summary::-webkit-details-marker { display: none; }
+  details[open] summary .faq-icon { transform: rotate(45deg); }
+  .faq-icon { transition: transform 0.3s ease; }
+  details[open] { border-color: #c8a84b; }
+  .hero-grid { background-image: radial-gradient(circle at 20% 50%, rgba(200,168,75,0.08) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(200,168,75,0.05) 0%, transparent 40%); }
+  .img-card { overflow: hidden; border-radius: 12px; }
+  .img-card img { transition: transform 0.5s ease; }
+  .img-card:hover img { transform: scale(1.04); }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: #0d0d0d; }
+  ::-webkit-scrollbar-thumb { background: #c8a84b; border-radius: 2px; }
+  html { scroll-behavior: smooth; }
+  .pill { background: rgba(200,168,75,0.1); border: 1px solid rgba(200,168,75,0.3); }
+  .stat-num { font-family: 'Bebas Neue', cursive; }
+</style>
 </head>
-<body class="font-sans">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-50">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <span class="text-2xl font-bold text-primary">FenceWorks of Georgia</span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-primary transition duration-300">Home</a>
-                    <a href="#services" class="text-gray-700 hover:text-primary transition duration-300">Services</a>
-                    <a href="#about" class="text-gray-700 hover:text-primary transition duration-300">About</a>
-                    <a href="#contact" class="text-gray-700 hover:text-primary transition duration-300">Contact</a>
-                </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-primary">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <div id="mobile-menu" class="hidden md:hidden pb-4">
-                <a href="#home" class="block py-2 text-gray-700 hover:text-primary">Home</a>
-                <a href="#services" class="block py-2 text-gray-700 hover:text-primary">Services</a>
-                <a href="#about" class="block py-2 text-gray-700 hover:text-primary">About</a>
-                <a href="#contact" class="block py-2 text-gray-700 hover:text-primary">Contact</a>
-            </div>
-        </div>
-    </nav>
+<body class="bg-[#0d0d0d]">
 
-    <!-- Hero Section -->
-    <section id="home" class="bg-gradient-to-r from-primary to-secondary text-white pt-20">
-        <div class="max-w-7xl mx-auto px-4 py-24">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">FenceWorks of Georgia</h1>
-                <p class="text-xl md:text-2xl mb-8 text-gray-100">Professional Fencing Solutions for Your Property</p>
-                <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
-                    <a href="#contact" class="inline-block bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Get Free Quote</a>
-                    <a href="#services" class="inline-block border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition duration-300">Our Services</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- NAV -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 py-5 px-6 transition-all duration-300" style="background: rgba(13,13,13,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(200,168,75,0.1);">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-3">
+      <div class="w-9 h-9 accent-bg flex items-center justify-center rounded-sm">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="3" width="2" height="14" fill="#0d0d0d"/><rect x="9" y="3" width="2" height="14" fill="#0d0d0d"/><rect x="16" y="3" width="2" height="14" fill="#0d0d0d"/><rect x="2" y="6" width="16" height="2" fill="#0d0d0d"/><rect x="2" y="11" width="16" height="2" fill="#0d0d0d"/></svg>
+      </div>
+      <div>
+        <span class="display-font text-xl tracking-wider text-white">FenceWorks</span>
+        <span class="display-font text-xl tracking-wider accent"> of Georgia</span>
+      </div>
+    </a>
+    <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+      <li><a href="#services" class="hover:text-[#c8a84b] transition-colors">Services</a></li>
+      <li><a href="#why-us" class="hover:text-[#c8a84b] transition-colors">Why Us</a></li>
+      <li><a href="#how-it-works" class="hover:text-[#c8a84b] transition-colors">Process</a></li>
+      <li><a href="#reviews" class="hover:text-[#c8a84b] transition-colors">Reviews</a></li>
+      <li><a href="#faq" class="hover:text-[#c8a84b] transition-colors">FAQ</a></li>
+      <li><a href="#contact" class="hover:text-[#c8a84b] transition-colors">Contact</a></li>
+    </ul>
+    <a href="#contact" class="hidden md:inline-flex items-center gap-2 accent-bg text-[#0d0d0d] font-semibold text-sm px-5 py-2.5 rounded-sm hover:brightness-110 transition-all">
+      Get Free Quote
+    </a>
+    <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
+      <span class="w-6 h-0.5 bg-white transition-all" id="h1"></span>
+      <span class="w-6 h-0.5 bg-white transition-all" id="h2"></span>
+      <span class="w-6 h-0.5 bg-white transition-all" id="h3"></span>
+    </button>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-800 pt-4">
+    <ul class="flex flex-col gap-4 text-gray-300 text-sm font-medium">
+      <li><a href="#services" class="hover:text-[#c8a84b] transition-colors block">Services</a></li>
+      <li><a href="#why-us" class="hover:text-[#c8a84b] transition-colors block">Why Us</a></li>
+      <li><a href="#how-it-works" class="hover:text-[#c8a84b] transition-colors block">Process</a></li>
+      <li><a href="#reviews" class="hover:text-[#c8a84b] transition-colors block">Reviews</a></li>
+      <li><a href="#faq" class="hover:text-[#c8a84b] transition-colors block">FAQ</a></li>
+      <li><a href="#contact" class="hover:text-[#c8a84b] transition-colors block">Contact</a></li>
+      <li><a href="#contact" class="inline-block accent-bg text-[#0d0d0d] font-semibold px-5 py-2.5 rounded-sm">Get Free Quote</a></li>
+    </ul>
+  </div>
+</nav>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
-                <p class="text-lg text-gray-600">Quality fencing solutions for residential and commercial properties</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
-                    <div class="text-primary mb-4">
-                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Residential Fencing</h3>
-                    <p class="text-gray-600">Custom fence installation for homes including privacy, decorative, and security fencing options.</p>
-                </div>
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
-                    <div class="text-primary mb-4">
-                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm3 5a1 1 0 011-1h4a1 1 0 110 2H8a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Commercial Fencing</h3>
-                    <p class="text-gray-600">Professional commercial fencing solutions for businesses, schools, and industrial properties.</p>
-                </div>
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
-                    <div class="text-primary mb-4">
-                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Fence Repair</h3>
-                    <p class="text-gray-600">Expert fence repair and maintenance services to keep your fence looking great and functioning properly.</p>
-                </div>
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
-                    <div class="text-primary mb-4">
-                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Gate Installation</h3>
-                    <p class="text-gray-600">Custom gate design and installation including automatic gates, security gates, and decorative entries.</p>
-                </div>
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
-                    <div class="text-primary mb-4">
-                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Free Estimates</h3>
-                    <p class="text-gray-600">Get a detailed, no-obligation estimate for your fencing project with professional consultation.</p>
-                </div>
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
-                    <div class="text-primary mb-4">
-                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Quality Materials</h3>
-                    <p class="text-gray-600">We use only the highest quality materials including wood, vinyl, aluminum, and chain link options.</p>
-                </div>
-            </div>
+<!-- HERO -->
+<section id="home" class="min-h-screen hero-grid flex items-center pt-20" style="background-color: #0d0d0d;">
+  <div class="max-w-7xl mx-auto px-6 w-full py-20">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="fade-in">
+        <div class="inline-flex items-center gap-2 pill px-4 py-1.5 rounded-full text-xs font-medium text-[#c8a84b] mb-6">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#c8a84b] inline-block"></span>
+          Georgia's Premier Fence Specialists
         </div>
-    </section>
+        <h1 class="display-font text-7xl md:text-8xl leading-none mb-6">
+          <span class="text-white">BUILT TO</span><br>
+          <span class="accent">LAST.</span><br>
+          <span class="text-white">BUILT TO</span><br>
+          <span class="text-gray-400">IMPRESS.</span>
+        </h1>
+        <p class="text-gray-400 text-lg leading-relaxed max-w-md mb-8">
+          From wood privacy fences to ornamental iron, we install fences that add real value to your property — done right the first time, every time.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#contact" class="inline-flex items-center justify-center gap-2 accent-bg text-[#0d0d0d] font-bold px-8 py-4 rounded-sm hover:brightness-110 transition-all text-sm tracking-wide">
+            GET A FREE ESTIMATE
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+          <a href="#services" class="inline-flex items-center justify-center gap-2 border border-gray-700 text-gray-300 font-medium px-8 py-4 rounded-sm hover:border-[#c8a84b] hover:text-[#c8a84b] transition-all text-sm tracking-wide">
+            VIEW OUR WORK
+          </a>
+        </div>
+        <div class="flex items-center gap-6 mt-10 pt-10 border-t border-gray-800">
+          <div class="flex -space-x-2">
+            <div class="w-9 h-9 rounded-full bg-gray-700 border-2 border-[#0d0d0d] flex items-center justify-center text-xs font-bold">JM</div>
+            <div class="w-9 h-9 rounded-full bg-gray-600 border-2 border-[#0d0d0d] flex items-center justify-center text-xs font-bold">SR</div>
+            <div class="w-9 h-9 rounded-full bg-gray-500 border-2 border-[#0d0d0d] flex items-center justify-center text-xs font-bold">TK</div>
+          </div>
+          <div>
+            <div class="flex text-[#c8a84b] text-sm">★★★★★</div>
+            <p class="text-gray-400 text-xs mt-0.5">500+ happy customers across Georgia</p>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in relative">
+        <div class="relative">
+          <div class="img-card glow-strong max-w-lg ml-auto">
+            <img src="https://loremflickr.com/800/600/wood-fence" alt="Beautiful wood fence installation" class="w-full h-80 object-cover">
+          </div>
+          <div class="absolute -bottom-6 -left-4 bg-[#1a1a1a] border border-gray-800 rounded-lg p-4 glow max-w-[180px]">
+            <div class="display-font text-3xl accent">15+</div>
+            <div class="text-xs text-gray-400 mt-0.5">Years serving Georgia homeowners</div>
+          </div>
+          <div class="absolute -top-4 -right-2 bg-[#1a1a1a] border border-[#c8a84b] rounded-lg p-3 glow">
+            <div class="flex items-center gap-2">
+              <span class="text-[#c8a84b] text-lg">✓</span>
+              <span class="text-xs font-semibold text-white">Licensed & Insured</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 grid grid-cols-2 gap-4 max-w-lg ml-auto">
+          <div class="img-card">
+            <img src="https://loremflickr.com/400/300/vinyl-fence" alt="Vinyl fence installation" class="w-full h-36 object-cover">
+          </div>
+          <div class="img-card">
+            <img src="https://loremflickr.com/400/300/iron-fence" alt="Iron fence installation" class="w-full h-36 object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">About FenceWorks of Georgia</h2>
-                    <p class="text-lg text-gray-600 mb-6">With over 15 years of experience serving Georgia, FenceWorks has established itself as the premier fencing contractor in the region. We pride ourselves on delivering exceptional craftsmanship, using quality materials, and providing outstanding customer service.</p>
-                    <p class="text-lg text-gray-600 mb-6">Our team of skilled professionals is committed to transforming your property with beautiful, durable fencing solutions that meet your specific needs and exceed your expectations.</p>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3">
-                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <span class="text-gray-700">Licensed and Insured</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3">
-                                <svg class="w-4 h-4 text-
+<!-- STATS BAR -->
+<section class="py-16 border-t border-b border-gray-800 fade-in" style="background: #111111;">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div>
+        <div class="stat-num text-5xl accent" data-target="500">0</div>
+        <div class="text-gray-400 text-sm mt-1 font-medium">Projects Completed</div>
+      </div>
+      <div>
+        <div class="stat-num text-5xl text-white"><span data-target="15">0</span>+</div>
+        <div class="text-gray-400 text-sm mt-1 font-medium">Years Experience</div>
+      </div>
+      <div>
+        <div class="stat-num text-5xl accent"><span data-target="100">0</span>%</div>
+        <div class="text-gray-400 text-sm mt-1 font-medium">Satisfaction Rate</div>
+      </div>
+      <div>
+        <div class="stat-num text-5xl text-white"><span data-target="24">0</span>hr</div>
+        <div class="text-gray-400 text-sm mt-1 font-medium">Quote Turnaround</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-24 px-6 fade-in">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-14">
+      <p class="text-[#c8a84b] text-sm font-semibold tracking-widest uppercase mb-3">What We Do</p>
+      <h2 class="display-font text-6xl text-white">OUR SERVICES</h2>
+      <p class="text-gray-400 mt-3 max-w-xl">From residential privacy fences to commercial security solutions, we have the expertise to handle any fencing project in Georgia.</p>
+    </div>
+    <!-- Tabs -->
+    <div class="flex flex-wrap gap-2

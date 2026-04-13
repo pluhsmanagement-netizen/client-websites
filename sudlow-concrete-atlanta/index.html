@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sudlow Concrete Atlanta | Expert Concrete Services in Atlanta, GA</title>
+<title>Sudlow Concrete Atlanta | Professional Concrete Services</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script>
@@ -12,23 +12,24 @@ tailwind.config = {
     extend: {
       colors: {
         concrete: {
-          50: '#f8f8f7',
-          100: '#f0efed',
-          200: '#e0deda',
-          300: '#c8c4be',
-          400: '#a8a29a',
-          500: '#8a8278',
-          600: '#716960',
-          700: '#5c5550',
-          800: '#4a4440',
-          900: '#3a3530',
+          50: '#f8f8f8',
+          100: '#ebebeb',
+          200: '#d4d4d4',
+          300: '#b0b0b0',
+          400: '#888888',
+          500: '#636363',
+          600: '#4a4a4a',
+          700: '#333333',
+          800: '#1f1f1f',
+          900: '#111111',
         },
         brand: {
-          primary: '#1a3a5c',
-          secondary: '#2563eb',
-          accent: '#f59e0b',
-          dark: '#0f1f2e',
-          light: '#e8f0f8',
+          orange: '#e8600a',
+          orangeLight: '#f07020',
+          orangeDark: '#c04e08',
+          gold: '#f5a623',
+          dark: '#1a1a1a',
+          darker: '#111111',
         }
       },
       fontFamily: {
@@ -40,90 +41,106 @@ tailwind.config = {
 </script>
 <style>
   html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; }
-  
+  * { font-family: 'Inter', sans-serif; }
+
   .nav-scrolled {
     padding-top: 0.5rem !important;
     padding-bottom: 0.5rem !important;
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
   }
-  
-  .glow-btn {
-    box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
-    transition: all 0.3s ease;
-  }
-  .glow-btn:hover {
-    box-shadow: 0 0 25px rgba(37, 99, 235, 0.7);
-    transform: translateY(-1px);
-  }
 
-  .fade-up {
+  .fade-in {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(30px);
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
-  .fade-up.visible {
+  .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
   }
 
-  .fade-in {
-    opacity: 0;
-    transition: opacity 0.8s ease;
+  .fade-in-delay-1 { transition-delay: 0.1s; }
+  .fade-in-delay-2 { transition-delay: 0.2s; }
+  .fade-in-delay-3 { transition-delay: 0.3s; }
+  .fade-in-delay-4 { transition-delay: 0.4s; }
+
+  .glow-btn {
+    box-shadow: 0 0 15px rgba(232, 96, 10, 0.4);
+    transition: all 0.3s ease;
   }
-  .fade-in.visible {
-    opacity: 1;
+  .glow-btn:hover {
+    box-shadow: 0 0 25px rgba(232, 96, 10, 0.7);
+    transform: translateY(-2px);
   }
 
+  .service-card {
+    transition: all 0.3s ease;
+  }
   .service-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(26, 58, 92, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
   }
 
-  .stat-number {
-    font-variant-numeric: tabular-nums;
-  }
-
-  .hero-bg {
-    background-image: linear-gradient(to bottom right, rgba(10, 20, 35, 0.82), rgba(26, 58, 92, 0.75)),
-      url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80');
-    background-size: cover;
-    background-position: center;
-  }
-
-  .about-img {
-    background-image: url('https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?w=800&q=80');
-    background-size: cover;
-    background-position: center;
-  }
-
-  @keyframes pulse-ring {
-    0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
-    70% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
-  }
-
-  .pulse-accent {
-    animation: pulse-ring 2s infinite;
-  }
-
-  .step-line::after {
+  .process-line::after {
     content: '';
     position: absolute;
     top: 50%;
     left: 100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(to right, #2563eb, #1a3a5c);
+    background: linear-gradient(to right, #e8600a, #f5a623);
     transform: translateY(-50%);
   }
 
-  .process-connector {
-    background: linear-gradient(to right, #2563eb 0%, #1a3a5c 100%);
+  @media (max-width: 768px) {
+    .process-line::after { display: none; }
   }
 
   .hamburger-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    margin: 5px 0;
     transition: all 0.3s ease;
+  }
+
+  .hero-bg {
+    background-image: linear-gradient(135deg, rgba(15,15,15,0.85) 0%, rgba(30,30,30,0.75) 100%),
+      url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .stats-card {
+    transition: transform 0.3s ease;
+  }
+  .stats-card:hover {
+    transform: scale(1.05);
+  }
+
+  .review-card {
+    transition: all 0.3s ease;
+  }
+  .review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  }
+
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #e8600a;
+    box-shadow: 0 0 0 3px rgba(232, 96, 10, 0.15);
+  }
+
+  .pill-tag {
+    transition: all 0.2s ease;
+  }
+  .pill-tag:hover {
+    background: #e8600a;
+    color: white;
+    transform: scale(1.05);
   }
 
   .mobile-menu {
@@ -131,120 +148,111 @@ tailwind.config = {
     overflow: hidden;
     transition: max-height 0.4s ease;
   }
-
   .mobile-menu.open {
     max-height: 500px;
   }
 
-  input:focus, textarea:focus, select:focus {
-    outline: none;
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  .about-img {
+    background-image: url('https://images.unsplash.com/photo-1590644365607-5e1d6d9d7f2d?w=800&q=80');
+    background-size: cover;
+    background-position: center;
   }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #111; }
+  ::-webkit-scrollbar-thumb { background: #e8600a; border-radius: 3px; }
 </style>
 </head>
 <body class="bg-white text-gray-800 antialiased">
 
-<!-- ============================================================ -->
 <!-- NAVIGATION -->
-<!-- ============================================================ -->
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-brand-dark/95 backdrop-blur-md py-4 transition-all duration-300">
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-brand-darker py-4 transition-all duration-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between">
-      <!-- Logo / Name -->
-      <a href="#hero" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 bg-brand-secondary rounded-lg flex items-center justify-center shadow-lg group-hover:bg-brand-accent transition-colors duration-300">
-          <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/>
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-brand-orange rounded-lg flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
           </svg>
         </div>
         <div>
-          <span class="text-white font-800 text-lg leading-tight block font-bold tracking-tight">Sudlow Concrete</span>
-          <span class="text-brand-accent text-xs font-semibold tracking-widest uppercase">Atlanta</span>
+          <span class="text-white font-800 text-lg leading-tight font-extrabold">Sudlow Concrete</span>
+          <span class="block text-brand-orange text-xs font-semibold tracking-widest uppercase">Atlanta</span>
         </div>
-      </a>
+      </div>
 
       <!-- Desktop Nav Links -->
-      <div class="hidden lg:flex items-center gap-8">
-        <a href="#services" class="text-gray-300 hover:text-white text-sm font-medium transition-colors duration-200">Services</a>
-        <a href="#why-us" class="text-gray-300 hover:text-white text-sm font-medium transition-colors duration-200">Why Us</a>
-        <a href="#about" class="text-gray-300 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
-        <a href="#reviews" class="text-gray-300 hover:text-white text-sm font-medium transition-colors duration-200">Reviews</a>
-        <a href="#service-area" class="text-gray-300 hover:text-white text-sm font-medium transition-colors duration-200">Service Area</a>
-        <a href="#contact" class="text-gray-300 hover:text-white text-sm font-medium transition-colors duration-200">Contact</a>
+      <div class="hidden lg:flex items-center space-x-8">
+        <a href="#services" class="text-gray-300 hover:text-brand-orange transition-colors duration-200 text-sm font-medium">Services</a>
+        <a href="#why-us" class="text-gray-300 hover:text-brand-orange transition-colors duration-200 text-sm font-medium">Why Us</a>
+        <a href="#process" class="text-gray-300 hover:text-brand-orange transition-colors duration-200 text-sm font-medium">Our Process</a>
+        <a href="#about" class="text-gray-300 hover:text-brand-orange transition-colors duration-200 text-sm font-medium">About</a>
+        <a href="#reviews" class="text-gray-300 hover:text-brand-orange transition-colors duration-200 text-sm font-medium">Reviews</a>
+        <a href="#contact" class="text-gray-300 hover:text-brand-orange transition-colors duration-200 text-sm font-medium">Contact</a>
       </div>
 
       <!-- CTA Phone Button -->
-      <div class="hidden lg:flex items-center gap-4">
-        <a href="tel:" class="glow-btn bg-brand-secondary text-white px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 hover:bg-blue-700 transition-colors duration-200">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      <div class="hidden lg:block">
+        <a href="tel:" class="glow-btn bg-brand-orange hover:bg-brand-orangeLight text-white font-bold px-5 py-2.5 rounded-full text-sm transition-all duration-300 flex items-center space-x-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
           </svg>
-          Get a Free Quote
+          <span>Get Free Estimate</span>
         </a>
       </div>
 
       <!-- Hamburger -->
-      <button id="hamburger" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu">
-        <span class="hamburger-line w-6 h-0.5 bg-white block"></span>
-        <span class="hamburger-line w-6 h-0.5 bg-white block"></span>
-        <span class="hamburger-line w-4 h-0.5 bg-white block"></span>
+      <button id="hamburger" class="lg:hidden flex flex-col justify-center p-2" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="mobile-menu lg:hidden">
-      <div class="pt-4 pb-2 flex flex-col gap-1 border-t border-white/10 mt-4">
-        <a href="#services" class="mobile-link text-gray-300 hover:text-white hover:bg-white/10 px-4 py-3 rounded-lg text-sm font-medium transition-all">Services</a>
-        <a href="#why-us" class="mobile-link text-gray-300 hover:text-white hover:bg-white/10 px-4 py-3 rounded-lg text-sm font-medium transition-all">Why Us</a>
-        <a href="#about" class="mobile-link text-gray-300 hover:text-white hover:bg-white/10 px-4 py-3 rounded-lg text-sm font-medium transition-all">About</a>
-        <a href="#reviews" class="mobile-link text-gray-300 hover:text-white hover:bg-white/10 px-4 py-3 rounded-lg text-sm font-medium transition-all">Reviews</a>
-        <a href="#service-area" class="mobile-link text-gray-300 hover:text-white hover:bg-white/10 px-4 py-3 rounded-lg text-sm font-medium transition-all">Service Area</a>
-        <a href="#contact" class="mobile-link text-gray-300 hover:text-white hover:bg-white/10 px-4 py-3 rounded-lg text-sm font-medium transition-all">Contact</a>
-        <a href="tel:" class="mt-2 bg-brand-secondary text-white px-4 py-3 rounded-lg text-sm font-semibold text-center">Get a Free Quote</a>
+    <div id="mobile-menu" class="mobile-menu lg:hidden">
+      <div class="pt-4 pb-2 space-y-1">
+        <a href="#services" class="mobile-link block text-gray-300 hover:text-brand-orange py-2 text-sm font-medium transition-colors">Services</a>
+        <a href="#why-us" class="mobile-link block text-gray-300 hover:text-brand-orange py-2 text-sm font-medium transition-colors">Why Us</a>
+        <a href="#process" class="mobile-link block text-gray-300 hover:text-brand-orange py-2 text-sm font-medium transition-colors">Our Process</a>
+        <a href="#about" class="mobile-link block text-gray-300 hover:text-brand-orange py-2 text-sm font-medium transition-colors">About</a>
+        <a href="#reviews" class="mobile-link block text-gray-300 hover:text-brand-orange py-2 text-sm font-medium transition-colors">Reviews</a>
+        <a href="#contact" class="mobile-link block text-gray-300 hover:text-brand-orange py-2 text-sm font-medium transition-colors">Contact</a>
+        <a href="tel:" class="block bg-brand-orange text-white text-center py-3 rounded-lg font-bold mt-3 text-sm">Call for Free Estimate</a>
       </div>
     </div>
   </div>
 </nav>
 
-<!-- ============================================================ -->
 <!-- HERO -->
-<!-- ============================================================ -->
-<section id="hero" class="hero-bg min-h-screen flex items-center relative overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-dark/40 pointer-events-none"></div>
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
-    <div class="max-w-3xl">
-      <!-- Badge -->
-      <div class="inline-flex items-center gap-2 bg-brand-accent/20 border border-brand-accent/40 text-brand-accent text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6 fade-up visible">
-        <span class="w-2 h-2 bg-brand-accent rounded-full animate-pulse"></span>
-        Atlanta's Trusted Concrete Experts
+<section id="home" class="hero-bg min-h-screen flex flex-col justify-center relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20 w-full">
+    <div class="max-w-3xl fade-in">
+      <div class="inline-flex items-center space-x-2 bg-brand-orange bg-opacity-20 border border-brand-orange border-opacity-40 rounded-full px-4 py-1.5 mb-6">
+        <span class="w-2 h-2 bg-brand-orange rounded-full animate-pulse"></span>
+        <span class="text-brand-orange text-sm font-semibold">Atlanta's Trusted Concrete Experts</span>
       </div>
-
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6 fade-up visible" style="transition-delay:0.1s">
-        Quality Concrete Work <br>
-        <span class="text-brand-accent">Built to Last</span> in Atlanta
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+        Concrete Done<br><span class="text-brand-orange">Right. Every Time.</span>
       </h1>
-
-      <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-10 max-w-2xl fade-up visible" style="transition-delay:0.2s">
-        From driveways to decorative flatwork, Sudlow Concrete Atlanta delivers expert craftsmanship, honest pricing, and results that hold up for decades — rain, heat, or Georgia clay.
+      <p class="text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
+        From driveways and patios to stamped concrete and foundations — Sudlow Concrete Atlanta delivers expert craftsmanship and lasting results for homeowners and businesses across Metro Atlanta.
       </p>
-
-      <div class="flex flex-col sm:flex-row gap-4 mb-14 fade-up visible" style="transition-delay:0.3s">
-        <a href="tel:" class="pulse-accent bg-brand-accent hover:bg-yellow-500 text-brand-dark font-bold px-8 py-4 rounded-xl text-base flex items-center justify-center gap-3 transition-all duration-300 hover:-translate-y-1 shadow-xl">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      <div class="flex flex-col sm:flex-row gap-4 mb-14">
+        <a href="tel:" class="glow-btn bg-brand-orange hover:bg-brand-orangeLight text-white font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 text-center flex items-center justify-center space-x-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
           </svg>
-          Call for Free Estimate
+          <span>Call Now — It's Free</span>
         </a>
-        <a href="#services" class="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-8 py-4 rounded-xl text-base flex items-center justify-center gap-3 transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm">
+        <a href="#services" class="bg-white bg-opacity-10 hover:bg-opacity-20 border border-white border-opacity-30 text-white font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 text-center backdrop-blur-sm">
           View Our Services
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-          </svg>
         </a>
       </div>
 
       <!-- Trust Badges -->
-      <div class="flex flex-wrap gap-4 fade-up visible" style="transition-delay:0.4s">
-        <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium px-4 py-2.5 rounded-full">
-          
+      <div class="flex flex-wrap gap-4">
+        <div class="flex items-center space-x-2 bg-white bg-opacity-10 backdrop-blur-sm border border-white border-opacity-20 rounded-full px-4 py-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-orange" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 

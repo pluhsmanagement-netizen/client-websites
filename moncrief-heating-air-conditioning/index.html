@@ -1,175 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moncrief Heating & Air Conditioning | Atlanta, GA</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              red: '#cc2229',
-              darkred: '#a01b21',
-              blue: '#1a3a5c',
-              lightblue: '#2d6da8',
-              gray: '#f5f5f5',
-              darkgray: '#333333'
-            }
-          },
-          fontFamily: {
-            sans: ['Segoe UI', 'Arial', 'sans-serif']
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    html { scroll-behavior: smooth; }
-    .hero-bg {
-      background: linear-gradient(135deg, rgba(26,58,92,0.92) 0%, rgba(204,34,41,0.75) 100%),
-        url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-    }
-    .wave-divider svg { display: block; }
-    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
-    .nav-scrolled { background: rgba(26,58,92,0.98) !important; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    .animate-fade-in { animation: fadeInUp 0.8s ease forwards; }
-    .animate-delay-1 { animation-delay: 0.2s; opacity: 0; }
-    .animate-delay-2 { animation-delay: 0.4s; opacity: 0; }
-    .animate-delay-3 { animation-delay: 0.6s; opacity: 0; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moncrief Heating & Air Conditioning | Atlanta, GA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+brand: {
+blue: '#1a3a6b',
+lightblue: '#2563eb',
+orange: '#f97316',
+darkorange: '#ea580c',
+gray: '#f3f4f6',
+dark: '#111827'
+}
+},
+fontFamily: {
+sans: ['Inter', 'sans-serif']
+}
+}
+}
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+html { scroll-behavior: smooth; }
+.hero-bg {
+background: linear-gradient(135deg, rgba(26,58,107,0.92) 0%, rgba(17,24,39,0.85) 100%),
+url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1600&q=80') center/cover no-repeat;
+}
+.nav-shadow { box-shadow: 0 2px 20px rgba(0,0,0,0.15); }
+.card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+.btn-primary { transition: all 0.3s ease; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(249,115,22,0.4); }
+.btn-secondary { transition: all 0.3s ease; }
+.btn-secondary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255,255,255,0.3); }
+</style>
 </head>
-<body class="font-sans text-brand-darkgray">
+<body class="font-sans text-brand-dark">
 
-  <!-- Top Bar -->
-  <div class="bg-brand-red text-white text-sm py-2">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-1">
-      <div class="flex items-center gap-4">
-        <span class="flex items-center gap-1">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
-          <a href="tel:4709645141" class="hover:underline font-semibold">(470) 964-5141</a>
-        </span>
-        <span class="flex items-center gap-1">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
-          935 Chattahoochee Ave NW, Atlanta, GA 30318
-        </span>
-      </div>
-      <div class="flex items-center gap-3">
-        <span class="bg-white text-brand-red text-xs font-bold px-2 py-0.5 rounded-full">24/7 Emergency Service</span>
-        <span>Mon–Fri: 8am–6pm | Sat: 9am–3pm</span>
-      </div>
-    </div>
-  </div>
+<!-- NAVIGATION -->
+<nav id="home" class="bg-brand-blue nav-shadow sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<div class="flex items-center gap-3">
+<div class="bg-brand-orange rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+<svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+<path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+</svg>
+</div>
+<div>
+<span class="text-white font-800 text-xl font-extrabold leading-tight block">Moncrief</span>
+<span class="text-brand-orange text-xs font-semibold tracking-widest uppercase">Heating & Air Conditioning</span>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a href="#services" class="text-white/80 hover:text-white text-sm font-medium transition-colors">Services</a>
+<a href="#why-us" class="text-white/80 hover:text-white text-sm font-medium transition-colors">Why Us</a>
+<a href="#about" class="text-white/80 hover:text-white text-sm font-medium transition-colors">About</a>
+<a href="#reviews" class="text-white/80 hover:text-white text-sm font-medium transition-colors">Reviews</a>
+<a href="#contact" class="text-white/80 hover:text-white text-sm font-medium transition-colors">Contact</a>
+</div>
+<a href="tel:4709645141" class="btn-primary bg-brand-orange hover:bg-brand-darkorange text-white font-bold px-5 py-3 rounded-lg text-sm flex items-center gap-2 flex-shrink-0">
+<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+<path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 8V5z"/>
+</svg>
+(470) 964-5141
+</a>
+</div>
+</div>
+</nav>
 
-  <!-- Navigation -->
-  <nav id="navbar" class="bg-brand-blue sticky top-0 z-50 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="bg-brand-red rounded-lg p-2">
-          <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M17 8C8 10 5.9 16.17 3.82 19.5c-.97 1.62-.17 3.5 1.72 3.5h13.92c1.89 0 2.7-1.88 1.72-3.5C19.1 16.17 17 10 17 8zm0 0V5h1a1 1 0 000-2h-3a1 1 0 000 2h1v3"/>
-            <path d="M12 2a3 3 0 00-3 3c0 1.5.83 2.8 2.04 3.48C10.36 9.94 9 12.47 9 15h6c0-2.53-1.36-5.06-2.04-6.52A3.001 3.001 0 0012 2z"/>
-          </svg>
-        </div>
-        <div>
-          <div class="text-white font-bold text-lg leading-tight">Moncrief</div>
-          <div class="text-red-300 text-xs font-medium tracking-wider uppercase">Heating & Air Conditioning</div>
-        </div>
-      </div>
+<!-- HERO SECTION -->
+<section class="hero-bg min-h-screen flex items-center py-24">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+<div class="max-w-3xl">
+<div class="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/40 rounded-full px-4 py-2 mb-6">
+<div class="w-2 h-2 bg-brand-orange rounded-full animate-pulse"></div>
+<span class="text-brand-orange text-sm font-semibold">Serving Atlanta Since 1898</span>
+</div>
+<h1 class="text-white text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
+Atlanta's Most <span class="text-brand-orange">Trusted</span> HVAC Experts
+</h1>
+<p class="text-white/80 text-xl md:text-2xl font-light mb-10 leading-relaxed">
+Professional heating and air conditioning services for homes and businesses across the Atlanta metro area. Fast, reliable, and affordable — 24/7 emergency service available.
+</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="tel:4709645141" class="btn-primary bg-brand-orange hover:bg-brand-darkorange text-white font-bold px-8 py-5 rounded-xl text-lg flex items-center justify-center gap-3 shadow-2xl">
+<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+<path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 8V5z"/>
+</svg>
+Call Now: (470) 964-5141
+</a>
+<a href="#services" class="btn-secondary border-2 border-white text-white hover:bg-white hover:text-brand-blue font-bold px-8 py-5 rounded-xl text-lg flex items-center justify-center gap-3">
+<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+<path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+</svg>
+Our Services
+</a>
+</div>
+<div class="flex flex-wrap gap-6 mt-12">
+<div class="flex items-center gap-2 text-white/70">
+<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-brand-orange" fill="currentColor" viewBox="0 0 20 20">
+<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+</svg>
+<span class="text-sm font-medium">Licensed & Insured</span>
+</div>
+<div class="flex items-center gap-2 text-white/70">
+<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-brand-orange" fill="currentColor" viewBox="0 0 20 20">
+<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+</svg>
+<span class="text-sm font-medium">24/7 Emergency Service</span>
+</div>
+<div class="flex items-center gap-2 text-white/70">
+<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-brand-orange" fill="currentColor" viewBox="0 0 20 20">
+<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+</svg>
+<span class="text-sm font-medium">Free Estimates</span>
+</div>
+<div class="flex items-center gap-2 text-white/70">
+<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-brand-orange" fill="currentColor" viewBox="0 0 20 20">
+<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+</svg>
+<span class="text-sm font-medium">100+ Years Experience</span>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-      <!-- Desktop Menu -->
-      <div class="hidden md:flex items-center gap-6">
-        <a href="#home" class="text-white hover:text-red-300 transition font-medium text-sm">Home</a>
-        <a href="#services" class="text-white hover:text-red-300 transition font-medium text-sm">Services</a>
-        <a href="#about" class="text-white hover:text-red-300 transition font-medium text-sm">About</a>
-        <a href="#why-us" class="text-white hover:text-red-300 transition font-medium text-sm">Why Us</a>
-        <a href="#testimonials" class="text-white hover:text-red-300 transition font-medium text-sm">Reviews</a>
-        <a href="#contact" class="text-white hover:text-red-300 transition font-medium text-sm">Contact</a>
-        <a href="tel:4709645141" class="bg-brand-red hover:bg-brand-darkred text-white font-bold px-5 py-2 rounded-full text-sm transition shadow-lg">
-          Call Now
-        </a>
-      </div>
+<!-- SERVICES SECTION -->
+<section id="services" class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<span class="text-brand-orange font-semibold text-sm uppercase tracking-widest">What We Do</span>
+<h2 class="text-4xl md:text-5xl font-extrabold text-brand-blue mt-2 mb-4">Our HVAC Services</h2>
+<p class="text-gray-500 text-lg max-w-2xl mx-auto">From routine maintenance to emergency repairs, our certified technicians handle all your heating and cooling needs.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <!-- Mobile Menu Button -->
-      <button id="menuBtn" class="md:hidden text-white focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </div>
+<!-- Card 1 -->
+<div class="card-hover bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-md">
+<div class="h-52 overflow-hidden">
+<img src="https://images.unsplash.com/photo-1631545806609-ec4e2e5e26d0?w=600&q=80" alt="AC Installation" class="w-full h-full object-cover">
+</div>
+<div class="p-7">
+<div class="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center mb-4">
+<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-brand-blue mb-2">AC Installation</h3>
+<p class="text-gray-500 text-sm leading-relaxed">Expert installation of energy-efficient air conditioning systems sized perfectly for your home or commercial space.</p>
+<a href="#contact" class="mt-4 inline-flex items-center text-brand-orange font-semibold text-sm hover:underline gap-1">Learn More <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+</div>
+</div>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden md:hidden bg-brand-blue border-t border-blue-700 px-4 pb-4">
-      <div class="flex flex-col gap-3 pt-3">
-        <a href="#home" class="text-white hover:text-red-300 transition font-medium">Home</a>
-        <a href="#services" class="text-white hover:text-red-300 transition font-medium">Services</a>
-        <a href="#about" class="text-white hover:text-red-300 transition font-medium">About</a>
-        <a href="#why-us" class="text-white hover:text-red-300 transition font-medium">Why Us</a>
-        <a href="#testimonials" class="text-white hover:text-red-300 transition font-medium">Reviews</a>
-        <a href="#contact" class="text-white hover:text-red-300 transition font-medium">Contact</a>
-        <a href="tel:4709645141" class="bg-brand-red text-white font-bold px-5 py-2 rounded-full text-sm text-center transition">Call (470) 964-5141</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section id="home" class="hero-bg min-h-screen flex items-center relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 py-24 w-full">
-      <div class="max-w-3xl">
-        <div class="inline-flex items-center gap-2 bg-brand-red/80 backdrop-blur text-white text-sm font-semibold px-4 py-2 rounded-full mb-6 animate-fade-in">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-          Trusted in Atlanta Since 1962
-        </div>
-        <h1 class="text-5xl md:text-7xl font-black text-white leading-tight mb-6 animate-fade-in animate-delay-1">
-          Atlanta's Premier<br>
-          <span class="text-red-400">HVAC Experts</span>
-        </h1>
-        <p class="text-xl text-blue-100 mb-8 max-w-xl leading-relaxed animate-fade-in animate-delay-2">
-          Keeping Atlanta comfortable year-round. Expert heating, cooling, and air quality solutions with fast, reliable service you can count on.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 animate-fade-in animate-delay-3">
-          <a href="tel:4709645141" class="bg-brand-red hover:bg-brand-darkred text-white font-bold px-8 py-4 rounded-full text-lg transition shadow-xl flex items-center justify-center gap-2">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
-            (470) 964-5141
-          </a>
-          <a href="#services" class="border-2 border-white text-white hover:bg-white hover:text-brand-blue font-bold px-8 py-4 rounded-full text-lg transition flex items-center justify-center gap-2">
-            Our Services
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-
-        <!-- Stats -->
-        <div class="flex flex-wrap gap-6 mt-12 animate-fade-in animate-delay-3">
-          <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-6 py-4 text-white text-center">
-            <div class="text-3xl font-black text-red-400">60+</div>
-            <div class="text-sm text-blue-200">Years Serving Atlanta</div>
-          </div>
-          <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-6 py-4 text-white text-center">
-            <div class="text-3xl font-black text-red-400">50k+</div>
-            <div class="text-sm text-blue-200">Happy Customers</div>
-          </div>
-          <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-6 py-4 text-white text-center">
-            <div class="text-3xl font-black text-red-400">24/7</div>
-            <div class="text-sm text-blue-200">Emergency Service</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-      <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-      </svg>
-    </div>
-  </section>
-
-  <!-- Emergency Banner -->
-  <div class="bg-brand-red py-4">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-4 text-white text-center">
-      <div class="flex items-center gap-2 font-bold text-lg">
-        <svg class="w-6 h-6 animate-pulse" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="even
+<!-- Card 2 -->
+<div class="card-hover bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-md">
+<div class="h-52 overflow-hidden">
+<img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600

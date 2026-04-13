@@ -5,246 +5,169 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Moncrief Heating & Air Conditioning | Atlanta's Trusted HVAC Experts</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#1B4F8A',
-        'primary-dark': '#0F3060',
-        'primary-light': '#2E6DB4',
-        accent: '#E8532A',
-        'accent-light': '#F06B42',
-        neutral: '#F8F9FA',
-        dark: '#1A1A2E',
-      },
-      fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-      },
-    }
-  }
-}
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+  :root { --accent: #C9452A; --accent-light: #E05A3A; --dark: #0F0F0F; --mid: #1A1A1A; --surface: #242424; --text: #E8E4DF; --muted: #9A9490; }
+  body { font-family: 'Inter', sans-serif; background: #0F0F0F; color: #E8E4DF; }
+  h1, h2, h3, .display { font-family: 'Playfair Display', serif; }
+  .accent { color: var(--accent); }
+  .bg-accent { background: var(--accent); }
+  .border-accent { border-color: var(--accent); }
+  nav.shrunk { padding-top: 0.75rem !important; padding-bottom: 0.75rem !important; background: rgba(15,15,15,0.98) !important; }
+  .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+  .tab-btn.active { background: var(--accent); color: #fff; }
+  details summary { cursor: pointer; list-style: none; }
+  details summary::-webkit-details-marker { display: none; }
+  details[open] summary .chevron { transform: rotate(180deg); }
+  .chevron { transition: transform 0.3s ease; }
+  details[open] { border-color: var(--accent) !important; }
+  .glow { box-shadow: 0 0 30px rgba(201,69,42,0.18); }
+  .pill { background: rgba(201,69,42,0.12); border: 1px solid rgba(201,69,42,0.3); }
+  .stat-num { font-family: 'Playfair Display', serif; }
+  img { object-fit: cover; }
   html { scroll-behavior: smooth; }
-  * { font-family: 'Inter', sans-serif; }
-
-  .nav-shrink {
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  }
-
-  .glow-btn {
-    box-shadow: 0 0 15px rgba(232, 83, 42, 0.4);
-    transition: all 0.3s ease;
-  }
-  .glow-btn:hover {
-    box-shadow: 0 0 25px rgba(232, 83, 42, 0.7);
-    transform: translateY(-1px);
-  }
-
-  .fade-up {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .fade-in {
-    opacity: 0;
-    transition: opacity 0.8s ease;
-  }
-  .fade-in.visible {
-    opacity: 1;
-  }
-
-  .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(27, 79, 138, 0.15);
-  }
-  .service-card {
-    transition: all 0.3s ease;
-  }
-
-  .count-up {
-    display: inline-block;
-  }
-
-  .hamburger-line {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: white;
-    margin: 5px 0;
-    transition: all 0.3s ease;
-  }
-
-  .process-line {
-    background: linear-gradient(90deg, #1B4F8A, #E8532A);
-  }
-
-  @keyframes pulse-ring {
-    0% { transform: scale(1); opacity: 0.8; }
-    100% { transform: scale(1.2); opacity: 0; }
-  }
-
-  .pulse-ring::before {
-    content: '';
-    position: absolute;
-    inset: -4px;
-    border-radius: 50%;
-    border: 2px solid #E8532A;
-    animation: pulse-ring 1.5s ease-out infinite;
-  }
-
-  .gradient-text {
-    background: linear-gradient(135deg, #1B4F8A, #2E6DB4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .hero-overlay {
-    background: linear-gradient(135deg, rgba(15,48,96,0.92) 0%, rgba(27,79,138,0.80) 50%, rgba(15,48,96,0.88) 100%);
-  }
-
-  .stats-bar {
-    background: linear-gradient(135deg, #1B4F8A 0%, #0F3060 100%);
-  }
-
-  .review-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  }
-  .review-card { transition: all 0.3s ease; }
-
-  .pill-tag:hover {
-    background: #1B4F8A;
-    color: white;
-    transform: scale(1.05);
-  }
-  .pill-tag { transition: all 0.2s ease; }
-
-  .form-input:focus {
-    border-color: #1B4F8A;
-    box-shadow: 0 0 0 3px rgba(27,79,138,0.1);
-    outline: none;
-  }
-
-  .social-icon:hover {
-    transform: translateY(-3px);
-    color: #E8532A;
-  }
-  .social-icon { transition: all 0.2s ease; }
-
-  @media (max-width: 768px) {
-    .process-line { display: none; }
-  }
+  @media(max-width:768px){.hero-img{display:none;}}
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
 </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-[#0F0F0F]">
 
-<!-- ==================== NAVIGATION ==================== -->
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4" style="background: rgba(15,48,96,0.97); backdrop-filter: blur(12px);">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between">
-      <!-- Logo -->
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
-          <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M17 8C8 10 5.9 16.17 3.82 19.83A1 1 0 0 0 5 21c4-1 6-3 7-5 1.5 2 2 4 2 6h2c0-2.5-.5-5-2-7.5C17 13 20 11 20 8V7h-3V8z"/>
-          </svg>
-        </div>
-        <div>
-          <div class="text-white font-bold text-lg leading-tight">Moncrief</div>
-          <div class="text-blue-300 text-xs font-medium leading-tight">Heating & Air Conditioning</div>
-        </div>
+<!-- NAV -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5 px-6 md:px-12" style="background:rgba(15,15,15,0.85);backdrop-filter:blur(12px);">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 bg-accent rounded-sm flex items-center justify-center">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
       </div>
-
-      <!-- Desktop Nav -->
-      <div class="hidden lg:flex items-center gap-6">
-        <a href="#services" class="text-blue-200 hover:text-white text-sm font-medium transition-colors duration-200">Services</a>
-        <a href="#why-us" class="text-blue-200 hover:text-white text-sm font-medium transition-colors duration-200">Why Us</a>
-        <a href="#about" class="text-blue-200 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
-        <a href="#reviews" class="text-blue-200 hover:text-white text-sm font-medium transition-colors duration-200">Reviews</a>
-        <a href="#service-area" class="text-blue-200 hover:text-white text-sm font-medium transition-colors duration-200">Service Area</a>
-        <a href="#contact" class="text-blue-200 hover:text-white text-sm font-medium transition-colors duration-200">Contact</a>
-        <a href="tel:4045435002" class="glow-btn bg-accent hover:bg-accent-light text-white px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          (404) 543-5002
-        </a>
-      </div>
-
-      <!-- Mobile Hamburger -->
-      <button id="hamburger" class="lg:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none">
-        <span class="hamburger-line" id="h1"></span>
-        <span class="hamburger-line" id="h2"></span>
-        <span class="hamburger-line" id="h3"></span>
-      </button>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden lg:hidden mt-4 pb-4 border-t border-blue-800">
-      <div class="flex flex-col gap-1 mt-4">
-        <a href="#services" class="mobile-link text-blue-200 hover:text-white hover:bg-blue-800 px-4 py-2 rounded-lg text-sm font-medium transition-all">Services</a>
-        <a href="#why-us" class="mobile-link text-blue-200 hover:text-white hover:bg-blue-800 px-4 py-2 rounded-lg text-sm font-medium transition-all">Why Us</a>
-        <a href="#about" class="mobile-link text-blue-200 hover:text-white hover:bg-blue-800 px-4 py-2 rounded-lg text-sm font-medium transition-all">About</a>
-        <a href="#reviews" class="mobile-link text-blue-200 hover:text-white hover:bg-blue-800 px-4 py-2 rounded-lg text-sm font-medium transition-all">Reviews</a>
-        <a href="#service-area" class="mobile-link text-blue-200 hover:text-white hover:bg-blue-800 px-4 py-2 rounded-lg text-sm font-medium transition-all">Service Area</a>
-        <a href="#contact" class="mobile-link text-blue-200 hover:text-white hover:bg-blue-800 px-4 py-2 rounded-lg text-sm font-medium transition-all">Contact</a>
-        <a href="tel:4045435002" class="mt-2 bg-accent text-white px-4 py-3 rounded-lg text-sm font-semibold text-center">📞 (404) 543-5002</a>
+      <div>
+        <div class="font-bold text-white text-sm leading-none tracking-wide">MONCRIEF</div>
+        <div class="text-[10px] text-[#9A9490] tracking-widest uppercase">Heating & Air</div>
       </div>
     </div>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-[#9A9490]">
+      <a href="#services" class="hover:text-white transition-colors">Services</a>
+      <a href="#about" class="hover:text-white transition-colors">About</a>
+      <a href="#reviews" class="hover:text-white transition-colors">Reviews</a>
+      <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+      <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      <a href="tel:undefined" class="ml-2 px-5 py-2.5 bg-accent text-white rounded-sm text-sm font-semibold hover:bg-[#E05A3A] transition-colors">Call Now</a>
+    </div>
+    <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2">
+      <span class="w-6 h-0.5 bg-white block transition-all"></span>
+      <span class="w-6 h-0.5 bg-white block transition-all"></span>
+      <span class="w-6 h-0.5 bg-white block transition-all"></span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-[#2A2A2A] pt-4 flex flex-col gap-4 text-sm font-medium text-[#9A9490]">
+    <a href="#services" class="hover:text-white transition-colors" onclick="closeMobile()">Services</a>
+    <a href="#about" class="hover:text-white transition-colors" onclick="closeMobile()">About</a>
+    <a href="#reviews" class="hover:text-white transition-colors" onclick="closeMobile()">Reviews</a>
+    <a href="#faq" class="hover:text-white transition-colors" onclick="closeMobile()">FAQ</a>
+    <a href="#contact" class="hover:text-white transition-colors" onclick="closeMobile()">Contact</a>
+    <a href="tel:undefined" class="w-fit px-5 py-2.5 bg-accent text-white rounded-sm font-semibold">Call Now</a>
   </div>
 </nav>
 
-<!-- ==================== HERO ==================== -->
-<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-  <!-- Background Image -->
-  <div class="absolute inset-0 z-0">
-    <img
-      src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1920&q=80"
-      alt="HVAC Technician at work"
-      class="w-full h-full object-cover"
-    />
-    <div class="hero-overlay absolute inset-0"></div>
-  </div>
-
-  <!-- Hero Content -->
-  <div class="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto pt-24">
-    <div class="fade-up visible">
-      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8">
-        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-        <span class="text-blue-100 text-sm font-medium">Available 24/7 for Emergency Service</span>
+<!-- HERO -->
+<section class="min-h-screen flex items-center pt-24 pb-20 px-6 md:px-12 overflow-hidden" style="background:linear-gradient(135deg,#0F0F0F 0%,#1A1210 60%,#0F0F0F 100%);">
+  <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 pill rounded-sm text-xs text-[#C9452A] font-semibold uppercase tracking-widest mb-8">
+        <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>
+        Atlanta's Trusted Since 1951
       </div>
-
-      <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-tight mb-6">
-        Atlanta's Most Trusted<br>
-        <span class="text-accent">Heating & Cooling</span><br>
-        Experts Since 1898
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.05] mb-6 text-white">
+        Comfort<br/>
+        <span class="accent">Delivered.</span><br/>
+        Year-Round.
       </h1>
-
-      <p class="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-        Over 125 years of keeping Atlanta families comfortable through every season. Expert HVAC installation, repair, and maintenance you can count on — guaranteed.
+      <p class="text-[#9A9490] text-lg leading-relaxed max-w-md mb-10">
+        Seven decades of heating and air conditioning mastery in the Atlanta area. When your system fails, Moncrief answers — fast, honest, and done right the first time.
       </p>
-
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-14">
-        <a href="tel:4045435002" class="glow-btn bg-accent hover:bg-accent-light text-white px-8 py-4 rounded-full text-lg font-bold flex items-center justify-center gap-3 transition-all duration-300">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          Call Now — (404) 543-5002
+      <div class="flex flex-wrap gap-4">
+        <a href="#contact" class="px-8 py-4 bg-accent text-white font-semibold rounded-sm hover:bg-[#E05A3A] transition-all hover:-translate-y-0.5 duration-200">
+          Get a Free Estimate
         </a>
-        <a href="#services" class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-full text-lg font-bold flex items-center justify-center gap-3 transition-all duration-300">
-          View Our Services
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        <a href="#services" class="px-8 py-4 border border-[#3A3A3A] text-white font-semibold rounded-sm hover:border-[#C9452A] transition-all duration-200">
+          View Services
         </a>
       </div>
+      <div class="mt-12 flex items-center gap-6 border-t border-[#2A2A2A] pt-8">
+        <div class="flex -space-x-2">
+          <div class="w-9 h-9 rounded-full bg-[#2A2A2A] border-2 border-[#0F0F0F] flex items-center justify-center text-xs font-bold text-accent">J</div>
+          <div class="w-9 h-9 rounded-full bg-[#2A2A2A] border-2 border-[#0F0F0F] flex items-center justify-center text-xs font-bold text-accent">M</div>
+          <div class="w-9 h-9 rounded-full bg-[#2A2A2A] border-2 border-[#0F0F0F] flex items-center justify-center text-xs font-bold text-accent">S</div>
+        </div>
+        <div>
+          <div class="flex gap-0.5 mb-1">
+            <span class="text-accent text-sm">★★★★★</span>
+          </div>
+          <p class="text-xs text-[#9A9490]">1,200+ five-star reviews across Atlanta</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-img relative">
+      <div class="relative rounded-2xl overflow-hidden glow" style="max-width:480px;margin-left:auto;">
+        <img src="https://loremflickr.com/800/600/hvac-technician" alt="HVAC Technician at work" class="w-full h-80 md:h-96 object-cover rounded-2xl"/>
+        <div class="absolute inset-0 rounded-2xl" style="background:linear-gradient(to top,rgba(15,15,15,0.6) 0%,transparent 50%);"></div>
+        <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl" style="background:rgba(15,15,15,0.85);backdrop-filter:blur(8px);">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-accent rounded-sm flex items-center justify-center flex-shrink-0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div>
+              <p class="text-white text-sm font-semibold">Emergency Service Available</p>
+              <p class="text-[#9A9490] text-xs">24/7 · Same-Day Response Guaranteed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute -top-6 -right-6 w-36 h-36 rounded-full opacity-10" style="background:radial-gradient(circle,#C9452A,transparent 70%);"></div>
+    </div>
+  </div>
+</section>
 
-      <!-- Trust Badges -->
-      <div class="flex flex-wrap justify-center gap-4 sm:gap-8">
-        <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2.5 border border-white/20">
-          <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg
+<!-- STATS BAR -->
+<section id="stats" class="py-16 px-6 md:px-12 border-y border-[#2A2A2A]" style="background:#1A1A1A;">
+  <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 fade-in">
+    <div class="text-center">
+      <div class="stat-num text-5xl font-black text-accent mb-2" data-target="70">0</div>
+      <div class="text-xs text-[#9A9490] uppercase tracking-widest">Years in Business</div>
+    </div>
+    <div class="text-center">
+      <div class="stat-num text-5xl font-black text-accent mb-2" data-target="12000">0</div>
+      <div class="text-xs text-[#9A9490] uppercase tracking-widest">Homes Served</div>
+    </div>
+    <div class="text-center">
+      <div class="stat-num text-5xl font-black text-accent mb-2" data-target="98">0</div>
+      <div class="text-xs text-[#9A9490] uppercase tracking-widest">% Satisfaction Rate</div>
+    </div>
+    <div class="text-center">
+      <div class="stat-num text-5xl font-black text-accent mb-2" data-target="24">0</div>
+      <div class="text-xs text-[#9A9490] uppercase tracking-widest">Hour Emergency Line</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-24 px-6 md:px-12">
+  <div class="max-w-6xl mx-auto">
+    <div class="fade-in mb-14">
+      <div class="text-xs text-accent uppercase tracking-widest font-semibold mb-3">What We Do</div>
+      <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Full-Spectrum<br/><span class="accent">HVAC Services</span></h2>
+      <p class="text-[#9A9490] max-w-lg">From a simple tune-up to a complete system replacement — we handle every job with the care your home deserves.</p>
+    </div>
+    <div class="fade-in">
+      <div class="flex flex-wrap gap-3 mb-10">
+        <button onclick="switchTab('heating')" id="tab-heating" class="tab-btn active px-6 py-2.5 rounded-sm text-sm font-semibold transition-all border border-[#3A3A3A] text-[#9A9490]">🔥 Heating</button>
+        <button onclick="switchTab('cooling')" id="tab-cooling" class="tab-btn px-6 py-2.5 rounded-sm text-sm font-semibold transition-all border border-[#3A3A3A] text-[#9A9490]">❄️ Cooling</button>
+        <button onclick="switchTab('maintenance')" id="tab-maintenance" class="tab-btn px-6 py-2.5 rounded-sm text-sm font-semibold transition-all border border-[#3A3A3A] text-[#9A9490]">🔧 Maintenance</button>
+      </div>
+      <div id="panel-heating" class="tab-panel active">
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-xl border border-[#2A2A2A] hover:border-accent transition-colors duration-300" style="background:#1A1A1A;">
+            <div class="text-3xl mb-4">🔥</div>
+            <h3 class="font-bold text-white text

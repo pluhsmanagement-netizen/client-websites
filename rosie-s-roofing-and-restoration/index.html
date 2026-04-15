@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rosie's Roofing and Restoration</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Source Sans Pro', sans-serif; }
+    h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Oswald', sans-serif; }
+    .active-tab { background-color: #1a3a5c; color: #ffffff; }
+    .inactive-tab { background-color: #f1f5f9; color: #1a3a5c; }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] summary { color: #1a3a5c; }
+    details[open] summary .summary-icon { transform: rotate(180deg); }
+    .summary-icon { transition: transform 0.3s ease; }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- NAV -->
+  <nav id="navbar" class="sticky top-0 z-50 bg-white transition-shadow duration-300">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i data-lucide="home" class="w-7 h-7" style="color:#1a3a5c"></i>
+        <span class="font-display text-xl font-bold" style="color:#1a3a5c">Rosie's Roofing</span>
+      </div>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#services" class="text-gray-700 hover:text-[#1a3a5c] font-semibold transition-colors">Services</a>
+        <a href="#gallery" class="text-gray-700 hover:text-[#1a3a5c] font-semibold transition-colors">Gallery</a>
+        <a href="#reviews" class="text-gray-700 hover:text-[#1a3a5c] font-semibold transition-colors">Reviews</a>
+        <a href="#faq" class="text-gray-700 hover:text-[#1a3a5c] font-semibold transition-colors">FAQ</a>
+        <a href="#contact" class="text-gray-700 hover:text-[#1a3a5c] font-semibold transition-colors">Contact</a>
+      </div>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="tel:(678) 661-5633" class="text-white font-bold px-5 py-2 rounded-lg transition-colors" style="background-color:#1a3a5c">
+          <span class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i>(678) 661-5633</span>
+        </a>
+      </div>
+      <button id="hamburger" class="md:hidden p-2 rounded-lg hover:bg-gray-100">
+        <i data-lucide="menu" class="w-6 h-6" style="color:#1a3a5c"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4">
+      <div class="flex flex-col gap-4">
+        <a href="#services" class="text-gray-700 font-semibold hover:text-[#1a3a5c]">Services</a>
+        <a href="#gallery" class="text-gray-700 font-semibold hover:text-[#1a3a5c]">Gallery</a>
+        <a href="#reviews" class="text-gray-700 font-semibold hover:text-[#1a3a5c]">Reviews</a>
+        <a href="#faq" class="text-gray-700 font-semibold hover:text-[#1a3a5c]">FAQ</a>
+        <a href="#contact" class="text-gray-700 font-semibold hover:text-[#1a3a5c]">Contact</a>
+        <a href="tel:(678) 661-5633" class="text-white font-bold px-5 py-3 rounded-lg text-center" style="background-color:#1a3a5c">(678) 661-5633</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section style="background:#1a3a5c;" class="py-20">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+          4.8 Stars — 258 Verified Reviews
+        </div>
+        <h1 class="text-4xl lg:text-6xl font-bold text-white mb-6 font-display leading-tight">Expert Roofing & Restoration You Can Trust</h1>
+        <p class="text-xl text-white/80 mb-8">Rosie's Roofing and Restoration delivers professional roof replacement, repair, skylight installation, and commercial roofing with unmatched craftsmanship and customer care.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="tel:(678) 661-5633" class="bg-white font-bold px-8 py-4 rounded-lg text-lg transition-colors hover:bg-gray-100" style="color:#1a3a5c">Call Now</a>
+          <a href="#services" class="border-2 border-white text-white font-bold px-8 py-4 rounded-lg text-lg hover:bg-white/10 transition-colors">Our Services</a>
+        </div>
+      </div>
+      <div>
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHC3Jmz4qBL3mu4hn5fG_FsVthKAOj9H4wy11ayC1n-fydlCwHo0kzpBgtlOvp7lm0ahYBZ_vKAngu6-h-nnRLOPPWHunnDyhmUyp41-5FJ13lvProYQ8WuVo511xN9JkXTe_-T1Q1rSqa9bWfNyHjik5zOwjJN1jVhfpR40O3DZ1YP1NZBpTHEyqJJ2FKJky-PNk8B-_n0JcVwQJe-n3HB2sBpoCfDTFhXwFw1QBzPcKHpoCIEw8qtob5eJmx20vffOWXFuIsbfkq4jePGRjAFTTH7JgxRD3cRPDkzHm5DLw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          loading="eager"
+          alt="Rosie's Roofing and Restoration"
+          class="w-full max-w-lg rounded-2xl shadow-2xl aspect-[4/3] object-cover"
+          onerror="this.onerror=null;this.src='https://picsum.photos/seed/roofing-hero/800/600';">
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="bg-gray-50 py-12 border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div class="flex flex-col items-center gap-2">
+        <i data-lucide="star" class="w-8 h-8 fill-yellow-400 text-yellow-400"></i>
+        <div class="text-3xl font-bold font-display" style="color:#1a3a5c">4.8</div>
+        <div class="text-gray-600 text-sm font-semibold">Average Rating</div>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <i data-lucide="users" class="w-8 h-8" style="color:#1a3a5c"></i>
+        <div class="text-3xl font-bold font-display" style="color:#1a3a5c">258+</div>
+        <div class="text-gray-600 text-sm font-semibold">Happy Customers</div>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <i data-lucide="shield-check" class="w-8 h-8" style="color:#1a3a5c"></i>
+        <div class="text-3xl font-bold font-display" style="color:#1a3a5c">100%</div>
+        <div class="text-gray-600 text-sm font-semibold">Guaranteed Work</div>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <i data-lucide="clock" class="w-8 h-8" style="color:#1a3a5c"></i>
+        <div class="text-3xl font-bold font-display" style="color:#1a3a5c">24hr</div>
+        <div class="text-gray-600 text-sm font-semibold">Response Time</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-16 animate-section">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold font-display mb-4" style="color:#1a3a5c">Our Roofing Services</h2>
+        <p class="text-gray-600 text-lg max-w-2xl mx-auto">From complete roof replacements to skylight installations and commercial work, we handle every roofing need with precision and care.</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex flex-wrap justify-center gap-3 mb-10">
+        <button onclick="showTab('tab-residential', this)" class="tab-btn active-tab font-display font-semibold px-6 py-3 rounded-lg text-sm uppercase tracking-wide transition-all">Residential</button>
+        <button onclick="showTab('tab-commercial', this)" class="tab-btn inactive-tab font-display font-semibold px-6 py-3 rounded-lg text-sm uppercase tracking-wide transition-all">Commercial</button>
+        <button onclick="showTab('tab-specialty', this)" class="tab-btn inactive-tab font-display font-semibold px-6 py-3 rounded-lg text-sm uppercase tracking-wide transition-all">Specialty</button>
+      </div>
+
+      <!-- Tab: Residential -->
+      <div id="tab-residential" class="tab-panel grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <i data-lucide="home" class="w-8 h-8 mb-3" style="color:#1a3a5c"></i>
+          <h3 class="font-display text-xl font-bold mb-2" style="color:#1a3a5c">Roof Replacement</h3>
+          <p class="text-gray-600 text-sm mb-4">Complete residential roof replacements using premium shingles and materials with meticulous attention to detail and clean workmanship.</p>
+          <a href="tel:(678) 661-5633" class="inline-flex items-center gap-2 text-white font-semibold px-4 py-2 rounded-lg text-sm" style="background-color:#1a3a5c"><i data-lucide="phone" class="w-4 h-4"></i>Call Now</a>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <i data-lucide="wrench" class="w-8 h-8 mb-3" style="color:#1a3a5c"></i>
+          <h3 class="font-display text-xl font-bold mb-2" style="color:#1a3a5c">Roof Repair</h3>
+          <p class="text-gray-600 text-sm mb-4">Expert diagnosis and repair of leaks, damaged shingles, flashing issues, and more — done right the first time with lasting results.</p>
+          <a href="tel:(678) 661-5633" class="inline-flex items-center gap-2 text-white font-semibold px-4 py-2 rounded-lg text-sm" style="background-color:#1a3a5c"><i data-lucide="phone" class="w-4 h-4"></i>Call Now</a>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <i data-lucide="search" class="w-8 h-8 mb-3" style="color:#1a3a5c"></i>
+          <h3 class="font-display text-xl font-bold mb-2" style="color:#1a3a5c">Roof Inspection</h3>
+          <p class="text-gray-600 text-sm mb-4">Thorough professional inspections with an honest, detailed evaluation — no upsells, just straightforward expert advice you can trust.</p>
+          <a href="tel:(678) 661-5633" class="inline-flex items-center gap-2 text-white font-semibold px-4 py-2 rounded-lg text-sm" style="background-color:#1a3a5c"><i data-lucide="phone" class="w-4 h-4"></i>Call Now</a>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <i data-lucide="droplets" class="w-8 h-8 mb-3" style="color:#1a3a5c"></i>
+          <h3 class="font-display text-xl font-bold mb-2" style="color:#1a3a5c">Gutter Services</h3>
+          <p class="text-gray-600 text-sm mb-4">Professional gutter installation, repair, and cleaning to protect your home's foundation and prevent costly water damage year-round.</p>
+          <a href="tel:(678) 661-5633" class="inline-flex items-center gap-2 text-white font-semibold px-4 py-2 rounded-lg text-sm" style="background-color:#1a3a5c"><i data-lucide="phone" class="w-4 h-4"></i>Call Now</a>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <i data-lucide="cloud-lightning" class="w-8 h-8 mb-3" style="color:#1a3a5c"></i>
+          <h3 class="font-display text-xl font-bold mb-2" style="color:#1a3a5c">Storm Damage Repair</h3>
+          <p class="text-gray-600 text-sm mb-4">Fast, reliable storm damage assessment and restoration. We work with insurance claims to get your home back to its best condition.</p>
+          <a href="tel:(678) 661-5633" class="inline-flex items-center gap-2 text-white font-semibold px-4 py-2 rounded-lg text-sm" style="background-color:#1a3a5c"><i data-lucide="phone" class="w-4 h-4"></i>Call Now</a>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <i data-lucide="shield-check" class="w-8 h-8 mb-3" style="color:#1a3a5c"></i>
+          <h3 class="font-display text-xl font-bold mb-2" style="color:#1a3a5c">Trim & Restoration</h3>
+          <p class="text-gray-600 text-sm mb-4">Complete roof trim, fascia, and soffit restoration to protect your roofline and enhance your home's curb appeal and structural integrity.</p>
+          <a href="tel:(678) 661-5633" class="inline-flex items-center gap-2 text-white font-semibold px-4 py-2 rounded-lg text-sm" style="background-color:#1a3a5c"><i data-lucide="phone" class="w-4 h-4"></i>Call Now</a>
+        </div>
+      </div>
+
+      <!-- Tab: Commercial -->
+      <div id="tab-commercial" class="tab-panel hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <i data-lucide="home" class="w-8 h-8 mb-3" style="color:#1a3a5c"></i>
+          <h3 class="font-display text-xl font-bold mb-2" style="color:#1a3a5c">Commercial Roofing</h3>
+          <p class="text-gray-600 text-sm mb-4">Full commercial roof installation and replacement including decking, shingles, and modified bitumen — completed efficiently with zero disruption.</p>
+          <a href="tel:(678) 661-5633" class="inline-flex items-center gap-2 text-white font-semibold px-4 py-2 rounded-lg text-sm" style="background-color:#1a3a5c"><i data-lucide="phone" class="w-4 h-4"></i>Call Now</a>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <i data-lucide="hammer" class="w-8 h-8 mb-3" style="color:#1a3a5c"></i>
+          <h3 class="font-display text-xl font-bold mb-2" style="color:#1a3a5c">Flat Roof Systems</h3>
+          <p class="text-gray-600 text-sm mb-4">Expert installation and repair of flat roof systems including modified bitumen membranes designed for long-lasting commercial performance.</p>
+          <a href="tel:(678) 661-5633" class="inline-flex items-center gap-2 text-white font-semibold px-4 py-2 rounded-lg text-sm" style="background-color:#1a3a5c"><i data-lucide="phone" class="w-4 h-4"></i>Call Now</a>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <i data-lucide="wrench" class="w-8 h-8 mb-3" style="color:#1a3a5c"></i>
+          <h3 class="font-display text-xl font-bold mb-2" style="color:#1a3a5c">Commercial Repair</h3>
+          <p class="text-gray-600 text-sm mb-4">Timely commercial roof repairs and maintenance programs that minimize downtime and protect your business investment with proven solutions.</p>
+          <a href="tel:(678) 661-5633" class="inline-flex items-center gap-2 text-white font-semibold px-4 py-2 rounded-lg text-sm" style="background-color:#1a3a5c"><i data-lucide="phone" class="w-4 h-4"></i>Call Now</a>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <i data-lucide="search" class="w-8 h-8 mb-3" style="color:#1a3a5c"></i>
+          <h3 class="font-display text-xl font-bold mb-2" style="color:#1a3a5c">Commercial Inspections</h3>
+          <p class="text-gray-600 text-sm mb-4">Detailed commercial roof assessments for property managers and building owners — comprehensive reports delivered promptly after inspection.</p>
+          <a href="tel:(678) 661-5633" class="inline-flex items-center gap-2 text-white font-semibold px-4 py-2 rounded-lg text-sm" style="background-color:#1a3a5c"><i data-lucide="phone" class="w-4 h-4"></i>Call Now</a>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <i data-lucide="shield-check" class="w-8 h-8 mb-3" style="color:#1a3a5c"></i>
+          <h3 class="font-display text-xl font-bold mb-2" style="color:#1a3a5c">Roof Maintenance Plans</h3>
+          <p class="text-gray-600 text-sm mb-4">Scheduled maintenance programs to extend roof life, prevent costly repairs, and ensure your commercial property stays protected year-round.</p>
+          <a href="tel:(678) 661-5633" class="inline-flex items-center gap-2 text-white font-semibold px-4 py-2 rounded-lg text-sm" style="background-color:#1a3a5c"><i data-lucide="phone" class="w-4 h-4"></i>Call Now</a>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <i data-lucide="cloud-lightning" class="w-8 h-8 mb-3" style="color:#1a3a5c"></i>
+          <h3 class="font-display text-xl font-bold mb-2" style="color:#1a3a5c">Emergency Services</h3>
+          <p class="text-gray-600 text-sm mb-4">Rapid response to commercial roofing emergencies — tarping, temporary repairs, and fast-track permanent solutions when you need them most.</p>
+          <a href="tel:(678) 661-5633" class="inline-flex items-center gap-2 text-white font-semibold px-4 py-2 rounded-lg text-sm" style="background-color:#1a3a5c"><i data-lucide="phone" class="w-4 h-4"></i>Call Now</a>
+        </div>
+      </div>
+
+      <!-- Tab: Specialty -->
+      <div id="tab-specialty" class="tab-panel hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <i data-lucide="sun" class="w-8 h-8 mb-3" style="color:#1a3a5c"></i>
+          <h3 class="font-display text-xl font-bold mb-2" style="color:#1a3a5c">Skylight Installation</h3>
+          <p class="text-gray-600 text-sm mb-4">Transform your living space with professionally installed skylights that flood your home with natural light — completed in a single day.</p>
+          <a href="tel:(678) 661-5633" class="inline-flex items-center gap-2 text-white font-semibold px-4 py-2 rounded-lg text-sm" style="background-color:#1a3a5c"><i data-lucide="phone" class="w-4 h-4"></i>Call Now</a>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <i data-lucide="wrench" class="w-8 h-8 mb-3" style="color:#1a3a5c"></i>
+          <h3 class="font-display text-xl font-bold mb-2" style="color:#1a3a5c">Skylight Repair</h3>
+          <p class="text-gray-600 text-sm mb-4">Expert skylight leak repair, resealing, and replacement ensuring your skylights remain watertight and beautiful for years to come.</p>
+          <a href="tel:(678) 661-5633" class="inline-flex items-center gap-2 text-white font-semibold px-4 py-2 rounded-lg text-sm" style="background-color:#1a3a5c"><i data-lucide="phone" class="w-4 h-4"></i>Call Now</a>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <i data-lucide="home" class="w-8 h-8 mb-3" style="color:#1a3a5c"></i>
+          <h3 class="font-display text-xl font-bold mb-2" style="color:#1a3a5c">MCM Roofing</h3>
+          <p class="text-gray-600 text-sm mb-4">Specialists in Mid-Century Modern roofing including tongue and groove ceilings — preserving the authentic look and character of your MCM home.</p>
+          <a href="tel:(678) 661-5633" class="inline-flex items-center gap-2 text-white font-semibold px-4 py-2 rounded-lg text-sm" style="background-color:#1a3a5c"><i data-lucide="phone" class="w-4 h-4"></i>Call Now</a>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <i data-lucide="hammer" class="w-8 h-8 mb-3" style="color:#1a3a5c"></i>
+          <h3 class="font-display text-xl font-bold mb-2" style="color:#1a3a5c">Decking Replacement</h3>
+          <p class="text-gray-600 text-sm mb-4">Full roof deck replacement and repair ensuring a solid foundation for your roofing system — critical to long-term performance and durability.</p>
+          <a href="tel:(678) 661-5633" class="inline-flex items-center gap-2 text-white font-semibold px-4 py-2 rounded-lg text-sm" style="background-color:#1a3a5c"><i data-lucide="phone" class="w-4 h-4"></i>Call Now</a>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <i data-lucide="shield-check" class="w-8 h-8 mb-3" style="color:#1a3a5c"></i>
+          <h3 class="font-display text-xl font-bold mb-2" style="color:#1a3a5c">Flashing & Waterproofing</h3>
+          <p class="text-gray-600 text-sm mb-4">Professional flashing installation and waterproofing solutions around chimneys, vents, and valleys to prevent leaks and water infiltration.</p>
+          <a href="tel:(678) 661-5633" class="inline-flex items-center gap-2 text-white font-semibold px-4 py-2 rounded-lg text-sm" style="background-color:#1a3a5c"><i data-lucide="phone" class="w-4 h-4"></i>Call Now</a>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+          <i data-lucide="sparkles" class="w-8 h-8 mb-3" style="color:#1a3a5c"></i>
+          <h3 class="font-display text-xl font-bold mb-2" style="color:#1a3a5c">Roof Restoration</h3>
+          <p class="text-gray-600 text-sm mb-4">Comprehensive roof restoration services that extend your roof's lifespan, improve appearance, and enhance overall weatherproofing protection.</p>
+          <a href="tel:(678) 661-5633" class="inline-flex items-center gap-2 text-white font-semibold px-4 py-2 rounded-lg text-sm" style="background-color:#1a3a5c"><i data-lucide="phone" class="w-4 h-4"></i>Call Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="py-16 animate-section" style="background-color:#f8fafc">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-4xl font-bold font-display mb-6" style="color:#1a3a5c">Why Homeowners & Builders Choose Rosie's</h

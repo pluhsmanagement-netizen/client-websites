@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Roofing LLC | Professional Roofing Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  * { font-family: 'Source Sans Pro', sans-serif; }
+  h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Oswald', sans-serif; }
+  .hero-clip { clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
+  .active-tab { background-color: #b71c1c; color: white; }
+  .inactive-tab { background-color: #f3f4f6; color: #37474f; }
+  details summary::-webkit-details-marker { display: none; }
+  details[open] summary .chevron { transform: rotate(180deg); }
+  .chevron { transition: transform 0.3s ease; }
+  .glass-card { background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.6); }
+  .glass-dark { background: rgba(55,71,79,0.15); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.2); }
+</style>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#b71c1c',
+          secondary: '#37474f',
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="bg-white text-gray-800 overflow-x-hidden">
+
+<!-- NAV -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-primary transition-shadow duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+          <i data-lucide="home" class="w-6 h-6 text-primary"></i>
+        </div>
+        <div>
+          <span class="font-headline text-xl lg:text-2xl text-white font-bold leading-tight block">Elite Roofing LLC</span>
+          <span class="text-red-200 text-xs leading-none">Professional Roofing Services</span>
+        </div>
+      </div>
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="#about" class="text-white hover:text-red-200 font-semibold tracking-wide transition-colors">About</a>
+        <a href="#services" class="text-white hover:text-red-200 font-semibold tracking-wide transition-colors">Services</a>
+        <a href="#reviews" class="text-white hover:text-red-200 font-semibold tracking-wide transition-colors">Reviews</a>
+        <a href="#gallery" class="text-white hover:text-red-200 font-semibold tracking-wide transition-colors">Gallery</a>
+        <a href="#contact" class="text-white hover:text-red-200 font-semibold tracking-wide transition-colors">Contact</a>
+        <a href="tel:7138047663" class="bg-secondary text-white px-5 py-2 rounded-full font-bold hover:bg-opacity-90 transition-all flex items-center gap-2">
+          <i data-lucide="phone" class="w-4 h-4"></i>
+          (713) 804-7663
+        </a>
+      </div>
+      <button id="hamburger" class="lg:hidden text-white p-2 rounded-lg hover:bg-red-800 transition-colors">
+        <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+        <i data-lucide="x" class="w-6 h-6 hidden" id="close-icon"></i>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-primary border-t border-red-800 px-4 pb-4">
+    <div class="flex flex-col gap-3 pt-3">
+      <a href="#about" class="text-white font-semibold py-2 border-b border-red-800">About</a>
+      <a href="#services" class="text-white font-semibold py-2 border-b border-red-800">Services</a>
+      <a href="#reviews" class="text-white font-semibold py-2 border-b border-red-800">Reviews</a>
+      <a href="#gallery" class="text-white font-semibold py-2 border-b border-red-800">Gallery</a>
+      <a href="#contact" class="text-white font-semibold py-2 border-b border-red-800">Contact</a>
+      <a href="tel:7138047663" class="bg-secondary text-white px-5 py-3 rounded-full font-bold text-center flex items-center justify-center gap-2 mt-2">
+        <i data-lucide="phone" class="w-4 h-4"></i>
+        (713) 804-7663
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-clip bg-gradient-to-br from-primary via-red-800 to-secondary pt-20 lg:pt-24 pb-32 lg:pb-40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-0 min-h-screen-60" style="min-height: calc(100vh - 80px);">
+      <!-- Text 60% -->
+      <div class="w-full lg:w-3/5 lg:pr-12 z-10 pt-8 lg:pt-0">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="bg-white/20 text-white text-sm font-semibold px-4 py-1.5 rounded-full flex items-center gap-2">
+            <i data-lucide="star" class="w-4 h-4 text-yellow-300 fill-yellow-300"></i>
+            4.8 Stars — 712 Reviews
+          </span>
+        </div>
+        <h1 class="text-4xl lg:text-6xl font-headline font-bold text-white leading-tight mb-6">
+          Houston's Most<br>
+          <span class="text-yellow-300">Trusted Roofing</span><br>
+          Contractors
+        </h1>
+        <p class="text-red-100 text-lg lg:text-xl mb-8 max-w-lg leading-relaxed">
+          Elite Roofing LLC delivers premium roofing solutions with unmatched professionalism. Available 24/7 for all your roofing needs — from repairs to full replacements.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="tel:7138047663" class="bg-white text-primary rounded-full px-10 py-4 font-bold text-lg hover:bg-gray-100 transition-all shadow-lg flex items-center justify-center gap-2">
+            <i data-lucide="phone" class="w-5 h-5"></i>
+            Call Now
+          </a>
+          <a href="#contact" class="border-2 border-white text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-white hover:text-primary transition-all flex items-center justify-center gap-2">
+            <i data-lucide="clipboard-list" class="w-5 h-5"></i>
+            Free Estimate
+          </a>
+        </div>
+        <div class="flex items-center gap-6 mt-8">
+          <div class="flex items-center gap-2 text-red-100">
+            <i data-lucide="shield-check" class="w-5 h-5 text-yellow-300"></i>
+            <span class="text-sm font-semibold">Licensed & Insured</span>
+          </div>
+          <div class="flex items-center gap-2 text-red-100">
+            <i data-lucide="clock" class="w-5 h-5 text-yellow-300"></i>
+            <span class="text-sm font-semibold">24/7 Emergency Service</span>
+          </div>
+        </div>
+      </div>
+      <!-- Image 40% -->
+      <div class="w-full lg:w-2/5 relative lg:translate-y-8">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHgXhmGZ48RnP0LWjK9bZvBxCj6idRvY8ysHpKJgpmMC-_UVhwjN0N_ZS0pLNJIYMSB2i-FHR7KoJ1Y3gxXMpeQ0QY_PF9-yqfpLOG5H1ffb2mqthdIL8CSPVl8DNZaWbUv02CM1vNXC4HAK9hnRavNEtcmVtgj_nWI1jv9-ZJdvGcEFHQ2_F3flX4-FFqWXtevnQCzWu7pOmNss3zvTi6p9cO-TwI47G-CRBGmuU9YKYwJSBZPb40t6pyqz8sUUZSpBxblMB_F6i999wviY1piMA5oLCLPj6DJx3ucRwFWYQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Elite Roofing Work"
+          loading="eager"
+          class="rounded-2xl shadow-2xl w-full h-80 lg:h-auto object-cover"
+          onerror="this.onerror=null;this.src='https://picsum.photos/seed/roofing-hero-main/800/600';"
+        >
+        <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl p-4 hidden lg:flex items-center gap-3">
+          <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+            <i data-lucide="home" class="w-6 h-6 text-white"></i>
+          </div>
+          <div>
+            <div class="font-headline font-bold text-gray-800 text-lg">1000+</div>
+            <div class="text-gray-500 text-sm">Roofs Completed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center">
+        <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-4">
+          <i data-lucide="star" class="w-7 h-7 text-primary"></i>
+        </div>
+        <div class="font-headline text-4xl font-bold text-primary mb-1">4.8</div>
+        <div class="text-gray-500 font-semibold text-sm">Star Rating</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center">
+        <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-4">
+          <i data-lucide="users" class="w-7 h-7 text-primary"></i>
+        </div>
+        <div class="font-headline text-4xl font-bold text-primary mb-1">712</div>
+        <div class="text-gray-500 font-semibold text-sm">Happy Clients</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center">
+        <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-4">
+          <i data-lucide="shield-check" class="w-7 h-7 text-primary"></i>
+        </div>
+        <div class="font-headline text-4xl font-bold text-primary mb-1">100%</div>
+        <div class="text-gray-500 font-semibold text-sm">Satisfaction Rate</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center">
+        <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-4">
+          <i data-lucide="clock" class="w-7 h-7 text-primary"></i>
+        </div>
+        <div class="font-headline text-4xl font-bold text-primary mb-1">24/7</div>
+        <div class="text-gray-500 font-semibold text-sm">Available Daily</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row items-center gap-16">
+      <div class="w-full lg:w-1/2">
+        <div class="relative">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHQkVtXsu3TJkh7uAaNiP86GeCDyjX6zr-HD-LrC-NwYeHBJ-wL-jKqPdQrM4TMnt2q6kr4g1O74FMYOBFj12uFYvbI8PAX33-MbZ9V30CkZG-fuM4oXc_KajIjcOW2dlVu8MLPru33dU9lCsBx3Z7EQrx13riz-MlY4tUXx1u4b6RCx_YR7n9a_4I_R4N9K9sngJn77V8dj3t5pPEIQ_3MPki2QP0zYcA-QYfDmg2LFKVwysKe32yVMExUxug9Dn-GPhfDKtmeCMSfGoh4iN5UVrrqrWwC670pqJMPMa9-xw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Elite Roofing Team"
+            class="rounded-2xl shadow-2xl w-full h-96 object-cover"
+            onerror="this.onerror=null;this.src='https://picsum.photos/seed/roofing-about-team/800/600';"
+          >
+          <div class="absolute -top-4 -right-4 bg-primary text-white rounded-2xl p-5 shadow-xl">
+            <div class="font-headline text-3xl font-bold">15+</div>
+            <div class="text-red-200 text-sm">Years of<br>Experience</div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full lg:w-1/2">
+        <span class="text-primary font-semibold text-sm uppercase tracking-widest mb-2 block">About Us</span>
+        <h2 class="text-4xl lg:text-6xl font-headline font-bold text-gray-800 mb-6 leading-tight">
+          Building Trust<br>One Roof at a Time
+        </h2>
+        <p class="text-gray-600 text-lg leading-relaxed mb-6">
+          Elite Roofing LLC is Houston's premier roofing contractor, delivering exceptional craftsmanship and outstanding customer service. We take pride in every project we undertake, from minor repairs to complete roof replacements.
+        </p>
+        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+          Our team of certified professionals is dedicated to protecting your home and family. We work with all major insurance companies and provide transparent, fair pricing on every job. With over 712 five-star reviews, our reputation speaks for itself.
+        </p>
+        <div class="grid grid-cols-2 gap-4 mb-8">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i data-lucide="shield-check" class="w-5 h-5 text-primary"></i>
+            </div>
+            <span class="font-semibold text-gray-700">Fully Licensed</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i data-lucide="award" class="w-5 h-5 text-primary"></i>
+            </div>
+            <span class="font-semibold text-gray-700">Certified Experts</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i data-lucide="clock" class="w-5 h-5 text-primary"></i>
+            </div>
+            <span class="font-semibold text-gray-700">24/7 Emergency</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i data-lucide="dollar-sign" class="w-5 h-5 text-primary"></i>
+            </div>
+            <span class="font-semibold text-gray-700">Fair Pricing</span>
+          </div>
+        </div>
+        <a href="tel:7138047663" class="inline-flex items-center gap-2 bg-primary text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-red-800 transition-all shadow-lg">
+          <i data-lucide="phone" class="w-5 h-5"></i>
+          Get a Free Quote
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="animate-section py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <span class="text-primary font-semibold text-sm uppercase tracking-widest mb-2 block">What We Do</span>
+      <h2 class="text-4xl lg:text-6xl font-headline font-bold text-gray-800 mb-4">Our Services</h2>
+      <p class="text-gray-500 text-lg max-w-2xl mx-auto">Comprehensive roofing solutions tailored to your needs. Quality workmanship guaranteed on every project.</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="flex flex-wrap justify-center gap-3 mb-10">
+      <button onclick="showTab('tab1', this)" class="tab-btn active-tab rounded-full px-7 py-3 font-bold text-base transition-all">Roofing & Repair</button>
+      <button onclick="showTab('tab2', this)" class="tab-btn inactive-tab rounded-full px-7 py-3 font-bold text-base transition-all">Installation</button>
+      <button onclick="showTab('tab3', this)" class="tab-btn inactive-tab rounded-full px-7 py-3 font-bold text-base transition-all">Inspection & More</button>
+    </div>
+
+    <!-- Tab 1 -->
+    <div id="tab1" class="tab-panel">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-5">
+            <i data-lucide="home" class="w-7 h-7 text-primary"></i>
+          </div>
+          <h3 class="font-headline text-2xl font-bold text-gray-800 mb-3">Roof Replacement</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">Complete tear-off and replacement of old roofing systems with premium materials built to last decades.</p>
+          <a href="tel:7138047663" class="inline-flex items-center gap-2 bg-primary text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-red-800 transition-all w-full justify-center">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            Call Now
+          </a>
+        </div>
+        <div class="glass-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-5">
+            <i data-lucide="wrench" class="w-7 h-7 text-primary"></i>
+          </div>
+          <h3 class="font-headline text-2xl font-bold text-gray-800 mb-3">Roof Repair</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">Fast and reliable repair for leaks, missing shingles, storm damage, and all types of roofing issues.</p>
+          <a href="tel:7138047663" class="inline-flex items-center gap-2 bg-primary text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-red-800 transition-all w-full justify-center">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            Call Now
+          </a>
+        </div>
+        <div class="glass-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-5">
+            <i data-lucide="cloud-lightning" class="w-7 h-7 text-primary"></i>
+          </div>
+          <h3 class="font-headline text-2xl font-bold text-gray-800 mb-3">Storm Damage Repair</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">Emergency storm damage assessment and repair. We work with all insurance companies to streamline claims.</p>
+          <a href="tel:7138047663" class="inline-flex items-center gap-2 bg-primary text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-red-800 transition-all w-full justify-center">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            Call Now
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2 -->
+    <div id="tab2" class="tab-panel hidden">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-5">
+            <i data-lucide="hammer" class="w-7 h-7 text-primary"></i>
+          </div>
+          <h3 class="font-headline text-2xl font-bold text-gray-800 mb-3">Shingle Installation</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">Expert installation of asphalt, architectural, and premium shingles with manufacturer warranties included.</p>
+          <a href="tel:7138047663" class="inline-flex items-center gap-2 bg-primary text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-red-800 transition-all w-full justify-center">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            Call Now
+          </a>
+        </div>
+        <div class="glass-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-5">
+            <i data-lucide="droplets" class="w-7 h-7 text-primary"></i>
+          </div>
+          <h3 class="font-headline text-2xl font-bold text-gray-800 mb-3">Flat Roof Systems</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">TPO, EPDM, and modified bitumen flat roof installations for commercial and residential properties.</p>
+          <a href="tel:7138047663" class="inline-flex items-center gap-2 bg-primary text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-red-800 transition-all w-full justify-center">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            Call Now
+          </a>
+        </div>
+        <div class="glass-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-5">
+            <i data-lucide="zap" class="w-7 h-7 text-primary"></i>
+          </div>
+          <h3 class="font-headline text-2xl font-bold text-gray-800 mb-3">Metal Roofing</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">Durable metal roof installation offering superior longevity, energy efficiency, and modern aesthetics.</p>
+          <a href="tel:7138047663" class="inline-flex items-center gap-2 bg-primary text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-red-800 transition-all w-full justify-center">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            Call Now
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 3 -->
+    <div id="tab3" class="tab-panel hidden">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-5">
+            <i data-lucide="search" class="w-7 h-7 text-primary"></i>
+          </div>
+          <h3 class="font-headline text-2xl font-bold text-gray-800 mb-3">Roof Inspection</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">Comprehensive roof inspection by certified professionals. Detailed reports with photos and recommendations.</p>
+          <a href="tel:7138047663" class="inline-flex items-center gap-2 bg-primary text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-red-800 transition-all w-full justify-center">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            Call Now
+          </a>
+        </div>
+        <div class="glass-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-5">
+            <i data-lucide="shield-check" class="w-7 h-7 text-primary"></i>
+          </div>
+          <h3 class="font-headline text-2xl font-bold text-gray-800 mb-3">Insurance Claims</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">We assist you through the entire insurance claim process, working directly with your insurance adjuster.</p>
+          <a href="tel:7138047663" class="inline-flex items-center gap-2 bg-primary

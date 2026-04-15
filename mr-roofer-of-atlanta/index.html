@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mr. Roofer of Atlanta | Expert Roofing Services</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#1a3a5c',
+        accent: '#e85d04',
+        light: '#f8fafc',
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        heading: ['Montserrat', 'sans-serif'],
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .tab-content { display: none; }
+  .tab-content.active { display: grid; }
+  details summary::-webkit-details-marker { display: none; }
+  details[open] .chevron { transform: rotate(180deg); }
+  .chevron { transition: transform 0.3s ease; }
+  .hero-bg { background: linear-gradient(135deg, #1a3a5c 0%, #0f2540 100%); }
+</style>
+</head>
+<body class="font-sans bg-white text-gray-800">
+
+<!-- Navigation -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+          <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22" fill="none" stroke="white" stroke-width="2"/></svg>
+        </div>
+        <div>
+          <span class="font-heading font-900 text-xl text-primary">Mr. Roofer</span>
+          <span class="block text-xs text-accent font-600 -mt-1">of Atlanta</span>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#services" class="text-gray-600 hover:text-accent font-500 transition-colors">Services</a>
+        <a href="#gallery" class="text-gray-600 hover:text-accent font-500 transition-colors">Gallery</a>
+        <a href="#reviews" class="text-gray-600 hover:text-accent font-500 transition-colors">Reviews</a>
+        <a href="#faq" class="text-gray-600 hover:text-accent font-500 transition-colors">FAQ</a>
+        <a href="#contact" class="text-gray-600 hover:text-accent font-500 transition-colors">Contact</a>
+        <a href="tel:7706373874" class="bg-accent text-white px-5 py-2.5 rounded-lg font-600 hover:bg-orange-600 transition-colors flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          (770) 637-3874
+        </a>
+      </div>
+      <button id="hamburger" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+        <div class="w-6 h-0.5 bg-gray-700 mb-1.5 transition-all" id="ham1"></div>
+        <div class="w-6 h-0.5 bg-gray-700 mb-1.5 transition-all" id="ham2"></div>
+        <div class="w-6 h-0.5 bg-gray-700 transition-all" id="ham3"></div>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pb-4">
+    <div class="flex flex-col gap-3 pt-3">
+      <a href="#services" class="text-gray-600 hover:text-accent font-500 py-2 border-b border-gray-100 mobile-link">Services</a>
+      <a href="#gallery" class="text-gray-600 hover:text-accent font-500 py-2 border-b border-gray-100 mobile-link">Gallery</a>
+      <a href="#reviews" class="text-gray-600 hover:text-accent font-500 py-2 border-b border-gray-100 mobile-link">Reviews</a>
+      <a href="#faq" class="text-gray-600 hover:text-accent font-500 py-2 border-b border-gray-100 mobile-link">FAQ</a>
+      <a href="#contact" class="text-gray-600 hover:text-accent font-500 py-2 border-b border-gray-100 mobile-link">Contact</a>
+      <a href="tel:7706373874" class="bg-accent text-white px-5 py-3 rounded-lg font-600 text-center mt-2">Call (770) 637-3874</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-bg pt-16 md:pt-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Left Column -->
+      <div class="fade-in">
+        <div class="inline-flex items-center gap-2 bg-accent/20 text-orange-300 px-4 py-2 rounded-full text-sm font-600 mb-6">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          4.9 Stars · 193 Reviews
+        </div>
+        <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-900 text-white leading-tight mb-6">
+          Atlanta's Most Trusted <span class="text-accent">Roofing</span> Experts
+        </h1>
+        <p class="text-blue-200 text-lg md:text-xl mb-8 leading-relaxed">
+          From roof replacements to storm damage repairs, Mr. Roofer of Atlanta delivers exceptional quality, honest pricing, and outstanding customer service — every single time.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+          <a href="tel:7706373874" class="bg-accent text-white px-8 py-4 rounded-xl font-700 text-lg hover:bg-orange-600 transition-colors flex items-center justify-center gap-2 shadow-lg">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            Call Now
+          </a>
+          <a href="#contact" class="border-2 border-white/30 text-white px-8 py-4 rounded-xl font-700 text-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
+            Get Free Estimate
+          </a>
+        </div>
+        <div class="flex flex-wrap gap-6">
+          <div class="flex items-center gap-2 text-blue-200">
+            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Licensed & Insured
+          </div>
+          <div class="flex items-center gap-2 text-blue-200">
+            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Insurance Claims Help
+          </div>
+          <div class="flex items-center gap-2 text-blue-200">
+            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Free Estimates
+          </div>
+        </div>
+      </div>
+      <!-- Right Column -->
+      <div class="fade-in flex justify-center">
+        <div class="relative max-w-lg w-full">
+          <div class="absolute -inset-4 bg-accent/20 rounded-3xl blur-2xl"></div>
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEG7tP7KftKCJItbs2eoVPOXOx2Bg-r67F4je8gAwlChG4-GCcd6tSfzf8xzk5omvPPLbicmVw-iFIXDbiIqou0bsngkHuTV9zAipehNJDhqAzj80zvCs0Wy1NpGY6lvsJ1pNlPmaFfOuFro6rlRKE4H1-2sGJBISRC0BaXsPdwJd-6QdU8ygvxTSgqs_pdpqnaM8RG-ZQwuSWQS4rmjvhPB32jXqVmuE1nWGysCmYAS83-SwLsWquQI8rS4pK7CRKKZALBeyFUvFKwHmJpati8uATOOzuHhxAS3DvfR1QJtcA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Mr. Roofer of Atlanta - Professional Roofing"
+            class="relative rounded-2xl shadow-2xl w-full h-80 md:h-96 object-cover border-4 border-white/10"
+            onerror="this.src='https://picsum.photos/seed/roof1/800/600'"
+          >
+          <div class="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-xl p-4 flex items-center gap-3">
+            <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <div>
+              <div class="text-yellow-400 flex gap-0.5">★★★★★</div>
+              <p class="text-sm font-600 text-gray-700">4.9 · 193 Reviews</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Wave -->
+  <div class="w-full overflow-hidden">
+    <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 60L1440 60L1440 20C1200 60 960 0 720 20C480 40 240 0 0 20L0 60Z" fill="white"/></svg>
+  </div>
+</section>
+
+<!-- Stats Bar -->
+<section class="bg-white py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 fade-in">
+      <div class="text-center p-6 bg-gray-50 rounded-2xl">
+        <div class="text-3xl md:text-4xl font-heading font-900 text-primary mb-2">4.9★</div>
+        <div class="text-gray-500 font-500">Google Rating</div>
+      </div>
+      <div class="text-center p-6 bg-gray-50 rounded-2xl">
+        <div class="text-3xl md:text-4xl font-heading font-900 text-primary mb-2">193+</div>
+        <div class="text-gray-500 font-500">Happy Customers</div>
+      </div>
+      <div class="text-center p-6 bg-gray-50 rounded-2xl">
+        <div class="text-3xl md:text-4xl font-heading font-900 text-primary mb-2">100%</div>
+        <div class="text-gray-500 font-500">Satisfaction</div>
+      </div>
+      <div class="text-center p-6 bg-gray-50 rounded-2xl">
+        <div class="text-3xl md:text-4xl font-heading font-900 text-primary mb-2">5★</div>
+        <div class="text-gray-500 font-500">All Recent Reviews</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14 fade-in">
+      <span class="text-accent font-600 text-sm uppercase tracking-wider">What We Do</span>
+      <h2 class="font-heading text-4xl md:text-5xl font-900 text-primary mt-2 mb-4">Our Roofing Services</h2>
+      <p class="text-gray-500 max-w-2xl mx-auto text-lg">From minor repairs to complete replacements, we handle every roofing challenge with expertise and care.</p>
+    </div>
+    <!-- Tabs -->
+    <div class="fade-in">
+      <div class="flex flex-wrap justify-center gap-2 mb-10" id="tab-buttons">
+        <button data-tab="residential" class="tab-btn active bg-primary text-white px-6 py-3 rounded-full font-600 transition-all">Residential</button>
+        <button data-tab="commercial" class="tab-btn bg-white text-gray-600 border border-gray-200 px-6 py-3 rounded-full font-600 transition-all hover:bg-gray-100">Commercial</button>
+        <button data-tab="repairs" class="tab-btn bg-white text-gray-600 border border-gray-200 px-6 py-3 rounded-full font-600 transition-all hover:bg-gray-100">Repairs & Storm</button>
+      </div>
+
+      <!-- Residential Tab -->
+      <div id="tab-residential" class="tab-content active grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3 class="font-heading font-800 text-primary text-xl mb-3">Full Roof Replacement</h3>
+          <p class="text-gray-500 mb-4">Complete tear-off and replacement with premium shingles. We replace damaged wood, underlayment, and ensure a weathertight installation.</p>
+          <a href="#contact" class="text-accent font-600 hover:underline flex items-center gap-1">Get Estimate <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+          </div>
+          <h3 class="font-heading font-800 text-primary text-xl mb-3">Architectural Shingles</h3>
+          <p class="text-gray-500 mb-4">High-quality architectural and dimensional shingles that combine superior durability with beautiful curb appeal for your home.</p>
+          <a href="#contact" class="text-accent font-600 hover:underline flex items-center gap-1">Get Estimate <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </div>
+          <h3 class="font-heading font-800 text-primary text-xl mb-3">TPO Roofing Systems</h3>
+          <p class="text-gray-500 mb-4">Energy-efficient TPO membrane solutions perfect for flat roofs, sunrooms, and additions. Helps reduce heat and energy costs.</p>
+          <a href="#contact" class="text-accent font-600 hover:underline flex items-center gap-1">Get Estimate <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Commercial Tab -->
+      <div id="tab-commercial" class="tab-content grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <h3 class="font-heading font-800 text-primary text-xl mb-3">Commercial Flat Roofs</h3>
+          <p class="text-gray-500 mb-4">Comprehensive flat roof installation and replacement for commercial properties using durable TPO, EPDM, and modified bitumen systems.</p>
+          <a href="#contact" class="text-accent font-600 hover:underline flex items-center gap-1">Get Estimate <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="font-heading font-800 text-primary text-xl mb-3">Preventive Maintenance</h3>
+          <p class="text-gray-500 mb-4">Regular inspections and maintenance programs to extend the life of your commercial roof and prevent costly emergency repairs.</p>
+          <a href="#contact" class="text-accent font-600 hover:underline flex items-center gap-1">Get Estimate <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-heading font-800 text-primary text-xl mb-3">Roof Inspections</h3>
+          <p class="text-gray-500 mb-4">Thorough professional inspections with detailed reports. Essential for property transactions, insurance claims, and annual maintenance.</p>
+          <a href="#contact" class="text-accent font-600 hover:underline flex items-center gap-1">Get Estimate <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Repairs Tab -->
+      <div id="tab-repairs" class="tab-content grid grid-cols-1 md:grid-cols-3 gap-6">
+        

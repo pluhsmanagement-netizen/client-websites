@@ -5,14 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accent Roofing Service | Professional Roofing Contractor</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Source Sans Pro', sans-serif; }
-    h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Oswald', sans-serif; }
+    h1, h2, h3, h4, h5 { font-family: 'Oswald', sans-serif; }
     .active-tab { background-color: #1a3a5c; color: #ffffff; }
-    .inactive-tab { background-color: #f1f5f9; color: #1a3a5c; }
+    .inactive-tab { background-color: #e5e7eb; color: #374151; }
+    details summary { list-style: none; }
     details summary::-webkit-details-marker { display: none; }
     details[open] summary { color: #1a3a5c; }
     .animate-section { opacity: 0; transform: translateY(2rem); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -22,34 +21,35 @@
 <body class="bg-white text-gray-800">
 
   <!-- NAV -->
-  <nav id="mainNav" class="sticky top-0 z-50 bg-white transition-shadow duration-300">
+  <nav id="navbar" class="sticky top-0 z-50 bg-white transition-shadow duration-300">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <span class="font-display text-2xl font-bold text-[#1a3a5c] tracking-wide">ACCENT <span class="text-[#c8960c]">ROOFING</span></span>
+      <div class="flex items-center">
+        <span class="text-2xl font-bold text-[#1a3a5c]" style="font-family:'Oswald',sans-serif;">Accent Roofing</span>
+        <span class="ml-2 text-sm font-semibold text-[#c8952a] hidden sm:inline">Service</span>
       </div>
-      <div class="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-wide text-gray-700">
-        <a href="#services" class="hover:text-[#1a3a5c] transition">Services</a>
-        <a href="#gallery" class="hover:text-[#1a3a5c] transition">Gallery</a>
-        <a href="#reviews" class="hover:text-[#1a3a5c] transition">Reviews</a>
-        <a href="#faq" class="hover:text-[#1a3a5c] transition">FAQ</a>
-        <a href="#contact" class="hover:text-[#1a3a5c] transition">Contact</a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#services" class="text-gray-700 hover:text-[#1a3a5c] font-semibold transition-colors">Services</a>
+        <a href="#gallery" class="text-gray-700 hover:text-[#1a3a5c] font-semibold transition-colors">Gallery</a>
+        <a href="#reviews" class="text-gray-700 hover:text-[#1a3a5c] font-semibold transition-colors">Reviews</a>
+        <a href="#faq" class="text-gray-700 hover:text-[#1a3a5c] font-semibold transition-colors">FAQ</a>
+        <a href="#contact" class="text-gray-700 hover:text-[#1a3a5c] font-semibold transition-colors">Contact</a>
       </div>
-      <a href="tel:4706136961" class="hidden md:inline-block bg-[#1a3a5c] text-white font-bold px-5 py-2 rounded-lg hover:bg-[#c8960c] transition text-sm">(470) 613-6961</a>
-      <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu">
+      <div class="hidden md:block">
+        <a href="tel:4706136961" class="bg-[#1a3a5c] text-white font-bold px-6 py-3 rounded-lg hover:bg-[#c8952a] transition-colors">(470) 613-6961</a>
+      </div>
+      <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
         <span class="block w-6 h-0.5 bg-gray-800"></span>
         <span class="block w-6 h-0.5 bg-gray-800"></span>
         <span class="block w-6 h-0.5 bg-gray-800"></span>
       </button>
     </div>
-    <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 pb-4">
-      <div class="flex flex-col gap-4 pt-4 text-sm font-semibold uppercase tracking-wide text-gray-700">
-        <a href="#services" class="hover:text-[#1a3a5c]" onclick="closeMobileMenu()">Services</a>
-        <a href="#gallery" class="hover:text-[#1a3a5c]" onclick="closeMobileMenu()">Gallery</a>
-        <a href="#reviews" class="hover:text-[#1a3a5c]" onclick="closeMobileMenu()">Reviews</a>
-        <a href="#faq" class="hover:text-[#1a3a5c]" onclick="closeMobileMenu()">FAQ</a>
-        <a href="#contact" class="hover:text-[#1a3a5c]" onclick="closeMobileMenu()">Contact</a>
-        <a href="tel:4706136961" class="bg-[#1a3a5c] text-white font-bold px-5 py-2 rounded-lg text-center hover:bg-[#c8960c] transition">(470) 613-6961</a>
-      </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 px-6 py-4 flex flex-col gap-4">
+      <a href="#services" class="text-gray-700 hover:text-[#1a3a5c] font-semibold">Services</a>
+      <a href="#gallery" class="text-gray-700 hover:text-[#1a3a5c] font-semibold">Gallery</a>
+      <a href="#reviews" class="text-gray-700 hover:text-[#1a3a5c] font-semibold">Reviews</a>
+      <a href="#faq" class="text-gray-700 hover:text-[#1a3a5c] font-semibold">FAQ</a>
+      <a href="#contact" class="text-gray-700 hover:text-[#1a3a5c] font-semibold">Contact</a>
+      <a href="tel:4706136961" class="bg-[#1a3a5c] text-white font-bold px-6 py-3 rounded-lg text-center">(470) 613-6961</a>
     </div>
   </nav>
 
@@ -57,44 +57,42 @@
   <section style="background: #1a3a5c;" class="py-20">
     <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div>
-        <div class="inline-block bg-[#c8960c] text-white text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-full mb-4">⭐ 5-Star Rated · 3,597 Reviews</div>
-        <h1 class="font-display text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">Expert Roofing You Can Trust — 24/7</h1>
-        <p class="text-xl text-white/80 mb-8">Accent Roofing Service delivers professional roof repairs, replacements, and inspections with transparent communication and exceptional craftsmanship every time.</p>
-        <div class="flex flex-wrap gap-4">
-          <a href="tel:4706136961" class="bg-white text-[#1a3a5c] font-bold px-8 py-4 rounded-lg text-lg hover:bg-[#c8960c] hover:text-white transition">Call Now</a>
-          <a href="#services" class="border-2 border-white text-white font-bold px-8 py-4 rounded-lg text-lg hover:bg-white hover:text-[#1a3a5c] transition">Our Services</a>
+        <div class="flex items-center gap-2 mb-4">
+          <span class="text-yellow-400 text-xl">★★★★★</span>
+          <span class="text-white/80 text-sm font-semibold">5.0 Stars · 3,597 Reviews</span>
         </div>
-        <div class="mt-8 flex items-center gap-6 flex-wrap">
-          <div class="text-white/80 text-sm flex items-center gap-2"><span class="text-[#c8960c] text-lg">✓</span> No-Pressure Estimates</div>
-          <div class="text-white/80 text-sm flex items-center gap-2"><span class="text-[#c8960c] text-lg">✓</span> Insurance Claim Experts</div>
-          <div class="text-white/80 text-sm flex items-center gap-2"><span class="text-[#c8960c] text-lg">✓</span> Photo Updates Throughout</div>
+        <h1 class="text-4xl lg:text-6xl font-bold text-white mb-6" style="font-family:'Oswald',sans-serif;">Expert Roofing You Can Trust</h1>
+        <p class="text-xl text-white/80 mb-8">Accent Roofing Service delivers professional roof repair, replacement, and inspection with transparent communication and exceptional results — available 24/7.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="tel:4706136961" class="bg-white text-[#1a3a5c] font-bold px-8 py-4 rounded-lg text-lg hover:bg-[#c8952a] hover:text-white transition-colors">Call Now</a>
+          <a href="#services" class="border-2 border-white text-white font-bold px-8 py-4 rounded-lg text-lg hover:bg-white hover:text-[#1a3a5c] transition-colors">Our Services</a>
         </div>
       </div>
       <div>
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEE27I5kEIH_k3AKjgj3-9aBhdIJNrbucQK7brXfrcWJtpKsaS_a6lvRIjoptwFvWC-N_hqAFgpmDOjIPdWyVXXF1qNfxJKE75TZwOEyuJmjuoxxS_ZoBJA--1kOZtyfnIuX_ay5dfwP64zRXSnkapEHSeDn7y0uPDkoz25zdZNTM_IpBA2zbNwZlaQVGSJ4mPZzbaXghlVRI2LTT4Hch0ur2IuAIwa694LWcLc0mAVSPlh0pjuc7_MqiJ3GuHEhWirF7Url6Cs8Xji7SKKt8LYWy-AKQZIJGymm1x_PGbsW1w&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="eager" alt="Accent Roofing Service" class="w-full max-w-lg rounded-2xl shadow-2xl aspect-[4/3] object-cover mx-auto" onerror="this.src='https://picsum.photos/seed/roofing-hero/800/600'">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGQf37r1vogmU9GKHWDQxmr7cG39XfJ_lKhrZSj91ua7Af1jUoWEJ1Cgetw8zU2P9CES92MJau3cRtYpf6CbDb9Q67m0eOzsuhLul9UuOjSqdxFIbfqX8koLTMT8CmA7F9PNn5mBlIEIdOUf8sPpCLxGYZqlqIqBpA0rvPi4EC3DOPNqf_qGsG-dwtaEGAFOZApMgI_3RagpjecF_h_RBiZ7gXxNBBk6JP1A2tuBh5ttd7LRH0JKrMPpXDi93u_f8QtHBmZ1y8FV6SHSs2XfyiB-nq_AmpWkZx89gGYPN_FlA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="eager" alt="Accent Roofing Service" class="w-full max-w-lg rounded-2xl shadow-2xl aspect-[4/3] object-cover" onerror="this.src='https://picsum.photos/seed/roofing-hero/800/600'">
       </div>
     </div>
   </section>
 
   <!-- TRUST BAR -->
-  <section class="bg-[#c8960c] py-6">
+  <section class="bg-[#c8952a] py-8">
     <div class="max-w-6xl mx-auto px-6">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
         <div>
-          <div class="font-display text-3xl font-bold">5★</div>
-          <div class="text-sm font-semibold opacity-90">Google Rating</div>
+          <div class="text-3xl font-bold" style="font-family:'Oswald',sans-serif;">3,597+</div>
+          <div class="text-sm font-semibold text-white/80">5-Star Reviews</div>
         </div>
         <div>
-          <div class="font-display text-3xl font-bold">3,597</div>
-          <div class="text-sm font-semibold opacity-90">Verified Reviews</div>
+          <div class="text-3xl font-bold" style="font-family:'Oswald',sans-serif;">24/7</div>
+          <div class="text-sm font-semibold text-white/80">Available Mon–Sat</div>
         </div>
         <div>
-          <div class="font-display text-3xl font-bold">24/7</div>
-          <div class="text-sm font-semibold opacity-90">Available Mon–Sat</div>
+          <div class="text-3xl font-bold" style="font-family:'Oswald',sans-serif;">100%</div>
+          <div class="text-sm font-semibold text-white/80">Satisfaction Guaranteed</div>
         </div>
         <div>
-          <div class="font-display text-3xl font-bold">100%</div>
-          <div class="text-sm font-semibold opacity-90">Satisfaction Focused</div>
+          <div class="text-3xl font-bold" style="font-family:'Oswald',sans-serif;">Free</div>
+          <div class="text-sm font-semibold text-white/80">Roof Inspections</div>
         </div>
       </div>
     </div>
@@ -104,29 +102,39 @@
   <section class="py-16 animate-section">
     <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div>
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEEjM5BpJWqT2O_Nv54SRA_awexRC33hMPtnJ3ePGdkZLHg7_WWwCCnq-LhhGYTVKHloJwZMPsZ8qvupgXRNdwUeotX3tFZdEtOpW2OSEW0XzScxKqIjEX6-WFb3Dwgt81u9-yC_mV0l_cjgiRgEDg2E21ppyox5qk5KoGuM6eQzvjepx1vM5-oZTRgNc7MoiTqVZrL0sQoDUdvnetsUmIJSUgFW7lWFecD-Glev0a_-UNMSBDx9fw_xFpAdEOwWWf7hT393eaV6QEE6F6LJWZXLqgvML0xIpZoWQqRCl8qdovB0x3zS2nZBCNlPlWlh_WBcJ63E9Va4zn3JtJNrLbaERXo3VqIr9yYDtblxhFMVk_ZWkspOf-v1qIySCCY-fZLFTTh8HlmdEtmdGtd-QXojVQV9bhY9ap_Coy_ZSAeQ7dl4fj4EoFZyblN7bhM3&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Accent Roofing Team" class="w-full max-w-md rounded-xl shadow-lg object-cover aspect-[4/3]" onerror="this.src='https://picsum.photos/seed/roofing-team/800/600'">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFU2pnfrFiy8m2FWVBWpVIxL4B6HbUVBlYs2SCZBkYvQnJN76lvj-TbuvEDJ1hAed1zTPbUjHKFEJREtThzrLIAzwuJ917IOoCibnIPUQRJmLQuQGTic0j2cDQpb4IRCuYSvohbmwheuo9IHrk8ckj20QcJXOrhfQ_m0otbiCHLfpqbyTrNdjrYCSHF_kIXMmZnT0U-q6Im7_U04cM4882XNAqrzlomTbkQXWQEi6kx1GKUZHDIVwUdklwpVqCszUprMhuMAgQAVpeM0WmJL1jhgh7y4mincmmDXDwbBvk9aHUidqDgRM8Ouf_t1owIaBDavrHYMalf1I-R43Ye1Jm5sJl6YJ1VpePoLRapX-2Av5OT4dPMG43VfA9rJUYAVg8Rfh62LqGm2bxwIfYng-CNxJ_OR_SEwS0ZMCvIWaPbUUfKf1KZP80j5UQRFtJ9&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Accent Roofing Team" class="w-full max-w-lg rounded-xl shadow-lg aspect-[4/3] object-cover" onerror="this.src='https://picsum.photos/seed/roofing-team/800/600'">
       </div>
       <div>
-        <p class="text-[#c8960c] font-semibold uppercase tracking-widest text-sm mb-3">About Us</p>
-        <h2 class="font-display text-4xl font-bold text-[#1a3a5c] mb-6">Roofing Done Right, From Start to Finish</h2>
-        <p class="text-gray-600 mb-4 leading-relaxed">Accent Roofing Service is a trusted roofing contractor dedicated to delivering top-quality work with complete transparency. From your first call to the final nail, our team communicates every step of the way — including photo updates throughout the project.</p>
-        <p class="text-gray-600 mb-6 leading-relaxed">Our specialists are experienced in all aspects of residential and commercial roofing, including full replacements, repairs, insurance claims, and inspections. We pride ourselves on no-pressure consultations and honest, detailed estimates.</p>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
-            <div class="text-2xl mb-2">🏆</div>
-            <div class="font-display font-semibold text-[#1a3a5c]">Award-Winning Team</div>
+        <h2 class="text-4xl font-bold text-[#1a3a5c] mb-4">Why Choose Accent Roofing?</h2>
+        <p class="text-gray-600 text-lg mb-6">Accent Roofing Service is a trusted roofing contractor known for transparent communication, professional crews, and lasting results. From single-home repairs to large community replacements, we bring the same dedication to every project.</p>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <span class="text-[#c8952a] text-2xl">✔</span>
+            <div>
+              <h4 class="font-bold text-[#1a3a5c]">No High-Pressure Sales</h4>
+              <p class="text-gray-600 text-sm">We explain all your options clearly so you can make the best decision for your home.</p>
+            </div>
           </div>
-          <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
-            <div class="text-2xl mb-2">📸</div>
-            <div class="font-display font-semibold text-[#1a3a5c]">Photo Updates Included</div>
+          <div class="flex items-start gap-3">
+            <span class="text-[#c8952a] text-2xl">✔</span>
+            <div>
+              <h4 class="font-bold text-[#1a3a5c]">Constant Photo Updates</h4>
+              <p class="text-gray-600 text-sm">Our supervisors send progress photos throughout the job so you're always informed.</p>
+            </div>
           </div>
-          <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
-            <div class="text-2xl mb-2">🛡️</div>
-            <div class="font-display font-semibold text-[#1a3a5c]">Insurance Specialists</div>
+          <div class="flex items-start gap-3">
+            <span class="text-[#c8952a] text-2xl">✔</span>
+            <div>
+              <h4 class="font-bold text-[#1a3a5c]">Insurance Claim Experts</h4>
+              <p class="text-gray-600 text-sm">We work directly with adjusters and guide you through the entire insurance process.</p>
+            </div>
           </div>
-          <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
-            <div class="text-2xl mb-2">🧹</div>
-            <div class="font-display font-semibold text-[#1a3a5c]">Daily Cleanup Guaranteed</div>
+          <div class="flex items-start gap-3">
+            <span class="text-[#c8952a] text-2xl">✔</span>
+            <div>
+              <h4 class="font-bold text-[#1a3a5c]">Thorough Daily Cleanup</h4>
+              <p class="text-gray-600 text-sm">We respect your property and clean up completely at the end of every work day.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -134,85 +142,87 @@
   </section>
 
   <!-- SERVICES -->
-  <section id="services" class="py-16 bg-slate-50 animate-section">
+  <section id="services" class="py-16 bg-gray-50 animate-section">
     <div class="max-w-6xl mx-auto px-6">
-      <p class="text-[#c8960c] font-semibold uppercase tracking-widest text-sm mb-3 text-center">What We Do</p>
-      <h2 class="font-display text-4xl font-bold text-[#1a3a5c] mb-4 text-center">Our Roofing Services</h2>
-      <p class="text-gray-500 text-center mb-10 max-w-2xl mx-auto">Comprehensive roofing solutions for homes and communities — delivered with professionalism and care.</p>
-
+      <div class="text-center mb-10">
+        <h2 class="text-4xl font-bold text-[#1a3a5c] mb-3">Our Roofing Services</h2>
+        <p class="text-gray-600 text-lg max-w-2xl mx-auto">From emergency repairs to full community replacements, our team handles every roofing need with professionalism and precision.</p>
+      </div>
       <!-- Tabs -->
-      <div class="flex flex-wrap gap-3 justify-center mb-10">
-        <button onclick="showTab('tab-replacement', this)" class="tab-btn active-tab font-display font-semibold px-6 py-3 rounded-lg text-sm uppercase tracking-wide transition">Roof Replacement</button>
-        <button onclick="showTab('tab-repair', this)" class="tab-btn inactive-tab font-display font-semibold px-6 py-3 rounded-lg text-sm uppercase tracking-wide transition">Roof Repair</button>
-        <button onclick="showTab('tab-inspection', this)" class="tab-btn inactive-tab font-display font-semibold px-6 py-3 rounded-lg text-sm uppercase tracking-wide transition">Inspection & Insurance</button>
+      <div class="flex flex-wrap gap-3 justify-center mb-8">
+        <button onclick="showTab('tab-repair', this)" class="tab-btn active-tab px-6 py-3 rounded-lg font-bold text-sm transition-colors">🔧 Repair Services</button>
+        <button onclick="showTab('tab-replace', this)" class="tab-btn inactive-tab px-6 py-3 rounded-lg font-bold text-sm transition-colors">🏠 Replacement Services</button>
+        <button onclick="showTab('tab-inspect', this)" class="tab-btn inactive-tab px-6 py-3 rounded-lg font-bold text-sm transition-colors">🔍 Inspection & Support</button>
       </div>
 
-      <!-- Tab Panels -->
-      <div id="tab-replacement" class="tab-panel">
+      <!-- Tab 1: Repair -->
+      <div id="tab-repair" class="tab-panel">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="bg-white rounded-xl shadow-md p-6 flex flex-col">
-            <div class="text-4xl mb-4">🏠</div>
-            <h3 class="font-display text-xl font-bold text-[#1a3a5c] mb-2">Full Roof Replacement</h3>
-            <p class="text-gray-600 text-sm flex-1 mb-4">Complete tear-off and replacement with premium shingles. We handle everything from start to finish with daily photo updates.</p>
-            <a href="tel:4706136961" class="bg-[#1a3a5c] text-white text-center font-bold py-2 px-4 rounded-lg hover:bg-[#c8960c] transition text-sm">Call Now</a>
+            <div class="text-4xl mb-3">🔧</div>
+            <h3 class="text-xl font-bold text-[#1a3a5c] mb-2">Leak Repair</h3>
+            <p class="text-gray-600 text-sm mb-4 flex-grow">Fast, reliable repair of roof leaks caused by damaged shingles, vent pipes, flashing, or dryer vents. We stop the problem at the source.</p>
+            <a href="tel:4706136961" class="bg-[#1a3a5c] text-white text-center font-bold px-4 py-3 rounded-lg hover:bg-[#c8952a] transition-colors text-sm">Call Now</a>
           </div>
           <div class="bg-white rounded-xl shadow-md p-6 flex flex-col">
-            <div class="text-4xl mb-4">🏘️</div>
-            <h3 class="font-display text-xl font-bold text-[#1a3a5c] mb-2">Community Roof Projects</h3>
-            <p class="text-gray-600 text-sm flex-1 mb-4">Specialists in large-scale HOA and community projects. We replaced 20 roofs in just 5 days with precision and care.</p>
-            <a href="tel:4706136961" class="bg-[#1a3a5c] text-white text-center font-bold py-2 px-4 rounded-lg hover:bg-[#c8960c] transition text-sm">Call Now</a>
+            <div class="text-4xl mb-3">🪣</div>
+            <h3 class="text-xl font-bold text-[#1a3a5c] mb-2">Flashing Repair</h3>
+            <p class="text-gray-600 text-sm mb-4 flex-grow">Deteriorated or improperly installed flashing is a leading cause of leaks. We reseal and replace flashing around chimneys, vents, and skylights.</p>
+            <a href="tel:4706136961" class="bg-[#1a3a5c] text-white text-center font-bold px-4 py-3 rounded-lg hover:bg-[#c8952a] transition-colors text-sm">Call Now</a>
           </div>
           <div class="bg-white rounded-xl shadow-md p-6 flex flex-col">
-            <div class="text-4xl mb-4">🎨</div>
-            <h3 class="font-display text-xl font-bold text-[#1a3a5c] mb-2">Shingle Color Selection</h3>
-            <p class="text-gray-600 text-sm flex-1 mb-4">Expert guidance on shingle selection to complement your home's style and color scheme with the best available products.</p>
-            <a href="tel:4706136961" class="bg-[#1a3a5c] text-white text-center font-bold py-2 px-4 rounded-lg hover:bg-[#c8960c] transition text-sm">Call Now</a>
+            <div class="text-4xl mb-3">🪟</div>
+            <h3 class="text-xl font-bold text-[#1a3a5c] mb-2">Shingle Replacement</h3>
+            <p class="text-gray-600 text-sm mb-4 flex-grow">Missing or damaged shingles leave your home exposed. We match existing shingle colors and install replacements quickly and correctly.</p>
+            <a href="tel:4706136961" class="bg-[#1a3a5c] text-white text-center font-bold px-4 py-3 rounded-lg hover:bg-[#c8952a] transition-colors text-sm">Call Now</a>
           </div>
         </div>
       </div>
 
-      <div id="tab-repair" class="tab-panel hidden">
+      <!-- Tab 2: Replacement -->
+      <div id="tab-replace" class="tab-panel hidden">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="bg-white rounded-xl shadow-md p-6 flex flex-col">
-            <div class="text-4xl mb-4">💧</div>
-            <h3 class="font-display text-xl font-bold text-[#1a3a5c] mb-2">Leak Repair</h3>
-            <p class="text-gray-600 text-sm flex-1 mb-4">Fast, thorough leak detection and repair around vent pipes, dryer vents, and flashing. Most repairs completed in under 2 hours.</p>
-            <a href="tel:4706136961" class="bg-[#1a3a5c] text-white text-center font-bold py-2 px-4 rounded-lg hover:bg-[#c8960c] transition text-sm">Call Now</a>
+            <div class="text-4xl mb-3">🏠</div>
+            <h3 class="text-xl font-bold text-[#1a3a5c] mb-2">Full Roof Replacement</h3>
+            <p class="text-gray-600 text-sm mb-4 flex-grow">Complete removal and replacement of your existing roof. We offer a wide selection of quality shingles and provide detailed product and warranty information.</p>
+            <a href="tel:4706136961" class="bg-[#1a3a5c] text-white text-center font-bold px-4 py-3 rounded-lg hover:bg-[#c8952a] transition-colors text-sm">Call Now</a>
           </div>
           <div class="bg-white rounded-xl shadow-md p-6 flex flex-col">
-            <div class="text-4xl mb-4">🔧</div>
-            <h3 class="font-display text-xl font-bold text-[#1a3a5c] mb-2">Emergency Repairs</h3>
-            <p class="text-gray-600 text-sm flex-1 mb-4">Available Monday through Saturday around the clock. Rapid response for storm damage, missing shingles, and urgent issues.</p>
-            <a href="tel:4706136961" class="bg-[#1a3a5c] text-white text-center font-bold py-2 px-4 rounded-lg hover:bg-[#c8960c] transition text-sm">Call Now</a>
+            <div class="text-4xl mb-3">🏘️</div>
+            <h3 class="text-xl font-bold text-[#1a3a5c] mb-2">Community Roof Replacement</h3>
+            <p class="text-gray-600 text-sm mb-4 flex-grow">We specialize in large-scale replacements for HOAs, apartment complexes, and communities. We replaced 20 roofs in just 5 days for one client!</p>
+            <a href="tel:4706136961" class="bg-[#1a3a5c] text-white text-center font-bold px-4 py-3 rounded-lg hover:bg-[#c8952a] transition-colors text-sm">Call Now</a>
           </div>
           <div class="bg-white rounded-xl shadow-md p-6 flex flex-col">
-            <div class="text-4xl mb-4">🌩️</div>
-            <h3 class="font-display text-xl font-bold text-[#1a3a5c] mb-2">Storm Damage Repair</h3>
-            <p class="text-gray-600 text-sm flex-1 mb-4">Comprehensive storm damage assessment and repair. Our team documents all damage thoroughly for your insurance claim.</p>
-            <a href="tel:4706136961" class="bg-[#1a3a5c] text-white text-center font-bold py-2 px-4 rounded-lg hover:bg-[#c8960c] transition text-sm">Call Now</a>
+            <div class="text-4xl mb-3">🎨</div>
+            <h3 class="text-xl font-bold text-[#1a3a5c] mb-2">Shingle Color Consultation</h3>
+            <p class="text-gray-600 text-sm mb-4 flex-grow">Our specialists help you choose the perfect shingle color to complement your home's exterior. Enhance curb appeal with the ideal aesthetic match.</p>
+            <a href="tel:4706136961" class="bg-[#1a3a5c] text-white text-center font-bold px-4 py-3 rounded-lg hover:bg-[#c8952a] transition-colors text-sm">Call Now</a>
           </div>
         </div>
       </div>
 
-      <div id="tab-inspection" class="tab-panel hidden">
+      <!-- Tab 3: Inspection & Support -->
+      <div id="tab-inspect" class="tab-panel hidden">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="bg-white rounded-xl shadow-md p-6 flex flex-col">
-            <div class="text-4xl mb-4">🔍</div>
-            <h3 class="font-display text-xl font-bold text-[#1a3a5c] mb-2">Roof Inspections</h3>
-            <p class="text-gray-600 text-sm flex-1 mb-4">Thorough roof inspections with detailed photo documentation of all damage and wear areas. Honest, clear reports provided.</p>
-            <a href="tel:4706136961" class="bg-[#1a3a5c] text-white text-center font-bold py-2 px-4 rounded-lg hover:bg-[#c8960c] transition text-sm">Call Now</a>
+            <div class="text-4xl mb-3">🔍</div>
+            <h3 class="text-xl font-bold text-[#1a3a5c] mb-2">Free Roof Inspection</h3>
+            <p class="text-gray-600 text-sm mb-4 flex-grow">Comprehensive roof inspections with detailed photo documentation of any damage. We help you understand exactly what's happening with your roof.</p>
+            <a href="tel:4706136961" class="bg-[#1a3a5c] text-white text-center font-bold px-4 py-3 rounded-lg hover:bg-[#c8952a] transition-colors text-sm">Call Now</a>
           </div>
           <div class="bg-white rounded-xl shadow-md p-6 flex flex-col">
-            <div class="text-4xl mb-4">📋</div>
-            <h3 class="font-display text-xl font-bold text-[#1a3a5c] mb-2">Insurance Claim Assistance</h3>
-            <p class="text-gray-600 text-sm flex-1 mb-4">We work directly with adjusters and guide you through the entire claims process to maximize your coverage and protect your interests.</p>
-            <a href="tel:4706136961" class="bg-[#1a3a5c] text-white text-center font-bold py-2 px-4 rounded-lg hover:bg-[#c8960c] transition text-sm">Call Now</a>
+            <div class="text-4xl mb-3">📋</div>
+            <h3 class="text-xl font-bold text-[#1a3a5c] mb-2">Insurance Claim Assistance</h3>
+            <p class="text-gray-600 text-sm mb-4 flex-grow">Our specialists work directly with your insurance adjusters to ensure your claim is handled fairly. We advocate for your best interests throughout the process.</p>
+            <a href="tel:4706136961" class="bg-[#1a3a5c] text-white text-center font-bold px-4 py-3 rounded-lg hover:bg-[#c8952a] transition-colors text-sm">Call Now</a>
           </div>
           <div class="bg-white rounded-xl shadow-md p-6 flex flex-col">
-            <div class="text-4xl mb-4">📝</div>
-            <h3 class="font-display text-xl font-bold text-[#1a3a5c] mb-2">Free Estimates</h3>
-            <p class="text-gray-600 text-sm flex-1 mb-4">No-pressure, detailed estimates with full product and warranty explanations. We help you understand every option available to you.</p>
-            <a href="tel:4706136961" class="bg-[#1a3a5c] text-white text-center font-bold py-2 px-4 rounded-lg hover:bg-[#c8960c] transition text-sm">Call Now</a>
+            <div class="text-4xl mb-3">🛡️</div>
+            <h3 class="text-xl font-bold text-[#1a3a5c] mb-2">Warranty & Follow-Up</h3>
+            <p class="text-gray-600 text-sm mb-4 flex-grow">We stand behind every job with solid product warranties and thorough follow-up. Our relationship with clients doesn't end when the crew leaves.</p>
+            <a href="tel:4706136961" class="bg-[#1a3a5c] text-white text-center font-bold px-4 py-3 rounded-lg hover:bg-[#c8952a] transition-colors text-sm">Call Now</a>
           </div>
         </div>
       </div>
@@ -222,11 +232,12 @@
   <!-- GALLERY -->
   <section id="gallery" class="py-16 animate-section">
     <div class="max-w-6xl mx-auto px-6">
-      <p class="text-[#c8960c] font-semibold uppercase tracking-widest text-sm mb-3 text-center">Our Work</p>
-      <h2 class="font-display text-4xl font-bold text-[#1a3a5c] mb-4 text-center">Project Gallery</h2>
-      <p class="text-gray-500 text-center mb-10 max-w-xl mx-auto">Real results from real projects. We document every job with photos so you can see the quality of our work.</p>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHW_hkBucLKAhFz8TWNe9jiyIDcXkzjtiYbQ-u-89UZhzLwqsA7RwjwJUaGvC7YhwpPp7khgSZ_DlQwmRzBhfKoapuvYTlOPWOmOi0pGh8jfGqK11HlyUpWb29A0OzSRv3tfDhUTN_nE3DSI7EEzbk1AS21qST5hK8cxIgpA71WQt2FFdZDldWpQm3mnq4fOAaEjnQ8QCkr5S_qDVftbOU6tN5ReHLDcx-egaxBFd1MbFzdI3i3k_toI4y29p-pmuJyNMQsTurPXzFSA1Q1I--4irWhdLCm0H9qf9i4NZVmtw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing Project 1" class="h-64 w-full object-cover rounded-xl shadow cursor-pointer hover:opacity-90 transition" onerror="this.src='https://picsum.photos/seed/roofing-project1/800/600'">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFtn5QTMKxGuNQseNNmzSaDLJIP39Kr6je4M5tKUuRF-wVs7FdLrpetEWRz_vEaYJP6dsTraJ1YfkuyIgGdpqJt-izD5vg_1JMOGQXomHrDlZl9BTSJYhUzKKma30pYUj_xThI2-gjh6BnxmpCAiQBGadNCBZOrh7rbcBubd3uEb4ZCtVCiHxPlkDq-m_K9Pu0iSleWcnY4AQKTW_5Dw-_bqr2rixBlGHk9fQlzzu947wtMAaNWociRoaa8Z10Fk0Ttox8uAx7778X4ckUun3V9FQ-at-AOakgBOzOHlWSVfw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing Project 2" class="h-64 w-full object-cover rounded-xl shadow cursor-pointer hover:opacity-90 transition" onerror="this.src='https://picsum.photos/seed/roofing-project2/800/600'">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGS0beWJN7ZOKEcKX-BdUnd2wslMHYc4dq10EzNC9nTxq6CO959VhJ-H0bjG4Y-60Cne833CWeKD84dFTHtPvSXEAvSQNST4lgaiRFKcJiGU6aQz3-WW9E0GWwIXpkuskxFC9rBzDErNyzjDgN0OqJnXruBE4I7naikqIuE-Z8vP8TGGfpm_VFQ_9iKFKKptGzyasldB5b73Et68JnAt8LYtDz0AKLkwO93RrIzOdpnWDCJLcPaGA0acjHZF4pS8FVjUAGbX-76gS5nXks2lFxC1Bx0fbtXupaxjuXqWg6C12aScKfyAq38TMcN4do5jr9baiXvGj4x5tS561LNdChsAKry2N99pbZGBDXrR7CAY4X_hOrIC-aTRvl8WFfS_Lfs-gOd5s24F5aLJT3gkztfs7MC7OeAMwgnb5IF-aIGnOXJOBeuamE0T8s16zj3&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing Project 3" class="h-64 w-full object-cover rounded-xl shadow cursor-pointer hover:opacity-90 transition" onerror="this.src='https://picsum.photos/seed/roofing-project3/800/600'">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEF_thgByO-A43v7oAuRsVj5dYSHpv0W8ErY6wDl6afjMg80uzZGkX0FztSYm8o667QJ2_Yqxk64JgM0EqVbN0-uQU8-DPOWLyWHdQvx5ZMoFSQXUzJvxD-OU_wtPgjgCmWzjqLyssTslj9P7Jy36sCkSJ28e-m2YiCBwXXkui7J0SZpZSk94g0K9tjX_TfIgnSx
+      <div class="text-center mb-10">
+        <h2 class="text-4xl font-bold text-[#1a3a5c] mb-3">Our Work</h2>
+        <p class="text-gray-600 text-lg">See the quality and craftsmanship we deliver on every project.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFwxPdjhBca1BGij4SG7MYJD7X0Ou8JZEHgoAKlxst66nOFsTB3JCaOiIIXQ_-AkR7-1xMO7n0BjBRkvcUfTDFIIE_PyVKYdgw8fqpghavB5DkbUx3dO2XWJCq7EQ_lzIGYgGgG0an4lYE1B-JV8MoxFsOjuehEUv-EpzvqfJ2zQ2ri9rI4gd_h9grD9GPD_Yns7HPya0RAPm7RGO8yELfukwq5462OtbZM3ZNZPfFicHXXk1m_shmu4xkAVrhCDQ7NuC4JBd5DdBE-3WaoyhRYrQ5KvrGVGL-WKxK-JUqluQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing project 1" class="h-64 w-full object-cover rounded-xl shadow cursor-pointer hover:opacity-90 transition-opacity" onerror="this.src='https://picsum.photos/seed/roofing-job1/800/600'">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEF5sC0bygqd-rDwjsaOisRFkq4oBZ251LogHsopGgdkDkGmqKX-eOo3LpnYl8v09sxsB3Pn0W2BWckjMrYv6U2sWHIt3Q8TEJVjRD7h00IYx1GyAodpynKJ3AQQgLsCZjkCDROIOGyTgihWasQzBoWNgXRS6r7mCAAWITtEDR0vOrwY_6NnNqhZmhIedWnYB5MdgIWXk-KoyDTQdVaZVblFC-Whcvo47zZ6EPJejtGJcMxq7D0neFZ8DLlclQk3BGA-ZIq2g8NzgEz3Hv4IbaoSPyoiIrcYvtv4ot1VFDCajw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing project 2" class="h-64 w-full object-cover rounded-xl shadow cursor-pointer hover:opacity-90 transition-opacity" onerror="this.src='https://picsum.photos/seed/roofing-job2/800/600'">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEElVBFs6_aZfloPBm13WVIbHyj-KmmG4YXWH0ZZf9BR5ns8TVoaoi_gfomsRLyfbi_9CIOwcN8WHHRS8WEZJnUEtP-c4rVvuowGNluxSjS1GpELhfi_xqWejKjnX-PJv8c33Hx-NEEQcC7rsn_YUzrUCPswuTWbKHNCXhcGFHda559zClZhcalusAgo5OaYvLszttFY55ViIOI3KOHfZ2pMxpKkTCAjT4XdmWwR-9Hc3-O73r16dJ6YM3iTh_tNcnA_5jW7vhmGKnalJKe28zjYGKt7zQ3UDi2rJYryegonnnF6xZOT004c22I59RgEFCcsI7fN_O_5Y4PYOd3ZZ5S0RLsJLekZarBcLjw214b6XFqpIraq3qEhmQQjNkfPmFRY2mRKDkOwgVlp7XzgTpkhNFaSKgHjhBnAL0mzgZIhlWuL1ahc4L1UwcTReT8T&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing project 3" class="h-64 w-full object-cover rounded-xl shadow cursor-pointer hover:opacity-90 transition-opacity" onerror="this.src='https://picsum.photos/seed/roofing-job3/800/600'">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHXbBrkmUcGZOtFopm1Cm-RFQywSfnEAR6KjOxbwOLUU4Ws6CG37fFSB3OJzpjevyf-JhxDK7N1QcLTdupPDtaaJVmEebKE-mMpboHruUH8smjngisKRgycC-Ago78fO1mr9-M4njFCETUq86xlM-NSUGnBhLMBF1qe8tz6XUQV-sXtwOY83bJfnv8jyWN23cTEsCTRyGS-Fpy-APuTNB8QwG8BE41JNLUH-SElsALRsW1Wgf3cSyuVIim61dmH5--PzIUKVrnxldJaKLLizAV9K7RD

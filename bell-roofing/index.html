@@ -3,240 +3,261 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bell Roofing – Atlanta's Trusted Roofing Contractor</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Bell Roofing | Atlanta's Trusted Roofing Contractor</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-  * { font-family: 'Source Sans Pro', sans-serif; }
-  h1,h2,h3,h4,h5,h6,.font-display { font-family: 'Oswald', sans-serif; }
-  :root { --primary: #880e4f; --secondary: #ffd600; }
-  html { scroll-behavior: smooth; }
-  .active-tab { background-color: #880e4f; color: #fff; border-color: #880e4f; }
-  .inactive-tab { background-color: transparent; color: #880e4f; border-color: #880e4f; }
-  .service-card { background-color: rgba(136,14,79,0.08); }
-  .review-card { background-color: rgba(136,14,79,0.08); }
+  * { font-family: 'Source Sans 3', sans-serif; }
+  h1, h2, h3, .font-display { font-family: 'Oswald', sans-serif; }
+  body { background-color: #030712; color: #f9fafb; }
+  .active-tab { background-color: #01579b; color: #ffffff; border-color: #01579b; }
+  .inactive-tab { background-color: transparent; color: #9ca3af; border-color: #374151; }
+  .hero-clip { clip-path: polygon(0 0, 100% 0, 100% 88%, 60% 100%, 0 100%); }
   details summary::-webkit-details-marker { display: none; }
-  details[open] summary .chevron { transform: rotate(180deg); }
-  .chevron { transition: transform 0.3s; }
-  nav.scrolled { background-color: #fff !important; box-shadow: 0 2px 20px rgba(0,0,0,0.1); }
-  nav.scrolled a { color: #1a1a1a !important; }
-  nav.scrolled .nav-logo { color: #880e4f !important; }
-  nav.scrolled .nav-phone { color: #880e4f !important; }
-  nav.scrolled .hamburger-btn { color: #1a1a1a !important; }
+  details[open] summary .faq-arrow { transform: rotate(180deg); }
+  .faq-arrow { transition: transform 0.3s ease; }
+  .glow-btn { box-shadow: 0 0 20px rgba(255,111,0,0.4); }
+  .primary-shadow { box-shadow: 0 0 30px rgba(1,87,155,0.5); }
 </style>
 <script>
   tailwind.config = {
     theme: {
       extend: {
         colors: {
-          primary: '#880e4f',
-          secondary: '#ffd600',
+          primary: '#01579b',
+          secondary: '#ff6f00',
         }
       }
     }
   }
 </script>
 </head>
-<body class="bg-white text-gray-900 overflow-x-hidden">
+<body class="bg-gray-950 text-white overflow-x-hidden">
 
 <!-- NAV -->
-<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background:transparent;">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20">
-      <a href="#" class="nav-logo font-display text-3xl font-bold text-white tracking-wide">BELL <span style="color:#ffd600;">ROOFING</span></a>
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#about" class="text-white font-semibold hover:text-yellow-400 transition-colors uppercase tracking-wide text-sm">About</a>
-        <a href="#services" class="text-white font-semibold hover:text-yellow-400 transition-colors uppercase tracking-wide text-sm">Services</a>
-        <a href="#gallery" class="text-white font-semibold hover:text-yellow-400 transition-colors uppercase tracking-wide text-sm">Gallery</a>
-        <a href="#reviews" class="text-white font-semibold hover:text-yellow-400 transition-colors uppercase tracking-wide text-sm">Reviews</a>
-        <a href="#contact" class="text-white font-semibold hover:text-yellow-400 transition-colors uppercase tracking-wide text-sm">Contact</a>
-        <a href="tel:4048747663" class="nav-phone text-white font-black text-lg hover:text-yellow-400 transition-colors">(404) 874-7663</a>
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-gray-950 transition-shadow duration-300">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+        <i data-lucide="home" class="w-5 h-5 text-white"></i>
       </div>
-      <button id="hamburger" class="hamburger-btn md:hidden text-white" aria-label="Toggle menu">
-        <i data-lucide="menu" class="w-7 h-7"></i>
-      </button>
+      <span class="font-display text-2xl font-bold text-white tracking-wide">BELL <span class="text-secondary">ROOFING</span></span>
     </div>
+    <div class="hidden md:flex items-center gap-10">
+      <a href="#about" class="text-gray-300 hover:text-white transition-colors tracking-wide uppercase text-sm font-semibold">About</a>
+      <a href="#services" class="text-gray-300 hover:text-white transition-colors tracking-wide uppercase text-sm font-semibold">Services</a>
+      <a href="#reviews" class="text-gray-300 hover:text-white transition-colors tracking-wide uppercase text-sm font-semibold">Reviews</a>
+      <a href="#gallery" class="text-gray-300 hover:text-white transition-colors tracking-wide uppercase text-sm font-semibold">Gallery</a>
+      <a href="#contact" class="text-gray-300 hover:text-white transition-colors tracking-wide uppercase text-sm font-semibold">Contact</a>
+      <a href="tel:4048747663" class="text-secondary font-bold text-lg tracking-wide">(404) 874-7663</a>
+    </div>
+    <button id="hamburger" class="md:hidden text-white p-2">
+      <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
   </div>
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-white border-t-4 border-primary px-4 pb-6 pt-4">
-    <div class="flex flex-col gap-4">
-      <a href="#about" class="text-gray-900 font-semibold uppercase tracking-wide text-sm border-b border-gray-100 pb-3 hover:text-primary">About</a>
-      <a href="#services" class="text-gray-900 font-semibold uppercase tracking-wide text-sm border-b border-gray-100 pb-3 hover:text-primary">Services</a>
-      <a href="#gallery" class="text-gray-900 font-semibold uppercase tracking-wide text-sm border-b border-gray-100 pb-3 hover:text-primary">Gallery</a>
-      <a href="#reviews" class="text-gray-900 font-semibold uppercase tracking-wide text-sm border-b border-gray-100 pb-3 hover:text-primary">Reviews</a>
-      <a href="#contact" class="text-gray-900 font-semibold uppercase tracking-wide text-sm border-b border-gray-100 pb-3 hover:text-primary">Contact</a>
-      <a href="tel:4048747663" class="text-primary font-black text-xl hover:text-pink-800">(404) 874-7663</a>
-    </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-800 px-6 py-4 flex flex-col gap-4">
+    <a href="#about" class="text-gray-300 hover:text-white transition-colors uppercase text-sm font-semibold tracking-wide">About</a>
+    <a href="#services" class="text-gray-300 hover:text-white transition-colors uppercase text-sm font-semibold tracking-wide">Services</a>
+    <a href="#reviews" class="text-gray-300 hover:text-white transition-colors uppercase text-sm font-semibold tracking-wide">Reviews</a>
+    <a href="#gallery" class="text-gray-300 hover:text-white transition-colors uppercase text-sm font-semibold tracking-wide">Gallery</a>
+    <a href="#contact" class="text-gray-300 hover:text-white transition-colors uppercase text-sm font-semibold tracking-wide">Contact</a>
+    <a href="tel:4048747663" class="text-secondary font-bold text-lg">(404) 874-7663</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<section id="hero" style="background: linear-gradient(135deg, #880e4f 0%, #4a0728 60%, #1a0010 100%);" class="min-h-screen flex flex-col items-center justify-center pt-20 pb-16 px-4">
-  <div class="max-w-5xl mx-auto text-center">
-    <div class="inline-flex items-center gap-2 bg-yellow-400 text-gray-900 px-4 py-2 font-bold uppercase tracking-widest text-sm mb-6">
-      <i data-lucide="star" class="w-4 h-4 fill-gray-900"></i>
-      4.8 Stars — 481 Reviews
+<section class="relative bg-gray-950 hero-clip pt-28 pb-40 overflow-hidden min-h-screen flex items-center">
+  <div class="absolute inset-0 bg-gradient-to-br from-primary/20 via-gray-950 to-gray-950 pointer-events-none"></div>
+  <div class="absolute top-0 right-0 w-1/2 h-full bg-primary/5 pointer-events-none"></div>
+  <div class="max-w-7xl mx-auto px-6 w-full">
+    <div class="flex flex-col lg:flex-row items-center gap-12">
+      <div class="flex-1 lg:w-[60%] z-10">
+        <div class="flex items-center gap-2 mb-6">
+          <div class="flex items-center gap-1">
+            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+          </div>
+          <span class="text-gray-300 text-sm font-semibold">4.8 Stars · 481 Reviews</span>
+        </div>
+        <h1 class="text-6xl lg:text-8xl font-black font-display text-white leading-none mb-6 tracking-tight">
+          ATLANTA'S<br><span class="text-secondary">TRUSTED</span><br>ROOFERS
+        </h1>
+        <p class="text-gray-300 text-xl max-w-lg mb-10 leading-relaxed">From roof inspections to full replacements, Bell Roofing delivers quality craftsmanship and transparent communication every step of the way.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="tel:4048747663" class="rounded-full px-10 py-4 font-bold text-lg bg-secondary text-white glow-btn hover:bg-orange-600 transition-all duration-300 inline-flex items-center gap-2">
+            <i data-lucide="phone" class="w-5 h-5"></i>
+            Call Now
+          </a>
+          <a href="#contact" class="rounded-full px-10 py-4 font-bold text-lg border-2 border-primary text-white hover:bg-primary transition-all duration-300 inline-flex items-center gap-2">
+            <i data-lucide="clipboard-list" class="w-5 h-5"></i>
+            Free Estimate
+          </a>
+        </div>
+      </div>
+      <div class="lg:w-[42%] relative z-10">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEF0FOSV3-63S7bwAKD_lG6cY9Cnm3HQRvgLvRAAKGkOVGlfMl-Wbm1I2tGwiCTpvIeT-jM6pf5U9PjSE_FYlcy8f1d1AXvQ_uLOV_ghHbaJZN6fnXSkL8NicLFNTKJPO4QtMExtgxoQviidXyPsuyD6uuChvf2iyUFt42y3VvNyk594GhndTfw-7alvO_cetly-wkV34ch10NcBi3e0OsbM2EwZ1CSPeLtpuRVM5Yxe2U5HpGZBPSBnMFAu_Ikh9e2ba9-NyxgndWQ1P6aI4n2YrZbqk7k1K6YQLSdqdacqIUE_a9LvZjaYVwwwlMxf6mcVm5deVIiiOJCTg5qkdxu0JAsEtiZM0O4JY7-XlXFGED_p1ZnN4XrSt3P-I_18x5nEBAm9MIP2SYZ2nD2LVlGtX5BROshrcmv_Ubte6TQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Bell Roofing Work"
+          loading="eager"
+          class="rounded-none shadow-xl border-4 border-white w-full object-cover h-96 lg:h-[500px] primary-shadow"
+          onerror="this.onerror=null;this.src='https://picsum.photos/seed/roofing-hero/800/600';"
+        >
+        <div class="absolute -bottom-6 -left-6 bg-primary border-2 border-white rounded-xl p-4 text-center">
+          <div class="font-display text-3xl font-bold text-white">20+</div>
+          <div class="text-gray-200 text-xs font-semibold uppercase tracking-wide">Years Experience</div>
+        </div>
+      </div>
     </div>
-    <h1 class="font-display text-5xl lg:text-7xl font-bold text-white leading-tight mb-6 uppercase tracking-tight">
-      Atlanta's Premier<br><span style="color:#ffd600;">Roofing Experts</span>
-    </h1>
-    <p class="text-xl text-pink-100 max-w-2xl mx-auto mb-10 leading-relaxed">
-      Trusted roofing contractor serving Atlanta with expert installation, repair, and replacement. Quality work, honest pricing, outstanding communication.
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-14">
-      <a href="tel:4048747663" class="rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 bg-yellow-400 text-gray-900 border-yellow-400 hover:bg-yellow-300 transition-colors inline-flex items-center gap-2 justify-center">
-        <i data-lucide="phone" class="w-5 h-5"></i>
-        Call (404) 874-7663
-      </a>
-      <a href="#contact" class="rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 bg-transparent text-white border-white hover:bg-white hover:text-primary transition-colors inline-flex items-center gap-2 justify-center">
-        <i data-lucide="clipboard-list" class="w-5 h-5"></i>
-        Free Estimate
-      </a>
-    </div>
-    <div class="max-w-3xl mx-auto">
-      <img
-        src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFSbnHMOrHFjKcWkn_LxTxLzjSB-C3QmA3DZ0FSR5fkyxHeFz0hAfhUaQImeKKoMr0dwI3Iwf1x1Kl1SRh6UbtMuSKjAVODqd9P-sCjpJ_xrNSoLRgNutGNMriSLnxh3uWnxujLFTVIDg6L16nmgI5DhnJmlgmKwEoo3Dp2sayb833b0i7hzui-aKj_piD4e1cvTBn2rZB_MU2MNi-P-QN6KCRToZiqqSqRN0_O04uQ7oM4rcNqq_55htQ3P-CUI9C0YvGtnYXjUpS1GJeiBFC2CTU4sJ6hlUvCQ1jjsO-6Xvzdi6AzTScy7dgc7ccI4SZzvtQPIn3zUZtS2qF5z3A5KodxdPHE0aQlZ3xq4t9n9sEKEmosdPSCGdZeuLnOl3RPZn0TYP64k2IpkEjOqcsL4rKe_IkWyD9LFoFBgUQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-        alt="Bell Roofing – Quality Roofing Work"
-        loading="eager"
-        class="rounded-2xl shadow-2xl w-full h-80 object-cover"
-        onerror="this.onerror=null;this.src='https://picsum.photos/seed/bellroofing-hero/800/600';"
-      >
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats" class="bg-gray-900 py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-gray-950 border-2 border-primary rounded-xl p-8 text-center">
+        <i data-lucide="star" class="w-8 h-8 text-secondary mx-auto mb-3 fill-secondary"></i>
+        <div class="font-display text-5xl font-bold text-white mb-2">4.8</div>
+        <div class="text-gray-400 text-sm font-semibold uppercase tracking-wider">Star Rating</div>
+      </div>
+      <div class="bg-gray-950 border-2 border-primary rounded-xl p-8 text-center">
+        <i data-lucide="users" class="w-8 h-8 text-secondary mx-auto mb-3"></i>
+        <div class="font-display text-5xl font-bold text-white mb-2">481</div>
+        <div class="text-gray-400 text-sm font-semibold uppercase tracking-wider">Happy Clients</div>
+      </div>
+      <div class="bg-gray-950 border-2 border-primary rounded-xl p-8 text-center">
+        <i data-lucide="shield-check" class="w-8 h-8 text-secondary mx-auto mb-3"></i>
+        <div class="font-display text-5xl font-bold text-white mb-2">100%</div>
+        <div class="text-gray-400 text-sm font-semibold uppercase tracking-wider">Satisfaction</div>
+      </div>
+      <div class="bg-gray-950 border-2 border-primary rounded-xl p-8 text-center">
+        <i data-lucide="clock" class="w-8 h-8 text-secondary mx-auto mb-3"></i>
+        <div class="font-display text-5xl font-bold text-white mb-2">20+</div>
+        <div class="text-gray-400 text-sm font-semibold uppercase tracking-wider">Years Serving Atlanta</div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="py-24 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
-      <div>
-        <div class="w-16 h-2 mb-6" style="background:#880e4f;"></div>
-        <h2 class="font-display text-5xl lg:text-7xl font-bold text-gray-900 uppercase leading-tight mb-6">
-          About<br><span style="color:#880e4f;">Bell Roofing</span>
-        </h2>
-        <p class="text-lg text-gray-700 leading-relaxed mb-6">
-          Bell Roofing is Atlanta's trusted roofing contractor, known for thorough evaluations, transparent communication, and competitive pricing. We've built our reputation one roof at a time — through honest work, skilled craftsmanship, and putting customers first.
-        </p>
-        <p class="text-lg text-gray-700 leading-relaxed mb-8">
-          From full roof replacements to targeted repairs on flat and pitched roofs, we handle every job with care and professionalism. Our customers keep coming back — and that says everything about how we do business.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <div class="flex items-center gap-3 service-card px-5 py-4">
-            <i data-lucide="shield-check" class="w-6 h-6 text-primary flex-shrink-0" style="color:#880e4f;"></i>
-            <span class="font-bold uppercase tracking-wide text-sm">Licensed & Insured</span>
-          </div>
-          <div class="flex items-center gap-3 service-card px-5 py-4">
-            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400 flex-shrink-0"></i>
-            <span class="font-bold uppercase tracking-wide text-sm">4.8 Star Rating</span>
-          </div>
-          <div class="flex items-center gap-3 service-card px-5 py-4">
-            <i data-lucide="users" class="w-6 h-6 flex-shrink-0" style="color:#880e4f;"></i>
-            <span class="font-bold uppercase tracking-wide text-sm">481 Happy Clients</span>
-          </div>
+<section id="about" class="bg-gray-950 py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col lg:flex-row gap-16 items-center">
+      <div class="lg:w-1/2">
+        <div class="grid grid-cols-2 gap-4">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEG09cNyq8FaFot79mkTw1aGoNIOS8EaGA4Z4lIZgkJcEwLiqdn1bK7WWnbm9yW8r5_jMYuuFjo1V0Jwpzaorl2H20r-A4GnID8aaCONWJYOxE05Eup0u5i0uY2LrYTKay0pDdrsNB4YKW1oTViC4uVmvy1wWmyg3PcE2--AeRfCWVbWA742VcSG4zV-WnFUb_7kXO9Qj3SBzrGtQos6U1R6gDG2m-5jd5Rz9A6g9uiRmSjyPnzQJ19rRDhGD1EUO_DaoPJv31Fz5I8U-1v5H1L6qKm16gd8Fjua8_4QE2FiaXLqgjTOtq4kKxpnKCbSqUalqdOumJpzR4qif3F9Bk-rxpYQpxaHgS2MMt2cyaYYGJm7Iwx5wRtj3Aui21ipZvRv9yR_CJ_OGxXiqCT6wTTCmdjaEq_WGCFWrzJ6jLovdbNcR8UKWgsMPboDYNfM&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Bell Roofing Project" class="rounded-xl object-cover h-56 w-full col-span-1 primary-shadow" onerror="this.onerror=null;this.src='https://picsum.photos/seed/roofing-about1/400/300';">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEF5dJZNi4pw6oSdeJWa0R5z5onTGxJaMFtqVYyYj6Xjl--aG3FOqfkxQN74ZU9CULMwrd9CMyE0mXcNwuWufQ_P9lH3jVNuyxv23oCFETq7Rm5m3zhfJ3PkCIlLDXbau3bSldi3RPVMfClWYfLip1XbMWByM1biLZ5vaZMnRwzOnHQivosqv31w6i0BMdh3LbuZCa_7WXt-61np9rvgC2CIXJidDFu0JpU5GPIXQhNDWX3Mdaalj2a7F1tmyplVy3ZBdkPTi-ujIvkMO2JgYKf2a-Jl04vt0fm4elAyBPwvnPTc1baJdpIS410XgLgCx7H-pM2Yss15w9ZGQ_rsSH3OmBYCPbixYHMbiqBpQBsRJ2A7rBRbjJEYXc_2KBX_dSqxZJmvnXQhYX3qnxLVYBhmv6_bVzuo_q0WyoxR2azs8tBa&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Bell Roofing Work" class="rounded-xl object-cover h-56 w-full col-span-1 primary-shadow" onerror="this.onerror=null;this.src='https://picsum.photos/seed/roofing-about2/400/300';">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFpXTZ36zKcWlz8Eczi-L5ZMViU6tvyz_0QuRA_0Uwx6csSZbTH7ciBdAKZOlenZeeaju18Uk3-ccIMzovOujH7R83fIzMVeIUjKc9oxZyBuGSFXKVqj0JDWaO7qH3Lq7-R-pWOdJNxRyG8aXrMAyyYirolGQu4nq2F8ZHPvv9jdQ7CR3b0tYrs1NywotHLWBQffcXp6jjyfQMaCl7UhzYftQmT_wbj7KEWbZCBINIdc9IJFUo7TUQLoGdMtcN-wkiFlyb0T6vPx0Aa9YPgohLfl-5jZnJ3mhNkANfV0D4kzjv6aUK6aj8H6lLigUnuJzvKcHC53keUZTMK7ht34ZVNGzmGnlxOFkxcBePK4tF1z5bBmdbp6VH9409ZdEaB7Qx1GuXS9RSGwsO9BcoZ3fksZu2TXfrGVlGXihuAWcCNuA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Bell Roofing Installation" class="rounded-xl object-cover h-56 w-full col-span-2 primary-shadow" onerror="this.onerror=null;this.src='https://picsum.photos/seed/roofing-about3/800/300';">
         </div>
       </div>
-      <div class="grid grid-cols-2 gap-4">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFieiOx2sEFvyAA9tD40IUrVY2v1doMdC0M3Y1L2FSOucNwhLugnEV2IIgAom792aGnvrngbZRwIYzTC2h93OAlfZpow200q880MQmJov2hiw6ChvnzH6S41t5Kub2k00chG27opxv52_cq-GaUWTQChWArIBgO0QscAylon3Dc-hKcuPeXMG46HH4qQpKFeLiz8iJlWA5whYWnxbrgVjBOcpzbjO1NgYsZGuWEJQx11XBPDhEr4Ep6YA2HuKQzsQY9qUV6R2Ctk8n8sNEr8d_Mg6_cVxOqBAVtWDIAWGs0WtIseoh5HcrxEVlEtPSh5niSh_lW2vFH3ACja4BdTx1Z1xBBeYYwn_Sfs0x4hZt0gTbXg2nYYfcm_1e3RJIRz185d9TIP4RuejY06CoTi56y80UoT9JkHfZNyb_C2ZwC1RGGnGjEX5R9pnUs_8wW&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Bell Roofing Work" class="rounded-xl h-48 w-full object-cover border-4 border-primary" onerror="this.onerror=null;this.src='https://picsum.photos/seed/bellroofing-about1/400/300';">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFKBsr-JYA98i2h5st5ikr-NCaNgbMbk0vbUzBcprP9xvZ0yuytCTdRfOH_Fj-lzV0eSuhUvY1yJNNxrSToxOd4TEdiAZGOWMmLulWCDq9Qo0seuGqmdYsq2QmLUhkbBzW1X9JU5SuWRSJfnbWEM0zWFHZho6N5bIRUHfqv7DkIKcMo6m9gTty-MTTni-bAUCg4_Neof-YX1V1PEuDHYjuNwEchw-phy6cMneUwz8EE-gSUpJzyXR9CT_0LxroMtdQD0jS3O7MICkTIVPPosHL4XBomVbshBtnVjCAimJ2iDPLpn1K6HuhS3e2j6004v-bSl2eKFA9_mcZa1K59Jxkw8q_7TbSV-J1nC6EuzS3SZdKpNG5NMMd31itw4qxCthxP7PRVDsWQTk6xKxW6Tg7FLcvMfvi_C47S0y8iqvbJ-nB&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Bell Roofing Work" class="rounded-xl h-48 w-full object-cover mt-8 border-4 border-yellow-400" onerror="this.onerror=null;this.src='https://picsum.photos/seed/bellroofing-about2/400/300';">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEEKAPGgowzifRO91XMbhb4egYWXsFUV0__vpR49kVIEQyRa3czzQOwm6Dn0xo53d73Dr1A2d_yZymVQAwDNb-U6VZ4jMDSRL-Cb-sPf5ZgKOz5bCLYLb-pFoG7_9gT6l7yeLfZPC9yp14UzKhv19gYAGOSQIQV4hRuWOMX2Fl4IDh5rAiKED5Q3k1mV_dfWS_e9pDxoZvwZFGvt5xulMRnGymwpEAMdhd7O8IkJc5RJWhFsUFoJ9Pss1qFc8oT17GeBmu-YkToHtpvdGkxtxnf-Y4JOlgPcOI4Jer_EUZH9HrdwWnrkUMbIRCc-VQSKnUheTLz5Kf0uRvKRallgJiAfiZYaQ5v4uUTZk_riFdU-OhIWPgmv-FNsNOaPphKFLUDqpPbNaGX5AL4qCkuopfyDXlVUB-LaSmzRZGkc_EhABg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Bell Roofing Work" class="rounded-xl h-48 w-full object-cover border-4 border-yellow-400" onerror="this.onerror=null;this.src='https://picsum.photos/seed/bellroofing-about3/400/300';">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEE07S1mpRVbGxyl9Vio9bKaOIzwsAmS7Y4GKekVfyJymTPQ7IsxgCVx1EAr8PeqfgmX5NAx7pAJs8WDgOtBHM8-gJeR0PWRCxFIfyZ4u4hGcB3X4DQmudkTKrFXjPwBRYVu2fQcx_njo0CHtatutkVPSk0qdTmPXY6s0-D1XSHr99zWqSlC-sKCd-tSVIGC8xYSB0pSdjhfbcktFa_XL6qmDIECK1Ke306c5LhsBr1Xy8DRIk5mYThVtU0N34L7A2K2TpDEeHWGy1Aqnz3ElBwc093J5doKehPprrQkbqMfvg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Bell Roofing Work" class="rounded-xl h-48 w-full object-cover mt-8 border-4 border-primary" onerror="this.onerror=null;this.src='https://picsum.photos/seed/bellroofing-about4/400/300';">
+      <div class="lg:w-1/2">
+        <div class="inline-block bg-primary/20 border border-primary/40 rounded-full px-4 py-1 text-primary text-sm font-semibold uppercase tracking-widest mb-4">About Bell Roofing</div>
+        <h2 class="font-display text-5xl font-bold text-white mb-6 leading-tight">QUALITY YOU CAN COUNT ON. <span class="text-secondary">EVERY TIME.</span></h2>
+        <p class="text-gray-300 text-lg leading-relaxed mb-6">Bell Roofing has been Atlanta's go-to roofing contractor for over two decades. We specialize in residential and commercial roofing with a commitment to honest assessments, transparent pricing, and exceptional workmanship.</p>
+        <p class="text-gray-400 text-lg leading-relaxed mb-8">Whether it's a minor repair or a complete roof replacement, our team takes a thorough approach — evaluating every detail, explaining the process clearly, and delivering results that last.</p>
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <i data-lucide="shield-check" class="w-5 h-5 text-secondary"></i>
+            </div>
+            <span class="text-gray-300 font-semibold">Licensed & Fully Insured Roofing Contractor</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <i data-lucide="search" class="w-5 h-5 text-secondary"></i>
+            </div>
+            <span class="text-gray-300 font-semibold">Free Thorough Roof Inspections & Estimates</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <i data-lucide="users" class="w-5 h-5 text-secondary"></i>
+            </div>
+            <span class="text-gray-300 font-semibold">Consistent 5-Star Service Across All Jobs</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="animate-section py-24" style="background:#f5f5f5;">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="services" class="animate-section bg-gray-900 py-24">
+  <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-14">
-      <div class="w-16 h-2 mx-auto mb-6" style="background:#880e4f;"></div>
-      <h2 class="font-display text-5xl lg:text-7xl font-bold text-gray-900 uppercase">Our <span style="color:#880e4f;">Services</span></h2>
-      <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Expert roofing solutions for every need — residential, commercial, and everything in between.</p>
+      <div class="inline-block bg-primary/20 border border-primary/40 rounded-full px-4 py-1 text-primary text-sm font-semibold uppercase tracking-widest mb-4">Our Services</div>
+      <h2 class="font-display text-5xl lg:text-6xl font-bold text-white">WHAT WE <span class="text-secondary">OFFER</span></h2>
     </div>
     <!-- Tabs -->
-    <div class="flex flex-wrap gap-3 justify-center mb-10">
-      <button onclick="showTab('tab1', this)" class="tab-btn active-tab rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 transition-colors">Roofing</button>
-      <button onclick="showTab('tab2', this)" class="tab-btn inactive-tab rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 transition-colors">Repair & Maintenance</button>
-      <button onclick="showTab('tab3', this)" class="tab-btn inactive-tab rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 transition-colors">Specialty</button>
+    <div class="flex flex-wrap justify-center gap-3 mb-10">
+      <button onclick="showTab('tab1', this)" class="tab-btn active-tab border-2 rounded-full px-8 py-3 font-bold text-sm uppercase tracking-wide transition-all duration-200">Roofing</button>
+      <button onclick="showTab('tab2', this)" class="tab-btn inactive-tab border-2 rounded-full px-8 py-3 font-bold text-sm uppercase tracking-wide transition-all duration-200">Repairs</button>
+      <button onclick="showTab('tab3', this)" class="tab-btn inactive-tab border-2 rounded-full px-8 py-3 font-bold text-sm uppercase tracking-wide transition-all duration-200">Specialty</button>
     </div>
 
-    <!-- Tab 1 -->
-    <div id="tab1" class="tab-panel">
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="service-card rounded-xl p-8 border-l-4 border-primary">
-          <i data-lucide="home" class="w-10 h-10 mb-4" style="color:#880e4f;"></i>
-          <h3 class="font-display text-2xl font-bold uppercase mb-2">Roof Replacement</h3>
-          <p class="text-gray-600 leading-relaxed mb-6">Complete residential and commercial roof replacement with quality materials and expert installation.</p>
-          <a href="tel:4048747663" class="rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 inline-block bg-primary text-white border-primary hover:bg-pink-900 transition-colors" style="background:#880e4f;">Call Now</a>
+    <div id="tab1" class="tab-panel grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-gray-950 border-2 border-primary rounded-xl p-8 flex flex-col gap-4 hover:border-secondary transition-colors duration-300">
+        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+          <i data-lucide="home" class="w-6 h-6 text-secondary"></i>
         </div>
-        <div class="service-card rounded-xl p-8 border-l-4 border-primary">
-          <i data-lucide="hammer" class="w-10 h-10 mb-4" style="color:#880e4f;"></i>
-          <h3 class="font-display text-2xl font-bold uppercase mb-2">Shingle Roofing</h3>
-          <p class="text-gray-600 leading-relaxed mb-6">Premium asphalt shingle installation for lasting protection and curb appeal for your home.</p>
-          <a href="tel:4048747663" class="rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 inline-block bg-primary text-white border-primary hover:bg-pink-900 transition-colors" style="background:#880e4f;">Call Now</a>
+        <h3 class="font-display text-2xl font-bold text-white">Roof Replacement</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Complete residential and commercial roof replacement using premium materials and expert installation.</p>
+        <a href="tel:4048747663" class="mt-auto rounded-full px-10 py-4 font-bold text-lg bg-secondary text-white text-center hover:bg-orange-600 transition-all duration-300 inline-block">Call Now</a>
+      </div>
+      <div class="bg-gray-950 border-2 border-primary rounded-xl p-8 flex flex-col gap-4 hover:border-secondary transition-colors duration-300">
+        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+          <i data-lucide="hammer" class="w-6 h-6 text-secondary"></i>
         </div>
-        <div class="service-card rounded-xl p-8 border-l-4 border-primary">
-          <i data-lucide="shield-check" class="w-10 h-10 mb-4" style="color:#880e4f;"></i>
-          <h3 class="font-display text-2xl font-bold uppercase mb-2">Flat Roofing</h3>
-          <p class="text-gray-600 leading-relaxed mb-6">Specialized flat roof installation and maintenance for commercial and residential properties.</p>
-          <a href="tel:4048747663" class="rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 inline-block bg-primary text-white border-primary hover:bg-pink-900 transition-colors" style="background:#880e4f;">Call Now</a>
+        <h3 class="font-display text-2xl font-bold text-white">New Roof Installation</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">New construction and addition roofing installed to code with quality workmanship guaranteed.</p>
+        <a href="tel:4048747663" class="mt-auto rounded-full px-10 py-4 font-bold text-lg bg-secondary text-white text-center hover:bg-orange-600 transition-all duration-300 inline-block">Call Now</a>
+      </div>
+      <div class="bg-gray-950 border-2 border-primary rounded-xl p-8 flex flex-col gap-4 hover:border-secondary transition-colors duration-300">
+        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+          <i data-lucide="search" class="w-6 h-6 text-secondary"></i>
         </div>
+        <h3 class="font-display text-2xl font-bold text-white">Roof Inspection</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Thorough inspection identifying all issues with clear reporting and honest recommendations.</p>
+        <a href="tel:4048747663" class="mt-auto rounded-full px-10 py-4 font-bold text-lg bg-secondary text-white text-center hover:bg-orange-600 transition-all duration-300 inline-block">Call Now</a>
       </div>
     </div>
 
-    <!-- Tab 2 -->
-    <div id="tab2" class="tab-panel hidden">
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="service-card rounded-xl p-8 border-l-4 border-primary">
-          <i data-lucide="wrench" class="w-10 h-10 mb-4" style="color:#880e4f;"></i>
-          <h3 class="font-display text-2xl font-bold uppercase mb-2">Roof Repair</h3>
-          <p class="text-gray-600 leading-relaxed mb-6">Fast, reliable roof repairs to address leaks, storm damage, and structural issues before they worsen.</p>
-          <a href="tel:4048747663" class="rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 inline-block bg-primary text-white border-primary hover:bg-pink-900 transition-colors" style="background:#880e4f;">Call Now</a>
+    <div id="tab2" class="tab-panel hidden grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-gray-950 border-2 border-primary rounded-xl p-8 flex flex-col gap-4 hover:border-secondary transition-colors duration-300">
+        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+          <i data-lucide="wrench" class="w-6 h-6 text-secondary"></i>
         </div>
-        <div class="service-card rounded-xl p-8 border-l-4 border-primary">
-          <i data-lucide="search" class="w-10 h-10 mb-4" style="color:#880e4f;"></i>
-          <h3 class="font-display text-2xl font-bold uppercase mb-2">Roof Inspections</h3>
-          <p class="text-gray-600 leading-relaxed mb-6">Thorough roof evaluations to identify issues early and help you make informed decisions.</p>
-          <a href="tel:4048747663" class="rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 inline-block bg-primary text-white border-primary hover:bg-pink-900 transition-colors" style="background:#880e4f;">Call Now</a>
+        <h3 class="font-display text-2xl font-bold text-white">Leak Repair</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Fast and effective leak detection and repair to protect your property from water damage.</p>
+        <a href="tel:4048747663" class="mt-auto rounded-full px-10 py-4 font-bold text-lg bg-secondary text-white text-center hover:bg-orange-600 transition-all duration-300 inline-block">Call Now</a>
+      </div>
+      <div class="bg-gray-950 border-2 border-primary rounded-xl p-8 flex flex-col gap-4 hover:border-secondary transition-colors duration-300">
+        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+          <i data-lucide="cloud-lightning" class="w-6 h-6 text-secondary"></i>
         </div>
-        <div class="service-card rounded-xl p-8 border-l-4 border-primary">
-          <i data-lucide="cloud-lightning" class="w-10 h-10 mb-4" style="color:#880e4f;"></i>
-          <h3 class="font-display text-2xl font-bold uppercase mb-2">Storm Damage</h3>
-          <p class="text-gray-600 leading-relaxed mb-6">Emergency response and insurance claim assistance for wind, hail, and storm-damaged roofs.</p>
-          <a href="tel:4048747663" class="rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 inline-block bg-primary text-white border-primary hover:bg-pink-900 transition-colors" style="background:#880e4f;">Call Now</a>
+        <h3 class="font-display text-2xl font-bold text-white">Storm Damage Repair</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Emergency storm damage assessment and repair, including insurance claim assistance.</p>
+        <a href="tel:4048747663" class="mt-auto rounded-full px-10 py-4 font-bold text-lg bg-secondary text-white text-center hover:bg-orange-600 transition-all duration-300 inline-block">Call Now</a>
+      </div>
+      <div class="bg-gray-950 border-2 border-primary rounded-xl p-8 flex flex-col gap-4 hover:border-secondary transition-colors duration-300">
+        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+          <i data-lucide="shield-check" class="w-6 h-6 text-secondary"></i>
         </div>
+        <h3 class="font-display text-2xl font-bold text-white">Preventive Maintenance</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Scheduled maintenance programs to extend the life of your roof and prevent costly repairs.</p>
+        <a href="tel:4048747663" class="mt-auto rounded-full px-10 py-4 font-bold text-lg bg-secondary text-white text-center hover:bg-orange-600 transition-all duration-300 inline-block">Call Now</a>
       </div>
     </div>
 
-    <!-- Tab 3 -->
-    <div id="tab3" class="tab-panel hidden">
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="service-card rounded-xl p-8 border-l-4 border-primary">
-          <i data-lucide="droplets" class="w-10 h-10 mb-4" style="color:#880e4f;"></i>
-          <h3 class="font-display text-2xl font-bold uppercase mb-2">Gutters & Drainage</h3>
-          <p class="text-gray-600 leading-relaxed mb-6">Gutter installation, cleaning, and repair to protect your roof and foundation from water damage.</p>
-          <a href="tel:4048747663" class="rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 inline-block bg-primary text-white border-primary hover:bg-pink-900 transition-colors" style="background:#880e4f;">Call Now</a>
+    <div id="tab3" class="tab-panel hidden grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-gray-950 border-2 border-primary rounded-xl p-8 flex flex-col gap-4 hover:border-secondary transition-colors duration-300">
+        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+          <i data-lucide="droplets" class="w-6 h-6 text-secondary"></i>
         </div>
-        <div class="service-card rounded-xl p-8 border-l-4 border-primary">
-          <i data-lucide="wind" class="w-10 h-10 mb-4" style="color:#880e4f;"></i>
-          <h3 class="font-display text-2xl font-bold uppercase mb-2">Ventilation</h3>
-          <p class="text-gray-600 leading-relaxed mb-6">Roof ventilation solutions to improve energy efficiency and extend the life of your roofing system.</p>
-          <a href="tel:4048747663" class="rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 inline-block bg-primary text-white border-primary hover:bg-pink-900 transition-colors" style="background:#880e4f;">Call Now</a>
-        </div>
-        <div class="service-card rounded-xl p-8 border-l-4 border-primary">
-          <i data-lucide="zap" class="w-10 h-10 mb-4" style="color:#880e4f;"></i>
-          <h3 class="font-display text-2xl font-bold uppercase mb-2">Flashing & Sealing</h3>
-          <p class="text-gray-600 leading-relaxed mb-6">Expert flashing installation and sealant application around chimneys, vents, and skylights.</p>
-          <a href="tel:4048747663" class="rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 inline-block bg-primary text-white border-primary hover:bg-pink-900 transition-colors" style="background:#880e4f;">Call Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section id="gallery" class="animate-section py-24 bg-white">
-  <div class="max-w-7xl mx-auto px-4
+        <h3 class="font-display text-2xl font-bold text-white">Flat Roof Systems</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Expert flat roof installation, repair, and waterproofing for residential and commercial properties

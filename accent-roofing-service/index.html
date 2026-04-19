@@ -11,280 +11,280 @@
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
   * { font-family: 'Source Sans Pro', sans-serif; }
-  h1,h2,h3,h4,h5,h6,.font-oswald { font-family: 'Oswald', sans-serif; }
-  body { background-color: #030712; color: #f9fafb; }
-  .hero-clip { clip-path: polygon(0 0, 100% 0, 100% 88%, 60% 100%, 0 100%); }
-  .active-tab { background-color: #1a472a; color: #fff; border-color: #1a472a; }
-  .inactive-tab { background-color: transparent; color: #d1d5db; border-color: #374151; }
-  .tab-btn { transition: all 0.2s ease; }
+  h1, h2, h3, h4, h5, .font-display { font-family: 'Oswald', sans-serif; }
+  .active-tab { background-color: #b71c1c; color: white; }
+  .inactive-tab { background-color: #f1f5f9; color: #37474f; }
   details summary::-webkit-details-marker { display: none; }
   details[open] summary .chevron { transform: rotate(180deg); }
   .chevron { transition: transform 0.3s ease; }
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #030712; }
-  ::-webkit-scrollbar-thumb { background: #1a472a; border-radius: 3px; }
+  .hero-clip { clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
 </style>
 <script>
   tailwind.config = {
     theme: {
       extend: {
         colors: {
-          primary: '#1a472a',
-          secondary: '#f4a261',
+          primary: '#b71c1c',
+          secondary: '#37474f',
         }
       }
     }
   }
 </script>
 </head>
-<body class="bg-gray-950 text-white">
+<body class="bg-white text-gray-800 overflow-x-hidden">
 
 <!-- NAV -->
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-primary transition-shadow duration-300">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16 lg:h-20">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center">
-          <i data-lucide="home" class="w-5 h-5 text-white"></i>
-        </div>
-        <div>
-          <div class="font-oswald text-xl font-bold text-white leading-tight">Accent Roofing</div>
-          <div class="text-xs text-secondary font-semibold tracking-wider uppercase">Service</div>
-        </div>
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background:transparent;">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:#b71c1c;">
+        <i data-lucide="home" class="w-5 h-5 text-white"></i>
       </div>
-      <div class="hidden lg:flex items-center gap-8">
-        <a href="#services" class="text-gray-200 hover:text-secondary font-semibold transition-colors">Services</a>
-        <a href="#gallery" class="text-gray-200 hover:text-secondary font-semibold transition-colors">Gallery</a>
-        <a href="#reviews" class="text-gray-200 hover:text-secondary font-semibold transition-colors">Reviews</a>
-        <a href="#about" class="text-gray-200 hover:text-secondary font-semibold transition-colors">About</a>
-        <a href="#contact" class="text-gray-200 hover:text-secondary font-semibold transition-colors">Contact</a>
-        <a href="tel:4706136961" class="bg-secondary text-white font-bold px-6 py-2 rounded-full hover:bg-orange-500 transition-colors text-sm">
-          (470) 613-6961
-        </a>
-      </div>
-      <button id="hamburger" class="lg:hidden text-white p-2" aria-label="Toggle menu">
-        <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
-        <i data-lucide="x" id="close-icon" class="w-6 h-6 hidden"></i>
-      </button>
+      <span class="font-display text-xl font-bold text-white tracking-wide">Accent Roofing</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#services" class="text-white hover:text-red-300 transition font-medium">Services</a>
+      <a href="#gallery" class="text-white hover:text-red-300 transition font-medium">Gallery</a>
+      <a href="#about" class="text-white hover:text-red-300 transition font-medium">About</a>
+      <a href="#reviews" class="text-white hover:text-red-300 transition font-medium">Reviews</a>
+      <a href="#contact" class="text-white hover:text-red-300 transition font-medium">Contact</a>
+      <a href="tel:4706136961" class="rounded-full px-6 py-2 font-bold text-sm transition" style="background:#b71c1c;color:white;">(470) 613-6961</a>
     </div>
+    <button id="hamburger" class="md:hidden text-white p-2">
+      <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
   </div>
-  <div id="mobile-menu" class="hidden lg:hidden bg-primary border-t border-green-800">
-    <div class="px-4 py-4 flex flex-col gap-3">
-      <a href="#services" class="text-gray-200 hover:text-secondary font-semibold py-2 transition-colors mobile-link">Services</a>
-      <a href="#gallery" class="text-gray-200 hover:text-secondary font-semibold py-2 transition-colors mobile-link">Gallery</a>
-      <a href="#reviews" class="text-gray-200 hover:text-secondary font-semibold py-2 transition-colors mobile-link">Reviews</a>
-      <a href="#about" class="text-gray-200 hover:text-secondary font-semibold py-2 transition-colors mobile-link">About</a>
-      <a href="#contact" class="text-gray-200 hover:text-secondary font-semibold py-2 transition-colors mobile-link">Contact</a>
-      <a href="tel:4706136961" class="bg-secondary text-white font-bold px-6 py-3 rounded-full text-center hover:bg-orange-500 transition-colors">(470) 613-6961</a>
-    </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-xl px-6 py-4">
+    <a href="#services" class="block py-2 font-medium text-gray-700 hover:text-red-700">Services</a>
+    <a href="#gallery" class="block py-2 font-medium text-gray-700 hover:text-red-700">Gallery</a>
+    <a href="#about" class="block py-2 font-medium text-gray-700 hover:text-red-700">About</a>
+    <a href="#reviews" class="block py-2 font-medium text-gray-700 hover:text-red-700">Reviews</a>
+    <a href="#contact" class="block py-2 font-medium text-gray-700 hover:text-red-700">Contact</a>
+    <a href="tel:4706136961" class="block mt-3 text-center rounded-full px-6 py-3 font-bold text-white" style="background:#b71c1c;">(470) 613-6961</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="relative min-h-screen bg-gray-950 pt-16 lg:pt-20 overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-br from-primary/40 via-gray-950 to-gray-950"></div>
-  <div class="absolute top-0 right-0 w-1/2 h-full bg-primary/10 hero-clip"></div>
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex items-center">
-    <div class="grid lg:grid-cols-5 gap-12 items-center w-full py-16 lg:py-24">
-      <div class="lg:col-span-3 lg:pr-8">
-        <div class="inline-flex items-center gap-2 bg-primary/30 border border-primary rounded-full px-4 py-2 text-secondary text-sm font-semibold mb-6">
-          <i data-lucide="shield-check" class="w-4 h-4"></i>
-          5-Star Rated — 3,603 Reviews
+<section class="hero-clip relative min-h-screen flex items-center" style="background: linear-gradient(135deg, #b71c1c 0%, #7f0000 50%, #37474f 100%);">
+  <div class="max-w-7xl mx-auto px-6 pt-24 pb-32 w-full">
+    <div class="flex flex-col lg:flex-row items-center gap-12">
+      <div class="lg:w-[60%] text-white z-10">
+        <div class="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6 text-sm font-semibold" style="background:rgba(255,255,255,0.15);">
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400" style="fill:#facc15;"></i>
+          <span>5.0 Stars — 3,603 Reviews</span>
         </div>
-        <h1 class="text-4xl lg:text-5xl font-extrabold font-oswald text-white leading-tight mb-6">
-          Professional Roofing<br>
-          <span class="text-secondary">You Can Trust</span><br>
-          24/7 Service
+        <h1 class="text-4xl lg:text-5xl font-extrabold font-display leading-tight mb-6 tracking-wide">
+          Expert Roofing<br>You Can Trust<br><span style="color:#ffcdd2;">24/7 Service</span>
         </h1>
-        <p class="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
-          From inspections to full replacements, Accent Roofing Service delivers expert craftsmanship with transparent communication every step of the way. Open 24 hours, 6 days a week.
+        <p class="text-lg text-red-100 mb-8 max-w-xl leading-relaxed">
+          Accent Roofing Service delivers superior craftsmanship for residential and commercial roofing. From inspections to full replacements, we protect what matters most.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 mb-10">
-          <a href="tel:4706136961" class="bg-secondary text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-orange-500 transition-colors text-center shadow-lg shadow-orange-900/30">
-            Call (470) 613-6961
+        <div class="flex flex-wrap gap-4">
+          <a href="tel:4706136961" class="rounded-full px-10 py-4 font-bold text-lg bg-white transition hover:bg-gray-100" style="color:#b71c1c;">
+            Call Now
           </a>
-          <a href="#contact" class="border-2 border-white/30 text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-white/10 transition-colors text-center">
+          <a href="#contact" class="rounded-full px-10 py-4 font-bold text-lg border-2 border-white text-white hover:bg-white transition" style="hover:color:#b71c1c;">
             Free Estimate
           </a>
         </div>
-        <div class="flex flex-wrap gap-6">
-          <div class="flex items-center gap-2 text-gray-300">
-            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
-            <span class="font-semibold">5.0 Rating</span>
+        <div class="flex flex-wrap gap-6 mt-10">
+          <div class="flex items-center gap-2 text-red-100">
+            <i data-lucide="shield-check" class="w-5 h-5 text-yellow-400"></i>
+            <span class="text-sm font-medium">Licensed & Insured</span>
           </div>
-          <div class="flex items-center gap-2 text-gray-300">
-            <i data-lucide="users" class="w-5 h-5 text-secondary"></i>
-            <span class="font-semibold">3,603+ Reviews</span>
+          <div class="flex items-center gap-2 text-red-100">
+            <i data-lucide="clock" class="w-5 h-5 text-yellow-400"></i>
+            <span class="text-sm font-medium">Open 24 Hours</span>
           </div>
-          <div class="flex items-center gap-2 text-gray-300">
-            <i data-lucide="clock" class="w-5 h-5 text-secondary"></i>
-            <span class="font-semibold">Open 24/7</span>
+          <div class="flex items-center gap-2 text-red-100">
+            <i data-lucide="users" class="w-5 h-5 text-yellow-400"></i>
+            <span class="text-sm font-medium">3,603+ Happy Clients</span>
           </div>
         </div>
       </div>
-      <div class="lg:col-span-2 relative">
-        <div class="relative z-10" style="margin-bottom: -80px;">
-          <img
-            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGa8QFmMrfb5vIW5qOlELZA4-fEqfwuWEpiCj5fFeHEQ2IS6hmIxbNrsM41p_kxpwKkmnQbpZBO6bWShdfNYLCC0Oo9rHutDBY3cR1hFNKwNMijo2_3QcPYXmcZPvD243p-jmGKBoOMzWbJTk3xoPPr3d3woLs3Kix8Fjiz60a8caz6Zsa1xOyImTTdNLE2OXNQFj5ZOjAgaUk7cvm_NkKuUvdbsS0ZhQm0MZ9TC5JG5CV8f-x4hMqpwgRmLU1go8Fa1HC4g54p564ttYmhQBo4hEQNHqyHLFonjhTKxtwHCg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-            alt="Accent Roofing Service - Professional Roof Work"
-            loading="eager"
-            class="w-full h-96 lg:h-[520px] object-cover rounded-3xl shadow-none ring-4 ring-white/30"
-            onerror="this.onerror=null;this.src='https://picsum.photos/seed/roofing-hero-01/800/600';"
-          >
-          <div class="absolute -bottom-4 -left-4 bg-primary border-2 border-secondary rounded-2xl p-4 shadow-xl">
-            <div class="flex items-center gap-3">
-              <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center">
-                <i data-lucide="hammer" class="w-6 h-6 text-white"></i>
-              </div>
-              <div>
-                <div class="font-oswald font-bold text-white text-lg">Expert Roofers</div>
-                <div class="text-secondary text-sm font-semibold">Licensed & Insured</div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="lg:w-[42%] relative lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEEJCT3cPKEubJbDusw7mCHbPuMecigFBan_vSlkDnmdweQx9yfq7VXsu5WWcRXforO4lfkaBBG3rXwHchVQ0sajs0xRyTIvsKMVKQEkTZ8FRHDPUxbuHPTjDRrqRt0-ig5TcFxhX4WWns1yVCauOIFCvCXzMp38znhxx05FWAVP0yENelpLG44l5hS84MJt7ZmDiM9VYely4twJQZdCzJcpkP70sWdwYoNPpXTrwWqYqAchjyCBnGpezTdTvZl69hy9Rp-QbaKvFt4zoXWLjZkfy5m1YMirRIvW-4o1YNjPzQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Accent Roofing Service Work"
+          loading="eager"
+          class="w-full h-80 lg:h-[520px] object-cover rounded-3xl shadow-none ring-4 ring-white/30"
+          onerror="this.onerror=null;this.src='https://picsum.photos/seed/roofing-hero/800/600';"
+        >
       </div>
     </div>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="animate-section bg-gray-950 pt-32 pb-20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-14">
-      <div class="inline-flex items-center gap-2 bg-primary/30 border border-primary rounded-full px-4 py-2 text-secondary text-sm font-semibold mb-4">
-        <i data-lucide="wrench" class="w-4 h-4"></i>
-        Our Services
-      </div>
-      <h2 class="text-4xl lg:text-5xl font-extrabold font-oswald text-white mb-4">Complete Roofing Solutions</h2>
-      <p class="text-gray-400 text-lg max-w-2xl mx-auto">From emergency repairs to full replacements, we handle every roofing need with precision and care.</p>
+<section id="services" class="animate-section py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <p class="text-sm font-semibold uppercase tracking-widest mb-2" style="color:#b71c1c;">What We Do</p>
+      <h2 class="text-4xl lg:text-5xl font-extrabold font-display text-gray-900">Our Roofing Services</h2>
+      <p class="mt-4 text-gray-500 max-w-2xl mx-auto">Comprehensive roofing solutions delivered with professional expertise and unmatched quality.</p>
     </div>
-
-    <!-- Tab Buttons -->
+    <!-- Tabs -->
     <div class="flex flex-wrap justify-center gap-3 mb-10">
-      <button onclick="showTab('tab1', this)" class="tab-btn active-tab border-2 rounded-full px-6 py-2 font-bold text-sm">
-        Installation & Replacement
-      </button>
-      <button onclick="showTab('tab2', this)" class="tab-btn inactive-tab border-2 rounded-full px-6 py-2 font-bold text-sm">
-        Repair & Maintenance
-      </button>
-      <button onclick="showTab('tab3', this)" class="tab-btn inactive-tab border-2 rounded-full px-6 py-2 font-bold text-sm">
-        Inspection & Specialty
-      </button>
+      <button onclick="showTab('tab1', this)" class="tab-btn active-tab rounded-full px-6 py-2 font-semibold text-sm transition">Residential</button>
+      <button onclick="showTab('tab2', this)" class="tab-btn inactive-tab rounded-full px-6 py-2 font-semibold text-sm transition">Commercial</button>
+      <button onclick="showTab('tab3', this)" class="tab-btn inactive-tab rounded-full px-6 py-2 font-semibold text-sm transition">Repair & Inspection</button>
     </div>
 
-    <!-- Tab Panel 1 -->
     <div id="tab1" class="tab-panel">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-gray-900 border-2 border-primary rounded-xl p-6 hover:border-secondary transition-colors">
-          <div class="w-14 h-14 bg-primary/30 rounded-xl flex items-center justify-center mb-5">
-            <i data-lucide="home" class="w-7 h-7 text-secondary"></i>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-xl p-6 flex flex-col gap-4" style="background:rgba(183,28,28,0.08);">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background:#b71c1c;">
+            <i data-lucide="home" class="w-6 h-6 text-white"></i>
           </div>
-          <h3 class="font-oswald text-xl font-bold text-white mb-2">Full Roof Replacement</h3>
-          <p class="text-gray-400 text-sm mb-5 leading-relaxed">Complete tear-off and installation of new roofing systems with premium materials and expert craftsmanship.</p>
-          <a href="tel:4706136961" class="inline-block bg-secondary text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-orange-500 transition-colors text-sm text-center w-full">Call Now</a>
+          <div>
+            <h3 class="font-display text-xl font-bold text-gray-900">Roof Replacement</h3>
+            <p class="text-gray-600 mt-1 text-sm">Full residential roof replacement with premium materials and expert installation that lasts for decades.</p>
+          </div>
+          <a href="tel:4706136961" class="rounded-full px-10 py-4 font-bold text-lg text-center text-white transition hover:opacity-90 mt-auto" style="background:#b71c1c;">Call Now</a>
         </div>
-        <div class="bg-gray-900 border-2 border-primary rounded-xl p-6 hover:border-secondary transition-colors">
-          <div class="w-14 h-14 bg-primary/30 rounded-xl flex items-center justify-center mb-5">
-            <i data-lucide="layers" class="w-7 h-7 text-secondary"></i>
+        <div class="rounded-xl p-6 flex flex-col gap-4" style="background:rgba(183,28,28,0.08);">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background:#b71c1c;">
+            <i data-lucide="hammer" class="w-6 h-6 text-white"></i>
           </div>
-          <h3 class="font-oswald text-xl font-bold text-white mb-2">Shingle Installation</h3>
-          <p class="text-gray-400 text-sm mb-5 leading-relaxed">High-quality asphalt, architectural, and designer shingles installed with precision for lasting durability.</p>
-          <a href="tel:4706136961" class="inline-block bg-secondary text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-orange-500 transition-colors text-sm text-center w-full">Call Now</a>
+          <div>
+            <h3 class="font-display text-xl font-bold text-gray-900">New Roof Installation</h3>
+            <p class="text-gray-600 mt-1 text-sm">New construction roofing installed with precision, ensuring your home is protected from the very start.</p>
+          </div>
+          <a href="tel:4706136961" class="rounded-full px-10 py-4 font-bold text-lg text-center text-white transition hover:opacity-90 mt-auto" style="background:#b71c1c;">Call Now</a>
         </div>
-        <div class="bg-gray-900 border-2 border-primary rounded-xl p-6 hover:border-secondary transition-colors">
-          <div class="w-14 h-14 bg-primary/30 rounded-xl flex items-center justify-center mb-5">
-            <i data-lucide="zap" class="w-7 h-7 text-secondary"></i>
+        <div class="rounded-xl p-6 flex flex-col gap-4" style="background:rgba(183,28,28,0.08);">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background:#b71c1c;">
+            <i data-lucide="droplets" class="w-6 h-6 text-white"></i>
           </div>
-          <h3 class="font-oswald text-xl font-bold text-white mb-2">Metal Roofing</h3>
-          <p class="text-gray-400 text-sm mb-5 leading-relaxed">Durable metal roof installation offering superior weather resistance and energy efficiency for your home.</p>
-          <a href="tel:4706136961" class="inline-block bg-secondary text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-orange-500 transition-colors text-sm text-center w-full">Call Now</a>
+          <div>
+            <h3 class="font-display text-xl font-bold text-gray-900">Gutter Services</h3>
+            <p class="text-gray-600 mt-1 text-sm">Complete gutter installation, cleaning, and repair to protect your home's foundation and landscaping.</p>
+          </div>
+          <a href="tel:4706136961" class="rounded-full px-10 py-4 font-bold text-lg text-center text-white transition hover:opacity-90 mt-auto" style="background:#b71c1c;">Call Now</a>
         </div>
       </div>
     </div>
 
-    <!-- Tab Panel 2 -->
     <div id="tab2" class="tab-panel hidden">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-gray-900 border-2 border-primary rounded-xl p-6 hover:border-secondary transition-colors">
-          <div class="w-14 h-14 bg-primary/30 rounded-xl flex items-center justify-center mb-5">
-            <i data-lucide="wrench" class="w-7 h-7 text-secondary"></i>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-xl p-6 flex flex-col gap-4" style="background:rgba(183,28,28,0.08);">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background:#37474f;">
+            <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
           </div>
-          <h3 class="font-oswald text-xl font-bold text-white mb-2">Roof Leak Repair</h3>
-          <p class="text-gray-400 text-sm mb-5 leading-relaxed">Fast and effective leak detection and repair services to protect your home from water damage and mold.</p>
-          <a href="tel:4706136961" class="inline-block bg-secondary text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-orange-500 transition-colors text-sm text-center w-full">Call Now</a>
+          <div>
+            <h3 class="font-display text-xl font-bold text-gray-900">Commercial Roofing</h3>
+            <p class="text-gray-600 mt-1 text-sm">Durable flat and pitched commercial roofing systems designed to protect your business investment long-term.</p>
+          </div>
+          <a href="tel:4706136961" class="rounded-full px-10 py-4 font-bold text-lg text-center text-white transition hover:opacity-90 mt-auto" style="background:#b71c1c;">Call Now</a>
         </div>
-        <div class="bg-gray-900 border-2 border-primary rounded-xl p-6 hover:border-secondary transition-colors">
-          <div class="w-14 h-14 bg-primary/30 rounded-xl flex items-center justify-center mb-5">
-            <i data-lucide="droplets" class="w-7 h-7 text-secondary"></i>
+        <div class="rounded-xl p-6 flex flex-col gap-4" style="background:rgba(183,28,28,0.08);">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background:#37474f;">
+            <i data-lucide="zap" class="w-6 h-6 text-white"></i>
           </div>
-          <h3 class="font-oswald text-xl font-bold text-white mb-2">Gutter Services</h3>
-          <p class="text-gray-400 text-sm mb-5 leading-relaxed">Complete gutter installation, cleaning, and repair to ensure proper drainage and protect your foundation.</p>
-          <a href="tel:4706136961" class="inline-block bg-secondary text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-orange-500 transition-colors text-sm text-center w-full">Call Now</a>
+          <div>
+            <h3 class="font-display text-xl font-bold text-gray-900">Community Projects</h3>
+            <p class="text-gray-600 mt-1 text-sm">Specialized roofing for HOAs and communities — we've completed full replacements for 20+ home developments.</p>
+          </div>
+          <a href="tel:4706136961" class="rounded-full px-10 py-4 font-bold text-lg text-center text-white transition hover:opacity-90 mt-auto" style="background:#b71c1c;">Call Now</a>
         </div>
-        <div class="bg-gray-900 border-2 border-primary rounded-xl p-6 hover:border-secondary transition-colors">
-          <div class="w-14 h-14 bg-primary/30 rounded-xl flex items-center justify-center mb-5">
-            <i data-lucide="hammer" class="w-7 h-7 text-secondary"></i>
+        <div class="rounded-xl p-6 flex flex-col gap-4" style="background:rgba(183,28,28,0.08);">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background:#37474f;">
+            <i data-lucide="wind" class="w-6 h-6 text-white"></i>
           </div>
-          <h3 class="font-oswald text-xl font-bold text-white mb-2">Storm Damage Repair</h3>
-          <p class="text-gray-400 text-sm mb-5 leading-relaxed">24/7 emergency storm damage repairs including hail, wind, and debris damage with insurance claim assistance.</p>
-          <a href="tel:4706136961" class="inline-block bg-secondary text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-orange-500 transition-colors text-sm text-center w-full">Call Now</a>
+          <div>
+            <h3 class="font-display text-xl font-bold text-gray-900">Storm Damage Roofing</h3>
+            <p class="text-gray-600 mt-1 text-sm">24/7 emergency commercial roofing response for storm, wind, and hail damage to minimize business downtime.</p>
+          </div>
+          <a href="tel:4706136961" class="rounded-full px-10 py-4 font-bold text-lg text-center text-white transition hover:opacity-90 mt-auto" style="background:#b71c1c;">Call Now</a>
         </div>
       </div>
     </div>
 
-    <!-- Tab Panel 3 -->
     <div id="tab3" class="tab-panel hidden">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-gray-900 border-2 border-primary rounded-xl p-6 hover:border-secondary transition-colors">
-          <div class="w-14 h-14 bg-primary/30 rounded-xl flex items-center justify-center mb-5">
-            <i data-lucide="search" class="w-7 h-7 text-secondary"></i>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-xl p-6 flex flex-col gap-4" style="background:rgba(183,28,28,0.08);">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background:#b71c1c;">
+            <i data-lucide="search" class="w-6 h-6 text-white"></i>
           </div>
-          <h3 class="font-oswald text-xl font-bold text-white mb-2">Roof Inspection</h3>
-          <p class="text-gray-400 text-sm mb-5 leading-relaxed">Thorough roof inspections with detailed photo documentation identifying all issues before they become costly.</p>
-          <a href="tel:4706136961" class="inline-block bg-secondary text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-orange-500 transition-colors text-sm text-center w-full">Call Now</a>
+          <div>
+            <h3 class="font-display text-xl font-bold text-gray-900">Roof Inspection</h3>
+            <p class="text-gray-600 mt-1 text-sm">Thorough inspection reports with photos delivered throughout the process so you know exactly what's happening.</p>
+          </div>
+          <a href="tel:4706136961" class="rounded-full px-10 py-4 font-bold text-lg text-center text-white transition hover:opacity-90 mt-auto" style="background:#b71c1c;">Call Now</a>
         </div>
-        <div class="bg-gray-900 border-2 border-primary rounded-xl p-6 hover:border-secondary transition-colors">
-          <div class="w-14 h-14 bg-primary/30 rounded-xl flex items-center justify-center mb-5">
-            <i data-lucide="shield-check" class="w-7 h-7 text-secondary"></i>
+        <div class="rounded-xl p-6 flex flex-col gap-4" style="background:rgba(183,28,28,0.08);">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background:#b71c1c;">
+            <i data-lucide="wrench" class="w-6 h-6 text-white"></i>
           </div>
-          <h3 class="font-oswald text-xl font-bold text-white mb-2">Insurance Claims</h3>
-          <p class="text-gray-400 text-sm mb-5 leading-relaxed">Expert assistance navigating insurance claims to ensure you receive maximum coverage for roof damage.</p>
-          <a href="tel:4706136961" class="inline-block bg-secondary text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-orange-500 transition-colors text-sm text-center w-full">Call Now</a>
+          <div>
+            <h3 class="font-display text-xl font-bold text-gray-900">Leak Repair</h3>
+            <p class="text-gray-600 mt-1 text-sm">Fast, reliable leak diagnosis and repair service — we find the source and fix it right the first time.</p>
+          </div>
+          <a href="tel:4706136961" class="rounded-full px-10 py-4 font-bold text-lg text-center text-white transition hover:opacity-90 mt-auto" style="background:#b71c1c;">Call Now</a>
         </div>
-        <div class="bg-gray-900 border-2 border-primary rounded-xl p-6 hover:border-secondary transition-colors">
-          <div class="w-14 h-14 bg-primary/30 rounded-xl flex items-center justify-center mb-5">
-            <i data-lucide="cloud-lightning" class="w-7 h-7 text-secondary"></i>
+        <div class="rounded-xl p-6 flex flex-col gap-4" style="background:rgba(183,28,28,0.08);">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background:#b71c1c;">
+            <i data-lucide="cloud-lightning" class="w-6 h-6 text-white"></i>
           </div>
-          <h3 class="font-oswald text-xl font-bold text-white mb-2">Ventilation & Flashing</h3>
-          <p class="text-gray-400 text-sm mb-5 leading-relaxed">Professional attic ventilation systems and flashing repairs to extend roof life and improve energy efficiency.</p>
-          <a href="tel:4706136961" class="inline-block bg-secondary text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-orange-500 transition-colors text-sm text-center w-full">Call Now</a>
+          <div>
+            <h3 class="font-display text-xl font-bold text-gray-900">Insurance Claims</h3>
+            <p class="text-gray-600 mt-1 text-sm">We help navigate insurance claims with detailed documentation and direct communication with your provider.</p>
+          </div>
+          <a href="tel:4706136961" class="rounded-full px-10 py-4 font-bold text-lg text-center text-white transition hover:opacity-90 mt-auto" style="background:#b71c1c;">Call Now</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
-<section id="gallery" class="animate-section bg-gray-900 py-20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-14">
-      <div class="inline-flex items-center gap-2 bg-primary/30 border border-primary rounded-full px-4 py-2 text-secondary text-sm font-semibold mb-4">
-        <i data-lucide="camera" class="w-4 h-4"></i>
-        Our Work
+<!-- STATS -->
+<section class="py-16" style="background:#37474f;">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center text-white">
+      <div>
+        <div class="flex justify-center mb-3">
+          <i data-lucide="star" class="w-8 h-8 text-yellow-400" style="fill:#facc15;"></i>
+        </div>
+        <div class="text-4xl lg:text-5xl font-extrabold font-display">5.0</div>
+        <div class="text-sm uppercase tracking-wider mt-1 text-gray-300">Star Rating</div>
       </div>
-      <h2 class="text-4xl lg:text-5xl font-extrabold font-oswald text-white mb-4">Project Gallery</h2>
-      <p class="text-gray-400 text-lg max-w-2xl mx-auto">See the quality craftsmanship we bring to every roofing project across the area.</p>
+      <div>
+        <div class="flex justify-center mb-3">
+          <i data-lucide="users" class="w-8 h-8 text-yellow-400"></i>
+        </div>
+        <div class="text-4xl lg:text-5xl font-extrabold font-display">3,603</div>
+        <div class="text-sm uppercase tracking-wider mt-1 text-gray-300">Verified Reviews</div>
+      </div>
+      <div>
+        <div class="flex justify-center mb-3">
+          <i data-lucide="shield-check" class="w-8 h-8 text-yellow-400"></i>
+        </div>
+        <div class="text-4xl lg:text-5xl font-extrabold font-display">100%</div>
+        <div class="text-sm uppercase tracking-wider mt-1 text-gray-300">Satisfaction Rate</div>
+      </div>
+      <div>
+        <div class="flex justify-center mb-3">
+          <i data-lucide="clock" class="w-8 h-8 text-yellow-400"></i>
+        </div>
+        <div class="text-4xl lg:text-5xl font-extrabold font-display">24/7</div>
+        <div class="text-sm uppercase tracking-wider mt-1 text-gray-300">Available Service</div>
+      </div>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <div class="overflow-hidden rounded-xl border-2 border-primary group">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGa8QFmMrfb5vIW5qOlELZA4-fEqfwuWEpiCj5fFeHEQ2IS6hmIxbNrsM41p_kxpwKkmnQbpZBO6bWShdfNYLCC0Oo9rHutDBY3cR1hFNKwNMijo2_3QcPYXmcZPvD243p-jmGKBoOMzWbJTk3xoPPr3d3woLs3Kix8Fjiz60a8caz6Zsa1xOyImTTdNLE2OXNQFj5ZOjAgaUk7cvm_NkKuUvdbsS0ZhQm0MZ9TC5JG5CV8f-x4hMqpwgRmLU1go8Fa1HC4g54p564ttYmhQBo4hEQNHqyHLFonjhTKxtwHCg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing Project 1" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://picsum.photos/seed/roofgallery01/800/600';">
-      </div>
-      <div class="overflow-hidden rounded-xl border-2 border-primary group">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHMqOn9rXwHhZ67eZVMlXif7SVtud_e_IQCJxk0DFT9dr3hCTy4JQhx3tN_giexcG_lJVXF-zo5aWzfTmrCkdC0bb15q7aJqvxQLs8hUsTuIYZTQJwKV8ljeu6ecPidYfoKZAU08jqpSW4jmzk-uV20mDpzgU_ATVYJAb-vC-Gy54Ftxxg_9Smicq0yXfcDu2G5ZgPG_Sz0zjoUa3u1oPRv95utp_Z-p0eWqmsVWO6jvkPuRTh86WOkYgdENYadzev3GC-S8tTnIiy9HhZL2iNZKh2MGHiuivP2uri0D8DEXgDKqcYa4LvmrJHC7KyYZ2yacnqXMQsVDZSQmA5ikZjyK4VHA4kIQREOYAY1m6wQXeTw362ngIC80lfltqlGstjFcgx9tPTgHnNTjX5l9eSvw8UyEJuy62wAAMbmxWZ0aFjwZmB0-_1HyiXEfHLp&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing Project 2" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://picsum.photos/seed/roofgallery02/800/600';">
-      </div>
-      <div class="overflow-hidden rounded-xl border-2 border-primary group">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHZUHdKVnHqUrr72TrXzZ0y_HdLbViLbdTyqpBowpQyVCXIRL8iJFjW0ZXajascJ_J-Uisvr7iD5PInKORrA3Hwx_BWozpvmWmUHpIm5wFWu6naiNhUV1Twvnz089Eoi302lHhEHusdI-whc4ztW2CMUvFALebLcgg3J68_s5xkJ9XQ0k24TxXizKe66YereFQxMhG85b4hYABSb0N_1pZn_BticzPMFivd7NQmUhJAm8hv5ktZdmqWTIExreWOzNIAELvGas2AntbsBw27j8LsDgSpwB0POrNkzw2zl4l0lA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing Project 3" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://picsum.photos/seed/roofgallery03/800/600';">
-      </div>
-      <div class="overflow-hidden rounded-xl border-2 border-primary group">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFrCyMJCyIFEjojJjE5e3E2QVz8E9H_ujC8RJ2OicKsxlzbEFv5pQoOxQ5QcxpegIPgG6PLC0B0K2A8xS9dMDsu-uUieqptwODX5jhVo7t93rEhrDBVpEkrk9HUKDBZocXYmzh3Yy2krQ4uDGB_yBGYNWwzq8RtwapZN-qO5rcQZazCN1Npm4w7ag3c8Ge5KerOPnJzz-pgyZXBshb
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="animate-section py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <p class="text-sm font-semibold uppercase tracking-widest mb-2" style="color:#b71c1c;">Our Work</p>
+      <h2 class="text-4xl lg:text-5xl font-extrabold font-display text-gray-900">Project Gallery</h2>
+      <p class="mt-4 text-gray-500 max-w-2xl mx-auto">See the quality and craftsmanship behind every Accent Roofing project.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEEJCT3cPKEubJbDusw7mCHbPuMecigFBan_vSlkDnmdweQx9yfq7VXsu5WWcRXforO4lfkaBBG3rXwHchVQ0sajs0xRyTIvsKMVKQEkTZ8FRHDPUxbuHPTjDRrqRt0-ig5TcFxhX4WWns1yVCauOIFCvCXzMp38znhxx05FWAVP0yENelpLG44l5hS84MJt7ZmDiM9VYely4twJQZdCzJcpkP70sWdwYoNPpXTrwWqYqAchjyCBnGpezTdTvZl69hy9Rp-QbaKvFt4zoXWLjZkfy5m1YMirRIvW-4o1YNjPzQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing project 1" class="w-full h-64 object-cover rounded-xl" onerror="this.onerror=null;this.src='https://picsum.photos/seed/roof-gallery-1/800/600';">
+      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEG23zT5sGEW9-nVrmjKqzgD9pHNlDP--2bZQTGVFoAP1XNMb_3d_kDe5fp3UGeW2TD3IUOrXuMHOx_4NSxurx3zq6H1l_u8vthC4odymDH_cagRiKf7p0-sZgabTQeI1LpkbNwdAbN2LF2GMBNLLK43lWhd1DQJ-fJDuTPEY6YAUkZ3HxiOmDFDBoeWqQS9In_FqHUx46vW_b5wJWfwnIOrtEfa9WJMJM3D8YjcOcMz2tGq9Qb5BzYkNOq0vW7kc1HXwUbYf2WzwMWCt0TXrstlSljwYZ75gkUlx1aAB3UA8m201yT6FWyWtcUmDS7zaZKNXERmtRNFOjb9ZcoO-9YofxJoYv1ldDmHFMpxtrZw8wKgwaXwV8BafTk_fyU2dtoc7uf37DdO2JAa9JmBFVyswcNUEyMIMZcwZXuHxU1jKlMBnn_GnubaJKEJy8UA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing project 2" class="w-full h-64 object-cover rounded-xl" onerror="this.onerror=null;this.src='https://picsum.photos/seed/roof-gallery-2/800/600';">
+      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGvq8-cjWShwVpMYRneSfNMil2daKXrkP7HzFEuAepaFnok4S7KC0B3FQ2wd0XbPmZoR8QdH7T2TnwGekOPBf0-97wDkGyPR7hRgZYbFt7fAoxtVKutdiRtklTevqa2G7HANmyq-3MPnEAdLe_fZlMIvqx3k3YQW3TffIilHX_Go7OGb-dVHK5nyKsiBUEuDhZ_M1NMjgSUjHzykkEku2GK9CltM_QD_PoN-bPFK-eBAWGCwiTwjUNKnHft_gVLh-q28FKLvgQp57AG6yS5JAjBDvWavkkQt11-HUVl67Nvhw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing project 3" class="w-full h-64 object-cover rounded-xl" onerror="this.onerror=null;this.src='https://picsum.photos/seed/roof-gallery-3/800/600';">
+      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEEWtLRx-6reP9qiSDlsJ89G7ly2hiIDMGXdiUjNNc-HnW1zmXY5K3Y5hIPG5zE_tUScj-SrMPsv-ypesf7maa--2HDIJmwqjRZB8sARunqxU43JG5EwOwX-g3bz3SgZo_cM54r7qNC-PpEMuE_-cyBynJcdQElp_veQg2EiMhD_6AWAT5-77IwRWNZN85vxJqCF3I_fpYQwavomNpSF5SIh1FW3OFUdiv_x8jncP1J-DF9B6em44av2-QbEJZH7e7vnSEykXaE0lml_xQ2e7U5hmYsnMxvsxITR1hCK_4IVhA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing project 4" class="w-full h-64 object-cover rounded-xl" onerror="this.onerror=null;this.src='https://picsum.photos/seed/roof-gallery-4/800/600';">
+      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEE6I3Jpy4yunKRDdLA3A3Sz4ADN6KxLQ8zcfVWCyOuVZ_S

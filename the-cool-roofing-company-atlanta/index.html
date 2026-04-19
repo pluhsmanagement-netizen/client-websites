@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Cool Roofing Company Atlanta | Expert Roofing Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Source Sans Pro', sans-serif; }
+    h1,h2,h3,h4,h5,h6,.heading { font-family: 'Oswald', sans-serif; }
+    html, body { overflow-x: hidden; }
+    .active-tab { background-color: #1e3a5f; color: #ffffff; }
+    .inactive-tab { background-color: #ffffff; color: #6b7280; border: 1px solid #d1d5db; }
+    details summary { cursor: pointer; list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] summary .faq-icon { transform: rotate(180deg); }
+    .faq-icon { transition: transform 0.3s ease; }
+    details[open] { background-color: #f8fafc; }
+    nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.18); }
+  </style>
+</head>
+<body class="bg-white">
+
+  <!-- NAV -->
+  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-shadow duration-300" style="background-color: #1e3a5f;">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-16">
+      <a href="#" class="flex items-center gap-2">
+        <span class="heading text-2xl font-bold text-white tracking-wide">COOL ROOFING <span style="color:#c9a84c">ATLANTA</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#about" class="text-white hover:text-yellow-300 text-sm font-semibold tracking-wide transition-colors">About</a>
+        <a href="#services" class="text-white hover:text-yellow-300 text-sm font-semibold tracking-wide transition-colors">Services</a>
+        <a href="#gallery" class="text-white hover:text-yellow-300 text-sm font-semibold tracking-wide transition-colors">Gallery</a>
+        <a href="#reviews" class="text-white hover:text-yellow-300 text-sm font-semibold tracking-wide transition-colors">Reviews</a>
+        <a href="#contact" class="text-white hover:text-yellow-300 text-sm font-semibold tracking-wide transition-colors">Contact</a>
+        <a href="tel:8882161766" class="font-bold text-base px-4 py-2 rounded-lg transition-colors" style="color:#c9a84c; border: 2px solid #c9a84c;">(888) 216-1766</a>
+      </div>
+      <button id="hamburger-btn" class="flex md:hidden items-center justify-center w-10 h-10 rounded text-white" aria-label="Open menu">
+        <i data-lucide="menu" class="w-7 h-7"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden" style="background-color: #1e3a5f; border-top: 1px solid rgba(255,255,255,0.1);">
+      <a href="#about" class="block text-white py-3 px-4 border-b border-white border-opacity-10 font-semibold hover:bg-white hover:bg-opacity-10 transition-colors">About</a>
+      <a href="#services" class="block text-white py-3 px-4 border-b border-white border-opacity-10 font-semibold hover:bg-white hover:bg-opacity-10 transition-colors">Services</a>
+      <a href="#gallery" class="block text-white py-3 px-4 border-b border-white border-opacity-10 font-semibold hover:bg-white hover:bg-opacity-10 transition-colors">Gallery</a>
+      <a href="#reviews" class="block text-white py-3 px-4 border-b border-white border-opacity-10 font-semibold hover:bg-white hover:bg-opacity-10 transition-colors">Reviews</a>
+      <a href="#contact" class="block text-white py-3 px-4 border-b border-white border-opacity-10 font-semibold hover:bg-white hover:bg-opacity-10 transition-colors">Contact</a>
+      <a href="tel:8882161766" class="block py-3 px-4 font-bold" style="color:#c9a84c;">(888) 216-1766</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" style="background-color: #1e3a5f;" class="pt-16 min-h-screen flex items-center">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 w-full py-16 md:py-24">
+      <div class="flex flex-col md:flex-row items-center gap-10">
+        <div class="w-full md:w-1/2 text-center md:text-left">
+          <div class="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest" style="background-color: rgba(201,168,76,0.15); color: #c9a84c;">
+            <i data-lucide="shield-check" class="w-4 h-4"></i>
+            Atlanta's Trusted Roofing Experts
+          </div>
+          <h1 class="text-3xl md:text-5xl lg:text-7xl font-bold text-white leading-tight mb-4">
+            The Cool Roofing<br>
+            <span style="color:#c9a84c;">Company Atlanta</span>
+          </h1>
+          <p class="text-lg md:text-xl text-blue-100 mb-4 leading-relaxed">
+            Atlanta's premier roofing contractor delivering superior craftsmanship, honest assessments, and lasting protection for your home or business.
+          </p>
+          <div class="flex items-center justify-center md:justify-start gap-1 mb-8">
+            <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
+            <span class="text-white font-bold ml-2">4.9</span>
+            <span class="text-blue-200 ml-1">(98 Reviews)</span>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+            <a href="tel:8882161766" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-bold text-lg transition-all hover:opacity-90 shadow-lg" style="background-color:#c9a84c; color:#1e3a5f;">
+              <i data-lucide="phone" class="w-5 h-5"></i>
+              Call Now
+            </a>
+            <a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-bold text-lg border-2 border-white text-white transition-all hover:bg-white hover:text-blue-900">
+              <i data-lucide="clipboard-list" class="w-5 h-5"></i>
+              Get Free Quote
+            </a>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 mt-6 md:mt-0">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+            <img
+              src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHV8HKR7E3HsOHoDsg6ChPUwYSdJ0hinepaCBnkEPls7yvryybED4XsR624Vv_2M-Foh9atn-Y1jzbYxuyiEcdrosZx1GVSvF8JuwndD6McyOM2JFD_i5XnMejUsyQtI5Ex8453Ic9mg1PhIjH8JFa9lGqHy-wRiVbhSiMMkSOTuXPOcuxPsWKgO8W-EobW1zoFR-BU1ucWlg9luOyRWEBYhHFdlwZZT11RXHdQQZ2IG3SrZ0lNEItSZhpGssDBWKCqLpTxgjHJKOHl9D9unX90RvI_OlQqhO1x3O-zFqEWlg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+              alt="Cool Roofing Atlanta - Expert Roofing Work"
+              loading="eager"
+              class="w-full h-72 md:h-96 object-cover"
+              onerror="this.onerror=null;this.src='https://picsum.photos/seed/roofing-1/800/600';"
+            >
+            <div class="absolute bottom-0 left-0 right-0 p-4" style="background: linear-gradient(to top, rgba(30,58,95,0.85), transparent);">
+              <div class="flex items-center gap-2">
+                <i data-lucide="map-pin" class="w-4 h-4" style="color:#c9a84c;"></i>
+                <span class="text-white text-sm font-semibold">Serving Greater Atlanta, GA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section id="about" style="background-color: #111827;">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-10 md:py-14">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="flex flex-col items-center gap-1">
+          <div class="flex items-center gap-1 mb-1">
+            <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
+          </div>
+          <span class="text-3xl md:text-4xl font-bold text-white heading">4.9</span>
+          <span class="text-sm font-semibold uppercase tracking-wider" style="color:#c9a84c;">Star Rating</span>
+        </div>
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-3xl md:text-4xl font-bold text-white heading">98</span>
+          <span class="text-sm font-semibold uppercase tracking-wider" style="color:#c9a84c;">Verified Reviews</span>
+        </div>
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-3xl md:text-4xl font-bold text-white heading">10+</span>
+          <span class="text-sm font-semibold uppercase tracking-wider" style="color:#c9a84c;">Years Experience</span>
+        </div>
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-3xl md:text-4xl font-bold text-white heading">50+</span>
+          <span class="text-sm font-semibold uppercase tracking-wider" style="color:#c9a84c;">Areas Served</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES TABS -->
+  <section id="services" class="animate-section py-12 md:py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+      <div class="text-center mb-10">
+        <span class="text-sm font-bold uppercase tracking-widest" style="color:#c9a84c;">What We Do</span>
+        <h2 class="text-4xl md:text-5xl font-bold mt-2" style="color:#1e3a5f;">Our Roofing Services</h2>
+        <p class="text-gray-600 mt-3 max-w-2xl mx-auto text-lg">Comprehensive roofing solutions tailored to protect and enhance your property across Greater Atlanta.</p>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="flex flex-wrap gap-2 md:flex-nowrap mb-8 justify-center">
+        <button onclick="showTab('tab1', this)" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-lg font-bold transition-all">Core Services</button>
+        <button onclick="showTab('tab2', this)" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-lg font-bold transition-all">Specialty Work</button>
+        <button onclick="showTab('tab3', this)" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-lg font-bold transition-all">Additional</button>
+      </div>
+
+      <!-- Tab 1: Core Services -->
+      <div id="tab1" class="tab-panel">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-4 hover:shadow-xl transition-shadow border border-gray-100">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background-color:rgba(30,58,95,0.08);">
+              <i data-lucide="home" class="w-6 h-6" style="color:#1e3a5f;"></i>
+            </div>
+            <h3 class="text-xl font-bold" style="color:#1e3a5f;">Roof Replacement</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">We provide complete roof replacement services using premium materials built to withstand Atlanta's climate. Our certified crews ensure every installation is done right the first time.</p>
+            <a href="tel:8882161766" class="mt-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-bold text-sm transition-all hover:opacity-90" style="background-color:#1e3a5f; color:#ffffff;">
+              <i data-lucide="phone" class="w-4 h-4"></i> Get a Free Quote
+            </a>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-4 hover:shadow-xl transition-shadow border border-gray-100">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background-color:rgba(30,58,95,0.08);">
+              <i data-lucide="wrench" class="w-6 h-6" style="color:#1e3a5f;"></i>
+            </div>
+            <h3 class="text-xl font-bold" style="color:#1e3a5f;">Roof Repair</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">From minor leaks to major storm damage, our expert technicians diagnose and repair all roofing issues swiftly and effectively. We restore your roof's integrity without unnecessary upselling.</p>
+            <a href="tel:8882161766" class="mt-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-bold text-sm transition-all hover:opacity-90" style="background-color:#1e3a5f; color:#ffffff;">
+              <i data-lucide="phone" class="w-4 h-4"></i> Get a Free Quote
+            </a>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-4 hover:shadow-xl transition-shadow border border-gray-100">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background-color:rgba(30,58,95,0.08);">
+              <i data-lucide="search" class="w-6 h-6" style="color:#1e3a5f;"></i>
+            </div>
+            <h3 class="text-xl font-bold" style="color:#1e3a5f;">Roof Inspection</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Our detailed roof inspections identify potential problems before they become costly repairs. We provide honest, thorough assessments with a written report and no-pressure recommendations.</p>
+            <a href="tel:8882161766" class="mt-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-bold text-sm transition-all hover:opacity-90" style="background-color:#1e3a5f; color:#ffffff;">
+              <i data-lucide="phone" class="w-4 h-4"></i> Get a Free Quote
+            </a>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-4 hover:shadow-xl transition-shadow border border-gray-100">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background-color:rgba(30,58,95,0.08);">
+              <i data-lucide="layers" class="w-6 h-6" style="color:#1e3a5f;"></i>
+            </div>
+            <h3 class="text-xl font-bold" style="color:#1e3a5f;">Shingle Roofing</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">We install and repair asphalt shingles — the most popular roofing choice for Atlanta homeowners. Our shingle systems offer excellent durability, curb appeal, and value.</p>
+            <a href="tel:8882161766" class="mt-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-bold text-sm transition-all hover:opacity-90" style="background-color:#1e3a5f; color:#ffffff;">
+              <i data-lucide="phone" class="w-4 h-4"></i> Get a Free Quote
+            </a>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-4 hover:shadow-xl transition-shadow border border-gray-100">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background-color:rgba(30,58,95,0.08);">
+              <i data-lucide="droplets" class="w-6 h-6" style="color:#1e3a5f;"></i>
+            </div>
+            <h3 class="text-xl font-bold" style="color:#1e3a5f;">Leak Detection & Waterproofing</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">We use advanced techniques to pinpoint the exact source of roof leaks and apply permanent waterproofing solutions. Protect your home from water damage with our proven sealing systems.</p>
+            <a href="tel:8882161766" class="mt-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-bold text-sm transition-all hover:opacity-90" style="background-color:#1e3a5f; color:#ffffff;">
+              <i data-lucide="phone" class="w-4 h-4"></i> Get a Free Quote
+            </a>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-4 hover:shadow-xl transition-shadow border border-gray-100">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background-color:rgba(30,58,95,0.08);">
+              <i data-lucide="cloud-lightning" class="w-6 h-6" style="color:#1e3a5f;"></i>
+            </div>
+            <h3 class="text-xl font-bold" style="color:#1e3a5f;">Storm Damage Restoration</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">After hail, wind, or severe weather, our team responds quickly to assess and restore storm-damaged roofs. We also assist with insurance claims to make the process as smooth as possible.</p>
+            <a href="tel:8882161766" class="mt-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-bold text-sm transition-all hover:opacity-90" style="background-color:#1e3a5f; color:#ffffff;">
+              <i data-lucide="phone" class="w-4 h-4"></i> Get a Free Quote
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tab 2: Specialty Work -->
+      <div id="tab2" class="tab-panel hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-4 hover:shadow-xl transition-shadow border border-gray-100">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background-color:rgba(201,168,76,0.1);">
+              <i data-lucide="building-2" class="w-6 h-6" style="color:#c9a84c;"></i>
+            </div>
+            <h3 class="text-xl font-bold" style="color:#1e3a5f;">Flat / Low-Slope Roofing</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Our flat roofing specialists install TPO, EPDM, and modified bitumen systems ideal for commercial and modern residential properties. We ensure proper drainage and long-term watertight performance.</p>
+            <a href="tel:8882161766" class="mt-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-bold text-sm transition-all hover:opacity-90" style="background-color:#1e3a5f; color:#ffffff;">
+              <i data-lucide="phone" class="w-4 h-4"></i> Get a Free Quote
+            </a>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-4 hover:shadow-xl transition-shadow border border-gray-100">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background-color:rgba(201,168,76,0.1);">
+              <i data-lucide="sun" class="w-6 h-6" style="color:#c9a84c;"></i>
+            </div>
+            <h3 class="text-xl font-bold" style="color:#1e3a5f;">Metal Roofing</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Metal roofing systems offer exceptional longevity, energy efficiency, and a sleek modern aesthetic. We install standing seam and metal panel roofs that can last 50+ years with minimal maintenance.</p>
+            <a href="tel:8882161766" class="mt-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-bold text-sm transition-all hover:opacity-90" style="background-color:#1e3a5f; color:#ffffff;">
+              <i data-lucide="phone" class="w-4 h-4"></i> Get a Free Quote
+            </a>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-4 hover:shadow-xl transition-shadow border border-gray-100">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background-color:rgba(201,168,76,0.1);">
+              <i data-lucide="gem" class="w-6 h-6" style="color:#c9a84c;"></i>
+            </div>
+            <h3 class="text-xl font-bold" style="color:#1e3a5f;">Tile & Slate Roofing</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Clay tile and natural slate roofing deliver timeless beauty and superior durability for upscale Atlanta properties. Our craftsmen are trained in proper tile installation techniques to prevent cracking and leaks.</p>
+            <a href="tel:8882161766" class="mt-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-bold text-sm transition-all hover:opacity-90" style="background-color:#1e3a5f; color:#ffffff;">
+              <i data-lucide="phone" class="w-4 h-4"></i> Get a Free Quote
+            </a>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-4 hover:shadow-xl transition-shadow border border-gray-100">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background-color:rgba(201,168,76,0.1);">
+              <i data-lucide="zap" class="w-6 h-6" style="color:#c9a84c;"></i>
+            </div>
+            <h3 class="text-xl font-bold" style="color:#1e3a5f;">Cool Roof Coatings</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Our specialty reflective roof coatings reduce heat absorption, lowering your energy bills and extending roof life. This energy-efficient solution is perfect for Georgia's hot summers.</p>
+            <a href="tel:8882161766" class="mt-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-bold text-sm transition-all hover:opacity-90" style="background-color:#1e3a5f; color:#ffffff;">
+              <i data-lucide="phone" class="w-4 h-4"></i> Get a Free Quote
+            </a>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-4 hover:shadow-xl transition-shadow border border-gray-100">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background-color:rgba(201,168,76,0.1);">
+              <i data-lucide="wind" class="w-6 h-6" style="color:#c9a84c;"></i>
+            </div>
+            <h3 class="text-xl font-bold" style="color:#1e3a5f;">Skylight Installation</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">We install and waterproof skylights to bring natural light into your home without compromising your roof's integrity. Proper flashing and sealing are guaranteed to prevent any future leaks.</p>
+            <a href="tel:8882161766" class="mt-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-bold text-sm transition-all hover:opacity-90" style="background-color:#1e3a5f; color:#ffffff;">
+              <i data-lucide="phone" class="w-4 h-4"></i> Get a Free Quote
+            </a>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-4 hover:shadow-xl transition-shadow border border-gray-100">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background-color:rgba(201,168,76,0.1);">
+              <i data-lucide="shield" class="w-6 h-6" style="color:#c9a84c;"></i>
+            </div>
+            <h3 class="text-xl font-bold" style="color:#1e3a5f;">Historic Roof Restoration</h3>
+            <p class="text

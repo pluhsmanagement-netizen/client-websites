@@ -1,293 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Southern Tree Pros | Professional Tree Services</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800;900&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/lucide@latest"></script>
-<style>
-  body { font-family: 'Lato', sans-serif; }
-  h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
-  .active-tab { background-color: #01579b; color: white; border-color: #01579b; }
-  .inactive-tab { background-color: transparent; color: #01579b; border-color: #01579b; }
-  .hero-clip { clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
-  details summary::-webkit-details-marker { display: none; }
-  details[open] summary .faq-icon { transform: rotate(180deg); }
-  .faq-icon { transition: transform 0.3s ease; }
-  .glass-card { background: rgba(255,255,255,0.10); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.20); border-radius: 1rem; }
-  .glass-card-light { background: rgba(1,87,155,0.08); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(1,87,155,0.15); border-radius: 1rem; }
-</style>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          primary: '#01579b',
-          secondary: '#ff6f00',
-        }
-      }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Southern Tree Pros | Professional Tree Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Manrope', sans-serif; }
+    h1,h2,h3,h4,h5,h6,.heading { font-family: 'Inter', sans-serif; }
+    .active-tab { background-color: #1e3a5f; color: #ffffff; }
+    .inactive-tab { background-color: #ffffff; color: #6b7280; border: 1px solid #d1d5db; }
+    details summary { cursor: pointer; list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] summary .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.3s ease; }
+    nav { transition: box-shadow 0.3s ease; }
+    .hero-img-wrap img { object-fit: cover; width: 100%; height: 100%; }
+    @media (max-width: 767px) {
+      .hero-split { flex-direction: column; }
+      .hero-text { width: 100%; padding: 3rem 1.5rem; }
+      .hero-img-wrap { width: 100%; height: 300px; }
     }
-  }
-</script>
+  </style>
 </head>
-<body class="bg-white text-gray-900 overflow-x-hidden">
+<body class="bg-white text-gray-800">
 
 <!-- NAV -->
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white transition-shadow duration-300">
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50" style="background-color:#1e3a5f;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <div class="flex items-center gap-2">
-        <i data-lucide="tree-pine" class="w-7 h-7 text-primary"></i>
-        <span class="text-xl font-extrabold text-primary" style="font-family:'Playfair Display',serif;">Southern Tree Pros</span>
+        <span data-lucide="tree-pine" class="w-7 h-7" style="color:#c9a84c;"></span>
+        <span class="heading text-white font-bold text-xl tracking-tight">Southern Tree Pros</span>
       </div>
       <div class="hidden md:flex items-center gap-8">
-        <a href="#about" class="text-gray-700 hover:text-primary font-medium tracking-wide transition-colors">About</a>
-        <a href="#services" class="text-gray-700 hover:text-primary font-medium tracking-wide transition-colors">Services</a>
-        <a href="#gallery" class="text-gray-700 hover:text-primary font-medium tracking-wide transition-colors">Gallery</a>
-        <a href="#reviews" class="text-gray-700 hover:text-primary font-medium tracking-wide transition-colors">Reviews</a>
-        <a href="#contact" class="text-gray-700 hover:text-primary font-medium tracking-wide transition-colors">Contact</a>
-        <a href="tel:7708411684" class="text-secondary font-bold text-lg tracking-wide hover:underline">(770) 841-1684</a>
+        <a href="#about" class="text-gray-200 hover:text-white text-sm font-medium transition-colors">About</a>
+        <a href="#services" class="text-gray-200 hover:text-white text-sm font-medium transition-colors">Services</a>
+        <a href="#gallery" class="text-gray-200 hover:text-white text-sm font-medium transition-colors">Gallery</a>
+        <a href="#reviews" class="text-gray-200 hover:text-white text-sm font-medium transition-colors">Reviews</a>
+        <a href="#contact" class="text-gray-200 hover:text-white text-sm font-medium transition-colors">Contact</a>
+        <a href="tel:7708411684" class="font-bold text-sm px-4 py-2 rounded-lg transition-colors" style="color:#1e3a5f;background-color:#c9a84c;">(770) 841-1684</a>
       </div>
-      <button id="hamburger" class="md:hidden p-2 rounded-lg text-primary hover:bg-gray-100">
-        <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
-        <i data-lucide="x" class="w-6 h-6 hidden" id="close-icon"></i>
+      <button id="hamburger" class="md:hidden text-white p-2 rounded focus:outline-none">
+        <span id="menu-icon" data-lucide="menu" class="w-6 h-6"></span>
       </button>
     </div>
   </div>
-  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-4">
-    <a href="#about" class="text-gray-700 hover:text-primary font-medium py-2 border-b border-gray-100">About</a>
-    <a href="#services" class="text-gray-700 hover:text-primary font-medium py-2 border-b border-gray-100">Services</a>
-    <a href="#gallery" class="text-gray-700 hover:text-primary font-medium py-2 border-b border-gray-100">Gallery</a>
-    <a href="#reviews" class="text-gray-700 hover:text-primary font-medium py-2 border-b border-gray-100">Reviews</a>
-    <a href="#contact" class="text-gray-700 hover:text-primary font-medium py-2 border-b border-gray-100">Contact</a>
-    <a href="tel:7708411684" class="text-secondary font-bold text-lg">(770) 841-1684</a>
+  <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+    <div class="flex flex-col gap-3 pt-2">
+      <a href="#about" class="text-gray-200 hover:text-white text-sm font-medium py-1">About</a>
+      <a href="#services" class="text-gray-200 hover:text-white text-sm font-medium py-1">Services</a>
+      <a href="#gallery" class="text-gray-200 hover:text-white text-sm font-medium py-1">Gallery</a>
+      <a href="#reviews" class="text-gray-200 hover:text-white text-sm font-medium py-1">Reviews</a>
+      <a href="#contact" class="text-gray-200 hover:text-white text-sm font-medium py-1">Contact</a>
+      <a href="tel:7708411684" class="font-bold text-sm px-4 py-2 rounded-lg text-center mt-1" style="color:#1e3a5f;background-color:#c9a84c;">(770) 841-1684</a>
+    </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero-clip bg-primary pt-16 pb-32 min-h-screen flex items-center relative overflow-hidden">
-  <div class="absolute inset-0 opacity-10">
-    <div class="absolute top-20 left-10 w-64 h-64 bg-secondary rounded-full blur-3xl"></div>
-    <div class="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-  </div>
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-    <div class="flex flex-col lg:flex-row items-center gap-12">
-      <div class="lg:w-[60%] lg:pr-8">
-        <div class="inline-flex items-center gap-2 bg-secondary/20 border border-secondary/40 rounded-full px-4 py-2 mb-6">
-          <i data-lucide="star" class="w-4 h-4 text-secondary fill-secondary"></i>
-          <span class="text-secondary font-bold text-sm uppercase tracking-widest">4.8 Stars · 199 Reviews</span>
+<section id="about" style="background-color:#1e3a5f;" class="min-h-screen flex items-stretch pt-16">
+  <div class="flex hero-split w-full">
+    <div class="hero-text flex flex-col justify-center w-full md:w-1/2 px-8 md:px-16 lg:px-24 py-20">
+      <div class="flex items-center gap-2 mb-4">
+        <span data-lucide="shield-check" class="w-5 h-5" style="color:#c9a84c;"></span>
+        <span class="text-sm font-semibold uppercase tracking-widest" style="color:#c9a84c;">Licensed &amp; Insured</span>
+      </div>
+      <h1 class="heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5">
+        Southern Tree Pros<br />
+        <span style="color:#c9a84c;">Experts You Can Trust.</span>
+      </h1>
+      <p class="text-gray-300 text-lg leading-relaxed mb-8 max-w-lg">
+        From hazardous tree removal to precision trimming, our certified arborists deliver safe, efficient, and beautiful results for homes and businesses across Georgia.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="tel:7708411684" class="inline-flex items-center gap-2 px-7 py-4 rounded-xl font-bold text-base transition-all hover:brightness-90" style="background-color:#c9a84c;color:#1e3a5f;">
+          <span data-lucide="phone" class="w-5 h-5"></span> Call Now
+        </a>
+        <a href="#contact" class="inline-flex items-center gap-2 px-7 py-4 rounded-xl font-bold text-base border-2 border-white text-white hover:bg-white transition-all" style="hover:color:#1e3a5f;">
+          <span data-lucide="clipboard-list" class="w-5 h-5"></span> Get Free Quote
+        </a>
+      </div>
+      <div class="flex items-center gap-6 mt-10 pt-8 border-t border-white border-opacity-20">
+        <div class="text-center">
+          <div class="heading text-3xl font-extrabold" style="color:#c9a84c;">4.8</div>
+          <div class="text-gray-300 text-xs mt-1">Star Rating</div>
         </div>
-        <h1 class="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
-          Expert Tree Care<br><span class="text-secondary">You Can Trust.</span>
-        </h1>
-        <p class="text-white/80 text-lg lg:text-xl leading-relaxed mb-8 max-w-xl">
-          Southern Tree Pros delivers professional tree removal, trimming, and stump grinding with unmatched safety and precision. Challenging jobs are our specialty.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="tel:7708411684" class="rounded-xl px-10 py-5 font-bold text-lg uppercase tracking-wide bg-secondary text-white hover:bg-orange-600 transition-colors text-center shadow-xl">
-            Call Now
-          </a>
-          <a href="#services" class="rounded-xl px-10 py-5 font-bold text-lg uppercase tracking-wide bg-white/10 border-2 border-white text-white hover:bg-white hover:text-primary transition-colors text-center">
-            Our Services
-          </a>
+        <div class="h-10 w-px bg-white opacity-20"></div>
+        <div class="text-center">
+          <div class="heading text-3xl font-extrabold" style="color:#c9a84c;">199+</div>
+          <div class="text-gray-300 text-xs mt-1">Reviews</div>
         </div>
-        <div class="flex items-center gap-6 mt-10">
-          <div class="flex items-center gap-2 text-white/80">
-            <i data-lucide="shield-check" class="w-5 h-5 text-secondary"></i>
-            <span class="text-sm font-medium">Fully Insured</span>
-          </div>
-          <div class="flex items-center gap-2 text-white/80">
-            <i data-lucide="clock" class="w-5 h-5 text-secondary"></i>
-            <span class="text-sm font-medium">Mon–Fri 7:30AM–5:30PM</span>
-          </div>
-          <div class="flex items-center gap-2 text-white/80">
-            <i data-lucide="users" class="w-5 h-5 text-secondary"></i>
-            <span class="text-sm font-medium">Expert Crew</span>
-          </div>
+        <div class="h-10 w-px bg-white opacity-20"></div>
+        <div class="text-center">
+          <div class="heading text-3xl font-extrabold" style="color:#c9a84c;">15+</div>
+          <div class="text-gray-300 text-xs mt-1">Years Serving GA</div>
         </div>
       </div>
-      <div class="lg:w-[42%] relative lg:-mr-8 lg:translate-x-4">
-        <img
-          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEEKtIMrjsg-h03HcnPqXT-AmtOv-pdR4ayqnrBH_80iH6UiaRGbHibV9-4-PQeEL_j6IMYrxazSs8-Mwspr8kcLm09EF6PSDDcCYWDczJSifnHGiIoVvDB8xFDvKCN2-EzWWK8gu1J96JjzNFrlp2kCll8W9-3gPfv2XFfdv4E-qRH6faYLhpyD_gHBF-4Ev9wWh_mEtMG2RMR8vBkfAbVVtYnYGZm2Nz7vxUUeCjgnqwF_U0HvxXOQTZBqzRjGUQ_u07u62JEAOglMKdv1lqPUs67HQCc0k8tQT7NCOasQbw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-          alt="Southern Tree Pros Work"
-          loading="eager"
-          class="rounded-2xl shadow-2xl w-full object-cover h-[420px] lg:h-[520px]"
-          onerror="this.onerror=null;this.src='https://picsum.photos/seed/tree-hero-main/800/600';"
-        >
-        <div class="absolute -bottom-6 -left-6 bg-secondary text-white rounded-2xl px-6 py-4 shadow-2xl">
-          <div class="text-3xl font-extrabold" style="font-family:'Playfair Display',serif;">199+</div>
-          <div class="text-sm font-bold uppercase tracking-wide">Happy Clients</div>
-        </div>
-      </div>
+    </div>
+    <div class="hero-img-wrap hidden md:block w-1/2 relative">
+      <img
+        src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFJj35sj3FqZaBpai0wp2FOLIqhxB3C2PgBRlCPjgI4L7EbrGuMSfgj92izL5Muhkyw4wd6KIFBOlWz-xsAJxOQ06v2QAiDy_BNUkdwvHql2qNH8vymrMpKEtETOGlxeKn304xM8LgWeS2ZjXDDKLIQT7uzFdRBRncVqUShqnADvClzkqvbo6JfZoZ7UDHgglPUEzRjj5nFNW8Za1EPwjmpM_y0MB2UVyRM6Z72jikFjmpWvgZfP-D3GqngMFeqc7GhSRODXGOVqfsS7GX6sgt7gN2zc1APwmRwXY3c0Etn_w&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+        alt="Southern Tree Pros at work"
+        loading="eager"
+        class="absolute inset-0 w-full h-full object-cover"
+        onerror="this.onerror=null;this.src='https://picsum.photos/seed/contractor-101/800/600';"
+      />
+      <div class="absolute inset-0" style="background:linear-gradient(to right, #1e3a5f 0%, transparent 40%);"></div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="py-24 bg-white">
+<!-- STATS BAR -->
+<section class="bg-gray-900 py-10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col lg:flex-row gap-16 items-center">
-      <div class="lg:w-1/2">
-        <div class="grid grid-cols-2 gap-4">
-          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFNDXOPuMxGkHgS0kepefU171KDV7caqeDz_pzNyrWsZXlbbJfzQjhrN1cVwBOtvWHf-jEB0fodv6FP5bftKAh7crVu5zFz3kAOkrfaVeSFuNifTuk4UmeHgLoHrNrfvx4eKpz3kyveOonMKGp7iRt2eYER0ctlg2nW_Wa8kY5S9kO7IhvrMisELQZh0np7jzkevNpjZsRd8xMuskwS94RmtTl8cb0ugdGPX2mq7s6XkL90Ho5dAc3oLhUfIVCJaG1l4gWRLqnzid5FqAgM2JEw_Ar9TFvqmUkPO6oirOqLvA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Tree Work" class="rounded-2xl shadow-xl object-cover h-64 w-full col-span-2" onerror="this.onerror=null;this.src='https://picsum.photos/seed/tree-about-1/800/600';">
-          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFoIPsFspnxcvUjWRAqt4lx0wcpuLsLPKfvPDiRdrru6Xh2NG-RJX9bDcNaEtl-nLiaRVh9O2qKPHhdOzYVu1-Z5JqPYM2m5mQXBHbLag-YaNmr6lbHNr8DYMJft4f66KD3j-zpXb-znbbvzjxYZhBmgIpN6Gd58LpxP3igGGWw7Plltcq2DcyvlRvGJFgHIJbW6vL4yf08rHAvM2sx6jP9GGe6rAlSy5Wc4wzFqGl7WUYX9PkVXZJV43iYpzweDEbGAJlAeiL5mJoo2e3VM8kKFWwYzkpAemx9KpMrDHpbBg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Tree Removal" class="rounded-2xl shadow-xl object-cover h-48 w-full" onerror="this.onerror=null;this.src='https://picsum.photos/seed/tree-about-2/800/600';">
-          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFJGOjZPXn24cqhMkoZiCXaWK6disYxuZFCLGtXaqzQjl5G2yx8i2yZdWReouckWZ_3v0m0Ac6WNaBYj1o8SKF82iZpLVwFrcIWJ-FFgZcLp43pJkGF5kvLy_26L9qmFM5COScFjptyjNyYek6mUHy_RpywLCpmobicTbuOuwqf4LQPb2u2uqLIInFG50Z0lcPY_glBM0kQ9EYQmdPUF4Dy9hFIhwadg6oooru3Wk4cvD5NQ6OiOasrWINFsq6bcm0oTgATKWkCTrE8Fyou8UHib0CSKdgMKmUtjiLX36OcTQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Professional Tree Service" class="rounded-2xl shadow-xl object-cover h-48 w-full" onerror="this.onerror=null;this.src='https://picsum.photos/seed/tree-about-3/800/600';">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div>
+        <div class="flex justify-center mb-1">
+          <span data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></span>
+          <span data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></span>
+          <span data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></span>
+          <span data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></span>
+          <span data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></span>
         </div>
+        <div class="heading text-3xl font-extrabold text-white">4.8</div>
+        <div class="text-sm font-semibold mt-1" style="color:#c9a84c;">Average Rating</div>
       </div>
-      <div class="lg:w-1/2">
-        <div class="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-2 mb-4">
-          <i data-lucide="tree-pine" class="w-4 h-4 text-primary"></i>
-          <span class="text-primary font-bold text-sm uppercase tracking-widest">Who We Are</span>
-        </div>
-        <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6">Southern Tree Pros — <span class="text-primary">Precision. Safety. Results.</span></h2>
-        <p class="text-gray-600 text-lg leading-relaxed mb-6">
-          Southern Tree Pros is a dedicated team of tree care professionals committed to safe, efficient, and thorough tree services. We specialize in challenging removals — trees close to homes, power lines, fences, and other structures.
-        </p>
-        <p class="text-gray-600 text-lg leading-relaxed mb-8">
-          Our crew communicates clearly, works efficiently, and always cleans up completely. Whether you have one tree or a whole property to manage, we deliver the same high-quality, professional service every time.
-        </p>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="flex items-center gap-3 p-4 bg-primary/5 border-2 border-primary/20 rounded-xl">
-            <i data-lucide="shield-check" class="w-6 h-6 text-primary flex-shrink-0"></i>
-            <span class="font-bold text-gray-800">Fully Insured</span>
-          </div>
-          <div class="flex items-center gap-3 p-4 bg-primary/5 border-2 border-primary/20 rounded-xl">
-            <i data-lucide="users" class="w-6 h-6 text-primary flex-shrink-0"></i>
-            <span class="font-bold text-gray-800">Expert Team</span>
-          </div>
-          <div class="flex items-center gap-3 p-4 bg-primary/5 border-2 border-primary/20 rounded-xl">
-            <i data-lucide="clock" class="w-6 h-6 text-primary flex-shrink-0"></i>
-            <span class="font-bold text-gray-800">Fast Scheduling</span>
-          </div>
-          <div class="flex items-center gap-3 p-4 bg-primary/5 border-2 border-primary/20 rounded-xl">
-            <i data-lucide="search" class="w-6 h-6 text-primary flex-shrink-0"></i>
-            <span class="font-bold text-gray-800">Free Estimates</span>
-          </div>
-        </div>
+      <div>
+        <div class="heading text-3xl font-extrabold text-white">199+</div>
+        <div class="text-sm font-semibold mt-1" style="color:#c9a84c;">Verified Reviews</div>
+      </div>
+      <div>
+        <div class="heading text-3xl font-extrabold text-white">15+</div>
+        <div class="text-sm font-semibold mt-1" style="color:#c9a84c;">Years in Business</div>
+      </div>
+      <div>
+        <div class="heading text-3xl font-extrabold text-white">50+</div>
+        <div class="text-sm font-semibold mt-1" style="color:#c9a84c;">Areas Served</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="py-24 bg-primary animate-section">
+<section id="services" class="py-20 bg-gray-50 animate-section">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
-      <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-4">
-        <i data-lucide="scissors" class="w-4 h-4 text-secondary"></i>
-        <span class="text-secondary font-bold text-sm uppercase tracking-widest">What We Do</span>
-      </div>
-      <h2 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">Our Tree Services</h2>
-      <p class="text-white/70 text-lg max-w-2xl mx-auto">From hazardous removals to routine maintenance, our certified team handles every job with precision and care.</p>
+      <span class="text-sm font-semibold uppercase tracking-widest" style="color:#c9a84c;">What We Do</span>
+      <h2 class="heading text-4xl font-extrabold mt-2" style="color:#1e3a5f;">Our Tree Services</h2>
+      <p class="text-gray-500 mt-3 max-w-xl mx-auto">Comprehensive arborist services delivered with safety, precision, and professionalism every single time.</p>
     </div>
-
-    <!-- TABS -->
+    <!-- Tabs -->
     <div class="flex flex-wrap justify-center gap-3 mb-10">
-      <button class="tab-btn active-tab border-2 rounded-xl px-6 py-3 font-bold text-sm uppercase tracking-wide transition-all" onclick="showTab('tab1', this)">Removal & Cutting</button>
-      <button class="tab-btn inactive-tab border-2 rounded-xl px-6 py-3 font-bold text-sm uppercase tracking-wide transition-all" onclick="showTab('tab2', this)">Health & Care</button>
-      <button class="tab-btn inactive-tab border-2 rounded-xl px-6 py-3 font-bold text-sm uppercase tracking-wide transition-all" onclick="showTab('tab3', this)">Cleanup & Extra</button>
+      <button onclick="showTab('tab1', this)" class="tab-btn active-tab px-6 py-3 rounded-full font-semibold text-sm transition-all">Core Services</button>
+      <button onclick="showTab('tab2', this)" class="tab-btn inactive-tab px-6 py-3 rounded-full font-semibold text-sm transition-all">Specialty Work</button>
+      <button onclick="showTab('tab3', this)" class="tab-btn inactive-tab px-6 py-3 rounded-full font-semibold text-sm transition-all">Additional</button>
     </div>
 
-    <!-- TAB 1 -->
-    <div id="tab1" class="tab-panel grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="glass-card p-6 flex flex-col gap-4">
-        <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center">
-          <i data-lucide="tree-pine" class="w-6 h-6 text-secondary"></i>
+    <!-- Tab 1 -->
+    <div id="tab1" class="tab-panel">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+          <span data-lucide="tree-pine" class="w-10 h-10 mb-4" style="color:#c9a84c;"></span>
+          <h3 class="heading text-xl font-bold mb-2" style="color:#1e3a5f;">Tree Removal</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">We safely remove trees of any size, including those close to structures, power lines, or other vegetation. Our crew uses industry-leading rigging and equipment to protect your property.</p>
+          <a href="tel:7708411684" class="inline-flex items-center gap-2 text-sm font-semibold px-5 py-3 rounded-lg text-white transition-all hover:brightness-90" style="background-color:#1e3a5f;">
+            <span data-lucide="phone" class="w-4 h-4"></span> Get a Free Quote
+          </a>
         </div>
-        <h3 class="text-xl font-extrabold text-white">Tree Removal</h3>
-        <p class="text-white/70 text-sm leading-relaxed">Safe removal of trees of all sizes, including those dangerously close to structures, fences, and power lines.</p>
-        <a href="tel:7708411684" class="rounded-xl px-10 py-5 font-bold text-lg uppercase tracking-wide bg-secondary text-white hover:bg-orange-600 transition-colors text-center mt-auto">Call Now</a>
-      </div>
-      <div class="glass-card p-6 flex flex-col gap-4">
-        <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center">
-          <i data-lucide="scissors" class="w-6 h-6 text-secondary"></i>
+        <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+          <span data-lucide="scissors" class="w-10 h-10 mb-4" style="color:#c9a84c;"></span>
+          <h3 class="heading text-xl font-bold mb-2" style="color:#1e3a5f;">Tree Trimming &amp; Pruning</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">Professional trimming improves the health, shape, and safety of your trees by removing dead or overgrown branches. We follow ANSI pruning standards to ensure the long-term vitality of your trees.</p>
+          <a href="tel:7708411684" class="inline-flex items-center gap-2 text-sm font-semibold px-5 py-3 rounded-lg text-white transition-all hover:brightness-90" style="background-color:#1e3a5f;">
+            <span data-lucide="phone" class="w-4 h-4"></span> Get a Free Quote
+          </a>
         </div>
-        <h3 class="text-xl font-extrabold text-white">Tree Trimming</h3>
-        <p class="text-white/70 text-sm leading-relaxed">Precision trimming and pruning to improve shape, health, and safety of your trees year-round.</p>
-        <a href="tel:7708411684" class="rounded-xl px-10 py-5 font-bold text-lg uppercase tracking-wide bg-secondary text-white hover:bg-orange-600 transition-colors text-center mt-auto">Call Now</a>
-      </div>
-      <div class="glass-card p-6 flex flex-col gap-4">
-        <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center">
-          <i data-lucide="zap" class="w-6 h-6 text-secondary"></i>
+        <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+          <span data-lucide="circle-dot" class="w-10 h-10 mb-4" style="color:#c9a84c;"></span>
+          <h3 class="heading text-xl font-bold mb-2" style="color:#1e3a5f;">Stump Grinding</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">After tree removal, unsightly stumps can be a hazard and an eyesore on your property. Our stump grinders reduce stumps below ground level, leaving your yard clean and ready for landscaping.</p>
+          <a href="tel:7708411684" class="inline-flex items-center gap-2 text-sm font-semibold px-5 py-3 rounded-lg text-white transition-all hover:brightness-90" style="background-color:#1e3a5f;">
+            <span data-lucide="phone" class="w-4 h-4"></span> Get a Free Quote
+          </a>
         </div>
-        <h3 class="text-xl font-extrabold text-white">Emergency Tree Removal</h3>
-        <p class="text-white/70 text-sm leading-relaxed">Fast response for storm-damaged, fallen, or hazardous trees that require urgent professional attention.</p>
-        <a href="tel:7708411684" class="rounded-xl px-10 py-5 font-bold text-lg uppercase tracking-wide bg-secondary text-white hover:bg-orange-600 transition-colors text-center mt-auto">Call Now</a>
-      </div>
-    </div>
-
-    <!-- TAB 2 -->
-    <div id="tab2" class="tab-panel hidden grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="glass-card p-6 flex flex-col gap-4">
-        <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center">
-          <i data-lucide="shield-check" class="w-6 h-6 text-secondary"></i>
+        <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+          <span data-lucide="wind" class="w-10 h-10 mb-4" style="color:#c9a84c;"></span>
+          <h3 class="heading text-xl font-bold mb-2" style="color:#1e3a5f;">Storm Damage Cleanup</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">Severe storms can leave dangerous fallen trees and broken limbs across your yard or on your home. We respond quickly to clear debris and restore safety to your property.</p>
+          <a href="tel:7708411684" class="inline-flex items-center gap-2 text-sm font-semibold px-5 py-3 rounded-lg text-white transition-all hover:brightness-90" style="background-color:#1e3a5f;">
+            <span data-lucide="phone" class="w-4 h-4"></span> Get a Free Quote
+          </a>
         </div>
-        <h3 class="text-xl font-extrabold text-white">Tree Health Assessment</h3>
-        <p class="text-white/70 text-sm leading-relaxed">Thorough evaluation of your trees' structural integrity, disease risk, and overall health by our experts.</p>
-        <a href="tel:7708411684" class="rounded-xl px-10 py-5 font-bold text-lg uppercase tracking-wide bg-secondary text-white hover:bg-orange-600 transition-colors text-center mt-auto">Call Now</a>
-      </div>
-      <div class="glass-card p-6 flex flex-col gap-4">
-        <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center">
-          <i data-lucide="droplets" class="w-6 h-6 text-secondary"></i>
+        <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+          <span data-lucide="leaf" class="w-10 h-10 mb-4" style="color:#c9a84c;"></span>
+          <h3 class="heading text-xl font-bold mb-2" style="color:#1e3a5f;">Tree Health Assessment</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">Our certified arborists evaluate the overall health of your trees to identify disease, pest infestations, or structural weaknesses. Early detection can save trees and prevent costly removal later.</p>
+          <a href="tel:7708411684" class="inline-flex items-center gap-2 text-sm font-semibold px-5 py-3 rounded-lg text-white transition-all hover:brightness-90" style="background-color:#1e3a5f;">
+            <span data-lucide="phone" class="w-4 h-4"></span> Get a Free Quote
+          </a>
         </div>
-        <h3 class="text-xl font-extrabold text-white">Deep Root Feeding</h3>
-        <p class="text-white/70 text-sm leading-relaxed">Nutrient injection at the root zone to strengthen trees, improve growth, and boost resistance to disease.</p>
-        <a href="tel:7708411684" class="rounded-xl px-10 py-5 font-bold text-lg uppercase tracking-wide bg-secondary text-white hover:bg-orange-600 transition-colors text-center mt-auto">Call Now</a>
-      </div>
-      <div class="glass-card p-6 flex flex-col gap-4">
-        <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center">
-          <i data-lucide="cloud-lightning" class="w-6 h-6 text-secondary"></i>
+        <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+          <span data-lucide="truck" class="w-10 h-10 mb-4" style="color:#c9a84c;"></span>
+          <h3 class="heading text-xl font-bold mb-2" style="color:#1e3a5f;">Debris Hauling</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">We don't just cut — we clean up thoroughly, hauling away all wood, branches, and debris so your property looks its best. Our team takes pride in leaving every job site spotless.</p>
+          <a href="tel:7708411684" class="inline-flex items-center gap-2 text-sm font-semibold px-5 py-3 rounded-lg text-white transition-all hover:brightness-90" style="background-color:#1e3a5f;">
+            <span data-lucide="phone" class="w-4 h-4"></span> Get a Free Quote
+          </a>
         </div>
-        <h3 class="text-xl font-extrabold text-white">Storm Damage Cleanup</h3>
-        <p class="text-white/70 text-sm leading-relaxed">Efficient removal of storm debris, broken limbs, and downed trees to restore safety and curb appeal.</p>
-        <a href="tel:7708411684" class="rounded-xl px-10 py-5 font-bold text-lg uppercase tracking-wide bg-secondary text-white hover:bg-orange-600 transition-colors text-center mt-auto">Call Now</a>
       </div>
     </div>
 
-    <!-- TAB 3 -->
-    <div id="tab3" class="tab-panel hidden grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="glass-card p-6 flex flex-col gap-4">
-        <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center">
-          <i data-lucide="hammer" class="w-6 h-6 text-secondary"></i>
+    <!-- Tab 2 -->
+    <div id="tab2" class="tab-panel hidden">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+          <span data-lucide="alert-triangle" class="w-10 h-10 mb-4" style="color:#c9a84c;"></span>
+          <h3 class="heading text-xl font-bold mb-2" style="color:#1e3a5f;">Hazardous Tree Removal</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">Leaning, dead, or structurally compromised trees pose serious risks to people and structures. Our specialists use advanced rigging techniques to safely dismantle high-risk trees piece by piece.</p>
+          <a href="tel:7708411684" class="inline-flex items-center gap-2 text-sm font-semibold px-5 py-3 rounded-lg text-white transition-all hover:brightness-90" style="background-color:#1e3a5f;">
+            <span data-lucide="phone" class="w-4 h-4"></span> Get a Free Quote
+          </a>
         </div>
-        <h3 class="text-xl font-extrabold text-white">Stump Grinding</h3>
-        <p class="text-white/70 text-sm leading-relaxed">Complete stump removal below grade using professional grinding equipment, leaving your yard clean and level.</p>
-        <a href="tel:7708411684" class="rounded-xl px-10 py-5 font-bold text-lg uppercase tracking-wide bg-secondary text-white hover:bg-orange-600 transition-colors text-center mt-auto">Call Now</a>
-      </div>
-      <div class="glass-card p-6 flex flex-col gap-4">
-        <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center">
-          <i data-lucide="wind" class="w-6 h-6 text-secondary"></i>
+        <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+          <span data-lucide="home" class="w-10 h-10 mb-4" style="color:#c9a84c;"></span>
+          <h3 class="heading text-xl font-bold mb-2" style="color:#1e3a5f;">Crane-Assisted Removal</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">For extremely large or inaccessible trees, we deploy crane-assisted removal to lift sections safely away from your home or obstacles. This method minimizes ground disturbance and maximizes precision.</p>
+          <a href="tel:7708411684" class="inline-flex items-center gap-2 text-sm font-semibold px-5 py-3 rounded-lg text-white transition-all hover:brightness-90" style="background-color:#1e3a5f;">
+            <span data-lucide="phone" class="w-4 h-4"></span> Get a Free Quote
+          </a>
         </div>
-        <h3 class="text-xl font-extrabold text-white">Lot Clearing</h3>
-        <p class="text-white/70 text-sm leading-relaxed">Full lot clearing services for new construction, landscaping projects, or overgrown property reclamation.</p>
-        <a href="tel:7708411684" class="rounded-xl px-10 py-5 font-bold text-lg uppercase tracking-wide bg-secondary text-white hover:bg-orange-600 transition-colors text-center mt-auto">Call Now</a>
-      </div>
-      <div class="glass-card p-6 flex flex-col gap-4">
-        <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center">
-          <i data-lucide="home" class="w-6 h-6 text-secondary"></i>
+        <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+          <span data-lucide="zap" class="w-10 h-10 mb-4" style="color:#c9a84c;"></span>
+          <h3 class="heading text-xl font-bold mb-2" style="color:#1e3a5f;">Utility Line Clearance</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">Overgrown limbs near power lines create fire hazards and service interruptions. We carefully trim and clear branches to meet utility company clearance requirements while preserving tree health.</p>
+          <a href="tel:7708411684" class="inline-flex items-center gap-2 text-sm font-semibold px-5 py-3 rounded-lg text-white transition-all hover:brightness-90" style="background-color:#1e3a5f;">
+            <span data-lucide="phone" class="w-4 h-4"></span> Get a Free Quote
+          </a>
         </div>
-        <h3 class="text-xl font-extrabold text-white">Brush & Debris Removal</h3>
-        <p class="text-white/70 text-sm leading-relaxed">Haul-away of all brush, wood chips, and debris after any job — leaving your property spotless and safe.</p>
-        <a href="tel:7708411684" class="rounded-xl px-10 py-5 font-bold text-lg uppercase tracking-wide bg-secondary text-white hover:bg-orange-600 transition-colors text-center mt-auto">Call Now</a>
+        <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+          <span data-lucide="bug" class="w-10 h-10 mb-4" style="color:#c9a84c;"></span>
+          <h3 class="heading text-xl font-bold mb-2" style="color:#1e3a5f;">Disease &amp; Pest Treatment</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">Fungal disease, bark beetles, and other pests can devastate your trees if left untreated. Our arborists diagnose and apply targeted treatments to halt the spread and restore tree vitality.</p>
+          <a href="tel:7708411684" class="inline-flex items-center gap-2 text-sm font-semibold px-5 py-3 rounded-lg text-white transition-all hover:brightness-90" style="background-color:#1e3a5f;">
+            <span data-lucide="phone" class="w-4 h-4"></span> Get a Free Quote
+          </a>
+        </div>
+        <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+          <span data-lucide="anchor" class="w-10 h-10 mb-4" style="color:#c9a84c;"></span>
+          <h3 class="heading text-xl font-bold mb-2" style="color:#1e3a5f;">Tree Cabling &amp; Bracing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">Structurally weak or multi-stemmed trees can be stabilized with professional cabling and bracing systems. This preserves valuable trees while significantly reducing the risk of failure during storms.</p>
+          <a href="tel:7708411684" class="inline-flex items-center gap-2 text-sm font-semibold px-5 py-3 rounded-lg text-white transition-all hover:brightness-90" style="background-color:#1e3a5f;">
+            <span data-lucide="phone" class="w-4 h-4"></span> Get a Free Quote
+          </a>
+        </div>
+        <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+          <span data-lucide="layers" class="w-10 h-10 mb-4" style="color:#c9a84c;"></span>
+          <h3 class="heading text-xl font-bold mb-2" style="color:#1e3a5f;">Root Zone Management</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">Compacted soil and invasive roots can choke the life from your trees and damage foundations or hardscaping. We offer root aeration, barrier installation, and pruning to protect both trees and structures.</p>
+          <a href="tel:7708411684" class="inline-flex items-center gap-2 text-sm font-semibold px-5 py-3 rounded-lg text-white transition-all hover:brightness-90" style="background-color:#1e3a5f;">
+            <span data-lucide="phone" class="w-4 h-4"></span> Get a Free Quote
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- GALLERY -->
-<section id="gallery" class="py-24 bg-gray-50 animate-section">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <div class="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-2 mb-4">
-        <i data-lucide="search" class="w-4 h-4 text-primary"></i>
-        <span class="text-primary font-bold text-sm uppercase tracking-widest">Our Work</span>
-      </div>
-      <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">Project Gallery</h2>
-      <p class="text-gray-600 text-lg max-w-xl mx-auto">See the results of our professional tree care work across the region.</p>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHk90a7Iv3Mt6R9HX9u8QMAgJJQzJ87da6Deft
+    <!-- Tab 3 -->
+    <div id="tab3" class="tab-panel hidden">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+          <span data-lucide="flower-2" class="w-10 h-10 mb-4" style="color:#c9a84c;"></span>
+          <h3 class="heading text-xl font-bold mb-2" style="color:#1e3a5f;">Land Clearing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">Preparing your lot for construction, landscaping, or new growth starts with expert land clearing. We remove trees, brush, and undergrowth efficiently to get your project moving on schedule.</p>
+          <a href="tel:7708411684" class="inline-flex items-center gap-2 text-sm font-semibold px-5 py-3 rounded-lg text-white transition-all hover:brightness-90" style="background-color:#1e3a5f;">
+            <span data-lucide="phone" class="w-4 h-4"></span> Get a Free Quote
+          </a>
+        </div>
+        <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+          <span data-lucide="recycle" class="w-10 h-10 mb-4" style="color:#c9a84c;"></span>
+          <h3 class="heading text-xl font-bold mb-2" style="color:#1e3a5f;">Wood Chipping &amp; Mulching</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">We convert removed branches and tree material into useful wood chips or mulch for your garden beds or landscaping. This eco-friendly option reduces waste and adds value back to your yard.</p>
+          <a href="tel:7708411684" class="inline-flex items-center gap-2 text-sm font-semibold px-5 py-3 rounded-lg text-white transition-all hover:brightness-90" style="background-color:#1e3a5f;">
+            <span data-lucide="phone" class="w-4 h-4"></span> Get a Free Quote
+          </a>
+        </div>
+        <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+          <span data-lucide="sprout" class="w-10 h-10 mb-4" style="color:#c9a84c;"></span>
+          <h3 class="heading text-xl font-bold mb-2" style="color:#1e3a5f;">Tree Planting</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">Our arborists help you select the right tree species for your climate, soil, and aesthetic goals, then plant them correctly for long-term success. Proper planting depth and technique make all the difference.</p>
+          <a href="tel:7708411684" class="inline-flex items-center gap-2 text-sm font-semibold

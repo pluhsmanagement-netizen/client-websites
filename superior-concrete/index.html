@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Superior Concrete — Professional Concrete Contractor</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html, body { overflow-x: hidden; }
+  body { font-family: 'Manrope', sans-serif; }
+  h1,h2,h3,h4,h5,h6,.heading { font-family: 'Inter', sans-serif; }
+  .ticker-track { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .marquee-track { display: flex; animation: marquee 40s linear infinite; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  details summary { list-style: none; cursor: pointer; }
+  details summary::-webkit-details-marker { display: none; }
+  .active-tab { background-color: #1e3a5f; color: white; }
+  .inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
+  .img-hover-wrap { overflow: hidden; }
+  .img-hover-wrap img { transition: transform 0.7s ease; }
+  .img-hover-wrap:hover img { transform: scale(1.05); }
+  .arrow-cta { border-bottom: 2px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s ease; }
+  .arrow-cta:hover { gap: 14px; }
+  details[open] summary span.faq-icon::before { content: '−'; }
+  span.faq-icon::before { content: '+'; }
+  .clip-diagonal { clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
+  .clip-diagonal-rev { clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 100%); }
+  .service-card { border-left: 0px solid #c9a84c; transition: border-left-width 0.2s ease, box-shadow 0.2s ease; }
+  .service-card:hover { border-left: 4px solid #c9a84c; }
+</style>
+</head>
+<body style="background-color:#ffffff;">
+
+<!-- NAV: DON-BOLD -->
+<nav style="background-color:#1e3a5f; border-bottom:3px solid #c9a84c;" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="px-4 md:px-8 lg:px-16 flex items-center justify-between py-4">
+    <!-- Logo/Brand -->
+    <a href="#hero" class="flex items-center gap-3">
+      <div style="background-color:#c9a84c;" class="w-10 h-10 flex items-center justify-center">
+        <span style="color:#1e3a5f;" class="font-black text-xl heading">SC</span>
+      </div>
+      <span class="text-white font-black text-lg tracking-widest uppercase heading">Superior Concrete</span>
+    </a>
+
+    <!-- Desktop Links -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#services" class="text-white text-xs font-bold tracking-widest uppercase hover:text-yellow-300 transition-colors">Services</a>
+      <a href="#gallery" class="text-white text-xs font-bold tracking-widest uppercase hover:text-yellow-300 transition-colors">Gallery</a>
+      <a href="#reviews" class="text-white text-xs font-bold tracking-widest uppercase hover:text-yellow-300 transition-colors">Reviews</a>
+      <a href="#faq" class="text-white text-xs font-bold tracking-widest uppercase hover:text-yellow-300 transition-colors">FAQ</a>
+      <a href="#contact" class="text-white text-xs font-bold tracking-widest uppercase hover:text-yellow-300 transition-colors">Contact</a>
+    </div>
+
+    <!-- Phone Pill -->
+    <div class="hidden md:flex items-center gap-4">
+      <a href="tel:8172779255" style="border:2px solid #c9a84c; color:#c9a84c;" class="px-5 py-2 font-black text-sm tracking-widest uppercase rounded-full hover:bg-yellow-400 hover:text-gray-900 transition-all">(817) 277-9255</a>
+    </div>
+
+    <!-- Hamburger -->
+    <button id="hamburger" class="flex md:hidden text-white" aria-label="Open menu">
+      <i data-lucide="menu" class="w-7 h-7"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden" style="background-color:#1e3a5f; border-top:1px solid #c9a84c;">
+    <a href="#services" class="block py-3 px-4 border-b border-blue-900 text-white text-sm font-bold tracking-widest uppercase">Services</a>
+    <a href="#gallery" class="block py-3 px-4 border-b border-blue-900 text-white text-sm font-bold tracking-widest uppercase">Gallery</a>
+    <a href="#reviews" class="block py-3 px-4 border-b border-blue-900 text-white text-sm font-bold tracking-widest uppercase">Reviews</a>
+    <a href="#faq" class="block py-3 px-4 border-b border-blue-900 text-white text-sm font-bold tracking-widest uppercase">FAQ</a>
+    <a href="#contact" class="block py-3 px-4 border-b border-blue-900 text-white text-sm font-bold tracking-widest uppercase">Contact</a>
+    <a href="tel:8172779255" class="block py-3 px-4 font-bold tracking-widest uppercase" style="color:#c9a84c;">(817) 277-9255</a>
+  </div>
+</nav>
+
+<!-- HERO: DON-STACKED -->
+<section id="hero" class="relative flex flex-col items-center justify-center min-h-screen" style="background-color:#0a0f1c; padding-top:80px;">
+  <!-- BG Image Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img src="https://picsum.photos/seed/concrete-hero/1600/900" alt="Concrete work" class="w-full h-full object-cover" loading="eager" style="opacity:0.25;" onerror="this.src='https://picsum.photos/seed/contractor-1/1600/900'">
+  </div>
+  <!-- Diagonal accent bar -->
+  <div class="absolute bottom-0 left-0 right-0 h-1 z-10" style="background-color:#c9a84c;"></div>
+
+  <div class="relative z-10 w-full px-4 md:px-8 lg:px-16 text-center flex flex-col items-center justify-center min-h-screen py-24">
+    <!-- Eyebrow -->
+    <p class="text-xs font-bold tracking-widest uppercase mb-6" style="color:#c9a84c; letter-spacing:0.3em;">ARLINGTON, TX — LICENSED & INSURED</p>
+
+    <!-- Massive stacked type -->
+    <h1 class="heading font-black uppercase leading-none text-white text-5xl md:text-8xl lg:text-9xl tracking-tight mb-2">SUPERIOR</h1>
+    <h1 class="heading font-black uppercase leading-none text-5xl md:text-8xl lg:text-9xl tracking-tight mb-2" style="color:#c9a84c; -webkit-text-stroke: 2px #c9a84c; text-stroke: 2px #c9a84c;">CONCRETE</h1>
+    <h1 class="heading font-black uppercase leading-none text-white text-5xl md:text-8xl lg:text-9xl tracking-tight mb-8" style="opacity:0.15;">SOLUTIONS</h1>
+
+    <!-- Thin rule -->
+    <div class="w-24 h-0.5 mb-8" style="background-color:#c9a84c;"></div>
+
+    <p class="text-gray-300 text-lg md:text-xl max-w-2xl mb-12 font-medium leading-relaxed">
+      PROFESSIONAL CONCRETE CONTRACTING. BUILT STRONG. BUILT TO LAST.<br>SERVING THE METROPLEX WITH UNMATCHED CRAFTSMANSHIP.
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+      <a href="tel:8172779255" class="px-8 py-4 font-black text-sm tracking-widest uppercase border-2 text-black transition-all hover:opacity-90" style="background-color:#c9a84c; border-color:#c9a84c;">CALL (817) 277-9255</a>
+      <a href="#contact" class="px-8 py-4 font-black text-sm tracking-widest uppercase border-2 text-white transition-all hover:bg-white hover:text-gray-900" style="border-color:#ffffff;">GET A FREE QUOTE</a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+      <span class="text-xs tracking-widest uppercase text-gray-400 font-bold">KEEP SCROLLING</span>
+      <i data-lucide="chevrons-down" class="w-5 h-5 text-gray-400"></i>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER BAND -->
+<div class="animate-section overflow-hidden py-3" style="background-color:#111111;">
+  <div class="ticker-track">
+    <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color:#c9a84c;">FREE QUOTES · </span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8 text-white">FAST RESPONSE · </span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color:#c9a84c;">LICENSED & INSURED · </span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8 text-white">LOCAL EXPERTS · </span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color:#c9a84c;">FREE QUOTES · </span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8 text-white">FAST RESPONSE · </span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color:#c9a84c;">LICENSED & INSURED · </span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8 text-white">LOCAL EXPERTS · </span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color:#c9a84c;">FREE QUOTES · </span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8 text-white">FAST RESPONSE · </span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color:#c9a84c;">LICENSED & INSURED · </span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8 text-white">LOCAL EXPERTS · </span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color:#c9a84c;">FREE QUOTES · </span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8 text-white">FAST RESPONSE · </span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color:#c9a84c;">LICENSED & INSURED · </span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8 text-white">LOCAL EXPERTS · </span>
+  </div>
+</div>
+
+<!-- STATS BAR: DON-TICKER -->
+<section class="animate-section" style="background-color:#111111;">
+  <div class="px-4 md:px-8 lg:px-16 py-12 md:py-20 grid grid-cols-2 md:grid-cols-4 gap-0">
+
+    <!-- Stat 1 -->
+    <div class="flex flex-col items-start px-6 py-8" style="border-left:3px solid #c9a84c;">
+      <span class="heading font-black text-white text-6xl md:text-7xl leading-none" data-count="5" data-suffix="/5">5/5</span>
+      <span class="text-xs font-bold tracking-widest uppercase mt-3" style="color:#c9a84c;">AVG RATING</span>
+    </div>
+
+    <!-- Stat 2 -->
+    <div class="flex flex-col items-start px-6 py-8" style="border-left:3px solid #c9a84c;">
+      <span class="heading font-black text-white text-6xl md:text-7xl leading-none" data-count="5" data-suffix="+">5+</span>
+      <span class="text-xs font-bold tracking-widest uppercase mt-3" style="color:#c9a84c;">HAPPY CLIENTS</span>
+    </div>
+
+    <!-- Stat 3 -->
+    <div class="flex flex-col items-start px-6 py-8" style="border-left:3px solid #c9a84c;">
+      <span class="heading font-black text-white text-6xl md:text-7xl leading-none" data-count="10" data-suffix="+">10+</span>
+      <span class="text-xs font-bold tracking-widest uppercase mt-3" style="color:#c9a84c;">YEARS EXPERIENCE</span>
+    </div>
+
+    <!-- Stat 4 -->
+    <div class="flex flex-col items-start px-6 py-8" style="border-left:3px solid #c9a84c;">
+      <span class="heading font-black text-white text-6xl md:text-7xl leading-none" data-count="20" data-suffix="+">20+</span>
+      <span class="text-xs font-bold tracking-widest uppercase mt-3" style="color:#c9a84c;">AREAS SERVED</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="animate-section py-12 md:py-20 px-4 md:px-8 lg:px-16" style="background-color:#f8f8f8;">
+  <!-- Section Header -->
+  <div class="mb-12">
+    <p class="text-xs font-bold tracking-widest uppercase mb-3" style="color:#c9a84c;">WHAT WE DO</p>
+    <h2 class="heading font-black text-4xl md:text-6xl uppercase tracking-tight" style="color:#1e3a5f;">OUR WORK</h2>
+    <div class="w-16 h-1 mt-4" style="background-color:#c9a84c;"></div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="flex flex-wrap gap-2 md:flex-nowrap mb-8">
+    <button class="tab-btn flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 transition-all active-tab font-bold tracking-widest uppercase heading" onclick="showTab('tab1', this)">OUR SERVICES</button>
+    <button class="tab-btn flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 transition-all inactive-tab font-bold tracking-widest uppercase heading" onclick="showTab('tab2', this)">HOW WE HELP</button>
+    <button class="tab-btn flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 transition-all inactive-tab font-bold tracking-widest uppercase heading" onclick="showTab('tab3', this)">WHY CHOOSE US</button>
+  </div>
+
+  <!-- Tab 1: Our Services -->
+  <div id="tab1" class="tab-panel">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Card 1: Establishment -->
+      <div class="service-card bg-white p-6 border-b-2 border-gray-200 shadow-sm">
+        <div class="mb-4 w-12 h-12 flex items-center justify-center rounded-none" style="background-color:#1e3a5f;">
+          <i data-lucide="building-2" class="w-6 h-6 text-white"></i>
+        </div>
+        <h3 class="heading font-black text-xl uppercase tracking-tight mb-3" style="color:#1e3a5f;">ESTABLISHMENT</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6">We provide fully established concrete contracting services that meet commercial and residential standards. From foundation to finish, we deliver solutions built to endure the test of time.</p>
+        <a href="tel:8172779255" class="block w-full text-center px-4 py-3 text-xs font-black tracking-widest uppercase border-2 transition-all hover:text-white" style="border-color:#1e3a5f; color:#1e3a5f;" onmouseover="this.style.backgroundColor='#1e3a5f'" onmouseout="this.style.backgroundColor='transparent'">GET A FREE QUOTE</a>
+      </div>
+
+      <!-- Card 2: General Contractor -->
+      <div class="service-card bg-white p-6 border-b-2 border-gray-200 shadow-sm">
+        <div class="mb-4 w-12 h-12 flex items-center justify-center rounded-none" style="background-color:#1e3a5f;">
+          <i data-lucide="hard-hat" class="w-6 h-6 text-white"></i>
+        </div>
+        <h3 class="heading font-black text-xl uppercase tracking-tight mb-3" style="color:#1e3a5f;">GENERAL CONTRACTOR</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6">As a licensed general contractor, we oversee every phase of your concrete project with precision and accountability. Trust our expert team to manage your project from planning through completion.</p>
+        <a href="tel:8172779255" class="block w-full text-center px-4 py-3 text-xs font-black tracking-widest uppercase border-2 transition-all hover:text-white" style="border-color:#1e3a5f; color:#1e3a5f;" onmouseover="this.style.backgroundColor='#1e3a5f'" onmouseout="this.style.backgroundColor='transparent'">GET A FREE QUOTE</a>
+      </div>
+
+      <!-- Card 3: Point of Interest -->
+      <div class="service-card bg-white p-6 border-b-2 border-gray-200 shadow-sm">
+        <div class="mb-4 w-12 h-12 flex items-center justify-center rounded-none" style="background-color:#1e3a5f;">
+          <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
+        </div>
+        <h3 class="heading font-black text-xl uppercase tracking-tight mb-3" style="color:#1e3a5f;">POINT OF INTEREST</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6">Superior Concrete is a recognized point of interest in the DFW area, known for exceptional concrete workmanship and reliable service. We are your go-to destination for all concrete contracting needs.</p>
+        <a href="tel:8172779255" class="block w-full text-center px-4 py-3 text-xs font-black tracking-widest uppercase border-2 transition-all hover:text-white" style="border-color:#1e3a5f; color:#1e3a5f;" onmouseover="this.style.backgroundColor='#1e3a5f'" onmouseout="this.style.backgroundColor='transparent'">GET A FREE QUOTE</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Tab 2: How We Help -->
+  <div id="tab2" class="tab-panel hidden">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="service-card bg-white p-6 border-b-2 border-gray-200 shadow-sm">
+        <div class="mb-4 w-12 h-12 flex items-center justify-center" style="background-color:#1e3a5f;">
+          <i data-lucide="clipboard-check" class="w-6 h-6 text-white"></i>
+        </div>
+        <h3 class="heading font-black text-xl uppercase tracking-tight mb-3" style="color:#1e3a5f;">FREE CONSULTATION</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6">We begin every project with a thorough consultation to understand your needs, budget, and timeline. Our experts walk you through every option so you can make the best decision for your property.</p>
+        <a href="tel:8172779255" class="block w-full text-center px-4 py-3 text-xs font-black tracking-widest uppercase border-2 transition-all" style="border-color:#1e3a5f; color:#1e3a5f;" onmouseover="this.style.backgroundColor='#1e3a5f'; this.style.color='#fff'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#1e3a5f'">GET A FREE QUOTE</a>
+      </div>
+
+      <div class="service-card bg-white p-6 border-b-2 border-gray-200 shadow-sm">
+        <div class="mb-4 w-12 h-12 flex items-center justify-center" style="background-color:#1e3a5f;">
+          <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+        </div>
+        <h3 class="heading font-black text-xl uppercase tracking-tight mb-3" style="color:#1e3a5f;">QUALITY ASSURANCE</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6">Every pour, every finish, and every edge is inspected to meet our strict quality standards. We use premium concrete mixes and professional techniques to ensure lasting durability for every project.</p>
+        <a href="tel:8172779255" class="block w-full text-center px-4 py-3 text-xs font-black tracking-widest uppercase border-2 transition-all" style="border-color:#1e3a5f; color:#1e3a5f;" onmouseover="this.style.backgroundColor='#1e3a5f'; this.style.color='#fff'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#1e3a5f'">GET A FREE QUOTE</a>
+      </div>
+
+      <div class="service-card bg-white p-6 border-b-2 border-gray-200 shadow-sm">
+        <div class="mb-4 w-12 h-12 flex items-center justify-center" style="background-color:#1e3a5f;">
+          <i data-lucide="clock" class="w-6 h-6 text-white"></i>
+        </div>
+        <h3 class="heading font-black text-xl uppercase tracking-tight mb-3" style="color:#1e3a5f;">ON-TIME DELIVERY</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6">We respect your schedule and commit to project timelines from day one. Our crews are trained to work efficiently without cutting corners, so your project is completed on time and on budget.</p>
+        <a href="tel:8172779255" class="block w-full text-center px-4 py-3 text-xs font-black tracking-widest uppercase border-2 transition-all" style="border-color:#1e3a5f; color:#1e3a5f;" onmouseover="this.style.backgroundColor='#1e3a5f'; this.style.color='#fff'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#1e3a5f'">GET A FREE QUOTE</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Tab 3: Why Choose Us -->
+  <div id="tab3" class="tab-panel hidden">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="service-card bg-white p-6 border-b-2 border-gray-200 shadow-sm">
+        <div class="mb-4 w-12 h-12 flex items-center justify-center" style="background-color:#1e3a5f;">
+          <i data-lucide="star" class="w-6 h-6 text-white"></i>
+        </div>
+        <h3 class="heading font-black text-xl uppercase tracking-tight mb-3" style="color:#1e3a5f;">5-STAR RATED</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6">Superior Concrete holds a perfect 5-star rating from our clients, earned through consistent excellence and genuine care for every project. Our reputation speaks louder than any advertisement.</p>
+        <a href="tel:8172779255" class="block w-full text-center px-4 py-3 text-xs font-black tracking-widest uppercase border-2 transition-all" style="border-color:#1e3a5f; color:#1e3a5f;" onmouseover="this.style.backgroundColor='#1e3a5f'; this.style.color='#fff'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#1e3a5f'">GET A FREE QUOTE</a>
+      </div>
+
+      <div class="service-card bg-white p-6 border-b-2 border-gray-200 shadow-sm">
+        <div class="mb-4 w-12 h-12 flex items-center justify-center" style="background-color:#1e3a5f;">
+          <i data-lucide="award" class="w-6 h-6 text-white"></i>
+        </div>
+        <h3 class="heading font-black text-xl uppercase tracking-tight mb-3" style="color:#1e3a5f;">LICENSED & INSURED</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6">We operate as a fully licensed and insured concrete contractor in Texas, giving you total peace of mind. You can trust us to protect your property and your investment at every stage of the job.</p>
+        <a href="tel:8172779255" class="block w-full text-center px-4 py-3 text-xs font-black tracking-widest uppercase border-2 transition-all" style="border-color:#1e3a5f; color:#1e3a5f;" onmouseover="this.style.backgroundColor='#1e3a5f'; this.style.color='#fff'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#1e3a5f'">GET A FREE QUOTE</a>
+      </div>
+
+      <div class="service-card bg-white p-6 border-b-2 border-gray-200 shadow-sm">
+        <div class="mb-4 w-12 h-12 flex items-center justify-center" style="background-color:#1e3a5f;">
+          <i data-lucide="users" class="w-6 h-6 text-white"></i>
+        </div>
+        <h3 class="heading font-black text-xl uppercase tracking-tight mb-3" style="color:#1e3a5f;">LOCAL EXPERTS</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6">As a locally rooted business in the DFW Metroplex, we understand the soil conditions, climate, and codes that affect concrete projects in our region. We bring that local expertise to every single job.</p>
+        <a href="tel:8172779255" class="block w-full text-center px-4 py-3 text-xs font-black tracking-widest uppercase border-2 transition-all" style="border-color:#1e3a5f; color:#1e3a5f;" onmouseover="this.style.backgroundColor='#1e3a5f'; this.style.color='#fff'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#1e3a5f'">GET A FREE QUOTE</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DIAGONAL DIVIDER -->
+<div class="w-full h-16 clip-diagonal" style="background-color:#1e3a5f; margin-bottom:-2px;"></div>
+
+<!-- GALLERY -->
+<section id="gallery" class="animate-section py-12 md:py-20 px-4 md:px-8 lg:px-16" style="background-color:#1e3a5f;">
+  <div class="mb-12">
+    <p class="text-xs font-bold tracking-widest uppercase mb-3" style="color:#c9a84c;">OUR PORTFOLIO</p>
+    <h2 class="heading font-black text-4xl md:text-6xl uppercase tracking-tight text-white">OUR WORK<br>IN ACTION</h2>
+    <div class="w-16 h-1 mt-4" style="background-color:#c9a84

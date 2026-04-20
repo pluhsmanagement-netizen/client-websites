@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Georgia In Home Services | Roofing, Painting & Home Renovation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    html, body { overflow-x: hidden; scroll-behavior: smooth; }
+    body { font-family: 'Source Sans Pro', sans-serif; }
+    h1,h2,h3,h4,h5,h6,.heading { font-family: 'Oswald', sans-serif; }
+    .ticker-track { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { display: flex; animation: marquee 40s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    .active-tab { background-color: #a03030; color: white; }
+    .inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
+    .img-hover-wrap { overflow: hidden; }
+    .img-hover-wrap img { transition: transform 0.7s ease; }
+    .img-hover-wrap:hover img { transform: scale(1.05); }
+    .arrow-cta { border-bottom: 2px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s ease; }
+    .arrow-cta:hover { gap: 14px; }
+    section { scroll-margin-top: 80px; }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- NAV -->
+  <nav id="main-nav" style="position:fixed;top:0;left:0;right:0;z-index:1000;transition:background-color 0.3s ease,border-bottom 0.3s ease;background-color:transparent;">
+    <div class="px-4 md:px-8 lg:px-16 py-4 flex items-center justify-between">
+      <a href="#home" onclick="event.preventDefault(); document.getElementById('home').scrollIntoView({behavior:'smooth'}); document.getElementById('mobile-menu')?.classList.add('hidden');" class="heading text-2xl font-bold text-white tracking-wide" style="text-shadow:0 2px 8px rgba(0,0,0,0.5);">
+        GEORGIA IN HOME<br><span style="color:#e01010;">SERVICES</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#about" onclick="event.preventDefault(); document.getElementById('about').scrollIntoView({behavior:'smooth'}); document.getElementById('mobile-menu')?.classList.add('hidden');" class="text-white hover:text-red-300 font-semibold tracking-wide transition-colors text-sm uppercase" style="text-shadow:0 1px 4px rgba(0,0,0,0.5);">About</a>
+        <a href="#services" onclick="event.preventDefault(); document.getElementById('services').scrollIntoView({behavior:'smooth'}); document.getElementById('mobile-menu')?.classList.add('hidden');" class="text-white hover:text-red-300 font-semibold tracking-wide transition-colors text-sm uppercase" style="text-shadow:0 1px 4px rgba(0,0,0,0.5);">Services</a>
+        <a href="#gallery" onclick="event.preventDefault(); document.getElementById('gallery').scrollIntoView({behavior:'smooth'}); document.getElementById('mobile-menu')?.classList.add('hidden');" class="text-white hover:text-red-300 font-semibold tracking-wide transition-colors text-sm uppercase" style="text-shadow:0 1px 4px rgba(0,0,0,0.5);">Gallery</a>
+        <a href="#reviews" onclick="event.preventDefault(); document.getElementById('reviews').scrollIntoView({behavior:'smooth'}); document.getElementById('mobile-menu')?.classList.add('hidden');" class="text-white hover:text-red-300 font-semibold tracking-wide transition-colors text-sm uppercase" style="text-shadow:0 1px 4px rgba(0,0,0,0.5);">Reviews</a>
+        <a href="#contact" onclick="event.preventDefault(); document.getElementById('contact').scrollIntoView({behavior:'smooth'}); document.getElementById('mobile-menu')?.classList.add('hidden');" class="text-white hover:text-red-300 font-semibold tracking-wide transition-colors text-sm uppercase" style="text-shadow:0 1px 4px rgba(0,0,0,0.5);">Contact</a>
+        <a href="tel:4044342436" class="px-5 py-2 text-white font-bold text-sm uppercase tracking-widest rounded-full border-2 border-white hover:bg-white hover:text-gray-900 transition-all">(404) 434-2436</a>
+      </div>
+      <button id="hamburger" class="flex md:hidden text-white" aria-label="Open menu">
+        <i data-lucide="menu" class="w-7 h-7"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden bg-gray-900 border-t border-gray-700 md:hidden">
+      <a href="#about" onclick="event.preventDefault(); document.getElementById('about').scrollIntoView({behavior:'smooth'}); document.getElementById('mobile-menu')?.classList.add('hidden');" class="block py-3 px-4 border-b border-gray-700 text-white hover:bg-gray-800 uppercase tracking-wide text-sm font-semibold">About</a>
+      <a href="#services" onclick="event.preventDefault(); document.getElementById('services').scrollIntoView({behavior:'smooth'}); document.getElementById('mobile-menu')?.classList.add('hidden');" class="block py-3 px-4 border-b border-gray-700 text-white hover:bg-gray-800 uppercase tracking-wide text-sm font-semibold">Services</a>
+      <a href="#gallery" onclick="event.preventDefault(); document.getElementById('gallery').scrollIntoView({behavior:'smooth'}); document.getElementById('mobile-menu')?.classList.add('hidden');" class="block py-3 px-4 border-b border-gray-700 text-white hover:bg-gray-800 uppercase tracking-wide text-sm font-semibold">Gallery</a>
+      <a href="#reviews" onclick="event.preventDefault(); document.getElementById('reviews').scrollIntoView({behavior:'smooth'}); document.getElementById('mobile-menu')?.classList.add('hidden');" class="block py-3 px-4 border-b border-gray-700 text-white hover:bg-gray-800 uppercase tracking-wide text-sm font-semibold">Reviews</a>
+      <a href="#faq" onclick="event.preventDefault(); document.getElementById('faq').scrollIntoView({behavior:'smooth'}); document.getElementById('mobile-menu')?.classList.add('hidden');" class="block py-3 px-4 border-b border-gray-700 text-white hover:bg-gray-800 uppercase tracking-wide text-sm font-semibold">FAQ</a>
+      <a href="#contact" onclick="event.preventDefault(); document.getElementById('contact').scrollIntoView({behavior:'smooth'}); document.getElementById('mobile-menu')?.classList.add('hidden');" class="block py-3 px-4 border-b border-gray-700 text-white hover:bg-gray-800 uppercase tracking-wide text-sm font-semibold">Contact</a>
+      <a href="tel:4044342436" class="block py-3 px-4 text-white font-bold" style="background-color:#a03030;">(404) 434-2436</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center" style="background-color:#111111;">
+    <div class="absolute inset-0">
+      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHpCzImJmxjWP6qXtx3XdISgkup8M8E55ISmGzxS2_u6GRYrksUf2cmlD1Dn0kTInKUCnUB-0wJ_7Nl8cNfbF3h0VXB87_vBJFbx46hHqlnvTAthQe5xsh4_4fk8bjfHJotKmlKMVYLcH8NbSmNYKHp8P5D69GJEuXVleSWUCOvZNUxrkXLjUczbeZlMPGD-fvNmQxe90Ii6w8Kdv71oDD6o-RVA8J1_fQ3kxCgxvPxdxHwnvOaNDulaMosSi_T5AMcfl8IwYrLTuLYyoL99faqLAXtyeISJgqvYI2CuEbB-w&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Georgia In Home Services" loading="eager" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/roofing-hero/1600/900'">
+      <div class="absolute inset-0" style="background:linear-gradient(135deg, rgba(160,48,48,0.85) 0%, rgba(0,0,0,0.75) 100%);"></div>
+    </div>
+    <div class="relative z-10 text-center px-4 md:px-8 max-w-5xl mx-auto">
+      <p class="text-white/70 uppercase tracking-widest text-xs md:text-sm mb-4 font-semibold">Atlanta's Premier Home Services</p>
+      <h1 class="heading font-bold text-white leading-none mb-6" style="font-size:clamp(3.5rem,10vw,9rem);line-height:0.9;">
+        BUILT<br><span style="color:#e01010;">RIGHT.</span><br>DONE<br>RIGHT.
+      </h1>
+      <hr class="border-white/30 max-w-xs mx-auto my-6">
+      <p class="text-white/85 text-lg md:text-xl max-w-xl mx-auto mb-8 font-light">Roofing, renovation, painting & more — delivered with professionalism Atlanta homeowners trust. 4.9★ across 323+ reviews.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="#contact" onclick="event.preventDefault(); document.getElementById('contact').scrollIntoView({behavior:'smooth'});" class="px-8 py-4 text-white font-bold uppercase tracking-widest text-sm rounded-none inline-block" style="background-color:#a03030;">Get a Free Quote</a>
+        <a href="tel:4044342436" class="px-8 py-4 font-bold uppercase tracking-widest text-sm rounded-none inline-block border-2 border-white text-white hover:bg-white hover:text-gray-900 transition-all">(404) 434-2436</a>
+      </div>
+      <div class="mt-16 flex flex-col items-center text-white/50 animate-bounce">
+        <span class="text-xs uppercase tracking-widest mb-2">Keep Scrolling</span>
+        <i data-lucide="chevron-down" class="w-5 h-5"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="animate-section overflow-hidden py-3" style="background-color:#111111;">
+    <div class="ticker-track">
+      <span class="text-white text-sm font-bold tracking-widest uppercase px-6">FREE QUOTES · FAST RESPONSE · LICENSED &amp; INSURED · LOCAL EXPERTS · 4.9 STAR RATED · ATLANTA'S BEST · FREE QUOTES · FAST RESPONSE · LICENSED &amp; INSURED · LOCAL EXPERTS · 4.9 STAR RATED · ATLANTA'S BEST · &nbsp;</span>
+      <span class="text-white text-sm font-bold tracking-widest uppercase px-6">FREE QUOTES · FAST RESPONSE · LICENSED &amp; INSURED · LOCAL EXPERTS · 4.9 STAR RATED · ATLANTA'S BEST · FREE QUOTES · FAST RESPONSE · LICENSED &amp; INSURED · LOCAL EXPERTS · 4.9 STAR RATED · ATLANTA'S BEST · &nbsp;</span>
+    </div>
+  </div>
+
+  <!-- STATS BAR -->
+  <div class="animate-section py-16 md:py-20" style="background-color:#1a1a1a;">
+    <div class="px-4 md:px-8 lg:px-16 grid grid-cols-2 md:grid-cols-4 gap-0">
+      <div class="text-center py-8 px-4 border-r border-white/10">
+        <div class="heading font-bold text-5xl md:text-6xl mb-1" style="color:#e01010;" data-count="49" data-suffix="/5">4.9/5</div>
+        <div class="text-white/60 text-sm uppercase tracking-widest font-semibold mt-1">Avg Rating</div>
+      </div>
+      <div class="text-center py-8 px-4 md:border-r border-white/10">
+        <div class="heading font-bold text-5xl md:text-6xl mb-1 text-white" data-count="323" data-suffix="+">323+</div>
+        <div class="text-white/60 text-sm uppercase tracking-widest font-semibold mt-1">Happy Clients</div>
+      </div>
+      <div class="text-center py-8 px-4 border-r border-white/10 border-t md:border-t-0">
+        <div class="heading font-bold text-5xl md:text-6xl mb-1 text-white" data-count="10" data-suffix="+">10+</div>
+        <div class="text-white/60 text-sm uppercase tracking-widest font-semibold mt-1">Years Experience</div>
+      </div>
+      <div class="text-center py-8 px-4 border-t md:border-t-0">
+        <div class="heading font-bold text-5xl md:text-6xl mb-1 text-white" data-count="20" data-suffix="+">20+</div>
+        <div class="text-white/60 text-sm uppercase tracking-widest font-semibold mt-1">Areas Served</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-24 md:py-32 px-4 md:px-8 lg:px-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="uppercase tracking-widest text-xs font-bold mb-4" style="color:#a03030;">Who We Are</p>
+          <h2 class="heading font-bold text-5xl md:text-7xl leading-none mb-6 text-gray-900">GEORGIA'S<br>TRUSTED<br><span style="color:#a03030;">HOME TEAM.</span></h2>
+          <hr class="border-gray-200 mb-6">
+          <p class="text-gray-600 text-lg leading-relaxed mb-5">Georgia In Home Services is Atlanta's full-service home improvement partner. From emergency roof replacements to complete interior renovations, our team — led by Danny — brings unmatched professionalism, clear communication, and quality craftsmanship to every single project.</p>
+          <p class="text-gray-600 text-lg leading-relaxed mb-8">We handle fire and water damage restoration, roofing, painting, general contracting, and more. Whether it's your primary home or an investment property, we treat every job like it's our own home on the line.</p>
+          <a href="#services" onclick="event.preventDefault(); document.getElementById('services').scrollIntoView({behavior:'smooth'});" class="arrow-cta font-bold uppercase tracking-widest text-sm" style="color:#a03030;">Explore Our Services <span>→</span></a>
+        </div>
+        <div class="img-hover-wrap rounded-none overflow-hidden h-80 md:h-[520px] relative">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFFFTcTeiXMqaun3ey1EEg7mITuMrPqnK3rV-gveD2yABwrbByegeMA-eOXYR2ApDoWjyRLrj34LvY3GFAqU_6JBah9QwMpSSflHzuLr3AtHONbVEYV4xA7fcn9QpQ_EMSxEqxJeOiJQTDtS-Vf-ou8kTNm4hp23aprbl-fDGQrxPNDf5WJ-NXEVfCm1yP54EdfwJcM_YCV_dGc8AagLlVimK-vZS1DbwlUl4niHXF9toOxPs1s3Ex8gykwHTyaCVSWiNkODOHClxf9BE-9w3UwdHt-q3csHPPbtkqNZ92X2af1W0NVkOMpblsDHs-1zgOHyrcOtRgRRpZGGlOqqiWjF29IBPNghjZAP1caf93eiNAlgMTRIoM8h8tfhMylmsvPQimJlWt7ci_JUNnjhg09XzpYthapUSNxu1Rs-OfOWOTC4zQ-Dkl_soVtZzr2&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Our team at work" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/roofing-about/800/600'">
+          <div class="absolute bottom-0 left-0 right-0 p-6" style="background:linear-gradient(to top, rgba(160,48,48,0.9), transparent);">
+            <p class="text-white font-bold uppercase tracking-widest text-sm">Danny &amp; The Georgia In Home Services Team</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="border-gray-100 mx-4 md:mx-16">
+
+  <!-- SERVICES -->
+  <section id="services" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16" style="background-color:#f9fafb;">
+    <div class="max-w-7xl mx-auto">
+      <p class="uppercase tracking-widest text-xs font-bold mb-4" style="color:#a03030;">What We Do</p>
+      <h2 class="heading font-bold text-5xl md:text-7xl leading-none mb-4 text-gray-900">OUR<br><span style="color:#a03030;">SERVICES.</span></h2>
+      <p class="text-gray-500 max-w-xl mb-12 text-lg">Comprehensive home services from a team Atlanta homeowners have trusted for over a decade.</p>
+
+      <!-- Tabs -->
+      <div class="flex flex-wrap gap-2 md:flex-nowrap mb-8">
+        <button class="tab-btn flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 transition-all heading font-semibold uppercase tracking-wide active-tab" onclick="showTab('tab-panel-1', this)">Roofing Services</button>
+        <button class="tab-btn flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 transition-all heading font-semibold uppercase tracking-wide inactive-tab" onclick="showTab('tab-panel-2', this)">Repairs &amp; Restoration</button>
+        <button class="tab-btn flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 transition-all heading font-semibold uppercase tracking-wide inactive-tab" onclick="showTab('tab-panel-3', this)">Specialty Services</button>
+      </div>
+
+      <!-- Tab 1 -->
+      <div id="tab-panel-1" class="tab-panel">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card: Establishment -->
+          <div class="bg-white/10 backdrop-blur border border-white/20 rounded-2xl p-6 shadow-xl" style="background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.3);">
+            <div class="mb-4 w-12 h-12 rounded-full flex items-center justify-center" style="background-color:#a03030;">
+              <i data-lucide="building-2" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="heading font-bold text-xl mb-3 text-gray-900">Licensed Establishment</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-5">We operate as a fully licensed and insured home services establishment in the greater Atlanta area. Our credentials give you total peace of mind from first call to final walkthrough.</p>
+            <a href="tel:4044342436" class="arrow-cta text-sm font-bold uppercase tracking-wide" style="color:#a03030;">Get a Free Quote <span>→</span></a>
+          </div>
+          <!-- Card: General Contractor -->
+          <div class="rounded-2xl p-6 shadow-xl" style="background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.3);">
+            <div class="mb-4 w-12 h-12 rounded-full flex items-center justify-center" style="background-color:#a03030;">
+              <i data-lucide="hard-hat" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="heading font-bold text-xl mb-3 text-gray-900">General Contracting</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-5">From kitchen and bathroom remodels to full-scale property renovations, our general contracting services cover every phase of your project with expert coordination and quality results.</p>
+            <a href="tel:4044342436" class="arrow-cta text-sm font-bold uppercase tracking-wide" style="color:#a03030;">Get a Free Quote <span>→</span></a>
+          </div>
+          <!-- Card: Home Goods Store -->
+          <div class="rounded-2xl p-6 shadow-xl" style="background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.3);">
+            <div class="mb-4 w-12 h-12 rounded-full flex items-center justify-center" style="background-color:#a03030;">
+              <i data-lucide="home" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="heading font-bold text-xl mb-3 text-gray-900">Home Goods &amp; Materials</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-5">We source premium home goods and materials so you don't have to. Quality finishes, fixtures, and supplies selected for durability and curb appeal — all sourced at competitive pricing.</p>
+            <a href="tel:4044342436" class="arrow-cta text-sm font-bold uppercase tracking-wide" style="color:#a03030;">Get a Free Quote <span>→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2 -->
+      <div id="tab-panel-2" class="tab-panel hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card: Painter -->
+          <div class="rounded-2xl p-6 shadow-xl" style="background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.3);">
+            <div class="mb-4 w-12 h-12 rounded-full flex items-center justify-center" style="background-color:#a03030;">
+              <i data-lucide="paintbrush" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="heading font-bold text-xl mb-3 text-gray-900">Interior &amp; Exterior Painting</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-5">Our professional painting crew delivers flawless finishes on every surface — interior rooms, exterior facades, trim, and more. Clean lines, premium paints, zero mess left behind.</p>
+            <a href="tel:4044342436" class="arrow-cta text-sm font-bold uppercase tracking-wide" style="color:#a03030;">Get a Free Quote <span>→</span></a>
+          </div>
+          <!-- Card: Point of Interest -->
+          <div class="rounded-2xl p-6 shadow-xl" style="background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.3);">
+            <div class="mb-4 w-12 h-12 rounded-full flex items-center justify-center" style="background-color:#a03030;">
+              <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="heading font-bold text-xl mb-3 text-gray-900">Local Home Services Hub</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-5">As a recognized Atlanta point of interest, we've built a reputation across neighborhoods citywide. Neighbors recommend us because we consistently show up, do great work, and stand behind every job.</p>
+            <a href="tel:4044342436" class="arrow-cta text-sm font-bold uppercase tracking-wide" style="color:#a03030;">Get a Free Quote <span>→</span></a>
+          </div>
+          <!-- Card: Roofing Contractor -->
+          <div class="rounded-2xl p-6 shadow-xl" style="background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.3);">
+            <div class="mb-4 w-12 h-12 rounded-full flex items-center justify-center" style="background-color:#a03030;">
+              <i data-lucide="triangle" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="heading font-bold text-xl mb-3 text-gray-900">Roofing Contractor</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-5">Full roof replacements, inspections, repairs, storm damage recovery, and mold investigation — we handle every aspect of your roof with licensed craftsmanship and lasting materials.</p>
+            <a href="tel:4044342436" class="arrow-cta text-sm font-bold uppercase tracking-wide" style="color:#a03030;">Get a Free Quote <span>→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3 -->
+      <div id="tab-panel-3" class="tab-panel hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card: Store -->
+          <div class="rounded-2xl p-6 shadow-xl" style="background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.3);">
+            <div class="mb-4 w-12 h-12 rounded-full flex items-center justify-center" style="background-color:#9010a0;">
+              <i data-lucide="store" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="heading font-bold text-xl mb-3 text-gray-900">Fire &amp; Water Damage Restoration</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-5">When disaster strikes, our specialty restoration team responds fast. From fire-damaged walls to water-soaked subfloors, we rebuild your home with care, speed, and exceptional attention to detail.</p>
+            <a href="tel:4044342436" class="arrow-cta text-sm font-bold uppercase tracking-wide" style="color:#a03030;">Get a Free Quote <span>→</span></a>
+          </div>
+          <div class="rounded-2xl p-6 shadow-xl" style="background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.3);">
+            <div class="mb-4 w-12 h-12 rounded-full flex items-center justify-center

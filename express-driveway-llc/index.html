@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Express Driveway, LLC — Premium Concrete & Driveway Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    html, body { overflow-x: hidden; }
+    body { font-family: 'Manrope', sans-serif; background-color: #111111; color: #f5f5f0; }
+    h1,h2,h3,h4,h5,h6,.heading { font-family: 'Inter', sans-serif; }
+    .ticker-track { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { display: flex; animation: marquee 40s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    .active-tab { background-color: #1e3a5f; color: white; }
+    .inactive-tab { background-color: #1a1a1a; color: #9ca3af; border: 1px solid #333; }
+    .img-hover-wrap { overflow: hidden; }
+    .img-hover-wrap img { transition: transform 0.7s ease; }
+    .img-hover-wrap:hover img { transform: scale(1.05); }
+    .arrow-cta { border-bottom: 2px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s ease; }
+    .arrow-cta:hover { gap: 14px; }
+    details[open] summary span.faq-icon::before { content: '−'; }
+    span.faq-icon::before { content: '+'; }
+    @keyframes bounce-down { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+    .bounce-down { animation: bounce-down 1.5s ease-in-out infinite; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background-color: #c9a84c; transition: width 0.3s ease; }
+    .nav-link:hover::after { width: 100%; }
+    .service-card { background-color: #1a1a1a; border: 1px solid #2a2a2a; transition: all 0.3s ease; position: relative; overflow: hidden; }
+    .service-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background-color: #c9a84c; transform: scaleY(0); transition: transform 0.3s ease; }
+    .service-card:hover::before { transform: scaleY(1); }
+    .service-card:hover { border-color: #c9a84c; transform: translateY(-2px); }
+    .faq-item { border-bottom: 1px solid #2a2a2a; }
+    .faq-item summary { color: #f5f5f0; }
+    input, textarea, select { background-color: #1a1a1a !important; color: #f5f5f0 !important; border-color: #333 !important; }
+    input::placeholder, textarea::placeholder { color: #666 !important; }
+    input:focus, textarea:focus, select:focus { border-color: #c9a84c !important; outline: none; }
+    select option { background-color: #1a1a1a; color: #f5f5f0; }
+    .hero-underline { height: 1px; background: linear-gradient(to right, #c9a84c, transparent); }
+    .gold-text { color: #c9a84c; }
+    .dark-card { background-color: #1a1a1a; border: 1px solid #2a2a2a; }
+  </style>
+</head>
+<body style="background-color: #111111;">
+
+  <!-- NAV -->
+  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-8 lg:px-16 py-5" style="background-color: transparent;">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="#" class="heading font-black text-xl tracking-tight" style="color: #c9a84c;">EXPRESS<span class="text-white font-light"> DRIVEWAY</span></a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#services" class="nav-link text-sm uppercase tracking-widest text-gray-300 hover:text-white transition-colors">Services</a>
+        <a href="#gallery" class="nav-link text-sm uppercase tracking-widest text-gray-300 hover:text-white transition-colors">Gallery</a>
+        <a href="#reviews" class="nav-link text-sm uppercase tracking-widest text-gray-300 hover:text-white transition-colors">Reviews</a>
+        <a href="#faq" class="nav-link text-sm uppercase tracking-widest text-gray-300 hover:text-white transition-colors">FAQ</a>
+        <a href="#contact" class="nav-link text-sm uppercase tracking-widest text-gray-300 hover:text-white transition-colors">Contact</a>
+        <a href="tel:7708626232" class="ml-4 px-5 py-2 text-sm font-bold uppercase tracking-widest border transition-all hover:text-black" style="border-color: #c9a84c; color: #c9a84c; hover:background-color: #c9a84c;"
+          onmouseover="this.style.backgroundColor='#c9a84c';this.style.color='#111';"
+          onmouseout="this.style.backgroundColor='transparent';this.style.color='#c9a84c';"
+        >(770) 862-6232</a>
+      </div>
+      <button id="hamburger" class="flex md:hidden text-white" data-lucide="menu" aria-label="Open menu"></button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden mt-4 border-t border-gray-800 pt-4 pb-4" style="background-color: #111111;">
+      <a href="#services" class="block py-3 px-4 border-b border-gray-800 text-sm uppercase tracking-widest text-gray-300">Services</a>
+      <a href="#gallery" class="block py-3 px-4 border-b border-gray-800 text-sm uppercase tracking-widest text-gray-300">Gallery</a>
+      <a href="#reviews" class="block py-3 px-4 border-b border-gray-800 text-sm uppercase tracking-widest text-gray-300">Reviews</a>
+      <a href="#faq" class="block py-3 px-4 border-b border-gray-800 text-sm uppercase tracking-widest text-gray-300">FAQ</a>
+      <a href="#contact" class="block py-3 px-4 border-b border-gray-800 text-sm uppercase tracking-widest text-gray-300">Contact</a>
+      <a href="tel:7708626232" class="block py-3 px-4 text-sm uppercase tracking-widest font-bold" style="color: #c9a84c;">(770) 862-6232</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="relative min-h-screen flex flex-col" style="background-color: #111111;">
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFn3W7BWPv3OGrK3Am3z78pzLrsKspzJGtpvArMp15Es_vklU0fFypOF48cUm7Gus-1W9AtQQZFcj5YaTaRdD_Ip-SBvHaYjPMpzYAPmI3Vl9n6n8Kulh4R4usK3wH4a9tTecmbPaqFT4w7gDZhSZxAOig66hnTNn0klvbK0PFFbFfEbuFFjsCllvtYcHesUWuwa2WF-X22NpP0Z_Jc-lo3GEgwOuxFeHVmEcIHNzyJw254gQZnwZKo9OoQreUqFu3VO3UJPIrFKct0qn5AqZ3l0J_WPhGwwZgMRlLDOHaKug&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+        alt="Express Driveway work"
+        class="w-full h-full object-cover"
+        loading="eager"
+        onerror="this.onerror=null;this.src='https://picsum.photos/seed/contractor-1/1600/900';"
+      >
+      <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(17,17,17,0.92) 55%, rgba(17,17,17,0.5) 100%);"></div>
+    </div>
+
+    <div class="relative z-10 flex-1 flex flex-col justify-center px-4 md:px-8 lg:px-16 pt-32 pb-24 max-w-7xl mx-auto w-full">
+      <div class="max-w-3xl">
+        <p class="text-xs uppercase tracking-widest mb-6 font-semibold" style="color: #c9a84c;">Express Driveway, LLC · Metro Atlanta</p>
+        <h1 class="heading font-black text-5xl md:text-8xl lg:text-9xl leading-none text-white mb-6">CRAFTED.<br><span style="color: #c9a84c;">PRECISE.</span><br>LASTING.</h1>
+        <div class="hero-underline w-24 mb-6"></div>
+        <p class="text-lg md:text-xl text-gray-300 max-w-lg mb-4 font-medium italic" style="font-family: Georgia, serif;">Premium concrete & driveway solutions for metro Atlanta homeowners.</p>
+        <p class="text-sm md:text-base text-gray-400 max-w-md mb-10">From driveways and parking pads to retaining walls and paver patios — we deliver quality that lasts, at prices that make sense. Rated 4.9 stars by satisfied clients.</p>
+        <div class="flex flex-col sm:flex-row gap-4 items-start">
+          <a href="#contact" class="arrow-cta font-bold text-base uppercase tracking-widest" style="color: #c9a84c;">get a free quote <span>→</span></a>
+          <a href="tel:7708626232" class="arrow-cta font-bold text-base uppercase tracking-widest text-white ml-0 sm:ml-8">call us now <span>→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative z-10 text-center pb-8">
+      <p class="text-xs uppercase tracking-widest text-gray-500 bounce-down">keep scrolling ↓</p>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="animate-section overflow-hidden py-3" style="background-color: #0a0a0a; border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a;">
+    <div class="ticker-track">
+      <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color: #c9a84c;">QUALITY WORK · TRUSTED PROFESSIONALS · SERVING METRO ATLANTA · CALL NOW · DRIVEWAYS · PATIOS · RETAINING WALLS · PAVER STONE · PARKING PADS · QUALITY WORK · TRUSTED PROFESSIONALS · SERVING METRO ATLANTA · CALL NOW · DRIVEWAYS · PATIOS · RETAINING WALLS · PAVER STONE · PARKING PADS · </span>
+      <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color: #c9a84c;">QUALITY WORK · TRUSTED PROFESSIONALS · SERVING METRO ATLANTA · CALL NOW · DRIVEWAYS · PATIOS · RETAINING WALLS · PAVER STONE · PARKING PADS · QUALITY WORK · TRUSTED PROFESSIONALS · SERVING METRO ATLANTA · CALL NOW · DRIVEWAYS · PATIOS · RETAINING WALLS · PAVER STONE · PARKING PADS · </span>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section class="animate-section py-16 md:py-24 px-4 md:px-8 lg:px-16" style="background-color: #111111;">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-0">
+
+        <div class="dark-card p-8 md:p-12 flex flex-col items-center text-center" style="border-left: 3px solid #c9a84c;">
+          <div class="mb-3 text-white" data-lucide="star" style="color: #c9a84c; width: 28px; height: 28px;"></div>
+          <div class="heading font-black text-5xl md:text-7xl text-white mb-2" data-count="49" data-suffix="/5">4.9/5</div>
+          <p class="text-xs uppercase tracking-widest text-gray-500">avg rating</p>
+        </div>
+
+        <div class="dark-card p-8 md:p-12 flex flex-col items-center text-center" style="border-left: 3px solid #c9a84c;">
+          <div class="mb-3" data-lucide="users" style="color: #c9a84c; width: 28px; height: 28px;"></div>
+          <div class="heading font-black text-5xl md:text-7xl text-white mb-2" data-count="35" data-suffix="+">35+</div>
+          <p class="text-xs uppercase tracking-widest text-gray-500">happy clients</p>
+        </div>
+
+        <div class="dark-card p-8 md:p-12 flex flex-col items-center text-center" style="border-left: 3px solid #c9a84c;">
+          <div class="mb-3" data-lucide="calendar" style="color: #c9a84c; width: 28px; height: 28px;"></div>
+          <div class="heading font-black text-5xl md:text-7xl text-white mb-2" data-count="10" data-suffix="+">10+</div>
+          <p class="text-xs uppercase tracking-widest text-gray-500">years experience</p>
+        </div>
+
+        <div class="dark-card p-8 md:p-12 flex flex-col items-center text-center" style="border-left: 3px solid #c9a84c;">
+          <div class="mb-3" data-lucide="map-pin" style="color: #c9a84c; width: 28px; height: 28px;"></div>
+          <div class="heading font-black text-5xl md:text-7xl text-white mb-2" data-count="20" data-suffix="+">20+</div>
+          <p class="text-xs uppercase tracking-widest text-gray-500">areas served</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT STRIP -->
+  <section class="animate-section py-16 md:py-24 px-4 md:px-8 lg:px-16 border-t" style="border-color: #1a1a1a; background-color: #0f0f0f;">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-20 items-center">
+      <div class="md:w-1/2">
+        <p class="text-xs uppercase tracking-widest mb-4 font-semibold" style="color: #c9a84c;">who we are</p>
+        <h2 class="heading font-black text-4xl md:text-6xl text-white leading-tight mb-6">atlanta's trusted concrete specialists</h2>
+        <div class="hero-underline w-16 mb-6"></div>
+        <p class="text-gray-400 leading-relaxed mb-4">Express Driveway, LLC brings craftsmanship and professionalism to every project. Led by Rodrigo, our team delivers exceptional concrete work — on time, on budget, and above expectations. We treat your property with the same care we'd give our own.</p>
+        <p class="text-gray-400 leading-relaxed mb-8">From a first consultation to the final walk-through, our clients consistently praise our communication, precision, and commitment to quality results that stand the test of time.</p>
+        <a href="#contact" class="arrow-cta font-bold text-sm uppercase tracking-widest" style="color: #c9a84c;">get a free quote →</a>
+      </div>
+      <div class="md:w-1/2 img-hover-wrap rounded-none" style="max-height: 500px; overflow: hidden;">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHbr8LwnwsnSe4UkS3lXdDdZeMlCw6ES6Rnk9Bt-b4eVMvWIjCTBbCd9931zCuUKb5aDnm6Rv40ANJvCGvB5Ej-OeZiRiBSfwyX23cfQSvYdc0dkoxX5Ljy1cW3WHZRt-BblOrXc6JlMQyQTxkvSES4aLRWOEUtwvThk-xKMG8zSllplNBTv4U-se9LtwPg4DWXWkNCwXniejjiOYw1Qk1mtQJqYBw3dytoVOEs55iBuxWWCyoPR8znAR_jaSrXs9UaSk3MiViCgCoBWePR18dFXnV3aA5Gk25LlsXXNuAtvw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Express Driveway project"
+          class="w-full object-cover"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='https://picsum.photos/seed/contractor-2/800/600';"
+          style="height: 400px;"
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="animate-section py-16 md:py-24 px-4 md:px-8 lg:px-16 border-t" style="border-color: #1a1a1a; background-color: #111111;">
+    <div class="max-w-7xl mx-auto">
+      <p class="text-xs uppercase tracking-widest mb-4 font-semibold" style="color: #c9a84c;">what we do</p>
+      <h2 class="heading font-black text-4xl md:text-6xl text-white leading-tight mb-12">our services</h2>
+
+      <div class="flex flex-wrap gap-2 md:flex-nowrap mb-8">
+        <button class="tab-btn flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 transition-all font-bold uppercase tracking-widest active-tab" onclick="showTab('tab1', this)">Core Services</button>
+        <button class="tab-btn flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 transition-all font-bold uppercase tracking-widest inactive-tab" onclick="showTab('tab2', this)">Specialty Work</button>
+        <button class="tab-btn flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 transition-all font-bold uppercase tracking-widest inactive-tab" onclick="showTab('tab3', this)">Additional</button>
+      </div>
+
+      <!-- Tab 1 -->
+      <div id="tab1" class="tab-panel">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <div class="service-card p-6">
+            <div class="mb-4" data-lucide="truck" style="color: #c9a84c; width: 32px; height: 32px;"></div>
+            <h3 class="heading font-bold text-xl text-white mb-3">driveway installation</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">We design and pour custom concrete driveways built to handle Atlanta's climate and daily use. Our installations are smooth, level, and finished to perfection.</p>
+            <a href="tel:7708626232" class="arrow-cta text-sm font-bold uppercase tracking-widest" style="color: #c9a84c;">get a free quote →</a>
+          </div>
+
+          <div class="service-card p-6">
+            <div class="mb-4" data-lucide="square" style="color: #c9a84c; width: 32px; height: 32px;"></div>
+            <h3 class="heading font-bold text-xl text-white mb-3">parking pad construction</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">Need extra parking space? We build sturdy, well-drained concrete parking pads that seamlessly integrate with your existing driveway and landscaping.</p>
+            <a href="tel:7708626232" class="arrow-cta text-sm font-bold uppercase tracking-widest" style="color: #c9a84c;">get a free quote →</a>
+          </div>
+
+          <div class="service-card p-6">
+            <div class="mb-4" data-lucide="layers" style="color: #c9a84c; width: 32px; height: 32px;"></div>
+            <h3 class="heading font-bold text-xl text-white mb-3">patio construction</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">Transform your backyard with a beautifully crafted concrete patio. We offer standard poured concrete and decorative finishes to match your outdoor living vision.</p>
+            <a href="tel:7708626232" class="arrow-cta text-sm font-bold uppercase tracking-widest" style="color: #c9a84c;">get a free quote →</a>
+          </div>
+
+          <div class="service-card p-6">
+            <div class="mb-4" data-lucide="home" style="color: #c9a84c; width: 32px; height: 32px;"></div>
+            <h3 class="heading font-bold text-xl text-white mb-3">sidewalk & walkway</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">From front-door walkways to full perimeter sidewalks, we craft safe, attractive concrete paths with clean edges and superior finish quality.</p>
+            <a href="tel:7708626232" class="arrow-cta text-sm font-bold uppercase tracking-widest" style="color: #c9a84c;">get a free quote →</a>
+          </div>
+
+          <div class="service-card p-6">
+            <div class="mb-4" data-lucide="shield" style="color: #c9a84c; width: 32px; height: 32px;"></div>
+            <h3 class="heading font-bold text-xl text-white mb-3">retaining wall construction</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">Our retaining walls are structurally sound and visually stunning. We handle everything from design consultation to final grading for lasting land retention.</p>
+            <a href="tel:7708626232" class="arrow-cta text-sm font-bold uppercase tracking-widest" style="color: #c9a84c;">get a free quote →</a>
+          </div>
+
+          <div class="service-card p-6">
+            <div class="mb-4" data-lucide="grid" style="color: #c9a84c; width: 32px; height: 32px;"></div>
+            <h3 class="heading font-bold text-xl text-white mb-3">paver stone installation</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">Elevate your property's curb appeal with premium paver stone work. We install patios, driveways, and walkways using top-quality materials and expert technique.</p>
+            <a href="tel:7708626232" class="arrow-cta text-sm font-bold uppercase tracking-widest" style="color: #c9a84c;">get a free quote →</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tab 2 -->
+      <div id="tab2" class="tab-panel hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <div class="service-card p-6">
+            <div class="mb-4" data-lucide="zap" style="color: #c9a84c; width: 32px; height: 32px;"></div>
+            <h3 class="heading font-bold text-xl text-white mb-3">decorative concrete</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">Add character and curb appeal with stamped, stained, or exposed aggregate concrete. We bring artistic flair to functional concrete surfaces throughout your property.</p>
+            <a href="tel:7708626232" class="arrow-cta text-sm font-bold uppercase tracking-widest" style="color: #c9a84c;">get a free quote →</a>
+          </div>
+
+          <div class="service-card p-6">
+            <div class="mb-4" data-lucide="anchor" style="color: #c9a84c; width: 32px; height: 32px;"></div>
+            <h3 class="heading font-bold text-xl text-white mb-3">foundation work</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">We handle concrete foundations for small structures, garden sheds, and outbuildings. Every pour is done with precision to ensure a level, solid base that lasts.</p>
+            <a href="tel:7708626232" class="arrow-cta text-sm font-bold uppercase tracking-widest" style="color: #c9a84c;">get a free quote →</a>
+          </div>
+
+          <div class="service-card p-6">
+            <div class="mb-4" data-lucide="sun" style="color: #c9a84c; width: 32px; height: 32px;"></div>
+            <h3 class="heading font-bold text-xl text-white mb-3">outdoor living areas</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">We design and build comprehensive outdoor living spaces combining concrete, pavers, and landscaping elements to create stunning entertainment areas for your home.</p>
+            <a href="tel:7708626232" class="arrow-cta text-sm font-bold uppercase tracking-widest" style="color: #c9a84c;">get a free quote →</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tab 3 -->
+      <div id="tab3" class="tab-panel hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <div class="service-card p-6">
+            <div class="mb-4" data-lucide="wrench" style="color: #c9a84c; width: 32px; height: 32px;"></div>
+            <h3 class="heading font-bold text-xl text-white mb-3">concrete repair & resurfacing</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">Don't replace when you can restore. We repair cracked, sunken, or deteriorated concrete surfaces and resurface them to look and perform like new again.</p>
+            <a href="tel:7708626232" class="arrow-cta text-sm font-bold uppercase tracking-widest" style="color: #c9a84c;">get a free quote →</a>
+          </div>
+
+          <div class="service-card p-6">
+            <div class="mb-4" data-lucide="droplets" style="color: #c9a84c; width: 32px; height: 32px;"></div>
+            <h3 class="heading font-bold text-xl text-white mb-3">drainage solutions</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">Proper drainage is critical to any concrete project's longevity. We incorporate effective drainage systems into every installation to prevent erosion and water damage.</p>
+            <a href="tel:7708626232" class="arrow-cta text-sm font-bold uppercase tracking-widest" style="color: #c9a84c;">get a free quote →</a>
+          </div>
+
+          <div class="service-card

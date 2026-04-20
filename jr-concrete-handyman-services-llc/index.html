@@ -1,268 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JR Concrete & Handyman Services LLC</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/lucide@latest"></script>
-<style>
-  body { font-family: 'Source Sans 3', sans-serif; }
-  h1, h2, h3, h4, h5, .oswald { font-family: 'Oswald', sans-serif; }
-  .active-tab { background-color: #263238; color: #ffffff; }
-  .inactive-tab { background-color: #f1f5f9; color: #263238; }
-  details summary::-webkit-details-marker { display: none; }
-  details[open] summary .chevron { transform: rotate(180deg); }
-  .chevron { transition: transform 0.3s ease; }
-  .flat-card { background-color: rgba(38,50,56,0.08); border-radius: 0.75rem; }
-  html { scroll-behavior: smooth; }
-</style>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          primary: '#263238',
-          secondary: '#00bcd4',
-        }
-      }
-    }
-  }
-</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JR Concrete & Handyman Services LLC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    html, body { overflow-x: hidden; }
+    body { font-family: 'Manrope', sans-serif; }
+    h1,h2,h3,h4,h5,h6,.heading { font-family: 'Inter', sans-serif; }
+    .ticker-track { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { display: flex; animation: marquee 40s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    .active-tab { background-color: #1e3a5f; color: white; }
+    .inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
+    .img-hover-wrap { overflow: hidden; }
+    .img-hover-wrap img { transition: transform 0.7s ease; }
+    .img-hover-wrap:hover img { transform: scale(1.05); }
+    .arrow-cta { border-bottom: 2px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s ease; }
+    .arrow-cta:hover { gap: 14px; }
+    details[open] summary span.faq-icon::before { content: '−'; }
+    span.faq-icon::before { content: '+'; }
+    @keyframes bounce-down { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+    .bounce-anim { animation: bounce-down 1.5s ease-in-out infinite; }
+  </style>
 </head>
-<body class="bg-white text-gray-800">
+<body style="background-color: #ffffff;">
 
-<!-- NAV -->
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-primary transition-shadow duration-300">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16 lg:h-20">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center">
-          <i data-lucide="hammer" class="text-white w-5 h-5"></i>
-        </div>
-        <div>
-          <span class="oswald text-white text-xl font-bold leading-tight block">JR Concrete</span>
-          <span class="text-secondary text-xs font-medium tracking-wide block">& Handyman Services LLC</span>
-        </div>
-      </div>
-      <div class="hidden lg:flex items-center gap-8">
-        <a href="#services" class="text-white hover:text-secondary transition-colors font-medium text-sm tracking-wide">Services</a>
-        <a href="#gallery" class="text-white hover:text-secondary transition-colors font-medium text-sm tracking-wide">Gallery</a>
-        <a href="#about" class="text-white hover:text-secondary transition-colors font-medium text-sm tracking-wide">About</a>
-        <a href="#reviews" class="text-white hover:text-secondary transition-colors font-medium text-sm tracking-wide">Reviews</a>
-        <a href="#contact" class="text-white hover:text-secondary transition-colors font-medium text-sm tracking-wide">Contact</a>
-        <a href="tel:4048841284" class="bg-secondary text-white rounded-full px-6 py-2 font-bold text-sm hover:bg-cyan-500 transition-colors flex items-center gap-2">
-          <i data-lucide="phone" class="w-4 h-4"></i>
-          (404) 884-1284
-        </a>
-      </div>
-      <button id="hamburger" class="lg:hidden text-white p-2">
-        <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
-        <i data-lucide="x" id="close-icon" class="w-6 h-6 hidden"></i>
-      </button>
-    </div>
-  </div>
-  <div id="mobile-menu" class="hidden lg:hidden bg-primary border-t border-white/10">
-    <div class="px-4 py-4 flex flex-col gap-3">
-      <a href="#services" class="text-white hover:text-secondary py-2 font-medium transition-colors">Services</a>
-      <a href="#gallery" class="text-white hover:text-secondary py-2 font-medium transition-colors">Gallery</a>
-      <a href="#about" class="text-white hover:text-secondary py-2 font-medium transition-colors">About</a>
-      <a href="#reviews" class="text-white hover:text-secondary py-2 font-medium transition-colors">Reviews</a>
-      <a href="#contact" class="text-white hover:text-secondary py-2 font-medium transition-colors">Contact</a>
-      <a href="tel:4048841284" class="bg-secondary text-white rounded-full px-6 py-3 font-bold text-center hover:bg-cyan-500 transition-colors flex items-center justify-center gap-2">
-        <i data-lucide="phone" class="w-4 h-4"></i>
-        (404) 884-1284
+  <!-- NAV: DON-BOLD -->
+  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background-color: #1e3a5f; border-bottom: 3px solid #c9a84c;">
+    <div class="flex items-center justify-between px-4 md:px-8 lg:px-16 py-4">
+      <a href="#hero" class="heading text-white text-xl font-black tracking-widest uppercase" style="letter-spacing: 0.1em;">
+        JR <span style="color: #c9a84c;">Concrete</span>
       </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#services" class="text-white text-sm font-bold uppercase tracking-widest hover:opacity-70 transition-opacity" style="letter-spacing: 0.2em;">Services</a>
+        <a href="#gallery" class="text-white text-sm font-bold uppercase tracking-widest hover:opacity-70 transition-opacity" style="letter-spacing: 0.2em;">Gallery</a>
+        <a href="#reviews" class="text-white text-sm font-bold uppercase tracking-widest hover:opacity-70 transition-opacity" style="letter-spacing: 0.2em;">Reviews</a>
+        <a href="#faq" class="text-white text-sm font-bold uppercase tracking-widest hover:opacity-70 transition-opacity" style="letter-spacing: 0.2em;">FAQ</a>
+        <a href="#contact" class="text-white text-sm font-bold uppercase tracking-widest hover:opacity-70 transition-opacity" style="letter-spacing: 0.2em;">Contact</a>
+        <a href="tel:4048841284" class="text-sm font-black uppercase px-5 py-2 border-2 hover:opacity-80 transition-opacity" style="color: #c9a84c; border-color: #c9a84c; letter-spacing: 0.15em;">(404) 884-1284</a>
+      </div>
+      <button id="hamburger" class="flex md:hidden text-white" data-lucide="menu" aria-label="Open menu"></button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden" style="background-color: #1e3a5f; border-top: 1px solid #c9a84c;">
+      <a href="#services" class="block py-3 px-4 border-b text-white font-bold uppercase tracking-widest text-sm" style="border-color: rgba(201,168,76,0.3);">Services</a>
+      <a href="#gallery" class="block py-3 px-4 border-b text-white font-bold uppercase tracking-widest text-sm" style="border-color: rgba(201,168,76,0.3);">Gallery</a>
+      <a href="#reviews" class="block py-3 px-4 border-b text-white font-bold uppercase tracking-widest text-sm" style="border-color: rgba(201,168,76,0.3);">Reviews</a>
+      <a href="#faq" class="block py-3 px-4 border-b text-white font-bold uppercase tracking-widest text-sm" style="border-color: rgba(201,168,76,0.3);">FAQ</a>
+      <a href="#contact" class="block py-3 px-4 border-b text-white font-bold uppercase tracking-widest text-sm" style="border-color: rgba(201,168,76,0.3);">Contact</a>
+      <a href="tel:4048841284" class="block py-3 px-4 text-sm font-black uppercase" style="color: #c9a84c; letter-spacing: 0.15em;">(404) 884-1284</a>
+    </div>
+  </nav>
+
+  <!-- HERO: EDITORIAL-RULED / MONOLITH DIRECTION -->
+  <section id="hero" class="min-h-screen flex flex-col justify-center pt-20" style="background-color: #f9f9f7;">
+    <div class="flex flex-col md:flex-row items-stretch min-h-screen">
+      <!-- Text Left 55% -->
+      <div class="flex flex-col justify-center px-4 md:px-8 lg:px-16 py-20 w-full md:w-[55%]">
+        <p class="text-xs font-bold uppercase tracking-widest mb-6" style="color: #c9a84c; letter-spacing: 0.3em;">Atlanta's Trusted Contractor</p>
+        <h1 class="heading font-black leading-none lowercase mb-4" style="font-size: clamp(4rem, 10vw, 7rem); color: #1e3a5f;">
+          built.<br>right.
+        </h1>
+        <hr style="border-color: #c9a84c; border-top-width: 2px; max-width: 80px;" class="mb-6">
+        <p class="text-lg md:text-xl font-medium mb-4" style="color: #444; max-width: 420px; font-style: italic;">
+          Concrete work & handyman services done with precision, pride, and professionalism.
+        </p>
+        <p class="text-base mb-8 text-gray-500" style="max-width: 400px;">
+          JR Concrete & Handyman Services LLC has earned 5-star trust from homeowners across the Atlanta area. Driveways, patios, repairs — no job too large or too small.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="tel:4048841284" class="arrow-cta font-bold text-base uppercase" style="color: #1e3a5f; letter-spacing: 0.1em;">
+            get a free quote <span>→</span>
+          </a>
+          <a href="#services" class="arrow-cta font-bold text-base uppercase" style="color: #c9a84c; letter-spacing: 0.1em;">
+            our services <span>→</span>
+          </a>
+        </div>
+        <div class="mt-16 flex items-center gap-2 text-gray-400 text-sm bounce-anim" style="width: fit-content;">
+          <span>keep scrolling</span>
+          <span>↓</span>
+        </div>
+      </div>
+      <!-- Image Right 45% -->
+      <div class="w-full md:w-[45%] img-hover-wrap relative" style="min-height: 400px;">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEG7X86Br2y22yCrfsFbJKmyiJFjidC4-Xdykl5dAZfOrPAv90P7H7CLJtlaaBVcrRu0jAmfSZK3n9naf-0WVbFh35XG24hvusIcNrqSE6MkyTiCO5dXwce5QtF5TdYBgsKpRy2OYZeJyPDA70kJURKLY3_16_rjlmUeHfXFZsXaeJPuupDfYOr3nLIO2a94IF0hIglDo0uqfDfxQmeUvddIcrWHXOCypdKhxfOFtfy3O8_8uMNM09q2xv7Q3Yc-KFBUyc3z6ykUYSPD2wSDvKPlTB-7UVTlCPDiUoo_FeUqCQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="JR Concrete work"
+          loading="eager"
+          class="w-full h-full object-cover absolute inset-0"
+          onerror="this.onerror=null;this.src='https://picsum.photos/seed/contractor-1/800/600';"
+        >
+        <div class="absolute inset-0 flex items-end p-8" style="background: linear-gradient(to top, rgba(30,58,95,0.7) 0%, transparent 60%);">
+          <div>
+            <div class="flex items-center gap-1 mb-2">
+              <span style="color: #c9a84c;" data-lucide="star" class="w-4 h-4 fill-current"></span>
+              <span style="color: #c9a84c;" data-lucide="star" class="w-4 h-4 fill-current"></span>
+              <span style="color: #c9a84c;" data-lucide="star" class="w-4 h-4 fill-current"></span>
+              <span style="color: #c9a84c;" data-lucide="star" class="w-4 h-4 fill-current"></span>
+              <span style="color: #c9a84c;" data-lucide="star" class="w-4 h-4 fill-current"></span>
+            </div>
+            <p class="text-white font-bold text-sm uppercase tracking-widest">5 stars · 75 reviews</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER BAND -->
+  <div class="animate-section w-full overflow-hidden py-3" style="background-color: #111111;">
+    <div class="ticker-track">
+      <span class="text-sm font-bold tracking-widest uppercase px-4" style="color: #c9a84c;">LICENSED &amp; INSURED · SERVING ATLANTA · FREE ESTIMATES · CALL TODAY · LICENSED &amp; INSURED · SERVING ATLANTA · FREE ESTIMATES · CALL TODAY · LICENSED &amp; INSURED · SERVING ATLANTA · FREE ESTIMATES · CALL TODAY · LICENSED &amp; INSURED · SERVING ATLANTA · FREE ESTIMATES · CALL TODAY · </span>
+      <span class="text-sm font-bold tracking-widest uppercase px-4" style="color: #c9a84c;">LICENSED &amp; INSURED · SERVING ATLANTA · FREE ESTIMATES · CALL TODAY · LICENSED &amp; INSURED · SERVING ATLANTA · FREE ESTIMATES · CALL TODAY · LICENSED &amp; INSURED · SERVING ATLANTA · FREE ESTIMATES · CALL TODAY · LICENSED &amp; INSURED · SERVING ATLANTA · FREE ESTIMATES · CALL TODAY · </span>
     </div>
   </div>
-</nav>
 
-<!-- HERO -->
-<section class="bg-gradient-to-br from-primary to-gray-900 pt-32 pb-20 px-4">
-  <div class="max-w-4xl mx-auto text-center">
-    <div class="inline-flex items-center gap-2 bg-secondary/20 text-secondary rounded-full px-4 py-2 text-sm font-semibold mb-6">
-      <i data-lucide="star" class="w-4 h-4 fill-secondary"></i>
-      5.0 Stars — 75 Verified Reviews
-    </div>
-    <h1 class="text-4xl lg:text-6xl oswald font-bold text-white leading-tight mb-6">
-      Expert Concrete &<br><span class="text-secondary">Handyman Services</span>
-    </h1>
-    <p class="text-gray-300 text-lg lg:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-      Professional concrete work, patio pavers, driveway installation, and general handyman services. Quality craftsmanship you can trust — 7 days a week.
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-14">
-      <a href="tel:4048841284" class="bg-secondary text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-cyan-500 transition-colors flex items-center justify-center gap-3">
-        <i data-lucide="phone" class="w-5 h-5"></i>
-        Call (404) 884-1284
-      </a>
-      <a href="#contact" class="bg-white/10 border-2 border-white/30 text-white rounded-full px-10 py-4 font-bold text-lg hover:bg-white/20 transition-colors flex items-center justify-center gap-3">
-        <i data-lucide="clipboard-list" class="w-5 h-5"></i>
-        Get Free Quote
-      </a>
-    </div>
-    <div class="max-w-3xl mx-auto">
-      <img
-        src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEG5z14GQL5MWjoadR2yJ2El9aM-GayGHkFDNQi5dV-EfF7FKSmdvtSwXj2x4-s570sjsWNLR_O4Pfsj33N6SVvGOSylXS5C9wnU3MYNaQuf_Fkx_RFHK_JkwtFHIO9omvaI4thFoQFAFTQiygeaQQyCDH-_u8AOItJgSKf9gLql9uSyNzTlt6Sc8ezUv3mPT7AT8OQrltxzwS4M5M2ndlWtJVNEOd74gfIO5SKGcZVQBAeFvWEKXpqtfiaNE9jr11sMdIBu0qv0cMBHcgdryBFcb0BwopByoiG2vCFVDEm2Bw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-        alt="JR Concrete work showcase"
-        loading="eager"
-        class="rounded-2xl shadow-2xl w-full h-80 lg:h-96 object-cover"
-        onerror="this.onerror=null;this.src='https://picsum.photos/seed/concrete-hero/800/600';"
-      >
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="animate-section py-20 px-4 bg-white">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-4xl lg:text-6xl oswald font-bold text-primary mb-4">Our Services</h2>
-      <p class="text-gray-500 text-lg max-w-2xl mx-auto">From concrete installation to handyman repairs — we handle it all with precision and care.</p>
-    </div>
-
-    <!-- Tabs -->
-    <div class="flex flex-wrap justify-center gap-3 mb-10">
-      <button onclick="showTab('tab1', this)" class="tab-btn active-tab rounded-full px-6 py-3 font-semibold text-sm transition-all">Concrete Work</button>
-      <button onclick="showTab('tab2', this)" class="tab-btn inactive-tab rounded-full px-6 py-3 font-semibold text-sm transition-all">Paving & Outdoor</button>
-      <button onclick="showTab('tab3', this)" class="tab-btn inactive-tab rounded-full px-6 py-3 font-semibold text-sm transition-all">Handyman Services</button>
-    </div>
-
-    <!-- Tab 1 -->
-    <div id="tab1" class="tab-panel grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="flat-card p-6 flex flex-col gap-4">
-        <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center">
-          <i data-lucide="hammer" class="w-6 h-6 text-secondary"></i>
-        </div>
-        <h3 class="oswald text-xl font-bold text-primary">Concrete Driveways</h3>
-        <p class="text-gray-600 text-sm leading-relaxed">Professional installation and repair of concrete driveways built to last. Smooth finish, proper drainage, and lasting durability.</p>
-        <a href="tel:4048841284" class="mt-auto bg-primary text-white rounded-full px-10 py-4 font-bold text-lg text-center hover:bg-secondary transition-colors">Call Now</a>
+  <!-- STATS BAR: ACCENT-STRIP -->
+  <section class="animate-section py-12 md:py-16" style="background-color: #c9a84c;">
+    <div class="grid grid-cols-2 md:grid-cols-4 px-4 md:px-8 lg:px-16 gap-0">
+      <div class="flex flex-col items-center justify-center py-8 border-r" style="border-color: rgba(255,255,255,0.3);">
+        <span class="heading font-black text-white" style="font-size: 4rem;" data-count="5" data-suffix="/5">5/5</span>
+        <span class="text-white font-bold text-xs uppercase tracking-widest mt-1 opacity-80">avg rating</span>
       </div>
-      <div class="flat-card p-6 flex flex-col gap-4">
-        <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center">
-          <i data-lucide="layers" class="w-6 h-6 text-secondary"></i>
-        </div>
-        <h3 class="oswald text-xl font-bold text-primary">Concrete Repair</h3>
-        <p class="text-gray-600 text-sm leading-relaxed">Restore cracked, sunken, or damaged concrete with expert repair services that blend seamlessly with existing surfaces.</p>
-        <a href="tel:4048841284" class="mt-auto bg-primary text-white rounded-full px-10 py-4 font-bold text-lg text-center hover:bg-secondary transition-colors">Call Now</a>
+      <div class="flex flex-col items-center justify-center py-8 md:border-r" style="border-color: rgba(255,255,255,0.3);">
+        <span class="heading font-black text-white" style="font-size: 4rem;" data-count="75" data-suffix="+">75+</span>
+        <span class="text-white font-bold text-xs uppercase tracking-widest mt-1 opacity-80">happy clients</span>
       </div>
-      <div class="flat-card p-6 flex flex-col gap-4">
-        <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center">
-          <i data-lucide="home" class="w-6 h-6 text-secondary"></i>
-        </div>
-        <h3 class="oswald text-xl font-bold text-primary">Foundation Footings</h3>
-        <p class="text-gray-600 text-sm leading-relaxed">Solid concrete footing installation for sheds, decks, additions, and structures requiring a stable, code-compliant base.</p>
-        <a href="tel:4048841284" class="mt-auto bg-primary text-white rounded-full px-10 py-4 font-bold text-lg text-center hover:bg-secondary transition-colors">Call Now</a>
+      <div class="flex flex-col items-center justify-center py-8 border-r" style="border-color: rgba(255,255,255,0.3);">
+        <span class="heading font-black text-white" style="font-size: 4rem;" data-count="10" data-suffix="+">10+</span>
+        <span class="text-white font-bold text-xs uppercase tracking-widest mt-1 opacity-80">years experience</span>
+      </div>
+      <div class="flex flex-col items-center justify-center py-8">
+        <span class="heading font-black text-white" style="font-size: 4rem;" data-count="20" data-suffix="+">20+</span>
+        <span class="text-white font-bold text-xs uppercase tracking-widest mt-1 opacity-80">areas served</span>
       </div>
     </div>
+  </section>
 
-    <!-- Tab 2 -->
-    <div id="tab2" class="tab-panel hidden grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="flat-card p-6 flex flex-col gap-4">
-        <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center">
-          <i data-lucide="grid-3x3" class="w-6 h-6 text-secondary"></i>
+  <!-- SERVICES: TABBED -->
+  <section id="services" class="animate-section py-12 md:py-20 px-4 md:px-8 lg:px-16" style="background-color: #f9f9f7;">
+    <div class="mb-10">
+      <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color: #c9a84c; letter-spacing: 0.3em;">what we do</p>
+      <h2 class="heading font-black text-4xl md:text-5xl lowercase" style="color: #1e3a5f;">our services</h2>
+      <hr class="mt-4" style="border-color: #e5e7eb; max-width: 80px; border-top-width: 2px;">
+    </div>
+
+    <!-- Tab Buttons -->
+    <div class="flex flex-wrap gap-2 md:flex-nowrap mb-8">
+      <button onclick="showTab('tab1', this)" class="tab-btn flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 transition-all font-bold uppercase tracking-wider active-tab">core services</button>
+      <button onclick="showTab('tab2', this)" class="tab-btn flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 transition-all font-bold uppercase tracking-wider inactive-tab">specialty work</button>
+      <button onclick="showTab('tab3', this)" class="tab-btn flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 transition-all font-bold uppercase tracking-wider inactive-tab">additional</button>
+    </div>
+
+    <!-- Tab 1: Core Services -->
+    <div id="tab1" class="tab-panel">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="rounded-xl p-6 transition-all duration-300 hover:shadow-lg" style="background-color: rgba(30,58,95,0.07);">
+          <div class="mb-4" style="color: #1e3a5f;" data-lucide="layers" class="w-8 h-8"></div>
+          <i data-lucide="layers" class="w-8 h-8 mb-4" style="color: #1e3a5f;"></i>
+          <h3 class="heading font-black text-xl mb-2 lowercase" style="color: #1e3a5f;">concrete driveways</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">We pour and finish precision concrete driveways built to last decades. From small residential to oversized commercial pads, quality is our standard.</p>
+          <a href="tel:4048841284" class="inline-block px-6 py-3 uppercase tracking-widest font-black border-2 text-xs hover:opacity-80 transition-opacity" style="color: #1e3a5f; border-color: #1e3a5f;">call for quote</a>
         </div>
-        <h3 class="oswald text-xl font-bold text-primary">Patio Pavers</h3>
-        <p class="text-gray-600 text-sm leading-relaxed">Beautiful paver installations for patios, walkways, and outdoor living spaces. Custom designs to enhance your home's curb appeal.</p>
-        <a href="tel:4048841284" class="mt-auto bg-primary text-white rounded-full px-10 py-4 font-bold text-lg text-center hover:bg-secondary transition-colors">Call Now</a>
-      </div>
-      <div class="flat-card p-6 flex flex-col gap-4">
-        <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center">
-          <i data-lucide="move-diagonal" class="w-6 h-6 text-secondary"></i>
+        <!-- Card 2 -->
+        <div class="rounded-xl p-6 transition-all duration-300 hover:shadow-lg" style="background-color: rgba(30,58,95,0.07);">
+          <i data-lucide="grid" class="w-8 h-8 mb-4" style="color: #1e3a5f;"></i>
+          <h3 class="heading font-black text-xl mb-2 lowercase" style="color: #1e3a5f;">patio pavers</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">Transform your outdoor space with beautifully installed patio pavers. We handle design, prep, and installation for a seamless finished look.</p>
+          <a href="tel:4048841284" class="inline-block px-6 py-3 uppercase tracking-widest font-black border-2 text-xs hover:opacity-80 transition-opacity" style="color: #1e3a5f; border-color: #1e3a5f;">call for quote</a>
         </div>
-        <h3 class="oswald text-xl font-bold text-primary">Retaining Walls</h3>
-        <p class="text-gray-600 text-sm leading-relaxed">Expertly built retaining walls that manage erosion, define landscape areas, and add structural integrity to your property.</p>
-        <a href="tel:4048841284" class="mt-auto bg-primary text-white rounded-full px-10 py-4 font-bold text-lg text-center hover:bg-secondary transition-colors">Call Now</a>
-      </div>
-      <div class="flat-card p-6 flex flex-col gap-4">
-        <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center">
-          <i data-lucide="footprints" class="w-6 h-6 text-secondary"></i>
+        <!-- Card 3 -->
+        <div class="rounded-xl p-6 transition-all duration-300 hover:shadow-lg" style="background-color: rgba(30,58,95,0.07);">
+          <i data-lucide="tool" class="w-8 h-8 mb-4" style="color: #1e3a5f;"></i>
+          <h3 class="heading font-black text-xl mb-2 lowercase" style="color: #1e3a5f;">concrete repair</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">Cracked, sunken, or deteriorating concrete? We diagnose and repair existing surfaces to restore strength and curb appeal to your property.</p>
+          <a href="tel:4048841284" class="inline-block px-6 py-3 uppercase tracking-widest font-black border-2 text-xs hover:opacity-80 transition-opacity" style="color: #1e3a5f; border-color: #1e3a5f;">call for quote</a>
         </div>
-        <h3 class="oswald text-xl font-bold text-primary">Walkways & Steps</h3>
-        <p class="text-gray-600 text-sm leading-relaxed">Custom concrete and paver walkways and stepped entries that improve access, safety, and the visual appeal of your home.</p>
-        <a href="tel:4048841284" class="mt-auto bg-primary text-white rounded-full px-10 py-4 font-bold text-lg text-center hover:bg-secondary transition-colors">Call Now</a>
+        <!-- Card 4 -->
+        <div class="rounded-xl p-6 transition-all duration-300 hover:shadow-lg" style="background-color: rgba(30,58,95,0.07);">
+          <i data-lucide="move-diagonal" class="w-8 h-8 mb-4" style="color: #1e3a5f;"></i>
+          <h3 class="heading font-black text-xl mb-2 lowercase" style="color: #1e3a5f;">walkways & paths</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">Enhance your property's accessibility and aesthetic with custom concrete or paver walkways. Stepped entries and decorative paths are our specialty.</p>
+          <a href="tel:4048841284" class="inline-block px-6 py-3 uppercase tracking-widest font-black border-2 text-xs hover:opacity-80 transition-opacity" style="color: #1e3a5f; border-color: #1e3a5f;">call for quote</a>
+        </div>
+        <!-- Card 5 -->
+        <div class="rounded-xl p-6 transition-all duration-300 hover:shadow-lg" style="background-color: rgba(30,58,95,0.07);">
+          <i data-lucide="home" class="w-8 h-8 mb-4" style="color: #1e3a5f;"></i>
+          <h3 class="heading font-black text-xl mb-2 lowercase" style="color: #1e3a5f;">handyman services</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">From siding repair to interior tile work, our team handles a wide range of home improvement tasks with the same care as our concrete projects.</p>
+          <a href="tel:4048841284" class="inline-block px-6 py-3 uppercase tracking-widest font-black border-2 text-xs hover:opacity-80 transition-opacity" style="color: #1e3a5f; border-color: #1e3a5f;">call for quote</a>
+        </div>
+        <!-- Card 6 -->
+        <div class="rounded-xl p-6 transition-all duration-300 hover:shadow-lg" style="background-color: rgba(30,58,95,0.07);">
+          <i data-lucide="shield" class="w-8 h-8 mb-4" style="color: #1e3a5f;"></i>
+          <h3 class="heading font-black text-xl mb-2 lowercase" style="color: #1e3a5f;">retaining walls</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">We design and build structurally sound retaining walls that integrate seamlessly with your landscape, driveway, and hardscape features.</p>
+          <a href="tel:4048841284" class="inline-block px-6 py-3 uppercase tracking-widest font-black border-2 text-xs hover:opacity-80 transition-opacity" style="color: #1e3a5f; border-color: #1e3a5f;">call for quote</a>
+        </div>
       </div>
     </div>
 
-    <!-- Tab 3 -->
-    <div id="tab3" class="tab-panel hidden grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="flat-card p-6 flex flex-col gap-4">
-        <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center">
-          <i data-lucide="wrench" class="w-6 h-6 text-secondary"></i>
+    <!-- Tab 2: Specialty Work -->
+    <div id="tab2" class="tab-panel hidden">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-xl p-6 transition-all duration-300 hover:shadow-lg" style="background-color: rgba(30,58,95,0.07);">
+          <i data-lucide="zap" class="w-8 h-8 mb-4" style="color: #1e3a5f;"></i>
+          <h3 class="heading font-black text-xl mb-2 lowercase" style="color: #1e3a5f;">decorative concrete</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">Stamped, stained, or exposed aggregate finishes that elevate your concrete surfaces into true design statements for your home or business.</p>
+          <a href="tel:4048841284" class="inline-block px-6 py-3 uppercase tracking-widest font-black border-2 text-xs hover:opacity-80 transition-opacity" style="color: #1e3a5f; border-color: #1e3a5f;">call for quote</a>
         </div>
-        <h3 class="oswald text-xl font-bold text-primary">Siding Repair</h3>
-        <p class="text-gray-600 text-sm leading-relaxed">Restore damaged or worn siding on your home with quality repair and replacement work that matches your existing exterior.</p>
-        <a href="tel:4048841284" class="mt-auto bg-primary text-white rounded-full px-10 py-4 font-bold text-lg text-center hover:bg-secondary transition-colors">Call Now</a>
-      </div>
-      <div class="flat-card p-6 flex flex-col gap-4">
-        <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center">
-          <i data-lucide="grid-2x2" class="w-6 h-6 text-secondary"></i>
+        <div class="rounded-xl p-6 transition-all duration-300 hover:shadow-lg" style="background-color: rgba(30,58,95,0.07);">
+          <i data-lucide="square" class="w-8 h-8 mb-4" style="color: #1e3a5f;"></i>
+          <h3 class="heading font-black text-xl mb-2 lowercase" style="color: #1e3a5f;">footing & foundation work</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">Structural footings, pier replacements, and shed foundations installed with code-compliant precision to ensure the longevity of your structures.</p>
+          <a href="tel:4048841284" class="inline-block px-6 py-3 uppercase tracking-widest font-black border-2 text-xs hover:opacity-80 transition-opacity" style="color: #1e3a5f; border-color: #1e3a5f;">call for quote</a>
         </div>
-        <h3 class="oswald text-xl font-bold text-primary">Tile Installation</h3>
-        <p class="text-gray-600 text-sm leading-relaxed">Kitchen, bathroom, and floor tile installation with precision alignment and professional grouting for a flawless finished look.</p>
-        <a href="tel:4048841284" class="mt-auto bg-primary text-white rounded-full px-10 py-4 font-bold text-lg text-center hover:bg-secondary transition-colors">Call Now</a>
-      </div>
-      <div class="flat-card p-6 flex flex-col gap-4">
-        <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center">
-          <i data-lucide="shield-check" class="w-6 h-6 text-secondary"></i>
+        <div class="rounded-xl p-6 transition-all duration-300 hover:shadow-lg" style="background-color: rgba(30,58,95,0.07);">
+          <i data-lucide="maximize-2" class="w-8 h-8 mb-4" style="color: #1e3a5f;"></i>
+          <h3 class="heading font-black text-xl mb-2 lowercase" style="color: #1e3a5f;">concrete cutting</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">Precision saw cutting for expansion joints, utility access, or demo work. We use wet-cut methods to minimize dust and protect surrounding areas.</p>
+          <a href="tel:4048841284" class="inline-block px-6 py-3 uppercase tracking-widest font-black border-2 text-xs hover:opacity-80 transition-opacity" style="color: #1e3a5f; border-color: #1e3a5f;">call for quote</a>
         </div>
-        <h3 class="oswald text-xl font-bold text-primary">General Repairs</h3>
-        <p class="text-gray-600 text-sm leading-relaxed">Reliable handyman services for a wide variety of home maintenance and repair needs — completed on time and on budget.</p>
-        <a href="tel:4048841284" class="mt-auto bg-primary text-white rounded-full px-10 py-4 font-bold text-lg text-center hover:bg-secondary transition-colors">Call Now</a>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- STATS -->
-<section class="py-16 px-4 bg-gray-50">
-  <div class="max-w-7xl mx-auto">
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center gap-3">
-        <div class="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center">
-          <i data-lucide="star" class="w-7 h-7 text-secondary"></i>
+    <!-- Tab 3: Additional -->
+    <div id="tab3" class="tab-panel hidden">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-xl p-6 transition-all duration-300 hover:shadow-lg" style="background-color: rgba(30,58,95,0.07);">
+          <i data-lucide="scissors" class="w-8 h-8 mb-4" style="color: #1e3a5f;"></i>
+          <h3 class="heading font-black text-xl mb-2 lowercase" style="color: #1e3a5f;">tile installation</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">Kitchen backsplash, bathroom floors, or outdoor tile — our team installs tile with careful attention to alignment, grouting, and lasting adhesion.</p>
+          <a href="tel:4048841284" class="inline-block px-6 py-3 uppercase tracking-widest font-black border-2 text-xs hover:opacity-80 transition-opacity" style="color: #1e3a5f; border-color: #1e3a5f;">call for quote</a>
         </div>
-        <div class="oswald text-4xl font-bold text-primary">5.0</div>
-        <div class="text-gray-500 text-sm font-medium">Star Rating</div>
-      </div>
-      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center gap-3">
-        <div class="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center">
-          <i data-lucide="users" class="w-7 h-7 text-secondary"></i>
+        <div class="rounded-xl p-6 transition-all duration-300 hover:shadow-lg" style="background-color: rgba(30,58,95,0.07);">
+          <i data-lucide="wind" class="w-8 h-8 mb-4" style="color: #1e3a5f;"></i>
+          <h3 class="heading font-black text-xl mb-2 lowercase" style="color: #1e3a5f;">siding repair</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">Damaged, warped, or missing siding repaired professionally to protect your home and restore visual consistency to your exterior.</p>
+          <a href="tel:4048841284" class="inline-block px-6 py-3 uppercase tracking-widest font-black border-2 text-xs hover:opacity-80 transition-opacity" style="color: #1e3a5f; border-color: #1e3a5f;">call for quote</a>
         </div>
-        <div class="oswald text-4xl font-bold text-primary">75+</div>
-        <div class="text-gray-500 text-sm font-medium">Happy Clients</div>
-      </div>
-      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center gap-3">
-        <div class="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center">
-          <i data-lucide="shield-check" class="w-7 h-7 text-secondary"></i>
+        <div class="rounded-xl p-6 transition-all duration-300 hover:shadow-lg" style="background-color: rgba(30,58,95,0.07);">
+          <i data-lucide="package" class="w-8 h-8 mb-4" style="color: #1e3a5f;"></i>
+          <h3 class="heading font-black text-xl mb-2 lowercase" style="color: #1e3a5f;">general contracting</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">Have a project that spans multiple trades? We coordinate and execute multi-task jobs with a single team so you never have to juggle contractors.</p>
+          <a href="tel:4048841284" class="inline-block px-6 py-3 uppercase tracking-widest font-black border-2 text-xs hover:opacity-80 transition-opacity" style="color: #1e3a5f; border-color: #1e3a5f;">call for quote</a>
         </div>
-        <div class="oswald text-4xl font-bold text-primary">100%</div>
-        <div class="text-gray-500 text-sm font-medium">Satisfaction</div>
-      </div>
-      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center gap-3">
-        <div class="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center">
-          <i data-lucide="clock" class="w-7 h-7 text-secondary"></i>
-        </div>
-        <div class="oswald text-4xl font-bold text-primary">6</div>
-        <div class="text-gray-500 text-sm font-medium">Days a Week</div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- GALLERY -->
-<section id="gallery" class="animate-section py-20 px-4 bg-white">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-4xl lg:text-6xl oswald font-bold text-primary mb-4">Our Work</h2>
-      <p class="text-gray-500 text-lg max-w-2xl mx-auto">Browse our portfolio of completed concrete and handyman projects across the Atlanta area.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEG5z14GQL5MWjoadR2yJ2El9aM-GayGHkFDNQi5dV-EfF7FKSmdvtSwXj2x4-s570sjsWNLR_O4Pfsj33N6SVvGOSylXS5C9wnU3MYNaQuf_Fkx_RFHK_JkwtFHIO9omvaI4thFoQFAFTQiygeaQQyCDH-_u8AOItJgSKf9gLql9uSyNzTlt6Sc8ezUv3mPT7AT8OQrltxzwS4M5M2ndlWtJVNEOd74gfIO5SKGcZVQBAeFvWEKXpqtfiaNE9jr11sMdIBu0qv0cMBHcgdryBFcb0BwopByoiG2vCFVDEm2Bw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Concrete project 1" class="h-64 w-full object-cover rounded-xl hover:scale-105 transition-transform duration-300 cursor-pointer" onerror="this.onerror=null;this.src='https://picsum.photos/seed/concrete-work-1/800/600';">
-      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFWqKnZG_l-46ukAVT_oUKO0CwLCNYlx-LBRO5QZGI1SAcpw3uH1RSPSmFkt15QYrPkkx5NIHUGejPFUWVsjOQo0guar5SZ0EnZawBw5-EJAuu5MtqyolxWSZjH1h3NvM-n-reVwmnYHiNEyyTABCiZ-496GZIF2VBlrncLA725xF7SUb50bOOSh_0sfYTAL_MtbirJovViy_shOAoOoVmqTYsw6IuLj_Z0v79TZ8ZBXOtkMmkyWX5KuE0Uj5XjMcAGuZajMNdoEsx5UEcZwjrgQHIIVDlAJx5jSzr3ODZMJw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Concrete project 2" class="h-64 w-full object-cover rounded-xl hover:scale-105 transition-transform duration-300 cursor-pointer" onerror="this.onerror=null;this.src='https://picsum.photos/seed/paver-work-2/800/600';">
-      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGixybOkDlUvkgU2aAyRS_GfiPa9US5QVTmxk45ROdUFJs71EM1OwDsszMmjuPeLhGwT9WroXJPEHqKLmYtwRZ6bIHT1T5azZ6x9i1j24UlBe4w6EIoNKG6w--OohYrpHPpmDPVtwLSqW7OkJ5Ihg3GesegnGnTGaie1cnPt4OJERZjOqiR22Vx330ruhN_4tNBCNIaRhQh45ak3ltrOqm4RIODFUN0DNCLeE9vgU7144Z00sa6etZYXAdTJarZmpSV6JPISmEMy-1Ns8Di9JW0ZGkD0PPsk1CbcjnD1ze8yg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Concrete project 3" class="h-64 w-full object-cover rounded-xl hover:scale-105 transition-transform duration-300 cursor-pointer" onerror="this.onerror=null;this.src='https://picsum.photos/seed/driveway-work-3/800/600';">
-      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHwFvm-kbr-Cy-beHa-Ogttk-Timz2hDPAXEfAV35gIrggabsPWP-DTIYvSnRTbYDfUfTOsHjCprkIwNdQKLamGNWk8ZCbDXfIDccHp1aL9yU3xRQzWEL2w0JR0_wa9MN23L7FByRaAOpenocnC2h5fzlvdJid6jPWQncvPnGZPtjSuehRqWg92tl1hPYxARvMsJcHTT8IyX2WHXtIHANiYx-WEhzGmYAMNdFAgMtifsaDRvLD9iBCDDSsZo3FclRuH-bc9wm677MnMAhat5-6JhCpcOGHekJ2Q6C-uMUBW4A&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Concrete project 4" class="h-64 w-full object-cover rounded-xl hover:scale-105 transition-transform duration-300 cursor-pointer" onerror="this.onerror=null;this.src='https://picsum.photos/seed/retaining-wall-4/800/600';">
-      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEH28-tmwOMErg0tjZQWJwNZGDZYMH3Hw3cKBbPyVVQ0WVOqEOcwR1IwgH68YSTAE7hvkz4oJZyq1mODoCyS8lJHkAIjco6U7o3pZgoXhDlbZaEzKzKGk9f6Vee9-PZs0q-l_hD4xnZ7cBKuBbu7IHRw1oW9NwCgNlXzMPinKHIEPYQUhZ_efPwUdPVhVGcMulun5oFWoB0OX0NgPaJOo2orUKpZcU6wYEGwqOf1fE3JcyyiwJHVl9aJd5r0OqcL704j2dRDsyfbfDbNPBxz5KJ_pi9iRi-sk-yZAdYZ4m6C3g&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Concrete project 5" class="h-64 w-full object-cover rounded-xl hover:scale-105 transition-transform duration-300 cursor-pointer" onerror="this.onerror=null;this.src='https://picsum.photos/seed/walkway-work-5/800/600';">
-      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGMh1RO2jhApLAHDI6pDRM_GpwskunTY90cyilBjbTX1noy3aF7W0BmVvxcMykHXRAVbVt0j6yKxi5EFR_cMmHhaUjWgUw_Sewg-OiJE-er2N68qW0tXtIw69xcnquFimWBLb0ue1EDJ1rG14Xz11howR5quGwSQEJP
+  <!-- GALLERY: HORIZONTAL -->
+  <section id="gallery" class="animate-section py-12 md:py-20" style="background-color: #ffffff;">
+    <div class="px-4 md

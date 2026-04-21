@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Restoration — Professional Restoration Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    html, body { overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Manrope', sans-serif; }
+    h1,h2,h3,h4,h5,h6,.heading { font-family: 'Inter', sans-serif; }
+    .ticker-track { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { display: flex; animation: marquee 40s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    .active-tab { background-color: #1E3A5F; color: white; }
+    .inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
+    .img-hover-wrap { overflow: hidden; }
+    .img-hover-wrap img { transition: transform 0.7s ease; }
+    .img-hover-wrap:hover img { transform: scale(1.05); }
+    .arrow-cta { border-bottom: 2px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s ease; }
+    .arrow-cta:hover { gap: 14px; }
+    section { scroll-margin-top: 96px; }
+    .animate-section { opacity: 1; transform: none; transition: opacity 0.6s ease, transform 0.6s ease; }
+    .animate-section.is-pending { opacity: 0; transform: translateY(24px); }
+    .animate-section.is-visible { opacity: 1; transform: none; }
+    .hero-overlay { background: linear-gradient(135deg, rgba(10,10,10,0.92) 0%, rgba(30,58,95,0.75) 100%); }
+    .gold-border { border-color: #C9A84C; }
+    .clip-diagonal { clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
+    .service-card { background: rgba(255,255,255,0.07); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.12); border-radius: 1rem; padding: 1.5rem; transition: border-color 0.3s, transform 0.3s; }
+    .service-card:hover { border-color: #C9A84C; transform: translateY(-4px); }
+    .faq-details[open] summary { color: #C9A84C; }
+    .faq-details[open] .faq-icon-plus { display: none; }
+    .faq-details .faq-icon-minus { display: none; }
+    .faq-details[open] .faq-icon-minus { display: block; }
+    nav { transition: background-color 0.3s ease, border-bottom 0.3s ease; }
+    .nav-link { color: white; font-size: 0.875rem; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600; transition: color 0.2s; }
+    .nav-link:hover { color: #C9A84C; }
+    .scroll-indicator { animation: bounce 2s infinite; }
+    @keyframes bounce { 0%,100%{transform:translateY(0);}50%{transform:translateY(8px);} }
+    .gallery-overlay { position:absolute; inset:0; background: rgba(30,58,95,0.6); opacity:0; transition:opacity 0.3s; display:flex; align-items:center; justify-content:center; }
+    .img-hover-wrap:hover .gallery-overlay { opacity:1; }
+    input, textarea, select { outline: none; }
+    input:focus, textarea:focus, select:focus { border-color: #C9A84C !important; }
+  </style>
+</head>
+<body style="background-color: #111111; color: #f5f5f0;">
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 lg:px-16 py-4" style="background-color: transparent;">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <!-- Logo / Name -->
+    <a href="#home" class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background-color: #C9A84C;">
+        <i data-lucide="shield-check" class="w-5 h-5" style="color: #111111;"></i>
+      </div>
+      <span class="heading font-bold text-lg tracking-wide" style="color: #f5f5f0;">SERVICE<span style="color:#C9A84C;">RESTORATION</span></span>
+    </a>
+
+    <!-- Desktop Links -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
+      <a href="#reviews" class="nav-link">Reviews</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+
+    <!-- Live Clock -->
+    <div class="hidden md:flex items-center gap-4">
+      <span id="live-clock" class="text-xs font-medium tracking-widest uppercase" style="color: #C9A84C;"></span>
+    </div>
+
+    <!-- Hamburger -->
+    <button id="hamburger" class="md:hidden p-2 rounded-lg" style="color: #f5f5f0;">
+      <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden mt-2 rounded-xl overflow-hidden" style="background-color: #1a1a1a; border: 1px solid #2a2a2a;">
+    <a href="#home" class="mobile-nav-link block py-3 px-4 border-b text-sm font-semibold uppercase tracking-widest" style="border-color: #2a2a2a; color: #f5f5f0;">Home</a>
+    <a href="#about" class="mobile-nav-link block py-3 px-4 border-b text-sm font-semibold uppercase tracking-widest" style="border-color: #2a2a2a; color: #f5f5f0;">About</a>
+    <a href="#services" class="mobile-nav-link block py-3 px-4 border-b text-sm font-semibold uppercase tracking-widest" style="border-color: #2a2a2a; color: #f5f5f0;">Services</a>
+    <a href="#gallery" class="mobile-nav-link block py-3 px-4 border-b text-sm font-semibold uppercase tracking-widest" style="border-color: #2a2a2a; color: #f5f5f0;">Gallery</a>
+    <a href="#reviews" class="mobile-nav-link block py-3 px-4 border-b text-sm font-semibold uppercase tracking-widest" style="border-color: #2a2a2a; color: #f5f5f0;">Reviews</a>
+    <a href="#faq" class="mobile-nav-link block py-3 px-4 border-b text-sm font-semibold uppercase tracking-widest" style="border-color: #2a2a2a; color: #f5f5f0;">FAQ</a>
+    <a href="#contact" class="mobile-nav-link block py-3 px-4 text-sm font-semibold uppercase tracking-widest" style="color: #C9A84C;">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="relative min-h-screen flex flex-col justify-center overflow-hidden">
+  <!-- BG Image -->
+  <div class="absolute inset-0 z-0">
+    <img src="https://picsum.photos/seed/restoration-hero/1600/900" alt="Restoration background" class="w-full h-full object-cover" loading="eager">
+    <div class="hero-overlay absolute inset-0"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto w-full pt-32 pb-24">
+    <div class="max-w-5xl">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="h-px w-12" style="background-color: #C9A84C;"></div>
+        <span class="text-xs font-bold uppercase tracking-widest" style="color: #C9A84C;">Licensed & Insured General Contractor</span>
+      </div>
+      <h1 class="heading font-black uppercase leading-none mb-4" style="font-size: clamp(3rem, 10vw, 8rem); color: #f5f5f0; line-height:0.92;">
+        RESTORE.<br>
+        <span style="color: #C9A84C;">REBUILD.</span><br>
+        RENEW.
+      </h1>
+      <p class="text-lg md:text-xl max-w-xl mt-6 mb-10" style="color: rgba(245,245,240,0.7); line-height: 1.7;">
+        Professional restoration and construction services delivered with precision, transparency, and care. When disaster strikes, we're the team you call.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all hover:opacity-90" style="background-color: #C9A84C; color: #111111;">
+          Get a Free Quote
+        </a>
+        <a href="tel:069173201017" class="inline-flex items-center justify-center px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all" style="border: 2px solid rgba(245,245,240,0.4); color: #f5f5f0; background: transparent;">
+          <i data-lucide="phone" class="w-4 h-4 mr-2"></i>
+          069 173201017
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 scroll-indicator" style="color: rgba(245,245,240,0.4);">
+      <span class="text-xs uppercase tracking-widest">Scroll</span>
+      <i data-lucide="chevron-down" class="w-5 h-5"></i>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER BAND -->
+<div class="animate-section overflow-hidden py-3" style="background-color: #111111; border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a;">
+  <div class="ticker-track">
+    <span class="text-sm font-bold tracking-widest uppercase mx-6" style="color: #C9A84C;">FREE QUOTES</span>
+    <span class="text-sm font-bold tracking-widest uppercase mx-6" style="color: rgba(245,245,240,0.3);">·</span>
+    <span class="text-sm font-bold tracking-widest uppercase mx-6" style="color: #f5f5f0;">FAST RESPONSE</span>
+    <span class="text-sm font-bold tracking-widest uppercase mx-6" style="color: rgba(245,245,240,0.3);">·</span>
+    <span class="text-sm font-bold tracking-widest uppercase mx-6" style="color: #C9A84C;">LICENSED & INSURED</span>
+    <span class="text-sm font-bold tracking-widest uppercase mx-6" style="color: rgba(245,245,240,0.3);">·</span>
+    <span class="text-sm font-bold tracking-widest uppercase mx-6" style="color: #f5f5f0;">LOCAL EXPERTS</span>
+    <span class="text-sm font-bold tracking-widest uppercase mx-6" style="color: rgba(245,245,240,0.3);">·</span>
+    <span class="text-sm font-bold tracking-widest uppercase mx-6" style="color: #C9A84C;">FREE QUOTES</span>
+    <span class="text-sm font-bold tracking-widest uppercase mx-6" style="color: rgba(245,245,240,0.3);">·</span>
+    <span class="text-sm font-bold tracking-widest uppercase mx-6" style="color: #f5f5f0;">FAST RESPONSE</span>
+    <span class="text-sm font-bold tracking-widest uppercase mx-6" style="color: rgba(245,245,240,0.3);">·</span>
+    <span class="text-sm font-bold tracking-widest uppercase mx-6" style="color: #C9A84C;">LICENSED & INSURED</span>
+    <span class="text-sm font-bold tracking-widest uppercase mx-6" style="color: rgba(245,245,240,0.3);">·</span>
+    <span class="text-sm font-bold tracking-widest uppercase mx-6" style="color: #f5f5f0;">LOCAL EXPERTS</span>
+    <span class="text-sm font-bold tracking-widest uppercase mx-6" style="color: rgba(245,245,240,0.3);">·</span>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="animate-section py-16 px-4 md:px-8 lg:px-16" style="background-color: #111111;">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-0 divide-x divide-y md:divide-y-0" style="border: 1px solid #1e1e1e; border-radius: 1rem; overflow: hidden;">
+    <div class="p-8 flex flex-col justify-between" style="border-left: 4px solid #C9A84C; background-color: #1a1a1a;">
+      <span class="heading font-black text-7xl" style="color: #f5f5f0;" data-count="50" data-suffix="/5">5</span>
+      <span class="text-xs uppercase tracking-widest font-bold mt-3" style="color: #C9A84C;">Avg Rating</span>
+    </div>
+    <div class="p-8 flex flex-col justify-between" style="border-left: 4px solid #C9A84C; background-color: #1a1a1a;">
+      <span class="heading font-black text-7xl" style="color: #f5f5f0;" data-count="1" data-suffix="+">1</span>
+      <span class="text-xs uppercase tracking-widest font-bold mt-3" style="color: #C9A84C;">Happy Clients</span>
+    </div>
+    <div class="p-8 flex flex-col justify-between" style="border-left: 4px solid #C9A84C; background-color: #1a1a1a;">
+      <span class="heading font-black text-7xl" style="color: #f5f5f0;" data-count="10" data-suffix="+">10</span>
+      <span class="text-xs uppercase tracking-widest font-bold mt-3" style="color: #C9A84C;">Years Experience</span>
+    </div>
+    <div class="p-8 flex flex-col justify-between" style="border-left: 4px solid #C9A84C; background-color: #1a1a1a;">
+      <span class="heading font-black text-7xl" style="color: #f5f5f0;" data-count="20" data-suffix="+">20</span>
+      <span class="text-xs uppercase tracking-widest font-bold mt-3" style="color: #C9A84C;">Areas Served</span>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="py-24 md:py-32 px-4 md:px-8 lg:px-16" style="background-color: #111111;">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <!-- Text -->
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="h-px w-8" style="background-color: #C9A84C;"></div>
+          <span class="text-xs font-bold uppercase tracking-widest" style="color: #C9A84C;">About Us</span>
+        </div>
+        <h2 class="heading font-black text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight" style="color: #f5f5f0;">
+          BUILT ON TRUST.<br>
+          <span style="color: #C9A84C;">DRIVEN BY</span><br>
+          RESULTS.
+        </h2>
+        <div class="h-px w-full mb-8" style="background-color: #2a2a2a;"></div>
+        <p class="text-base mb-5 leading-relaxed" style="color: rgba(245,245,240,0.7);">
+          Service Restoration is a professional general contracting and restoration company dedicated to delivering exceptional quality workmanship. We specialize in recovering properties from damage — whether caused by water, fire, mold, or structural wear — restoring them to their original condition and beyond.
+        </p>
+        <p class="text-base mb-8 leading-relaxed" style="color: rgba(245,245,240,0.7);">
+          With over a decade of experience, our team brings the expertise, equipment, and commitment needed to tackle complex restoration projects. We pride ourselves on transparent communication, professional execution, and genuine care for our clients and their properties.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6">
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-1" style="background-color: rgba(201,168,76,0.15);">
+              <i data-lucide="award" class="w-5 h-5" style="color: #C9A84C;"></i>
+            </div>
+            <div>
+              <p class="font-bold text-sm mb-1" style="color: #f5f5f0;">Licensed & Insured</p>
+              <p class="text-sm" style="color: rgba(245,245,240,0.5);">Full compliance with industry standards</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-1" style="background-color: rgba(201,168,76,0.15);">
+              <i data-lucide="clock" class="w-5 h-5" style="color: #C9A84C;"></i>
+            </div>
+            <div>
+              <p class="font-bold text-sm mb-1" style="color: #f5f5f0;">Rapid Response</p>
+              <p class="text-sm" style="color: rgba(245,245,240,0.5);">Mon–Fri, 7:00 AM – 7:00 PM</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-10">
+          <a href="#contact" class="arrow-cta font-bold uppercase tracking-widest text-sm" style="color: #C9A84C;">
+            Start your project <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Image -->
+      <div class="img-hover-wrap relative rounded-2xl overflow-hidden h-96 lg:h-[500px]">
+        <img src="https://picsum.photos/seed/restoration-about/800/600" alt="About Service Restoration" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-about-2/800/600'">
+        <div class="gallery-overlay rounded-2xl"></div>
+        <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl" style="background-color: rgba(10,10,10,0.85); backdrop-filter: blur(8px);">
+          <div class="flex items-center gap-3">
+            <div class="flex">
+              <i data-lucide="star" class="w-4 h-4" style="color: #C9A84C; fill: #C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4" style="color: #C9A84C; fill: #C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4" style="color: #C9A84C; fill: #C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4" style="color: #C9A84C; fill: #C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4" style="color: #C9A84C; fill: #C9A84C;"></i>
+            </div>
+            <span class="text-sm font-semibold" style="color: #f5f5f0;">5.0 Star Rated</span>
+          </div>
+          <p class="text-xs mt-1" style="color: rgba(245,245,240,0.6);">Trusted by clients across the region</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr style="border-color: #1e1e1e; border-width: 1px; margin: 0;">
+
+<!-- SERVICES -->
+<section id="services" class="py-24 md:py-32 px-4 md:px-8 lg:px-16 animate-section" style="background-color: #111111;">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="h-px w-8" style="background-color: #C9A84C;"></div>
+      <span class="text-xs font-bold uppercase tracking-widest" style="color: #C9A84C;">What We Do</span>
+    </div>
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+      <h2 class="heading font-black text-4xl md:text-5xl lg:text-6xl leading-tight" style="color: #f5f5f0;">
+        OUR CORE<br><span style="color: #C9A84C;">EXPERTISE</span>
+      </h2>
+      <a href="tel:069173201017" class="arrow-cta font-bold uppercase tracking-widest text-sm self-start md:self-auto" style="color: #C9A84C;">
+        Call now <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+
+    <!-- Tabs -->
+    <div class="flex flex-wrap gap-2 md:flex-nowrap mb-8">
+      <button class="tab-btn flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 transition-all rounded-lg font-bold uppercase tracking-widest active-tab" onclick="showTab('tab-panel-1', this)">Our Services</button>
+      <button class="tab-btn flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 transition-all rounded-lg font-bold uppercase tracking-widest inactive-tab" onclick="showTab('tab-panel-2', this)">How We Help</button>
+      <button class="tab-btn flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 transition-all rounded-lg font-bold uppercase tracking-widest inactive-tab" onclick="showTab('tab-panel-3', this)">Why Choose Us</button>
+    </div>
+
+    <!-- Tab Panel 1 -->
+    <div id="tab-panel-1" class="tab-panel">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="service-card">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background-color: rgba(201,168,76,0.15);">
+            <i data-lucide="building-2" class="w-6 h-6" style="color: #C9A84C;"></i>
+          </div>
+          <h3 class="heading font-bold text-xl mb-3" style="color: #f5f5f0;">Establishment Services</h3>
+          <p class="text-sm mb-5 leading-relaxed" style="color: rgba(245,245,240,0.6);">Comprehensive establishment and setup services for commercial and residential properties. We handle everything from initial assessment to full project completion with professionalism.</p>
+          <a href="tel:069173201017" class="inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-bold uppercase tracking-widest" style="background-color: white; color: #1E3A5F;">
+            <i data-lucide="phone" class="w-3.5 h-3.5"></i> Free Quote
+          </a>
+        </div>
+        <!-- Card 2 -->
+        <div class="service-card">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background-color: rgba(201,168,76,0.15);">
+            <i data-lucide="hard-hat" class="w-6 h-6" style="color: #C9A84C;"></i>
+          </div>
+          <h3 class="heading font-bold text-xl mb-3" style="color: #f5f5f0;">General Contractor</h3>
+          <p class="text-sm mb-5 leading-relaxed" style="color: rgba(245,245,240,0.6);">Full-scope general contracting services including structural repair, renovation, and new construction. Our licensed team manages every aspect of your project with precision.</p>
+          <a href="tel:069173201017" class="inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-bold uppercase tracking-widest" style="background-color: white; color: #1E3A5F;">
+            <i data-lucide="phone" class="w-3.5 h-3.5"></i> Free Quote
+          </a>
+        </div>
+        <!-- Card 3 -->
+        <div class="service-card">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background-color: rgba(201,168,76,0.15);">
+            <i data-lucide="map-pin" class="w-6 h-6" style="color: #C9A84C;"></i>
+          </div>
+          <h3 class="heading font-bold text-xl mb-3" style="color: #f5f5f0;">Point Of Interest</h3>
+          <p class="text-sm mb-5 leading-relaxed" style="color: rgba(245,245,240,0.6);">Serving key community locations with high-quality restoration and construction services. We work on landmarks, public spaces, and essential community establishments.</p>
+          <a href="tel:069173201017" class="inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-bold uppercase tracking-widest" style="background-color: white; color: #1E3A5F;">
+            <i data-lucide="phone" class="w-3.5 h-3.5"></i> Free Quote
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab Panel 2 -->
+    <div id="tab-panel-2" class="tab-panel hidden">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="service-card">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background-color: rgba(201,168,76,0.15);">
+            <i data-lucide="droplets" class="w-6 h-6" style="color: #C9A84C;"></i>
+          </div>
+          <h3 class="heading font-bold text-xl mb-3" style="color: #f5f5f0;">Water Damage Restoration</h3>
+          <p class="text-sm mb-5 leading

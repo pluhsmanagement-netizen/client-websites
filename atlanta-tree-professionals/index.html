@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlanta Tree Professionals | Expert Tree Services in Atlanta, GA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Manrope:wght@400;500&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html, body { overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Manrope', sans-serif; }
+    h1,h2,h3,h4,h5,h6,.heading { font-family: 'Inter', sans-serif; }
+    .serif-display { font-family: 'Playfair Display', serif; }
+    .ticker-track { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { display: flex; animation: marquee 40s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    .tab-btn { cursor: pointer; transition: all 0.2s ease; }
+    .tab-btn.active-tab { background-color: #1E3A5F; color: white; }
+    .tab-btn.inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
+    .tab-panel { display: block; }
+    .tab-panel.hidden { display: none !important; }
+    .img-hover-wrap { overflow: hidden; }
+    .img-hover-wrap img { transition: transform 0.7s ease; }
+    .img-hover-wrap:hover img { transform: scale(1.05); }
+    .arrow-cta { border-bottom: 2px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s ease; }
+    .arrow-cta:hover { gap: 14px; }
+    .dotted-leader { flex: 1; border-bottom: 1px dotted currentColor; margin: 0 1rem; opacity: 0.3; align-self: end; padding-bottom: 0.5rem; }
+    section { scroll-margin-top: 96px; }
+    .animate-section { opacity: 1; transform: none; transition: opacity 0.6s ease, transform 0.6s ease; }
+    .animate-section.is-pending { opacity: 0; transform: translateY(24px); }
+    .animate-section.is-visible { opacity: 1; transform: none; }
+    .animate-section:target,
+    .animate-section.is-pending:target { opacity: 1 !important; transform: none !important; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-16 md:h-20">
+      <a href="#home" class="flex items-center gap-2">
+        <span class="text-xl font-extrabold tracking-tight" style="color:#1E3A5F;">Atlanta Tree</span>
+        <span class="text-xl font-extrabold tracking-tight" style="color:#C9A84C;">Professionals</span>
+      </a>
+      <div class="hidden md:flex items-center gap-7 text-sm font-semibold text-gray-600">
+        <a href="#home" class="hover:text-[#1E3A5F] transition-colors">Home</a>
+        <a href="#about" class="hover:text-[#1E3A5F] transition-colors">About</a>
+        <a href="#services" class="hover:text-[#1E3A5F] transition-colors">Services</a>
+        <a href="#gallery" class="hover:text-[#1E3A5F] transition-colors">Gallery</a>
+        <a href="#reviews" class="hover:text-[#1E3A5F] transition-colors">Reviews</a>
+        <a href="#faq" class="hover:text-[#1E3A5F] transition-colors">FAQ</a>
+        <a href="#contact" class="hover:text-[#1E3A5F] transition-colors">Contact</a>
+        <a href="tel:4046448733" class="ml-2 px-5 py-2 rounded-full text-white font-bold text-sm transition-opacity hover:opacity-90" style="background:#1E3A5F;">(404) 644-8733</a>
+      </div>
+      <button id="hamburger" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden bg-white border-t border-gray-100 md:hidden">
+      <a href="#home" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold text-gray-700 hover:bg-gray-50">Home</a>
+      <a href="#about" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold text-gray-700 hover:bg-gray-50">About</a>
+      <a href="#services" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold text-gray-700 hover:bg-gray-50">Services</a>
+      <a href="#gallery" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold text-gray-700 hover:bg-gray-50">Gallery</a>
+      <a href="#reviews" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold text-gray-700 hover:bg-gray-50">Reviews</a>
+      <a href="#faq" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold text-gray-700 hover:bg-gray-50">FAQ</a>
+      <a href="#contact" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold text-gray-700 hover:bg-gray-50">Contact</a>
+      <div class="p-4">
+        <a href="tel:4046448733" class="block text-center py-3 px-4 rounded-full text-white font-bold text-sm" style="background:#1E3A5F;">(404) 644-8733</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="relative w-full h-screen min-h-[600px] flex items-end">
+    <div class="absolute inset-0 img-hover-wrap">
+      <img
+        src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFTNbPmmgo8w96o3QPhhaWQOFoa2DuwSraH62zu743KtVOceLFytCCYgJQWeaVnSxRgT2c_GmnFEwZEeb1J7jIa4ZQYAUYRNGr8bN6RmYH2zz9U9Mcy7LQiOuAlkpv5fotNLliOHhFrdQIBMtkxm_2v0Z4t8AdCjwUh1YgTtK0Pco0b2ADLgTlEXDjPwzlH37-80Ez8k8fo0ZwnmF-yEyXVAJihGP35Ec0S99J-Y2fmMcHO29mbn-285KyqpstzIgPPy8Of5o7OMysVNCcfOmZz93j2CWwJHLC9J7y301yozg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+        alt="Atlanta Tree Professionals at work in Atlanta, GA"
+        class="w-full h-full object-cover"
+        onerror="this.src='https://picsum.photos/seed/contractor-1/1600/900'"
+      >
+    </div>
+    <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(15,25,40,0.92) 0%, rgba(15,25,40,0.5) 50%, rgba(15,25,40,0.1) 100%);"></div>
+    <div class="relative z-10 px-4 md:px-8 lg:px-16 pb-16 md:pb-24 max-w-4xl">
+      <p class="tracking-widest uppercase text-xs md:text-sm font-semibold mb-4" style="color:#C9A84C;">Atlanta, Georgia · Expert Tree Care</p>
+      <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-none mb-5">Crafted<br>Tree<br>Services.</h1>
+      <p class="text-base md:text-lg text-gray-200 max-w-md mb-8 font-medium">Professional tree removal, trimming, and care for Atlanta homes — done right, every time.</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#gallery" class="px-7 py-3 rounded-full font-bold text-sm text-white transition-opacity hover:opacity-90" style="background:#C9A84C;">View Our Work</a>
+        <a href="tel:4046448733" class="px-7 py-3 rounded-full font-bold text-sm border-2 border-white text-white hover:bg-white hover:text-gray-900 transition-colors">Call (404) 644-8733</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="animate-section bg-white py-10 px-4 md:px-8 lg:px-16 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="rounded-lg p-6 flex flex-col items-center text-center bg-gray-50 border border-gray-100">
+          <i data-lucide="star" class="w-6 h-6 mb-3" style="color:#C9A84C;"></i>
+          <span class="text-3xl font-extrabold" style="color:#1E3A5F;" data-count="88" data-suffix="+">88+</span>
+          <span class="text-xs text-gray-500 mt-1 font-medium">Google Reviews</span>
+        </div>
+        <div class="rounded-lg p-6 flex flex-col items-center text-center bg-gray-50 border border-gray-100">
+          <i data-lucide="shield-check" class="w-6 h-6 mb-3" style="color:#C9A84C;"></i>
+          <span class="text-3xl font-extrabold" style="color:#1E3A5F;" data-count="4" data-suffix=".7★">4.7★</span>
+          <span class="text-xs text-gray-500 mt-1 font-medium">Average Rating</span>
+        </div>
+        <div class="rounded-lg p-6 flex flex-col items-center text-center bg-gray-50 border border-gray-100">
+          <i data-lucide="check-circle" class="w-6 h-6 mb-3" style="color:#C9A84C;"></i>
+          <span class="text-3xl font-extrabold" style="color:#1E3A5F;" data-count="500" data-suffix="+">500+</span>
+          <span class="text-xs text-gray-500 mt-1 font-medium">Jobs Completed</span>
+        </div>
+        <div class="rounded-lg p-6 flex flex-col items-center text-center bg-gray-50 border border-gray-100">
+          <i data-lucide="clock" class="w-6 h-6 mb-3" style="color:#C9A84C;"></i>
+          <span class="text-3xl font-extrabold" style="color:#1E3A5F;" data-count="6" data-suffix=" Days">6 Days</span>
+          <span class="text-xs text-gray-500 mt-1 font-medium">Available Weekly</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="animate-section py-24 px-4 md:px-8 lg:px-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-end justify-between mb-10">
+        <div>
+          <p class="tracking-widest uppercase text-xs font-semibold mb-2" style="color:#C9A84C;">Our Portfolio</p>
+          <h2 class="text-4xl md:text-5xl font-extrabold" style="color:#1E3A5F;">Work We're Proud Of</h2>
+        </div>
+        <a href="#contact" class="hidden md:inline-flex arrow-cta text-sm font-semibold" style="color:#1E3A5F;">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+        <!-- Featured large -->
+        <div class="col-span-2 row-span-2 img-hover-wrap rounded-xl overflow-hidden h-[300px] md:h-[500px]">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFTNbPmmgo8w96o3QPhhaWQOFoa2DuwSraH62zu743KtVOceLFytCCYgJQWeaVnSxRgT2c_GmnFEwZEeb1J7jIa4ZQYAUYRNGr8bN6RmYH2zz9U9Mcy7LQiOuAlkpv5fotNLliOHhFrdQIBMtkxm_2v0Z4t8AdCjwUh1YgTtK0Pco0b2ADLgTlEXDjPwzlH37-80Ez8k8fo0ZwnmF-yEyXVAJihGP35Ec0S99J-Y2fmMcHO29mbn-285KyqpstzIgPPy8Of5o7OMysVNCcfOmZz93j2CWwJHLC9J7y301yozg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Tree removal project Atlanta"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/contractor-10/800/600'"
+          >
+        </div>
+        <div class="img-hover-wrap rounded-xl overflow-hidden h-[145px] md:h-[240px]">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEEo5eEBAP7Da0KUMf1A-tgp8tT1KvxPSzfLGSw1HnwbrcdR2BD0-yu9DhEHRL0h0M4NLrhqFObn6vWv8wxrI4YeZ_WhgFfUa10oFOH0_5GvYpoZjzjtD9yGST70_amTPVYGRKmFZX_X6GvUliYzuf0ulY-1-x6WdKzuWXxQDbYzUGsdbW0DOcSvXZr7_Ph6ptvXaDlCZO7gaDSDPP2BMrzL9CzO6f7uyZKxm_wnxOfVDi5t_2zZuSnQNpFub61Ki1LprTBCoBOCjVbpJPelIj2nYAhUgf4YgHyEUH4H0aOBDw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Tree trimming Atlanta GA"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/contractor-11/800/600'"
+          >
+        </div>
+        <div class="img-hover-wrap rounded-xl overflow-hidden h-[145px] md:h-[240px]">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHn7BzaqJ5kVwd_24oCZC4b3e85-NP0DBURGHaZtgDIWl_5u_n9FcVksM7m4KXlKNxsY-lfkpfN1uILQ8VDKJjM0cSPkvGmR7daBA3D12OzkFNnJcogcuOXiZRNQ0sE8A1HdEtoAmf_ql5j-E0wPHv8x5uZL9BibGSBVahMW8CUy24-IYDHfSJryOMN0M8huO_-Z3Yu00LrWYOeE-uCD8zbqGbIkfnqLBftFlWuzcisTf_1rZmQusTiZsf70LnK6kgO4As4kR7vmddxCyM5uNmNriTIlUGdgKu8AfMfRu_0fw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Professional tree pruning"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/contractor-12/800/600'"
+          >
+        </div>
+        <div class="img-hover-wrap rounded-xl overflow-hidden h-[145px] md:h-[200px]">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHJmARJaMAwMknyRN_TBPH8ROPq0XRbY6NA61CsSgzZ-c2x2Zun4Ke93bL4pTqETItfMPzkoTLFpoyyalQchKnv3C2PwqZ_FNC92EKSfxbI3pqmm_PxtZ_2uM0SILmIGxRyJ3dRNImC9qpZtPFHlm8vOZBKsxdNsMlK_2pBJT7aOtrw1mV7pvnyu59qzuK8yfi7EJurNru5p1cC7LssMHNBZHFJ7NJPgMez7x2swk1jRYJYfKWz4y-lmtMLRwWQ_DVpF2QOmzBzGNNvCsk_nB-ULObvQ71cpyAtj2ELG_tIx4y0GrDNPZaXSOwc9k2p5_a8x4EbaBHLm8XKhOfmljyJu7KWyYnvdJdelYpEBiwTLchbaFjmEX_MT4qSYWhzXxHIwQeMvFAkF9GZ4w0Iz7nrR-VH0vNegr77xWRILdApwnE&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Tree care Atlanta neighborhood"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/contractor-13/800/600'"
+          >
+        </div>
+        <div class="img-hover-wrap rounded-xl overflow-hidden h-[145px] md:h-[200px]">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGWkhs-mEsui2H7M4065dBpnYrlfnWIRcDmmqvRbmAgdQGSqOEc_VNVGWn6snnvj_l7M4C3NAKZ3MJNH_XDkoa53CYJpjTQ8CrJ2ijepU4hKHZ9GFL8h52HIkqPYYaFIWMO70Y6GKMoETfcNHGt1gvD4lawWu9q07kzJOB9Q0A19Pe5NDuRKZRj1cKunlirU0Q-IiIFpfDH6R1FHKhD50jI50X2F6QyQQrW7Gz5_hkaly565_ZIPU2F1LW-8Kdz9hQpIye9p4zmMu5Z2mB9QonfE-emBRwmfwk8gcwAAYbJPg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Large tree removal project"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/contractor-14/800/600'"
+          >
+        </div>
+        <div class="img-hover-wrap rounded-xl overflow-hidden h-[145px] md:h-[200px]">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGh8EX2Wt36_bkyR17D5zNFDubslttFBtdEbUTZd9vi5EpLdEDvLWHGM0y65Ds5Q9GsPko132HDUDfBP60RY0NLZJfp5QIK10eeVa6ujJrS5TJQvMgHTP7-SfyQ8llY-udMeRwlQoWBk0ZRcIJzc8ECer80u5ifLrk8ca2thzgrV_KguIZm7h59T9dp4kJgLaLpbD4gaOhZOEcEueDJ3vxhscmp_4B-85TD38AFbsIEsKRIK3fF9sABHCyJWJ8fxhzuDtlSwahka3CW4tjsLZo2TD43mJ639fPELLImwEZcFtzWg2WRYX-3VnXFxvt2FtUqMs7kihkUnDZlU2cNi25qrjkFR7qhjvcPQgDBGhS44hki63cg8F45G6R8WkHKp-1FvasLSnhikK3VIB2oKZPYNHY1aLn6ZgxGMcqi12XvGg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Tree work completed in Atlanta"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/contractor-15/800/600'"
+          >
+        </div>
+        <div class="img-hover-wrap rounded-xl overflow-hidden h-[145px] md:h-[200px]">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHsK-XikVri39HdNCxe0y1vw2KjujnZe1HdfPvuo_OXaFbC3vG5i4hgfnzX3BFI8RA3KAkhUg2ZiR52G8WCO_EobnnrmJfq8_oEsWkwphINFvqHBM4z1kDXi6bhWTxDIK4bV8dNrrA35lcoPcL3OpGIUEAj-zd7MUNMaoXIGVI0q83UP-w72Qrqbr3rfcHnJJr4WAtLMKM4_aRZtbBCIrV-YoKU9P9K6CopBvzOSrwO9yf3NVl0OlEkQh2JOWDLVlDW62QSXvVMo3GG2Z2uVUaRkwq9J91QPADsCsZsrzF3AN2QiLU0NutsdREA1ZbuXjBQuGVGCA0tBS06UEJH0VKlSwzRUYeOD_w-g2mMQw3RDdqcBLrehi2ja_5-ubmYXKQLsgz1dizLTkaZupqCxKdBlMgOm2NfCDwCVkufYAGiFQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Skilled arborist at work"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/contractor-16/800/600'"
+          >
+        </div>
+        <div class="img-hover-wrap rounded-xl overflow-hidden h-[145px] md:h-[200px]">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGQn7rv_7W6rClwiNrXmkOkxke5qWwO_OqHgOmHetLXUOl2flAUAiN5bJHu2IBtsihxUWQk8iMf_B3GMUl0H1653uur1O_LOob8P7LzM8SJSqau7X_3KZqyLvD47VGQf7rjmC3VY3569Ejyf-Ek4qHAwZ2OWvnayHo8eXYDW2F2rJ99qYR3ATwjA9bHHZeKHoHRFBZ8BWZWN2x2Rif1jFc4k2o0CKbJnz9hidpuncfjuBGZusQG0QneWSjuWlA683PYu-hL1ATKa4tctiObs_mw7JZatHRzDeIuzJgApjxKdgYizyHw8nplLixjZzG4YVWthn8b8xR0jSM695SPgTQKFoZFfoHw4soa7ePEfAC9ZaovaQxKn-nBmTyyQqiTLqCkekUTS-tG91VHL63TdKFgJcMS-LWbiB_9zQxXGxjDCw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Backyard tree transformation"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/contractor-17/800/600'"
+          >
+        </div>
+        <div class="img-hover-wrap rounded-xl overflow-hidden h-[145px] md:h-[200px]">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEEhzZ5vJRX-r9HjXXaJBg9-v_ga3k2UWTrVnwX4iJOwOHo5k1QC15SWGyhPg0z5vy5-EVopvuheZpYeNHAvP1VEvbb3QEX5yMevDKJT1Sja2MF2SP_0e4NroktoT23IL_RiVhv0jwwSjXQXFQBolzel51562uxbPAkYizlKyl6gAxuMz3GVB2Z4S4A4KPfDO

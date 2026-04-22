@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phenom Pressure Washing Inc. | Roofing Atlanta, GA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html, body { overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Sans Pro', sans-serif; }
+    h1,h2,h3,h4,h5,h6,.heading { font-family: 'Oswald', sans-serif; }
+    .serif-display { font-family: 'Playfair Display', serif; }
+    .ticker-track { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { display: flex; animation: marquee 40s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    .active-tab { background-color: #8B2F1B; color: white; }
+    .inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
+    .img-hover-wrap { overflow: hidden; }
+    .img-hover-wrap img { transition: transform 0.7s ease; }
+    .img-hover-wrap:hover img { transform: scale(1.05); }
+    .arrow-cta { border-bottom: 2px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s ease; }
+    .arrow-cta:hover { gap: 14px; }
+    .dotted-leader { flex: 1; border-bottom: 1px dotted currentColor; margin: 0 1rem; opacity: 0.3; align-self: end; padding-bottom: 0.5rem; }
+    section { scroll-margin-top: 96px; }
+    .animate-section { opacity: 1; transform: none; transition: opacity 0.6s ease, transform 0.6s ease; }
+    .animate-section.is-pending { opacity: 0; transform: translateY(24px); }
+    .animate-section.is-visible { opacity: 1; transform: none; }
+    .brand-primary { color: #8B2F1B; }
+    .brand-primary-bg { background-color: #8B2F1B; }
+    .brand-secondary-bg { background-color: #2C3E50; }
+    .accent-color { color: #C9A84C; }
+    .accent-bg { background-color: #C9A84C; }
+    .cream-bg { background-color: #FDF8F0; }
+    .warm-border { border-color: #C9A84C; }
+  </style>
+</head>
+<body class="text-gray-800">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-16 md:h-20">
+      <!-- Wordmark -->
+      <a href="#home" class="flex flex-col leading-tight">
+        <span class="font-bold text-xl md:text-2xl uppercase tracking-wide" style="font-family:'Oswald',sans-serif; color:#8B2F1B;">Phenom</span>
+        <span class="text-xs uppercase tracking-widest" style="font-family:'Oswald',sans-serif; color:#2C3E50; letter-spacing:0.18em;">Pressure Washing Inc.</span>
+      </a>
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#home" class="text-sm uppercase tracking-wide font-semibold hover:text-[#8B2F1B] transition-colors">Home</a>
+        <a href="#about" class="text-sm uppercase tracking-wide font-semibold hover:text-[#8B2F1B] transition-colors">About</a>
+        <a href="#services" class="text-sm uppercase tracking-wide font-semibold hover:text-[#8B2F1B] transition-colors">Services</a>
+        <a href="#gallery" class="text-sm uppercase tracking-wide font-semibold hover:text-[#8B2F1B] transition-colors">Gallery</a>
+        <a href="#reviews" class="text-sm uppercase tracking-wide font-semibold hover:text-[#8B2F1B] transition-colors">Reviews</a>
+        <a href="#faq" class="text-sm uppercase tracking-wide font-semibold hover:text-[#8B2F1B] transition-colors">FAQ</a>
+        <a href="#contact" class="ml-2 px-5 py-2 text-sm uppercase tracking-wide font-bold text-white rounded transition-colors" style="background:#8B2F1B;">Contact</a>
+      </div>
+      <!-- Hamburger -->
+      <button id="hamburger" class="md:hidden p-2 text-gray-700" aria-label="Open menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+      <a href="#home" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm uppercase tracking-wide font-semibold hover:bg-gray-50">Home</a>
+      <a href="#about" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm uppercase tracking-wide font-semibold hover:bg-gray-50">About</a>
+      <a href="#services" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm uppercase tracking-wide font-semibold hover:bg-gray-50">Services</a>
+      <a href="#gallery" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm uppercase tracking-wide font-semibold hover:bg-gray-50">Gallery</a>
+      <a href="#reviews" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm uppercase tracking-wide font-semibold hover:bg-gray-50">Reviews</a>
+      <a href="#faq" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm uppercase tracking-wide font-semibold hover:bg-gray-50">FAQ</a>
+      <a href="#contact" class="mobile-nav-link block py-3 px-4 text-sm uppercase tracking-wide font-bold text-white" style="background:#8B2F1B;">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="pt-16 md:pt-20 min-h-screen flex items-center" style="background:#FDF8F0;">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 w-full py-12 md:py-20">
+      <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+        <!-- Left Text -->
+        <div class="flex-1 order-2 md:order-1">
+          <p class="uppercase tracking-widest text-sm font-semibold mb-3 accent-color">Serving Metro Atlanta</p>
+          <h1 class="text-5xl md:text-6xl font-bold uppercase leading-tight mb-4" style="color:#2C3E50;">Atlanta's Most <span style="color:#8B2F1B;">Trusted</span> Roofing Team</h1>
+          <p class="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed">From new installations to emergency repairs, Phenom delivers honest work, fair pricing, and lasting results — right here in your community.</p>
+          <div class="flex flex-wrap gap-4 mb-10">
+            <a href="tel:6785020684" class="px-7 py-3 text-white font-bold uppercase tracking-wide rounded shadow-md transition-opacity hover:opacity-90 text-sm" style="background:#8B2F1B;">Call Now: (678) 502-0684</a>
+            <a href="#contact" class="px-7 py-3 font-bold uppercase tracking-wide rounded border-2 text-sm transition-colors hover:bg-gray-100" style="border-color:#8B2F1B; color:#8B2F1B;">Free Estimate</a>
+          </div>
+          <!-- Trust Badges -->
+          <div class="flex flex-wrap gap-6">
+            <div class="flex items-center gap-2 text-gray-600 text-sm">
+              <i data-lucide="shield-check" class="w-5 h-5" style="color:#8B2F1B;"></i>
+              <span class="font-semibold">Licensed &amp; Insured</span>
+            </div>
+            <div class="flex items-center gap-2 text-gray-600 text-sm">
+              <i data-lucide="home" class="w-5 h-5" style="color:#8B2F1B;"></i>
+              <span class="font-semibold">Local &amp; Family-Owned</span>
+            </div>
+            <div class="flex items-center gap-2 text-gray-600 text-sm">
+              <i data-lucide="star" class="w-5 h-5" style="color:#C9A84C;"></i>
+              <span class="font-semibold">5-Star Rated (277 Reviews)</span>
+            </div>
+          </div>
+        </div>
+        <!-- Right Photo -->
+        <div class="flex-1 order-1 md:order-2 w-full">
+          <div class="img-hover-wrap rounded-2xl shadow-2xl overflow-hidden" style="max-height:520px;">
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHLS1Sj9dqcPCvw3hUZ9qa6029QiWDhvbhbD2eczk0vkfdCRfU6ZdyqBz1J92djESkw27HV7ElABAq2iOVu10qqOxCSIJom3tszlPsFSHygDlfP4ZyMv3NxwWgBYtBPUsjTwNVGMKiFIJ9fJnqFhqKnjatYFoKVuQ2ul6_nm3UyG_MsHJ_IhuzKn3jWG0F8TI4LLz5gFKTZ4V2KwJRudoIg99pU39h4RI1zilnvjXP47AoOkbcwUeLQVjWg8cxtEbOyOMYlHvf5F0CGaNDZrQzsYsumVKl0mC3z5-RCre3CWA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Phenom Roofing Atlanta" class="w-full object-cover" style="height:520px;" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-1/800/600'" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER BAND -->
+  <div class="py-3 overflow-hidden" style="background:#2C3E50;">
+    <div class="ticker-track">
+      <span class="text-white text-sm font-semibold uppercase tracking-widest px-8">SERVING ATLANTA SINCE DAY ONE</span>
+      <span class="accent-color text-sm font-bold px-4">·</span>
+      <span class="text-white text-sm font-semibold uppercase tracking-widest px-8">LICENSED IN GEORGIA</span>
+      <span class="accent-color text-sm font-bold px-4">·</span>
+      <span class="text-white text-sm font-semibold uppercase tracking-widest px-8">LOCAL &amp; FAMILY-OWNED</span>
+      <span class="accent-color text-sm font-bold px-4">·</span>
+      <span class="text-white text-sm font-semibold uppercase tracking-widest px-8">TRUSTED NEIGHBORS</span>
+      <span class="accent-color text-sm font-bold px-4">·</span>
+      <span class="text-white text-sm font-semibold uppercase tracking-widest px-8">FREE QUOTES · FAST RESPONSE</span>
+      <span class="accent-color text-sm font-bold px-4">·</span>
+      <span class="text-white text-sm font-semibold uppercase tracking-widest px-8">LICENSED &amp; INSURED</span>
+      <span class="accent-color text-sm font-bold px-4">·</span>
+      <span class="text-white text-sm font-semibold uppercase tracking-widest px-8">LOCAL EXPERTS</span>
+      <span class="accent-color text-sm font-bold px-4">·</span>
+      <!-- Duplicate for seamless loop -->
+      <span class="text-white text-sm font-semibold uppercase tracking-widest px-8">SERVING ATLANTA SINCE DAY ONE</span>
+      <span class="accent-color text-sm font-bold px-4">·</span>
+      <span class="text-white text-sm font-semibold uppercase tracking-widest px-8">LICENSED IN GEORGIA</span>
+      <span class="accent-color text-sm font-bold px-4">·</span>
+      <span class="text-white text-sm font-semibold uppercase tracking-widest px-8">LOCAL &amp; FAMILY-OWNED</span>
+      <span class="accent-color text-sm font-bold px-4">·</span>
+      <span class="text-white text-sm font-semibold uppercase tracking-widest px-8">TRUSTED NEIGHBORS</span>
+      <span class="accent-color text-sm font-bold px-4">·</span>
+      <span class="text-white text-sm font-semibold uppercase tracking-widest px-8">FREE QUOTES · FAST RESPONSE</span>
+      <span class="accent-color text-sm font-bold px-4">·</span>
+      <span class="text-white text-sm font-semibold uppercase tracking-widest px-8">LICENSED &amp; INSURED</span>
+      <span class="accent-color text-sm font-bold px-4">·</span>
+      <span class="text-white text-sm font-semibold uppercase tracking-widest px-8">LOCAL EXPERTS</span>
+      <span class="accent-color text-sm font-bold px-4">·</span>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section class="animate-section py-16 md:py-20" style="background:#8B2F1B;">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-4xl md:text-5xl font-bold text-white mb-2" data-count="8" data-suffix="+">8+</div>
+          <p class="text-sm uppercase tracking-wide font-semibold text-red-200">Metro Areas Served</p>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-bold text-white mb-2" data-count="277" data-suffix="+">277+</div>
+          <p class="text-sm uppercase tracking-wide font-semibold text-red-200">Atlanta Neighbors Served</p>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-bold text-white mb-2" data-count="5" data-suffix="★">5★</div>
+          <p class="text-sm uppercase tracking-wide font-semibold text-red-200">Google Rating</p>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-bold text-white mb-2" data-count="24" data-suffix="/7">24/7</div>
+          <p class="text-sm uppercase tracking-wide font-semibold text-red-200">Emergency Availability</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-16 md:py-20 cream-bg">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+      <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+        <div class="flex-1 w-full">
+          <div class="img-hover-wrap rounded-2xl shadow-xl overflow-hidden">
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEEQIEvrVqI9gROp5SRf709grM2w3tZvFw-WrtOhLZf72-MYkd454eh58vnIG21tdOuncJDGSUhXfbgx45QPt0-Vzb21g0Uvc0J3dIgwvD6H_txJ8RWrXs7GYSPfT6FaDcN3_XT5eeoa717EM5YRvjLv4_CnWUJIaofV6Wa1EblV8aS6nvUncdI5PsJr6iQijXX5PyyOA1SUtwUpRbrkEWJyR2FeE36tGcjfQv7MhyI33dQQdXckduk1jNTY__7F-jXRMJgJCjWw2J3p8cqcgOF4u8Pc8DedqoLsaxr0ohNXBw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Phenom team at work" class="w-full object-cover" style="height:420px;" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-2/800/600'" />
+          </div>
+        </div>
+        <div class="flex-1">
+          <p class="uppercase tracking-widest text-xs font-semibold mb-3 accent-color">Our Story</p>
+          <h2 class="text-4xl md:text-5xl font-bold uppercase mb-6" style="color:#2C3E50;">Rooted Right Here<br/>In Atlanta</h2>
+          <div class="w-16 h-1 mb-6 rounded" style="background:#C9A84C;"></div>
+          <p class="text-gray-600 text-lg leading-relaxed mb-4">Phenom Pressure Washing Inc. is a locally rooted roofing and exterior services company proudly operating out of Atlanta, GA, delivering dependable craftsmanship to homeowners across the metro area. We treat every roof like it belongs to a neighbor — because it does — and we back every job with honest communication, quality materials, and work that lasts.</p>
+          <p class="text-gray-600 text-lg leading-relaxed mb-8">When you choose Phenom, you're not calling a distant call center — you're reaching a real team that lives in your community, understands Atlanta's weather challenges, and stands behind every shingle we nail down.</p>
+          <div class="flex flex-wrap gap-6">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:#FDF8F0; border:2px solid #C9A84C;">
+                <i data-lucide="check-circle" class="w-5 h-5" style="color:#8B2F1B;"></i>
+              </div>
+              <span class="font-semibold text-gray-700">Georgia Licensed</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:#FDF8F0; border:2px solid #C9A84C;">
+                <i data-lucide="shield-check" class="w-5 h-5" style="color:#8B2F1B;"></i>
+              </div>
+              <span class="font-semibold text-gray-700">Fully Insured</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:#FDF8F0; border:2px solid #C9A84C;">
+                <i data-lucide="home" class="w-5 h-5" style="color:#8B2F1B;"></i>
+              </div>
+              <span class="font-semibold text-gray-700">Family-Owned</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS STRIP -->
+  <div class="py-6 border-y border-gray-200 bg-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex flex-wrap items-center justify-center gap-8 text-sm font-semibold text-gray-600 uppercase tracking-wide">
+      <div class="flex items-center gap-2"><i data-lucide="shield-check" class="w-5 h-5" style="color:#8B2F1B;"></i> Georgia State Licensed</div>
+      <div class="flex items-center gap-2"><i data-lucide="hard-hat" class="w-5 h-5" style="color:#8B2F1B;"></i> OSHA Safety Certified</div>
+      <div class="flex items-center gap-2"><i data-lucide="star" class="w-5 h-5" style="color:#C9A84C;"></i> 5-Star Google Rating</div>
+      <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5" style="color:#8B2F1B;"></i> Fully Bonded &amp; Insured</div>
+      <div class="flex items-center gap-2"><i data-lucide="clock" class="w-5 h-5" style="color:#8B2F1B;"></i> 24/7 Emergency Service</div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services" class="animate-section py-16 md:py-20" style="background:#F7F1E8;">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+      <div class="text-center mb-12">
+        <p class="uppercase tracking-widest text-xs font-semibold mb-3 accent-color">What We Do</p>
+        <h2 class="text-4xl md:text-5xl font-bold uppercase mb-4" style="color:#2C3E50;">Our Services</h2>
+        <div class="w-16 h-1 mx-auto rounded" style="background:#C9A84C;"></div>
+      </div>
+      <!-- Tabs -->
+      <div class="flex flex-wrap justify-center gap-3 mb-10">
+        <button onclick="showTab('tab-panel-1', this)" class="tab-btn active-tab px-6 py-3 text-sm font-bold uppercase tracking-wide rounded-full transition-all">Roofing Services</button>
+        <button onclick="showTab('tab-panel-2', this)" class="tab-btn inactive-tab px-6 py-3 text-sm font-bold uppercase tracking-wide rounded-full transition-all">Repairs &amp; Restoration</button>
+        <button onclick="showTab('tab-panel-3', this)" class="tab-btn inactive-tab px-6 py-3 text-sm font-bold uppercase tracking-wide rounded-full transition-all">Specialty Services</button>
+      </div>
+
+      <!-- Tab Panel 1 -->
+      <div id="tab-panel-1" class="tab-panel grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background:#FDF8F0;">
+            <i data-lucide="home" class="w-6 h-6" style="color:#8B2F1B;"></i>
+          </div>
+          <h3 class="text-xl font-bold uppercase mb-2" style="color:#2C3E50;">New Roof Installation</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">We install complete new roofing systems using premium materials rated for Atlanta's climate, from asphalt shingles to architectural systems. Every installation includes proper underlayment, flashing, and a detailed walkthrough.</p>
+          <a href="tel:6785020684" class="arrow-cta text-sm font-bold" style="color:#8B2F1B;">Get a Free Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background:#FDF8F0;">
+            <i data-lucide="hard-hat" class="w-6 h-6" style="color:#8B2F1B;"></i>
+          </div>
+          <h3 class="text-xl font-bold uppercase mb-2" style="color:#2C3E50;">Roof Replacement</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">When repairs are no longer cost-effective, our full replacement service removes old roofing down to the deck and starts fresh with durable, warrantied materials. We handle the entire process cleanly and efficiently.</p>
+          <a href="tel:6785020684" class="arrow-cta text-sm font-bold" style="color:#8B2F1B;">Get a Free Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background:#FDF8F0;">
+            <i data-lucide="ruler" class="w-6 h-6" style="color:#8B2F1B;"></i>
+          </div>
+          <h3 class="text-xl font-bold uppercase mb-2" style="color:#2C3E50;">Roof Inspections</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">Our detailed roof inspections identify hidden damage, moisture intrusion, and wear before they become costly problems. We provide written reports suitable for insurance claims and real estate transactions.</p>
+          <a href="tel:6785020684" class="arrow-cta text-sm font-bold" style="color:#8B2F1B;">Get a Free Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+
+      <!-- Tab Panel 2 -->
+      <div id="tab-panel-2" class="tab-panel hidden grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 4 -->
+        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background:#FDF8F0;">
+            <i data-lucide="wrench" class="w-6 h-6" style="color:#8B2F1B;"></i>
+          </div>
+          <h3 class="text-xl font-bold uppercase mb-2" style="color:#2C3E50;">Leak Repair</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">We locate and repair roof leaks fast, preventing water damage from spreading into your attic and living spaces. Our technicians trace leaks to their true source — not just the visible symptom — for lasting fixes.</p>
+          <a href="tel:6785020684" class="arrow-cta text-sm font-bold" style="color:#8B2F1B;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <!-- Card 5 -->
+        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background:#FDF8F0;">
+            <i data-lucide="cloud-rain" class="w-6 h-6" style="color:#8B2F

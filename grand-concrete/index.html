@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grand Concrete — Stillwater, MN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html, body { overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Sans Pro', sans-serif; }
+    h1,h2,h3,h4,h5,h6,.heading { font-family: 'Oswald', sans-serif; }
+    .serif-display { font-family: 'Playfair Display', serif; }
+    .ticker-track { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { display: flex; animation: marquee 40s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    .tab-btn { cursor: pointer; transition: all 0.2s ease; }
+    .tab-btn.active-tab { background-color: #2C3E50; color: white; }
+    .tab-btn.inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
+    .tab-panel { display: block; }
+    .tab-panel.hidden { display: none !important; }
+    .img-hover-wrap { overflow: hidden; }
+    .img-hover-wrap img { transition: transform 0.7s ease; }
+    .img-hover-wrap:hover img { transform: scale(1.05); }
+    .arrow-cta { border-bottom: 2px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s ease; }
+    .arrow-cta:hover { gap: 14px; }
+    .dotted-leader { flex: 1; border-bottom: 1px dotted currentColor; margin: 0 1rem; opacity: 0.3; align-self: end; padding-bottom: 0.5rem; }
+    section { scroll-margin-top: 96px; }
+    .animate-section { opacity: 1; transform: none; transition: opacity 0.6s ease, transform 0.6s ease; }
+    .animate-section.is-pending { opacity: 0; transform: translateY(24px); }
+    .animate-section.is-visible { opacity: 1; transform: none; }
+    .bg-page { background-color: #f8f8f5; }
+    .text-primary { color: #2C3E50; }
+    .text-secondary { color: #E67E22; }
+    .text-accent { color: #E74C3C; }
+    .bg-primary { background-color: #2C3E50; }
+    .bg-secondary { background-color: #E67E22; }
+    .border-primary { border-color: #2C3E50; }
+    .service-card { border-top: 1px solid #e5e7eb; padding-top: 2rem; padding-bottom: 2rem; position: relative; }
+    .service-card:last-child { border-bottom: 1px solid #e5e7eb; }
+    .review-stars { color: #E67E22; }
+    .quote-mark { font-family: 'Playfair Display', serif; color: #E67E22; line-height: 1; }
+  </style>
+</head>
+<body class="bg-page">
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-page transition-shadow duration-300">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-20 border-b border-gray-200">
+    <a href="#home" class="text-2xl font-bold tracking-widest text-primary" style="font-family:'Oswald',sans-serif;">GRAND CONCRETE</a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#home" class="text-sm font-semibold tracking-wider uppercase text-gray-600 hover:text-primary transition-colors">Home</a>
+      <a href="#about" class="text-sm font-semibold tracking-wider uppercase text-gray-600 hover:text-primary transition-colors">About</a>
+      <a href="#services" class="text-sm font-semibold tracking-wider uppercase text-gray-600 hover:text-primary transition-colors">Services</a>
+      <a href="#gallery" class="text-sm font-semibold tracking-wider uppercase text-gray-600 hover:text-primary transition-colors">Gallery</a>
+      <a href="#reviews" class="text-sm font-semibold tracking-wider uppercase text-gray-600 hover:text-primary transition-colors">Reviews</a>
+      <a href="#faq" class="text-sm font-semibold tracking-wider uppercase text-gray-600 hover:text-primary transition-colors">FAQ</a>
+      <a href="#contact" class="text-sm font-semibold tracking-wider uppercase text-gray-600 hover:text-primary transition-colors">Contact</a>
+      <a href="tel:6515283377" class="ml-4 bg-primary text-white px-5 py-2 text-sm font-semibold tracking-wider uppercase hover:bg-opacity-90 transition-all">(651) 528-3377</a>
+    </div>
+    <button id="hamburger" class="md:hidden p-2 text-primary" aria-label="Open menu">
+      <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden bg-page border-b border-gray-200 md:hidden">
+    <a href="#home" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold tracking-wider uppercase text-gray-700 hover:text-primary">Home</a>
+    <a href="#about" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold tracking-wider uppercase text-gray-700 hover:text-primary">About</a>
+    <a href="#services" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold tracking-wider uppercase text-gray-700 hover:text-primary">Services</a>
+    <a href="#gallery" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold tracking-wider uppercase text-gray-700 hover:text-primary">Gallery</a>
+    <a href="#reviews" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold tracking-wider uppercase text-gray-700 hover:text-primary">Reviews</a>
+    <a href="#faq" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold tracking-wider uppercase text-gray-700 hover:text-primary">FAQ</a>
+    <a href="#contact" class="mobile-nav-link block py-3 px-4 text-sm font-semibold tracking-wider uppercase text-gray-700 hover:text-primary">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="animate-section pt-32 md:pt-40 pb-32 md:pb-40 px-4 md:px-8 lg:px-16 min-h-screen flex flex-col justify-center relative">
+  <div class="max-w-7xl mx-auto w-full">
+    <p class="text-xs uppercase tracking-widest text-gray-400 mb-6">— Construction, Stillwater, MN</p>
+    <h1 class="serif-display font-extrabold leading-none text-primary" style="font-size:clamp(3.5rem,10vw,9rem); letter-spacing:-0.02em; max-width:14ch;">Concrete<br/><em class="text-secondary not-italic">Crafted</em><br/>to Last.</h1>
+    <div class="mt-12 md:mt-16 flex flex-col md:flex-row md:justify-end">
+      <div class="md:max-w-sm">
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">Grand Concrete delivers precision concrete work and construction services across the Stillwater region — built with integrity, finished with care.</p>
+        <a href="#contact" class="arrow-cta text-primary font-semibold text-base">
+          Request a Free Estimate <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
+    <span class="w-px h-12 bg-primary block"></span>
+    <p class="text-xs uppercase tracking-widest text-primary">Scroll</p>
+  </div>
+</section>
+
+<!-- PULL QUOTE / STAT -->
+<section class="animate-section py-32 md:py-40 px-4 md:px-8 lg:px-16 border-t border-gray-200">
+  <div class="max-w-7xl mx-auto text-center">
+    <p class="serif-display font-extrabold text-primary leading-none" style="font-size:clamp(5rem,18vw,10rem);" data-count="74" data-suffix="+">74+</p>
+    <p class="text-xl italic text-gray-500 mt-6 max-w-2xl mx-auto" style="font-family:'Playfair Display',serif;">"Seventy-four five-star reviews from homeowners and businesses who trusted Grand Concrete to deliver — and were never disappointed."</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="animate-section py-32 md:py-40 px-4 md:px-8 lg:px-16 border-t border-gray-200">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+      <!-- Left -->
+      <div>
+        <p class="text-xs uppercase tracking-widest text-secondary mb-4">About Grand Concrete</p>
+        <h2 class="serif-display font-bold text-primary leading-tight" style="font-size:clamp(2.5rem,5vw,3.5rem);">Built on Precision.<br/>Grounded in Trust.</h2>
+      </div>
+      <!-- Right -->
+      <div>
+        <p class="text-lg text-gray-700 leading-relaxed mb-8">Grand Concrete is a full-service concrete and construction company based in Stillwater, MN, dedicated to delivering exceptional craftsmanship on every residential and commercial project we undertake. From patios and driveways to structural foundations and specialty concrete work, our team brings meticulous attention to detail and a commitment to doing the job right the first time.</p>
+        <blockquote class="border-l-4 pl-6 my-8" style="border-color:#E67E22;">
+          <p class="text-2xl italic text-gray-600" style="font-family:'Playfair Display',serif;">"Every project is personal — we treat your property with the same care we'd give our own."</p>
+        </blockquote>
+        <p class="text-lg text-gray-700 leading-relaxed">With deep roots in the Stillwater community and a reputation built entirely on referrals and five-star reviews, Grand Concrete stands as the region's most trusted name in concrete and construction services. Our owner Andy and his crew bring transparency, flexibility, and genuine pride to every pour, every project, every time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 border-t border-gray-200">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-12">
+      <p class="text-xs uppercase tracking-widest text-secondary mb-3">What We Do</p>
+      <h2 class="serif-display font-bold text-primary" style="font-size:clamp(2rem,4vw,3rem);">Our Services</h2>
+    </div>
+
+    <!-- Tab buttons -->
+    <div class="flex flex-wrap gap-2 md:flex-nowrap mb-12 tabs-container">
+      <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-1">Construction</button>
+      <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-2">Remodeling</button>
+      <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-3">Specialty Projects</button>
+    </div>
+
+    <!-- Tab Panel 1 -->
+    <div id="tab-panel-1" class="tab-panel">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0">
+
+        <div class="service-card px-2 col-span-1 sm:col-span-2 lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          <div class="relative pr-6">
+            <div class="flex items-start justify-between mb-3">
+              <span class="serif-display font-bold text-secondary" style="font-size:2.5rem;">01.</span>
+              <i data-lucide="building-2" class="w-5 h-5 text-gray-300 mt-2"></i>
+            </div>
+            <h3 class="serif-display font-bold text-primary text-2xl mb-3">Establishment</h3>
+            <p class="text-lg text-gray-700 leading-relaxed mb-4">We handle the foundational work that brings new structures to life, from site preparation through first pours. Every establishment project is executed with structural integrity and long-term durability at its core.</p>
+            <a href="tel:6515283377" class="arrow-cta text-secondary text-sm font-semibold">
+              Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <div class="relative pr-6">
+            <div class="flex items-start justify-between mb-3">
+              <span class="serif-display font-bold text-secondary" style="font-size:2.5rem;">02.</span>
+              <i data-lucide="hard-hat" class="w-5 h-5 text-gray-300 mt-2"></i>
+            </div>
+            <h3 class="serif-display font-bold text-primary text-2xl mb-3">General Contractor</h3>
+            <p class="text-lg text-gray-700 leading-relaxed mb-4">As a licensed general contractor, Grand Concrete manages your entire project from concept through completion, coordinating trades and ensuring quality at every phase. We bring accountability and professional oversight to every build.</p>
+            <a href="tel:6515283377" class="arrow-cta text-secondary text-sm font-semibold">
+              Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <div class="relative pr-6">
+            <div class="flex items-start justify-between mb-3">
+              <span class="serif-display font-bold text-secondary" style="font-size:2.5rem;">03.</span>
+              <i data-lucide="map-pin" class="w-5 h-5 text-gray-300 mt-2"></i>
+            </div>
+            <h3 class="serif-display font-bold text-primary text-2xl mb-3">Point of Interest</h3>
+            <p class="text-lg text-gray-700 leading-relaxed mb-4">We create landmark concrete installations and features that become defining elements of a property or public space. Our design-conscious approach ensures these structures are as visually compelling as they are structurally sound.</p>
+            <a href="tel:6515283377" class="arrow-cta text-secondary text-sm font-semibold">
+              Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <div class="relative pr-6">
+            <div class="flex items-start justify-between mb-3">
+              <span class="serif-display font-bold text-secondary" style="font-size:2.5rem;">04.</span>
+              <i data-lucide="ruler" class="w-5 h-5 text-gray-300 mt-2"></i>
+            </div>
+            <h3 class="serif-display font-bold text-primary text-2xl mb-3">General Contracting</h3>
+            <p class="text-lg text-gray-700 leading-relaxed mb-4">Our general contracting services span commercial and residential scopes, delivering well-managed projects on time and within budget. We pride ourselves on transparent communication from bid to final walkthrough.</p>
+            <a href="tel:6515283377" class="arrow-cta text-secondary text-sm font-semibold">
+              Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab Panel 2 -->
+    <div id="tab-panel-2" class="tab-panel hidden">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0">
+        <div class="service-card px-2 col-span-1 sm:col-span-2 lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          <div class="relative pr-6">
+            <div class="flex items-start justify-between mb-3">
+              <span class="serif-display font-bold text-secondary" style="font-size:2.5rem;">01.</span>
+              <i data-lucide="hammer" class="w-5 h-5 text-gray-300 mt-2"></i>
+            </div>
+            <h3 class="serif-display font-bold text-primary text-2xl mb-3">Home Remodeling</h3>
+            <p class="text-lg text-gray-700 leading-relaxed mb-4">Grand Concrete transforms existing homes with comprehensive remodeling services that balance your vision with sound construction practice. We handle structural concrete elements alongside broader renovation scopes to deliver a cohesive result.</p>
+            <a href="tel:6515283377" class="arrow-cta text-secondary text-sm font-semibold">
+              Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <div class="relative pr-6">
+            <div class="flex items-start justify-between mb-3">
+              <span class="serif-display font-bold text-secondary" style="font-size:2.5rem;">02.</span>
+              <i data-lucide="wrench" class="w-5 h-5 text-gray-300 mt-2"></i>
+            </div>
+            <h3 class="serif-display font-bold text-primary text-2xl mb-3">Kitchen Renovation</h3>
+            <p class="text-lg text-gray-700 leading-relaxed mb-4">We bring fresh life to kitchen spaces with renovation services that include polished concrete countertops, new flooring, and structural modifications. Our team ensures every detail is executed cleanly and to spec.</p>
+            <a href="tel:6515283377" class="arrow-cta text-secondary text-sm font-semibold">
+              Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <div class="relative pr-6">
+            <div class="flex items-start justify-between mb-3">
+              <span class="serif-display font-bold text-secondary" style="font-size:2.5rem;">03.</span>
+              <i data-lucide="wrench" class="w-5 h-5 text-gray-300 mt-2"></i>
+            </div>
+            <h3 class="serif-display font-bold text-primary text-2xl mb-3">Bathroom Renovation</h3>
+            <p class="text-lg text-gray-700 leading-relaxed mb-4">Our bathroom renovation services include waterproof concrete finishes, custom shower pans, and complete layout redesigns built to last for decades. We manage every step so you can expect a seamless, stress-free transformation.</p>
+            <a href="tel:6515283377" class="arrow-cta text-secondary text-sm font-semibold">
+              Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <div class="relative pr-6">
+            <div class="flex items-start justify-between mb-3">
+              <span class="serif-display font-bold text-secondary" style="font-size:2.5rem;">04.</span>
+              <i data-lucide="building-2" class="w-5 h-5 text-gray-300 mt-2"></i>
+            </div>
+            <h3 class="serif-display font-bold text-primary text-2xl mb-3">Basement Finishing</h3>
+            <p class="text-lg text-gray-700 leading-relaxed mb-4">We convert unfinished basements into fully functional living or working spaces, starting with moisture-resistant concrete treatments and progressing through full interior buildout. The result is a durable, comfortable space that adds real value to your home.</p>
+            <a href="tel:6515283377" class="arrow-cta text-secondary text-sm font-semibold">
+              Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab Panel 3 -->
+    <div id="tab-panel-3" class="tab-panel hidden">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0">
+        <div class="service-card px-2 col-span-1 sm:col-span-2 lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          <div class="relative pr-6">
+            <div class="flex items-start justify-between mb-3">
+              <span class="serif-display font-bold text-secondary" style="font-size:2.5rem;">01.</span>
+              <i data-lucide="hammer" class="w-5 h-5 text-gray-300 mt-2"></i>
+            </div>
+            <h3 class="serif-display font-bold text-primary text-2xl mb-3">Custom Carpentry</h3>
+            <p class="text-lg text-gray-700 leading-relaxed mb-4">Our custom carpentry services complement concrete work with precision-crafted wood elements — from custom framing to decorative millwork. Every piece is measured, cut, and installed to exacting tolerances that stand the test of time.</p>
+            <a href="tel:6515283377" class="arrow-cta text-secondary text-sm font-semibold">
+              Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <div class="relative pr-6">
+            <div class="flex items-start justify-between mb-3">
+              <span class="serif-display font-bold text-secondary" style="font-size:2.5rem;">02.</span>
+              <i data-lucide="ruler" class="w-5 h-5 text-gray-300 mt-2"></i>
+            </div>
+            <h3 class="serif-display font-bold text-primary text-2xl mb-3">Design-Build</h3>
+            <p class="text-lg text-gray-700 leading-relaxed mb-4">Our design-build approach unifies planning and construction under one roof, eliminating costly miscommunication between separate teams. Grand Concrete brings your concept to life with a streamlined process that keeps projects on schedule and on budget.</p>
+            <a href="tel:6515283377" class="arrow-cta text-secondary text-sm font-semibold">
+              Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <div class="relative pr-6">
+            <div class="flex items-start justify-between mb-3">
+              <span class="serif-display font-bold text-secondary" style="font-size:2.5rem;">03.</span>
+              <i data-lucide="pickaxe" class="w-5 h-5 text-gray-300 mt-2"></i>
+            </div>
+            <h3 class="serif-display font-bold text-primary text-2xl mb-3">Historic Restoration</h3>
+            <p class="text-lg text-gray-700 leading-relaxed mb-4">We specialize in restoring historically significant structures using period-appropriate materials and techniques that honor the original character of the building. Our team works sensitively to preserve architectural details while bringing lasting structural stability.</p>
+            <a href="tel:6515283377" class="arrow-cta text-secondary text-sm font-semibold">
+              Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <div class="relative pr-6">
+            <div class="flex items-start justify-between mb-3">
+              <span class="serif-display font-bold text-secondary" style="font-size:2.5rem;">04.</span>
+              <i data-lucide="building-2" class="w-5 h-5 text-gray-300 mt-2"></i>
+            </div>
+            <h3 class="serif-display font-bold text-primary text-2xl mb-3">Tenant Improvements</h3>
+            <p class="text-lg text-gray-700 leading-relaxed mb-4">We execute commercial tenant improvement projects efficiently, minimizing business disruption while transforming leased spaces to meet your operational needs. From polished concrete floors to full buildouts, we deliver on time with clean, code-compliant results.</p>
+            <a href="tel:6515283377" class="arrow-cta text-secondary text-sm font-semibold">
+              Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="animate-section py-32 md:py-40 px-4 md:px-8 lg:px-16 border-t border-gray-200">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-12">
+      <p class="text-xs uppercase tracking-widest text-secondary mb-3">Our Work</p>
+      <h2 class="serif-display font-bold text-primary" style="font-size:clamp(2rem,4vw,3rem);">Portfolio</h2>
+    </div>
+
+    <!-- Row 1: Large feature + tall -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+      <div class="md:col-span-2 img-hover-wrap" style="height:480px;">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEH5UHgQPasfoT7DVPdIEmzyVP8z0pTpvhxhs0IrDJd2nfrFSUN5FD8RN6jN8i6hUNoVcfgnQ0j68zRuyW5qqzHvvErA_YQq6LXqk_J4dCQqXzv9jaSiOrakp3oakrGHzza-WG58fUkDmKzAwHC90O-JOKlu8FP_cAtbiL4g9PkmajoZxSAGik5DYkJasUfBlhxRyjwlGVqGQlDm7IuuzR-QXSF7-5vXfdHL59urQbiN0InJDnV-xyJHA_vgNGvJzL8KZiWnS-4ULNYpKUpP4bbvUSk0cw4XdFZqY7cs4M0&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Concrete patio project" loading="lazy" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/construction-1/800/600'">
+        <p class="text-xs italic text-gray-400 mt-2">Featured patio installation, Stillwater</p

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concrete Xperts | Atlanta's Premier Concrete Contractor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    html, body { overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Manrope', sans-serif; }
+    h1,h2,h3,h4,h5,h6,.heading { font-family: 'Inter', sans-serif; }
+    .ticker-track { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { display: flex; animation: marquee 40s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    .active-tab { background-color: #404090; color: white; }
+    .inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
+    .img-hover-wrap { overflow: hidden; }
+    .img-hover-wrap img { transition: transform 0.7s ease; }
+    .img-hover-wrap:hover img { transform: scale(1.05); }
+    .arrow-cta { border-bottom: 2px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s ease; }
+    .arrow-cta:hover { gap: 14px; }
+    section { scroll-margin-top: 96px; }
+    .animate-section { opacity: 1; transform: none; transition: opacity 0.6s ease, transform 0.6s ease; }
+    .animate-section.is-pending { opacity: 0; transform: translateY(24px); }
+    .animate-section.is-visible { opacity: 1; transform: none; }
+    .hero-bg {
+      background-image: url('https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHmA_Ku3qXa_3eOpLmqtNb6UjNTNJHm8SPvc-Frl1jJ_OMxbW1nbD81bQcT0piaIsMBJ0EXN--Wy1CqLGQjWxdvWQb5PnvJwPuL4R7iinxAz97vD5XK5KmwFUbgebO1_wiK1olL5uz8mv040W8KiAFOHKy0tpLHMDQRIagolSXYaOkt1u54Ha3NP8qihZwAhxvDNhP0vhTccznVb2qWhFjbAO03ZFtr4AajultsX3cyU1opZ8D9h1ifO4B7JGcOnXTt9LdqHDzxLF6zRqA847_VHVQ4C6JPD_vePY6A-CFjPw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k');
+      background-size: cover;
+      background-position: center;
+    }
+    .clip-diagonal { clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
+    .nav-link-hover { position: relative; }
+    .nav-link-hover::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background-color: #00f0a0; transition: width 0.3s ease; }
+    .nav-link-hover:hover::after { width: 100%; }
+    .review-row:last-child { border-bottom: none; }
+    .faq-icon { transition: transform 0.3s ease; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+    input:focus, textarea:focus, select:focus { outline: none; border-color: #404090; box-shadow: 0 0 0 3px rgba(64,64,144,0.15); }
+    .btn-primary { background-color: #404090; color: white; transition: background-color 0.2s, transform 0.1s; }
+    .btn-primary:hover { background-color: #2e2e6e; transform: translateY(-1px); }
+    .btn-accent { background-color: #00f0a0; color: #111111; transition: background-color 0.2s, transform 0.1s; }
+    .btn-accent:hover { background-color: #40b070; transform: translateY(-1px); }
+  </style>
+</head>
+<body style="background-color: #111111; color: #f5f5f0;">
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background-color: #404090; border-bottom: 3px solid #00f0a0;">
+  <div class="flex items-center justify-between px-4 md:px-8 lg:px-16 py-4">
+    <!-- Logo -->
+    <a href="#home" class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded flex items-center justify-center font-black text-xl heading" style="background-color: #00f0a0; color: #111111;">CX</div>
+      <span class="heading font-black text-xl tracking-wider text-white uppercase">Concrete Xperts</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#home" class="nav-link-hover text-white uppercase tracking-widest text-xs font-bold">Home</a>
+      <a href="#about" class="nav-link-hover text-white uppercase tracking-widest text-xs font-bold">About</a>
+      <a href="#services" class="nav-link-hover text-white uppercase tracking-widest text-xs font-bold">Services</a>
+      <a href="#gallery" class="nav-link-hover text-white uppercase tracking-widest text-xs font-bold">Gallery</a>
+      <a href="#reviews" class="nav-link-hover text-white uppercase tracking-widest text-xs font-bold">Reviews</a>
+      <a href="#faq" class="nav-link-hover text-white uppercase tracking-widest text-xs font-bold">FAQ</a>
+      <a href="#contact" class="nav-link-hover text-white uppercase tracking-widest text-xs font-bold">Contact</a>
+    </div>
+
+    <!-- Phone -->
+    <a href="tel:4044742999" class="hidden md:flex items-center gap-2 px-5 py-2 rounded-full border-2 border-white text-white font-black uppercase tracking-wider text-sm hover:bg-white transition-colors" style="hover:color:#404090;">
+      <i data-lucide="phone" class="w-4 h-4"></i>
+      (404) 474-2999
+    </a>
+
+    <!-- Hamburger -->
+    <button id="hamburger" class="md:hidden text-white p-2">
+      <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden" style="background-color: #2e2e6e; border-top: 1px solid #00f0a0;">
+    <a href="#home" class="mobile-nav-link block py-3 px-4 border-b border-white/10 text-white uppercase tracking-widest text-sm font-bold">Home</a>
+    <a href="#about" class="mobile-nav-link block py-3 px-4 border-b border-white/10 text-white uppercase tracking-widest text-sm font-bold">About</a>
+    <a href="#services" class="mobile-nav-link block py-3 px-4 border-b border-white/10 text-white uppercase tracking-widest text-sm font-bold">Services</a>
+    <a href="#gallery" class="mobile-nav-link block py-3 px-4 border-b border-white/10 text-white uppercase tracking-widest text-sm font-bold">Gallery</a>
+    <a href="#reviews" class="mobile-nav-link block py-3 px-4 border-b border-white/10 text-white uppercase tracking-widest text-sm font-bold">Reviews</a>
+    <a href="#faq" class="mobile-nav-link block py-3 px-4 border-b border-white/10 text-white uppercase tracking-widest text-sm font-bold">FAQ</a>
+    <a href="#contact" class="mobile-nav-link block py-3 px-4 border-b border-white/10 text-white uppercase tracking-widest text-sm font-bold">Contact</a>
+    <div class="px-4 py-4">
+      <a href="tel:4044742999" class="flex items-center justify-center gap-2 w-full px-5 py-3 rounded-full border-2 border-white text-white font-black uppercase tracking-wider text-sm">
+        <i data-lucide="phone" class="w-4 h-4"></i> (404) 474-2999
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="relative min-h-screen flex flex-col justify-center overflow-hidden hero-bg clip-diagonal" style="padding-top: 96px;">
+  <!-- Dark overlay -->
+  <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(17,17,17,0.85) 0%, rgba(64,64,144,0.65) 100%);"></div>
+
+  <div class="relative z-10 px-4 md:px-8 lg:px-16 py-20 md:py-32 flex flex-col gap-8 max-w-6xl">
+    <!-- Label -->
+    <div class="flex items-center gap-4">
+      <div class="h-px w-12" style="background-color: #00f0a0;"></div>
+      <span class="uppercase tracking-widest text-xs font-bold" style="color: #00f0a0;">Atlanta's Concrete Specialists</span>
+    </div>
+
+    <!-- Massive stacked type -->
+    <div class="heading">
+      <div class="text-6xl md:text-8xl lg:text-9xl font-black uppercase text-white leading-none tracking-tighter">CONCRETE</div>
+      <div class="text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-none tracking-tighter" style="color: #00f0a0;">XPERTS</div>
+      <div class="text-4xl md:text-6xl lg:text-7xl font-black uppercase text-white/60 leading-none tracking-tighter">ATLANTA, GA</div>
+    </div>
+
+    <p class="text-lg md:text-xl text-white/70 max-w-xl leading-relaxed">
+      Precision concrete work delivered with unmatched craftsmanship. From driveways to patios, retaining walls to full commercial pours — built to last, built to impress.
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a href="tel:4044742999" class="btn-primary px-8 py-4 uppercase tracking-widest font-black text-sm border-2 border-transparent flex items-center gap-3 justify-center">
+        <i data-lucide="phone" class="w-5 h-5"></i>
+        CALL (404) 474-2999
+      </a>
+      <a href="#contact" class="btn-accent px-8 py-4 uppercase tracking-widest font-black text-sm border-2 border-transparent flex items-center gap-3 justify-center">
+        <i data-lucide="clipboard-list" class="w-5 h-5"></i>
+        FREE ESTIMATE
+      </a>
+    </div>
+
+    <!-- Rating badge -->
+    <div class="flex items-center gap-3">
+      <div class="flex gap-1">
+        <i data-lucide="star" class="w-5 h-5 fill-current" style="color: #00f0a0;"></i>
+        <i data-lucide="star" class="w-5 h-5 fill-current" style="color: #00f0a0;"></i>
+        <i data-lucide="star" class="w-5 h-5 fill-current" style="color: #00f0a0;"></i>
+        <i data-lucide="star" class="w-5 h-5 fill-current" style="color: #00f0a0;"></i>
+        <i data-lucide="star" class="w-5 h-5 fill-current" style="color: #00f0a0;"></i>
+      </div>
+      <span class="text-white font-bold">4.7 / 5</span>
+      <span class="text-white/50 text-sm">· 15 Google Reviews</span>
+    </div>
+  </div>
+
+  <!-- Keep scrolling -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
+    <span class="uppercase tracking-widest text-xs text-white/40 font-bold">Keep Scrolling</span>
+    <div class="w-px h-12 animate-bounce" style="background: linear-gradient(to bottom, #00f0a0, transparent);"></div>
+  </div>
+</section>
+
+<!-- TICKER BAND -->
+<div class="animate-section overflow-hidden py-3" style="background-color: #111111; border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a;">
+  <div class="ticker-track">
+    <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color: #00f0a0;">LICENSED &amp; INSURED</span>
+    <span class="text-white/30 mr-8">·</span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color: #40b070;">SERVING ATLANTA</span>
+    <span class="text-white/30 mr-8">·</span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color: #00f0a0;">FREE ESTIMATES</span>
+    <span class="text-white/30 mr-8">·</span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color: #40b070;">CALL TODAY</span>
+    <span class="text-white/30 mr-8">·</span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color: #00f0a0;">QUALITY GUARANTEED</span>
+    <span class="text-white/30 mr-8">·</span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color: #40b070;">ATLANTA'S #1 CONCRETE</span>
+    <span class="text-white/30 mr-8">·</span>
+    <!-- Repeat for seamless loop -->
+    <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color: #00f0a0;">LICENSED &amp; INSURED</span>
+    <span class="text-white/30 mr-8">·</span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color: #40b070;">SERVING ATLANTA</span>
+    <span class="text-white/30 mr-8">·</span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color: #00f0a0;">FREE ESTIMATES</span>
+    <span class="text-white/30 mr-8">·</span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color: #40b070;">CALL TODAY</span>
+    <span class="text-white/30 mr-8">·</span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color: #00f0a0;">QUALITY GUARANTEED</span>
+    <span class="text-white/30 mr-8">·</span>
+    <span class="text-sm font-bold tracking-widest uppercase mr-8" style="color: #40b070;">ATLANTA'S #1 CONCRETE</span>
+    <span class="text-white/30 mr-8">·</span>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="animate-section" style="background-color: #111111;">
+  <div class="px-4 md:px-8 lg:px-16 py-16">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-0 border border-white/10">
+      <div class="flex flex-col items-center justify-center p-8 border-r border-white/10 border-b md:border-b-0">
+        <span class="heading font-black text-5xl md:text-7xl" style="color: #00f0a0;" data-count="47" data-suffix="/5">4.7/5</span>
+        <span class="uppercase tracking-widest text-xs font-bold text-white/50 mt-2">Avg Rating</span>
+      </div>
+      <div class="flex flex-col items-center justify-center p-8 md:border-r border-white/10 border-b md:border-b-0">
+        <span class="heading font-black text-5xl md:text-7xl" style="color: #00f0a0;" data-count="15" data-suffix="+">15+</span>
+        <span class="uppercase tracking-widest text-xs font-bold text-white/50 mt-2">Happy Clients</span>
+      </div>
+      <div class="flex flex-col items-center justify-center p-8 border-r border-white/10">
+        <span class="heading font-black text-5xl md:text-7xl" style="color: #00f0a0;" data-count="10" data-suffix="+">10+</span>
+        <span class="uppercase tracking-widest text-xs font-bold text-white/50 mt-2">Years Experience</span>
+      </div>
+      <div class="flex flex-col items-center justify-center p-8">
+        <span class="heading font-black text-5xl md:text-7xl" style="color: #00f0a0;" data-count="20" data-suffix="+">20+</span>
+        <span class="uppercase tracking-widest text-xs font-bold text-white/50 mt-2">Areas Served</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" style="background-color: #0d0d0d;">
+  <div class="px-4 md:px-8 lg:px-16 py-20 md:py-32">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <!-- Text -->
+      <div>
+        <div class="flex items-center gap-4 mb-6">
+          <div class="h-px w-12" style="background-color: #00f0a0;"></div>
+          <span class="uppercase tracking-widest text-xs font-bold" style="color: #00f0a0;">About Concrete Xperts</span>
+        </div>
+        <h2 class="heading font-black text-4xl md:text-6xl text-white uppercase leading-none mb-8">BUILT ON<br><span style="color: #40b070;">STRENGTH.</span><br>BUILT ON<br><span style="color: #00f0a0;">TRUST.</span></h2>
+        <p class="text-white/60 text-lg leading-relaxed mb-6">
+          Concrete Xperts is Atlanta's trusted concrete contractor, delivering precision craftsmanship on every pour. From residential driveways and decorative patios to commercial foundations and retaining walls, we bring more than a decade of hands-on experience to every job site.
+        </p>
+        <p class="text-white/60 text-lg leading-relaxed mb-10">
+          Our team is fully licensed and insured, committed to transparent pricing, on-time delivery, and results that exceed expectations. When you hire Concrete Xperts, you're not just getting concrete — you're getting a long-term investment in your property.
+        </p>
+        <div class="grid grid-cols-2 gap-6 mb-10">
+          <div class="p-5 border border-white/10" style="background-color: #1a1a1a;">
+            <i data-lucide="shield-check" class="w-8 h-8 mb-3" style="color: #00f0a0;"></i>
+            <h4 class="heading font-bold text-white text-sm uppercase tracking-wider mb-1">Licensed & Insured</h4>
+            <p class="text-white/50 text-sm">Full coverage for your peace of mind.</p>
+          </div>
+          <div class="p-5 border border-white/10" style="background-color: #1a1a1a;">
+            <i data-lucide="clock" class="w-8 h-8 mb-3" style="color: #40b070;"></i>
+            <h4 class="heading font-bold text-white text-sm uppercase tracking-wider mb-1">On-Time Delivery</h4>
+            <p class="text-white/50 text-sm">We respect your schedule every time.</p>
+          </div>
+          <div class="p-5 border border-white/10" style="background-color: #1a1a1a;">
+            <i data-lucide="dollar-sign" class="w-8 h-8 mb-3" style="color: #00f0a0;"></i>
+            <h4 class="heading font-bold text-white text-sm uppercase tracking-wider mb-1">Transparent Pricing</h4>
+            <p class="text-white/50 text-sm">Free estimates, no hidden fees.</p>
+          </div>
+          <div class="p-5 border border-white/10" style="background-color: #1a1a1a;">
+            <i data-lucide="award" class="w-8 h-8 mb-3" style="color: #40b070;"></i>
+            <h4 class="heading font-bold text-white text-sm uppercase tracking-wider mb-1">Quality Guaranteed</h4>
+            <p class="text-white/50 text-sm">We stand behind every project.</p>
+          </div>
+        </div>
+        <a href="tel:4044742999" class="arrow-cta font-black uppercase tracking-widest text-sm" style="color: #00f0a0;">
+          Call For A Free Quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- Image -->
+      <div class="img-hover-wrap rounded-none relative">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHirMiAMq4l_2Ei9jyqbUDFHh2IrpMVmqUxZ10XyeKa4b7tfH5Vq6Z3W75bD-jfaVt4TW1XfgrZHn0veb7AJekOmdMK-RSX71zSiDZ2z8UgBhpIBIYVhABlpdKVDJhpsnlg8Wza_IWg8b4CY7D10llvTeXSQD6W_vyN58ZUxrAgM9AhVO1TA1Mg3T2SQ4PHIsni37p7SJq9rmQmeZ2m081mZo8y6kmo0Z6AoLDvssmpZFYwK-uUTRZvcWaH2kFq2HbMt0FcY6lSdZecR5Am0pk_NyBTNSPSzlXitxHXRaT7qQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Concrete Xperts team at work"
+          class="w-full h-96 lg:h-full object-cover"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/contractor-101/800/600'"
+        >
+        <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(to top, rgba(64,64,144,0.3) 0%, transparent 60%);"></div>
+        <!-- Accent border -->
+        <div class="absolute top-4 left-4 right-4 bottom-4 border-2 pointer-events-none" style="border-color: #00f0a0; opacity: 0.3;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr style="border-color: #1a1a1a; margin: 0;">
+
+<!-- SERVICES -->
+<section id="services" class="animate-section" style="background-color: #111111;">
+  <div class="px-4 md:px-8 lg:px-16 py-20 md:py-32">
+    <!-- Header -->
+    <div class="mb-12">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="h-px w-12" style="background-color: #00f0a0;"></div>
+        <span class="uppercase tracking-widest text-xs font-bold" style="color: #00f0a0;">What We Do</span>
+      </div>
+      <h2 class="heading font-black text-4xl md:text-6xl text-white uppercase leading-none">OUR<br><span style="color: #40b070;">SERVICES</span></h2>
+    </div>
+
+    <!-- Tabs -->
+    <div class="flex flex-wrap gap-2 md:flex-nowrap mb-8">
+      <button class="tab-btn flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 transition-all active-tab font-bold uppercase tracking-wider" onclick="showTab('tab-panel-1', this)">Our Services</button>
+      <button class="tab-btn flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 transition-all inactive-tab font-bold uppercase tracking-wider" onclick="showTab('tab-panel-2', this)">How We Help</button>
+      <button class="tab-btn flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 transition-all inactive-tab font-bold uppercase tracking-wider" onclick="showTab('tab-panel-3', this)">Why Choose Us</button>
+    </div>
+
+    <!-- Tab Panel 1 -->
+    <div id="tab-panel-1" class="tab-panel">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="p-6 rounded-xl border border-white/10 flex flex-col gap-4" style="background-color: rgba(64,64,144,0.08);">
+          <i data-lucide="building-2" class="w-8 h-8" style="color: #00f0a0;"></i>
+          <h3 class="heading font-black text-white text-xl uppercase">Establishment Services</h3>
+          <p class="text-white/60 text-sm leading-relaxed">We serve as your go-to concrete establishment for all structural and decorative concrete needs. From foundation work to finishing, our team handles every aspect with precision and professionalism.</p>
+          <a href="tel:4044742999" class="mt-auto px-6 py-3 uppercase tracking-widest font-black border-2 text-sm text-center" style="border-color: #404090; color: #404090; background: transparent; transition: all 0.2s;" onmouseover="this.style.background='#404090';this.style.color='white';" onmouseout="this.style.background='transparent';this.style.color='#404090';">GET A FREE QUOTE</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="p-6 rounded-xl border border-white/10 flex flex-col gap-4" style="background-color: rgba(64,64,144,0.08);">
+          <i data-lucide="hard-hat" class="w-8 h-8" style="color: #40b070;"></i>
+          <h3 class="heading font-black text-white text-xl uppercase">General Contractor</h3>
+          <p class="text-white/60 text-sm leading-relaxed">As a licensed general contractor, we coordinate and execute complex concrete projects from start to finish. We manage timelines, materials, and crews so your project runs smoothly without surprises.</p>
+          <a href="tel:4044742999" class="mt-auto px-6 py-3 uppercase tracking-widest font-black border-2 text-sm text-center" style="border-color: #40b070; color: #40b070; background: transparent; transition: all 0.2s;" onmouseover="this.style.background='#40b070';this.style.color='white';" onmouseout="this.style.background='transparent';this.style.color='#40b070';">GET A FREE QUOTE</a>
+        </div>
+
+        <!--

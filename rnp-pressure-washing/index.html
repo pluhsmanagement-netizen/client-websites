@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RNP Pressure Washing | Atlanta, GA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Manrope:wght@400;500&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html, body { overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Manrope', sans-serif; }
+    h1,h2,h3,h4,h5,h6,.heading { font-family: 'Inter', sans-serif; }
+    .serif-display { font-family: 'Playfair Display', serif; }
+    .ticker-track { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { display: flex; animation: marquee 40s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    .tab-btn { cursor: pointer; transition: all 0.2s ease; }
+    .tab-btn.active-tab { background-color: #1E3A5F; color: white; }
+    .tab-btn.inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
+    .tab-panel { display: block; }
+    .tab-panel.hidden { display: none !important; }
+    .img-hover-wrap { overflow: hidden; }
+    .img-hover-wrap img { transition: transform 0.7s ease; }
+    .img-hover-wrap:hover img { transform: scale(1.05); }
+    .arrow-cta { border-bottom: 2px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s ease; }
+    .arrow-cta:hover { gap: 14px; }
+    .dotted-leader { flex: 1; border-bottom: 1px dotted currentColor; margin: 0 1rem; opacity: 0.3; align-self: end; padding-bottom: 0.5rem; }
+    section { scroll-margin-top: 96px; }
+    .animate-section { opacity: 1; transform: none; transition: opacity 0.6s ease, transform 0.6s ease; }
+    .animate-section.is-pending { opacity: 0; transform: translateY(24px); }
+    .animate-section.is-visible { opacity: 1; transform: none; }
+    .animate-section:target,
+    .animate-section.is-pending:target { opacity: 1 !important; transform: none !important; }
+    .service-card { border-left: 4px solid transparent; transition: border-color 0.2s ease; }
+    .service-card:hover { border-left-color: #C9A84C; }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100 transition-shadow duration-200">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-16">
+      <a href="#home" class="text-xl font-bold tracking-tight lowercase" style="font-family:'Inter',sans-serif; color:#1E3A5F;">rnp pressure washing</a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+        <a href="#home" class="hover:text-gray-900 transition lowercase">home</a>
+        <a href="#about" class="hover:text-gray-900 transition lowercase">about</a>
+        <a href="#services" class="hover:text-gray-900 transition lowercase">services</a>
+        <a href="#gallery" class="hover:text-gray-900 transition lowercase">gallery</a>
+        <a href="#reviews" class="hover:text-gray-900 transition lowercase">reviews</a>
+        <a href="#faq" class="hover:text-gray-900 transition lowercase">faq</a>
+        <a href="#contact" class="hover:text-gray-900 transition lowercase">contact</a>
+        <a href="tel:4049911102" class="ml-4 px-4 py-2 text-white text-xs font-semibold lowercase rounded-full transition" style="background:#1E3A5F;">(404) 991-1102</a>
+      </div>
+      <button id="hamburger" class="md:hidden p-2 text-gray-700">
+        <i data-lucide="menu" class="w-5 h-5"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+      <a href="#home" class="mobile-nav-link block py-3 px-4 border-b border-gray-50 text-sm lowercase text-gray-700 hover:bg-gray-50">home</a>
+      <a href="#about" class="mobile-nav-link block py-3 px-4 border-b border-gray-50 text-sm lowercase text-gray-700 hover:bg-gray-50">about</a>
+      <a href="#services" class="mobile-nav-link block py-3 px-4 border-b border-gray-50 text-sm lowercase text-gray-700 hover:bg-gray-50">services</a>
+      <a href="#gallery" class="mobile-nav-link block py-3 px-4 border-b border-gray-50 text-sm lowercase text-gray-700 hover:bg-gray-50">gallery</a>
+      <a href="#reviews" class="mobile-nav-link block py-3 px-4 border-b border-gray-50 text-sm lowercase text-gray-700 hover:bg-gray-50">reviews</a>
+      <a href="#faq" class="mobile-nav-link block py-3 px-4 border-b border-gray-50 text-sm lowercase text-gray-700 hover:bg-gray-50">faq</a>
+      <a href="#contact" class="mobile-nav-link block py-3 px-4 border-b border-gray-50 text-sm lowercase text-gray-700 hover:bg-gray-50">contact</a>
+      <a href="tel:4049911102" class="mobile-nav-link block py-3 px-4 text-sm lowercase font-semibold" style="color:#1E3A5F;">(404) 991-1102</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="animate-section pt-16 min-h-screen flex items-center">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center py-24 md:py-32">
+      <div>
+        <p class="text-xs uppercase tracking-widest mb-6 font-medium" style="color:#C9A84C;">atlanta, georgia</p>
+        <h1 class="text-8xl md:text-9xl font-black lowercase leading-none tracking-tight" style="color:#1E3A5F;">clean.</h1>
+        <hr class="my-6 border-t border-gray-200">
+        <p class="text-xl text-gray-500 max-w-md font-medium leading-relaxed lowercase">professional pressure washing for homes and properties across atlanta. results that speak for themselves.</p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-6 items-start">
+          <a href="#contact" class="arrow-cta text-sm font-semibold lowercase" style="color:#1E3A5F;">get a quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          <a href="tel:4049911102" class="text-sm text-gray-500 hover:text-gray-700 transition lowercase">(404) 991-1102</a>
+        </div>
+      </div>
+      <div class="img-hover-wrap rounded-none">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFoOHh_8PXh05Hm-ltfUU7YvlMeq0xxGcrd6BEdleVRKxGn8N2CV7dPnrKccuXpQclLXs5hv575YEW0Z8x2Sbt5fzrb4vIeIAAcBj0fK1kgFdm2LrFymHp084xVXKhun4GhRs8lvvmACCbOcMOs_rkoEuJoZYhKmWD17OJAZxDo4A2Pqi0DXbjGVINEC6T4NHfwfYUZ0SgZsaAi8qQl3eIB1jCxufIG2ZcC82VBi1IDteGiFWnCEAUvvzVZ5awfk0SY4PPbxEywYuk2UPiS5eEdD2Ex56LYmt-pBusJvdNQYQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="RNP Pressure Washing Atlanta"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/contractor-1/800/600'"
+          class="w-full h-[500px] object-cover"
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS INLINE SENTENCE BLOCK -->
+  <section class="animate-section py-16 px-4 md:px-8 lg:px-16 border-t border-b border-gray-200">
+    <div class="max-w-7xl mx-auto">
+      <p class="text-xl text-gray-600 font-medium lowercase leading-relaxed">over <span class="font-bold text-gray-900">90 projects</span> completed. <span class="font-bold text-gray-900">5 stars</span> across google. serving <span class="font-bold text-gray-900">atlanta</span> and surrounding communities. licensed. insured. local.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-white">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+      <div>
+        <p class="text-xs uppercase tracking-widest font-semibold mb-4" style="color:#C9A84C;">— about</p>
+        <h2 class="text-5xl font-bold lowercase leading-tight" style="color:#1E3A5F;">who we are</h2>
+      </div>
+      <div>
+        <p class="text-gray-600 text-lg leading-relaxed mb-8">rnp pressure washing is atlanta's trusted choice for residential and commercial pressure washing services, delivering meticulous results on everything from porches and driveways to roofs and gutters. we bring honest pricing, professional communication, and genuine care to every job — no corners cut, no shortcuts taken.</p>
+        <div class="flex gap-8 flex-wrap">
+          <div>
+            <p class="text-3xl font-bold lowercase" style="color:#1E3A5F;" data-count="90" data-suffix="+">0+</p>
+            <p class="text-sm text-gray-500 lowercase mt-1">projects completed</p>
+          </div>
+          <div>
+            <p class="text-3xl font-bold lowercase" style="color:#1E3A5F;">5.0</p>
+            <p class="text-sm text-gray-500 lowercase mt-1">google rating</p>
+          </div>
+          <div>
+            <p class="text-3xl font-bold lowercase" style="color:#1E3A5F;" data-count="90" data-suffix="+">0+</p>
+            <p class="text-sm text-gray-500 lowercase mt-1">happy clients</p>
+          </div>
+        </div>
+        <hr class="my-8 border-gray-100">
+        <div class="flex gap-6 text-sm font-semibold lowercase text-gray-700">
+          <span class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4" style="color:#C9A84C;"></i> licensed.</span>
+          <span class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4" style="color:#C9A84C;"></i> insured.</span>
+          <span class="flex items-center gap-2"><i data-lucide="home" class="w-4 h-4" style="color:#C9A84C;"></i> local.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-8">
+        <p class="text-xs uppercase tracking-widest font-semibold mb-3" style="color:#C9A84C;">— what we do</p>
+        <h2 class="text-4xl md:text-5xl font-bold lowercase" style="color:#1E3A5F;">our services</h2>
+      </div>
+      <div class="flex flex-wrap gap-2 md:flex-nowrap mb-8 tabs-container">
+        <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-1">Our Services</button>
+        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-2">Specialty Work</button>
+        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-3">Additional Services</button>
+      </div>
+
+      <div id="tab-panel-1" class="tab-panel">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="service-card bg-white border-b-2 border-gray-100 p-6 border-l-4">
+            <i data-lucide="sparkles" class="w-6 h-6 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl font-bold lowercase mb-2" style="color:#1E3A5F;">consultation</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">we start every project with a thorough on-site consultation to understand your property's needs. you'll receive honest recommendations and a clear, fair quote — no surprises.</p>
+            <a href="tel:4049911102" class="arrow-cta text-xs font-semibold lowercase" style="color:#1E3A5F;">call now <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+          </div>
+          <div class="service-card bg-white border-b-2 border-gray-100 p-6 border-l-4">
+            <i data-lucide="shield-check" class="w-6 h-6 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl font-bold lowercase mb-2" style="color:#1E3A5F;">assessment</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">our detailed property assessment identifies problem areas including mildew, staining, and buildup before we begin. this ensures the right pressure levels and techniques are applied for each surface.</p>
+            <a href="tel:4049911102" class="arrow-cta text-xs font-semibold lowercase" style="color:#1E3A5F;">call now <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+          </div>
+          <div class="service-card bg-white border-b-2 border-gray-100 p-6 border-l-4">
+            <i data-lucide="wrench" class="w-6 h-6 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl font-bold lowercase mb-2" style="color:#1E3A5F;">installation</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">from protective sealants to surface preparation services, we offer installation add-ons that extend the life of your clean. our team handles every step with care and precision.</p>
+            <a href="tel:4049911102" class="arrow-cta text-xs font-semibold lowercase" style="color:#1E3A5F;">call now <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+          </div>
+          <div class="service-card bg-white border-b-2 border-gray-100 p-6 border-l-4">
+            <i data-lucide="home" class="w-6 h-6 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl font-bold lowercase mb-2" style="color:#1E3A5F;">repair</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">high-pressure water can reveal surface damage that needs attention — we provide minor repair services and referrals to trusted local contractors when deeper fixes are required. your property is in good hands.</p>
+            <a href="tel:4049911102" class="arrow-cta text-xs font-semibold lowercase" style="color:#1E3A5F;">call now <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-panel-2" class="tab-panel hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="service-card bg-white border-b-2 border-gray-100 p-6 border-l-4">
+            <i data-lucide="star" class="w-6 h-6 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl font-bold lowercase mb-2" style="color:#1E3A5F;">specialty work</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">roof soft washing, gutter brightening, and graffiti removal require specialized techniques — we have the tools and expertise to tackle surfaces that standard pressure washing could damage. trust the specialists.</p>
+            <a href="tel:4049911102" class="arrow-cta text-xs font-semibold lowercase" style="color:#1E3A5F;">call now <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+          </div>
+          <div class="service-card bg-white border-b-2 border-gray-100 p-6 border-l-4">
+            <i data-lucide="sparkles" class="w-6 h-6 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl font-bold lowercase mb-2" style="color:#1E3A5F;">custom projects</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">every property is different — we design custom cleaning plans for unique surfaces, multi-structure properties, and commercial spaces. we work with you to build the exact scope your project demands.</p>
+            <a href="tel:4049911102" class="arrow-cta text-xs font-semibold lowercase" style="color:#1E3A5F;">call now <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+          </div>
+          <div class="service-card bg-white border-b-2 border-gray-100 p-6 border-l-4">
+            <i data-lucide="award" class="w-6 h-6 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl font-bold lowercase mb-2" style="color:#1E3A5F;">premium service</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">our premium tier includes priority scheduling, before-and-after photo documentation, and a thorough post-job walkthrough. for clients who want the full white-glove experience, this is it.</p>
+            <a href="tel:4049911102" class="arrow-cta text-xs font-semibold lowercase" style="color:#1E3A5F;">call now <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+          </div>
+          <div class="service-card bg-white border-b-2 border-gray-100 p-6 border-l-4">
+            <i data-lucide="clock" class="w-6 h-6 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl font-bold lowercase mb-2" style="color:#1E3A5F;">expedited service</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">need your property cleaned before an open house, event, or inspection? our expedited service ensures fast turnaround without compromising quality. call us and we'll make it happen.</p>
+            <a href="tel:4049911102" class="arrow-cta text-xs font-semibold lowercase" style="color:#1E3A5F;">call now <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-panel-3" class="tab-panel hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="service-card bg-white border-b-2 border-gray-100 p-6 border-l-4">
+            <i data-lucide="check-circle" class="w-6 h-6 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl font-bold lowercase mb-2" style="color:#1E3A5F;">maintenance plans</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">keep your property looking its best year-round with a scheduled maintenance plan. we offer seasonal and quarterly service packages tailored to your property's specific surfaces and conditions.</p>
+            <a href="tel:4049911102" class="arrow-cta text-xs font-semibold lowercase" style="color:#1E3A5F;">call now <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+          </div>
+          <div class="service-card bg-white border-b-2 border-gray-100 p-6 border-l-4">
+            <i data-lucide="shield-check" class="w-6 h-6 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl font-bold lowercase mb-2" style="color:#1E3A5F;">warranty coverage</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">we stand behind our work — all completed jobs include a satisfaction guarantee and follow-up warranty window. if something isn't right, we return and make it right at no extra cost.</p>
+            <a href="tel:4049911102" class="arrow-cta text-xs font-semibold lowercase" style="color:#1E3A5F;">call now <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+          </div>
+          <div class="service-card bg-white border-b-2 border-gray-100 p-6 border-l-4">
+            <i data-lucide="home" class="w-6 h-6 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl font-bold lowercase mb-2" style="color:#1E3A5F;">inspections</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">we offer pre-cleaning and post-cleaning inspections to document property condition and verify results. this is especially valuable for real estate transactions, HOA compliance, and insurance purposes.</p>
+            <a href="tel:4049911102" class="arrow-cta text-xs font-semibold lowercase" style="color:#1E3A5F;">call now <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+          </div>
+          <div class="service-card bg-white border-b-2 border-gray-100 p-6 border-l-4">
+            <i data-lucide="phone" class="w-6 h-6 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl font-bold lowercase mb-2" style="color:#1E3A5F;">emergency service</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">storm damage, pre-sale crunch, or unexpected messes — our emergency response team is available for urgent situations. call us and we'll dispatch as quickly as possible to assess and clean your property.</p>
+            <a href="tel:4049911102" class="arrow-cta text-xs font-semibold lowercase" style="color:#1E3A5F;">call now <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-12">
+        <p class="text-xs uppercase tracking-widest font-semibold mb-3" style="color:#C9A84C;">— our work</p>
+        <h2 class="text-4xl md:text-5xl font-bold lowercase" style="color:#1E3A5F;">gallery</h2>
+      </div>
+      <div class="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
+        <div class="img-hover-wrap break-inside-avoid mb-4">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGxZt28Eqg78EvOIHbnPhFA3nCyn6mXonNNYM8XdNHkniBfeVWgxkuwrd2FWQmFlXUDNpjFZHEVqyctTcRqGXUStiSPSQH5ks_tlGSvAmySJZaK9eMa08EJX1RAmVuds78q38t9woWW1SWN-V3AZ3sFbUO7-3CctCcRkRimYaUlxD30pUV8bgXZyfmS5dJk6t3H2yjozPJ3vJKpxsYqBu52ov6OKaDXGkNmfbNLVVqwjqfo8e5QlRoEiYc-CDH_L-Ibp34e2giUPtxNXPSAkVAhJQogHAm9Zg3TUGfZGwEElg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Pressure washing project Atlanta" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-2/800/600'" class="w-full object-cover">
+        </div>
+        <div class="img-hover-wrap break-inside-avoid mb-4">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGMah2ipQcusTS_5fv3DPQB8ynDILO1ot2wFfSHlbXzYAzZ832JefxRIVpkCM_JTYaLZvd04EbOf-mqdtigayBhPJk6C9HIoBLfMW5GiiZuli21fKj8-eP2kCmy6W8uoQ5dOhcWIh-P2J_Mh1Gx5LTdiKb1FiqfFeN3T_rzRWHOf3nU4Omwv6cQmiAiygjhom0kKL

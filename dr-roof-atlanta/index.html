@@ -1,209 +1,903 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Dr Roof Atlanta | Professional Roofing Services</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<style>
-  * { font-family: 'Source Sans 3', sans-serif; }
-  h1,h2,h3,h4,h5,h6,.font-display { font-family: 'Oswald', sans-serif; }
-  html { scroll-behavior: smooth; }
-
-  .nav-shrunk { padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; box-shadow: 0 2px 20px rgba(0,0,0,0.15); }
-
-  .active-tab { background-color: #B91C1C !important; color: #ffffff !important; border-color: #B91C1C !important; }
-  .inactive-tab { background-color: transparent; color: #B91C1C; border: 2px solid #B91C1C; }
-  .inactive-tab:hover { background-color: #FEE2E2; }
-
-  .fade-section { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .fade-section.visible { opacity: 1; transform: translateY(0); }
-
-  /* FAQ Accordion */
-  .faq-item input[type="checkbox"] { display: none; }
-  .faq-item label { cursor: pointer; }
-  .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-  .faq-item input:checked ~ .faq-content { max-height: 400px; }
-  .faq-item input:checked ~ label .faq-arrow { transform: rotate(180deg); }
-  .faq-arrow { transition: transform 0.3s ease; display: inline-block; }
-
-  /* Mobile menu */
-  #mobile-menu { display: none; }
-  #mobile-menu.open { display: block; }
-
-  /* Hero overlay */
-  .hero-overlay { background: linear-gradient(135deg, rgba(10,10,10,0.85) 0%, rgba(30,30,30,0.6) 100%); }
-
-  /* Gallery hover */
-  .gallery-card:hover img { transform: scale(1.05); }
-  .gallery-card img { transition: transform 0.4s ease; }
-
-  /* Tab panel */
-  .tab-panel { }
-</style>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          accent: '#B91C1C',
-          'accent-dark': '#991B1B',
-          'accent-light': '#FEE2E2',
-          dark: '#111111',
-          'off-white': '#F9F7F5',
-        }
-      }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr Roof Atlanta | Roofing Roswell, GA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html, body { overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Sans Pro', sans-serif; }
+    h1,h2,h3,h4,h5,h6,.heading { font-family: 'Oswald', sans-serif; }
+    .serif-display { font-family: 'Playfair Display', serif; }
+    .ticker-track { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { display: flex; animation: marquee 40s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    .tab-btn { cursor: pointer; transition: all 0.2s ease; }
+    .tab-btn.active-tab { background-color: #8B2F1B; color: white; }
+    .tab-btn.inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
+    .tab-panel { display: block; }
+    .tab-panel.hidden { display: none !important; }
+    .img-hover-wrap { overflow: hidden; }
+    .img-hover-wrap img { transition: transform 0.7s ease; }
+    .img-hover-wrap:hover img { transform: scale(1.05); }
+    .arrow-cta { border-bottom: 2px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s ease; }
+    .arrow-cta:hover { gap: 14px; }
+    .dotted-leader { flex: 1; border-bottom: 1px dotted currentColor; margin: 0 1rem; opacity: 0.3; align-self: end; padding-bottom: 0.5rem; }
+    section { scroll-margin-top: 96px; }
+    .animate-section { opacity: 1; transform: none; transition: opacity 0.6s ease, transform 0.6s ease; }
+    .animate-section.is-pending { opacity: 0; transform: translateY(24px); }
+    .animate-section.is-visible { opacity: 1; transform: none; }
+    .animate-section:target,
+    .animate-section.is-pending:target { opacity: 1 !important; transform: none !important; }
+    .hero-bg {
+      background-image: url('https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGo9rlp1dqn-2i_jHNMO1JRVQCJYfPwyMpF-SN9kKSSYMHSQldT04XSsV6AUItxkaXhCXHfK6_N_u2D5etImM_TNIvHZmZcpWuf5ihbMSpJtfdqk21n3_-urRiXLvVlrWwCORLHk4VQgRIQK_zUWcajry5ZYPL4OHbxQxzbIfaCCaS6nHnrUGmW00dXu2MMdpC3A4qOI0eYRF0zvfY3aCg-7W7FFWqf4TdxMqNKN8WXxQ0p8XcqHJNpuiIcK1fy4EUSbN8MdMM4U7bsObXX5RUVaZt7M4BMxzqOu-QYn7_gpg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k');
+      background-size: cover;
+      background-position: center;
     }
-  }
-</script>
+    .nav-link { font-family: 'Oswald', sans-serif; letter-spacing: 0.05em; }
+    .service-card-num { font-family: 'Oswald', sans-serif; }
+    .star-filled { color: #C9A84C; fill: #C9A84C; }
+    .process-strip-item { border-left: 4px solid #8B2F1B; }
+  </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-black text-white">
 
-<!-- ===== NAV ===== -->
-<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 py-4 px-6 lg:px-12">
-  <div class="max-w-7xl mx-auto flex items-center justify-between">
-    <!-- Logo -->
-    <div class="flex items-center gap-3">
-      <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M3 12L12 3l9 9v9H3v-9zm2 1v7h14v-7l-7-7-7 7z"/><path d="M9 14h6v6H9z"/></svg>
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-black border-b-2 border-gray-800 transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-20">
+      <a href="#home" class="text-white font-black text-2xl tracking-widest uppercase" style="font-family:'Oswald',sans-serif;">DR ROOF <span style="color:#8B2F1B;">ATLANTA</span></a>
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#home" class="nav-link text-gray-300 hover:text-white text-sm font-semibold uppercase tracking-widest transition">HOME</a>
+        <a href="#about" class="nav-link text-gray-300 hover:text-white text-sm font-semibold uppercase tracking-widest transition">ABOUT</a>
+        <a href="#services" class="nav-link text-gray-300 hover:text-white text-sm font-semibold uppercase tracking-widest transition">SERVICES</a>
+        <a href="#gallery" class="nav-link text-gray-300 hover:text-white text-sm font-semibold uppercase tracking-widest transition">GALLERY</a>
+        <a href="#reviews" class="nav-link text-gray-300 hover:text-white text-sm font-semibold uppercase tracking-widest transition">REVIEWS</a>
+        <a href="#faq" class="nav-link text-gray-300 hover:text-white text-sm font-semibold uppercase tracking-widest transition">FAQ</a>
+        <a href="#contact" class="nav-link text-gray-300 hover:text-white text-sm font-semibold uppercase tracking-widest transition">CONTACT</a>
+        <a href="tel:7704508843" class="ml-4 bg-red-900 hover:bg-red-800 text-white px-5 py-2 uppercase font-black tracking-widest text-sm transition" style="background-color:#8B2F1B; font-family:'Oswald',sans-serif;">(770) 450-8843</a>
       </div>
-      <div>
-        <div class="font-display text-xl font-bold tracking-wide text-dark leading-tight">DR ROOF</div>
-        <div class="text-xs text-accent font-semibold tracking-widest uppercase leading-tight">Atlanta</div>
-      </div>
+      <button id="hamburger" class="md:hidden text-white p-2" aria-label="Open menu">
+        <i data-lucide="menu" class="w-7 h-7"></i>
+      </button>
     </div>
-
-    <!-- Desktop Nav -->
-    <div class="hidden lg:flex items-center gap-8">
-      <a href="#services" class="text-gray-700 hover:text-accent font-medium transition-colors text-sm tracking-wide uppercase">Services</a>
-      <a href="#about" class="text-gray-700 hover:text-accent font-medium transition-colors text-sm tracking-wide uppercase">About</a>
-      <a href="#gallery" class="text-gray-700 hover:text-accent font-medium transition-colors text-sm tracking-wide uppercase">Gallery</a>
-      <a href="#reviews" class="text-gray-700 hover:text-accent font-medium transition-colors text-sm tracking-wide uppercase">Reviews</a>
-      <a href="#faq" class="text-gray-700 hover:text-accent font-medium transition-colors text-sm tracking-wide uppercase">FAQ</a>
-      <a href="#contact" class="text-gray-700 hover:text-accent font-medium transition-colors text-sm tracking-wide uppercase">Contact</a>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden bg-black border-t border-gray-800">
+      <a href="#home" class="mobile-nav-link block py-3 px-6 border-b border-gray-800 text-white uppercase font-semibold tracking-widest text-sm hover:bg-gray-900 transition" style="font-family:'Oswald',sans-serif;">HOME</a>
+      <a href="#about" class="mobile-nav-link block py-3 px-6 border-b border-gray-800 text-white uppercase font-semibold tracking-widest text-sm hover:bg-gray-900 transition" style="font-family:'Oswald',sans-serif;">ABOUT</a>
+      <a href="#services" class="mobile-nav-link block py-3 px-6 border-b border-gray-800 text-white uppercase font-semibold tracking-widest text-sm hover:bg-gray-900 transition" style="font-family:'Oswald',sans-serif;">SERVICES</a>
+      <a href="#gallery" class="mobile-nav-link block py-3 px-6 border-b border-gray-800 text-white uppercase font-semibold tracking-widest text-sm hover:bg-gray-900 transition" style="font-family:'Oswald',sans-serif;">GALLERY</a>
+      <a href="#reviews" class="mobile-nav-link block py-3 px-6 border-b border-gray-800 text-white uppercase font-semibold tracking-widest text-sm hover:bg-gray-900 transition" style="font-family:'Oswald',sans-serif;">REVIEWS</a>
+      <a href="#faq" class="mobile-nav-link block py-3 px-6 border-b border-gray-800 text-white uppercase font-semibold tracking-widest text-sm hover:bg-gray-900 transition" style="font-family:'Oswald',sans-serif;">FAQ</a>
+      <a href="#contact" class="mobile-nav-link block py-3 px-6 border-b border-gray-800 text-white uppercase font-semibold tracking-widest text-sm hover:bg-gray-900 transition" style="font-family:'Oswald',sans-serif;">CONTACT</a>
+      <a href="tel:7704508843" class="mobile-nav-link block py-4 px-6 text-white uppercase font-black tracking-widest text-sm text-center" style="background-color:#8B2F1B; font-family:'Oswald',sans-serif;">(770) 450-8843</a>
     </div>
+  </nav>
 
-    <!-- CTA -->
-    <div class="hidden lg:flex items-center gap-4">
-      <a href="tel:undefined" class="bg-accent text-white font-display text-sm tracking-wider px-6 py-3 rounded-lg hover:bg-accent-dark transition-colors uppercase font-semibold">
-        📞 Call Now
-      </a>
-    </div>
-
-    <!-- Hamburger -->
-    <button id="hamburger-btn" class="lg:hidden flex flex-col gap-1.5 p-2" onclick="toggleMobile()">
-      <span class="w-6 h-0.5 bg-gray-800 transition-all duration-300"></span>
-      <span class="w-6 h-0.5 bg-gray-800 transition-all duration-300"></span>
-      <span class="w-6 h-0.5 bg-gray-800 transition-all duration-300"></span>
-    </button>
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="lg:hidden bg-white border-t border-gray-100 mt-4 pb-4">
-    <div class="flex flex-col gap-1 px-4">
-      <a href="#services" class="py-3 text-gray-700 hover:text-accent font-medium border-b border-gray-50 transition-colors" onclick="toggleMobile()">Services</a>
-      <a href="#about" class="py-3 text-gray-700 hover:text-accent font-medium border-b border-gray-50 transition-colors" onclick="toggleMobile()">About</a>
-      <a href="#gallery" class="py-3 text-gray-700 hover:text-accent font-medium border-b border-gray-50 transition-colors" onclick="toggleMobile()">Gallery</a>
-      <a href="#reviews" class="py-3 text-gray-700 hover:text-accent font-medium border-b border-gray-50 transition-colors" onclick="toggleMobile()">Reviews</a>
-      <a href="#faq" class="py-3 text-gray-700 hover:text-accent font-medium border-b border-gray-50 transition-colors" onclick="toggleMobile()">FAQ</a>
-      <a href="#contact" class="py-3 text-gray-700 hover:text-accent font-medium border-b border-gray-50 transition-colors" onclick="toggleMobile()">Contact</a>
-      <a href="tel:undefined" class="mt-3 bg-accent text-white text-center font-display font-semibold px-6 py-3 rounded-lg tracking-wider uppercase">📞 Call Now</a>
-    </div>
-  </div>
-</nav>
-
-<!-- ===== HERO ===== -->
-<section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
-  <div class="absolute inset-0">
-    <img src="https://picsum.photos/seed/atlanta-roof-skyline/1600/900" alt="Roofing Atlanta" class="w-full h-full object-cover" />
-    <div class="hero-overlay absolute inset-0"></div>
-  </div>
-  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-32 lg:py-40">
-    <div class="max-w-3xl">
-      <div class="inline-flex items-center gap-2 bg-accent bg-opacity-90 text-white text-sm font-semibold px-4 py-2 rounded-full mb-6 tracking-wider uppercase">
-        <span>⭐</span> Atlanta's Trusted Roofing Specialists
-      </div>
-      <h1 class="font-display text-6xl lg:text-8xl font-bold text-white leading-tight mb-6 uppercase tracking-wide">
-        Atlanta's<br /><span class="text-accent">Premier</span><br />Roofing Experts
+  <!-- HERO -->
+  <section id="home" class="relative min-h-screen flex flex-col justify-center items-center hero-bg">
+    <div class="absolute inset-0 bg-black/75"></div>
+    <div class="relative z-10 text-center px-4 md:px-8 max-w-6xl mx-auto pt-20">
+      <p class="uppercase tracking-widest text-sm font-semibold mb-6" style="color:#C9A84C;">ROSWELL, GA &mdash; SERVING GREATER ATLANTA</p>
+      <h1 class="font-black leading-none mb-4">
+        <span class="block text-white" style="font-size:clamp(3rem,10vw,9rem); letter-spacing:-0.02em; font-family:'Oswald',sans-serif;">PROTECTING</span>
+        <span class="block" style="font-size:clamp(3rem,10vw,9rem); letter-spacing:-0.02em; font-family:'Oswald',sans-serif; color:#C9A84C;">EVERY ROOF</span>
+        <span class="block text-white" style="font-size:clamp(3rem,10vw,9rem); letter-spacing:-0.02em; font-family:'Oswald',sans-serif;">WE TOUCH</span>
       </h1>
-      <p class="text-gray-200 text-xl lg:text-2xl leading-relaxed mb-10 max-w-xl font-light">
-        From storm damage repair to full roof replacements — Dr Roof Atlanta delivers world-class craftsmanship, guaranteed workmanship, and total peace of mind for Atlanta homeowners and businesses.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a href="tel:undefined" class="bg-accent hover:bg-accent-dark text-white font-display font-semibold text-lg px-8 py-4 rounded-xl transition-colors uppercase tracking-wider text-center">
-          📞 Get Free Estimate
-        </a>
-        <a href="#services" class="border-2 border-white text-white hover:bg-white hover:text-dark font-display font-semibold text-lg px-8 py-4 rounded-xl transition-colors uppercase tracking-wider text-center">
-          Our Services
-        </a>
+      <p class="uppercase tracking-widest text-gray-300 text-base md:text-xl font-semibold mt-6 mb-10 max-w-2xl mx-auto">EXPERT ROOFING. ZERO COMPROMISES. ROSWELL'S TRUSTED CREW.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="#contact" class="px-10 py-4 uppercase font-black tracking-widest text-white text-lg transition hover:opacity-90" style="background-color:#8B2F1B; font-family:'Oswald',sans-serif;">GET A FREE QUOTE</a>
+        <a href="tel:7704508843" class="px-10 py-4 uppercase font-black tracking-widest text-white text-lg border-2 border-white hover:bg-white hover:text-black transition" style="font-family:'Oswald',sans-serif;">CALL (770) 450-8843</a>
+      </div>
+      <div class="flex flex-wrap justify-center gap-6 mt-10">
+        <span class="flex items-center gap-2 uppercase text-xs tracking-widest text-gray-300 font-semibold"><i data-lucide="shield-check" class="w-4 h-4" style="color:#C9A84C;"></i>LICENSED &amp; INSURED</span>
+        <span class="flex items-center gap-2 uppercase text-xs tracking-widest text-gray-300 font-semibold"><i data-lucide="clock" class="w-4 h-4" style="color:#C9A84C;"></i>24/7 EMERGENCY SERVICE</span>
+        <span class="flex items-center gap-2 uppercase text-xs tracking-widest text-gray-300 font-semibold"><i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>4.8 STARS &bull; 1,785 REVIEWS</span>
+        <span class="flex items-center gap-2 uppercase text-xs tracking-widest text-gray-300 font-semibold"><i data-lucide="award" class="w-4 h-4" style="color:#C9A84C;"></i>STORM DAMAGE SPECIALISTS</span>
+      </div>
+    </div>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
+      <span class="uppercase tracking-widest text-xs text-gray-400 font-semibold">SCROLL</span>
+      <div class="w-px h-10 bg-gray-500"></div>
+    </div>
+  </section>
+
+  <!-- TICKER BAND -->
+  <div class="overflow-hidden py-3" style="background:#111;">
+    <div class="ticker-track">
+      <span class="px-8 uppercase tracking-widest font-bold text-sm text-white">&#9632; QUALITY WORK</span>
+      <span class="px-8 uppercase tracking-widest font-bold text-sm" style="color:#C9A84C;">&#9632; TRUSTED PROFESSIONALS</span>
+      <span class="px-8 uppercase tracking-widest font-bold text-sm text-white">&#9632; SERVING ROSWELL AREA</span>
+      <span class="px-8 uppercase tracking-widest font-bold text-sm" style="color:#C9A84C;">&#9632; CALL NOW</span>
+      <span class="px-8 uppercase tracking-widest font-bold text-sm text-white">&#9632; OPEN 24 HOURS</span>
+      <span class="px-8 uppercase tracking-widest font-bold text-sm" style="color:#C9A84C;">&#9632; ROSWELL, GA</span>
+      <span class="px-8 uppercase tracking-widest font-bold text-sm text-white">&#9632; STORM DAMAGE EXPERTS</span>
+      <span class="px-8 uppercase tracking-widest font-bold text-sm" style="color:#C9A84C;">&#9632; 4.8 STAR RATED</span>
+      <!-- dupe for seamless loop -->
+      <span class="px-8 uppercase tracking-widest font-bold text-sm text-white">&#9632; QUALITY WORK</span>
+      <span class="px-8 uppercase tracking-widest font-bold text-sm" style="color:#C9A84C;">&#9632; TRUSTED PROFESSIONALS</span>
+      <span class="px-8 uppercase tracking-widest font-bold text-sm text-white">&#9632; SERVING ROSWELL AREA</span>
+      <span class="px-8 uppercase tracking-widest font-bold text-sm" style="color:#C9A84C;">&#9632; CALL NOW</span>
+      <span class="px-8 uppercase tracking-widest font-bold text-sm text-white">&#9632; OPEN 24 HOURS</span>
+      <span class="px-8 uppercase tracking-widest font-bold text-sm" style="color:#C9A84C;">&#9632; ROSWELL, GA</span>
+      <span class="px-8 uppercase tracking-widest font-bold text-sm text-white">&#9632; STORM DAMAGE EXPERTS</span>
+      <span class="px-8 uppercase tracking-widest font-bold text-sm" style="color:#C9A84C;">&#9632; 4.8 STAR RATED</span>
+    </div>
+  </div>
+
+  <!-- STATS BAND -->
+  <div class="bg-gray-900 py-20 animate-section">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-2 md:grid-cols-4">
+      <div class="border-l-4 pl-6 py-8 md:py-4" style="border-color:#8B2F1B;">
+        <div class="text-6xl font-black text-white leading-none" data-count="1785" data-suffix="+">0</div>
+        <div class="uppercase tracking-widest text-sm font-semibold mt-2" style="color:#C9A84C;">REVIEWS</div>
+      </div>
+      <div class="border-l-4 pl-6 py-8 md:py-4" style="border-color:#8B2F1B;">
+        <div class="text-6xl font-black text-white leading-none" data-count="4" data-suffix=".8&#9733;">0</div>
+        <div class="uppercase tracking-widest text-sm font-semibold mt-2" style="color:#C9A84C;">STAR RATING</div>
+      </div>
+      <div class="border-l-4 pl-6 py-8 md:py-4" style="border-color:#8B2F1B;">
+        <div class="text-6xl font-black text-white leading-none" data-count="24" data-suffix="/7">0</div>
+        <div class="uppercase tracking-widest text-sm font-semibold mt-2" style="color:#C9A84C;">EMERGENCY SERVICE</div>
+      </div>
+      <div class="border-l-4 pl-6 py-8 md:py-4" style="border-color:#8B2F1B;">
+        <div class="text-6xl font-black text-white leading-none" data-count="100" data-suffix="%">0</div>
+        <div class="uppercase tracking-widest text-sm font-semibold mt-2" style="color:#C9A84C;">SATISFACTION GOAL</div>
       </div>
     </div>
   </div>
-  <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white opacity-60">
-    <span class="text-xs uppercase tracking-widest">Scroll</span>
-    <div class="w-0.5 h-8 bg-white opacity-50 animate-pulse"></div>
-  </div>
-</section>
 
-<!-- ===== STATS BAR ===== -->
-<section class="bg-accent text-white py-10 fade-section">
-  <div class="max-w-7xl mx-auto px-6 lg:px-12">
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+  <!-- ABOUT -->
+  <section id="about" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16" style="background:#1a1a1a;">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
       <div>
-        <div class="font-display text-5xl font-bold leading-none mb-1">15+</div>
-        <div class="text-red-200 font-medium text-sm uppercase tracking-widest">Years Experience</div>
-      </div>
-      <div>
-        <div class="font-display text-5xl font-bold leading-none mb-1">2,500+</div>
-        <div class="text-red-200 font-medium text-sm uppercase tracking-widest">Roofs Completed</div>
-      </div>
-      <div>
-        <div class="font-display text-5xl font-bold leading-none mb-1">100%</div>
-        <div class="text-red-200 font-medium text-sm uppercase tracking-widest">Satisfaction Rate</div>
-      </div>
-      <div>
-        <div class="font-display text-5xl font-bold leading-none mb-1">24/7</div>
-        <div class="text-red-200 font-medium text-sm uppercase tracking-widest">Emergency Service</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SERVICES ===== -->
-<section id="services" class="py-24 bg-off-white fade-section">
-  <div class="max-w-7xl mx-auto px-6 lg:px-12">
-    <div class="text-center mb-16">
-      <div class="text-accent font-semibold text-sm uppercase tracking-widest mb-3">What We Do</div>
-      <h2 class="font-display text-5xl lg:text-6xl font-bold text-dark uppercase tracking-wide mb-4">Our Roofing Services</h2>
-      <p class="text-gray-500 text-lg max-w-2xl mx-auto">Comprehensive roofing solutions for residential and commercial properties throughout the Atlanta metro area.</p>
-    </div>
-
-    <!-- Tab Buttons -->
-    <div class="flex flex-col sm:flex-row gap-3 justify-center mb-12">
-      <button class="tab-btn active-tab font-display font-semibold text-sm uppercase tracking-wider px-8 py-3 rounded-lg transition-all duration-200" onclick="showTab('tab1', this)">
-        Residential Roofing
-      </button>
-      <button class="tab-btn inactive-tab font-display font-semibold text-sm uppercase tracking-wider px-8 py-3 rounded-lg transition-all duration-200 border-2" onclick="showTab('tab2', this)">
-        Commercial Roofing
-      </button>
-      <button class="tab-btn inactive-tab font-display font-semibold text-sm uppercase tracking-wider px-8 py-3 rounded-lg transition-all duration-200 border-2" onclick="showTab('tab3', this)">
-        Repair & Restoration
-      </button>
-    </div>
-
-    <!-- Tab 1: Residential -->
-    <div id="tab1" class="tab-panel">
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-          <div class="text-4xl mb-4">🏠</div>
-          <h3 class="font-display text-xl font-semibold uppercase tracking-wide mb-3 text-dark">Roof Replacement</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-5">Complete tear-off and replacement of your existing roof using premium shingles, underlayment, and flashing. Backed by manufacturer and workmanship warranties.</p>
-          <a href="tel:undefined" class="inline-block bg-accent text-white font-display text-xs uppercase tracking-wider px-5 py-2.5 rounded-lg hover:bg-accent-dark transition-colors font-semibold">Call Now</a>
+        <p class="uppercase tracking-widest text-sm font-semibold mb-4" style="color:#C9A84C;">WHO WE ARE</p>
+        <h2 class="font-black leading-none mb-8 text-white" style="font-size:clamp(3rem,7vw,5rem); font-family:'Oswald',sans-serif; letter-spacing:-0.01em;">ROSWELL'S<br><span style="color:#8B2F1B;">ROOF</span><br>AUTHORITY</h2>
+        <p class="text-gray-300 text-lg leading-relaxed max-w-2xl mb-6">Dr Roof Atlanta is Roswell, Georgia's go-to roofing contractor, delivering expert diagnostics, precision installations, and rapid storm damage restorations to homeowners across the greater Atlanta metro. We bring accountability, craftsmanship, and transparent pricing to every job we take on — no shortcuts, no surprises.</p>
+        <p class="text-gray-400 text-base leading-relaxed max-w-2xl mb-10">From single-shingle repairs to full roof replacements, our licensed and insured crews treat your home like their own. We're open 24/7 because roof emergencies don't wait for business hours.</p>
+        <div class="flex flex-wrap gap-4">
+          <span class="flex items-center gap-2 px-5 py-2 border border-gray-700 uppercase text-xs tracking-widest font-semibold text-white"><i data-lucide="shield-check" class="w-4 h-4" style="color:#C9A84C;"></i>LICENSED &amp; INSURED</span>
+          <span class="flex items-center gap-2 px-5 py-2 border border-gray-700 uppercase text-xs tracking-widest font-semibold text-white"><i data-lucide="clock" class="w-4 h-4" style="color:#C9A84C;"></i>24/7 AVAILABILITY</span>
+          <span class="flex items-center gap-2 px-5 py-2 border border-gray-700 uppercase text-xs tracking-widest font-semibold text-white"><i data-lucide="cloud-rain" class="w-4 h-4" style="color:#C9A84C;"></i>STORM SPECIALISTS</span>
+          <span class="flex items-center gap-2 px-5 py-2 border border-gray-700 uppercase text-xs tracking-widest font-semibold text-white"><i data-lucide="award" class="w-4 h-4" style="color:#C9A84C;"></i>4.8 STAR RATED</span>
         </div>
-        <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-          <div class="text-4xl mb-4">🔨</div>
-          <h3 class="font-display text-xl font-semibold uppercase tracking-wide mb-3 text-dark">Shingle Installation</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-5">Architectural, 3-tab, and designer shingle systems installed by certified professionals. We carry top brands including GAF, Owens Corning, and CertainTeed.</p>
-          <a href="tel:undefined" class="inline-block bg-accent text-white font-display text-xs uppercase tracking
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div class="img-hover-wrap row-span-2 rounded-none overflow-hidden border-2 border-gray-700">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHl3fCrUWEd78pkbNI6I4Xsv1h6L2n8pJSHQXMMY_hoU7_ia4tZ3EXj6rol_D-6V40mFx_teFGx4VUEjAg3fyMiFnZff44_UznLsDSh2i6yBuvUhuHpyz2izf51LPiTxCVgDPHMMb1QbTS4m-_JHQpnGrmJ7-G-34LcsjOyllCPzNnJ5twdPcwK2lzIraX91UFK5HH0MszNqB4DiiBG7XrXpYhQaOY8Q-qR6UNvo7xlYTAIB65_TZsReyt_Ef77apnjKdGD3bcjSDhMgQvrfTmSvhz0Ed2d6Oq0dkp1k_6JvQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing work by Dr Roof Atlanta" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-1/800/600'">
+        </div>
+        <div class="img-hover-wrap rounded-none overflow-hidden border-2 border-gray-700">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGaR-hedSB04jkFxn-9tdim0Ptqa85YphkRoDnm-ilObXes82ayJ78kQX2d_xiUNXOrVk52CLgxWwH2hcyvEonQdd6biGPImziEIo1tJZt22NJ495v1t-BZnCHosImPgpOIwPrNGMdINO31q6DPfWf_HAjQIYKwZyUdGXV6rG7uIh6IjXG2lrwyAVcOj38Qbg2ZLi9cOs4XwQ7djgtyj8up-Q-02rV7k1BHIDPym0UW8Kjfn2xsCpTOpoLdcMguorAtADGmgDODGW1TK6k4Wj-Nbe7ISEyfVKaGfYl9Na2cMdl2QhsGoxv9siHmbpIptH9N12KIlTmekR9kBVVgBuHDoX6DQOsu-bgmxYsXSUhq7-fGk87U9e89QOyLk9KEgqayzqWF7uLTF7oR_eXI3V3w2LZ-ZapfxeACHBot8KTOG4VGtSrAFxnCpv9XVqCb&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Dr Roof Atlanta crew on site" class="w-full h-48 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-2/800/600'">
+        </div>
+        <div class="img-hover-wrap rounded-none overflow-hidden border-2 border-gray-700">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFAFzhni2_heMqhUrC5untTqZb-qDUSod_lqu9tLzB89XIHhJyv-2mrfGpJW4z_kpPf65caFSwB0A3xbX0B5DgdWEq3m5e3kzALxIDd1AXGy67z4STR8zhEtaRzf6lso_6OTYewYAOwImBk8t0066a7_B9X10gw934O3TgbWkZH-8QYRLnMBJlNl4F650g9gBkSKTzv7tYM93mTYJyl9Ewi-4tBDxlq8P0_sRKAyHJ7eX6Gdv4CxZv4EndFlvn2Jxb3FxDg20sG5Az8rhiOZr22BnFza5r_tS17XxYn4albcw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Completed roofing project Roswell GA" class="w-full h-48 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-3/800/600'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS STRIP -->
+  <div class="animate-section py-16 px-4 md:px-8 lg:px-16 bg-black border-t-2 border-b-2 border-gray-800">
+    <div class="max-w-7xl mx-auto">
+      <p class="uppercase tracking-widest text-sm font-semibold mb-10 text-center" style="color:#C9A84C;">OUR PROCESS</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
+        <div class="process-strip-item pl-6 pr-4 py-6 border-b lg:border-b-0 border-gray-800">
+          <div class="text-5xl font-black mb-3" style="color:#8B2F1B; font-family:'Oswald',sans-serif;">01</div>
+          <h4 class="uppercase font-black text-white text-lg mb-2" style="font-family:'Oswald',sans-serif;">FREE INSPECTION</h4>
+          <p class="text-gray-400 text-sm uppercase tracking-wide">We assess your roof thoroughly and document every issue with no cost or commitment.</p>
+        </div>
+        <div class="process-strip-item pl-6 pr-4 py-6 border-b lg:border-b-0 border-gray-800">
+          <div class="text-5xl font-black mb-3" style="color:#8B2F1B; font-family:'Oswald',sans-serif;">02</div>
+          <h4 class="uppercase font-black text-white text-lg mb-2" style="font-family:'Oswald',sans-serif;">CLEAR ESTIMATE</h4>
+          <p class="text-gray-400 text-sm uppercase tracking-wide">Transparent, itemized pricing — you know exactly what you're getting before we start.</p>
+        </div>
+        <div class="process-strip-item pl-6 pr-4 py-6 border-b lg:border-b-0 border-gray-800">
+          <div class="text-5xl font-black mb-3" style="color:#8B2F1B; font-family:'Oswald',sans-serif;">03</div>
+          <h4 class="uppercase font-black text-white text-lg mb-2" style="font-family:'Oswald',sans-serif;">EXPERT INSTALL</h4>
+          <p class="text-gray-400 text-sm uppercase tracking-wide">Our licensed crew executes the work on time, on budget, and to the highest standard.</p>
+        </div>
+        <div class="process-strip-item pl-6 pr-4 py-6">
+          <div class="text-5xl font-black mb-3" style="color:#8B2F1B; font-family:'Oswald',sans-serif;">04</div>
+          <h4 class="uppercase font-black text-white text-lg mb-2" style="font-family:'Oswald',sans-serif;">FINAL WALKTHROUGH</h4>
+          <p class="text-gray-400 text-sm uppercase tracking-wide">We inspect completed work with you and leave your property cleaner than we found it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-black">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-10">
+        <p class="uppercase tracking-widest text-sm font-semibold mb-4" style="color:#C9A84C;">WHAT WE DO</p>
+        <h2 class="font-black leading-none text-white" style="font-size:clamp(2.5rem,6vw,5rem); font-family:'Oswald',sans-serif; letter-spacing:-0.01em;">OUR ROOFING<br><span style="color:#8B2F1B;">SERVICES</span></h2>
+      </div>
+      <div class="flex flex-wrap gap-2 md:flex-nowrap mb-10 tabs-container">
+        <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold uppercase tracking-wide" data-target="tab-panel-1" style="font-family:'Oswald',sans-serif;">Roofing Services</button>
+        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold uppercase tracking-wide" data-target="tab-panel-2" style="font-family:'Oswald',sans-serif;">Repairs &amp; Restoration</button>
+        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold uppercase tracking-wide" data-target="tab-panel-3" style="font-family:'Oswald',sans-serif;">Specialty Services</button>
+      </div>
+
+      <!-- Tab Panel 1 -->
+      <div id="tab-panel-1" class="tab-panel">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 hover:border-red-900 transition group">
+            <div class="text-6xl font-black mb-4 service-card-num" style="color:#8B2F1B;">01</div>
+            <i data-lucide="home" class="w-8 h-8 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl uppercase font-black mb-3 text-white" style="font-family:'Oswald',sans-serif;">ROOF REPLACEMENT</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">When repairs no longer cut it, we deliver full roof replacements built to last decades in Georgia's demanding climate. Our crews work efficiently to minimize disruption to your daily life.</p>
+            <a href="tel:7704508843" class="inline-block uppercase font-black tracking-widest text-xs px-5 py-3 text-white border border-gray-700 hover:border-red-800 transition" style="font-family:'Oswald',sans-serif;">CALL NOW &rarr;</a>
+          </div>
+          <!-- Card 2 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 hover:border-red-900 transition group">
+            <div class="text-6xl font-black mb-4 service-card-num" style="color:#8B2F1B;">02</div>
+            <i data-lucide="hammer" class="w-8 h-8 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl uppercase font-black mb-3 text-white" style="font-family:'Oswald',sans-serif;">NEW ROOF INSTALLATION</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">Building new construction or adding a structure? We install premium roofing systems from the ground up with code-compliant precision. Every new installation is backed by our workmanship guarantee.</p>
+            <a href="tel:7704508843" class="inline-block uppercase font-black tracking-widest text-xs px-5 py-3 text-white border border-gray-700 hover:border-red-800 transition" style="font-family:'Oswald',sans-serif;">CALL NOW &rarr;</a>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 hover:border-red-900 transition group">
+            <div class="text-6xl font-black mb-4 service-card-num" style="color:#8B2F1B;">03</div>
+            <i data-lucide="sun" class="w-8 h-8 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl uppercase font-black mb-3 text-white" style="font-family:'Oswald',sans-serif;">ASPHALT SHINGLE ROOFING</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">Asphalt shingles remain America's top roofing choice for durability and value — we install them right the first time. We carry a wide selection of styles and colors to match any Roswell home.</p>
+            <a href="tel:7704508843" class="inline-block uppercase font-black tracking-widest text-xs px-5 py-3 text-white border border-gray-700 hover:border-red-800 transition" style="font-family:'Oswald',sans-serif;">CALL NOW &rarr;</a>
+          </div>
+          <!-- Card 4 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 hover:border-red-900 transition group">
+            <div class="text-6xl font-black mb-4 service-card-num" style="color:#8B2F1B;">04</div>
+            <i data-lucide="shield-check" class="w-8 h-8 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl uppercase font-black mb-3 text-white" style="font-family:'Oswald',sans-serif;">METAL ROOFING</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">Standing seam and metal panel systems offer unmatched longevity and energy efficiency for Georgia properties. Our metal roofing installs are precise, weather-tight, and built to outlast the competition.</p>
+            <a href="tel:7704508843" class="inline-block uppercase font-black tracking-widest text-xs px-5 py-3 text-white border border-gray-700 hover:border-red-800 transition" style="font-family:'Oswald',sans-serif;">CALL NOW &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Panel 2 -->
+      <div id="tab-panel-2" class="tab-panel hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 hover:border-red-900 transition group">
+            <div class="text-6xl font-black mb-4 service-card-num" style="color:#8B2F1B;">01</div>
+            <i data-lucide="cloud-rain" class="w-8 h-8 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl uppercase font-black mb-3 text-white" style="font-family:'Oswald',sans-serif;">LEAK REPAIR</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">We find the leaks other roofers miss — every time. Our diagnostic process pinpoints the root cause so the fix is permanent, not just a bandage over the real problem.</p>
+            <a href="tel:7704508843" class="inline-block uppercase font-black tracking-widest text-xs px-5 py-3 text-white border border-gray-700 hover:border-red-800 transition" style="font-family:'Oswald',sans-serif;">CALL NOW &rarr;</a>
+          </div>
+          <!-- Card 2 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 hover:border-red-900 transition group">
+            <div class="text-6xl font-black mb-4 service-card-num" style="color:#8B2F1B;">02</div>
+            <i data-lucide="hard-hat" class="w-8 h-8 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl uppercase font-black mb-3 text-white" style="font-family:'Oswald',sans-serif;">STORM DAMAGE RESTORATION</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">Hail, wind, and fallen trees don't stand a chance against our rapid-response restoration teams. We also help navigate insurance claims from start to finish so you're not left fighting alone.</p>
+            <a href="tel:7704508843" class="inline-block uppercase font-black tracking-widest text-xs px-5 py-3 text-white border border-gray-700 hover:border-red-800 transition" style="font-family:'Oswald',sans-serif;">CALL NOW &rarr;</a>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 hover:border-red-900 transition group">
+            <div class="text-6xl font-black mb-4 service-card-num" style="color:#8B2F1B;">03</div>
+            <i data-lucide="wrench" class="w-8 h-8 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl uppercase font-black mb-3 text-white" style="font-family:'Oswald',sans-serif;">GUTTER REPAIR</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">Failing gutters lead to foundation damage, fascia rot, and basement flooding — we stop it before it starts. Our gutter repair and replacement services keep water moving away from your home.</p>
+            <a href="tel:7704508843" class="inline-block uppercase font-black tracking-widest text-xs px-5 py-3 text-white border border-gray-700 hover:border-red-800 transition" style="font-family:'Oswald',sans-serif;">CALL NOW &rarr;</a>
+          </div>
+          <!-- Card 4 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 hover:border-red-900 transition group">
+            <div class="text-6xl font-black mb-4 service-card-num" style="color:#8B2F1B;">04</div>
+            <i data-lucide="shield-check" class="w-8 h-8 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl uppercase font-black mb-3 text-white" style="font-family:'Oswald',sans-serif;">EMERGENCY TARPING</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">When disaster strikes, our 24/7 emergency tarping service protects your home from further water intrusion immediately. We respond fast so storm damage doesn't become interior devastation.</p>
+            <a href="tel:7704508843" class="inline-block uppercase font-black tracking-widest text-xs px-5 py-3 text-white border border-gray-700 hover:border-red-800 transition" style="font-family:'Oswald',sans-serif;">CALL NOW &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Panel 3 -->
+      <div id="tab-panel-3" class="tab-panel hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 hover:border-red-900 transition group">
+            <div class="text-6xl font-black mb-4 service-card-num" style="color:#8B2F1B;">01</div>
+            <i data-lucide="sun" class="w-8 h-8 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl uppercase font-black mb-3 text-white" style="font-family:'Oswald',sans-serif;">SKYLIGHT INSTALLATION</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">Bring natural light into your home with a properly flashed, leak-proof skylight installation by our certified crew. We ensure every skylight is sealed and integrated perfectly with your existing roofing system.</p>
+            <a href="tel:7704508843" class="inline-block uppercase font-black tracking-widest text-xs px-5 py-3 text-white border border-gray-700 hover:border-red-800 transition" style="font-family:'Oswald',sans-serif;">CALL NOW &rarr;</a>
+          </div>
+          <!-- Card 2 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 hover:border-red-900 transition group">
+            <div class="text-6xl font-black mb-4 service-card-num" style="color:#8B2F1B;">02</div>
+            <i data-lucide="home" class="w-8 h-8 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl uppercase font-black mb-3 text-white" style="font-family:'Oswald',sans-serif;">VENTILATION UPGRADES</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">Poor attic ventilation shortens roof life and drives up energy bills — we diagnose and fix it fast. Proper airflow means your shingles last longer and your HVAC works less.</p>
+            <a href="tel:7704508843" class="inline-block uppercase font-black tracking-widest text-xs px-5 py-3 text-white border border-gray-700 hover:border-red-800 transition" style="font-family:'Oswald',sans-serif;">CALL NOW &rarr;</a>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 hover:border-red-900 transition group">
+            <div class="text-6xl font-black mb-4 service-card-num" style="color:#8B2F1B;">03</div>
+            <i data-lucide="ruler" class="w-8 h-8 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl uppercase font-black mb-3 text-white" style="font-family:'Oswald',sans-serif;">ROOF INSPECTIONS</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">Our thorough roof inspections catch problems early — before they become costly emergencies. Perfect for home buyers, sellers, or any homeowner who wants peace of mind.</p>
+            <a href="tel:7704508843" class="inline-block uppercase font-black tracking-widest text-xs px-5 py-3 text-white border border-gray-700 hover:border-red-800 transition" style="font-family:'Oswald',sans-serif;">CALL NOW &rarr;</a>
+          </div>
+          <!-- Card 4 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 hover:border-red-900 transition group">
+            <div class="text-6xl font-black mb-4 service-card-num" style="color:#8B2F1B;">04</div>
+            <i data-lucide="shield-check" class="w-8 h-8 mb-4" style="color:#C9A84C;"></i>
+            <h3 class="text-2xl uppercase font-black mb-3 text-white" style="font-family:'Oswald',sans-serif;">MAINTENANCE PLANS</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">Protect your investment with a scheduled maintenance plan that keeps your roof in peak condition year-round. Regular maintenance prevents small issues from becoming five-figure repair bills.</p>
+            <a href="tel:7704508843" class="inline-block uppercase font-black tracking-widest text-xs px-5 py-3 text-white border border-gray-700 hover:border-red-800 transition" style="font-family:'Oswald',sans-serif;">CALL NOW &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="animate-section py-20 md:py-28" style="background:#111;">
+    <div class="px-4 md:px-8 lg:px-16 mb-10">
+      <div class="max-w-7xl mx-auto">
+        <p class="uppercase tracking-widest text-sm font-semibold mb-4" style="color:#C9A84C;">OUR WORK</p>
+        <h2 class="font-black leading-none text-white" style="font-size:clamp(2.5rem,6vw,5rem); font-family:'Oswald',sans-serif; letter-spacing:-0.01em;">PROJECT <span style="color:#8B2F1B;">GALLERY</span></h2>
+      </div>
+    </div>
+    <div class="flex gap-4 overflow-x-auto pb-4 px-4 md:px-8" style="scrollbar-color:#8B2F1B #111;">
+      <div class="flex-shrink-0 w-96 h-72 img-hover-wrap border-2 border-gray-700">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGo9rlp1dqn-2i_jHNMO1JRVQCJYfPwyMpF-SN9kKSSYMHSQldT04XSsV6AUItxkaXhCXHfK6_N_u2D5etImM_TNIvHZmZcpWuf5ihbMSpJtfdqk21n3_-urRiXLvVlrWwCORLHk4VQgRIQK_zUWcajry5ZYPL4OHbxQxzbIfaCCaS6nHnrUGmW00dXu2MMdpC3A4qOI0eYRF0zvfY3aCg-7W7FFWqf4TdxMqNKN8WXxQ0p8XcqHJNpuiIcK1fy4EUSbN8MdMM4U7bsObXX5RUVaZt7M4BMxzqOu-QYn7_gpg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing project 1" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-10/800/600'">
+      </div>
+      <div class="flex-shrink-0 w-96 h-72 img-hover-wrap border-2 border-gray-700">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHl3fCrUWEd78pkbNI6I4Xsv1h6L2n8pJSHQXMMY_hoU7_ia4tZ3EXj6rol_D-6V40mFx_teFGx4VUEjAg3fyMiFnZff44_UznLsDSh2i6yBuvUhuHpyz2izf51LPiTxCVgDPHMMb1QbTS4m-_JHQpnGrmJ7-G-34LcsjOyllCPzNnJ5twdPcwK2lzIraX91UFK5HH0MszNqB4DiiBG7XrXpYhQaOY8Q-qR6UNvo7xlYTAIB65_TZsReyt_Ef77apnjKdGD3bcjSDhMgQvrfTmSvhz0Ed2d6Oq0dkp1k_6JvQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing project 2" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-11/800/600'">
+      </div>
+      <div class="flex-shrink-0 w-96 h-72 img-hover-wrap border-2 border-gray-700">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGaR-hedSB04jkFxn-9tdim0Ptqa85YphkRoDnm-ilObXes82ayJ78kQX2d_xiUNXOrVk52CLgxWwH2hcyvEonQdd6biGPImziEIo1tJZt22NJ495v1t-BZnCHosImPgpOIwPrNGMdINO31q6DPfWf_HAjQIYKwZyUdGXV6rG7uIh6IjXG2lrwyAVcOj38Qbg2ZLi9cOs4XwQ7djgtyj8up-Q-02rV7k1BHIDPym0UW8Kjfn2xsCpTOpoLdcMguorAtADGmgDODGW1TK6k4Wj-Nbe7ISEyfVKaGfYl9Na2cMdl2QhsGoxv9siHmbpIptH9N12KIlTmekR9kBVVgBuHDoX6DQOsu-bgmxYsXSUhq7-fGk87U9e89QOyLk9KEgqayzqWF7uLTF7oR_eXI3V3w2LZ-ZapfxeACHBot8KTOG4VGtSrAFxnCpv9XVqCb&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing project 3" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-12/800/600'">
+      </div>
+      <div class="flex-shrink-0 w-96 h-72 img-hover-wrap border-2 border-gray-700">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFAFzhni2_heMqhUrC5untTqZb-qDUSod_lqu9tLzB89XIHhJyv-2mrfGpJW4z_kpPf65caFSwB0A3xbX0B5DgdWEq3m5e3kzALxIDd1AXGy67z4STR8zhEtaRzf6lso_6OTYewYAOwImBk8t0066a7_B9X10gw934O3TgbWkZH-8QYRLnMBJlNl4F650g9gBkSKTzv7tYM93mTYJyl9Ewi-4tBDxlq8P0_sRKAyHJ7eX6Gdv4CxZv4EndFlvn2Jxb3FxDg20sG5Az8rhiOZr22BnFza5r_tS17XxYn4albcw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing project 4" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-13/800/600'">
+      </div>
+      <div class="flex-shrink-0 w-96 h-72 img-hover-wrap border-2 border-gray-700">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGKGOe_Md79n_gBQJwGnNEiWSNseZOzumIHq78YZSAf_4SMLSLq0vgCUpnYbpBxcL5UDEtR0Kcn5V76YPzwTR7tg84PeeILjfe9DcI5kukRe2wkrapA0FFc359lBhi3Le8USwBkZE5ZlET8lYFnhlEZ4iy0aAZ89hTd_llces-Ux9um3XKE1vtMGe4Hal1KnpB5yvrNjUXuVCUrHcOOxuCP3w6AOqZI0KRtn1T-jg4lFXEgei5e6QDoulNqgHx4_vIln5-TDep83zkCyl7JfMz9rzT7tiptYXW63ClwQETYuw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing project 5" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-14/800/600'">
+      </div>
+      <div class="flex-shrink-0 w-96 h-72 img-hover-wrap border-2 border-gray-700">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFRuJtNxnz95CUfJiCglq38Sm0EeLWb35oyK__UGGBlbYfA4w5lKHSZdYF8ckdzoOkEzoVa_PGWsE86m-BHB5IvTvnTG10Cc6R3ERl0RO1efUN5jfbbkgjuaRZoFJxKkmnZpVZEbDn7X-5J7H_xTRJdyeG49Pdjw9jLGM-cZoJcO_jMW1z8ewGzdgS7vVFA7T3y_AqUZQg6X20sQHqBRo9yLngnaPaGSS_tVax9kAvdyM0B1SrptNiPqblm2A5wmh8NhxMB1_I9Np6D_B64zysuZpbsgT5v02_GdHyj2AJvDu7s_aE8Oj7dGNIQ3L9RYcEJe3JzHRfCoi_f3jy7M5mBbVmtAyIXT0rN0zScXh4iunTr9Om_u3511AF6GrGMj7o5-6nXyY257Pq7CuY5oxEKBOZAd7Yo13qhekQOobVzkg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing project 6" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-15/800/600'">
+      </div>
+      <div class="flex-shrink-0 w-96 h-72 img-hover-wrap border-2 border-gray-700">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGEEMFlzUIMMr7pemE_HIZ69uPZVP0X1cNKrtAsF6YOM6pC9pFFqjCNj-AC-0lkhMEpFupEB2QmCC23KJCnV37WIXDJ1SjyJpOwOErEg0a4p_OEqzpx43aUSoVcGUDVS6j-1gQGQx0LG4aBQUmOxukUc63LIQmMaFEonOwe01AZsT5yKj5tAlMSeC5sd2h7ATpnybyxiVrSvaia9utrD4W8hNyqISyHX8dHJzwdf3BaHPd5pnl907OqkBwNoIdbzDkfO-8ZbGiDG7C1GPKxd8mmFHSJ_R7NVwnrBvme3B-52w&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing project 7" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-16/800/600'">
+      </div>
+      <div class="flex-shrink-0 w-96 h-72 img-hover-wrap border-2 border-gray-700">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEH_M7Fmj5tr0wuT51CaE48MtDGW7TWNWRn9xdvAQgMP2MuLMLl5tJYGxYgT9QK2JxHedtAzsgRqHX1LcHp1gqD7fWsaQvz91uKKe9H6Wc6bOqYGLH3AkIsaTCPARyW2C0j0Q94PnGgZQ74RgRE_YN153PX9WjyITLXlBlzR32W8JlCGJxT6UjPW9Mo9-7aX_3aBVH6LIa5Zvn9DunNFZ1psdOuzutKpFtBYY4Z0B3bx4DnSMUn6CIDuYiJfxgeu1NJnX5Aef3OQfWnJMLHELOcrM5wWinXh0PE6YKgW4rmeJg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing project 8" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-17/800/600'">
+      </div>
+      <div class="flex-shrink-0 w-96 h-72 img-hover-wrap border-2 border-gray-700">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHOZayOIG7H8rQDKhLI08P3JRiNWjuDWH79VWLTZ9jasIs8E8K-csR55Ty5OhkU8EOfxCSho9io1Wa4PAL1m7IptKrvt8Z2Dk4EE6yWEfvb-Zpg7lOMOSZ1UXKTKZyuKJbcX1VPbIxQBVYYWI4zk0wa5yRByCmJ8_YVFbVse9hfJO-ClsVEvOx-ofx9daxgFm0zG7bqX9NN9-ljGz4bgs77sUEDbKVt5xH_AvYXTEQ4LLnW898_nD0N6HmT9Czg3EEFqjH97YfxcRu8uk98ufPDku51-VtFq-wFZNmkV74-Ew&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing project 9" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-18/800/600'">
+      </div>
+      <div class="flex-shrink-0 w-96 h-72 img-hover-wrap border-2 border-gray-700">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHyg_MLFaNvDfgIjxmxb9j8OmcNGvCXgLsbzCDx4nB7A3APmakLUdZw-oqvVcPE-s9VM8KiiWoUgDScxEzLVtUKn_D_z36Ht1vycqBaoxq5GAHSBWRMU4UTI8e0a-WApAkqw2F6wWX0GBTjYdkDHomivavQ8iwTBJ5sHxMwux2y_vMvapblyp2pP60mzyj44q0ZkNsBj6eT4FYoyYZCOi1MGGiqRlY5ZSLUuF_yI2RuRLHdGzqt_KZAlvYNp6ebW1uzdQWY7-CduNPA9Viv0RSUfJeoBvGC87n64v5xtzFwSw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roofing project 10" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-19/800/600'">
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-black">
+    <div class="max-w-7xl mx-auto">
+      <p class="uppercase tracking-widest text-sm font-semibold mb-4" style="color:#C9A84C;">WHAT CLIENTS SAY</p>
+      <h2 class="font-black leading-none text-white mb-16" style="font-size:clamp(2.5rem,6vw,5rem); font-family:'Oswald',sans-serif; letter-spacing:-0.01em;">REAL <span style="color:#8B2F1B;">REVIEWS</span></h2>
+
+      <!-- Review 1 -->
+      <div class="border-b-2 border-gray-800 py-10 flex flex-col lg:flex-row lg:items-start gap-6">
+        <div class="flex-shrink-0 w-20 text-6xl font-black" style="color:#8B2F1B; font-family:'Oswald',sans-serif;">01</div>
+        <div class="flex-1">
+          <p class="text-xl uppercase italic text-gray-200 leading-relaxed mb-4">"Dr Roof did a great job diagnosing our roof leak issue that 3 other roofers missed. They were on time, did a great job and cleaned up afterwards. I would highly recommend Dr Roof for your roof repairs."</p>
+        </div>
+        <div class="flex-shrink-0 lg:text-right">
+          <p class="uppercase font-black text-white text-sm tracking-widest mb-2" style="font-family:'Oswald',sans-serif;">SANDY OLIVIA SANDOVAL</p>
+          <div class="flex lg:justify-end gap-1 mb-2">
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+          </div>
+          <span class="text-xs uppercase tracking-widest font-semibold px-3 py-1 border border-gray-700 text-gray-400">VIA GOOGLE</span>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="border-b-2 border-gray-800 py-10 flex flex-col lg:flex-row lg:items-start gap-6">
+        <div class="flex-shrink-0 w-20 text-6xl font-black" style="color:#8B2F1B; font-family:'Oswald',sans-serif;">02</div>
+        <div class="flex-1">
+          <p class="text-xl uppercase italic text-gray-200 leading-relaxed mb-4">"I had a great experience with Dr. Roof Atlanta. They completed multiple roof repairs on my home, including fascia replacement, shingle repairs, decking replacement, and sealing around the power mast. The crew was professional, on time, and left everything clean. Pricing was clear and fair, and the work was done right. I would definitely recommend them."</p>
+        </div>
+        <div class="flex-shrink-0 lg:text-right">
+          <p class="uppercase font-black text-white text-sm tracking-widest mb-2" style="font-family:'Oswald',sans-serif;">BROCKTON EDWARDS</p>
+          <div class="flex lg:justify-end gap-1 mb-2">
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+          </div>
+          <span class="text-xs uppercase tracking-widest font-semibold px-3 py-1 border border-gray-700 text-gray-400">VIA GOOGLE</span>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="border-b-2 border-gray-800 py-10 flex flex-col lg:flex-row lg:items-start gap-6">
+        <div class="flex-shrink-0 w-20 text-6xl font-black" style="color:#8B2F1B; font-family:'Oswald',sans-serif;">03</div>
+        <div class="flex-1">
+          <p class="text-xl uppercase italic text-gray-200 leading-relaxed mb-4">"I had a great experience with Dr. Roof from start to finish. Drake and the team was professional, responsive, and extremely knowledgeable. Drake explained everything clearly, each step of the process from filing claim to final step. Dennis and his installation team showed up on time, and completed the work exactly as promised. The quality of the work is excellent, and they left the area clean when the job was done. It's hard to find a roofing company you can truly trust, but Dr. Roof definitely delivers. I highly recommend them to anyone needing roofing work."</p>
+        </div>
+        <div class="flex-shrink-0 lg:text-right">
+          <p class="uppercase font-black text-white text-sm tracking-widest mb-2" style="font-family:'Oswald',sans-serif;">ISAAC REEVES</p>
+          <div class="flex lg:justify-end gap-1 mb-2">
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+          </div>
+          <span class="text-xs uppercase tracking-widest font-semibold px-3 py-1 border border-gray-700 text-gray-400">VIA GOOGLE</span>
+        </div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="border-b-2 border-gray-800 py-10 flex flex-col lg:flex-row lg:items-start gap-6">
+        <div class="flex-shrink-0 w-20 text-6xl font-black" style="color:#8B2F1B; font-family:'Oswald',sans-serif;">04</div>
+        <div class="flex-1">
+          <p class="text-xl uppercase italic text-gray-200 leading-relaxed mb-4">"I received free estimates from three roofing companies. My mom prompted me to give Dr. Roof a call since she had such a good experience with them. Don from Dr. Roof gave the most comprehensive, practical, and no-nonsense evaluation of the three. He noted and provided more detailed feedback on the severity of the issues he spotted, and helped me think through what would make the most sense to fix, defer, or ignore as irrelevant. I was very pleased with the gentleman who performed the work as well. He was very helpful and went above and beyond to make sure the work was done right the first time. I highly recommend Dr. Roof's work and work ethic- a rarity these days."</p>
+        </div>
+        <div class="flex-shrink-0 lg:text-right">
+          <p class="uppercase font-black text-white text-sm tracking-widest mb-2" style="font-family:'Oswald',sans-serif;">C C</p>
+          <div class="flex lg:justify-end gap-1 mb-2">
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+          </div>
+          <span class="text-xs uppercase tracking-widest font-semibold px-3 py-1 border border-gray-700 text-gray-400">VIA GOOGLE</span>
+        </div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="py-10 flex flex-col lg:flex-row lg:items-start gap-6">
+        <div class="flex-shrink-0 w-20 text-6xl font-black" style="color:#8B2F1B; font-family:'Oswald',sans-serif;">05</div>
+        <div class="flex-1">
+          <p class="text-xl uppercase italic text-gray-200 leading-relaxed mb-4">"Dr. Roof responded quickly to roof damage caused by tree limb blown down during an ice storm. The estimator provided temporary patch for the hole and a work crew was scheduled in a timely manner to complete the repairs. I added additional work to their Scope of Work to include re-roofing a sunroom. Work was done professionally. Price was likely a little high but urgency was critical so I did not get multiple bids."</p>
+        </div>
+        <div class="flex-shrink-0 lg:text-right">
+          <p class="uppercase font-black text-white text-sm tracking-widest mb-2" style="font-family:'Oswald',sans-serif;">DICK OLSEN</p>
+          <div class="flex lg:justify-end gap-1 mb-2">
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+            <i data-lucide="star" class="w-4 h-4 star-filled"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#4b5563;"></i>
+          </div>
+          <span class="text-xs uppercase tracking-widest font-semibold px-3 py-1 border border-gray-700 text-gray-400">VIA GOOGLE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16" style="background:#111;">
+    <div class="max-w-4xl mx-auto">
+      <p class="uppercase tracking-widest text-sm font-semibold mb-4" style="color:#C9A84C;">GOT QUESTIONS?</p>
+      <h2 class="font-black leading-none text-white mb-16" style="font-size:clamp(2.5rem,6vw,5rem); font-family:'Oswald',sans-serif; letter-spacing:-0.01em;">FREQUENTLY<br><span style="color:#8B2F1B;">ASKED</span></h2>
+
+      <details class="border-l-4 border-gray-700 mb-2 group" style="border-width:3px;">
+        <summary class="uppercase font-black text-xl py-6 px-6 text-white flex justify-between items-center" style="font-family:'Oswald',sans-serif;">
+          HOW DO I KNOW IF MY ROOF NEEDS REPLACEMENT OR JUST REPAIRS?
+          <span class="text-2xl font-black group-open:hidden" style="color:#C9A84C;">+</span>
+          <span class="text-2xl font-black hidden group-open:block" style="color:#C9A84C;">−</span>
+        </summary>
+        <div class="px-6 pb-6 text-gray-400 text-sm uppercase tracking-wide leading-relaxed" style="background:#8B2F1B20;">
+          If your roof is over 20 years old, has widespread shingle damage, or has experienced repeated leaks in multiple areas, full replacement is usually more cost-effective than ongoing repairs. Our free inspection will give you an honest, detailed assessment so you can make an informed decision — never a sales pitch.
+        </div>
+      </details>
+
+      <details class="border-l-4 border-gray-700 mb-2 group" style="border-width:3px;">
+        <summary class="uppercase font-black text-xl py-6 px-6 text-white flex justify-between items-center" style="font-family:'Oswald',sans-serif;">
+          DO YOU WORK WITH INSURANCE COMPANIES FOR STORM DAMAGE CLAIMS?
+          <span class="text-2xl font-black group-open:hidden" style="color:#C9A84C;">+</span>
+          <span class="text-2xl font-black hidden group-open:block" style="color:#C9A84C;">−</span>
+        </summary>
+        <div class="px-6 pb-6 text-gray-400 text-sm uppercase tracking-wide leading-relaxed" style="background:#8B2F1B20;">
+          Yes — we have extensive experience navigating homeowner insurance claims for storm, hail, and wind damage. Our team documents damage thoroughly, communicates directly with adjusters, and guides you step-by-step from initial filing to final payment. You don't have to fight the insurance company alone.
+        </div>
+      </details>
+
+      <details class="border-l-4 border-gray-700 mb-2 group" style="border-width:3px;">
+        <summary class="uppercase font-black text-xl py-6 px-6 text-white flex justify-between items-center" style="font-family:'Oswald',sans-serif;">
+          HOW LONG DOES A FULL ROOF REPLACEMENT TAKE?
+          <span class="text-2xl font-black group-open:hidden" style="color:#C9A84C;">+</span>
+          <span class="text-2xl font-black hidden group-open:block" style="color:#C9A84C;">−</span>
+        </summary>
+        <div class="px-6 pb-6 text-gray-400 text-sm uppercase tracking-wide leading-relaxed" style="background:#8B2F1B20;">
+          Most residential roof replacements in the Roswell area are completed in one to two days depending on the size and complexity of the roof. We schedule efficiently, arrive on time, and work without unnecessary delays — your home won't be exposed longer than it has to be.
+        </div>
+      </details>
+
+      <details class="border-l-4 border-gray-700 mb-2 group" style="border-width:3px;">
+        <summary class="uppercase font-black text-xl py-6 px-6 text-white flex justify-between items-center" style="font-family:'Oswald',sans-serif;">
+          ARE YOU LICENSED AND INSURED IN GEORGIA?
+          <span class="text-2xl font-black group-open:hidden" style="color:#C9A84C;">+</span>
+          <span class="text-2xl font-black hidden group-open:block" style="color:#C9A84C;">−</span>
+        </summary>
+        <div class="px-6 pb-6 text-gray-400 text-sm uppercase tracking-wide leading-relaxed" style="background:#8B2F1B20;">
+          Absolutely. Dr Roof Atlanta is fully licensed, bonded, and insured in the state of Georgia. We carry both general liability and workers' compensation coverage, so you're completely protected if anything unexpected occurs on your property during the job.
+        </div>
+      </details>
+
+      <details class="border-l-4 border-gray-700 mb-2 group" style="border-width:3px;">
+        <summary class="uppercase font-black text-xl py-6 px-6 text-white flex justify-between items-center" style="font-family:'Oswald',sans-serif;">
+          WHAT ROOFING MATERIALS DO YOU INSTALL?
+          <span class="text-2xl font-black group-open:hidden" style="color:#C9A84C;">+</span>
+          <span class="text-2xl font-black hidden group-open:block" style="color:#C9A84C;">−</span>
+        </summary>
+        <div class="px-6 pb-6 text-gray-400 text-sm uppercase tracking-wide leading-relaxed" style="background:#8B2F1B20;">
+          We install asphalt shingles, metal roofing systems, and flat/low-slope materials suited to both residential and commercial properties in Roswell and the Atlanta metro area. During your free estimate, we'll recommend the best material for your home's needs, budget, and HOA requirements.
+        </div>
+      </details>
+
+      <details class="border-l-4 border-gray-700 mb-2 group" style="border-width:3px;">
+        <summary class="uppercase font-black text-xl py-6 px-6 text-white flex justify-between items-center" style="font-family:'Oswald',sans-serif;">
+          DO YOU OFFER EMERGENCY ROOFING SERVICES?
+          <span class="text-2xl font-black group-open:hidden" style="color:#C9A84C;">+</span>
+          <span class="text-2xl font-black hidden group-open:block" style="color:#C9A84C;">−</span>
+        </summary>
+        <div class="px-6 pb-6 text-gray-400 text-sm uppercase tracking-wide leading-relaxed" style="background:#8B2F1B20;">
+          Yes — we're available 24 hours a day, 7 days a week for emergency roofing situations. Whether it's a fallen tree, storm breach, or sudden leak, we respond fast with emergency tarping and temporary repairs to protect your home until permanent work can be scheduled.
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-black border-t-2 border-gray-800">
+    <div class="max-w-7xl mx-auto">
+      <p class="uppercase tracking-widest text-sm font-semibold mb-4" style="color:#C9A84C;">GET IN TOUCH</p>
+      <h2 class="font-black leading-none text-white mb-16" style="font-size:clamp(2.5rem,6vw,5rem); font-family:'Oswald',sans-serif; letter-spacing:-0.01em;">REQUEST A<br><span style="color:#8B2F1B;">FREE QUOTE</span></h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <!-- Form -->
+        <div>
+          <form class="space-y-5" onsubmit="event.preventDefault();">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block uppercase text-xs tracking-widest text-gray-400 font-semibold mb-2">NAME</label>
+                <input type="text" placeholder="Your Full Name" class="w-full bg-gray-900 border border-gray-700 text-white px-4 py-3 text-sm focus:border-red-800 focus:outline-none transition" style="border-color:#333;">
+              </div>
+              <div>
+                <label class="block uppercase text-xs tracking-widest text-gray-400 font-semibold mb-2">PHONE</label>
+                <input type="tel" placeholder="(770) 000-0000" class="w-full bg-gray-900 border border-gray-700 text-white px-4 py-3 text-sm focus:border-red-800 focus:outline-none transition" style="border-color:#333;">
+              </div>
+            </div>
+            <div>
+              <label class="block uppercase text-xs tracking-widest text-gray-400 font-semibold mb-2">EMAIL</label>
+              <input type="email" placeholder="your@email.com" class="w-full bg-gray-900 border border-gray-700 text-white px-4 py-3 text-sm focus:border-red-800 focus:outline-none transition" style="border-color:#333;">
+            </div>
+            <div>
+              <label class="block uppercase text-xs tracking-widest text-gray-400 font-semibold mb-2">SERVICE NEEDED</label>
+              <select class="w-full bg-gray-900 border border-gray-700 text-white px-4 py-3 text-sm focus:border-red-800 focus:outline-none transition" style="border-color:#333;">
+                <option value="">Select a Service</option>
+                <option>Roof Replacement</option>
+                <option>New Roof Installation</option>
+                <option>Asphalt Shingle Roofing</option>
+                <option>Metal Roofing</option>
+              </select>
+            </div>
+            <div>
+              <label class="block uppercase text-xs tracking-widest text-gray-400 font-semibold mb-2">MESSAGE</label>
+              <textarea rows="5" placeholder="Describe your roofing needs..." class="w-full bg-gray-900 border border-gray-700 text-white px-4 py-3 text-sm focus:border-red-800 focus:outline-none transition resize-none" style="border-color:#333;"></textarea>
+            </div>
+            <button type="submit" class="w-full py-4 uppercase font-black tracking-widest text-white text-base transition hover:opacity-90" style="background-color:#8B2F1B; font-family:'Oswald',sans-serif;">SUBMIT REQUEST &rarr;</button>
+          </form>
+        </div>
+        <!-- Contact Info + Map -->
+        <div class="space-y-8">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center border-2" style="border-color:#8B2F1B;">
+              <i data-lucide="phone" class="w-5 h-5" style="color:#C9A84C;"></i>
+            </div>
+            <div>
+              <p class="uppercase text-xs tracking-widest text-gray-400 font-semibold mb-1">PHONE</p>
+              <a href="tel:7704508843" class="text-white text-xl font-black uppercase hover:text-yellow-500 transition" style="font-family:'Oswald',sans-serif;">(770) 450-8843</a>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center border-2" style="border-color:#8B2F1B;">
+              <i data-lucide="map-pin" class="w-5 h-5" style="color:#C9A84C;"></i>
+            </div>
+            <div>
+              <p class="uppercase text-xs tracking-widest text-gray-400 font-semibold mb-1">ADDRESS</p>
+              <p class="text-white font-semibold uppercase text-sm">88 Mansell Ct<br>Roswell, GA 30076</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center border-2" style="border-color:#8B2F1B;">
+              <i data-lucide="clock" class="w-5 h-5" style="color:#C9A84C;"></i>
+            </div>
+            <div>
+              <p class="uppercase text-xs tracking-widest text-gray-400 font-semibold mb-1">HOURS</p>
+              <p class="text-white font-semibold uppercase text-sm">OPEN 24 HOURS — 7 DAYS A WEEK</p>
+              <p id="live-clock" class="text-xs text-gray-500 mt-1 uppercase tracking-widest"></p>
+            </div>
+          </div>
+          <div class="border-2 border-gray-800">
+            <iframe
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k&q=place_id:ChIJR5bE_Ax19YgRkHNfDXphaRE"
+              class="w-full h-64"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Dr Roof Atlanta Location Map">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white" style="border-top:4px solid #2C3E50;">
+    <!-- CTA Strip -->
+    <div class="py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6" style="background-color:#8B2F1B;">
+      <h2 class="text-4xl md:text-5xl font-black uppercase text-white" style="font-family:'Oswald',sans-serif;">READY TO GET STARTED?</h2>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#contact" class="px-8 py-4 uppercase font-black tracking-widest text-white text-sm transition hover:opacity-90 text-center" style="background-color:#2C3E50; font-family:'Oswald',sans-serif;">GET A FREE QUOTE</a>
+        <a href="tel:7704508843" class="px-8 py-4 uppercase font-black tracking-widest text-white text-sm border-2 border-white hover:bg-white hover:text-black transition text-center" style="font-family:'Oswald',sans-serif;">CALL (770) 450-8843</a>
+      </div>
+    </div>
+
+    <!-- Main Footer -->
+    <div class="py-20 px-8 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8">
+      <!-- Col 1: Identity -->
+      <div class="col-span-2 md:col-span-1">
+        <p class="text-4xl font-black uppercase mb-1" style="color:#2C3E50; font-family:'Oswald',sans-serif;">DR ROOF</p>
+        <p class="text-4xl font-black uppercase mb-2" style="color:#8B2F1B; font-family:'Oswald',sans-serif;">ATLANTA</p>
+        <p class="uppercase text-xs tracking-widest text-gray-400 font-semibold mb-6">PROTECTING EVERY ROOF WE TOUCH</p>
+        <div class="space-y-4 mt-6">
+          <div class="flex items-start gap-3">
+            <i data-lucide="map-pin" class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:#2C3E50;"></i>
+            <p class="text-gray-400 text-xs uppercase tracking-wide">88 Mansell Ct<br>Roswell, GA 30076</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <i data-lucide="phone" class="w-4 h-4 flex-shrink-0" style="color:#2C3E50;"></i>
+            <a href="tel:7704508843" class="text-gray-400 text-xs uppercase tracking-wide hover:text-white transition">(770) 450-8843</a>
+          </div>
+          <div class="flex items-start gap-3">
+            <i data-lucide="clock" class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:#2C3E50;"></i>
+            <p class="text-gray-400 text-xs uppercase tracking-wide">Open 24 Hours<br>7 Days A Week</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <i data-lucide="star" class="w-4 h-4 flex-shrink-0" style="color:#C9A84C;"></i>
+            <p class="text-gray-400 text-xs uppercase tracking-wide">4.8 Stars &bull; 1,785 Reviews</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 2: Services -->
+      <div>
+        <h4 class="uppercase tracking-widest font-black text-sm pb-2 mb-4 border-b-2" style="color:#2C3E50; border-color:#2C3E50;">SERVICES</h4>
+        <ul class="space-y-2">
+          <li><a href="#services" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Roof Replacement</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">New Roof Installation</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Asphalt Shingles</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Metal Roofing</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Leak Repair</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Storm Restoration</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Gutter Repair</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Emergency Tarping</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Skylight Installation</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Ventilation Upgrades</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Roof Inspections</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Maintenance Plans</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Service Areas -->
+      <div>
+        <h4 class="uppercase tracking-widest font-black text-sm pb-2 mb-4 border-b-2" style="color:#2C3E50; border-color:#2C3E50;">SERVICE AREAS</h4>
+        <ul class="space-y-2">
+          <li><a href="#contact" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Roswell, GA</a></li>
+          <li><a href="#contact" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Alpharetta, GA</a></li>
+          <li><a href="#contact" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Johns Creek, GA</a></li>
+          <li><a href="#contact" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Sandy Springs, GA</a></li>
+          <li><a href="#contact" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Marietta, GA</a></li>
+          <li><a href="#contact" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Kennesaw, GA</a></li>
+          <li><a href="#contact" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Woodstock, GA</a></li>
+          <li><a href="#contact" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Dunwoody, GA</a></li>
+          <li><a href="#contact" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Cumming, GA</a></li>
+          <li><a href="#contact" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Canton, GA</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Company Nav -->
+      <div>
+        <h4 class="uppercase tracking-widest font-black text-sm pb-2 mb-4 border-b-2" style="color:#2C3E50; border-color:#2C3E50;">COMPANY</h4>
+        <ul class="space-y-2">
+          <li><a href="#home" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Home</a></li>
+          <li><a href="#about" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">About</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Services</a></li>
+          <li><a href="#gallery" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Gallery</a></li>
+          <li><a href="#reviews" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Reviews</a></li>
+          <li><a href="#faq" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">FAQ</a></li>
+          <li><a href="#contact" class="text-gray-400 hover:text-white text-xs uppercase font-semibold tracking-wide transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 5: Certifications / Trust -->
+      <div>
+        <h4 class="uppercase tracking-widest font-black text-sm pb-2 mb-4 border-b-2" style="color:#2C3E50; border-color:#2C3E50;">CERTIFICATIONS</h4>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-2 text-gray-400 text-xs uppercase font-semibold tracking-wide"><i data-lucide="check-circle" class="w-4 h-4 flex-shrink-0" style="color:#C9A84C;"></i>LICENSED GC</li>
+          <li class="flex items-center gap-2 text-gray-400 text-xs uppercase font-semibold tracking-wide"><i data-lucide="check-circle" class="w-4 h-4 flex-shrink-0" style="color:#C9A84C;"></i>FULLY INSURED</li>
+          <li class="flex items-center gap-2 text-gray-400 text-xs uppercase font-semibold tracking-wide"><i data-lucide="check-circle" class="w-4 h-4 flex-shrink-0" style="color:#C9A84C;"></i>BONDED</li>
+          <li class="flex items-center gap-2 text-gray-400 text-xs uppercase font-semibold tracking-wide"><i data-lucide="check-circle" class="w-4 h-4 flex-shrink-0" style="color:#C9A84C;"></i>GEORGIA LICENSED</li>
+          <li class="flex items-center gap-2 text-gray-400 text-xs uppercase font-semibold tracking-wide"><i data-lucide="check-circle" class="w-4 h-4 flex-shrink-0" style="color:#C9A84C;"></i>4.8 GOOGLE RATING</li>
+          <li class="flex items-center gap-2 text-gray-400 text-xs uppercase font-semibold tracking-wide"><i data-lucide="check-circle" class="w-4 h-4 flex-shrink-0" style="color:#C9A84C;"></i>1,785 REVIEWS</li>
+          <li class="flex items-center gap-2 text-gray-400 text-xs uppercase font-semibold tracking-wide"><i data-lucide="check-circle" class="w-4 h-4 flex-shrink-0" style="color:#C9A84C;"></i>24/7 AVAILABILITY</li>
+          <li class="flex items-center gap-2 text-gray-400 text-xs uppercase font-semibold tracking-wide"><i data-lucide="check-circle" class="w-4 h-4 flex-shrink-0" style="color:#C9A84C;"></i>STORM SPECIALISTS</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="py-6 px-8 border-t-2 flex flex-col md:flex-row justify-between items-center gap-4" style="background:#0a0a0a; border-color:#2C3E50;">
+      <p class="text-xs uppercase tracking-widest text-gray-500">&copy; 2025 DR ROOF ATLANTA. ALL RIGHTS RESERVED. ROSWELL, GA.</p>
+      <div class="flex gap-6">
+        <a href="#home" class="text-xs uppercase tracking-widest text-gray-500 hover:text-white transition font-semibold">HOME</a>
+        <a href="#about" class="text-xs uppercase tracking-widest text-gray-500 hover:text-white transition font-semibold">ABOUT</a>
+        <a href="#services" class="text-xs uppercase tracking-widest text-gray-500 hover:text-white transition font-semibold">SERVICES</a>
+        <a href="#reviews" class="text-xs uppercase tracking-widest text-gray-500 hover:text-white transition font-semibold">REVIEWS</a>
+        <a href="#contact" class="text-xs uppercase tracking-widest text-gray-500 hover:text-white transition font-semibold">CONTACT</a>
+      </div>
+    </div>
+  </footer>
+
+<script>
+// Nav scroll shadow
+(function(){
+  const nav = document.querySelector('nav');
+  if (!nav) return;
+  window.addEventListener('scroll', () => nav.classList.toggle('shadow-md', window.scrollY > 50));
+})();
+
+// Hamburger
+(function(){
+  const ham = document.getElementById('hamburger');
+  const menu = document.getElementById('mobile-menu');
+  if (ham && menu) ham.addEventListener('click', () => menu.classList.toggle('hidden'));
+  document.querySelectorAll('.mobile-nav-link').forEach(a => {
+    a.addEventListener('click', () => { if (menu) menu.classList.add('hidden'); });
+  });
+})();
+
+// TABS
+(function(){
+  const buttons = Array.from(document.querySelectorAll('.tab-btn'));
+  const panels = Array.from(document.querySelectorAll('.tab-panel'));
+  if (!buttons.length || !panels.length) return;
+  function showByIndex(idx) {
+    panels.forEach(p => p.classList.add('hidden'));
+    buttons.forEach(b => { b.classList.remove('active-tab'); b.classList.add('inactive-tab'); });
+    if (panels[idx]) panels[idx].classList.remove('hidden');
+    if (buttons[idx]) { buttons[idx].classList.add('active-tab'); buttons[idx].classList.remove('inactive-tab'); }
+  }
+  function showById(id) { const i = panels.findIndex(p => p.id === id); if (i >= 0) showByIndex(i); }
+  buttons.forEach((btn, idx) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const t = btn.getAttribute('data-target');
+      if (t) showById(t); else showByIndex(idx);
+    });
+  });
+  window.showTab = function(id){ showById(id); };
+  if (!panels.some(p => !p.classList.contains('hidden'))) showByIndex(0);
+})();
+
+// Counters
+function animateCount(el, target, suffix) {
+  let start = 0;
+  const duration = 2000, steps = 60, inc = target / steps;
+  const t = setInterval(() => {
+    start += inc;
+    if (start >= target) { el.textContent = target + (suffix || ''); clearInterval(t); }
+    else el.textContent = Math.floor(start) + (suffix || '');
+  }, duration / steps);
+}
+const statObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const t = parseInt(e.target.dataset.count);
+      const s = e.target.dataset.suffix || '';
+      if (t) animateCount(e.target, t, s);
+      statObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('[data-count]').forEach(el => statObs.observe(el));
+
+// Section reveal
+(function(){
+  const sections = document.querySelectorAll('.animate-section');
+  if (!sections.length) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('is-pending');
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  sections.forEach(el => {
+    const r = el.getBoundingClientRect();
+    const inView = r.top < window.innerHeight && r.bottom > 0;
+    if (inView) el.classList.add('is-visible');
+    else { el.classList.add('is-pending'); obs.observe(el); }
+  });
+  setTimeout(() => {
+    document.querySelectorAll('.animate-section.is-pending').forEach(el => {
+      el.classList.remove('is-pending'); el.classList.add('is-visible');
+    });
+  }, 2500);
+})();
+
+// Hash-click reveal
+(function(){
+  function revealTarget() {
+    const hash = window.location.hash;
+    if (!hash || hash.length < 2) return;
+    try {
+      const target = document.querySelector(hash);
+      if (target && target.classList.contains('animate-section')) {
+        target.classList.remove('is-pending');
+        target.classList.add('is-visible');
+      }
+    } catch(e) {}
+  }
+  window.addEventListener('hashchange', revealTarget);
+  setTimeout(revealTarget, 100);
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', () => {
+      const hash = a.getAttribute('href');
+      if (hash && hash.length > 1) {
+        try {
+          const target = document.querySelector(hash);
+          if (target && target.classList.contains('animate-section')) {
+            target.classList.remove('is-pending');
+            target.classList.add('is-visible');
+          }
+        } catch(e) {}
+      }
+    });
+  });
+})();
+
+// Live clock
+function updateClock() {
+  const el = document.getElementById('live-clock');
+  if (el) el.textContent = 'Roswell - ' + new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+}
+updateClock();
+setInterval(updateClock, 1000);
+
+// Lucide
+(function(){
+  const render = () => { if (window.lucide) window.lucide.createIcons(); };
+  if (window.lucide) render();
+  else document.addEventListener('DOMContentLoaded', render);
+  setTimeout(render, 500);
+  setTimeout(render, 1500);
+})();
+</script>
+</body>
+</html>

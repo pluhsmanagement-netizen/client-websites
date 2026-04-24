@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cunningham Associates | Construction | Atlanta, GA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html, body { overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Sans Pro', sans-serif; }
+    h1,h2,h3,h4,h5,h6,.heading { font-family: 'Oswald', sans-serif; }
+    .serif-display { font-family: 'Playfair Display', serif; }
+    .ticker-track { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { display: flex; animation: marquee 40s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    .tab-btn { cursor: pointer; transition: all 0.2s ease; }
+    .tab-btn.active-tab { background-color: #2C3E50; color: white; }
+    .tab-btn.inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
+    .tab-panel { display: block; }
+    .tab-panel.hidden { display: none !important; }
+    .img-hover-wrap { overflow: hidden; }
+    .img-hover-wrap img { transition: transform 0.7s ease; }
+    .img-hover-wrap:hover img { transform: scale(1.05); }
+    .arrow-cta { border-bottom: 2px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s ease; }
+    .arrow-cta:hover { gap: 14px; }
+    .dotted-leader { flex: 1; border-bottom: 1px dotted currentColor; margin: 0 1rem; opacity: 0.3; align-self: end; padding-bottom: 0.5rem; }
+    section { scroll-margin-top: 96px; }
+    .animate-section { opacity: 1; transform: none; transition: opacity 0.6s ease, transform 0.6s ease; }
+    .animate-section.is-pending { opacity: 0; transform: translateY(24px); }
+    .animate-section.is-visible { opacity: 1; transform: none; }
+    .animate-section:target,
+    .animate-section.is-pending:target { opacity: 1 !important; transform: none !important; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-16 md:h-20">
+    <a href="#home" class="text-2xl font-bold tracking-widest text-[#2C3E50]" style="font-family:'Oswald',sans-serif;">CUNNINGHAM<span class="text-[#E67E22]">.</span></a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#home" class="text-sm font-semibold tracking-wide text-gray-700 hover:text-[#E67E22] transition-colors uppercase">Home</a>
+      <a href="#about" class="text-sm font-semibold tracking-wide text-gray-700 hover:text-[#E67E22] transition-colors uppercase">About</a>
+      <a href="#services" class="text-sm font-semibold tracking-wide text-gray-700 hover:text-[#E67E22] transition-colors uppercase">Services</a>
+      <a href="#gallery" class="text-sm font-semibold tracking-wide text-gray-700 hover:text-[#E67E22] transition-colors uppercase">Gallery</a>
+      <a href="#reviews" class="text-sm font-semibold tracking-wide text-gray-700 hover:text-[#E67E22] transition-colors uppercase">Reviews</a>
+      <a href="#faq" class="text-sm font-semibold tracking-wide text-gray-700 hover:text-[#E67E22] transition-colors uppercase">FAQ</a>
+      <a href="#contact" class="bg-[#E67E22] text-white text-sm font-bold tracking-wide px-6 py-2 rounded-full hover:bg-[#d4701e] transition-colors uppercase">Contact</a>
+    </div>
+    <button id="hamburger" class="md:hidden p-2 text-[#2C3E50]">
+      <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+    <a href="#home" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold uppercase text-gray-700 hover:text-[#E67E22]">Home</a>
+    <a href="#about" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold uppercase text-gray-700 hover:text-[#E67E22]">About</a>
+    <a href="#services" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold uppercase text-gray-700 hover:text-[#E67E22]">Services</a>
+    <a href="#gallery" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold uppercase text-gray-700 hover:text-[#E67E22]">Gallery</a>
+    <a href="#reviews" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold uppercase text-gray-700 hover:text-[#E67E22]">Reviews</a>
+    <a href="#faq" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold uppercase text-gray-700 hover:text-[#E67E22]">FAQ</a>
+    <a href="#contact" class="mobile-nav-link block py-3 px-4 text-sm font-semibold uppercase text-[#E67E22] font-bold">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="relative h-screen w-full flex items-end">
+  <div class="absolute inset-0 z-0">
+    <img
+      src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGOVd0uMOC88H7XszYdn-eIM-9bRAPhhytLBplAe2Ozopk1caaGzQ4fi1Ev4j7D_iGSZmt-2BFgUYX7bPFW7cC9y6AMmgK0jo9qoWR3iKUGff6lrH7iU_e4cWndNX1aa7xPPpHOBqEDckb3kyQIdsTBAn5XEgHZKOlt7u_4pPDsKgJGnXFCUtt1R3GET4u4WgtWOw-zEgkQfiN5X7beYXQIl6zL62c3vKHxEwO0q-L6TWGbB1lKwIqdTNl6qYC9dtVQnM5ANl72ZlswPl6_hxH_N0Y_CGWLvKh2jV7dxAoLXQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+      alt="Cunningham Associates Construction Atlanta"
+      class="w-full h-full object-cover"
+      onerror="this.src='https://picsum.photos/seed/construction-1/1600/900'"
+    >
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+  </div>
+  <div class="relative z-10 px-8 md:px-16 pb-20 md:pb-28 max-w-4xl">
+    <p class="text-[#E67E22] text-xs tracking-widest uppercase font-semibold mb-4">Atlanta, Georgia · Licensed &amp; Insured</p>
+    <h1 class="text-6xl md:text-7xl font-bold text-white leading-none mb-6" style="font-family:'Oswald',sans-serif;">Building Atlanta<br><span class="text-[#E67E22]">One Project</span><br>At a Time.</h1>
+    <p class="text-gray-200 text-lg md:text-xl max-w-xl mb-8 font-light">Full-service construction and remodeling for Atlanta homeowners and businesses. Quality craftsmanship, delivered on time.</p>
+    <div class="flex flex-wrap gap-4">
+      <a href="#gallery" class="bg-[#E67E22] text-white font-bold uppercase tracking-wider px-8 py-4 rounded-full hover:bg-[#d4701e] transition-colors text-sm">View Our Work</a>
+      <a href="tel:7703437565" class="border-2 border-white text-white font-bold uppercase tracking-wider px-8 py-4 rounded-full hover:bg-white hover:text-[#2C3E50] transition-colors text-sm">(770) 343-7565</a>
+    </div>
+  </div>
+  <div class="absolute bottom-6 right-8 z-10">
+    <span id="live-clock" class="text-white/60 text-xs tracking-widest font-mono"></span>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="animate-section bg-white py-12 px-4 md:px-8 lg:px-16 shadow-sm">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="bg-gray-50 rounded-lg p-6 flex flex-col items-center text-center">
+      <i data-lucide="star" class="w-7 h-7 text-[#E67E22] mb-3"></i>
+      <span class="text-3xl font-bold text-[#2C3E50]" data-count="4" data-suffix=".8★">4.8★</span>
+      <span class="text-xs text-gray-500 mt-1 uppercase tracking-wide">Google Rating</span>
+    </div>
+    <div class="bg-gray-50 rounded-lg p-6 flex flex-col items-center text-center">
+      <i data-lucide="award" class="w-7 h-7 text-[#E67E22] mb-3"></i>
+      <span class="text-3xl font-bold text-[#2C3E50]" data-count="1143" data-suffix="">0</span>
+      <span class="text-xs text-gray-500 mt-1 uppercase tracking-wide">Verified Reviews</span>
+    </div>
+    <div class="bg-gray-50 rounded-lg p-6 flex flex-col items-center text-center">
+      <i data-lucide="clock" class="w-7 h-7 text-[#E67E22] mb-3"></i>
+      <span class="text-3xl font-bold text-[#2C3E50]">24/7</span>
+      <span class="text-xs text-gray-500 mt-1 uppercase tracking-wide">Available</span>
+    </div>
+    <div class="bg-gray-50 rounded-lg p-6 flex flex-col items-center text-center">
+      <i data-lucide="map-pin" class="w-7 h-7 text-[#E67E22] mb-3"></i>
+      <span class="text-3xl font-bold text-[#2C3E50]" data-count="10" data-suffix="+">0+</span>
+      <span class="text-xs text-gray-500 mt-1 uppercase tracking-wide">Areas Served</span>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="animate-section py-24 px-4 md:px-8 lg:px-16">
+  <div class="max-w-7xl mx-auto">
+    <p class="text-[#E67E22] text-xs tracking-widest uppercase font-semibold mb-2">Our Portfolio</p>
+    <h2 class="text-4xl md:text-5xl font-bold text-[#2C3E50] mb-12">Work We're Proud Of</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <!-- Featured large -->
+      <div class="md:col-span-2 img-hover-wrap rounded-xl overflow-hidden h-[500px]">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGOVd0uMOC88H7XszYdn-eIM-9bRAPhhytLBplAe2Ozopk1caaGzQ4fi1Ev4j7D_iGSZmt-2BFgUYX7bPFW7cC9y6AMmgK0jo9qoWR3iKUGff6lrH7iU_e4cWndNX1aa7xPPpHOBqEDckb3kyQIdsTBAn5XEgHZKOlt7u_4pPDsKgJGnXFCUtt1R3GET4u4WgtWOw-zEgkQfiN5X7beYXQIl6zL62c3vKHxEwO0q-L6TWGbB1lKwIqdTNl6qYC9dtVQnM5ANl72ZlswPl6_hxH_N0Y_CGWLvKh2jV7dxAoLXQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Construction project Atlanta"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/construction-2/800/600'"
+        >
+      </div>
+      <div class="img-hover-wrap rounded-xl overflow-hidden h-[500px]">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEH00fvYeIeMkhUtyvSijci_8061TtZmQTzZIy_mmuEcDelCOpmWLGZqyEG7K-tk5ijOnj0hXfas5fsiwZQG5NyXhFnqd5x7xgi7P_VbPdpLi7MwReP5LEG8lUsGsKIdzJci4CieXhkFvLrrZ2dSK_v3fYhazlfEsk3hX-BCrbEZOvNJG71Hw109QYbV1LgDv7UTPJKE8VMgNRA_KIiWPEmfX4lr5DPUxoZlB3T6Dblrl5wKGzgPz7tlG18cBGaJ9ee_oOEHh-6COCFrW4AfeLl0ysBv8TCC30jxvZfSLSGRdQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Atlanta construction work"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/construction-3/800/600'"
+        >
+      </div>
+      <!-- Row 2 -->
+      <div class="img-hover-wrap rounded-xl overflow-hidden h-64">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHwC9zuxe2vXc_DW8oc8WoX5wGQpWrm9cif-JJYbTbdkRCaI878j17mnTMwH_UpUT655hw099hlvPQ-u7Q6UD0qXKZsWRdzCggn5-ertkTP91OgDMb5nqVZ5rQPRc2G0Q8QarN9Og2kI1jY1duluT5oanJVpy07XAaMrsI2phGGRNB_Lcg5xKGSP9GoTUWFajfQsLY_qnskjR1OcxiNsfUO5nhnpv_CU4vUWXkiPfIEwGN7HzpvPuYEPhqc3ZqBFYkNspWmRPukP73IT6pJ6xhobFA1nKBXDGUHghii4UxZ42Pd6ZpnaxNjNKCwC7yYP04JutoOEhMbyAhcSPJkKKBa7qH0zMEyLQPj3ybCsjW1ot5KoAda4v-d4-PtbGLVc4UAlULwNLxYh7yypq16oWcj9JE8wntrbBPDmd4KZNQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Remodeling Atlanta GA"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/construction-4/800/600'"
+        >
+      </div>
+      <div class="img-hover-wrap rounded-xl overflow-hidden h-64">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEG7niq3TFgyri-SXY-v3OuLeD1nMfaMDkbwNsZXjz5oIwpeq9-0cMiaB06aHGCMAsTIWElLpBNDjGW419jjZ0Lc85vPhTm0Y-snexbIfSQpN1qVyiJUIrLZWHyPK5W0YZpthEC-tBdKv-nJLP_xZn-o9CgeRh56ngo0AcMdzt5CYOD3p5mKTLre5uBEZYjkTyn-ZQDMR4v4H8k75NYUMQ4ZWwqkcOSbt5RcCUzs00RL-VqSb7FQr5LV0_IuQq9y4SK6shkAV0ZHYXvZ-rfW9kFIvlt9NUpp4NZ0aPAnn9C_7g&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Commercial build-out Atlanta"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/construction-5/800/600'"
+        >
+      </div>
+      <div class="img-hover-wrap rounded-xl overflow-hidden h-64">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGZd0wDPEDbB8KPyo56o1tmHiVdlHWmh-GajpxY3nIl0dTmwe4dbcQeX-3-1f7-yl3EjU1h1F5UbrY6ZVN-53jWnMUonmDTeMtLyOLHqoal3okVt_g3pMTbZ9qzEdW37ElOdNpAbFf_Rp7_PWVahq7p-C55jtnv9CqVIZ_oLs2EJcHeyqEm-_QrpoQ24Y8tUUXdPLer6YIx_L-v7FZYcfUoLawAYLMwamqxSt6CN22iPtoXHvD2rSQNYYEmo8t38SKanebZU4s5u5785PgcVs8x0tat-jzr303LhZqNrzMA5A&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Structural work Atlanta"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/construction-6/800/600'"
+        >
+      </div>
+      <!-- Row 3 -->
+      <div class="md:col-span-2 img-hover-wrap rounded-xl overflow-hidden h-72">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEEq89VXeZYezW0buHj4nBzO6YSsmr1s52XARq3FcUYYhZWgmVdtrhWLF8zNQK3z4T409hSfo9-phFMx_D_F7b6tERUcafhuLMIwBqm30G4OjQFWrdhKD8CL7VNGHuctQ8OiAMymbNJPHpStG6e9FRKptlK9FAoQWqaiNHeUopuwoM8D_7p04i1SyEnld2EbUs-EJK3hURCtqI9oiSiBjLoLMcruk0xyE44fG7dbthYSTdJPF4HzCx8ky9J4yZfCzJncwmIFsZxkX7rmdP30ZSUfc0AysLoMxmsVn7f2gLmPrcbYn80i_yXudRu0uMp1ot6NnvCKJewyhjs3Fj3KxUh6i7_lfLWgNdJJQn-GCX2FiyoExTS4VXTs3Jh22vnFJaSLdM4scJfBgl4ZVXlR1Vi_5_FDCB_u6uBD-QVwmZbhKGzJhaWUiD0ikwcKjvci&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Kitchen renovation Atlanta"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/construction-7/800/600'"
+        >
+      </div>
+      <div class="img-hover-wrap rounded-xl overflow-hidden h-72">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGv7Mr7EGX5DUrRSFb0mPRkUwySH8QPNru_C4sohWUSUKyqiFb0CeuVJq7mTRjBoe9bWExbv5QKMNQe0Ysvz6ZPgcb03ZqMvCNM5sd5xlArU-zfGRhAYK1vEpr1luOgYtB6htK9pNDnNHXSfX1gYVMb2uAo31QNt1o_e42Xz56Ep2dVqiBtGujRbxvpOHbL1cjf-urFJKkQq8E1Nfp-o5y_kMFkGpW5ey4rhUr4taSaOMOoTrjaRspH8wFesAUrqY1lp0GvnZH-Ed-x2UqhmVoen--MTvkwPu5I2t3v2mqgDe5wIZTpOeEYrVjaBUfOv2QooLpfUqfQqHCwWVQrSeAXrgcLMHyCu2dWMVRA8S544GMzxpxOqm6Fno8A71AAxjSR3z8UuGYMRUE9z7koYDJcr-06C8Nc0YYTUJ_JSQcj3HRpH5aUngxBlqRKVw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Bathroom renovation Atlanta"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/construction-8/800/600'"
+        >
+      </div>
+      <!-- Row 4 -->
+      <div class="img-hover-wrap rounded-xl overflow-hidden h-64">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEE1Is_PvYMELLsRSXp41gBrKiNVjKgNva3wm4hqiU64EYrXy4F4UK9Zc-u8GAo_wopkpLvDB9sFHy7IGmo8a_tK2grQ6SZivBG6KDbBSIh0lCXv27VcfW4ySX6-ZRDJyxXWLFWX0zYHqVEgLDo8gz3BXWJBtP1Xbi_udzjmjzw0lBwpmSluFdoUmGHc690g_2lj2NmRvKZMGCScwCi3dS7T4VdV5FeOaKH9rN5BLr5BatyRs59BhewDgbYpbg25W0JdwcPToZJjuYuWS1ef59rEbpkl61T_FGe5T0uTBgKdYo-qG6GrrAod1nmN24--ZEx7P98OQJEqInwFglm1gRXJbIFB1ii0QxV-mN1PoTi3KjZtFh9dAOdR6tREG4jTaALqovOKMA9Ts_Z0urVk_SYXQiuv-R_2Dmm52PZtEfDD6lBwmPtp5bSWw7gdRw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Custom carpentry Atlanta"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/construction-9/800/600'"
+        >
+      </div>
+      <div class="img-hover-wrap rounded-xl overflow-hidden h-64">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHGDPSwnHV-K9nd2P2WOb3c6bW3O5hK8S_Jz2BwwGRcNjBZAr-kNKXMlbynhtkQFJq-bKnjFGiOvxHNc1YjerrqeXQS6bDlGr0Z8kJDHOGg6Nohi6nTO12Kjjl_F1-4O6n8ZCcGs6lzRF6ruWO2p9-y_WmDzNCPTfT1ZWbIOf1lC_j44akvJ5z9GMR3kQNNZlwxuHtTZBuiGO5u1dalOxfgogFCNwhVTJIUi_GURQNHIUHrPIZpUWRMs7tXzDUO61iUqIUSlahv-9Fmv6jS8p-wq2_ZHpCf6_ynMWmfnec3Ow&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Design-build project Atlanta"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/construction-10/800/600'"
+        >
+      </div>
+      <div class="img-hover-wrap rounded-xl overflow-hidden h-64">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHC5qljLhA-N4vfB4a5CiNlKzHYR3EkwtWarEkafgli893D8r8lNCDvb5-HG1f53QTSiAMiPYb3IZEEd6ocLzFgdNEZm4dKrhfb34A68B9kqCOa7aHmhhpGku3JGTrwpbeVUjLfgMXh7KSN26ADVfWJTD0rsJNZ4OxW92-FvDmsURav4a2ceFsPHkLgvFp5bUQrTNA6IwqF11iRy1nqhopa12dBDx3tB3I588dRrnmL0QDSoIYTabpeRqHRz3CHVvOe69kOInDNR0QWjNf-2FOa5O0WJVerUI0lusDUfc-4Gg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Historic restoration Atlanta GA"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/construction-11/800/600'"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="animate-section py-16 md:py-20 px-4 md:px-8 lg:px-16 bg-white">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="text-[#E67E22] text-xs tracking-widest uppercase font-semibold mb-3">About Us</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-[#2C3E50] mb-6">Atlanta's Trusted Construction Partner</h2>
+      <p class="text-gray-600 text-lg leading-relaxed mb-4 max-w-2xl">Cunningham Associates is a full-service construction company serving Atlanta, GA and the surrounding metro area with comprehensive building, renovation, and specialty project services. Our dedicated team brings expertise, integrity, and craftsmanship to every project — from large commercial build-outs to residential kitchen remodels.</p>
+      <p class="text-gray-600 text-lg leading-relaxed max-w-2xl">We operate 24 hours a day, 7 days a week, ensuring that our clients in Atlanta have access to the responsive service they deserve whenever they need it most.</p>
+      <div class="flex flex-wrap gap-8 mt-10">
+        <div class="flex flex-col">
+          <span class="text-4xl font-bold text-[#E67E22]">4.8★</span>
+          <span class="text-sm text-gray-500 uppercase tracking-wide mt-1">Google Rating</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-4xl font-bold text-[#E67E22]">1,143</span>
+          <span class="text-sm text-gray-500 uppercase tracking-wide mt-1">Verified Reviews</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-4xl font-bold text-[#E67E22]">24/7</span>
+          <span class="text-sm text-gray-500 uppercase tracking-wide mt-1">Availability</span>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-3 mt-8">
+        <span class="flex items-center gap-2 bg-gray-100 rounded-full px-4 py-2 text-sm text-gray-700 font-semibold"><i data-lucide="shield-check" class="w-4 h-4 text-[#E67E22]"></i> Licensed &amp; Insured</span>
+        <span class="flex items-center gap-2 bg-gray-100 rounded-full px-4 py-2 text-sm text-gray-700 font-semibold"><i data-lucide="check-circle" class="w-4 h-4 text-[#E67E22]"></i> Licensed GC</span>
+      </div>
+    </div>
+    <div class="img-hover-wrap rounded-2xl overflow-hidden h-96 lg:h-[480px]">
+      <img
+        src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEH00fvYeIeMkhUtyvSijci_8061TtZmQTzZIy_mmuEcDelCOpmWLGZqyEG7K-tk5ijOnj0hXfas5fsiwZQG5NyXhFnqd5x7xgi7P_VbPdpLi7MwReP5LEG8lUsGsKIdzJci4CieXhkFvLrrZ2dSK_v3fYhazlfEsk3hX-BCrbEZOvNJG71Hw109QYbV1LgDv7UTPJKE8VMgNRA_KIiWPEmfX4lr5DPUxoZlB3T6Dblrl5wKGzgPz7tlG18cBGaJ9ee_oOEHh-6COCFrW4AfeLl0ysBv8TCC30jxvZfSLSGRdQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+        alt="Cunningham Associates team Atlanta"
+        class="w-full h-full object-cover"
+        loading="lazy"
+        onerror="this.src='https://picsum.photos/seed/construction-12/800/600'"
+      >
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-8">
+      <p class="text-[#E67E22] text-xs tracking-widest uppercase font-semibold mb-2">What We Do</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-[#2C3E50]">Our Services</h2>
+    </div>
+    <div class="flex flex-wrap gap-2 md:flex-nowrap mb-8 tabs-container">
+      <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-1">Construction</button>
+      <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-2">Remodeling</button>
+      <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-3">Specialty Projects</button>
+    </div>
+    <div id="tab-panel-1" class="tab-panel">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- General Contracting -->
+        <div class="bg-white rounded-xl shadow-sm p-8 flex flex-col gap-4 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background-color:#fef3e8;">
+            <i data-lucide="hard-hat" class="w-6 h-6 text-[#E67E22]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#2C3E50]">General Contracting</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">We manage every phase of your construction project from planning to final walkthrough. Our Atlanta team coordinates all trades and subcontractors to keep your project on schedule and on budget.</p>
+          <a href="tel:7703437565" class="arrow-cta text-[#E67E22] text-sm font-semibold mt-auto w-fit">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <!-- New Construction -->
+        <div class="bg-white rounded-xl shadow-sm p-8 flex flex-col gap-4 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background-color:#fef3e8;">
+            <i data-lucide="building-2" class="w-6 h-6 text-[#E67E22]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#2C3E50]">New Construction</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">From ground-up residential homes to commercial facilities, Cunningham Associates brings precision and craftsmanship to every new build in Atlanta, GA. We handle permitting, site prep, and complete construction.</p>
+          <a href="tel:7703437565" class="arrow-cta text-[#E67E22] text-sm font-semibold mt-auto w-fit">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <!-- Commercial Build-Outs -->
+        <div class="bg-white rounded-xl shadow-sm p-8 flex flex-col gap-4 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background-color:#fef3e8;">
+            <i data-lucide="construction" class="w-6 h-6 text-[#E67E22]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#2C3E50]">Commercial Build-Outs</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Transform raw commercial space into a fully functioning business environment with our expert build-out services. We specialize in retail, office, and restaurant fit-outs across the Atlanta metro area.</p>
+          <a href="tel:7703437565" class="arrow-cta text-[#E67E22] text-sm font-semibold mt-auto w-fit">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <!-- Structural Work -->
+        <div class="bg-white rounded-xl shadow-sm p-8 flex flex-col gap-4 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background-color:#fef3e8;">
+            <i data-lucide="hammer" class="w-6 h-6 text-[#E67E22]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#2C3E50]">Structural Work</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Our structural work services cover foundations, load-bearing modifications, and reinforcement for residential and commercial properties. We ensure every structural project meets Atlanta building codes.</p>
+          <a href="tel:7703437565" class="arrow-cta text-[#E67E22] text-sm font-semibold mt-auto w-fit">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </div>
+    <div id="tab-panel-2" class="tab-panel hidden">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Home Remodeling -->
+        <div class="bg-white rounded-xl shadow-sm p-8 flex flex-col gap-4 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background-color:#fef3e8;">
+            <i data-lucide="hard-hat" class="w-6 h-6 text-[#E67E22]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#2C3E50]">Home Remodeling</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Give your Atlanta home a fresh look and improved functionality with our full-service home remodeling. We handle everything from whole-home renovations to targeted room upgrades with quality finishes.</p>
+          <a href="tel:7703437565" class="arrow-cta text-[#E67E22] text-sm font-semibold mt-auto w-fit">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <!-- Kitchen Renovation -->
+        <div class="bg-white rounded-xl shadow-sm p-8 flex flex-col gap-4 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background-color:#fef3e8;">
+            <i data-lucide="wrench" class="w-6 h-6 text-[#E67E22]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#2C3E50]">Kitchen Renovation</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Modernize your kitchen with new cabinetry, countertops, flooring, and layout changes crafted by our expert team. We work with Atlanta homeowners to design spaces that are both beautiful and highly functional.</p>
+          <a href="tel:7703437565" class="arrow-cta text-[#E67E22] text-sm font-semibold mt-auto w-fit">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <!-- Bathroom Renovation -->
+        <div class="bg-white rounded-xl shadow-sm p-8 flex flex-col gap-4 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background-color:#fef3e8;">
+            <i data-lucide="ruler" class="w-6 h-6 text-[#E67E22]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#2C3E50]">Bathroom Renovation</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Upgrade your bathroom into a relaxing retreat or efficient space with tile, fixtures, vanities, and custom features. Cunningham Associates handles bathroom renovations of all sizes throughout Atlanta, GA.</p>
+          <a href="tel:7703437565" class="arrow-cta text-[#E67E22] text-sm font-semibold mt-auto w-fit">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <!-- Basement Finishing -->
+        <div class="bg-white rounded-xl shadow-sm p-8 flex flex-col gap-4 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background-color:#fef3e8;">
+            <i data-lucide="building-2" class="w-6 h-6 text-[#E67E22]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#2C3E50]">Basement Finishing</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Turn your unfinished basement into usable living space, a home office, gym, or entertainment room. Our team handles framing, insulation, drywall, flooring, and all finishing touches.</p>
+          <a href="tel:7703437565" class="arrow-cta text-[#E67E22] text-sm font-semibold mt-auto w-fit">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </div>
+    <div id="tab-panel-3" class="tab-panel hidden">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Custom Carpentry -->
+        <div class="bg-white rounded-xl shadow-sm p-8 flex flex-col gap-4 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background-color:#fef3e8;">
+            <i data-lucide="hammer" class="w-6 h-6 text-[#E67E22]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#2C3E50]">Custom Carpentry</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Bespoke woodwork including built-ins, trim, shelving, and decorative millwork crafted to fit your space perfectly. Our Atlanta carpenters bring artisan-level skill to every custom project.</p>
+          <a href="tel:7703437565" class="arrow-cta text-[#E67E22] text-sm font-semibold mt-auto w-fit">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <!-- Design-Build -->
+        <div class="bg-white rounded-xl shadow-sm p-8 flex flex-col gap-4 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background-color:#fef3e8;">
+            <i data-lucide="ruler" class="w-6 h-6 text-[#E67E22]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#2C3E50]">Design-Build</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Streamline your project with our integrated design-build approach, where design and construction are managed under one roof. This ensures clear communication, faster timelines, and better outcomes for Atlanta clients.</p>
+          <a href="tel:7703437565" class="arrow-cta text-[#E67E22] text-sm font-semibold mt-auto w-fit">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <!-- Historic Restoration -->
+        <div class="bg-white rounded-xl shadow-sm p-8 flex flex-col gap-4 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background-color:#fef3e8;">
+            <i data-lucide="building-2" class="w-6 h-6 text-[#E67E22]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#2C3E50]">Historic Restoration</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Preserve and restore the character of Atlanta's historic buildings with our sensitive restoration services. We combine traditional craftsmanship with modern techniques to protect architectural heritage.</p>
+          <a href="tel:7703437565" class="arrow-cta text-[#E67E22] text-sm font-semibold mt-auto w-fit">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <!-- Tenant Improvements -->
+        <div class="bg-white rounded-xl shadow-sm p-8 flex flex-col gap-4 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background-color:#fef3e8;">
+            <i data-lucide="construction" class="w-6 h-6 text-[#E67E22]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#2C3E50]">Tenant Improvements</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">We customize leased commercial spaces to meet your specific business needs, from wall reconfigurations to full interior renovations. Cunningham Associates delivers tenant improvements on time for Atlanta businesses.</p>
+          <a href="tel:7703437565" class="arrow-cta text-[#E67E22] text-sm font-semibold mt-auto w-fit">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <p class="text-[#E67E22] text-xs tracking-widest uppercase font-semibold mb-2">Client Reviews</p>
+    <h2 class="text-4xl md:text-5xl font-bold text-[#2C3E50] mb-4">What Atlanta Says</h2>
+    <p class="text-gray-500 mb-12">4.8 stars · 1,143 reviews on Google</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Review 1 -->
+      <div class="bg-gray-50 rounded-xl p-8 flex flex-col gap-4 border border-gray-100">
+        <div class="flex items-center gap-1">
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+        </div>
+        <p class="text-gray-700 text-sm leading-relaxed italic">"Danielle from Cunningham Associates was absolutely wonderful to work with. Today we had to purchase a new HVAC system and she made what could have been a stressful process feel easy and manageable. She truly listened to what we wanted and what we could afford and helped us find the best solution that fit our needs. She went above and beyond every step of the way and was patient, knowledgeable, and kind throughout the entire process. It was a pleasure working with her!"</p>
+        <div class="flex items-center gap-3 mt-auto">
+          <div class="w-10 h-10 rounded-full bg-[#2C3E50] text-white flex items-center justify-center font-bold text-sm">TS</div>
+          <div>
+            <p class="font-semibold text-[#2C3E50] text-sm">Terrica Smith</p>
+            <p class="text-gray-400 text-xs">3 months ago</p>
+          </div>
+          <span class="ml-auto text-xs bg-blue-50 text-blue-600 border border-blue-100 rounded-full px-3 py-1 font-semibold">via Google</span>
+        </div>
+      </div>
+      <!-- Review 2 -->
+      <div class="bg-gray-50 rounded-xl p-8 flex flex-col gap-4 border border-gray-100">
+        <div class="flex items-center gap-1">
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+        </div>
+        <p class="text-gray-700 text-sm leading-relaxed italic">"Matt came to my home to service my BritaPro water filtration system. He was punctual and very professional, and very patient with my two kittens. He kindly gave me suggestions for things I can do until the next servicing is needed. He was very pleasant and I would not hesitate to call Cunningham Associates and ask for Matt in the future."</p>
+        <div class="flex items-center gap-3 mt-auto">
+          <div class="w-10 h-10 rounded-full bg-[#2C3E50] text-white flex items-center justify-center font-bold text-sm">BK</div>
+          <div>
+            <p class="font-semibold text-[#2C3E50] text-sm">Barbara Kulik</p>
+            <p class="text-gray-400 text-xs">4 months ago</p>
+          </div>
+          <span class="ml-auto text-xs bg-blue-50 text-blue-600 border border-blue-100 rounded-full px-3 py-1 font-semibold">via Google</span>
+        </div>
+      </div>
+      <!-- Review 3 -->
+      <div class="bg-gray-50 rounded-xl p-8 flex flex-col gap-4 border border-gray-100">
+        <div class="flex items-center gap-1">
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+        </div>
+        <p class="text-gray-700 text-sm leading-relaxed italic">"Sam and Ryan came to our condominium to install a new HVAC system. The condenser that needed to be installed was too large. Sam worked diligently to find a product that would accommodate our home. Both Sam and Ryan worked approximately 8 hours straight to remove and install the new unit. They were always friendly, polite and explained what they needed to do. We are very pleased with the installation, clean up and the knowledge and manner they conducted themselves. Also, we are very pleased with Cunningham Associates and so far everyone they have sent to our home to assist us. We have already recommended this company to others living in our condo."</p>
+        <div class="flex items-center gap-3 mt-auto">
+          <div class="w-10 h-10 rounded-full bg-[#2C3E50] text-white flex items-center justify-center font-bold text-sm">LS</div>
+          <div>
+            <p class="font-semibold text-[#2C3E50] text-sm">Leslie Samueslon</p>
+            <p class="text-gray-400 text-xs">5 months ago</p>
+          </div>
+          <span class="ml-auto text-xs bg-blue-50 text-blue-600 border border-blue-100 rounded-full px-3 py-1 font-semibold">via Google</span>
+        </div>
+      </div>
+      <!-- Review 4 -->
+      <div class="bg-gray-50 rounded-xl p-8 flex flex-col gap-4 border border-gray-100">
+        <div class="flex items-center gap-1">
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+        </div>
+        <p class="text-gray-700 text-sm leading-relaxed italic">"Cunningham does a great job of communicating with the customer, before, during and following up. Noah was prompt, did a thorough job of accessing the issue and quoting cost. I give them A+ on keeping customer first."</p>
+        <div class="flex items-center gap-3 mt-auto">
+          <div class="w-10 h-10 rounded-full bg-[#2C3E50] text-white flex items-center justify-center font-bold text-sm">RM</div>
+          

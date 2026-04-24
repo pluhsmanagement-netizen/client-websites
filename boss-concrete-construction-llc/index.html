@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOSS Concrete Construction LLC | Tyrone, GA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html, body { overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Sans Pro', sans-serif; }
+    h1,h2,h3,h4,h5,h6,.heading { font-family: 'Oswald', sans-serif; }
+    .serif-display { font-family: 'Playfair Display', serif; }
+    .ticker-track { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { display: flex; animation: marquee 40s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    .tab-btn { cursor: pointer; transition: all 0.2s ease; }
+    .tab-btn.active-tab { background-color: #3D3D3D; color: white; }
+    .tab-btn.inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
+    .tab-panel { display: block; }
+    .tab-panel.hidden { display: none !important; }
+    .img-hover-wrap { overflow: hidden; }
+    .img-hover-wrap img { transition: transform 0.7s ease; }
+    .img-hover-wrap:hover img { transform: scale(1.05); }
+    .arrow-cta { border-bottom: 2px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s ease; }
+    .arrow-cta:hover { gap: 14px; }
+    .dotted-leader { flex: 1; border-bottom: 1px dotted currentColor; margin: 0 1rem; opacity: 0.3; align-self: end; padding-bottom: 0.5rem; }
+    section { scroll-margin-top: 96px; }
+    .animate-section { opacity: 1; transform: none; transition: opacity 0.6s ease, transform 0.6s ease; }
+    .animate-section.is-pending { opacity: 0; transform: translateY(24px); }
+    .animate-section.is-visible { opacity: 1; transform: none; }
+    .animate-section:target,
+    .animate-section.is-pending:target { opacity: 1 !important; transform: none !important; }
+    .accent-border-left { border-left: 4px solid #C9A84C; }
+    .hero-bg {
+      background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.80)), url('https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEEC3I1fq-arpldoFpqUCV5NpSswqA35SA379_LZtO_q2VvZ6lfSuBz8KXq0qrOLb-vDtE698ieGWAVwDK56roS3bApGv2PlpCjHPaNfKIjFkyW6tnh_zZFWfcpw3-ZS5g2gvnvuiFS0mGDTScAPAr9F93Tg1Xm3IOqjXI9MiVbEOmBTU81-NlY3T8JJSCeZyGD11oBxXDEdgOA_1FBAovctZUQD_zBK_Xr67Oi7cnm77c3bCpst4i-mSYr9AbPe6MQrxqoZc_zQsuDHHgpdGGqoUILT-OQTOwf5lbT7fjkGmA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-black border-b-2 border-yellow-600 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-16 md:h-20">
+      <a href="#home" class="text-2xl md:text-3xl font-black uppercase tracking-widest" style="color:#C9A84C; font-family:'Oswald',sans-serif;">BOSS <span class="text-white">CONCRETE</span></a>
+      <div class="hidden md:flex items-center gap-6 lg:gap-8">
+        <a href="#home" class="text-xs uppercase tracking-widest font-semibold text-gray-300 hover:text-yellow-400 transition">HOME</a>
+        <a href="#about" class="text-xs uppercase tracking-widest font-semibold text-gray-300 hover:text-yellow-400 transition">ABOUT</a>
+        <a href="#services" class="text-xs uppercase tracking-widest font-semibold text-gray-300 hover:text-yellow-400 transition">SERVICES</a>
+        <a href="#gallery" class="text-xs uppercase tracking-widest font-semibold text-gray-300 hover:text-yellow-400 transition">GALLERY</a>
+        <a href="#reviews" class="text-xs uppercase tracking-widest font-semibold text-gray-300 hover:text-yellow-400 transition">REVIEWS</a>
+        <a href="#faq" class="text-xs uppercase tracking-widest font-semibold text-gray-300 hover:text-yellow-400 transition">FAQ</a>
+        <a href="#contact" class="text-xs uppercase tracking-widest font-semibold text-gray-300 hover:text-yellow-400 transition">CONTACT</a>
+        <a href="tel:7705993800" class="bg-yellow-500 text-black px-5 py-2 text-xs uppercase font-black tracking-widest hover:bg-yellow-400 transition">(770) 599-3800</a>
+      </div>
+      <button id="hamburger" class="md:hidden p-2 text-white"><i data-lucide="menu" class="w-7 h-7"></i></button>
+    </div>
+    <div id="mobile-menu" class="hidden bg-black border-t border-gray-800 md:hidden">
+      <a href="#home" class="mobile-nav-link block py-3 px-4 border-b border-gray-800 text-sm uppercase font-semibold tracking-widest text-gray-300 hover:text-yellow-400">HOME</a>
+      <a href="#about" class="mobile-nav-link block py-3 px-4 border-b border-gray-800 text-sm uppercase font-semibold tracking-widest text-gray-300 hover:text-yellow-400">ABOUT</a>
+      <a href="#services" class="mobile-nav-link block py-3 px-4 border-b border-gray-800 text-sm uppercase font-semibold tracking-widest text-gray-300 hover:text-yellow-400">SERVICES</a>
+      <a href="#gallery" class="mobile-nav-link block py-3 px-4 border-b border-gray-800 text-sm uppercase font-semibold tracking-widest text-gray-300 hover:text-yellow-400">GALLERY</a>
+      <a href="#reviews" class="mobile-nav-link block py-3 px-4 border-b border-gray-800 text-sm uppercase font-semibold tracking-widest text-gray-300 hover:text-yellow-400">REVIEWS</a>
+      <a href="#faq" class="mobile-nav-link block py-3 px-4 border-b border-gray-800 text-sm uppercase font-semibold tracking-widest text-gray-300 hover:text-yellow-400">FAQ</a>
+      <a href="#contact" class="mobile-nav-link block py-3 px-4 border-b border-gray-800 text-sm uppercase font-semibold tracking-widest text-gray-300 hover:text-yellow-400">CONTACT</a>
+      <a href="tel:7705993800" class="mobile-nav-link block py-4 px-4 text-sm uppercase font-black tracking-widest text-center" style="background:#C9A84C;color:#000;">CALL (770) 599-3800</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero-bg min-h-screen flex flex-col justify-center items-center text-center relative pt-20">
+    <div class="max-w-6xl mx-auto px-4 md:px-8 flex flex-col items-center justify-center min-h-screen">
+      <div class="mb-4">
+        <span class="inline-block text-xs uppercase tracking-widest font-bold px-4 py-2 border border-yellow-500 text-yellow-400 mb-6">TYRONE, GA — LICENSED &amp; INSURED</span>
+      </div>
+      <h1 class="font-black uppercase leading-none mb-4">
+        <span class="block text-6xl md:text-8xl lg:text-9xl text-white tracking-tight">WE BUILD</span>
+        <span class="block text-6xl md:text-8xl lg:text-9xl tracking-tight" style="color:#C9A84C;">CONCRETE</span>
+        <span class="block text-6xl md:text-8xl lg:text-9xl text-white tracking-tight">THAT LASTS</span>
+      </h1>
+      <p class="text-sm md:text-base uppercase tracking-widest text-gray-300 mt-6 mb-10 font-semibold max-w-xl">PRECISION WORK. HONEST PRICING. RESULTS THAT STAND THE TEST OF TIME.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contact" class="px-8 py-4 uppercase font-black text-sm tracking-widest text-black transition hover:opacity-90" style="background:#C9A84C;">GET A FREE QUOTE</a>
+        <a href="tel:7705993800" class="px-8 py-4 uppercase font-black text-sm tracking-widest text-white border-2 border-white hover:border-yellow-400 hover:text-yellow-400 transition">CALL (770) 599-3800</a>
+      </div>
+      <div class="flex flex-wrap justify-center gap-6 mt-10">
+        <span class="flex items-center gap-2 text-xs uppercase tracking-widest text-gray-400 font-semibold"><i data-lucide="shield-check" class="w-4 h-4" style="color:#C9A84C;"></i>LICENSED &amp; INSURED</span>
+        <span class="flex items-center gap-2 text-xs uppercase tracking-widest text-gray-400 font-semibold"><i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>5-STAR RATED</span>
+        <span class="flex items-center gap-2 text-xs uppercase tracking-widest text-gray-400 font-semibold"><i data-lucide="award" class="w-4 h-4" style="color:#C9A84C;"></i>252 REVIEWS</span>
+        <span class="flex items-center gap-2 text-xs uppercase tracking-widest text-gray-400 font-semibold"><i data-lucide="map-pin" class="w-4 h-4" style="color:#C9A84C;"></i>TYRONE, GA</span>
+      </div>
+    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 animate-bounce">
+      <span class="text-xs uppercase tracking-widest text-gray-400 font-bold">SCROLL</span>
+      <i data-lucide="chevron-right" class="w-5 h-5 text-yellow-400 rotate-90"></i>
+    </div>
+  </section>
+
+  <!-- TICKER BAND -->
+  <div class="py-3 overflow-hidden" style="background:#111;">
+    <div class="ticker-track">
+      <span class="text-xs uppercase tracking-widest font-bold text-white px-8">FREE QUOTES</span>
+      <span class="text-xs uppercase tracking-widest font-bold px-4" style="color:#C9A84C;">✦</span>
+      <span class="text-xs uppercase tracking-widest font-bold text-white px-8">FAST RESPONSE</span>
+      <span class="text-xs uppercase tracking-widest font-bold px-4" style="color:#C9A84C;">✦</span>
+      <span class="text-xs uppercase tracking-widest font-bold text-white px-8">LICENSED &amp; INSURED</span>
+      <span class="text-xs uppercase tracking-widest font-bold px-4" style="color:#C9A84C;">✦</span>
+      <span class="text-xs uppercase tracking-widest font-bold text-white px-8">LOCAL EXPERTS</span>
+      <span class="text-xs uppercase tracking-widest font-bold px-4" style="color:#C9A84C;">✦</span>
+      <span class="text-xs uppercase tracking-widest font-bold text-white px-8">SERVING TYRONE, GA &amp; SURROUNDING AREAS</span>
+      <span class="text-xs uppercase tracking-widest font-bold px-4" style="color:#C9A84C;">✦</span>
+      <span class="text-xs uppercase tracking-widest font-bold text-white px-8">FREE QUOTES</span>
+      <span class="text-xs uppercase tracking-widest font-bold px-4" style="color:#C9A84C;">✦</span>
+      <span class="text-xs uppercase tracking-widest font-bold text-white px-8">FAST RESPONSE</span>
+      <span class="text-xs uppercase tracking-widest font-bold px-4" style="color:#C9A84C;">✦</span>
+      <span class="text-xs uppercase tracking-widest font-bold text-white px-8">LICENSED &amp; INSURED</span>
+      <span class="text-xs uppercase tracking-widest font-bold px-4" style="color:#C9A84C;">✦</span>
+      <span class="text-xs uppercase tracking-widest font-bold text-white px-8">LOCAL EXPERTS</span>
+      <span class="text-xs uppercase tracking-widest font-bold px-4" style="color:#C9A84C;">✦</span>
+      <span class="text-xs uppercase tracking-widest font-bold text-white px-8">SERVING TYRONE, GA &amp; SURROUNDING AREAS</span>
+      <span class="text-xs uppercase tracking-widest font-bold px-4" style="color:#C9A84C;">✦</span>
+    </div>
+  </div>
+
+  <!-- STATS BAND -->
+  <div class="bg-gray-900 py-0">
+    <div class="grid grid-cols-2 md:grid-cols-4">
+      <div class="accent-border-left p-10 md:p-14 flex flex-col gap-2 border-b md:border-b-0 border-gray-800">
+        <span class="text-6xl font-black text-white" data-count="252" data-suffix="+">252+</span>
+        <span class="text-xs uppercase tracking-widest font-bold" style="color:#C9A84C;">5-STAR REVIEWS</span>
+      </div>
+      <div class="accent-border-left p-10 md:p-14 flex flex-col gap-2 border-b md:border-b-0 border-gray-800">
+        <span class="text-6xl font-black text-white" data-count="500" data-suffix="+">500+</span>
+        <span class="text-xs uppercase tracking-widest font-bold" style="color:#C9A84C;">PROJECTS COMPLETED</span>
+      </div>
+      <div class="accent-border-left p-10 md:p-14 flex flex-col gap-2">
+        <span class="text-6xl font-black text-white" data-count="10" data-suffix="+">10+</span>
+        <span class="text-xs uppercase tracking-widest font-bold" style="color:#C9A84C;">YEARS EXPERIENCE</span>
+      </div>
+      <div class="accent-border-left p-10 md:p-14 flex flex-col gap-2">
+        <span class="text-6xl font-black text-white" data-count="100" data-suffix="%">100%</span>
+        <span class="text-xs uppercase tracking-widest font-bold" style="color:#C9A84C;">SATISFACTION GUARANTEED</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16" style="background:#1a1a1a;">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div>
+          <span class="text-xs uppercase tracking-widest font-bold mb-4 block" style="color:#C9A84C;">WHO WE ARE</span>
+          <h2 class="text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-none text-white mb-8">BUILT ON STRENGTH.<br><span style="color:#C9A84C;">BUILT ON TRUST.</span></h2>
+          <p class="text-lg text-gray-300 max-w-2xl leading-relaxed mb-6">BOSS Concrete Construction LLC is Tyrone, Georgia's premier concrete contractor — delivering expert craftsmanship on driveways, foundations, slabs, patios, and more with unmatched precision and integrity. We take pride in every pour, every finish, and every project we complete, ensuring our clients in Tyrone and across the surrounding communities get results built to last a lifetime.</p>
+          <div class="flex flex-wrap gap-3 mt-8">
+            <span class="px-4 py-2 text-xs uppercase font-black tracking-widest text-black" style="background:#C9A84C;">LICENSED &amp; INSURED</span>
+            <span class="px-4 py-2 text-xs uppercase font-black tracking-widest border border-gray-600 text-gray-300">5-STAR RATED</span>
+            <span class="px-4 py-2 text-xs uppercase font-black tracking-widest border border-gray-600 text-gray-300">GEORGIA BASED</span>
+            <span class="px-4 py-2 text-xs uppercase font-black tracking-widest border border-gray-600 text-gray-300">FREE ESTIMATES</span>
+          </div>
+          <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-5 h-5 mt-1 flex-shrink-0" style="color:#C9A84C;"></i>
+              <div>
+                <span class="text-sm uppercase font-black text-white block">SAME-DAY QUOTES</span>
+                <span class="text-xs text-gray-400 uppercase tracking-wide">Fast, transparent pricing</span>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-5 h-5 mt-1 flex-shrink-0" style="color:#C9A84C;"></i>
+              <div>
+                <span class="text-sm uppercase font-black text-white block">CREW-OWNED EQUIPMENT</span>
+                <span class="text-xs text-gray-400 uppercase tracking-wide">No subcontracting surprises</span>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-5 h-5 mt-1 flex-shrink-0" style="color:#C9A84C;"></i>
+              <div>
+                <span class="text-sm uppercase font-black text-white block">RESIDENTIAL &amp; COMMERCIAL</span>
+                <span class="text-xs text-gray-400 uppercase tracking-wide">Any scale, any scope</span>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-5 h-5 mt-1 flex-shrink-0" style="color:#C9A84C;"></i>
+              <div>
+                <span class="text-sm uppercase font-black text-white block">CLEAN JOB SITES</span>
+                <span class="text-xs text-gray-400 uppercase tracking-wide">Professional finish every time</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="img-hover-wrap">
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFTsIN4XimBWK31AkER06oRKXUSnkQjsAVvA4HDZ1nxB90mzjr6AdnxP2AHaP_AluE64mhur8QWaaNWpWNkvMWv0EpJ2P7YqhovWiWx1fpXf5FtPLbyhO_QHKIRaB8HFxOjGd3CTjGQC8qThwZ9IGPi-OwjLwqI37pLHQk2blpuoh-rep0rfQnFi6uuNi0VL406AL5MgDwxJWLcSIbLllTnMeRCZi3D0j6WV45ajyX2xtzkl9VgjwJGgDgEkiixTMQBicd0Bk_tfiprhyzMp7lS1QfE45z_CeIl8ft142oj_6iz_8aeJHygeX79CBBBZ6ME1iBPKzN4bFADD9ER8ZkAxw4zynYQYRb8CUqxgOVa6J1hduVDGmUSEcVSOgCjZinJcBHwLVSH2tOs5fuBEkXnNxtSCu-aCCLOQkiL0w08Q5n2o8TGMuEGznp5xmGv&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="BOSS Concrete Work" class="w-full h-48 md:h-64 object-cover border-2 border-gray-700" loading="lazy" onerror="this.src='https://picsum.photos/seed/concrete-1/800/600'">
+          </div>
+          <div class="img-hover-wrap mt-8">
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHLr_NY5Jejw6vN__0_Uf166mKcI7cOp2kW3ZsJJ_sAUIShMzzPhkg8FowtVcigChkQ9x8w0Gbi53vGFGEGDbMHdgHcpKZZFsrfXkstQkCtvwEJDlwZ0P9m2ryiNEPzH7mRmbE1iKeS1gEmlSXSo3e6SSKcNV16LNtr6geQ231O9n_aC_wWDAylVLp0aXAR7sXe8XQdMHuYChTo3Iub3t-iiDlqhXowaLy2xlNEFIKDqO8nedhom0XbDd5HB-cTnNPGzxH8KZ6Y5I0Aa_LxU-xmZo0f_kkwYok-hHIBCDXDbDxq9Q3Xq6VLM6YEjbSPag_w_yDLajvI_Ycxf9ES2mAcYPMF0oRDwruu8DdNqtvGETbcJWLSG8J6kV3i0T-05AFRK0fxbW2JP2tBoFttoGaoBG9_3SqHNm8BoBCjd4dwsHMD3ZhuW4Pt_C68zw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="BOSS Concrete Work" class="w-full h-48 md:h-64 object-cover border-2 border-gray-700" loading="lazy" onerror="this.src='https://picsum.photos/seed/concrete-2/800/600'">
+          </div>
+          <div class="img-hover-wrap">
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHS5XLfvgTG4_DHbAlgp7q9Ca2hoVfqmwm0y03sJFwSn7PQK0uS5ldx3rZVahO8SX-d5d2c_FAK9onlx6ckVBG16JGvB4tIvdhUTuHdocBZpELVFY5a-4lPgPEMtXkV6_0deSVnkQYISKZ6GUYfk7rcMOVeSP2O-SXP5Im9KUbhAthImPD8zBC0JMcvQ9qi0qyTmJO3v8TONgkC2LRAE8QFe1aHRDCW20MmJtz91t7YI4gvMGszaCPh4VFFvZ4tB5zWpWPnF1k8cjml3m0Ia9oOewe_f2iSR6YUVFQLvNcqZOb8YnlQne9CUp0O1fqemYTenD4d6VXQ31kH8AKGK-A8oBsT9TQKEqbyTie-PqOxA8KmiJtD7g6G4lYms37PTdkUeICiDHbmllJXUKtjnzqjeNDV4tFkwJmDgSpi0V6zxc5J&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="BOSS Concrete Work" class="w-full h-48 md:h-64 object-cover border-2 border-gray-700" loading="lazy" onerror="this.src='https://picsum.photos/seed/concrete-3/800/600'">
+          </div>
+          <div class="img-hover-wrap mt-8">
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEH14NsRTdJDDRhGORQSDvYxhWBlLn0b2Bv2RFK7Fur6f6culG1q5oVeKUjVBDfcQ8wyFrLSQPBGb6jdbziZVX65S0pmKkDn82Ego_OAbJNDCCI3JrEXZEeCB3dwdmuJr5mQdxwDl2VXh4B2ryxYk4KrquL41fWXy96_OJojJel5qUw3bc-Z9MSHhMuCEP6s38Bv-MpyvhlWQKeLQvDkvMq-sfY_i_xJsKuTkasWPvkGuGSo6OO5WybrM-Actbn7l7UDts3qyaCjlxDGwyN3IBRVgQ3mfEbqQ7_25pvcvUpp0YwXRunQEf3_MldmDLxz0apGiJZIaNh5lMlzMfJBN2NMFhqArpDoBpSFne_Aug_gw9VN12LmjAEFv2efqAfEM5iAsGKn6kXuuQBF01CAJE3yf5yzFQJlkbsVKXaHxVT3Eng&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="BOSS Concrete Work" class="w-full h-48 md:h-64 object-cover border-2 border-gray-700" loading="lazy" onerror="this.src='https://picsum.photos/seed/concrete-4/800/600'">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS STRIP -->
+  <div class="py-16 px-4 md:px-8 lg:px-16 bg-black border-t border-b border-gray-800">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-xs uppercase tracking-widest font-bold" style="color:#C9A84C;">HOW IT WORKS</span>
+        <h2 class="text-4xl md:text-5xl font-black uppercase text-white mt-2">OUR PROCESS</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
+        <div class="p-8 border border-gray-800 relative">
+          <span class="text-5xl font-black block mb-4" style="color:#C9A84C;">01</span>
+          <h3 class="text-xl font-black uppercase text-white mb-2">FREE QUOTE</h3>
+          <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed">Contact us and we'll come out to assess your project at no charge.</p>
+        </div>
+        <div class="p-8 border border-gray-800 relative">
+          <span class="text-5xl font-black block mb-4" style="color:#C9A84C;">02</span>
+          <h3 class="text-xl font-black uppercase text-white mb-2">PLAN &amp; PREP</h3>
+          <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed">We design your project, finalize specs, and prepare the site properly.</p>
+        </div>
+        <div class="p-8 border border-gray-800 relative">
+          <span class="text-5xl font-black block mb-4" style="color:#C9A84C;">03</span>
+          <h3 class="text-xl font-black uppercase text-white mb-2">EXECUTE</h3>
+          <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed">Our expert crew gets to work — on time, on budget, zero shortcuts.</p>
+        </div>
+        <div class="p-8 border border-gray-800 relative">
+          <span class="text-5xl font-black block mb-4" style="color:#C9A84C;">04</span>
+          <h3 class="text-xl font-black uppercase text-white mb-2">FINAL WALKTHROUGH</h3>
+          <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed">We walk you through the finished work and won't leave until you're satisfied.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-gray-950">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-8">
+        <span class="text-xs uppercase tracking-widest font-bold mb-3 block" style="color:#C9A84C;">WHAT WE DO</span>
+        <h2 class="text-5xl md:text-6xl lg:text-7xl font-black uppercase text-white leading-none">OUR <span style="color:#C9A84C;">SERVICES</span></h2>
+      </div>
+      <div class="flex flex-wrap gap-2 md:flex-nowrap mb-8 tabs-container">
+        <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold uppercase tracking-wide" data-target="tab-panel-1">Concrete Services</button>
+        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold uppercase tracking-wide" data-target="tab-panel-2">Driveways &amp; Patios</button>
+        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold uppercase tracking-wide" data-target="tab-panel-3">Specialty Work</button>
+      </div>
+
+      <div id="tab-panel-1" class="tab-panel">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 flex flex-col">
+            <span class="text-6xl font-black leading-none mb-4" style="color:#C9A84C;">01</span>
+            <i data-lucide="square" class="w-8 h-8 mb-4 text-gray-500"></i>
+            <h3 class="text-2xl uppercase font-black text-white mb-3">CONCRETE POURING</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed flex-1">Expert concrete pouring for residential and commercial applications. We ensure proper mix ratios, reinforcement, and curing for a durable, long-lasting result.</p>
+            <a href="tel:7705993800" class="mt-6 block text-center py-3 text-xs uppercase font-black tracking-widest text-black transition hover:opacity-90" style="background:#C9A84C;">CALL NOW</a>
+          </div>
+          <!-- Card 2 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 flex flex-col">
+            <span class="text-6xl font-black leading-none mb-4" style="color:#C9A84C;">02</span>
+            <i data-lucide="hammer" class="w-8 h-8 mb-4 text-gray-500"></i>
+            <h3 class="text-2xl uppercase font-black text-white mb-3">FOUNDATION WORK</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed flex-1">Solid foundations for new construction, additions, and structural supports. We use proven techniques to ensure stability and compliance with local codes.</p>
+            <a href="tel:7705993800" class="mt-6 block text-center py-3 text-xs uppercase font-black tracking-widest text-black transition hover:opacity-90" style="background:#C9A84C;">CALL NOW</a>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 flex flex-col">
+            <span class="text-6xl font-black leading-none mb-4" style="color:#C9A84C;">03</span>
+            <i data-lucide="grid-3x3" class="w-8 h-8 mb-4 text-gray-500"></i>
+            <h3 class="text-2xl uppercase font-black text-white mb-3">SLAB INSTALLATION</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed flex-1">Precision-poured concrete slabs for garages, sheds, workshops, and building pads. Every slab is properly graded, reinforced, and finished to your specifications.</p>
+            <a href="tel:7705993800" class="mt-6 block text-center py-3 text-xs uppercase font-black tracking-widest text-black transition hover:opacity-90" style="background:#C9A84C;">CALL NOW</a>
+          </div>
+          <!-- Card 4 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 flex flex-col">
+            <span class="text-6xl font-black leading-none mb-4" style="color:#C9A84C;">04</span>
+            <i data-lucide="ruler" class="w-8 h-8 mb-4 text-gray-500"></i>
+            <h3 class="text-2xl uppercase font-black text-white mb-3">SIDEWALK CONSTRUCTION</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed flex-1">New sidewalk installation for residential homes, commercial properties, and municipalities. Clean lines, correct slope, and ADA-compliant finishes available.</p>
+            <a href="tel:7705993800" class="mt-6 block text-center py-3 text-xs uppercase font-black tracking-widest text-black transition hover:opacity-90" style="background:#C9A84C;">CALL NOW</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-panel-2" class="tab-panel hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 flex flex-col">
+            <span class="text-6xl font-black leading-none mb-4" style="color:#C9A84C;">01</span>
+            <i data-lucide="truck" class="w-8 h-8 mb-4 text-gray-500"></i>
+            <h3 class="text-2xl uppercase font-black text-white mb-3">DRIVEWAY INSTALLATION</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed flex-1">New concrete driveway installations built to last decades. We handle excavation, base prep, forming, pouring, and a smooth finished surface you'll be proud of.</p>
+            <a href="tel:7705993800" class="mt-6 block text-center py-3 text-xs uppercase font-black tracking-widest text-black transition hover:opacity-90" style="background:#C9A84C;">CALL NOW</a>
+          </div>
+          <!-- Card 2 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 flex flex-col">
+            <span class="text-6xl font-black leading-none mb-4" style="color:#C9A84C;">02</span>
+            <i data-lucide="square" class="w-8 h-8 mb-4 text-gray-500"></i>
+            <h3 class="text-2xl uppercase font-black text-white mb-3">PATIO DESIGN</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed flex-1">Custom concrete patios designed to complement your home and outdoor lifestyle. We work with you on size, shape, and finish options to create your perfect outdoor space.</p>
+            <a href="tel:7705993800" class="mt-6 block text-center py-3 text-xs uppercase font-black tracking-widest text-black transition hover:opacity-90" style="background:#C9A84C;">CALL NOW</a>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 flex flex-col">
+            <span class="text-6xl font-black leading-none mb-4" style="color:#C9A84C;">03</span>
+            <i data-lucide="grid-3x3" class="w-8 h-8 mb-4 text-gray-500"></i>
+            <h3 class="text-2xl uppercase font-black text-white mb-3">DECORATIVE CONCRETE</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed flex-1">Elevate your property with decorative concrete finishes including exposed aggregate, broom finish, and custom color options. Beauty and strength in every square foot.</p>
+            <a href="tel:7705993800" class="mt-6 block text-center py-3 text-xs uppercase font-black tracking-widest text-black transition hover:opacity-90" style="background:#C9A84C;">CALL NOW</a>
+          </div>
+          <!-- Card 4 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 flex flex-col">
+            <span class="text-6xl font-black leading-none mb-4" style="color:#C9A84C;">04</span>
+            <i data-lucide="hammer" class="w-8 h-8 mb-4 text-gray-500"></i>
+            <h3 class="text-2xl uppercase font-black text-white mb-3">STAMPED FINISHES</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed flex-1">Stamped concrete that mimics the look of stone, brick, or slate at a fraction of the cost. A stunning upgrade for driveways, patios, pool decks, and walkways.</p>
+            <a href="tel:7705993800" class="mt-6 block text-center py-3 text-xs uppercase font-black tracking-widest text-black transition hover:opacity-90" style="background:#C9A84C;">CALL NOW</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-panel-3" class="tab-panel hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 flex flex-col">
+            <span class="text-6xl font-black leading-none mb-4" style="color:#C9A84C;">01</span>
+            <i data-lucide="pickaxe" class="w-8 h-8 mb-4 text-gray-500"></i>
+            <h3 class="text-2xl uppercase font-black text-white mb-3">CONCRETE REPAIR</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed flex-1">Structural and cosmetic concrete repair for damaged driveways, sidewalks, slabs, and foundations. We assess the root cause and fix it right the first time.</p>
+            <a href="tel:7705993800" class="mt-6 block text-center py-3 text-xs uppercase font-black tracking-widest text-black transition hover:opacity-90" style="background:#C9A84C;">CALL NOW</a>
+          </div>
+          <!-- Card 2 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 flex flex-col">
+            <span class="text-6xl font-black leading-none mb-4" style="color:#C9A84C;">02</span>
+            <i data-lucide="ruler" class="w-8 h-8 mb-4 text-gray-500"></i>
+            <h3 class="text-2xl uppercase font-black text-white mb-3">RESURFACING</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed flex-1">Concrete resurfacing gives old, worn surfaces a fresh new look without full replacement. Cost-effective, durable, and available in multiple finish styles.</p>
+            <a href="tel:7705993800" class="mt-6 block text-center py-3 text-xs uppercase font-black tracking-widest text-black transition hover:opacity-90" style="background:#C9A84C;">CALL NOW</a>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 flex flex-col">
+            <span class="text-6xl font-black leading-none mb-4" style="color:#C9A84C;">03</span>
+            <i data-lucide="shield-check" class="w-8 h-8 mb-4 text-gray-500"></i>
+            <h3 class="text-2xl uppercase font-black text-white mb-3">SEALING &amp; COATING</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed flex-1">Protect your concrete investment with professional-grade sealing and coating applications. Extends surface life, enhances appearance, and repels water and stains.</p>
+            <a href="tel:7705993800" class="mt-6 block text-center py-3 text-xs uppercase font-black tracking-widest text-black transition hover:opacity-90" style="background:#C9A84C;">CALL NOW</a>
+          </div>
+          <!-- Card 4 -->
+          <div class="bg-black text-white p-8 rounded-none border border-gray-800 flex flex-col">
+            <span class="text-6xl font-black leading-none mb-4" style="color:#C9A84C;">04</span>
+            <i data-lucide="hammer" class="w-8 h-8 mb-4 text-gray-500"></i>
+            <h3 class="text-2xl uppercase font-black text-white mb-3">CRACK REPAIR</h3>
+            <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed flex-1">Professional crack repair using industry-best materials and techniques. We seal and stabilize cracks before they spread, preserving your concrete for years to come.</p>
+            <a href="tel:7705993800" class="mt-6 block text-center py-3 text-xs uppercase font-black tracking-widest text-black transition hover:opacity-90" style="background:#C9A84C;">CALL NOW</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="animate-section py-20 md:py-28 bg-black border-t border-gray-900">
+    <div class="px-4 md:px-8 lg:px-16 max-w-7xl mx-auto mb-10">
+      <span class="text-xs uppercase tracking-widest font-bold mb-3 block" style="color:#C9A84C;">OUR WORK</span>
+      <h2 class="text-5xl md:text-6xl lg:text-7xl font-black uppercase text-white leading-none">PROJECT <span style="color:#C9A84C;">GALLERY</span></h2>
+    </div>
+    <div class="overflow-x-auto pb-4">
+      <div class="flex gap-4 px-4 md:px-8 lg:px-16" style="width:max-content;">
+        <div class="img-hover-wrap w-96 h-72 flex-shrink-0 border-2 border-gray-800">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEEC3I1fq-arpldoFpqUCV5NpSswqA35SA379_LZtO_q2VvZ6lfSuBz8KXq0qrOLb-vDtE698ieGWAVwDK56roS3bApGv2PlpCjHPaNfKIjFkyW6tnh_zZFWfcpw3-ZS5g2gvnvuiFS0mGDTScAPAr9F93Tg1Xm3IOqjXI9MiVbEOmBTU81-NlY3T8JJSCeZyGD11oBxXDEdgOA_1FBAovctZUQD_zBK_Xr67Oi7cnm77c3bCpst4i-mSYr9AbPe6MQrxqoZc_zQsuDHHgpdGGqoUILT-OQTOwf5lbT7fjkGmA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Concrete Project" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/concrete-10/800/600'">
+        </div>
+        <div class="img-hover-wrap w-96 h-72 flex-shrink-0 border-2 border-gray-800">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFTsIN4XimBWK31AkER06oRKXUSnkQjsAVvA4HDZ1nxB90mzjr6AdnxP2AHaP_AluE64mhur8QWaaNWpWNkvMWv0EpJ2P7YqhovWiWx1fpXf5FtPLbyhO_QHKIRaB8HFxOjGd3CTjGQC8qThwZ9IGPi-OwjLwqI37pLHQk2blpuoh-rep0rfQnFi6uuNi0VL406AL5MgDwxJWLcSIbLllTnMeRCZi3D0j6WV45ajyX2xtzkl9VgjwJGgDgEkiixTMQBicd0Bk_tfiprhyzMp7lS1QfE45z_CeIl8ft142oj_6iz_8aeJHygeX79CBBBZ6ME1iBPKzN4bFADD9ER8ZkAxw4zynYQYRb8CUqxgOVa6J1hduVDGmUSEcVSOgCjZinJcBHwLVSH2tOs5fuBEkXnNxtSCu-aCCLOQkiL0w08Q5n2o8TGMuEGznp5xmGv&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Concrete Project" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/concrete-11/800/600'">
+        </div>
+        <div class="img-hover-wrap w-96 h-72 flex-shrink-0 border-2 border-gray-800">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHLr_NY5Jejw6vN__0_Uf166mKcI7cOp2kW3ZsJJ_sAUIShMzzPhkg8FowtVcigChkQ9x8w0Gbi53vGFGEGDbMHdgHcpKZZFsrfXkstQkCtvwEJDlwZ0P9m2ryiNEPzH7mRmbE1iKeS1gEmlSXSo3e6SSKcNV16LNtr6geQ231O9n_aC_wWDAylVLp0aXAR7sXe8XQdMHuYChTo3Iub3t-iiDlqhXowaLy2xlNEFIKDqO8nedhom0XbDd5HB-cTnNPGzxH8KZ6Y5I0Aa_LxU-xmZo0f_kkwYok-hHIBCDXDbDxq9Q3Xq6VLM6YEjbSPag_w_yDLajvI_Ycxf9ES2mAcYPMF0oRDwruu8DdNqtvGETbcJWLSG8J6kV3i0T-05AFRK0fxbW2JP2tBoFttoGaoBG9_3SqHNm8BoBCjd4dwsHMD3ZhuW4Pt_C68zw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Concrete Project" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/concrete-12/800/600'">
+        </div>
+        <div class="img-hover-wrap w-96 h-72 flex-shrink-0 border-2 border-gray-800">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHS5XLfvgTG4_DHbAlgp7q9Ca2hoVfqmwm0y03sJFwSn7PQK0uS5ldx3rZVahO8SX-d5d2c_FAK9onlx6ckVBG16JGvB4tIvdhUTuHdocBZpELVFY5a-4lPgPEMtXkV6_0deSVnkQYISKZ6GUYfk7rcMOVeSP2O-SXP5Im9KUbhAthImPD8zBC0JMcvQ9qi0qyTmJO3v8TONgkC2LRAE8QFe1aHRDCW20MmJtz91t7YI4gvMGszaCPh4VFFvZ4tB5zWpWPnF1k8cjml3m0Ia9oOewe_f2iSR6YUVFQLvNcqZOb8YnlQne9CUp0O1fqemYTenD4d6VXQ31kH8AKGK-A8oBsT9TQKEqbyTie-PqOxA8KmiJtD7g6G4lYms37PTdkUeICiDHbmllJXUKtjnzqjeNDV4tFkwJmDgSpi0V6zxc5J&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Concrete Project" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/concrete-13/800/600'">
+        </div>
+        <div class="img-hover-wrap w-96 h-72 flex-shrink-0 border-2 border-gray-800">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEH14NsRTdJDDRhGORQSDvYxhWBlLn0b2Bv2RFK7Fur6f6culG1q5oVeKUjVBDfcQ8wyFrLSQPBGb6jdbziZVX65S0pmKkDn82Ego_OAbJNDCCI3JrEXZEeCB3dwdmuJr5mQdxwDl2VXh4B2ryxYk4KrquL41fWXy96_OJojJel5qUw3bc-Z9MSHhMuCEP6s38Bv-MpyvhlWQKeLQvDkvMq-sfY_i_xJsKuTkasWPvkGuGSo6OO5WybrM-Actbn7l7UDts3qyaCjlxDGwyN3IBRVgQ3mfEbqQ7_25pvcvUpp0YwXRunQEf3_MldmDLxz0apGiJZIaNh5lMlzMfJBN2NMFhqArpDoBpSFne_Aug_gw9VN12LmjAEFv2efqAfEM5iAsGKn6kXuuQBF01CAJE3yf5yzFQJlkbsVKXaHxVT3Eng&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Concrete Project" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/concrete-14/800/600'">
+        </div>
+        <div class="img-hover-wrap w-96 h-72 flex-shrink-0 border-2 border-gray-800">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEF7j50rRG3BsSFmbFHPv5-aAUtZyo3YVDtkaTpKJ34szAAIyFJt59HuVBpvxqHHOxkrqiIJD03K2jt9FgMkScv6fhCVx_w9uwpRQuuBPaHe0PjIuCyz7ISj7iTWSNELbEMJugzkqM_Hqg0MeR5Gl66fd6G3ctpZ7xouECd4BcmnTz4y6Ceai7Q83DjVYqGzA9rAeGX7zGUlQ2ec8u-mAOZI-tCfxRtAPtiIL2v9qTYqIVm4DwOHS_nL4i7alr_U8V3SLHCh4YB0UA9w5IM-NJvN8Vtj6g1BX7dOp2_ozci8og&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Concrete Project" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/concrete-15/800/600'">
+        </div>
+        <div class="img-hover-wrap w-96 h-72 flex-shrink-0 border-2 border-gray-800">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHmFjx9SBO9t7W8OsJ7X90DfCFcYcD7twPcVeexyv1LTyWqnBhCbEafGYo9KPUHQBruJsUnmtTNilSchXRTm_XCktiUwCN2m5qIMDVeB4Hk9BB3OlvMIbViDqZ222GbgzTtqOlzSYBML3WxB5mLmaarhC4ydQrmcy1AFDoDZIz0F2lzmLvZ2nf6bm3a-hjbZ4UiXLsqD7kGovxw0veywo_UGCSzut0-17wwKABxAGLWE4qX3BCD1qVcFrVtTuEd_7vKbywyPMKaDDx3XbRBoG77kmeNDe3lL-FS7iydmL6E4A&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Concrete Project" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/concrete-16/800/600'">
+        </div>
+        <div class="img-hover-wrap w-96 h-72 flex-shrink-0 border-2 border-gray-800">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGje1HCFyDH-g1dqk6jV-AZrbkLDvBbENKbfJFYf3RPcIvJ1hRxRag8fHd1UvPdXSmPCmG44fpOhPMwT1Wy4pCQCtsgW30cTWDilfoRSikc7NOoXQBMj_1C8K_GtQFuJda-yPuM_LfsvTidda4fR4xJ9-zC-n9-oAtsHS_imRTka_g02X0MyjNKjNjbno36SuCPeW3xJhKJWOSZy9hvpEag6qAv3fbpr9MRxcAeTme3PBegPwoRDz1eG1209RzMVE_MEp040HGGbA7BfpmMFoalFRLoBQz2PUOJcqgJLyTsLA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Concrete Project" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/concrete-17/800/600'">
+        </div>
+        <div class="img-hover-wrap w-96 h-72 flex-shrink-0 border-2 border-gray-800">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEEFsX77AyxwEDfnrRSwppzArQq257dUw5LqXYxqr_tptVNYJ0c5NUg-AF8yhLydZMetXsyHjMWODwJyAi32ujd5enzBlstNphqLtPMk6EHrBIif08A1Co1ZFsLUGL3Y4_BEUZGmBxPAVLVaCQjQSxG5EzdAB7g8uYuudVGWK8NW36TBp8f4-YxfkP2MXpLXMc-8UEt_McHbUIGgeiw1dM53_uM94vhbjTjV4EeKomEgst-qCHS0STNoKFusQ4tV5P2H8dDZz4YHIKixNNYm7IFHt-l8FjP5LR_E0nOhx_djt8KM2a7YOtGwV-LNhe15JDa2_kEVY-COiso4AIHlmBtLk5XFu8-Edmr8TRIZYCkB0t6hIWPDKDa7kW6V66jy3ezlvxPm1I-HympEhIfPVyZbqwg8NoEMTSiV2odX4_NwQML1&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Concrete Project" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/concrete-18/800/600'">
+        </div>
+        <div class="img-hover-wrap w-96 h-72 flex-shrink-0 border-2 border-gray-800">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHg01VhNyrMObmE4TSRAldh32AB7fyln9oWhMUWDdu6pzuCUHvi4kOF3vorMEi20KLNO1sdOT7uWJFUXuV7BYlVfl7JCkQl2FveLK55XbzGPqXB96mEA9_vOD08S0SMwVOBGFIUs3DA22pH_Z8h8QKp6VpiaFr7o391bEZGwwN6QxmpGhutVCmrroqfuR4sTaobjK7RD-uolm3mD8jl43g5_mY4EHueI9MVOY7BrA1yUJzxux8wDZP9_KJPc6FJWhP6lHgiT6nrNGtbpm8hOfi3QVLFvybYoqJxGhOpFEOz0ThO9EANcOxYAtaWabmPOdKmLT29JaLYaHRlMp53P7f_ZckrYO-wv6evlmbuwP6Stzk3JO0NsJDyU6IvX7-0xOQCwDYcpadDeq30gFRYQuYQ222Gn5lV6p3ziyXdlcdokA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Concrete Project" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/concrete-19/800/600'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="animate-section py-20 md:py-28 bg-gray-950">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+      <div class="mb-12">
+        <span class="text-xs uppercase tracking-widest font-bold mb-3 block" style="color:#C9A84C;">WHAT CLIENTS SAY</span>
+        <h2 class="text-5xl md:text-6xl lg:text-7xl font-black uppercase text-white leading-none">REAL <span style="color:#C9A84C;">RESULTS</span></h2>
+        <div class="flex items-center gap-3 mt-4">
+          <div class="flex gap-1">
+            <i data-lucide="star" class="w-5 h-5" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-5 h-5" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-5 h-5" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-5 h-5" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-5 h-5" style="color:#C9A84C;"></i>
+          </div>
+          <span class="text-sm uppercase font-bold text-gray-400 tracking-widest">5.0 — 252 GOOGLE REVIEWS</span>
+        </div>
+      </div>
+
+      <!-- Review 1 -->
+      <div class="flex flex-col md:flex-row items-start gap-6 md:gap-10 py-8 border-b-2 border-gray-800">
+        <span class="text-6xl font-black flex-shrink-0 w-20 text-center" style="color:#C9A84C;">01</span>
+        <div class="flex-1">
+          <p class="text-xl uppercase italic text-white leading-relaxed">"It was a pleasure working with Boss Concrete. Marcos was professional, knowledgeable, honest, and friendly from the moment he came out to give the quote through completion. His crew did an outstanding job on my sidewalk, long driveway, and the basketball court in my backyard. They were hardworking, courteous, and made sure everything was done to my satisfaction. The cleanup was excellent, and the attention to detail really stood out. I'm thrilled with how everything turned out and would definitely hire them again. Here are a few photos of their great work!"</p>
+        </div>
+        <div class="flex flex-col items-end gap-2 flex-shrink-0 min-w-[160px]">
+          <span class="text-sm font-black uppercase text-white">MATTHEW SPRAGUE</span>
+          <div class="flex gap-1">
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+          </div>
+          <span class="text-xs uppercase tracking-widest text-gray-500">5 MONTHS AGO</span>
+          <span class="text-xs uppercase tracking-widest font-bold px-2 py-1 border" style="color:#C9A84C; border-color:#C9A84C;">VIA GOOGLE</span>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="flex flex-col md:flex-row items-start gap-6 md:gap-10 py-8 border-b-2 border-gray-800">
+        <span class="text-6xl font-black flex-shrink-0 w-20 text-center" style="color:#C9A84C;">02</span>
+        <div class="flex-1">
+          <p class="text-xl uppercase italic text-white leading-relaxed">"Boss Concrete did an excellent job creating a concrete slab and path for a new shed. Marco is very efficient and provided great communication during the project. His crew executed the plan just like we envisioned. Thank you!"</p>
+        </div>
+        <div class="flex flex-col items-end gap-2 flex-shrink-0 min-w-[160px]">
+          <span class="text-sm font-black uppercase text-white">THOMAS MORRISSEY</span>
+          <div class="flex gap-1">
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+          </div>
+          <span class="text-xs uppercase tracking-widest text-gray-500">2 MONTHS AGO</span>
+          <span class="text-xs uppercase tracking-widest font-bold px-2 py-1 border" style="color:#C9A84C; border-color:#C9A84C;">VIA GOOGLE</span>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="flex flex-col md:flex-row items-start gap-6 md:gap-10 py-8 border-b-2 border-gray-800">
+        <span class="text-6xl font-black flex-shrink-0 w-20 text-center" style="color:#C9A84C;">03</span>
+        <div class="flex-1">
+          <p class="text-xl uppercase italic text-white leading-relaxed">"I recently hired a concrete contractor here in the USA to handle several large projects on my property, and I have to say—working with them was one of the best decisions I've made as a homeowner. From the very beginning, the experience was smooth, professional, and impressive. I first reached out for a quote to have my old, cracked driveway removed and replaced with a new stamped concrete design. Their team responded promptly, scheduled an in-person consultation, and showed up right on time. What really stood out during that initial meeting was how knowledgeable and honest they were. They took the time to explain the different types of concrete finishes, thicknesses, and reinforcement options, helping me choose the most durable and visually appealing option within my budget. Once the job..."</p>
+        </div>
+        <div class="flex flex-col items-end gap-2 flex-shrink-0 min-w-[160px]">
+          <span class="text-sm font-black uppercase text-white">DIANE TURNER</span>
+          <div class="flex gap-1">
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+          </div>
+          <span class="text-xs uppercase tracking-widest text-gray-500">9 MONTHS AGO</span>
+          <span class="text-xs uppercase tracking-widest font-bold px-2 py-1 border" style="color:#C9A84C; border-color:#C9A84C;">VIA GOOGLE</span>
+        </div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="flex flex-col md:flex-row items-start gap-6 md:gap-10 py-8 border-b-2 border-gray-800">
+        <span class="text-6xl font-black flex-shrink-0 w-20 text-center" style="color:#C9A84C;">04</span>
+        <div class="flex-1">
+          <p class="text-xl uppercase italic text-white leading-relaxed">"I wanted to share this review for my Boss Concrete Team!!! I appreciate this company and its team! They got me covered and taken care of! I was pouring my footers and piers for my upper level foundation! They showed up on time they setup fast the mix came out perfect and the fact they can change the mix on spot was EXCEPTIONAL! The instructors and trainee worked so damn well together! The instructor allowed the trainee to use his magnificent mind it was an amazing time! These gentlemen went above and beyond the call of duty! It started to pour showers of blessings and this did not deter the guys… we paused for about 15-20mins and got back to it… strengthen the cement to push water out and got the job completely finished. Boss Concrete prices are unmatched the team is unmatched and I will n..."</p>
+        </div>
+        <div class="flex flex-col items-end gap-2 flex-shrink-0 min-w-[160px]">
+          <span class="text-sm font-black uppercase text-white">JAMIE JAMAL</span>
+          <div class="flex gap-1">
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+          </div>
+          <span class="text-xs uppercase tracking-widest text-gray-500">12 MONTHS AGO</span>
+          <span class="text-xs uppercase tracking-widest font-bold px-2 py-1 border" style="color:#C9A84C; border-color:#C9A84C;">VIA GOOGLE</span>
+        </div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="flex flex-col md:flex-row items-start gap-6 md:gap-10 py-8 border-b-2 border-gray-800">
+        <span class="text-6xl font-black flex-shrink-0 w-20 text-center" style="color:#C9A84C;">05</span>
+        <div class="flex-1">
+          <p class="text-xl uppercase italic text-white leading-relaxed">"I am more than pleased with my experience with Boss Concrete. They installed a new driveway at my house. They clearly explained the process and commitment to my total satisfaction. Working with Marco was a pleasure. I found him to be honest and a man of integrity. You will not be disappointed working with him. Boss Concrete is who you want to handle your concrete needs."</p>
+        </div>
+        <div class="flex flex-col items-end gap-2 flex-shrink-0 min-w-[160px]">
+          <span class="text-sm font-black uppercase text-white">KERRY REES</span>
+          <div class="flex gap-1">
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#C9A84C;"></i>
+          </div>
+          <span class="text-xs uppercase tracking-widest text-gray-500">2 MONTHS AGO</span>
+          <span class="text-xs uppercase tracking-widest font-bold px-2 py-1 border" style="color:#C9A84C; border-color:#C9A84C;">VIA GOOGLE</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-black">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-12">
+        <span class="text-xs uppercase tracking-widest font-bold mb-3 block" style="color:#C9A84C;">GOT QUESTIONS</span>
+        <h2 class="text-5xl md:text-6xl lg:text-7xl font-black uppercase text-white leading-none">FREQUENTLY <span style="color:#C9A84C;">ASKED</span></h2>
+      </div>
+
+      <details class="border-3 border-gray-700 mb-4 group" style="border-width:3px;">
+        <summary class="uppercase font-black text-xl py-6 px-6 text-white flex justify-between items-center group-open:bg-yellow-500 group-open:text-black transition-colors">
+          HOW LONG DOES A CONCRETE DRIVEWAY INSTALLATION TAKE?
+          <i data-lucide="chevron-right" class="w-6 h-6 transition-transform group-open:rotate-90 flex-shrink-0"></i>
+        </summary>
+        <div class="px-6 py-5 bg-gray-900">
+          <p class="text-sm text-gray-300 uppercase tracking-wide leading-relaxed">A standard residential driveway typically takes 1-2 days to pour and form, plus an additional 24-48 hours before light foot traffic and up to 7 days before vehicle use. We'll give you a specific timeline during your free quote based on your project size and current weather conditions in the Tyrone, GA area.</p>
+        </div>
+      </details>
+
+      <details class="border-3 border-gray-700 mb-4 group" style="border-width:3px;">
+        <summary class="uppercase font-black text-xl py-6 px-6 text-white flex justify-between items-center group-open:bg-yellow-500 group-open:text-black transition-colors">
+          WHAT THICKNESS SHOULD MY CONCRETE SLAB BE?
+          <i data-lucide="chevron-right" class="w-6 h-6 transition-transform group-open:rotate-90 flex-shrink-0"></i>
+        </summary>
+        <div class="px-6 py-5 bg-gray-900">
+          <p class="text-sm text-gray-300 uppercase tracking-wide leading-relaxed">For residential driveways, we typically pour at 4 inches thick with proper rebar reinforcement. Slabs for heavy vehicles or equipment are poured at 6 inches or more. We assess each project individually and always recommend the right thickness for your specific load and use requirements — no cutting corners on our end.</p>
+        </div>
+      </details>
+
+      <details class="border-3 border-gray-700 mb-4 group" style="border-width:3px;">
+        <summary class="uppercase font-black text-xl py-6 px-6 text-white flex justify-between items-center group-open:bg-yellow-500 group-open:text-black transition-colors">
+          DO YOU OFFER FREE ESTIMATES?
+          <i data-lucide="chevron-right" class="w-6 h-6 transition-transform group-open:rotate-90 flex-shrink-0"></i>
+        </summary>
+        <div class="px-6 py-5 bg-gray-900">
+          <p class="text-sm text-gray-300 uppercase tracking-wide leading-relaxed">Absolutely — every estimate we provide is 100% free with no obligation. We'll come out to your property in Tyrone, GA or the surrounding area, assess the scope of work, and give you a transparent, written quote on the spot. We believe in upfront pricing with zero surprises.</p>
+        </div>
+      </details>
+
+      <details class="border-3 border-gray-700 mb-4 group" style="border-width:3px;">
+        <summary class="uppercase font-black text-xl py-6 px-6 text-white flex justify-between items-center group-open:bg-yellow-500 group-open:text-black transition-colors">
+          ARE YOU LICENSED AND INSURED IN GEORGIA?
+          <i data-lucide="chevron-right" class="w-6 h-6 transition-transform group-open:rotate-90 flex-shrink-0"></i>
+        </summary>
+        <div class="px-6 py-5 bg-gray-900">
+          <p class="text-sm text-gray-300 uppercase tracking-wide leading-relaxed">Yes. BOSS Concrete Construction LLC is fully licensed, insured, and bonded to operate in Georgia. We carry comprehensive general liability insurance to protect your property and our crew on every project. You can request proof of insurance before we begin — we're happy to provide it.</p>
+        </div>
+      </details>
+
+      <details class="border-3 border-gray-700 mb-4 group" style="border-width:3px;">
+        <summary class="uppercase font-black text-xl py-6 px-6 text-white flex justify-between items-center group-open:bg-yellow-500 group-open:text-black transition-colors">
+          CAN CONCRETE BE POURED IN COLD OR HOT WEATHER?
+          <i data-lucide="chevron-right" class="w-6 h-6 transition-transform group-open:rotate-90 flex-shrink-0"></i>
+        </summary>
+        <div class="px-6 py-5 bg-gray-900">
+          <p class="text-sm text-gray-300 uppercase tracking-wide leading-relaxed">Concrete can be poured in a wide range of temperatures, but extreme heat or cold requires special precautions. In Georgia's climate, we monitor weather closely and adjust our mix and curing process accordingly. We'll never pour in conditions that would compromise the quality of your finished product — your project's integrity always comes first.</p>
+        </div>
+      </details>
+
+      <details class="border-3 border-gray-700 mb-4 group" style="border-width:3px;">
+        <summary class="uppercase font-black text-xl py-6 px-6 text-white flex justify-between items-center group-open:bg-yellow-500 group-open:text-black transition-colors">
+          HOW DO I MAINTAIN MY NEW CONCRETE DRIVEWAY OR PATIO?
+          <i data-lucide="chevron-right" class="w-6 h-6 transition-transform group-open:rotate-90 flex-shrink-0"></i>
+        </summary>
+        <div class="px-6 py-5 bg-gray-900">
+          <p class="text-sm text-gray-300 uppercase tracking-wide leading-relaxed">Proper maintenance starts with sealing your concrete every 2-3 years to protect it from moisture, stains, and Georgia's UV exposure. Avoid harsh deicers and clean up oil spills promptly. We offer professional sealing and coating services, and we'll walk you through a care plan after every project is complete so your investment lasts for decades.</p>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-gray-950">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-12">
+        <span class="text-xs uppercase tracking-widest font-bold mb-3 block" style="color:#C9A84C;">LET'S TALK</span>
+        <h2 class="text-5xl md:text-6xl lg:text-7xl font-black uppercase text-white leading-none">GET A FREE <span style="color:#C9A84C;">QUOTE</span></h2>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <!-- Form -->
+        <div>
+          <form class="flex flex-col gap-4" onsubmit="return false;">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs uppercase font-black tracking-widest text-gray-400 mb-2">YOUR NAME</label>
+                <input type="text" placeholder="John Smith" class="w-full bg-black border-2 border-gray-700 text-white px-4 py-3 text-sm focus:border-yellow-500 focus:outline-none uppercase placeholder-gray-600">
+              </div>
+              <div>
+                <label class="block text-xs uppercase font-black tracking-widest text-gray-400 mb-2">PHONE NUMBER</label>
+                <input type="tel" placeholder="(770) 000-0000" class="w-full bg-black border-2 border-gray-700 text-white px-4 py-3 text-sm focus:border-yellow-500 focus:outline-none uppercase placeholder-gray-600">
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs uppercase font-black tracking-widest text-gray-400 mb-2">EMAIL ADDRESS</label>
+              <input type="email" placeholder="your@email.com" class="w-full bg-black border-2 border-gray-700 text-white px-4 py-3 text-sm focus:border-yellow-500 focus:outline-none uppercase placeholder-gray-600">
+            </div>
+            <div>
+              <label class="block text-xs uppercase font-black tracking-widest text-gray-400 mb-2">SERVICE NEEDED</label>
+              <select class="w-full bg-black border-2 border-gray-700 text-white px-4 py-3 text-sm focus:border-yellow-500 focus:outline-none uppercase appearance-none">
+                <option value="">SELECT A SERVICE</option>
+                <option>CONCRETE POURING</option>
+                <option>FOUNDATION WORK</option>
+                <option>SLAB INSTALLATION</option>
+                <option>SIDEWALK CONSTRUCTION</option>
+                <option>DRIVEWAY INSTALLATION</option>
+                <option>PATIO DESIGN</option>
+                <option>DECORATIVE CONCRETE</option>
+                <option>STAMPED FINISHES</option>
+                <option>CONCRETE REPAIR</option>
+                <option>RESURFACING</option>
+                <option>SEALING &amp; COATING</option>
+                <option>CRACK REPAIR</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs uppercase font-black tracking-widest text-gray-400 mb-2">PROJECT DETAILS</label>
+              <textarea rows="5" placeholder="DESCRIBE YOUR PROJECT..." class="w-full bg-black border-2 border-gray-700 text-white px-4 py-3 text-sm focus:border-yellow-500 focus:outline-none uppercase placeholder-gray-600 resize-none"></textarea>

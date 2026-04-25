@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dr. Klean Power Washing and Exterior Cleaning LLC. | Atlanta, GA</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -20,7 +20,7 @@
     details summary { list-style: none; cursor: pointer; }
     details summary::-webkit-details-marker { display: none; }
     .tab-btn { cursor: pointer; transition: all 0.2s ease; }
-    .tab-btn.active-tab { background-color: #1C3A4A; color: white; }
+    .tab-btn.active-tab { background-color: #118AB2; color: white; }
     .tab-btn.inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
     .tab-panel { display: block; }
     .tab-panel.hidden { display: none !important; }
@@ -38,839 +38,978 @@
     .animate-section.is-pending:target { opacity: 1 !important; transform: none !important; }
     .award-badge { filter: grayscale(100%); transition: filter 0.3s ease; }
     .award-badge:hover { filter: grayscale(0%); }
-    .accent-green { color: #80FF00; }
-    .bg-accent-green { background-color: #80FF00; }
-    .service-icon-bg { background-color: rgba(128,255,0,0.12); }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-white text-gray-800">
 
-<!-- NAV -->
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-all duration-300">
-  <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-20">
-    <a href="#home" class="text-xl font-bold text-[#1C3A4A]" style="font-family:'Poppins',sans-serif;">Dr. Klean<span style="color:#80FF00;">.</span></a>
-    <div class="hidden md:flex items-center gap-8">
-      <a href="#home" class="text-sm font-medium text-gray-700 hover:text-[#1C3A4A] transition">Home</a>
-      <a href="#about" class="text-sm font-medium text-gray-700 hover:text-[#1C3A4A] transition">About</a>
-      <a href="#services" class="text-sm font-medium text-gray-700 hover:text-[#1C3A4A] transition">Services</a>
-      <a href="#gallery" class="text-sm font-medium text-gray-700 hover:text-[#1C3A4A] transition">Gallery</a>
-      <a href="#reviews" class="text-sm font-medium text-gray-700 hover:text-[#1C3A4A] transition">Reviews</a>
-      <a href="#faq" class="text-sm font-medium text-gray-700 hover:text-[#1C3A4A] transition">FAQ</a>
-      <a href="#contact" class="text-sm font-medium text-gray-700 hover:text-[#1C3A4A] transition">Contact</a>
-      <a href="tel:6789549367" class="bg-[#1C3A4A] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#2a5066] transition">(678) 954-9367</a>
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-20">
+      <a href="#home" class="font-bold text-xl text-[#118AB2]" style="font-family:'Poppins',sans-serif;">Dr. Klean<span class="text-[#06D6A0]">.</span></a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
+        <a href="#home" class="hover:text-[#118AB2] transition">Home</a>
+        <a href="#about" class="hover:text-[#118AB2] transition">About</a>
+        <a href="#services" class="hover:text-[#118AB2] transition">Services</a>
+        <a href="#gallery" class="hover:text-[#118AB2] transition">Gallery</a>
+        <a href="#reviews" class="hover:text-[#118AB2] transition">Reviews</a>
+        <a href="#faq" class="hover:text-[#118AB2] transition">FAQ</a>
+        <a href="#contact" class="hover:text-[#118AB2] transition">Contact</a>
+      </div>
+      <a href="tel:6789549367" class="hidden md:inline-flex items-center gap-2 bg-[#118AB2] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#0e7a9e] transition">
+        <i data-lucide="phone" class="w-4 h-4"></i> (678) 954-9367
+      </a>
+      <button id="hamburger" class="md:hidden p-2 text-gray-700">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
     </div>
-    <button id="hamburger" class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition">
-      <i data-lucide="menu" class="w-6 h-6"></i>
-    </button>
-  </div>
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
-    <a href="#home" class="mobile-nav-link block py-3 px-6 text-gray-700 hover:bg-gray-50 border-b border-gray-100 text-sm font-medium">Home</a>
-    <a href="#about" class="mobile-nav-link block py-3 px-6 text-gray-700 hover:bg-gray-50 border-b border-gray-100 text-sm font-medium">About</a>
-    <a href="#services" class="mobile-nav-link block py-3 px-6 text-gray-700 hover:bg-gray-50 border-b border-gray-100 text-sm font-medium">Services</a>
-    <a href="#gallery" class="mobile-nav-link block py-3 px-6 text-gray-700 hover:bg-gray-50 border-b border-gray-100 text-sm font-medium">Gallery</a>
-    <a href="#reviews" class="mobile-nav-link block py-3 px-6 text-gray-700 hover:bg-gray-50 border-b border-gray-100 text-sm font-medium">Reviews</a>
-    <a href="#faq" class="mobile-nav-link block py-3 px-6 text-gray-700 hover:bg-gray-50 border-b border-gray-100 text-sm font-medium">FAQ</a>
-    <a href="#contact" class="mobile-nav-link block py-3 px-6 text-gray-700 hover:bg-gray-50 border-b border-gray-100 text-sm font-medium">Contact</a>
-    <div class="px-6 py-4">
-      <a href="tel:6789549367" class="block text-center bg-[#1C3A4A] text-white px-5 py-3 rounded-full text-sm font-semibold">(678) 954-9367</a>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden bg-white border-t border-gray-100 md:hidden">
+      <a href="#home" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-medium hover:text-[#118AB2]">Home</a>
+      <a href="#about" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-medium hover:text-[#118AB2]">About</a>
+      <a href="#services" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-medium hover:text-[#118AB2]">Services</a>
+      <a href="#gallery" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-medium hover:text-[#118AB2]">Gallery</a>
+      <a href="#reviews" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-medium hover:text-[#118AB2]">Reviews</a>
+      <a href="#faq" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-medium hover:text-[#118AB2]">FAQ</a>
+      <a href="#contact" class="mobile-nav-link block py-3 px-4 text-sm font-medium hover:text-[#118AB2]">Contact</a>
+      <div class="px-4 py-3">
+        <a href="tel:6789549367" class="flex items-center justify-center gap-2 bg-[#118AB2] text-white px-5 py-3 rounded-full text-sm font-semibold">
+          <i data-lucide="phone" class="w-4 h-4"></i> (678) 954-9367
+        </a>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- HERO -->
-<section id="home" class="relative w-full h-screen min-h-[600px] flex items-end">
-  <div class="absolute inset-0 img-hover-wrap">
-    <img
-      src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-uzkK8J4NtXruHjexrXyoPg07v7J1hrwQc7gSHmJWgJcVrN81KwqOoZG47uABbULgN4ix55LGsr9FEatn1XSrWVEpMhrelGyAJ_oOK3HtrSZ_t2IKOIgcthfNzvUveF8edmYbK4Jh2r8aPW3mUkZFkuhn7aiswrgA3duTXiPwmLMjck9eFULNVg-q0yOPybgqkLy25z7YLgmJ69V631QxaGr3Q-tylW2C2r2-c-JG6Xo-JAUBkkaklbYyuI7LcC6aNluBID2d03_BoXaY6rpasHDjeDhpCBjvY3kvNi3KLJeg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-      alt="Dr. Klean Power Washing Atlanta"
-      class="w-full h-full object-cover"
-      onerror="this.src='https://picsum.photos/seed/pressure-1/1600/900'"
-    />
-  </div>
-  <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(10,20,28,0.92) 0%, rgba(10,20,28,0.55) 50%, transparent 100%);"></div>
-  <div class="relative z-10 px-6 md:px-16 pb-20 md:pb-28 max-w-4xl">
-    <p class="text-xs tracking-widest uppercase font-semibold mb-4" style="color:#80FF00;">Atlanta, GA · Exterior Cleaning Specialists</p>
-    <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-4">Atlanta's Premier<br/>Power Washing<br/>Pros.</h1>
-    <p class="text-gray-300 text-lg md:text-xl max-w-xl mb-8">Spotless surfaces, every visit — backed by 5-star results.</p>
-    <div class="flex flex-wrap gap-4">
-      <a href="#contact" class="bg-accent-green text-black font-bold px-8 py-4 rounded-full text-sm uppercase tracking-wider hover:brightness-110 transition">Get a Free Estimate</a>
-      <a href="tel:6789549367" class="border border-white/40 text-white font-semibold px-8 py-4 rounded-full text-sm hover:bg-white/10 transition">(678) 954-9367</a>
-    </div>
-  </div>
-</section>
-
-<!-- STATS -->
-<section class="animate-section bg-white py-10 px-4 md:px-8 lg:px-16 shadow-sm">
-  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-    <div class="rounded-lg p-6 flex flex-col items-center text-center border border-gray-100 shadow-sm hover:shadow-md transition">
-      <div class="service-icon-bg rounded-full p-3 mb-3">
-        <i data-lucide="star" class="w-6 h-6" style="color:#80FF00;"></i>
-      </div>
-      <span class="text-3xl font-bold text-[#1C3A4A]" data-count="5" data-suffix="">5</span>
-      <span class="text-xs text-gray-500 mt-1 font-medium">Star Rating</span>
-    </div>
-    <div class="rounded-lg p-6 flex flex-col items-center text-center border border-gray-100 shadow-sm hover:shadow-md transition">
-      <div class="service-icon-bg rounded-full p-3 mb-3">
-        <i data-lucide="award" class="w-6 h-6" style="color:#80FF00;"></i>
-      </div>
-      <span class="text-3xl font-bold text-[#1C3A4A]" data-count="74" data-suffix="+">74+</span>
-      <span class="text-xs text-gray-500 mt-1 font-medium">Google Reviews</span>
-    </div>
-    <div class="rounded-lg p-6 flex flex-col items-center text-center border border-gray-100 shadow-sm hover:shadow-md transition">
-      <div class="service-icon-bg rounded-full p-3 mb-3">
-        <i data-lucide="shield-check" class="w-6 h-6" style="color:#80FF00;"></i>
-      </div>
-      <span class="text-3xl font-bold text-[#1C3A4A]">100%</span>
-      <span class="text-xs text-gray-500 mt-1 font-medium">Licensed &amp; Insured</span>
-    </div>
-    <div class="rounded-lg p-6 flex flex-col items-center text-center border border-gray-100 shadow-sm hover:shadow-md transition">
-      <div class="service-icon-bg rounded-full p-3 mb-3">
-        <i data-lucide="droplets" class="w-6 h-6" style="color:#80FF00;"></i>
-      </div>
-      <span class="text-3xl font-bold text-[#1C3A4A]" data-count="7" data-suffix="">7</span>
-      <span class="text-xs text-gray-500 mt-1 font-medium">Days a Week</span>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="animate-section py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-gray-50">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-    <div>
-      <p class="text-xs tracking-widest uppercase font-semibold mb-3" style="color:#80FF00;">Who We Are</p>
-      <h2 class="text-4xl md:text-5xl font-bold text-[#1C3A4A] leading-tight mb-6">Cleaning Atlanta,<br/>One Surface at a Time.</h2>
-      <p class="text-gray-600 leading-relaxed mb-4 max-w-2xl">Dr. Klean Power Washing and Exterior Cleaning LLC. is Atlanta's trusted exterior cleaning company, delivering meticulous pressure washing and soft wash services that restore curb appeal and protect your property. Based in Atlanta, GA, we serve homeowners and businesses across the metro area with the care and attention to detail your property deserves.</p>
-      <p class="text-gray-600 leading-relaxed max-w-2xl">From driveways to rooftops, every job receives our full dedication — using professional-grade equipment and eco-friendly techniques that are safe for your family, pets, and landscaping.</p>
-      <div class="mt-8 flex flex-wrap gap-6">
-        <div class="flex items-center gap-2">
-          <i data-lucide="check-circle" class="w-5 h-5" style="color:#80FF00;"></i>
-          <span class="text-sm font-medium text-gray-700">Same-Day Availability</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <i data-lucide="check-circle" class="w-5 h-5" style="color:#80FF00;"></i>
-          <span class="text-sm font-medium text-gray-700">Licensed &amp; Fully Insured</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <i data-lucide="check-circle" class="w-5 h-5" style="color:#80FF00;"></i>
-          <span class="text-sm font-medium text-gray-700">Eco-Friendly Solutions</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <i data-lucide="check-circle" class="w-5 h-5" style="color:#80FF00;"></i>
-          <span class="text-sm font-medium text-gray-700">Satisfaction Guaranteed</span>
-        </div>
-      </div>
-    </div>
-    <div class="img-hover-wrap rounded-2xl overflow-hidden shadow-xl h-[420px]">
-      <img
-        src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-tHTQL1zRw1UUyLTstiPfthFyav0fuGwZAQetAa_bLYG-q4KdZdUeE9LtTiemZH8kooKHkbauIBjI70jliTEto7bUE-mEI1Loh_0_K7UWjnUSHig9bdoyF8PI2Sg56-97f-EYKyzFlkVZXB5ZrI_fur5Fn3MqFwXcdR6Ec8bjjkEVr6oKrrK8DV5dfW0RHQQnenGcNvRXA_izdFBLo9CTc3ObNIl3pqOfFwZ18m6ObB1KAFBMlXtENwkOc8OBmtjCiODA1uEBmR5FwoVoRNY913X82LcDM3fdepR_qcww5fBsoJtWj4XW0NuzPNAFtMRRf1mSByEwqL2YmhBMpbqwbJqANC2ZmEV0m7-bwGMEv0DKW2GbK4hd8-H58QeJngQIX97niJNMGmrb7Kp3UZjSZnbSXGIOLXf672dJyU6-A&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-        alt="Dr. Klean power washing service"
-        class="w-full h-full object-cover"
-        loading="lazy"
-        onerror="this.src='https://picsum.photos/seed/pressure-2/800/600'"
-      />
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section id="gallery" class="animate-section py-24 px-4 md:px-8 lg:px-16 bg-white">
-  <div class="max-w-7xl mx-auto">
-    <p class="text-xs tracking-widest uppercase font-semibold mb-3" style="color:#80FF00;">Our Work</p>
-    <h2 class="text-4xl md:text-5xl font-bold text-[#1C3A4A] mb-12">Results That Speak<br/>for Themselves.</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <!-- Featured large -->
-      <div class="img-hover-wrap rounded-xl overflow-hidden col-span-1 sm:col-span-2 h-[500px]">
-        <img
-          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-uzkK8J4NtXruHjexrXyoPg07v7J1hrwQc7gSHmJWgJcVrN81KwqOoZG47uABbULgN4ix55LGsr9FEatn1XSrWVEpMhrelGyAJ_oOK3HtrSZ_t2IKOIgcthfNzvUveF8edmYbK4Jh2r8aPW3mUkZFkuhn7aiswrgA3duTXiPwmLMjck9eFULNVg-q0yOPybgqkLy25z7YLgmJ69V631QxaGr3Q-tylW2C2r2-c-JG6Xo-JAUBkkaklbYyuI7LcC6aNluBID2d03_BoXaY6rpasHDjeDhpCBjvY3kvNi3KLJeg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-          alt="Power washing Atlanta driveway"
-          class="w-full h-full object-cover"
-          loading="lazy"
-          onerror="this.src='https://picsum.photos/seed/pressure-3/1200/800'"
-        />
-      </div>
-      <div class="img-hover-wrap rounded-xl overflow-hidden h-[500px]">
-        <img
-          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-tHTQL1zRw1UUyLTstiPfthFyav0fuGwZAQetAa_bLYG-q4KdZdUeE9LtTiemZH8kooKHkbauIBjI70jliTEto7bUE-mEI1Loh_0_K7UWjnUSHig9bdoyF8PI2Sg56-97f-EYKyzFlkVZXB5ZrI_fur5Fn3MqFwXcdR6Ec8bjjkEVr6oKrrK8DV5dfW0RHQQnenGcNvRXA_izdFBLo9CTc3ObNIl3pqOfFwZ18m6ObB1KAFBMlXtENwkOc8OBmtjCiODA1uEBmR5FwoVoRNY913X82LcDM3fdepR_qcww5fBsoJtWj4XW0NuzPNAFtMRRf1mSByEwqL2YmhBMpbqwbJqANC2ZmEV0m7-bwGMEv0DKW2GbK4hd8-H58QeJngQIX97niJNMGmrb7Kp3UZjSZnbSXGIOLXf672dJyU6-A&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-          alt="Exterior cleaning Atlanta"
-          class="w-full h-full object-cover"
-          loading="lazy"
-          onerror="this.src='https://picsum.photos/seed/pressure-4/800/900'"
-        />
-      </div>
-      <div class="img-hover-wrap rounded-xl overflow-hidden h-[320px]">
-        <img
-          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-sNPrHouUO60X9pJqpBPkFqhqysI38g4PSP858MAu-KsiKWcI7moK0sF87pkhNlQqk5vhIerhpT-c24FCWtTp0c7FnBtn5mdoxRLbMP1_Hq5F6Axe7LZG2-mzysJmbu7ZF-r4X_W26TvEVTV2xYVqdHzrkxzDwQn3UjxCY-ynEOu63Mgtso__2eYYrT_xBHsBj9q-6_HhRyecBfhEeameNnsFx3XJM80LFeAmj0i2ovJPjgXmHLyGSn2ZulQM0QXh46cH_BPOw_B3r8Iho2Kd9-uMaiioJUE7yKJaGqCnsADFST-1qu22Uij6mPcLjb4t_lZyzxVnTcD6kyookMMMd62uSKp1uAe_HN8T7a8RcTI0-2W1JQ-GyseTntT9Am1dLozcYRkYbL8iQprvjXRWpKLcCIy6OfC56KxY6zo2esxqEx&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-          alt="Roof soft wash Atlanta"
-          class="w-full h-full object-cover"
-          loading="lazy"
-          onerror="this.src='https://picsum.photos/seed/pressure-5/800/600'"
-        />
-      </div>
-      <div class="img-hover-wrap rounded-xl overflow-hidden h-[320px]">
-        <img
-          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-uzkK8J4NtXruHjexrXyoPg07v7J1hrwQc7gSHmJWgJcVrN81KwqOoZG47uABbULgN4ix55LGsr9FEatn1XSrWVEpMhrelGyAJ_oOK3HtrSZ_t2IKOIgcthfNzvUveF8edmYbK4Jh2r8aPW3mUkZFkuhn7aiswrgA3duTXiPwmLMjck9eFULNVg-q0yOPybgqkLy25z7YLgmJ69V631QxaGr3Q-tylW2C2r2-c-JG6Xo-JAUBkkaklbYyuI7LcC6aNluBID2d03_BoXaY6rpasHDjeDhpCBjvY3kvNi3KLJeg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-          alt="House washing Atlanta GA"
-          class="w-full h-full object-cover"
-          loading="lazy"
-          onerror="this.src='https://picsum.photos/seed/pressure-6/800/600'"
-        />
-      </div>
-      <div class="img-hover-wrap rounded-xl overflow-hidden h-[320px]">
-        <img
-          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-tHTQL1zRw1UUyLTstiPfthFyav0fuGwZAQetAa_bLYG-q4KdZdUeE9LtTiemZH8kooKHkbauIBjI70jliTEto7bUE-mEI1Loh_0_K7UWjnUSHig9bdoyF8PI2Sg56-97f-EYKyzFlkVZXB5ZrI_fur5Fn3MqFwXcdR6Ec8bjjkEVr6oKrrK8DV5dfW0RHQQnenGcNvRXA_izdFBLo9CTc3ObNIl3pqOfFwZ18m6ObB1KAFBMlXtENwkOc8OBmtjCiODA1uEBmR5FwoVoRNY913X82LcDM3fdepR_qcww5fBsoJtWj4XW0NuzPNAFtMRRf1mSByEwqL2YmhBMpbqwbJqANC2ZmEV0m7-bwGMEv0DKW2GbK4hd8-H58QeJngQIX97niJNMGmrb7Kp3UZjSZnbSXGIOLXf672dJyU6-A&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-          alt="Patio cleaning Atlanta"
-          class="w-full h-full object-cover"
-          loading="lazy"
-          onerror="this.src='https://picsum.photos/seed/pressure-7/800/600'"
-        />
-      </div>
-      <div class="img-hover-wrap rounded-xl overflow-hidden col-span-1 sm:col-span-2 lg:col-span-1 h-[320px]">
-        <img
-          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-sNPrHouUO60X9pJqpBPkFqhqysI38g4PSP858MAu-KsiKWcI7moK0sF87pkhNlQqk5vhIerhpT-c24FCWtTp0c7FnBtn5mdoxRLbMP1_Hq5F6Axe7LZG2-mzysJmbu7ZF-r4X_W26TvEVTV2xYVqdHzrkxzDwQn3UjxCY-ynEOu63Mgtso__2eYYrT_xBHsBj9q-6_HhRyecBfhEeameNnsFx3XJM80LFeAmj0i2ovJPjgXmHLyGSn2ZulQM0QXh46cH_BPOw_B3r8Iho2Kd9-uMaiioJUE7yKJaGqCnsADFST-1qu22Uij6mPcLjb4t_lZyzxVnTcD6kyookMMMd62uSKp1uAe_HN8T7a8RcTI0-2W1JQ-GyseTntT9Am1dLozcYRkYbL8iQprvjXRWpKLcCIy6OfC56KxY6zo2esxqEx&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-          alt="Deck cleaning Atlanta Georgia"
-          class="w-full h-full object-cover"
-          loading="lazy"
-          onerror="this.src='https://picsum.photos/seed/pressure-8/800/600'"
-        />
-      </div>
-      <div class="img-hover-wrap rounded-xl overflow-hidden h-[280px]">
-        <img
-          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-uzkK8J4NtXruHjexrXyoPg07v7J1hrwQc7gSHmJWgJcVrN81KwqOoZG47uABbULgN4ix55LGsr9FEatn1XSrWVEpMhrelGyAJ_oOK3HtrSZ_t2IKOIgcthfNzvUveF8edmYbK4Jh2r8aPW3mUkZFkuhn7aiswrgA3duTXiPwmLMjck9eFULNVg-q0yOPybgqkLy25z7YLgmJ69V631QxaGr3Q-tylW2C2r2-c-JG6Xo-JAUBkkaklbYyuI7LcC6aNluBID2d03_BoXaY6rpasHDjeDhpCBjvY3kvNi3KLJeg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-          alt="Commercial wash Atlanta"
-          class="w-full h-full object-cover"
-          loading="lazy"
-          onerror="this.src='https://picsum.photos/seed/pressure-9/800/600'"
-        />
-      </div>
-      <div class="img-hover-wrap rounded-xl overflow-hidden h-[280px]">
-        <img
-          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-tHTQL1zRw1UUyLTstiPfthFyav0fuGwZAQetAa_bLYG-q4KdZdUeE9LtTiemZH8kooKHkbauIBjI70jliTEto7bUE-mEI1Loh_0_K7UWjnUSHig9bdoyF8PI2Sg56-97f-EYKyzFlkVZXB5ZrI_fur5Fn3MqFwXcdR6Ec8bjjkEVr6oKrrK8DV5dfW0RHQQnenGcNvRXA_izdFBLo9CTc3ObNIl3pqOfFwZ18m6ObB1KAFBMlXtENwkOc8OBmtjCiODA1uEBmR5FwoVoRNY913X82LcDM3fdepR_qcww5fBsoJtWj4XW0NuzPNAFtMRRf1mSByEwqL2YmhBMpbqwbJqANC2ZmEV0m7-bwGMEv0DKW2GbK4hd8-H58QeJngQIX97niJNMGmrb7Kp3UZjSZnbSXGIOLXf672dJyU6-A&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-          alt="Siding soft wash Atlanta"
-          class="w-full h-full object-cover"
-          loading="lazy"
-          onerror="this.src='https://picsum.photos/seed/pressure-10/800/600'"
-        />
-      </div>
-      <div class="img-hover-wrap rounded-xl overflow-hidden h-[280px]">
-        <img
-          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-sNPrHouUO60X9pJqpBPkFqhqysI38g4PSP858MAu-KsiKWcI7moK0sF87pkhNlQqk5vhIerhpT-c24FCWtTp0c7FnBtn5mdoxRLbMP1_Hq5F6Axe7LZG2-mzysJmbu7ZF-r4X_W26TvEVTV2xYVqdHzrkxzDwQn3UjxCY-ynEOu63Mgtso__2eYYrT_xBHsBj9q-6_HhRyecBfhEeameNnsFx3XJM80LFeAmj0i2ovJPjgXmHLyGSn2ZulQM0QXh46cH_BPOw_B3r8Iho2Kd9-uMaiioJUE7yKJaGqCnsADFST-1qu22Uij6mPcLjb4t_lZyzxVnTcD6kyookMMMd62uSKp1uAe_HN8T7a8RcTI0-2W1JQ-GyseTntT9Am1dLozcYRkYbL8iQprvjXRWpKLcCIy6OfC56KxY6zo2esxqEx&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-          alt="Storefront cleaning Atlanta GA"
-          class="w-full h-full object-cover"
-          loading="lazy"
-          onerror="this.src='https://picsum.photos/seed/pressure-11/800/600'"
-        />
-      </div>
-    </div>
-    <div class="text-center mt-10">
-      <a href="#contact" class="arrow-cta text-[#1C3A4A] font-semibold text-sm">Start Your Project <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-gray-50">
-  <div class="max-w-7xl mx-auto">
-    <div class="mb-8">
-      <p class="text-xs tracking-widest uppercase font-semibold mb-3" style="color:#80FF00;">What We Do</p>
-      <h2 class="text-4xl md:text-5xl font-bold text-[#1C3A4A]">Services Built<br/>for Every Surface.</h2>
-    </div>
-    <div class="flex flex-wrap gap-2 md:flex-nowrap mb-8 tabs-container">
-      <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-1">Pressure Washing</button>
-      <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-2">Soft Wash</button>
-      <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-3">Commercial</button>
-    </div>
-
-    <!-- Tab 1 -->
-    <div id="tab-panel-1" class="tab-panel">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- House Washing -->
-        <div class="bg-white rounded-xl shadow-sm p-7 hover:shadow-md transition flex flex-col gap-4">
-          <div class="service-icon-bg rounded-full w-12 h-12 flex items-center justify-center">
-            <i data-lucide="droplets" class="w-6 h-6" style="color:#80FF00;"></i>
+  <!-- HERO -->
+  <section id="home" class="animate-section pt-20 min-h-screen flex items-center bg-gradient-to-br from-[#f0f9ff] to-[#e8f5f0]">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 w-full py-16 md:py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Left -->
+        <div>
+          <div class="inline-flex items-center gap-2 bg-[#118AB2]/10 text-[#118AB2] px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Serving Atlanta, GA
           </div>
-          <h3 class="text-xl font-bold text-[#1C3A4A]">House Washing</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Restore your home's exterior to like-new condition with our high-powered house washing service. We remove dirt, mold, mildew, and staining from siding, brick, and more.</p>
-          <a href="tel:6789549367" class="arrow-cta text-[#1C3A4A] font-semibold text-sm mt-auto">Call to Book <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-        <!-- Driveway Cleaning -->
-        <div class="bg-white rounded-xl shadow-sm p-7 hover:shadow-md transition flex flex-col gap-4">
-          <div class="service-icon-bg rounded-full w-12 h-12 flex items-center justify-center">
-            <i data-lucide="gauge" class="w-6 h-6" style="color:#80FF00;"></i>
+          <h1 class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
+            Your Neighborhood's <span class="text-[#118AB2]">Cleaning</span> Crew
+          </h1>
+          <p class="text-lg text-gray-600 mt-4 font-medium">Atlanta's trusted power washing pros — right around the corner.</p>
+          <div class="flex flex-wrap gap-4 mt-8">
+            <a href="#contact" class="inline-flex items-center gap-2 bg-[#118AB2] text-white px-7 py-4 rounded-full font-semibold text-base hover:bg-[#0e7a9e] transition shadow-lg shadow-[#118AB2]/20">
+              Get a Free Estimate <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+            <a href="tel:6789549367" class="inline-flex items-center gap-2 bg-white text-[#118AB2] border-2 border-[#118AB2] px-7 py-4 rounded-full font-semibold text-base hover:bg-[#118AB2]/5 transition">
+              <i data-lucide="phone" class="w-5 h-5"></i> Call Now
+            </a>
           </div>
-          <h3 class="text-xl font-bold text-[#1C3A4A]">Driveway Cleaning</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Blast away oil stains, tire marks, and embedded grime from concrete or asphalt driveways. Our process leaves your driveway looking fresh and noticeably cleaner.</p>
-          <a href="tel:6789549367" class="arrow-cta text-[#1C3A4A] font-semibold text-sm mt-auto">Call to Book <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-        <!-- Deck Cleaning -->
-        <div class="bg-white rounded-xl shadow-sm p-7 hover:shadow-md transition flex flex-col gap-4">
-          <div class="service-icon-bg rounded-full w-12 h-12 flex items-center justify-center">
-            <i data-lucide="sun" class="w-6 h-6" style="color:#80FF00;"></i>
-          </div>
-          <h3 class="text-xl font-bold text-[#1C3A4A]">Deck Cleaning</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Revive your wooden or composite deck by removing algae, mold, and years of weathered buildup. Regular cleaning extends the life of your deck and keeps it safe underfoot.</p>
-          <a href="tel:6789549367" class="arrow-cta text-[#1C3A4A] font-semibold text-sm mt-auto">Call to Book <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-        <!-- Patio Cleaning -->
-        <div class="bg-white rounded-xl shadow-sm p-7 hover:shadow-md transition flex flex-col gap-4">
-          <div class="service-icon-bg rounded-full w-12 h-12 flex items-center justify-center">
-            <i data-lucide="sparkles" class="w-6 h-6" style="color:#80FF00;"></i>
-          </div>
-          <h3 class="text-xl font-bold text-[#1C3A4A]">Patio Cleaning</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Whether stone, pavers, or concrete, our patio cleaning service eliminates stubborn stains and biological growth. Enjoy a clean, welcoming outdoor space all season long.</p>
-          <a href="tel:6789549367" class="arrow-cta text-[#1C3A4A] font-semibold text-sm mt-auto">Call to Book <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tab 2 -->
-    <div id="tab-panel-2" class="tab-panel hidden">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Soft Wash Roof -->
-        <div class="bg-white rounded-xl shadow-sm p-7 hover:shadow-md transition flex flex-col gap-4">
-          <div class="service-icon-bg rounded-full w-12 h-12 flex items-center justify-center">
-            <i data-lucide="shield" class="w-6 h-6" style="color:#80FF00;"></i>
-          </div>
-          <h3 class="text-xl font-bold text-[#1C3A4A]">Soft Wash Roof</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Safely remove black streaks, moss, and algae from your roof using a low-pressure soft wash treatment. Our process kills growth at the root — protecting your shingles and extending roof life.</p>
-          <a href="tel:6789549367" class="arrow-cta text-[#1C3A4A] font-semibold text-sm mt-auto">Call to Book <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-        <!-- Siding Soft Wash -->
-        <div class="bg-white rounded-xl shadow-sm p-7 hover:shadow-md transition flex flex-col gap-4">
-          <div class="service-icon-bg rounded-full w-12 h-12 flex items-center justify-center">
-            <i data-lucide="spray-can" class="w-6 h-6" style="color:#80FF00;"></i>
-          </div>
-          <h3 class="text-xl font-bold text-[#1C3A4A]">Siding Soft Wash</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Our gentle soft wash technique cleans vinyl, wood, and fiber cement siding without warping or damage. The result is a bright, refreshed exterior that boosts your home's curb appeal.</p>
-          <a href="tel:6789549367" class="arrow-cta text-[#1C3A4A] font-semibold text-sm mt-auto">Call to Book <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-        <!-- Window Soft Wash -->
-        <div class="bg-white rounded-xl shadow-sm p-7 hover:shadow-md transition flex flex-col gap-4">
-          <div class="service-icon-bg rounded-full w-12 h-12 flex items-center justify-center">
-            <i data-lucide="sparkles" class="w-6 h-6" style="color:#80FF00;"></i>
-          </div>
-          <h3 class="text-xl font-bold text-[#1C3A4A]">Window Soft Wash</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Crystal-clear windows without streaks or damage using our soft wash exterior window cleaning. We remove pollen, grime, and water spots for a spotless shine inside and out.</p>
-          <a href="tel:6789549367" class="arrow-cta text-[#1C3A4A] font-semibold text-sm mt-auto">Call to Book <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-        <!-- Gentle Surface Cleaning -->
-        <div class="bg-white rounded-xl shadow-sm p-7 hover:shadow-md transition flex flex-col gap-4">
-          <div class="service-icon-bg rounded-full w-12 h-12 flex items-center justify-center">
-            <i data-lucide="waves" class="w-6 h-6" style="color:#80FF00;"></i>
-          </div>
-          <h3 class="text-xl font-bold text-[#1C3A4A]">Gentle Surface Cleaning</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Ideal for delicate surfaces like painted wood, stucco, and older masonry — our gentle cleaning method lifts contaminants without surface stress. Perfect for historic homes and sensitive areas.</p>
-          <a href="tel:6789549367" class="arrow-cta text-[#1C3A4A] font-semibold text-sm mt-auto">Call to Book <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tab 3 -->
-    <div id="tab-panel-3" class="tab-panel hidden">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Commercial Building Wash -->
-        <div class="bg-white rounded-xl shadow-sm p-7 hover:shadow-md transition flex flex-col gap-4">
-          <div class="service-icon-bg rounded-full w-12 h-12 flex items-center justify-center">
-            <i data-lucide="shield-check" class="w-6 h-6" style="color:#80FF00;"></i>
-          </div>
-          <h3 class="text-xl font-bold text-[#1C3A4A]">Commercial Building Wash</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Keep your commercial property looking its best with our professional building exterior wash. We handle multi-story facades, retail centers, and office buildings across the Atlanta metro area.</p>
-          <a href="tel:6789549367" class="arrow-cta text-[#1C3A4A] font-semibold text-sm mt-auto">Call to Book <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-        <!-- Parking Lot Cleaning -->
-        <div class="bg-white rounded-xl shadow-sm p-7 hover:shadow-md transition flex flex-col gap-4">
-          <div class="service-icon-bg rounded-full w-12 h-12 flex items-center justify-center">
-            <i data-lucide="gauge" class="w-6 h-6" style="color:#80FF00;"></i>
-          </div>
-          <h3 class="text-xl font-bold text-[#1C3A4A]">Parking Lot Cleaning</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Remove oil, fuel, and debris from parking surfaces to improve safety and presentation. Our commercial pressure washing creates a cleaner, more professional environment for customers and tenants.</p>
-          <a href="tel:6789549367" class="arrow-cta text-[#1C3A4A] font-semibold text-sm mt-auto">Call to Book <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-        <!-- Storefront Cleaning -->
-        <div class="bg-white rounded-xl shadow-sm p-7 hover:shadow-md transition flex flex-col gap-4">
-          <div class="service-icon-bg rounded-full w-12 h-12 flex items-center justify-center">
-            <i data-lucide="sparkles" class="w-6 h-6" style="color:#80FF00;"></i>
-          </div>
-          <h3 class="text-xl font-bold text-[#1C3A4A]">Storefront Cleaning</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">First impressions count — our storefront cleaning service removes gum, stains, and buildup from entrances and sidewalks. Present a polished, welcoming exterior to every customer who walks by.</p>
-          <a href="tel:6789549367" class="arrow-cta text-[#1C3A4A] font-semibold text-sm mt-auto">Call to Book <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-        <!-- Fleet Washing -->
-        <div class="bg-white rounded-xl shadow-sm p-7 hover:shadow-md transition flex flex-col gap-4">
-          <div class="service-icon-bg rounded-full w-12 h-12 flex items-center justify-center">
-            <i data-lucide="wind" class="w-6 h-6" style="color:#80FF00;"></i>
-          </div>
-          <h3 class="text-xl font-bold text-[#1C3A4A]">Fleet Washing</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Maintain a professional, road-ready fleet with our commercial vehicle washing service. We efficiently clean trucks, vans, and equipment to project a clean brand image on every route.</p>
-          <a href="tel:6789549367" class="arrow-cta text-[#1C3A4A] font-semibold text-sm mt-auto">Call to Book <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- REVIEWS -->
-<section id="reviews" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-white">
-  <div class="max-w-7xl mx-auto">
-    <p class="text-xs tracking-widest uppercase font-semibold mb-3" style="color:#80FF00;">Client Reviews</p>
-    <h2 class="text-4xl md:text-5xl font-bold text-[#1C3A4A] mb-12">What Atlanta<br/>Homeowners Say.</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Review 1 -->
-      <div class="bg-gray-50 rounded-2xl p-7 flex flex-col gap-4 hover:shadow-md transition">
-        <div class="flex items-center gap-1">
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-        </div>
-        <p class="text-gray-600 text-sm leading-relaxed">"Derek @ Mr Klean has provided professional and quality service. Very respectful and trustworthy individual. He power washed my driveway and did a good job.."</p>
-        <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-200">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-full bg-[#1C3A4A] flex items-center justify-center text-white text-sm font-bold">E</div>
-            <div>
-              <p class="text-sm font-semibold text-[#1C3A4A]">Eileen DS</p>
-              <p class="text-xs text-gray-400">2 years ago</p>
+          <!-- Trust Badges -->
+          <div class="flex flex-wrap gap-4 mt-8">
+            <div class="flex items-center gap-2 bg-white rounded-xl px-4 py-2.5 shadow-sm border border-gray-100">
+              <i data-lucide="shield-check" class="w-5 h-5 text-[#118AB2]"></i>
+              <span class="text-sm font-semibold text-gray-700">Licensed &amp; Insured</span>
+            </div>
+            <div class="flex items-center gap-2 bg-white rounded-xl px-4 py-2.5 shadow-sm border border-gray-100">
+              <i data-lucide="check-circle" class="w-5 h-5 text-[#06D6A0]"></i>
+              <span class="text-sm font-semibold text-gray-700">5-Star Google Rated</span>
+            </div>
+            <div class="flex items-center gap-2 bg-white rounded-xl px-4 py-2.5 shadow-sm border border-gray-100">
+              <i data-lucide="heart" class="w-5 h-5 text-[#F4A261]"></i>
+              <span class="text-sm font-semibold text-gray-700">Family Owned</span>
             </div>
           </div>
-          <span class="text-xs bg-gray-200 text-gray-600 rounded-full px-3 py-1 font-medium">via Google</span>
-        </div>
-      </div>
-      <!-- Review 2 -->
-      <div class="bg-gray-50 rounded-2xl p-7 flex flex-col gap-4 hover:shadow-md transition">
-        <div class="flex items-center gap-1">
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-        </div>
-        <p class="text-gray-600 text-sm leading-relaxed">"I called Derek first thing on a Monday and he was at my house less than 2 hours later. He did a great job and was in and out in just over an hour. He was very responsive and communicated well. He also had a great price in my opinion. Could not recommend him enough."</p>
-        <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-200">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-full bg-[#1C3A4A] flex items-center justify-center text-white text-sm font-bold">J</div>
-            <div>
-              <p class="text-sm font-semibold text-[#1C3A4A]">Jake Rucker</p>
-              <p class="text-xs text-gray-400">2 years ago</p>
-            </div>
+          <div class="mt-6 text-sm text-gray-500 flex items-center gap-1">
+            <i data-lucide="clock" class="w-4 h-4 text-[#118AB2]"></i>
+            <span id="live-clock">Atlanta - Loading...</span>
           </div>
-          <span class="text-xs bg-gray-200 text-gray-600 rounded-full px-3 py-1 font-medium">via Google</span>
         </div>
-      </div>
-      <!-- Review 3 (long) -->
-      <div class="bg-gray-50 rounded-2xl p-7 flex flex-col gap-4 hover:shadow-md transition lg:row-span-2">
-        <div class="flex items-center gap-1">
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-        </div>
-        <p class="text-gray-600 text-sm leading-relaxed">"I simply can't say enough good things about my recent experience with Dr. Klean Power Washing. From my initial inquiry and getting an estimate through scheduling and the completion of the job, communication with Derek was prompt and courteous. I had extensive moss and algae buildup on the roof, exterior walls, deck, walkways and front door stoop of my house. I am impressed and amazed at how thorough a job Derek did getting all of those surfaces cleaned. He really went above and beyond, even cleaning areas I had not explicitly mentioned in seeking an estimate. The cost of the service was more that reasonable given the amount of time Derek spent and the attention to detail in the final results. I will definitely be calling on Derek in the future, and I recommend his services without reservat..."</p>
-        <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-200">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-full bg-[#1C3A4A] flex items-center justify-center text-white text-sm font-bold">A</div>
-            <div>
-              <p class="text-sm font-semibold text-[#1C3A4A]">Agata Rozga</p>
-              <p class="text-xs text-gray-400">3 years ago</p>
-            </div>
-          </div>
-          <span class="text-xs bg-gray-200 text-gray-600 rounded-full px-3 py-1 font-medium">via Google</span>
-        </div>
-      </div>
-      <!-- Review 4 -->
-      <div class="bg-gray-50 rounded-2xl p-7 flex flex-col gap-4 hover:shadow-md transition">
-        <div class="flex items-center gap-1">
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-        </div>
-        <p class="text-gray-600 text-sm leading-relaxed">"Derek is a very passionate and detail oriented about his work.  We hired him to pressure wash our house and wash our roof and the roof on our carriage house.  He came on time when he said he would, spent extra time to do the job well, and told me he would come back if needed if I noticed anything that still needed to be done.  You can't ask for anything more.  I highly recommend him and will definitely use him again.  I think you will be very pleased if you hire Derek to pressure wash your house and clean your roof"</p>
-        <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-200">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-full bg-[#1C3A4A] flex items-center justify-center text-white text-sm font-bold">L</div>
-            <div>
-              <p class="text-sm font-semibold text-[#1C3A4A]">Leslie Leighton</p>
-              <p class="text-xs text-gray-400">3 years ago</p>
-            </div>
-          </div>
-          <span class="text-xs bg-gray-200 text-gray-600 rounded-full px-3 py-1 font-medium">via Google</span>
-        </div>
-      </div>
-      <!-- Review 5 -->
-      <div class="bg-gray-50 rounded-2xl p-7 flex flex-col gap-4 hover:shadow-md transition">
-        <div class="flex items-center gap-1">
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-        </div>
-        <p class="text-gray-600 text-sm leading-relaxed">"Derek did an amazing job cleaning our back patio and front driveway! He was very responsive, reasonably priced, and very courteous. I will only recommend Dr. Klean Power Washing to my friends and family from now on. 5 Stars."</p>
-        <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-200">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-full bg-[#1C3A4A] flex items-center justify-center text-white text-sm font-bold">A</div>
-            <div>
-              <p class="text-sm font-semibold text-[#1C3A4A]">Andrew</p>
-              <p class="text-xs text-gray-400">3 years ago</p>
-            </div>
-          </div>
-          <span class="text-xs bg-gray-200 text-gray-600 rounded-full px-3 py-1 font-medium">via Google</span>
+        <!-- Right -->
+        <div class="img-hover-wrap rounded-3xl overflow-hidden shadow-2xl h-[480px]">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEFQntzxsAGQS5vgSuXtCHYPtJwMM_a2IUP-SqItw-4wUdi7UywjHDycMdI9b5xCGXQJ_v27JaocOBFeFRqJPaT5aoZyQ0UYJ-itLWAY4UNAW-YbVb2RAN6Ai46QQoPZGfYE57mSp9ZNWOvJKi0pAHo1jF4uIjZGWugkA5IJiVNJuSDyFZ1PUC6nC-nzsTfp5ZubFLX7eTH9zvICtzR64y_8Uw3EPMUZdPn8NN-u4_UOZrviv5CbPTIetWtvKOPB4xmBWfymmQbpz8-qBs9D67TyVWh7GAOcKTpIjs1zDlMKZg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Dr. Klean Power Washing team at work in Atlanta"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/pressure-101/800/600'"
+          >
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FAQ -->
-<section id="faq" class="animate-section py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-gray-50">
-  <div class="max-w-3xl mx-auto">
-    <p class="text-xs tracking-widest uppercase font-semibold mb-3" style="color:#80FF00;">FAQ</p>
-    <h2 class="text-4xl font-bold text-[#1C3A4A] mb-12">Common Questions.</h2>
-    <div class="space-y-3">
-      <details class="bg-white rounded-xl shadow-sm overflow-hidden group">
-        <summary class="flex items-center justify-between p-6 font-semibold text-[#1C3A4A] text-sm md:text-base">
-          What is the difference between pressure washing and soft washing?
-          <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-90 flex-shrink-0"></i>
-        </summary>
-        <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed">Pressure washing uses high-pressure water to blast away stubborn dirt, oil, and stains from hard surfaces like concrete and brick. Soft washing uses low pressure combined with eco-friendly cleaning solutions to safely clean delicate surfaces like roofs, siding, and painted wood without causing damage.</div>
-      </details>
-      <details class="bg-white rounded-xl shadow-sm overflow-hidden group">
-        <summary class="flex items-center justify-between p-6 font-semibold text-[#1C3A4A] text-sm md:text-base">
-          How often should I have my home pressure washed in Atlanta?
-          <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-90 flex-shrink-0"></i>
-        </summary>
-        <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed">In Atlanta's humid climate, most homes benefit from exterior cleaning once a year to keep mold, mildew, and pollen buildup under control. High-traffic areas like driveways and patios may benefit from cleaning twice a year depending on usage and tree cover.</div>
-      </details>
-      <details class="bg-white rounded-xl shadow-sm overflow-hidden group">
-        <summary class="flex items-center justify-between p-6 font-semibold text-[#1C3A4A] text-sm md:text-base">
-          Is pressure washing safe for my landscaping and plants?
-          <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-90 flex-shrink-0"></i>
-        </summary>
-        <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed">Yes — we take great care to protect your landscaping during every job. We pre-wet plants and shrubs before applying any cleaning solutions and rinse thoroughly afterward. Our biodegradable products are formulated to be safe for vegetation, pets, and people.</div>
-      </details>
-      <details class="bg-white rounded-xl shadow-sm overflow-hidden group">
-        <summary class="flex items-center justify-between p-6 font-semibold text-[#1C3A4A] text-sm md:text-base">
-          Do you offer free estimates?
-          <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-90 flex-shrink-0"></i>
-        </summary>
-        <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed">Absolutely — we provide free, no-obligation estimates for all residential and commercial projects. Simply give us a call at (678) 954-9367 or fill out our online contact form and we'll get back to you promptly with transparent, upfront pricing.</div>
-      </details>
-      <details class="bg-white rounded-xl shadow-sm overflow-hidden group">
-        <summary class="flex items-center justify-between p-6 font-semibold text-[#1C3A4A] text-sm md:text-base">
-          Are you licensed and insured?
-          <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-90 flex-shrink-0"></i>
-        </summary>
-        <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed">Yes, Dr. Klean Power Washing and Exterior Cleaning LLC. is fully licensed and insured to operate in Atlanta, GA. Our coverage protects your property and gives you peace of mind knowing you're working with a professional, accountable service provider.</div>
-      </details>
-      <details class="bg-white rounded-xl shadow-sm overflow-hidden group">
-        <summary class="flex items-center justify-between p-6 font-semibold text-[#1C3A4A] text-sm md:text-base">
-          How long does a typical job take?
-          <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-90 flex-shrink-0"></i>
-        </summary>
-        <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed">Most residential jobs — like driveway cleaning or house washing — take between one to three hours depending on the size and condition of the surface. Larger or more complex projects such as full-home exterior cleaning including roof, deck, and walkways may take a half day or more.</div>
-      </details>
+  <!-- TICKER BAND -->
+  <div class="bg-[#118AB2] py-3 overflow-hidden">
+    <div class="ticker-track">
+      <span class="flex items-center gap-8 pr-8 text-white text-sm font-semibold uppercase tracking-widest">
+        <span class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-[#06D6A0]"></i> SERVING ATLANTA</span>
+        <span class="text-[#06D6A0]">·</span>
+        <span class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-[#06D6A0]"></i> LICENSED IN GEORGIA</span>
+        <span class="text-[#06D6A0]">·</span>
+        <span class="flex items-center gap-2"><i data-lucide="heart" class="w-4 h-4 text-[#06D6A0]"></i> LOCAL &amp; FAMILY-OWNED</span>
+        <span class="text-[#06D6A0]">·</span>
+        <span class="flex items-center gap-2"><i data-lucide="star" class="w-4 h-4 text-[#06D6A0]"></i> TRUSTED NEIGHBORS</span>
+        <span class="text-[#06D6A0]">·</span>
+        <span class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-[#06D6A0]"></i> FREE QUOTES</span>
+        <span class="text-[#06D6A0]">·</span>
+        <span class="flex items-center gap-2"><i data-lucide="gauge" class="w-4 h-4 text-[#06D6A0]"></i> FAST RESPONSE</span>
+        <span class="text-[#06D6A0]">·</span>
+      </span>
+      <span class="flex items-center gap-8 pr-8 text-white text-sm font-semibold uppercase tracking-widest">
+        <span class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-[#06D6A0]"></i> SERVING ATLANTA</span>
+        <span class="text-[#06D6A0]">·</span>
+        <span class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-[#06D6A0]"></i> LICENSED IN GEORGIA</span>
+        <span class="text-[#06D6A0]">·</span>
+        <span class="flex items-center gap-2"><i data-lucide="heart" class="w-4 h-4 text-[#06D6A0]"></i> LOCAL &amp; FAMILY-OWNED</span>
+        <span class="text-[#06D6A0]">·</span>
+        <span class="flex items-center gap-2"><i data-lucide="star" class="w-4 h-4 text-[#06D6A0]"></i> TRUSTED NEIGHBORS</span>
+        <span class="text-[#06D6A0]">·</span>
+        <span class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-[#06D6A0]"></i> FREE QUOTES</span>
+        <span class="text-[#06D6A0]">·</span>
+        <span class="flex items-center gap-2"><i data-lucide="gauge" class="w-4 h-4 text-[#06D6A0]"></i> FAST RESPONSE</span>
+        <span class="text-[#06D6A0]">·</span>
+      </span>
     </div>
   </div>
-</section>
 
-<!-- CONTACT -->
-<section id="contact" class="animate-section py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-white">
-  <div class="max-w-5xl mx-auto">
-    <p class="text-xs tracking-widest uppercase font-semibold mb-3" style="color:#80FF00;">Get Started</p>
-    <h2 class="text-4xl font-bold text-[#1C3A4A] mb-10">Ready for a Spotless<br/>Exterior?</h2>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-      <!-- Left: Map -->
-      <div class="rounded-xl overflow-hidden shadow-lg min-h-[450px]">
+  <!-- STATS -->
+  <section class="animate-section bg-white py-16 px-4 md:px-8 lg:px-16">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="text-center bg-[#f0f9ff] rounded-2xl py-8 px-4 border border-[#118AB2]/10">
+        <div class="text-4xl font-bold text-[#118AB2]" data-count="12" data-suffix="+">12+</div>
+        <div class="text-sm text-gray-600 mt-2 font-medium">Areas Served</div>
+      </div>
+      <div class="text-center bg-[#f0f9ff] rounded-2xl py-8 px-4 border border-[#118AB2]/10">
+        <div class="text-4xl font-bold text-[#118AB2]" data-count="74" data-suffix="+">74+</div>
+        <div class="text-sm text-gray-600 mt-2 font-medium">Atlanta Neighbors</div>
+      </div>
+      <div class="text-center bg-[#f0f9ff] rounded-2xl py-8 px-4 border border-[#118AB2]/10">
+        <div class="text-4xl font-bold text-[#118AB2]" data-count="5" data-suffix="★">5★</div>
+        <div class="text-sm text-gray-600 mt-2 font-medium">Google Rating</div>
+      </div>
+      <div class="text-center bg-[#f0f9ff] rounded-2xl py-8 px-4 border border-[#118AB2]/10">
+        <div class="text-4xl font-bold text-[#118AB2]" data-count="10" data-suffix="+">10+</div>
+        <div class="text-sm text-gray-600 mt-2 font-medium">Years Local</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-[#fafaf8]">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="img-hover-wrap rounded-3xl overflow-hidden shadow-xl h-[440px]">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGFnw2BFBoZCF7D_Ai72funFPEwBkyewhq2_ZM5mN2gntUy5VZrXzQH62nU_cnlfse5J7wAh2JG5-dQlO7LlKw1IwdBEY9ZSSYtmeu8aSSSyvhUG_7ajCzcYQtP62aGgXFGT8IkDf3D7WKY_8oQl2RdUcP5x2isOdjXwIxNrWGANAfzb_12r7ZE5syjgT00pOOPXebZFOhtsYaOAXj-1u-BmXi-QXUWPmJ7PdRj7QnujlgUdLrluGVbX43c9E1ls_GskXK7e0dsJvtfwVa3MQKpWQpk9zwtqVtskWVhiJg1FNUNKzck5RVUFmEhwdi95UcxdRVhgBpaep-vtLKqexcRU9Pa1p10XOdRFNw661bR9V2Opfl3A4FeBDkYmgYjOA_1rX_kXrKdXHci3p2d8RZhB50gYpGeNSMJCoSJ-gw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Dr. Klean team serving Atlanta neighborhoods"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/pressure-202/800/600'"
+        >
+      </div>
+      <div>
+        <p class="text-xs uppercase tracking-widest font-semibold text-[#06D6A0] mb-3">Our Story</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">Atlanta's Hometown <span class="text-[#118AB2]">Cleaning Neighbors</span></h2>
+        <p class="mt-6 text-gray-600 leading-relaxed text-base">Dr. Klean Power Washing and Exterior Cleaning LLC. was built right here in Atlanta, GA with one purpose: helping our neighbors reclaim the beauty of their homes and businesses through expert, reliable exterior cleaning. We treat every driveway, roof, and patio like it belongs to our own family — because to us, Atlanta isn't just where we work, it's home.</p>
+        <p class="mt-4 text-gray-600 leading-relaxed text-base">From Buckhead driveways to Decatur decks, we've earned our reputation one sparkling surface at a time, always showing up on time, communicating clearly, and never cutting corners on quality or care.</p>
+        <div class="mt-8 grid grid-cols-2 gap-4">
+          <div class="flex items-start gap-3">
+            <div class="bg-[#118AB2]/10 rounded-full p-2 mt-0.5"><i data-lucide="shield-check" class="w-4 h-4 text-[#118AB2]"></i></div>
+            <div>
+              <div class="font-semibold text-sm text-gray-800">Same-Day Response</div>
+              <div class="text-xs text-gray-500">Quick quotes, fast scheduling</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="bg-[#06D6A0]/10 rounded-full p-2 mt-0.5"><i data-lucide="droplets" class="w-4 h-4 text-[#06D6A0]"></i></div>
+            <div>
+              <div class="font-semibold text-sm text-gray-800">Eco-Friendly Methods</div>
+              <div class="text-xs text-gray-500">Safe for family &amp; pets</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="bg-[#F4A261]/10 rounded-full p-2 mt-0.5"><i data-lucide="check-circle" class="w-4 h-4 text-[#F4A261]"></i></div>
+            <div>
+              <div class="font-semibold text-sm text-gray-800">Licensed &amp; Insured</div>
+              <div class="text-xs text-gray-500">Georgia certified professional</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="bg-[#118AB2]/10 rounded-full p-2 mt-0.5"><i data-lucide="heart" class="w-4 h-4 text-[#118AB2]"></i></div>
+            <div>
+              <div class="font-semibold text-sm text-gray-800">100% Satisfaction</div>
+              <div class="text-xs text-gray-500">We come back if needed</div>
+            </div>
+          </div>
+        </div>
+        <a href="tel:6789549367" class="mt-8 inline-flex items-center gap-2 arrow-cta text-[#118AB2] font-semibold text-base">
+          Call Us Today <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-8 text-center">
+        <p class="text-xs uppercase tracking-widest font-semibold text-[#06D6A0] mb-3">What We Do</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Services for Your Home <span class="text-[#118AB2]">&amp; Business</span></h2>
+        <p class="text-gray-500 mt-3 max-w-xl mx-auto text-base">Professional exterior cleaning tailored to Atlanta's climate and your property's needs.</p>
+      </div>
+      <div class="flex flex-wrap gap-2 md:flex-nowrap mb-8 tabs-container">
+        <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-1">Pressure Washing</button>
+        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-2">Soft Wash</button>
+        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-3">Commercial</button>
+      </div>
+      <div id="tab-panel-1" class="tab-panel">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card: House Washing -->
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl transition">
+            <div class="bg-[#118AB2]/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+              <i data-lucide="droplets" class="w-6 h-6 text-[#118AB2]"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900">House Washing</h3>
+            <p class="text-gray-600 text-sm mt-2 leading-relaxed">We blast away mold, mildew, and years of Atlanta grime from your home's exterior. Your curb appeal will look brand new after our thorough house wash service.</p>
+            <a href="tel:6789549367" class="mt-4 inline-flex items-center gap-1 text-[#118AB2] text-sm font-semibold arrow-cta">Book Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <!-- Card: Driveway Cleaning -->
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl transition">
+            <div class="bg-[#118AB2]/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+              <i data-lucide="waves" class="w-6 h-6 text-[#118AB2]"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900">Driveway Cleaning</h3>
+            <p class="text-gray-600 text-sm mt-2 leading-relaxed">Oil stains, tire marks, and Georgia red clay don't stand a chance against our high-powered driveway cleaning. We restore concrete and asphalt to their original clean.</p>
+            <a href="tel:6789549367" class="mt-4 inline-flex items-center gap-1 text-[#118AB2] text-sm font-semibold arrow-cta">Book Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <!-- Card: Deck Cleaning -->
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl transition">
+            <div class="bg-[#118AB2]/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+              <i data-lucide="sun" class="w-6 h-6 text-[#118AB2]"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900">Deck Cleaning</h3>
+            <p class="text-gray-600 text-sm mt-2 leading-relaxed">Restore your deck's natural beauty and remove dangerous slippery algae before your next cookout. Our gentle yet effective approach protects wood grain while delivering a deep clean.</p>
+            <a href="tel:6789549367" class="mt-4 inline-flex items-center gap-1 text-[#118AB2] text-sm font-semibold arrow-cta">Book Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <!-- Card: Patio Cleaning -->
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl transition">
+            <div class="bg-[#118AB2]/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+              <i data-lucide="sparkles" class="w-6 h-6 text-[#118AB2]"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900">Patio Cleaning</h3>
+            <p class="text-gray-600 text-sm mt-2 leading-relaxed">Your outdoor living space deserves to shine. We clean pavers, flagstone, and concrete patios, removing built-up grime so you can enjoy your Atlanta backyard again.</p>
+            <a href="tel:6789549367" class="mt-4 inline-flex items-center gap-1 text-[#118AB2] text-sm font-semibold arrow-cta">Book Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+      </div>
+      <div id="tab-panel-2" class="tab-panel hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card: Soft Wash Roof -->
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl transition">
+            <div class="bg-[#06D6A0]/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+              <i data-lucide="shield" class="w-6 h-6 text-[#06D6A0]"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900">Soft Wash Roof</h3>
+            <p class="text-gray-600 text-sm mt-2 leading-relaxed">Our low-pressure soft wash system safely eliminates black streaks, moss, and lichen from your roof without causing shingle damage. Extend the life of your roof with this Atlanta-essential service.</p>
+            <a href="tel:6789549367" class="mt-4 inline-flex items-center gap-1 text-[#06D6A0] text-sm font-semibold arrow-cta">Book Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <!-- Card: Siding Soft Wash -->
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl transition">
+            <div class="bg-[#06D6A0]/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+              <i data-lucide="wind" class="w-6 h-6 text-[#06D6A0]"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900">Siding Soft Wash</h3>
+            <p class="text-gray-600 text-sm mt-2 leading-relaxed">Vinyl, wood, and fiber cement siding all respond beautifully to our gentle soft wash treatment. We remove mold, mildew, and oxidation without warping or damaging your exterior surfaces.</p>
+            <a href="tel:6789549367" class="mt-4 inline-flex items-center gap-1 text-[#06D6A0] text-sm font-semibold arrow-cta">Book Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <!-- Card: Window Soft Wash -->
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl transition">
+            <div class="bg-[#06D6A0]/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+              <i data-lucide="sparkles" class="w-6 h-6 text-[#06D6A0]"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900">Window Soft Wash</h3>
+            <p class="text-gray-600 text-sm mt-2 leading-relaxed">Let the light shine in with streak-free, spot-free window cleaning using our soft wash technique. We treat frames and sills too, leaving every window looking crystal clear.</p>
+            <a href="tel:6789549367" class="mt-4 inline-flex items-center gap-1 text-[#06D6A0] text-sm font-semibold arrow-cta">Book Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <!-- Card: Gentle Surface Cleaning -->
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl transition">
+            <div class="bg-[#06D6A0]/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+              <i data-lucide="droplets" class="w-6 h-6 text-[#06D6A0]"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900">Gentle Surface Cleaning</h3>
+            <p class="text-gray-600 text-sm mt-2 leading-relaxed">Delicate surfaces like painted wood, stucco, and older brick need a careful touch. Our gentle surface cleaning delivers a thorough clean without the risk of high-pressure damage.</p>
+            <a href="tel:6789549367" class="mt-4 inline-flex items-center gap-1 text-[#06D6A0] text-sm font-semibold arrow-cta">Book Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+      </div>
+      <div id="tab-panel-3" class="tab-panel hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card: Commercial Building Wash -->
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl transition">
+            <div class="bg-[#F4A261]/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+              <i data-lucide="shield-check" class="w-6 h-6 text-[#F4A261]"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900">Commercial Building Wash</h3>
+            <p class="text-gray-600 text-sm mt-2 leading-relaxed">First impressions matter for your business. We provide comprehensive exterior building washes for Atlanta commercial properties, removing pollutants and biological growth that hurt your image.</p>
+            <a href="tel:6789549367" class="mt-4 inline-flex items-center gap-1 text-[#F4A261] text-sm font-semibold arrow-cta">Book Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <!-- Card: Parking Lot Cleaning -->
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl transition">
+            <div class="bg-[#F4A261]/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+              <i data-lucide="waves" class="w-6 h-6 text-[#F4A261]"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900">Parking Lot Cleaning</h3>
+            <p class="text-gray-600 text-sm mt-2 leading-relaxed">Keep your parking area safe and welcoming with regular high-pressure cleaning that removes oil, gum, and debris. A clean lot signals professionalism to every customer who arrives.</p>
+            <a href="tel:6789549367" class="mt-4 inline-flex items-center gap-1 text-[#F4A261] text-sm font-semibold arrow-cta">Book Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <!-- Card: Storefront Cleaning -->
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl transition">
+            <div class="bg-[#F4A261]/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+              <i data-lucide="sparkles" class="w-6 h-6 text-[#F4A261]"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900">Storefront Cleaning</h3>
+            <p class="text-gray-600 text-sm mt-2 leading-relaxed">Attract more customers with a sparkling, welcoming storefront. We clean glass, awnings, sidewalks, and facades to make your Atlanta business stand out from the competition.</p>
+            <a href="tel:6789549367" class="mt-4 inline-flex items-center gap-1 text-[#F4A261] text-sm font-semibold arrow-cta">Book Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <!-- Card: Fleet Washing -->
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl transition">
+            <div class="bg-[#F4A261]/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+              <i data-lucide="gauge" class="w-6 h-6 text-[#F4A261]"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900">Fleet Washing</h3>
+            <p class="text-gray-600 text-sm mt-2 leading-relaxed">Your company vehicles are rolling billboards — keep them clean and professional. We offer efficient fleet washing for Atlanta businesses to maintain your brand image on the road.</p>
+            <a href="tel:6789549367" class="mt-4 inline-flex items-center gap-1 text-[#F4A261] text-sm font-semibold arrow-cta">Book Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA MAP -->
+  <section class="animate-section py-16 px-4 md:px-8 lg:px-16 bg-[#f0f9ff]">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-10">
+        <p class="text-xs uppercase tracking-widest font-semibold text-[#06D6A0] mb-2">Where We Work</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Proudly Serving <span class="text-[#118AB2]">Metro Atlanta</span></h2>
+        <p class="text-gray-500 mt-2 text-sm">We're your local neighbors — ready to serve communities across Greater Atlanta.</p>
+      </div>
+      <div class="rounded-3xl overflow-hidden shadow-xl h-[380px]">
         <iframe
           src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k&q=place_id:ChIJNZfdWH4H9YgRwHZwM0dRw98"
           width="100%"
           height="100%"
-          style="border:0; min-height:450px; display:block;"
+          style="border:0;"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="Dr. Klean Power Washing location in Atlanta, GA"
         ></iframe>
       </div>
-      <!-- Right: Form -->
-      <div class="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full">
-        <p class="text-xs tracking-widest uppercase font-semibold" style="color:#80FF00;">GET STARTED</p>
-        <h3 class="text-3xl font-bold text-[#1C3A4A] mt-2">Get a Free Estimate</h3>
-        <p class="text-gray-500 text-sm mt-1">We'll respond the same day — often within the hour.</p>
-        <div class="flex items-center gap-1 mt-3">
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#80FF00;"></i>
-          <span class="text-sm text-gray-500 ml-2">5 out of 5 · 74 reviews</span>
-        </div>
-        <form class="mt-4" onsubmit="return false;">
-          <input type="text" placeholder="Your Name" class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-4 text-sm outline-none" style="focus-ring-color:#80FF00;" />
-          <input type="tel" placeholder="Phone Number" class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-4 text-sm outline-none" />
-          <input type="email" placeholder="Email Address" class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-4 text-sm outline-none" />
-          <select class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-4 text-sm outline-none text-gray-500">
-            <option value="" disabled selected>Select a Service</option>
-            <option>House Washing</option>
-            <option>Driveway Cleaning</option>
-            <option>Deck Cleaning</option>
-            <option>Patio Cleaning</option>
-          </select>
-          <textarea rows="3" placeholder="Tell us about your project..." class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-4 text-sm outline-none resize-none"></textarea>
-          <button type="submit" class="w-full rounded-lg py-4 font-bold mt-6 text-black text-sm uppercase tracking-wider hover:brightness-110 transition" style="background-color:#80FF00;">Request Free Estimate</button>
-        </form>
-        <p class="text-xs text-gray-400 mt-3">By submitting you agree to be contacted regarding your request.</p>
+      <div class="flex flex-wrap justify-center gap-3 mt-8">
+        <span class="bg-white border border-[#118AB2]/20 text-gray-700 rounded-full px-4 py-2 text-sm font-medium shadow-sm">Atlanta</span>
+        <span class="bg-white border border-[#118AB2]/20 text-gray-700 rounded-full px-4 py-2 text-sm font-medium shadow-sm">Decatur</span>
+        <span class="bg-white border border-[#118AB2]/20 text-gray-700 rounded-full px-4 py-2 text-sm font-medium shadow-sm">Buckhead</span>
+        <span class="bg-white border border-[#118AB2]/20 text-gray-700 rounded-full px-4 py-2 text-sm font-medium shadow-sm">Sandy Springs</span>
+        <span class="bg-white border border-[#118AB2]/20 text-gray-700 rounded-full px-4 py-2 text-sm font-medium shadow-sm">Marietta</span>
+        <span class="bg-white border border-[#118AB2]/20 text-gray-700 rounded-full px-4 py-2 text-sm font-medium shadow-sm">Smyrna</span>
+        <span class="bg-white border border-[#118AB2]/20 text-gray-700 rounded-full px-4 py-2 text-sm font-medium shadow-sm">Tucker</span>
+        <span class="bg-white border border-[#118AB2]/20 text-gray-700 rounded-full px-4 py-2 text-sm font-medium shadow-sm">Brookhaven</span>
+        <span class="bg-white border border-[#118AB2]/20 text-gray-700 rounded-full px-4 py-2 text-sm font-medium shadow-sm">Dunwoody</span>
+        <span class="bg-white border border-[#118AB2]/20 text-gray-700 rounded-full px-4 py-2 text-sm font-medium shadow-sm">Druid Hills</span>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer style="background-color:#0f0f0f;" class="text-white relative overflow-hidden">
-  <!-- Ghost bg image -->
-  <img
-    src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-uzkK8J4NtXruHjexrXyoPg07v7J1hrwQc7gSHmJWgJcVrN81KwqOoZG47uABbULgN4ix55LGsr9FEatn1XSrWVEpMhrelGyAJ_oOK3HtrSZ_t2IKOIgcthfNzvUveF8edmYbK4Jh2r8aPW3mUkZFkuhn7aiswrgA3duTXiPwmLMjck9eFULNVg-q0yOPybgqkLy25z7YLgmJ69V631QxaGr3Q-tylW2C2r2-c-JG6Xo-JAUBkkaklbYyuI7LcC6aNluBID2d03_BoXaY6rpasHDjeDhpCBjvY3kvNi3KLJeg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-    alt=""
-    aria-hidden="true"
-    class="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none"
-    onerror="this.style.display='none'"
-  />
-
-  <div class="relative z-10">
-    <!-- Top CTA Block -->
-    <div class="py-20 text-center px-4">
-      <p class="text-xs tracking-widest uppercase font-semibold" style="color:#80FF00;">START YOUR PROJECT</p>
-      <h3 class="text-4xl md:text-5xl font-bold max-w-3xl mx-auto mt-4">Let's build something together.</h3>
-      <a href="#contact" class="inline-block rounded-full px-10 py-4 text-black font-bold uppercase tracking-wider mt-8 hover:brightness-110 transition" style="background-color:#80FF00;">Get a Free Estimate</a>
-    </div>
-
-    <!-- Divider -->
-    <div class="border-t border-white/10 mx-8"></div>
-
-    <!-- Main Footer Grid -->
-    <div class="grid grid-cols-2 md:grid-cols-5 gap-8 py-16 px-8">
-      <!-- Col 1: Business Identity (col-span-2) -->
-      <div class="col-span-2">
-        <p class="text-3xl font-bold" style="font-family:'Poppins',sans-serif;">Dr. Klean<span style="color:#80FF00;">.</span></p>
-        <p class="text-gray-400 max-w-sm mt-2 text-sm leading-relaxed">Spotless surfaces, every visit — backed by 5-star results. Atlanta's trusted exterior cleaning specialists.</p>
-        <div class="mt-6 space-y-3">
-          <div class="flex items-start gap-3">
-            <i data-lucide="map-pin" class="w-4 h-4 mt-0.5 flex-shrink-0" style="color:#80FF00;"></i>
-            <span class="text-gray-400 text-sm">2331 Briarcliff Rd NE, Atlanta, GA 30329</span>
-          </div>
-          <div class="flex items-center gap-3">
-            <i data-lucide="phone" class="w-4 h-4 flex-shrink-0" style="color:#80FF00;"></i>
-            <a href="tel:6789549367" class="text-gray-400 text-sm hover:text-white transition">(678) 954-9367</a>
-          </div>
-          <div class="flex items-start gap-3">
-            <i data-lucide="clock" class="w-4 h-4 mt-0.5 flex-shrink-0" style="color:#80FF00;"></i>
-            <div class="text-gray-400 text-sm">
-              <p>Mon–Fri: 9:00 AM – 5:00 PM</p>
-              <p>Sat–Sun: 9:00 AM – 7:00 PM</p>
+  <!-- GALLERY -->
+  <section id="gallery" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-xs uppercase tracking-widest font-semibold text-[#06D6A0] mb-3">Our Work</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Before &amp; After <span class="text-[#118AB2]">Atlanta Projects</span></h2>
+        <p class="text-gray-500 mt-3 max-w-lg mx-auto text-base">Real results from real neighbors across Atlanta's communities.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Photo 1 -->
+        <div class="img-hover-wrap rounded-2xl overflow-hidden shadow-md group relative h-64">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEFQntzxsAGQS5vgSuXtCHYPtJwMM_a2IUP-SqItw-4wUdi7UywjHDycMdI9b5xCGXQJ_v27JaocOBFeFRqJPaT5aoZyQ0UYJ-itLWAY4UNAW-YbVb2RAN6Ai46QQoPZGfYE57mSp9ZNWOvJKi0pAHo1jF4uIjZGWugkA5IJiVNJuSDyFZ1PUC6nC-nzsTfp5ZubFLX7eTH9zvICtzR64y_8Uw3EPMUZdPn8NN-u4_UOZrviv5CbPTIetWtvKOPB4xmBWfymmQbpz8-qBs9D67TyVWh7GAOcKTpIjs1zDlMKZg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Driveway cleaning in Druid Hills, Atlanta" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/pressure-301/800/600'">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+            <div>
+              <p class="text-white font-semibold text-sm">Driveway Cleaning</p>
+              <p class="text-white/70 text-xs flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Druid Hills, Atlanta</p>
             </div>
           </div>
-          <div class="flex items-center gap-3">
-            <i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0" style="color:#80FF00;"></i>
-            <span class="text-gray-400 text-sm">Licensed &amp; Insured · 5★ Google Rating</span>
+        </div>
+        <!-- Photo 2 -->
+        <div class="img-hover-wrap rounded-2xl overflow-hidden shadow-md group relative h-64">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGFnw2BFBoZCF7D_Ai72funFPEwBkyewhq2_ZM5mN2gntUy5VZrXzQH62nU_cnlfse5J7wAh2JG5-dQlO7LlKw1IwdBEY9ZSSYtmeu8aSSSyvhUG_7ajCzcYQtP62aGgXFGT8IkDf3D7WKY_8oQl2RdUcP5x2isOdjXwIxNrWGANAfzb_12r7ZE5syjgT00pOOPXebZFOhtsYaOAXj-1u-BmXi-QXUWPmJ7PdRj7QnujlgUdLrluGVbX43c9E1ls_GskXK7e0dsJvtfwVa3MQKpWQpk9zwtqVtskWVhiJg1FNUNKzck5RVUFmEhwdi95UcxdRVhgBpaep-vtLKqexcRU9Pa1p10XOdRFNw661bR9V2Opfl3A4FeBDkYmgYjOA_1rX_kXrKdXHci3p2d8RZhB50gYpGeNSMJCoSJ-gw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roof soft wash in Buckhead, Atlanta" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/pressure-302/800/600'">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+            <div>
+              <p class="text-white font-semibold text-sm">Roof Soft Wash</p>
+              <p class="text-white/70 text-xs flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Buckhead, Atlanta</p>
+            </div>
+          </div>
+        </div>
+        <!-- Photo 3 -->
+        <div class="img-hover-wrap rounded-2xl overflow-hidden shadow-md group relative h-64">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGRwKpOzD4fH2mVhpDNIPnwOThx2oyqMsjr9CyDy3ToTRN6CJnLTiTRMJb3SjhtgY0At-dnw1jRM_4Q-u72tySmch_kv3rG6CBIQnA9uQIfC9Asxm4S_3tHXRwRJRmWtG2OEEqkOfBhieNu5SCCisyvpAPEbJbkMIgS3wbXjm2PWUDYMhlUsX6hDCbOBiP8X92-kIcHFpvD4GQQDRaNHLyl8acX8y41bmz8cWh4jYrrbt-XpFeF3pVGqyA0257x6zPhIjODEoNbjGTVCw8etPOwqemXSIKhNt13GjhQYSR23nVjLmUmClu3u3o98gpZVNwwN2cr3nDf5p33MKiZWeXAtbT6Pha9z2pmHKbZSw_YzxbTGPmHDRoPXGWZzxSBA3MgPq7wSC59ZANCN79zecO1Sx5IB9ZIgVu9rYSeMEyKZCmJ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Patio cleaning in Decatur, Atlanta" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/pressure-303/800/600'">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+            <div>
+              <p class="text-white font-semibold text-sm">Patio Cleaning</p>
+              <p class="text-white/70 text-xs flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Decatur, Atlanta</p>
+            </div>
+          </div>
+        </div>
+        <!-- Photo 4 (repeat with different seeds) -->
+        <div class="img-hover-wrap rounded-2xl overflow-hidden shadow-md group relative h-64">
+          <img src="https://picsum.photos/seed/pressure-304/800/600" alt="House washing in Sandy Springs, Atlanta" class="w-full h-full object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+            <div>
+              <p class="text-white font-semibold text-sm">House Washing</p>
+              <p class="text-white/70 text-xs flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Sandy Springs, Atlanta</p>
+            </div>
+          </div>
+        </div>
+        <!-- Photo 5 -->
+        <div class="img-hover-wrap rounded-2xl overflow-hidden shadow-md group relative h-64">
+          <img src="https://picsum.photos/seed/pressure-305/800/600" alt="Deck cleaning in Brookhaven, Atlanta" class="w-full h-full object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+            <div>
+              <p class="text-white font-semibold text-sm">Deck Cleaning</p>
+              <p class="text-white/70 text-xs flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Brookhaven, Atlanta</p>
+            </div>
+          </div>
+        </div>
+        <!-- Photo 6 -->
+        <div class="img-hover-wrap rounded-2xl overflow-hidden shadow-md group relative h-64">
+          <img src="https://picsum.photos/seed/pressure-306/800/600" alt="Commercial cleaning in Midtown, Atlanta" class="w-full h-full object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+            <div>
+              <p class="text-white font-semibold text-sm">Commercial Wash</p>
+              <p class="text-white/70 text-xs flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Midtown, Atlanta</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-[#fafaf8]">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-xs uppercase tracking-widest font-semibold text-[#06D6A0] mb-3">What Atlanta Says</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Neighbors <span class="text-[#118AB2]">Trust Us</span></h2>
+        <div class="flex items-center justify-center gap-1 mt-4">
+          <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+          <span class="ml-2 text-gray-600 text-sm font-medium">5.0 · 74 Google reviews</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Review 1 -->
+        <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 flex flex-col">
+          <div class="flex items-center gap-1 mb-3">
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          </div>
+          <p class="text-gray-700 text-sm leading-relaxed flex-1">"Derek @ Mr Klean has provided professional and quality service. Very respectful and trustworthy individual. He power washed my driveway and did a good job.."</p>
+          <div class="mt-4 flex items-center justify-between">
+            <div>
+              <p class="font-semibold text-sm text-gray-900">Eileen DS</p>
+              <p class="text-xs text-gray-400">2 years ago</p>
+            </div>
+            <span class="inline-flex items-center gap-1 bg-[#118AB2]/10 text-[#118AB2] text-xs font-semibold px-3 py-1 rounded-full">via Google · Atlanta</span>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 flex flex-col">
+          <div class="flex items-center gap-1 mb-3">
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          </div>
+          <p class="text-gray-700 text-sm leading-relaxed flex-1">"I called Derek first thing on a Monday and he was at my house less than 2 hours later. He did a great job and was in and out in just over an hour. He was very responsive and communicated well. He also had a great price in my opinion. Could not recommend him enough."</p>
+          <div class="mt-4 flex items-center justify-between">
+            <div>
+              <p class="font-semibold text-sm text-gray-900">Jake Rucker</p>
+              <p class="text-xs text-gray-400">2 years ago</p>
+            </div>
+            <span class="inline-flex items-center gap-1 bg-[#118AB2]/10 text-[#118AB2] text-xs font-semibold px-3 py-1 rounded-full">via Google · Atlanta</span>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 flex flex-col">
+          <div class="flex items-center gap-1 mb-3">
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          </div>
+          <p class="text-gray-700 text-sm leading-relaxed flex-1">"I simply can't say enough good things about my recent experience with Dr. Klean Power Washing. From my initial inquiry and getting an estimate through scheduling and the completion of the job, communication with Derek was prompt and courteous. I had extensive moss and algae buildup on the roof, exterior walls, deck, walkways and front door stoop of my house. I am impressed and amazed at how thorough a job Derek did getting all of those surfaces cleaned. He really went above and beyond, even cleaning areas I had not explicitly mentioned in seeking an estimate. The cost of the service was more that reasonable given the amount of time Derek spent and the attention to detail in the final results. I will definitely be calling on Derek in the future, and I recommend his services without reservat..."</p>
+          <div class="mt-4 flex items-center justify-between">
+            <div>
+              <p class="font-semibold text-sm text-gray-900">Agata Rozga</p>
+              <p class="text-xs text-gray-400">3 years ago</p>
+            </div>
+            <span class="inline-flex items-center gap-1 bg-[#118AB2]/10 text-[#118AB2] text-xs font-semibold px-3 py-1 rounded-full">via Google · Atlanta</span>
+          </div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 flex flex-col">
+          <div class="flex items-center gap-1 mb-3">
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          </div>
+          <p class="text-gray-700 text-sm leading-relaxed flex-1">"Derek is a very passionate and detail oriented about his work. We hired him to pressure wash our house and wash our roof and the roof on our carriage house. He came on time when he said he would, spent extra time to do the job well, and told me he would come back if needed if I noticed anything that still needed to be done. You can't ask for anything more. I highly recommend him and will definitely use him again. I think you will be very pleased if you hire Derek to pressure wash your house and clean your roof"</p>
+          <div class="mt-4 flex items-center justify-between">
+            <div>
+              <p class="font-semibold text-sm text-gray-900">Leslie Leighton</p>
+              <p class="text-xs text-gray-400">3 years ago</p>
+            </div>
+            <span class="inline-flex items-center gap-1 bg-[#118AB2]/10 text-[#118AB2] text-xs font-semibold px-3 py-1 rounded-full">via Google · Atlanta</span>
+          </div>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 flex flex-col">
+          <div class="flex items-center gap-1 mb-3">
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          </div>
+          <p class="text-gray-700 text-sm leading-relaxed flex-1">"Derek did an amazing job cleaning our back patio and front driveway! He was very responsive, reasonably priced, and very courteous. I will only recommend Dr. Klean Power Washing to my friends and family from now on. 5 Stars."</p>
+          <div class="mt-4 flex items-center justify-between">
+            <div>
+              <p class="font-semibold text-sm text-gray-900">Andrew</p>
+              <p class="text-xs text-gray-400">3 years ago</p>
+            </div>
+            <span class="inline-flex items-center gap-1 bg-[#118AB2]/10 text-[#118AB2] text-xs font-semibold px-3 py-1 rounded-full">via Google · Atlanta</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-white">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-xs uppercase tracking-widest font-semibold text-[#06D6A0] mb-3">Got Questions?</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Frequently Asked <span class="text-[#118AB2]">Questions</span></h2>
+      </div>
+      <div class="space-y-4">
+
+        <details class="bg-[#f0f9ff] rounded-2xl border border-[#118AB2]/10 overflow-hidden group">
+          <summary class="flex items-center justify-between px-6 py-5 font-semibold text-gray-900 text-base">
+            What areas do you serve near Atlanta, GA?
+            <span class="ml-4 flex-shrink-0 w-6 h-6 rounded-full bg-[#118AB2]/10 flex items-center justify-center text-[#118AB2] group-open:rotate-45 transition-transform duration-200 text-xl font-light">+</span>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+            We serve Atlanta and all surrounding communities within the metro area, including Decatur, Buckhead, Sandy Springs, Marietta, Smyrna, Tucker, Brookhaven, Dunwoody, and Druid Hills. If you're unsure whether we cover your neighborhood, just give us a call at (678) 954-9367 — we're happy to help.
+          </div>
+        </details>
+
+        <details class="bg-[#f0f9ff] rounded-2xl border border-[#118AB2]/10 overflow-hidden group">
+          <summary class="flex items-center justify-between px-6 py-5 font-semibold text-gray-900 text-base">
+            How much does pressure washing cost in Atlanta?
+            <span class="ml-4 flex-shrink-0 w-6 h-6 rounded-full bg-[#118AB2]/10 flex items-center justify-center text-[#118AB2] group-open:rotate-45 transition-transform duration-200 text-xl font-light">+</span>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+            Pricing depends on the surface size, type of service, and condition of the area being cleaned. We offer free, no-obligation estimates so you know exactly what to expect before we begin. We pride ourselves on fair, transparent pricing with no hidden fees.
+          </div>
+        </details>
+
+        <details class="bg-[#f0f9ff] rounded-2xl border border-[#118AB2]/10 overflow-hidden group">
+          <summary class="flex items-center justify-between px-6 py-5 font-semibold text-gray-900 text-base">
+            What is the difference between pressure washing and soft washing?
+            <span class="ml-4 flex-shrink-0 w-6 h-6 rounded-full bg-[#118AB2]/10 flex items-center justify-center text-[#118AB2] group-open:rotate-45 transition-transform duration-200 text-xl font-light">+</span>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+            Pressure washing uses high-pressure water to clean hard, durable surfaces like driveways, sidewalks, and patios. Soft washing uses low-pressure water combined with safe cleaning solutions to treat delicate surfaces such as roofs, siding, and windows. We'll recommend the right method for your specific surface to ensure the best results without any damage.
+          </div>
+        </details>
+
+        <details class="bg-[#f0f9ff] rounded-2xl border border-[#118AB2]/10 overflow-hidden group">
+          <summary class="flex items-center justify-between px-6 py-5 font-semibold text-gray-900 text-base">
+            Is Dr. Klean Power Washing licensed and insured in Georgia?
+            <span class="ml-4 flex-shrink-0 w-6 h-6 rounded-full bg-[#118AB2]/10 flex items-center justify-center text-[#118AB2] group-open:rotate-45 transition-transform duration-200 text-xl font-light">+</span>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+            Yes. Dr. Klean Power Washing and Exterior Cleaning LLC. is fully licensed and insured to operate in Georgia. You can hire us with complete confidence that your property is protected and you're working with a legitimate, professional business.
+          </div>
+        </details>
+
+        <details class="bg-[#f0f9ff] rounded-2xl border border-[#118AB2]/10 overflow-hidden group">
+          <summary class="flex items-center justify-between px-6 py-5 font-semibold text-gray-900 text-base">
+            How soon can you come out for a job in Atlanta?
+            <span class="ml-4 flex-shrink-0 w-6 h-6 rounded-full bg-[#118AB2]/10 flex items-center justify-center text-[#118AB2] group-open:rotate-45 transition-transform duration-200 text-xl font-light">+</span>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+            We're known for our fast response — in many cases we can be at your property the same day or the next morning. Give us a call at (678) 954-9367 and we'll get you on the schedule as quickly as possible. Our hours are Monday through Friday 9 AM–5 PM, and Saturday–Sunday 9 AM–7 PM.
+          </div>
+        </details>
+
+        <details class="bg-[#f0f9ff] rounded-2xl border border-[#118AB2]/10 overflow-hidden group">
+          <summary class="flex items-center justify-between px-6 py-5 font-semibold text-gray-900 text-base">
+            Are your cleaning products safe for kids, pets, and plants?
+            <span class="ml-4 flex-shrink-0 w-6 h-6 rounded-full bg-[#118AB2]/10 flex items-center justify-center text-[#118AB2] group-open:rotate-45 transition-transform duration-200 text-xl font-light">+</span>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+            Absolutely. We use environmentally responsible cleaning solutions that are safe for your family, pets, and landscaping. We take extra care to protect your plants and outdoor areas during every job, so you can feel good about the service from start to finish.
+          </div>
+        </details>
+
+        <details class="bg-[#f0f9ff] rounded-2xl border border-[#118AB2]/10 overflow-hidden group">
+          <summary class="flex items-center justify-between px-6 py-5 font-semibold text-gray-900 text-base">
+            Do you offer services for commercial properties in Atlanta?
+            <span class="ml-4 flex-shrink-0 w-6 h-6 rounded-full bg-[#118AB2]/10 flex items-center justify-center text-[#118AB2] group-open:rotate-45 transition-transform duration-200 text-xl font-light">+</span>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+            Yes! We work with Atlanta-area businesses of all sizes, providing commercial building washes, storefront cleaning, parking lot cleaning, and fleet washing. A clean exterior makes a powerful first impression — contact us today to discuss a commercial cleaning plan that fits your schedule and budget.
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-[#fafaf8]">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-xs uppercase tracking-widest font-semibold text-[#06D6A0] mb-3">Let's Talk</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Ready to Get <span class="text-[#118AB2]">Started?</span></h2>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <!-- Left: Map -->
+        <div class="rounded-2xl overflow-hidden shadow-xl h-[420px]">
+          <iframe
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k&q=place_id:ChIJNZfdWH4H9YgRwHZwM0dRw98"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Dr. Klean Power Washing location"
+          ></iframe>
+        </div>
+        <!-- Right: Form -->
+        <div class="bg-white border-2 border-[#118AB2] p-8 rounded-2xl max-w-md w-full mx-auto">
+          <p class="text-xs uppercase tracking-widest font-semibold text-[#118AB2]">Get Started</p>
+          <h3 class="text-3xl font-bold text-gray-900 mt-2">Get a Free Estimate</h3>
+          <p class="text-gray-600 text-sm mt-1">We'll get back to you fast — usually same day.</p>
+          <div class="flex items-center gap-1 mt-3">
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <span class="ml-1 text-sm text-gray-600">5 out of 5 · 74 reviews</span>
+          </div>
+          <form onsubmit="return false;" class="mt-4 space-y-3">
+            <input type="text" placeholder="Your Name" class="bg-gray-50 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#118AB2] focus:border-transparent py-3 px-4 w-full text-sm outline-none" required>
+            <input type="tel" placeholder="Phone Number" class="bg-gray-50 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#118AB2] focus:border-transparent py-3 px-4 w-full text-sm outline-none">
+            <input type="email" placeholder="Email Address" class="bg-gray-50 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#118AB2] focus:border-transparent py-3 px-4 w-full text-sm outline-none">
+            <select class="bg-gray-50 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#118AB2] focus:border-transparent py-3 px-4 w-full text-sm outline-none text-gray-600">
+              <option value="" disabled selected>Select a Service</option>
+              <option>House Washing</option>
+              <option>Driveway Cleaning</option>
+              <option>Deck Cleaning</option>
+              <option>Patio Cleaning</option>
+            </select>
+            <textarea rows="3" placeholder="Tell us about your project..." class="bg-gray-50 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#118AB2] focus:border-transparent py-3 px-4 w-full text-sm outline-none resize-none"></textarea>
+            <button type="submit" class="w-full bg-[#118AB2] text-white rounded-lg py-4 font-bold text-base hover:bg-[#0e7a9e] transition mt-2">
+              Request My Free Estimate
+            </button>
+          </form>
+          <div class="flex items-center gap-1.5 mt-3">
+            <i data-lucide="shield-check" class="w-4 h-4 text-[#118AB2]"></i>
+            <span class="text-xs text-gray-500">Licensed &amp; Insured · Atlanta Local</span>
+          </div>
+          <p class="text-xs text-gray-400 mt-2">By submitting you agree to be contacted regarding your request.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#118AB2] text-white">
+
+    <!-- Certifications Strip -->
+    <div class="py-10 border-b border-white/20">
+      <div class="flex flex-wrap justify-center gap-8 px-4">
+        <div class="flex items-center gap-2">
+          <i data-lucide="shield-check" class="w-5 h-5 text-[#06D6A0]"></i>
+          <span class="uppercase tracking-wider text-xs font-semibold">Licensed</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="check-circle" class="w-5 h-5 text-[#06D6A0]"></i>
+          <span class="uppercase tracking-wider text-xs font-semibold">Insured</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="award" class="w-5 h-5 text-[#06D6A0]"></i>
+          <span class="uppercase tracking-wider text-xs font-semibold">5 Google Rating</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="heart" class="w-5 h-5 text-[#06D6A0]"></i>
+          <span class="uppercase tracking-wider text-xs font-semibold">Local &amp; Family-Owned</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="sparkles" class="w-5 h-5 text-[#06D6A0]"></i>
+          <span class="uppercase tracking-wider text-xs font-semibold">Community-First</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proud Serving Banner -->
+    <div class="py-10 border-b border-white/20 text-center px-4">
+      <p class="uppercase tracking-widest text-xs font-semibold text-[#06D6A0]">Proudly Serving</p>
+      <h3 class="text-3xl md:text-4xl font-bold mt-2">Atlanta &amp; Surrounding Communities</h3>
+      <div class="flex flex-wrap justify-center gap-2 mt-6">
+        <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Atlanta</span>
+        <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Decatur</span>
+        <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Buckhead</span>
+        <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Sandy Springs</span>
+        <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Marietta</span>
+        <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Smyrna</span>
+        <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Tucker</span>
+        <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Brookhaven</span>
+        <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Dunwoody</span>
+        <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Druid Hills</span>
+      </div>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-16 px-8 max-w-7xl mx-auto">
+
+      <!-- Col 1: Business Identity -->
+      <div class="col-span-2 md:col-span-1">
+        <div class="text-3xl font-bold" style="font-family:'Poppins',sans-serif;">Dr. Klean<span class="text-[#06D6A0]">.</span></div>
+        <p class="text-white/70 text-sm mt-2">Proudly serving Atlanta and surrounding communities.</p>
+        <div class="mt-6 space-y-3">
+          <div class="flex items-start gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-[#06D6A0] mt-0.5 flex-shrink-0"></i>
+            <span class="text-white/80 text-sm">2331 Briarcliff Rd NE, Atlanta, GA 30329</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4 text-[#06D6A0] flex-shrink-0"></i>
+            <a href="tel:6789549367" class="text-white/80 text-sm hover:text-white transition">(678) 954-9367</a>
+          </div>
+          <div class="flex items-start gap-2">
+            <i data-lucide="clock" class="w-4 h-4 text-[#06D6A0] mt-0.5 flex-shrink-0"></i>
+            <div class="text-white/80 text-sm">
+              <div>Mon–Fri: 9AM – 5PM</div>
+              <div>Sat–Sun: 9AM – 7PM</div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Col 2: WORK -->
+      <!-- Col 2: Services -->
       <div>
-        <p class="uppercase text-xs tracking-widest font-semibold mb-4" style="color:#80FF00;">Work</p>
-        <ul class="space-y-2">
-          <li><a href="#gallery" class="text-gray-400 hover:text-white transition text-sm">Gallery</a></li>
-          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Services</a></li>
-          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">House Washing</a></li>
-          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Driveway Cleaning</a></li>
-          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Deck Cleaning</a></li>
-          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Patio Cleaning</a></li>
-          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Roof Soft Wash</a></li>
-          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Siding Soft Wash</a></li>
-          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Commercial Wash</a></li>
-          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Fleet Washing</a></li>
-        </ul>
+        <p class="uppercase tracking-wider text-sm text-[#06D6A0] border-b border-[#06D6A0]/30 pb-2 mb-4 font-semibold">Services</p>
+        <a href="#services" class="text-white/80 hover:text-white transition text-sm block py-1">House Washing</a>
+        <a href="#services" class="text-white/80 hover:text-white transition text-sm block py-1">Driveway Cleaning</a>
+        <a href="#services" class="text-white/80 hover:text-white transition text-sm block py-1">Deck Cleaning</a>
+        <a href="#services" class="text-white/80 hover:text-white transition text-sm block py-1">Patio Cleaning</a>
+        <a href="#services" class="text-white/80 hover:text-white transition text-sm block py-1">Soft Wash Roof</a>
+        <a href="#services" class="text-white/80 hover:text-white transition text-sm block py-1">Siding Soft Wash</a>
+        <a href="#services" class="text-white/80 hover:text-white transition text-sm block py-1">Window Soft Wash</a>
+        <a href="#services" class="text-white/80 hover:text-white transition text-sm block py-1">Gentle Surface Cleaning</a>
+        <a href="#services" class="text-white/80 hover:text-white transition text-sm block py-1">Commercial Building Wash</a>
+        <a href="#services" class="text-white/80 hover:text-white transition text-sm block py-1">Parking Lot Cleaning</a>
+        <a href="#services" class="text-white/80 hover:text-white transition text-sm block py-1">Storefront Cleaning</a>
+        <a href="#services" class="text-white/80 hover:text-white transition text-sm block py-1">Fleet Washing</a>
       </div>
 
-      <!-- Col 3: COMPANY -->
+      <!-- Col 3: Company -->
       <div>
-        <p class="uppercase text-xs tracking-widest font-semibold mb-4" style="color:#80FF00;">Company</p>
-        <ul class="space-y-2">
-          <li><a href="#home" class="text-gray-400 hover:text-white transition text-sm">Home</a></li>
-          <li><a href="#about" class="text-gray-400 hover:text-white transition text-sm">About</a></li>
-          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Services</a></li>
-          <li><a href="#reviews" class="text-gray-400 hover:text-white transition text-sm">Reviews</a></li>
-          <li><a href="#faq" class="text-gray-400 hover:text-white transition text-sm">FAQ</a></li>
-          <li><a href="#contact" class="text-gray-400 hover:text-white transition text-sm">Contact</a></li>
-        </ul>
+        <p class="uppercase tracking-wider text-sm text-[#06D6A0] border-b border-[#06D6A0]/30 pb-2 mb-4 font-semibold">Company</p>
+        <a href="#home" class="text-white/80 hover:text-white transition text-sm block py-1">Home</a>
+        <a href="#about" class="text-white/80 hover:text-white transition text-sm block py-1">About</a>
+        <a href="#services" class="text-white/80 hover:text-white transition text-sm block py-1">Services</a>
+        <a href="#gallery" class="text-white/80 hover:text-white transition text-sm block py-1">Gallery</a>
+        <a href="#reviews" class="text-white/80 hover:text-white transition text-sm block py-1">Reviews</a>
+        <a href="#faq" class="text-white/80 hover:text-white transition text-sm block py-1">FAQ</a>
+        <a href="#contact" class="text-white/80 hover:text-white transition text-sm block py-1">Contact</a>
       </div>
 
-      <!-- Col 4: SERVICE AREAS -->
+      <!-- Col 4: Resources -->
       <div>
-        <p class="uppercase text-xs tracking-widest font-semibold mb-4" style="color:#80FF00;">Service Areas</p>
-        <ul class="space-y-2">
-          <li><span class="text-gray-400 text-sm">Atlanta, GA</span></li>
-          <li><span class="text-gray-400 text-sm">Decatur, GA</span></li>
-          <li><span class="text-gray-400 text-sm">Sandy Springs, GA</span></li>
-          <li><span class="text-gray-400 text-sm">Marietta, GA</span></li>
-          <li><span class="text-gray-400 text-sm">Smyrna, GA</span></li>
-          <li><span class="text-gray-400 text-sm">Dunwoody, GA</span></li>
-          <li><span class="text-gray-400 text-sm">Roswell, GA</span></li>
-          <li><span class="text-gray-400 text-sm">Tucker, GA</span></li>
-          <li><span class="text-gray-400 text-sm">Chamblee, GA</span></li>
-          <li><span class="text-gray-400 text-sm">Brookhaven, GA</span></li>
-        </ul>
+        <p class="uppercase tracking-wider text-sm text-[#06D6A0] border-b border-[#06D6A0]/30 pb-2 mb-4 font-semibold">Resources</p>
+        <a href="#home" class="text-white/80 hover:text-white transition text-sm block py-1">Home</a>
+        <a href="#reviews" class="text-white/80 hover:text-white transition text-sm block py-1">Reviews</a>
+        <a href="#faq" class="text-white/80 hover:text-white transition text-sm block py-1">FAQ</a>
+        <a href="#contact" class="text-white/80 hover:text-white transition text-sm block py-1">Contact</a>
+        <div class="mt-4 p-3 bg-white/10 rounded-xl">
+          <p class="text-xs font-semibold text-white/90 uppercase tracking-wider mb-1">Call Anytime</p>
+          <a href="tel:6789549367" class="text-[#06D6A0] font-bold text-base hover:text-white transition">(678) 954-9367</a>
+        </div>
       </div>
+
     </div>
 
     <!-- Bottom Bar -->
-    <div class="border-t border-white/10 mx-8 py-6 flex flex-col md:flex-row justify-between items-center gap-3 px-0">
-      <p class="text-gray-500 text-xs">&copy; 2025 Dr. Klean Power Washing and Exterior Cleaning LLC. All rights reserved. · Atlanta, GA</p>
-      <p class="text-gray-500 text-xs" id="live-clock"></p>
+    <div class="py-6 border-t border-white/20 px-8 flex flex-col md:flex-row justify-between items-center gap-2 max-w-7xl mx-auto">
+      <p class="text-xs text-white/60">&copy; 2025 Dr. Klean Power Washing and Exterior Cleaning LLC. All rights reserved.</p>
+      <p class="text-xs text-white/60">Proud Atlanta neighbors</p>
     </div>
-  </div>
-</footer>
 
-<script>
-// Nav scroll shadow
-(function(){
-  const nav = document.querySelector('nav');
-  if (!nav) return;
-  window.addEventListener('scroll', () => nav.classList.toggle('shadow-md', window.scrollY > 50));
-})();
+  </footer>
 
-// Hamburger
-(function(){
-  const ham = document.getElementById('hamburger');
-  const menu = document.getElementById('mobile-menu');
-  if (ham && menu) ham.addEventListener('click', () => menu.classList.toggle('hidden'));
-  document.querySelectorAll('.mobile-nav-link').forEach(a => {
-    a.addEventListener('click', () => { if (menu) menu.classList.add('hidden'); });
-  });
-})();
+  <!-- MANDATORY JS -->
+  <script>
+  // Nav scroll shadow
+  (function(){
+    const nav = document.querySelector('nav');
+    if (!nav) return;
+    window.addEventListener('scroll', () => nav.classList.toggle('shadow-md', window.scrollY > 50));
+  })();
 
-// TABS
-(function(){
-  const buttons = Array.from(document.querySelectorAll('.tab-btn'));
-  const panels = Array.from(document.querySelectorAll('.tab-panel'));
-  if (!buttons.length || !panels.length) return;
-  function showByIndex(idx) {
-    panels.forEach(p => p.classList.add('hidden'));
-    buttons.forEach(b => { b.classList.remove('active-tab'); b.classList.add('inactive-tab'); });
-    if (panels[idx]) panels[idx].classList.remove('hidden');
-    if (buttons[idx]) { buttons[idx].classList.add('active-tab'); buttons[idx].classList.remove('inactive-tab'); }
-  }
-  function showById(id) { const i = panels.findIndex(p => p.id === id); if (i >= 0) showByIndex(i); }
-  buttons.forEach((btn, idx) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const t = btn.getAttribute('data-target');
-      if (t) showById(t); else showByIndex(idx);
+  // Hamburger
+  (function(){
+    const ham = document.getElementById('hamburger');
+    const menu = document.getElementById('mobile-menu');
+    if (ham && menu) ham.addEventListener('click', () => menu.classList.toggle('hidden'));
+    document.querySelectorAll('.mobile-nav-link').forEach(a => {
+      a.addEventListener('click', () => { if (menu) menu.classList.add('hidden'); });
     });
-  });
-  window.showTab = function(id){ showById(id); };
-  if (!panels.some(p => !p.classList.contains('hidden'))) showByIndex(0);
-})();
+  })();
 
-// Counters
-function animateCount(el, target, suffix) {
-  let start = 0;
-  const duration = 2000, steps = 60, inc = target / steps;
-  const t = setInterval(() => {
-    start += inc;
-    if (start >= target) { el.textContent = target + (suffix || ''); clearInterval(t); }
-    else el.textContent = Math.floor(start) + (suffix || '');
-  }, duration / steps);
-}
-const statObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const t = parseInt(e.target.dataset.count);
-      const s = e.target.dataset.suffix || '';
-      if (t) animateCount(e.target, t, s);
-      statObs.unobserve(e.target);
+  // TABS
+  (function(){
+    const buttons = Array.from(document.querySelectorAll('.tab-btn'));
+    const panels = Array.from(document.querySelectorAll('.tab-panel'));
+    if (!buttons.length || !panels.length) return;
+    function showByIndex(idx) {
+      panels.forEach(p => p.classList.add('hidden'));
+      buttons.forEach(b => { b.classList.remove('active-tab'); b.classList.add('inactive-tab'); });
+      if (panels[idx]) panels[idx].classList.remove('hidden');
+      if (buttons[idx]) { buttons[idx].classList.add('active-tab'); buttons[idx].classList.remove('inactive-tab'); }
     }
-  });
-}, { threshold: 0.3 });
-document.querySelectorAll('[data-count]').forEach(el => statObs.observe(el));
-
-// Section reveal
-(function(){
-  const sections = document.querySelectorAll('.animate-section');
-  if (!sections.length) return;
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove('is-pending');
-        entry.target.classList.add('is-visible');
-        obs.unobserve(entry.target);
-      }
+    function showById(id) { const i = panels.findIndex(p => p.id === id); if (i >= 0) showByIndex(i); }
+    buttons.forEach((btn, idx) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const t = btn.getAttribute('data-target');
+        if (t) showById(t); else showByIndex(idx);
+      });
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  sections.forEach(el => {
-    const r = el.getBoundingClientRect();
-    const inView = r.top < window.innerHeight && r.bottom > 0;
-    if (inView) el.classList.add('is-visible');
-    else { el.classList.add('is-pending'); obs.observe(el); }
-  });
-  setTimeout(() => {
-    document.querySelectorAll('.animate-section.is-pending').forEach(el => {
-      el.classList.remove('is-pending'); el.classList.add('is-visible');
-    });
-  }, 2500);
-})();
+    window.showTab = function(id){ showById(id); };
+    if (!panels.some(p => !p.classList.contains('hidden'))) showByIndex(0);
+  })();
 
-// Hash-click reveal
-(function(){
-  function revealTarget() {
-    const hash = window.location.hash;
-    if (!hash || hash.length < 2) return;
-    try {
-      const target = document.querySelector(hash);
-      if (target && target.classList.contains('animate-section')) {
-        target.classList.remove('is-pending');
-        target.classList.add('is-visible');
-      }
-    } catch(e) {}
+  // Counters
+  function animateCount(el, target, suffix) {
+    let start = 0;
+    const duration = 2000, steps = 60, inc = target / steps;
+    const t = setInterval(() => {
+      start += inc;
+      if (start >= target) { el.textContent = target + (suffix || ''); clearInterval(t); }
+      else el.textContent = Math.floor(start) + (suffix || '');
+    }, duration / steps);
   }
-  window.addEventListener('hashchange', revealTarget);
-  setTimeout(revealTarget, 100);
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', () => {
-      const hash = a.getAttribute('href');
-      if (hash && hash.length > 1) {
-        try {
-          const target = document.querySelector(hash);
-          if (target && target.classList.contains('animate-section')) {
-            target.classList.remove('is-pending');
-            target.classList.add('is-visible');
-          }
-        } catch(e) {}
+  const statObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const t = parseInt(e.target.dataset.count);
+        const s = e.target.dataset.suffix || '';
+        if (t) animateCount(e.target, t, s);
+        statObs.unobserve(e.target);
       }
     });
-  });
-})();
+  }, { threshold: 0.3 });
+  document.querySelectorAll('[data-count]').forEach(el => statObs.observe(el));
 
-// Live clock
-function updateClock() {
-  const el = document.getElementById('live-clock');
-  if (el) el.textContent = 'Atlanta - ' + new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-}
-updateClock();
-setInterval(updateClock, 1000);
+  // Section reveal
+  (function(){
+    const sections = document.querySelectorAll('.animate-section');
+    if (!sections.length) return;
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('is-pending');
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    sections.forEach(el => {
+      const r = el.getBoundingClientRect();
+      const inView = r.top < window.innerHeight && r.bottom > 0;
+      if (inView) el.classList.add('is-visible');
+      else { el.classList.add('is-pending'); obs.observe(el); }
+    });
+    setTimeout(() => {
+      document.querySelectorAll('.animate-section.is-pending').forEach(el => {
+        el.classList.remove('is-pending'); el.classList.add('is-visible');
+      });
+    }, 2500);
+  })();
 
-// Lucide
-(function(){
-  const render = () => { if (window.lucide) window.lucide.createIcons(); };
-  if (window.lucide) render();
-  else document.addEventListener('DOMContentLoaded', render);
-  setTimeout(render, 500);
-  setTimeout(render, 1500);
-})();
-</script>
+  // Hash-click reveal
+  (function(){
+    function revealTarget() {
+      const hash = window.location.hash;
+      if (!hash || hash.length < 2) return;
+      try {
+        const target = document.querySelector(hash);
+        if (target && target.classList.contains('animate-section')) {
+          target.classList.remove('is-pending');
+          target.classList.add('is-visible');
+        }
+      } catch(e) {}
+    }
+    window.addEventListener('hashchange', revealTarget);
+    setTimeout(revealTarget, 100);
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', () => {
+        const hash = a.getAttribute('href');
+        if (hash && hash.length > 1) {
+          try {
+            const target = document.querySelector(hash);
+            if (target && target.classList.contains('animate-section')) {
+              target.classList.remove('is-pending');
+              target.classList.add('is-visible');
+            }
+          } catch(e) {}
+        }
+      });
+    });
+  })();
+
+  // Live clock
+  function updateClock() {
+    const el = document.getElementById('live-clock');
+    if (el) el.textContent = 'Atlanta - ' + new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+
+  // Lucide
+  (function(){
+    const render = () => { if (window.lucide) window.lucide.createIcons(); };
+    if (window.lucide) render();
+    else document.addEventListener('DOMContentLoaded', render);
+    setTimeout(render, 500);
+    setTimeout(render, 1500);
+  })();
+  </script>
+
 </body>
 </html>

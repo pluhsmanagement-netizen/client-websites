@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restoration 1 of North Atlanta | Construction & Restoration | Alpharetta, GA</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restoration 1 of North Atlanta | Alpharetta, GA</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
     details summary { list-style: none; cursor: pointer; }
     details summary::-webkit-details-marker { display: none; }
     .tab-btn { cursor: pointer; transition: all 0.2s ease; }
-    .tab-btn.active-tab { background-color: #1A1A2E; color: white; }
+    .tab-btn.active-tab { background-color: #0D0D0D; color: white; }
     .tab-btn.inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
     .tab-panel { display: block; }
     .tab-panel.hidden { display: none !important; }
@@ -38,249 +38,325 @@
     .animate-section.is-pending:target { opacity: 1 !important; transform: none !important; }
     .award-badge { filter: grayscale(100%); transition: filter 0.3s ease; }
     .award-badge:hover { filter: grayscale(0%); }
-    .gold-border { border-color: #E63946; }
-    .gold-text { color: #E63946; }
-    .active-tab { background-color: #E63946 !important; color: #f5f5f0 !important; border-color: #E63946 !important; }
-    .inactive-tab { background-color: transparent !important; color: #9ca3af !important; border: 1px solid rgba(230,57,70,0.3) !important; }
   </style>
 </head>
-<body class="bg-[#0f0f0f] text-[#f5f5f0]">
+<body class="bg-gray-50 text-gray-900">
 
   <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-sm border-b border-[#E63946]/20 transition-all duration-300">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-20">
-      <a href="#home" class="flex flex-col leading-tight">
-        <span class="font-['Oswald'] text-xl font-700 tracking-widest text-[#f5f5f0] uppercase">Restoration 1</span>
-        <span class="font-['Oswald'] text-xs tracking-[0.3em] text-[#E63946] uppercase">of North Atlanta</span>
+      <a href="#home" class="text-2xl font-bold tracking-tight" style="font-family:'Oswald',sans-serif;">
+        RESTORATION 1 <span style="color:#D4890A;">NORTH ATLANTA</span>
       </a>
       <div class="hidden md:flex items-center gap-8">
-        <a href="#home" class="serif-display italic text-sm text-gray-400 hover:text-[#E63946] transition">Home</a>
-        <a href="#about" class="serif-display italic text-sm text-gray-400 hover:text-[#E63946] transition">About</a>
-        <a href="#services" class="serif-display italic text-sm text-gray-400 hover:text-[#E63946] transition">Services</a>
-        <a href="#gallery" class="serif-display italic text-sm text-gray-400 hover:text-[#E63946] transition">Gallery</a>
-        <a href="#reviews" class="serif-display italic text-sm text-gray-400 hover:text-[#E63946] transition">Reviews</a>
-        <a href="#faq" class="serif-display italic text-sm text-gray-400 hover:text-[#E63946] transition">FAQ</a>
-        <a href="#contact" class="serif-display italic text-sm text-gray-400 hover:text-[#E63946] transition">Contact</a>
-        <a href="tel:6783902145" class="border border-[#E63946] text-[#E63946] px-5 py-2 text-sm font-['Oswald'] tracking-widest hover:bg-[#E63946] hover:text-[#0f0f0f] transition uppercase">(678) 390-2145</a>
+        <a href="#home" class="text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-gray-900 transition">Home</a>
+        <a href="#about" class="text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-gray-900 transition">About</a>
+        <a href="#services" class="text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-gray-900 transition">Services</a>
+        <a href="#gallery" class="text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-gray-900 transition">Gallery</a>
+        <a href="#reviews" class="text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-gray-900 transition">Reviews</a>
+        <a href="#faq" class="text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-gray-900 transition">FAQ</a>
+        <a href="#contact" class="text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-gray-900 transition">Contact</a>
+        <a href="tel:6783902145" class="ml-4 px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wide text-black transition" style="background:#D4890A;">(678) 390-2145</a>
       </div>
-      <button id="hamburger" class="md:hidden text-[#f5f5f0] p-2">
+      <button id="hamburger" class="md:hidden p-2 rounded-lg text-gray-700">
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-[#0a0a0a] border-t border-[#E63946]/20">
-      <a href="#home" class="mobile-nav-link serif-display italic block py-3 px-4 border-b border-[#E63946]/10 text-gray-300 hover:text-[#E63946] transition">Home</a>
-      <a href="#about" class="mobile-nav-link serif-display italic block py-3 px-4 border-b border-[#E63946]/10 text-gray-300 hover:text-[#E63946] transition">About</a>
-      <a href="#services" class="mobile-nav-link serif-display italic block py-3 px-4 border-b border-[#E63946]/10 text-gray-300 hover:text-[#E63946] transition">Services</a>
-      <a href="#gallery" class="mobile-nav-link serif-display italic block py-3 px-4 border-b border-[#E63946]/10 text-gray-300 hover:text-[#E63946] transition">Gallery</a>
-      <a href="#reviews" class="mobile-nav-link serif-display italic block py-3 px-4 border-b border-[#E63946]/10 text-gray-300 hover:text-[#E63946] transition">Reviews</a>
-      <a href="#faq" class="mobile-nav-link serif-display italic block py-3 px-4 border-b border-[#E63946]/10 text-gray-300 hover:text-[#E63946] transition">FAQ</a>
-      <a href="#contact" class="mobile-nav-link serif-display italic block py-3 px-4 border-b border-[#E63946]/10 text-gray-300 hover:text-[#E63946] transition">Contact</a>
-      <div class="px-4 py-4">
-        <a href="tel:6783902145" class="block text-center border border-[#E63946] text-[#E63946] py-3 font-['Oswald'] tracking-widest text-sm hover:bg-[#E63946] hover:text-[#0f0f0f] transition uppercase">(678) 390-2145</a>
-      </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+      <a href="#home" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold uppercase tracking-wide text-gray-700">Home</a>
+      <a href="#about" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold uppercase tracking-wide text-gray-700">About</a>
+      <a href="#services" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold uppercase tracking-wide text-gray-700">Services</a>
+      <a href="#gallery" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold uppercase tracking-wide text-gray-700">Gallery</a>
+      <a href="#reviews" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold uppercase tracking-wide text-gray-700">Reviews</a>
+      <a href="#faq" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold uppercase tracking-wide text-gray-700">FAQ</a>
+      <a href="#contact" class="mobile-nav-link block py-3 px-4 text-sm font-semibold uppercase tracking-wide text-gray-700">Contact</a>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section id="home" class="min-h-screen flex items-center relative overflow-hidden bg-[#0f0f0f]">
+  <section id="home" class="relative w-full h-screen min-h-[600px] flex items-end overflow-hidden">
     <div class="absolute inset-0 z-0">
       <img
-        src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEHnzVhk59OHQ5tOPvWUvK04oRY2DT-4JL_CPBvY8uu-KGfIYmCE8d6o3jPGZTRYHRUwNG-GKsKx1mscL4KXmxotf0xtOv7_yYeMHzejxYjAXPJAfwx4ZOjarBkdmAAjHhsalaWBWspr0t3LKpsEiQ7sTpFxzJbC-F6CWr4MXlJF4tk2VDqOIwh-CpgoRBWl4iw2PzIHt_bEg2UKEO-02OFleFwXlgTOnkhC2isJUITHKtJbjTDzvB2fF5J9Wi7loH_aWtkCmCJQwcDK3B2vM-gP1-VeQtEgAkNA-JLu0LnpWQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-        alt="Restoration work" loading="lazy"
-        onerror="this.src='https://picsum.photos/seed/construction-001/1600/900'"
-        class="w-full h-full object-cover opacity-25"
-      >
-      <div class="absolute inset-0 bg-gradient-to-r from-[#0f0f0f] via-[#0f0f0f]/80 to-[#0f0f0f]/40"></div>
+        src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEG_9AW_z4zFtZlybfquBvS4IPGulz5EnTELa4-PDdRx__PI4n1KMe4ocCd7t2Yfj5ivlcwuz_8LwyXovxtfhcz-QDKSPPpwv48PmH7e29-zqb7bU61z5j0k6ICNF2mqDsR2M771tgcKoPwfaur5SgKIWmoM18j4AZdM0Y01Zcpcy1JcZVXgvQAujvQQlre32ZuVJhw-Vh-f9YHb3b75Mb-dhJjv08ah3hNzC9GS0A6wwk4cd1tAjhYEXWxeV3rIvbm3y_vcXXpqNiyVwzhpr3Sg2dvp6BkfKjZL0dlfvzQ0zA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+        alt="Restoration 1 of North Atlanta project"
+        class="w-full h-full object-cover"
+        onerror="this.src='https://picsum.photos/seed/construction-1/1600/900'"
+      />
+      <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);"></div>
     </div>
-    <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-16 pt-32 pb-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
-      <div>
-        <p class="serif-display italic text-[#E63946] text-sm tracking-widest uppercase mb-6">Alpharetta, Georgia · 24/7 Emergency Response</p>
-        <h1 class="serif-display font-800 text-6xl md:text-7xl lg:text-8xl text-white leading-[0.95] mb-6">
-          Restore.<br><em class="text-[#E63946]">Rebuild.</em><br>Renew.
-        </h1>
-        <p class="serif-display italic text-[#f5f5f0]/80 text-xl max-w-lg mb-10 leading-relaxed">
-          When disaster strikes or vision demands excellence — crafted restoration and construction for North Atlanta's finest properties.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a href="#contact" class="border border-[#E63946] text-[#E63946] px-8 py-4 font-['Oswald'] tracking-widest text-sm uppercase hover:bg-[#E63946] hover:text-[#0f0f0f] transition">Get a Free Estimate</a>
-          <a href="tel:6783902145" class="border border-[#f5f5f0]/30 text-[#f5f5f0] px-8 py-4 font-['Oswald'] tracking-widest text-sm uppercase hover:border-[#f5f5f0] transition">(678) 390-2145</a>
-        </div>
-        <div class="mt-8 flex items-center gap-3">
-          <div class="flex gap-1">
-            <i data-lucide="star" class="w-4 h-4 fill-[#E63946] text-[#E63946]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#E63946] text-[#E63946]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#E63946] text-[#E63946]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#E63946] text-[#E63946]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#E63946] text-[#E63946]"></i>
-          </div>
-          <span class="serif-display italic text-gray-400 text-sm">4.9 · 234 Google Reviews</span>
-        </div>
+    <div class="relative z-10 px-4 md:px-8 lg:px-16 pb-16 md:pb-24 max-w-7xl w-full mx-auto">
+      <p class="text-xs uppercase tracking-widest mb-3 font-semibold" style="color:#D4890A;">Alpharetta, Georgia · Est. North Atlanta</p>
+      <h1 class="text-6xl md:text-7xl font-bold text-white leading-tight max-w-3xl">Restore.<br/>Rebuild.<br/>Renew.</h1>
+      <p class="text-gray-300 text-lg md:text-xl mt-4 max-w-xl font-normal">Expert restoration and construction craftsmanship for homes and businesses throughout North Atlanta.</p>
+      <div class="flex flex-wrap gap-4 mt-8">
+        <a href="#contact" class="px-8 py-4 rounded-full font-bold uppercase tracking-wider text-black text-sm transition hover:brightness-110" style="background:#D4890A;">Get a Free Estimate</a>
+        <a href="#gallery" class="px-8 py-4 rounded-full font-bold uppercase tracking-wider text-white text-sm border border-white/40 hover:bg-white/10 transition">View Our Work</a>
       </div>
-      <div class="hidden md:block">
-        <div class="relative img-hover-wrap">
-          <img
-            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGSU4_p3pzITaeUCBHVgASn9YBT_IpMbSAl3d-JV7dGhY_nMEcg_rMWZBGxJLRT0UzEPbqrtlrbWW_2tLhF84f5AtODC5C23PtnnXcaoaTO7cKBpuz9BEnD4G9M4ZvASFabmL7tAnE2UUAQVxww0nJFWe-v1rCVvc5fIEGXgmUZHvskzTWdQBZGty9blPH5ooCndE9x2t1zkymksBS4UTNkR2wWA2RME_QDsck33sK6mH-SXyT48PyzMPJ6yBNIbQxrFQtFzwvC1poGr2Kxyo4x4Rmuc0qPM_8e135AAyQZew&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-            alt="Restoration project" loading="lazy"
-            onerror="this.src='https://picsum.photos/seed/construction-002/800/600'"
-            class="w-full h-[520px] object-cover"
-          >
-          <div class="absolute inset-0 border border-[#E63946]/40 pointer-events-none"></div>
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0f0f0f]/80 to-transparent p-6">
-            <p class="serif-display italic text-[#f5f5f0]/70 text-xs tracking-widest">Serving North Atlanta Since Day One</p>
-          </div>
+      <div class="mt-8 flex items-center gap-2">
+        <div class="flex gap-0.5">
+          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
         </div>
+        <span class="text-white text-sm">4.9 · 234 Google Reviews</span>
       </div>
-    </div>
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-      <div class="w-px h-12 bg-gradient-to-b from-[#E63946]/60 to-transparent mx-auto"></div>
     </div>
   </section>
 
   <!-- STATS -->
-  <section class="animate-section py-20 bg-[#0a0a0a] border-t border-b border-[#E63946]/15">
-    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        <div>
-          <div class="serif-display text-5xl md:text-6xl font-800 text-[#f5f5f0] mb-2">
-            <span data-count="234" data-suffix="">234</span>
-          </div>
-          <p class="serif-display italic text-[#E63946] text-sm tracking-wide">Google Reviews</p>
+  <section class="animate-section bg-white py-10 px-4 md:px-8 lg:px-16">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col items-center text-center gap-2">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center mb-1" style="background:#FFF3E0;">
+          <i data-lucide="star" class="w-5 h-5" style="color:#D4890A;"></i>
         </div>
-        <div>
-          <div class="serif-display text-5xl md:text-6xl font-800 text-[#f5f5f0] mb-2">
-            4.9
-          </div>
-          <p class="serif-display italic text-[#E63946] text-sm tracking-wide">Star Rating</p>
+        <span class="text-3xl font-bold" style="font-family:'Oswald',sans-serif;" data-count="4" data-suffix=".9">4.9</span>
+        <span class="text-xs text-gray-500 uppercase tracking-wide">Google Rating</span>
+      </div>
+      <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col items-center text-center gap-2">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center mb-1" style="background:#FFF3E0;">
+          <i data-lucide="award" class="w-5 h-5" style="color:#D4890A;"></i>
         </div>
-        <div>
-          <div class="serif-display text-5xl md:text-6xl font-800 text-[#f5f5f0] mb-2">
-            <span data-count="24" data-suffix="">24</span><span class="text-3xl">/7</span>
-          </div>
-          <p class="serif-display italic text-[#E63946] text-sm tracking-wide">Emergency Response</p>
+        <span class="text-3xl font-bold" style="font-family:'Oswald',sans-serif;" data-count="234" data-suffix="+">234+</span>
+        <span class="text-xs text-gray-500 uppercase tracking-wide">Verified Reviews</span>
+      </div>
+      <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col items-center text-center gap-2">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center mb-1" style="background:#FFF3E0;">
+          <i data-lucide="clock" class="w-5 h-5" style="color:#D4890A;"></i>
         </div>
-        <div>
-          <div class="serif-display text-5xl md:text-6xl font-800 text-[#f5f5f0] mb-2">
-            <span data-count="10" data-suffix="+">10+</span>
-          </div>
-          <p class="serif-display italic text-[#E63946] text-sm tracking-wide">Cities Served</p>
+        <span class="text-3xl font-bold" style="font-family:'Oswald',sans-serif;">24/7</span>
+        <span class="text-xs text-gray-500 uppercase tracking-wide">Emergency Service</span>
+      </div>
+      <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col items-center text-center gap-2">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center mb-1" style="background:#FFF3E0;">
+          <i data-lucide="shield-check" class="w-5 h-5" style="color:#D4890A;"></i>
         </div>
+        <span class="text-3xl font-bold" style="font-family:'Oswald',sans-serif;">100%</span>
+        <span class="text-xs text-gray-500 uppercase tracking-wide">Licensed & Insured</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="animate-section py-24 px-4 md:px-8 lg:px-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <p class="text-xs uppercase tracking-widest font-semibold mb-3" style="color:#D4890A;">Our Portfolio</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-12">Craftsmanship in Every Detail</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <!-- Featured large -->
+        <div class="col-span-2 row-span-1 img-hover-wrap rounded-xl overflow-hidden" style="height:500px;">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEG_9AW_z4zFtZlybfquBvS4IPGulz5EnTELa4-PDdRx__PI4n1KMe4ocCd7t2Yfj5ivlcwuz_8LwyXovxtfhcz-QDKSPPpwv48PmH7e29-zqb7bU61z5j0k6ICNF2mqDsR2M771tgcKoPwfaur5SgKIWmoM18j4AZdM0Y01Zcpcy1JcZVXgvQAujvQQlre32ZuVJhw-Vh-f9YHb3b75Mb-dhJjv08ah3hNzC9GS0A6wwk4cd1tAjhYEXWxeV3rIvbm3y_vcXXpqNiyVwzhpr3Sg2dvp6BkfKjZL0dlfvzQ0zA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Restoration project 1"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/construction-10/800/600'"
+          />
+        </div>
+        <div class="img-hover-wrap rounded-xl overflow-hidden" style="height:500px;">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEFmJhP4X2Vcyan3A7mkW5pxKFuRToj7nIBXV90ibCd7f47h7j_vXwEZ4NfyukgyoMpAdS_znZg5UwGDFU4SfRY_gYDctBwktlUM2w81uBNsZ1GpccvCh1nuhUnvYKfdrCEsr1DfCgB_F_aDyZ0uzzgogs62c02eabk77gqu4qOAov3BwPQTwkNxOpJvqKy34JSPBUKQmKIfA1vaEX1VciLZJGOkS1IFwlp7Mp7WCp5HLvvH57JR46C5sTEHE6qcBPTn8Sb8LIREwgZw3O_gcYyh3L7hcFYBwidh-ARFYHzESQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Restoration project 2"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/construction-11/800/600'"
+          />
+        </div>
+        <div class="img-hover-wrap rounded-xl overflow-hidden" style="height:280px;">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEEi2uYWLzeGhu2NUf_RHJdKr7eBYlCtMgbZdvAuQbpqLJA_rg6idFUPepOXDYfZaFoWWNkXaqtKeWPlU8t0SnD1mSi2hXY4q_tl-yhr5cin0stGj_dcpc9a7GQkkXNE9Pr20rHmbqvGW6GHSmAkwxnHE3TbCnkxw1wVBs7UYuGD2suoKnSY70aWgijopJvHSAjUh5MokEGI9cftT3jAsOGK7JIVUoAFjWgdkUZOkaqLqFCp4azvx3SWaCCfRDgCXRMz_f9YAVLnajWLFQZvf89ACjFHyzOCpqxHRKbKYGmyWQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Restoration project 3"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/construction-12/800/600'"
+          />
+        </div>
+        <div class="img-hover-wrap rounded-xl overflow-hidden" style="height:280px;">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEE5RAQBMbdAHo6V37khd0YRn4p00RXheujSJ_CP1GrCRATooYR6Yj3yORYFM9381boUSuS50Juf67-QTa0WDdx6RVoPlSPv2Nyapnh8klgpiOk-jqbYA52ufDyVk-5TzZunwbv-BxjO8hsPH0j13Rw_39ekO8UOeCWHtFl90HRaNoYkeLqHxdZavHIGZ9ZkB9dG6n7tkHUltymRiO2UlgwAiySfnllChTf0vm0LYhzJBqsuasUzbL0diIbbCjqatdze2q1GCYXvxNf7YaQpUkh8APlYW2Hp5WexIS08nNsmiw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Restoration project 4"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/construction-13/800/600'"
+          />
+        </div>
+        <div class="img-hover-wrap rounded-xl overflow-hidden" style="height:280px;">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEFDrW5x3WMhdtbpzTpzsfw0iDkNs5H8bMbC5m47Bg9BxgcdswdnJvZziHTzfO2kypiLn33CmTkhYrcilBW8_axn7R4o75HQmo9gV1fnFE-yjsfUQTnuxvTvoacTdUO7mwlUi2VvlAqJ2GD28qg0FPY4tfQ85xwj8WsIkMXZvQ4ORc12rv2VqT9Bub-myTrQBUXobOJ7YBKEzgBDswjhJD8uZPuSz7mNvx0sPWpAxk9dSGY8ekamj13Kwnda2BN_fep_JQG1B3hpt60uhxJoZtkQUDi-OZcoFLKxK1odOevqyg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Restoration project 5"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/construction-14/800/600'"
+          />
+        </div>
+        <div class="img-hover-wrap rounded-xl overflow-hidden" style="height:280px;">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGWD9-uljnqeVtL_7TEZ654d2BF_N156Xbtfy57fcgXdn0-zscsyWgP0TAZhhG_42lBWbTBPX21S1Dxaj6lFPkJg5L3FgqmjZPw-jWRLZzzUZ869vPyd1VDfZPdQoZr6Abc8gbfIOrdedLVW4KxVTe0duQrXJpNOqjVhv0JWrSDERHol2C0MM-og0_8RIMVlsFchb_YZZ_JJdyMZGoeEM0dEOSwZFIa-vqTHoORw6ytoPL0g_NFDIBEhJwwnvOQhbfob-vPWsBXVj6mPO0Ji-Fgk2PqfjUs6HTG73mLn-wr9Q&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Restoration project 6"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/construction-15/800/600'"
+          />
+        </div>
+        <div class="img-hover-wrap rounded-xl overflow-hidden" style="height:280px;">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEH7IPeFNADGXCeJvHVF1NFy7sWFvh4mALp7Bnhl9kiRmD6sNu_cjqvCn_bI9Qnl-zJCmDQdT58Z0DEh-dqj06wRVm-7gnA5e6OQ9I5_Xk-wq1npGNPo9-2q8w_GoazHvlUomj-77_Fu_q5Z04CDufNQFGVlyeAyEWtqSAnWUDE24TX4bSbxqvbw3PeM4gQvuD4mMI28SB0niXtstCKN5MOk9JSGOdb5w8peENXXzCXumoq_5shMwsAIuTXy076U-T1eKZUVVD5ucXax618WshhviSHx0RiwEGcnbSIxtkeqag&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Restoration project 7"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/construction-16/800/600'"
+          />
+        </div>
+        <div class="img-hover-wrap rounded-xl overflow-hidden" style="height:280px;">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEE5CesPIEwI7KDgw0iYpLSlJuoNSRsXn64nOeWdgZh5dEuJP3KXq0Z2pO5QR06ZSNkBZ0cyzwoaep0p3eRGNuDDNzxGruZWzKkmLTtSYvZa5tYpZlPceX343N78vQnBsxi7QZOiJzakbIhNiZUQKFTKEHNT9R2ORb6XMpPQu2m0BbyBAkGniML0EuFVPJGmSmUFX1ebGTb8dONEO9g5-6fqyc8tIohPcEkI6-l31WuMaFTnkUwF-2n9gLsubjKtm1pXodWTgFHuCusuABj4lBzkvYfEBN-YFVS6gcJqJPseaw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Restoration project 8"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/construction-17/800/600'"
+          />
+        </div>
+        <div class="img-hover-wrap rounded-xl overflow-hidden" style="height:280px;">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEH93DOYZ8yzx_FGAuixgZBdJRgWRXs9RLsIipTgW0tDlv8PjT0HZh4l521dOuG2auj-6uuCPCE4zAvCgI-YxhIabuQhZo5foFOkP38x2nKorsE3wlIjrEbZ5HbgSxG6vT1hubigNIPyhMr-q4guTb1CgBcWGTiny-DdoEy1vnygJkg11ifYz9VdsdQbXxux8VGJhbwgzGGvmGY2g5DgG7Jx6jolR0cRScl47C2wf2-hfSUHrXqKuXVgEmV9oCTXTB8X7SxKkLmE1kHVxy9XCeNTOgSDPjCXE57WeyeBvYLmaA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Restoration project 9"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/construction-18/800/600'"
+          />
+        </div>
+        <div class="img-hover-wrap rounded-xl overflow-hidden" style="height:280px;">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEFp9yxjUIDYY3uLp0D6ppyNtSNw5yEXo9jbT_4c1EuBFqHRbv2faW8nt78NxHn9DOlLqp_cvIm_3DpdCBvADlqxOiNBv7Kv_MSLNyAPtDDYtkZWAM8hA9n-EV_oUGknAZY9I-jnB13EVdbTRR_NgtzPYE51a2tEjwkYG_CsB5sWvpdM5UBK40QxD3XsUH3KpcvTeGByu0zvsFZEUBqIrHej_SNbcCihOyAqc2Aut9YTIEZiuD2_3NEOwaB7amBcTVQhqKzQOMT4DUUZoyam0_cGr4a8vTMaEJpO6neoJZSn_Q&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Restoration project 10"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/construction-19/800/600'"
+          />
+        </div>
+      </div>
+      <div class="mt-10 text-center">
+        <a href="#contact" class="arrow-cta text-sm font-bold uppercase tracking-widest" style="color:#D4890A;">
+          Start Your Project <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="animate-section py-28 md:py-36 bg-[#0f0f0f]">
-    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <p class="font-['Oswald'] text-xs tracking-[0.4em] text-[#E63946] uppercase mb-4">About Us</p>
-          <h2 class="serif-display font-800 text-5xl md:text-6xl text-[#f5f5f0] leading-tight mb-8">
-            Precision Restored.<br><em class="text-[#E63946]">Trust Built.</em>
-          </h2>
-          <p class="text-gray-300 text-lg leading-relaxed mb-6">
-            Restoration 1 of North Atlanta is Alpharetta's dedicated partner in construction and property restoration, bringing meticulous craftsmanship and rapid response to every project — from emergency water damage remediation to comprehensive structural rebuilds. Our team serves homeowners and commercial clients across North Atlanta with the transparency, skill, and genuine care that transforms distressing situations into beautifully restored spaces.
-          </p>
-          <p class="text-gray-400 leading-relaxed mb-10">
-            Licensed, insured, and available around the clock, we treat every property with the same devotion we would bring to our own. From the first assessment to final inspection, our commitment is unwavering: restore not just the structure, but the peace of mind that comes with it.
-          </p>
-          <blockquote class="border-l-2 border-[#E63946] pl-6 mb-10">
-            <p class="serif-display italic text-[#f5f5f0]/80 text-xl leading-relaxed">"They were genuine, knowledgeable, and friendly — God forbid I need it, I would go with these guys again."</p>
-            <cite class="serif-display italic text-[#E63946] text-sm mt-3 block">— Chad B., Alpharetta, GA</cite>
-          </blockquote>
-          <div class="grid grid-cols-2 gap-4">
-            <div class="flex items-start gap-3">
-              <i data-lucide="shield-check" class="w-5 h-5 text-[#E63946] mt-0.5 flex-shrink-0"></i>
-              <span class="text-gray-300 text-sm">Licensed &amp; Insured in Georgia</span>
+  <section id="about" class="animate-section py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-white">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-xs uppercase tracking-widest font-semibold mb-3" style="color:#D4890A;">About Us</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">North Atlanta's Trusted Restoration Experts</h2>
+        <p class="text-gray-600 text-lg leading-relaxed mb-4 max-w-2xl">Restoration 1 of North Atlanta is a locally operated construction and restoration company serving Alpharetta, GA and surrounding communities with expert water damage remediation, structural repairs, and full-scale rebuilds. Our team brings a hands-on, detail-driven approach to every project — from emergency water extraction to finished renovations.</p>
+        <p class="text-gray-600 text-lg leading-relaxed max-w-2xl">We pride ourselves on transparent communication, rapid response, and exceptional results that restore both properties and peace of mind. Whether it's a burst pipe, storm damage, or a planned renovation, we treat every home and business as if it were our own.</p>
+        <div class="grid grid-cols-2 gap-6 mt-8">
+          <div class="flex items-start gap-3">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#FFF3E0;">
+              <i data-lucide="clock" class="w-4 h-4" style="color:#D4890A;"></i>
             </div>
-            <div class="flex items-start gap-3">
-              <i data-lucide="clock" class="w-5 h-5 text-[#E63946] mt-0.5 flex-shrink-0"></i>
-              <span class="text-gray-300 text-sm">24/7 Emergency Response</span>
+            <div>
+              <div class="font-bold text-gray-900 text-sm uppercase tracking-wide">24/7 Emergency Response</div>
+              <div class="text-gray-500 text-sm">Available around the clock, every day of the year</div>
             </div>
-            <div class="flex items-start gap-3">
-              <i data-lucide="award" class="w-5 h-5 text-[#E63946] mt-0.5 flex-shrink-0"></i>
-              <span class="text-gray-300 text-sm">4.9-Star Google Rating</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#FFF3E0;">
+              <i data-lucide="shield-check" class="w-4 h-4" style="color:#D4890A;"></i>
             </div>
-            <div class="flex items-start gap-3">
-              <i data-lucide="check-circle" class="w-5 h-5 text-[#E63946] mt-0.5 flex-shrink-0"></i>
-              <span class="text-gray-300 text-sm">Free Estimates &amp; Transparent Pricing</span>
+            <div>
+              <div class="font-bold text-gray-900 text-sm uppercase tracking-wide">Licensed & Insured</div>
+              <div class="text-gray-500 text-sm">Fully certified for residential and commercial work</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#FFF3E0;">
+              <i data-lucide="check-circle" class="w-4 h-4" style="color:#D4890A;"></i>
+            </div>
+            <div>
+              <div class="font-bold text-gray-900 text-sm uppercase tracking-wide">Insurance Claim Support</div>
+              <div class="text-gray-500 text-sm">We work directly with your insurance provider</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#FFF3E0;">
+              <i data-lucide="heart" class="w-4 h-4" style="color:#D4890A;"></i>
+            </div>
+            <div>
+              <div class="font-bold text-gray-900 text-sm uppercase tracking-wide">Locally Owned</div>
+              <div class="text-gray-500 text-sm">Deep roots in the North Atlanta community</div>
             </div>
           </div>
         </div>
-        <div class="grid grid-cols-2 gap-3">
-          <div class="img-hover-wrap row-span-2">
-            <img
-              src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEHOYJWgczQVFg7EyQ5GShuFUPnqssVc4Uc6Pn3uiv_voTqM6uK1_cHH7EYY-piveULg7B_ndmDioaxdNrVKu911uf7FkwWP_d14PZrGUJ6RM-ILVFRZ8xPzYHTbG82lf72E-uOL5D8xPjUfoOieBWCcUY4vdLhifWBH8wk3v-2_QrYyHyq8OjU_3DmOkoH2nIN7NqFL8Laqj316b-8tbx_2fQWHDgPxsYPDqrM8p0tZy3boalEWvmOszxttSs-6Qyic_-bg7FS2d16DLgzg5ck8lpe1WhWP8x77VWQN8wxuog&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-              alt="About us" loading="lazy"
-              onerror="this.src='https://picsum.photos/seed/construction-003/600/800'"
-              class="w-full h-full object-cover"
-            >
-          </div>
-          <div class="img-hover-wrap">
-            <img
-              src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEFx_dPMn_UfOYr2IKhQga3fll8WP_3EURCGyawUC3lb4uVI-wvX4UZJ2bySVrd7hsRJEd72yJOJpw7bURRUgeUj6W3bpT8i4mCm00JsL62QP9t7GYLGTxkGYs-yEX9U3joJyTu7Pw_Tgum0NjVF0F-oL2QSTzTPv6y2drC8SAJoQR8ql5F9s-xQFic_x38Lo2r4i4VsVMScnu8o5B279U-lU_iqZzXH2SUC0koyusytN4WpMCx0mw6EKBsw8vX2YQE5qt0Nb9HWVtLPqS4lFNk7gfaE0hGKgtdlmzFmGvCv9Q&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-              alt="Restoration detail" loading="lazy"
-              onerror="this.src='https://picsum.photos/seed/construction-004/600/400'"
-              class="w-full h-48 object-cover"
-            >
-          </div>
-          <div class="img-hover-wrap">
-            <img
-              src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGrr8Y6EdACf1VoENKUH99V1yh485Ds5Ha0hq7naeRJLSkJdTUkpHXL6xlpPySjXQgfkRC_I--H0DixOrH2XennVpqwFBNvnvNDJEA-Qlinpt6LFQNiPBYskt6ZVtqRGmB0woYZkurfGaTCS3-jMkIix753xRT7I57TQUHd6BiXTrpbJj08TecygD-dDgYCBjt2vV7NB5hp6tF3TLVEIbl3V5m7IgLXNpntLqAb7MjnW-YwpPQBD-yBW216ArIT29aUzC9kFO8Z92N9aNSQwCDkyGKhuJC-j6lN0TB2XLtWVw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-              alt="Construction craftsmanship" loading="lazy"
-              onerror="this.src='https://picsum.photos/seed/construction-005/600/400'"
-              class="w-full h-48 object-cover"
-            >
-          </div>
-        </div>
+      </div>
+      <div class="img-hover-wrap rounded-2xl overflow-hidden h-[500px]">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEFmJhP4X2Vcyan3A7mkW5pxKFuRToj7nIBXV90ibCd7f47h7j_vXwEZ4NfyukgyoMpAdS_znZg5UwGDFU4SfRY_gYDctBwktlUM2w81uBNsZ1GpccvCh1nuhUnvYKfdrCEsr1DfCgB_F_aDyZ0uzzgogs62c02eabk77gqu4qOAov3BwPQTwkNxOpJvqKy34JSPBUKQmKIfA1vaEX1VciLZJGOkS1IFwlp7Mp7WCp5HLvvH57JR46C5sTEHE6qcBPTn8Sb8LIREwgZw3O_gcYyh3L7hcFYBwidh-ARFYHzESQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="About Restoration 1 North Atlanta"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/construction-20/800/600'"
+        />
       </div>
     </div>
   </section>
 
   <!-- SERVICES -->
-  <section id="services" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-[#0a0a0a]">
+  <section id="services" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-gray-50">
     <div class="max-w-7xl mx-auto">
-      <div class="mb-12 text-center">
-        <p class="font-['Oswald'] text-xs tracking-[0.4em] text-[#E63946] uppercase mb-4">Our Craft</p>
-        <h2 class="serif-display font-800 text-5xl md:text-6xl text-[#f5f5f0]">Services of Distinction</h2>
-        <p class="serif-display italic text-gray-400 text-lg mt-4 max-w-xl mx-auto">From emergency restoration to deliberate construction — every project bears our signature of excellence.</p>
+      <div class="mb-8">
+        <p class="text-xs uppercase tracking-widest font-semibold mb-3" style="color:#D4890A;">What We Do</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Our Services</h2>
       </div>
-      <div class="flex flex-wrap gap-2 md:flex-nowrap mb-10 tabs-container justify-center">
-        <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-['Oswald'] tracking-widest uppercase" data-target="tab-panel-1">Construction</button>
-        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-['Oswald'] tracking-widest uppercase" data-target="tab-panel-2">Remodeling</button>
-        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-['Oswald'] tracking-widest uppercase" data-target="tab-panel-3">Specialty Projects</button>
+      <div class="flex flex-wrap gap-2 md:flex-nowrap mb-8 tabs-container">
+        <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-1">Construction</button>
+        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-2">Remodeling</button>
+        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-3">Specialty Projects</button>
       </div>
 
       <div id="tab-panel-1" class="tab-panel">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="bg-[#1a1a1a] border border-[#E63946]/20 p-8 hover:border-[#E63946]/60 transition group">
-            <i data-lucide="building-2" class="w-8 h-8 text-[#E63946] mb-5"></i>
-            <h3 class="serif-display font-700 text-xl text-[#f5f5f0] mb-3">General Contracting</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">We manage every facet of your construction project with precision and accountability. From permitting to final walkthrough, our general contracting ensures seamless execution at every stage.</p>
-            <a href="tel:6783902145" class="arrow-cta text-[#E63946] text-xs font-['Oswald'] tracking-widest uppercase">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-11 h-11 rounded-full flex items-center justify-center mb-4" style="background:#FFF3E0;">
+              <i data-lucide="hard-hat" class="w-5 h-5" style="color:#D4890A;"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">General Contracting</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">We manage every aspect of your construction project from planning to completion. Our experienced team coordinates subcontractors, materials, and timelines to deliver on budget and on schedule.</p>
+            <a href="tel:6783902145" class="arrow-cta text-xs font-bold uppercase tracking-widest" style="color:#D4890A;">
               Call Now <i data-lucide="arrow-right" class="w-3 h-3"></i>
             </a>
           </div>
-          <div class="bg-[#1a1a1a] border border-[#E63946]/20 p-8 hover:border-[#E63946]/60 transition group">
-            <i data-lucide="hard-hat" class="w-8 h-8 text-[#E63946] mb-5"></i>
-            <h3 class="serif-display font-700 text-xl text-[#f5f5f0] mb-3">New Construction</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">Build your vision from the ground up with our expert new construction services. We bring structural integrity and refined detail to every new build across North Atlanta.</p>
-            <a href="tel:6783902145" class="arrow-cta text-[#E63946] text-xs font-['Oswald'] tracking-widest uppercase">
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-11 h-11 rounded-full flex items-center justify-center mb-4" style="background:#FFF3E0;">
+              <i data-lucide="building-2" class="w-5 h-5" style="color:#D4890A;"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">New Construction</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">From ground-up builds to new additions, we bring your vision to life with quality materials and precision craftsmanship. We serve both residential and commercial new construction clients throughout North Atlanta.</p>
+            <a href="tel:6783902145" class="arrow-cta text-xs font-bold uppercase tracking-widest" style="color:#D4890A;">
               Call Now <i data-lucide="arrow-right" class="w-3 h-3"></i>
             </a>
           </div>
-          <div class="bg-[#1a1a1a] border border-[#E63946]/20 p-8 hover:border-[#E63946]/60 transition group">
-            <i data-lucide="ruler" class="w-8 h-8 text-[#E63946] mb-5"></i>
-            <h3 class="serif-display font-700 text-xl text-[#f5f5f0] mb-3">Commercial Build-Outs</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">Transform commercial spaces into functional, impressive environments designed for your business. We specialize in tenant build-outs that balance aesthetics with operational efficiency.</p>
-            <a href="tel:6783902145" class="arrow-cta text-[#E63946] text-xs font-['Oswald'] tracking-widest uppercase">
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-11 h-11 rounded-full flex items-center justify-center mb-4" style="background:#FFF3E0;">
+              <i data-lucide="truck" class="w-5 h-5" style="color:#D4890A;"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Commercial Build-Outs</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">We specialize in transforming raw commercial spaces into functional, branded environments ready for business. Whether it's an office, retail space, or restaurant, we deliver high-quality finishes and efficient timelines.</p>
+            <a href="tel:6783902145" class="arrow-cta text-xs font-bold uppercase tracking-widest" style="color:#D4890A;">
               Call Now <i data-lucide="arrow-right" class="w-3 h-3"></i>
             </a>
           </div>
-          <div class="bg-[#1a1a1a] border border-[#E63946]/20 p-8 hover:border-[#E63946]/60 transition group">
-            <i data-lucide="hammer" class="w-8 h-8 text-[#E63946] mb-5"></i>
-            <h3 class="serif-display font-700 text-xl text-[#f5f5f0] mb-3">Structural Work</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">Structural integrity is the foundation of every lasting property. Our team addresses load-bearing repairs, framing, and reinforcement with exacting standards and certified expertise.</p>
-            <a href="tel:6783902145" class="arrow-cta text-[#E63946] text-xs font-['Oswald'] tracking-widest uppercase">
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-11 h-11 rounded-full flex items-center justify-center mb-4" style="background:#FFF3E0;">
+              <i data-lucide="wrench" class="w-5 h-5" style="color:#D4890A;"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Structural Work</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">From foundation repairs to load-bearing wall modifications, our structural specialists ensure your property is safe and sound. We assess, plan, and execute structural solutions with attention to code compliance and longevity.</p>
+            <a href="tel:6783902145" class="arrow-cta text-xs font-bold uppercase tracking-widest" style="color:#D4890A;">
               Call Now <i data-lucide="arrow-right" class="w-3 h-3"></i>
             </a>
           </div>
@@ -288,36 +364,44 @@
       </div>
 
       <div id="tab-panel-2" class="tab-panel hidden">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="bg-[#1a1a1a] border border-[#E63946]/20 p-8 hover:border-[#E63946]/60 transition group">
-            <i data-lucide="building-2" class="w-8 h-8 text-[#E63946] mb-5"></i>
-            <h3 class="serif-display font-700 text-xl text-[#f5f5f0] mb-3">Home Remodeling</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">Breathe new life into your home with comprehensive remodeling services tailored to your lifestyle. We handle full-scope renovations with care for your family's daily routine throughout the process.</p>
-            <a href="tel:6783902145" class="arrow-cta text-[#E63946] text-xs font-['Oswald'] tracking-widest uppercase">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-11 h-11 rounded-full flex items-center justify-center mb-4" style="background:#FFF3E0;">
+              <i data-lucide="hammer" class="w-5 h-5" style="color:#D4890A;"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Home Remodeling</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Breathe new life into your home with a comprehensive remodel tailored to your lifestyle and budget. We handle everything from initial design concepts to final trim work, delivering a seamless transformation.</p>
+            <a href="tel:6783902145" class="arrow-cta text-xs font-bold uppercase tracking-widest" style="color:#D4890A;">
               Call Now <i data-lucide="arrow-right" class="w-3 h-3"></i>
             </a>
           </div>
-          <div class="bg-[#1a1a1a] border border-[#E63946]/20 p-8 hover:border-[#E63946]/60 transition group">
-            <i data-lucide="wrench" class="w-8 h-8 text-[#E63946] mb-5"></i>
-            <h3 class="serif-display font-700 text-xl text-[#f5f5f0] mb-3">Kitchen Renovation</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">Reimagine the heart of your home with a kitchen renovation that marries beauty and function. From cabinetry to countertops, every detail reflects your taste and our craftsmanship.</p>
-            <a href="tel:6783902145" class="arrow-cta text-[#E63946] text-xs font-['Oswald'] tracking-widest uppercase">
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-11 h-11 rounded-full flex items-center justify-center mb-4" style="background:#FFF3E0;">
+              <i data-lucide="ruler" class="w-5 h-5" style="color:#D4890A;"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Kitchen Renovation</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">From cabinetry and countertops to flooring and fixtures, we craft kitchens that combine beauty with functionality. Our team works closely with homeowners to design a space that reflects their personal taste.</p>
+            <a href="tel:6783902145" class="arrow-cta text-xs font-bold uppercase tracking-widest" style="color:#D4890A;">
               Call Now <i data-lucide="arrow-right" class="w-3 h-3"></i>
             </a>
           </div>
-          <div class="bg-[#1a1a1a] border border-[#E63946]/20 p-8 hover:border-[#E63946]/60 transition group">
-            <i data-lucide="hammer" class="w-8 h-8 text-[#E63946] mb-5"></i>
-            <h3 class="serif-display font-700 text-xl text-[#f5f5f0] mb-3">Bathroom Renovation</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">Transform your bathroom into a sanctuary of refined design and lasting utility. We execute bathroom renovations with attention to waterproofing, tile work, and premium fixtures.</p>
-            <a href="tel:6783902145" class="arrow-cta text-[#E63946] text-xs font-['Oswald'] tracking-widest uppercase">
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-11 h-11 rounded-full flex items-center justify-center mb-4" style="background:#FFF3E0;">
+              <i data-lucide="wrench" class="w-5 h-5" style="color:#D4890A;"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Bathroom Renovation</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Transform your bathroom into a spa-like retreat with custom tile, modern fixtures, and expert waterproofing. We manage every detail to ensure your renovation is completed on time and exceeds expectations.</p>
+            <a href="tel:6783902145" class="arrow-cta text-xs font-bold uppercase tracking-widest" style="color:#D4890A;">
               Call Now <i data-lucide="arrow-right" class="w-3 h-3"></i>
             </a>
           </div>
-          <div class="bg-[#1a1a1a] border border-[#E63946]/20 p-8 hover:border-[#E63946]/60 transition group">
-            <i data-lucide="ruler" class="w-8 h-8 text-[#E63946] mb-5"></i>
-            <h3 class="serif-display font-700 text-xl text-[#f5f5f0] mb-3">Basement Finishing</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">Unlock the hidden potential beneath your home with expert basement finishing services. We create livable, beautiful lower-level spaces that add genuine value to your property.</p>
-            <a href="tel:6783902145" class="arrow-cta text-[#E63946] text-xs font-['Oswald'] tracking-widest uppercase">
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-11 h-11 rounded-full flex items-center justify-center mb-4" style="background:#FFF3E0;">
+              <i data-lucide="building-2" class="w-5 h-5" style="color:#D4890A;"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Basement Finishing</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Unlock the hidden potential of your home with a professionally finished basement. We convert unfinished spaces into livable, functional areas including home theaters, offices, gyms, and guest suites.</p>
+            <a href="tel:6783902145" class="arrow-cta text-xs font-bold uppercase tracking-widest" style="color:#D4890A;">
               Call Now <i data-lucide="arrow-right" class="w-3 h-3"></i>
             </a>
           </div>
@@ -325,246 +409,179 @@
       </div>
 
       <div id="tab-panel-3" class="tab-panel hidden">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="bg-[#1a1a1a] border border-[#E63946]/20 p-8 hover:border-[#E63946]/60 transition group">
-            <i data-lucide="pickaxe" class="w-8 h-8 text-[#E63946] mb-5"></i>
-            <h3 class="serif-display font-700 text-xl text-[#f5f5f0] mb-3">Custom Carpentry</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">From bespoke built-ins to architectural millwork, our custom carpentry elevates every interior space. Each piece is crafted with precision to complement your property's unique character.</p>
-            <a href="tel:6783902145" class="arrow-cta text-[#E63946] text-xs font-['Oswald'] tracking-widest uppercase">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-11 h-11 rounded-full flex items-center justify-center mb-4" style="background:#FFF3E0;">
+              <i data-lucide="hammer" class="w-5 h-5" style="color:#D4890A;"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Custom Carpentry</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">From built-in shelving and custom cabinetry to crown molding and decorative millwork, our carpenters bring fine craftsmanship to every detail. Each piece is built to fit your space perfectly and stand the test of time.</p>
+            <a href="tel:6783902145" class="arrow-cta text-xs font-bold uppercase tracking-widest" style="color:#D4890A;">
               Call Now <i data-lucide="arrow-right" class="w-3 h-3"></i>
             </a>
           </div>
-          <div class="bg-[#1a1a1a] border border-[#E63946]/20 p-8 hover:border-[#E63946]/60 transition group">
-            <i data-lucide="hard-hat" class="w-8 h-8 text-[#E63946] mb-5"></i>
-            <h3 class="serif-display font-700 text-xl text-[#f5f5f0] mb-3">Design-Build</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">Our integrated design-build approach streamlines your project from concept to completion under one expert team. This unified process reduces delays, controls costs, and ensures creative cohesion.</p>
-            <a href="tel:6783902145" class="arrow-cta text-[#E63946] text-xs font-['Oswald'] tracking-widest uppercase">
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-11 h-11 rounded-full flex items-center justify-center mb-4" style="background:#FFF3E0;">
+              <i data-lucide="ruler" class="w-5 h-5" style="color:#D4890A;"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Design-Build</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Our integrated design-build approach streamlines your project by combining architectural design and construction under one roof. This reduces costs, shortens timelines, and ensures your vision is maintained throughout every phase.</p>
+            <a href="tel:6783902145" class="arrow-cta text-xs font-bold uppercase tracking-widest" style="color:#D4890A;">
               Call Now <i data-lucide="arrow-right" class="w-3 h-3"></i>
             </a>
           </div>
-          <div class="bg-[#1a1a1a] border border-[#E63946]/20 p-8 hover:border-[#E63946]/60 transition group">
-            <i data-lucide="award" class="w-8 h-8 text-[#E63946] mb-5"></i>
-            <h3 class="serif-display font-700 text-xl text-[#f5f5f0] mb-3">Historic Restoration</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">We honor the heritage of historic properties through careful, respectful restoration methods. Our team blends period-accurate techniques with modern structural standards to preserve architectural legacy.</p>
-            <a href="tel:6783902145" class="arrow-cta text-[#E63946] text-xs font-['Oswald'] tracking-widest uppercase">
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-11 h-11 rounded-full flex items-center justify-center mb-4" style="background:#FFF3E0;">
+              <i data-lucide="hard-hat" class="w-5 h-5" style="color:#D4890A;"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Historic Restoration</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">We preserve the character and integrity of historic properties while bringing them up to modern standards. Our team understands the special requirements of period architecture and uses appropriate techniques and materials.</p>
+            <a href="tel:6783902145" class="arrow-cta text-xs font-bold uppercase tracking-widest" style="color:#D4890A;">
               Call Now <i data-lucide="arrow-right" class="w-3 h-3"></i>
             </a>
           </div>
-          <div class="bg-[#1a1a1a] border border-[#E63946]/20 p-8 hover:border-[#E63946]/60 transition group">
-            <i data-lucide="building-2" class="w-8 h-8 text-[#E63946] mb-5"></i>
-            <h3 class="serif-display font-700 text-xl text-[#f5f5f0] mb-3">Tenant Improvements</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">We execute tenant improvement projects with speed and professionalism to minimize business disruption. From office fit-outs to retail transformations, we deliver on time and within budget.</p>
-            <a href="tel:6783902145" class="arrow-cta text-[#E63946] text-xs font-['Oswald'] tracking-widest uppercase">
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-11 h-11 rounded-full flex items-center justify-center mb-4" style="background:#FFF3E0;">
+              <i data-lucide="building-2" class="w-5 h-5" style="color:#D4890A;"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Tenant Improvements</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">We help commercial tenants customize their leased spaces to meet operational needs and brand standards. From cosmetic upgrades to full interior reconfigurations, we minimize downtime and maximize your investment.</p>
+            <a href="tel:6783902145" class="arrow-cta text-xs font-bold uppercase tracking-widest" style="color:#D4890A;">
               Call Now <i data-lucide="arrow-right" class="w-3 h-3"></i>
             </a>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery" class="animate-section py-28 bg-[#0f0f0f]">
-    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
-      <div class="mb-14 text-center">
-        <p class="font-['Oswald'] text-xs tracking-[0.4em] text-[#E63946] uppercase mb-4">Portfolio</p>
-        <h2 class="serif-display font-800 text-5xl md:text-6xl text-[#f5f5f0]">Our Work, Unveiled</h2>
-        <p class="serif-display italic text-gray-400 text-lg mt-4 max-w-xl mx-auto">Every project a testament to skill, care, and dedication to craft in Alpharetta and beyond.</p>
-      </div>
-      <div class="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-        <div class="img-hover-wrap break-inside-avoid relative group">
-          <img
-            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEHnzVhk59OHQ5tOPvWUvK04oRY2DT-4JL_CPBvY8uu-KGfIYmCE8d6o3jPGZTRYHRUwNG-GKsKx1mscL4KXmxotf0xtOv7_yYeMHzejxYjAXPJAfwx4ZOjarBkdmAAjHhsalaWBWspr0t3LKpsEiQ7sTpFxzJbC-F6CWr4MXlJF4tk2VDqOIwh-CpgoRBWl4iw2PzIHt_bEg2UKEO-02OFleFwXlgTOnkhC2isJUITHKtJbjTDzvB2fF5J9Wi7loH_aWtkCmCJQwcDK3B2vM-gP1-VeQtEgAkNA-JLu0LnpWQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-            alt="Gallery 1" loading="lazy"
-            onerror="this.src='https://picsum.photos/seed/construction-006/800/600'"
-            class="w-full object-cover filter sepia-[20%]"
-          >
-          <div class="absolute inset-0 border-2 border-[#E63946]/0 group-hover:border-[#E63946]/60 transition-all duration-500 pointer-events-none"></div>
-        </div>
-        <div class="img-hover-wrap break-inside-avoid relative group">
-          <img
-            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGSU4_p3pzITaeUCBHVgASn9YBT_IpMbSAl3d-JV7dGhY_nMEcg_rMWZBGxJLRT0UzEPbqrtlrbWW_2tLhF84f5AtODC5C23PtnnXcaoaTO7cKBpuz9BEnD4G9M4ZvASFabmL7tAnE2UUAQVxww0nJFWe-v1rCVvc5fIEGXgmUZHvskzTWdQBZGty9blPH5ooCndE9x2t1zkymksBS4UTNkR2wWA2RME_QDsck33sK6mH-SXyT48PyzMPJ6yBNIbQxrFQtFzwvC1poGr2Kxyo4x4Rmuc0qPM_8e135AAyQZew&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-            alt="Gallery 2" loading="lazy"
-            onerror="this.src='https://picsum.photos/seed/construction-007/800/1000'"
-            class="w-full object-cover filter sepia-[20%]"
-          >
-          <div class="absolute inset-0 border-2 border-[#E63946]/0 group-hover:border-[#E63946]/60 transition-all duration-500 pointer-events-none"></div>
-        </div>
-        <div class="img-hover-wrap break-inside-avoid relative group">
-          <img
-            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEHOYJWgczQVFg7EyQ5GShuFUPnqssVc4Uc6Pn3uiv_voTqM6uK1_cHH7EYY-piveULg7B_ndmDioaxdNrVKu911uf7FkwWP_d14PZrGUJ6RM-ILVFRZ8xPzYHTbG82lf72E-uOL5D8xPjUfoOieBWCcUY4vdLhifWBH8wk3v-2_QrYyHyq8OjU_3DmOkoH2nIN7NqFL8Laqj316b-8tbx_2fQWHDgPxsYPDqrM8p0tZy3boalEWvmOszxttSs-6Qyic_-bg7FS2d16DLgzg5ck8lpe1WhWP8x77VWQN8wxuog&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-            alt="Gallery 3" loading="lazy"
-            onerror="this.src='https://picsum.photos/seed/construction-008/800/600'"
-            class="w-full object-cover filter sepia-[20%]"
-          >
-          <div class="absolute inset-0 border-2 border-[#E63946]/0 group-hover:border-[#E63946]/60 transition-all duration-500 pointer-events-none"></div>
-        </div>
-        <div class="img-hover-wrap break-inside-avoid relative group">
-          <img
-            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEFx_dPMn_UfOYr2IKhQga3fll8WP_3EURCGyawUC3lb4uVI-wvX4UZJ2bySVrd7hsRJEd72yJOJpw7bURRUgeUj6W3bpT8i4mCm00JsL62QP9t7GYLGTxkGYs-yEX9U3joJyTu7Pw_Tgum0NjVF0F-oL2QSTzTPv6y2drC8SAJoQR8ql5F9s-xQFic_x38Lo2r4i4VsVMScnu8o5B279U-lU_iqZzXH2SUC0koyusytN4WpMCx0mw6EKBsw8vX2YQE5qt0Nb9HWVtLPqS4lFNk7gfaE0hGKgtdlmzFmGvCv9Q&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-            alt="Gallery 4" loading="lazy"
-            onerror="this.src='https://picsum.photos/seed/construction-009/800/900'"
-            class="w-full object-cover filter sepia-[20%]"
-          >
-          <div class="absolute inset-0 border-2 border-[#E63946]/0 group-hover:border-[#E63946]/60 transition-all duration-500 pointer-events-none"></div>
-        </div>
-        <div class="img-hover-wrap break-inside-avoid relative group">
-          <img
-            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGrr8Y6EdACf1VoENKUH99V1yh485Ds5Ha0hq7naeRJLSkJdTUkpHXL6xlpPySjXQgfkRC_I--H0DixOrH2XennVpqwFBNvnvNDJEA-Qlinpt6LFQNiPBYskt6ZVtqRGmB0woYZkurfGaTCS3-jMkIix753xRT7I57TQUHd6BiXTrpbJj08TecygD-dDgYCBjt2vV7NB5hp6tF3TLVEIbl3V5m7IgLXNpntLqAb7MjnW-YwpPQBD-yBW216ArIT29aUzC9kFO8Z92N9aNSQwCDkyGKhuJC-j6lN0TB2XLtWVw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-            alt="Gallery 5" loading="lazy"
-            onerror="this.src='https://picsum.photos/seed/construction-010/800/600'"
-            class="w-full object-cover filter sepia-[20%]"
-          >
-          <div class="absolute inset-0 border-2 border-[#E63946]/0 group-hover:border-[#E63946]/60 transition-all duration-500 pointer-events-none"></div>
-        </div>
-        <div class="img-hover-wrap break-inside-avoid relative group">
-          <img
-            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEFYHhzcz6r-maaxG1Bg71iMKfdEmEggajUItkefXScRR5kU4NbgLH_NX4O6LU9M-6h3-zz21iBXqWZMUbNLSyuncVhyN40arbhhM_2RNxaJdpxEAdAKBVxHvn9R65i2qoFJsnR7QGOoe6K0Euk51_Fzn3v5tKYMPtxEcrTw31e3XkBz04M6zCyqb4UorkSsGVWBxhynmThCweHo7mVBZDKjk8Z8agV2DaiTH31pp4F6UGYZ5PfJ8-lCNTFYJPJnogg3cii0RLx-Fw-8EYP1LjmgyXiYhX2quDCz0e-oCBynlw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-            alt="Gallery 6" loading="lazy"
-            onerror="this.src='https://picsum.photos/seed/construction-011/800/700'"
-            class="w-full object-cover filter sepia-[20%]"
-          >
-          <div class="absolute inset-0 border-2 border-[#E63946]/0 group-hover:border-[#E63946]/60 transition-all duration-500 pointer-events-none"></div>
-        </div>
-        <div class="img-hover-wrap break-inside-avoid relative group">
-          <img
-            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGmv1p9v1dSO4gB9RCpJbNVN5PqO_Do7omz3KVnZEcEJz0-_K6PVR5uYoLwZx3q_JudIaECp4du4gihRxXT1fmGWOxFKsNC9nWBySc101q_VcE2a3yLJSxMj7NZI1T6u-32KA97SjQfL-u5FjZSzJUERV2tys8jTdUxnXCmmKlIqgt0uJ5Lx7NzbhQ2GoqU0TJOhBkM9zs3UdXU2V3bLRSR5GEgdG7uY-XgOySpwqsVQGJtJnQZ0qUJiSk5FE8ehxqgXpfveGC5vjzAr7iQZxNrJtxjao2baBapGgBKYycq0A&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-            alt="Gallery 7" loading="lazy"
-            onerror="this.src='https://picsum.photos/seed/construction-012/800/600'"
-            class="w-full object-cover filter sepia-[20%]"
-          >
-          <div class="absolute inset-0 border-2 border-[#E63946]/0 group-hover:border-[#E63946]/60 transition-all duration-500 pointer-events-none"></div>
-        </div>
-        <div class="img-hover-wrap break-inside-avoid relative group">
-          <img
-            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEG7K58kHGJ7XHArpYWspTiWF4PwIOwi9f55-Z250q4QbeK26s9ejBHW4DJnC5AksCccoguhl1G550CpOD9Z3uqtRW14KVUemtEAXxFd2efQJIiHNmDvKvvqWKVWjdp3KeirqnelQwwY5gvscAbpudS95wopnK4yHPlqi0EJfeMegdq9Jk61W6b-IcIQmn7tPCm7TQS-_XdBAO2Q-8NPx-rQTWHLzhxyw3DJxrcCsF6FZtBaYL7CE20pDon3hMn5yiF8Y14Dg2AVdjOdRAcl6ZTT6OIjjapH-8ahWTHc0xWJ4A&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-            alt="Gallery 8" loading="lazy"
-            onerror="this.src='https://picsum.photos/seed/construction-013/800/900'"
-            class="w-full object-cover filter sepia-[20%]"
-          >
-          <div class="absolute inset-0 border-2 border-[#E63946]/0 group-hover:border-[#E63946]/60 transition-all duration-500 pointer-events-none"></div>
-        </div>
-        <div class="img-hover-wrap break-inside-avoid relative group">
-          <img
-            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEHq1wJrvaAhhNnJedZN6VLwa6A_781tpYB0mhOhNPd-dkH-7UXz3h7lOrNSKPPoV5TgpzfM0ODw0QbPThXrTYMBjRXLYNC9zzrjnMA4vLzuEds8rKEyX4_IbOwGNNS5eDRmQPzS9S0JboBJEIPGKbpbCC5sZWhnU_eWoRjrY0H0HsiVGJVsNqF3NsKo7w0N9-q99C1M-I6P5_2h0AykCb1fZJUQKCadyBtnAJgIUbQjGYGhhqnLC6VlZIUvni4Phyxn5n4kcG452MsF617VyHdbGcfgyYOYfhE8dDznSbjs8Q&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-            alt="Gallery 9" loading="lazy"
-            onerror="this.src='https://picsum.photos/seed/construction-014/800/600'"
-            class="w-full object-cover filter sepia-[20%]"
-          >
-          <div class="absolute inset-0 border-2 border-[#E63946]/0 group-hover:border-[#E63946]/60 transition-all duration-500 pointer-events-none"></div>
-        </div>
-        <div class="img-hover-wrap break-inside-avoid relative group">
-          <img
-            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEEYC9b9DjIaqRgTDv8XuS2fPwqrq_aIDXHqq99q6lE-6r86XrflR479QoNx9lKmDqTkSO3T0zoT2KY_Y3B2PvJgEkpRIklmq49pgpZjepjT4iO9MVEGau9ykDOqXxUECnsLxgBERDgm-ICJQRvX56e6GUqMgIStjcrdL3KdyaVqkSlexqUlqsXwgRTXHVno6zxh17WunECKmzoMR06Ncn5_SO3rV45EW5oGGFsawY9PBy3n2pWMDPHbrg4xCqIsHy2VaVPOqEMBhbRXYs1aEOM7cpKLNrAD1TpDrOgn4O3TJw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-            alt="Gallery 10" loading="lazy"
-            onerror="this.src='https://picsum.photos/seed/construction-015/800/700'"
-            class="w-full object-cover filter sepia-[20%]"
-          >
-          <div class="absolute inset-0 border-2 border-[#E63946]/0 group-hover:border-[#E63946]/60 transition-all duration-500 pointer-events-none"></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- REVIEWS -->
-  <section id="reviews" class="animate-section py-28 bg-[#0a0a0a]">
-    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
-      <div class="mb-14 text-center">
-        <p class="font-['Oswald'] text-xs tracking-[0.4em] text-[#E63946] uppercase mb-4">Client Voices</p>
-        <h2 class="serif-display font-800 text-5xl md:text-6xl text-[#f5f5f0]">What Our Clients Say</h2>
-        <div class="flex justify-center items-center gap-2 mt-4">
-          <i data-lucide="star" class="w-5 h-5 fill-[#E63946] text-[#E63946]"></i>
-          <i data-lucide="star" class="w-5 h-5 fill-[#E63946] text-[#E63946]"></i>
-          <i data-lucide="star" class="w-5 h-5 fill-[#E63946] text-[#E63946]"></i>
-          <i data-lucide="star" class="w-5 h-5 fill-[#E63946] text-[#E63946]"></i>
-          <i data-lucide="star" class="w-5 h-5 fill-[#E63946] text-[#E63946]"></i>
-          <span class="serif-display italic text-gray-400 text-sm ml-2">4.9 · 234 Google Reviews</span>
+  <section id="reviews" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <p class="text-xs uppercase tracking-widest font-semibold mb-3" style="color:#D4890A;">Client Feedback</p>
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900">What Our Clients Say</h2>
+        <div class="flex items-center gap-3">
+          <div class="flex gap-0.5">
+            <i data-lucide="star" class="w-5 h-5 fill-current" style="color:#D4890A;"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-current" style="color:#D4890A;"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-current" style="color:#D4890A;"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-current" style="color:#D4890A;"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-current" style="color:#D4890A;"></i>
+          </div>
+          <span class="text-gray-600 text-sm font-semibold">4.9 out of 5 · 234 reviews</span>
         </div>
       </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-      <!-- Hero Review -->
-      <div class="mb-16 max-w-4xl mx-auto text-center">
-        <div class="text-[#E63946] serif-display font-800 text-[8rem] leading-none opacity-20 select-none -mb-8">&ldquo;</div>
-        <blockquote class="relative z-10">
-          <p class="serif-display italic text-[#f5f5f0] text-2xl md:text-3xl leading-relaxed font-600">
-            "Lukas and his team were amazing to work with and I cannot recommend Restoration 01 enough! In a moment of distress, they provided prompt services, going above and beyond to ensure I had appropriate coverage in place for complete restoration after suffering from Cat 3 water damage. Lukas was very communicative throughout the entire process, which was incredibly helpful as my loss occurred right in the midst of the holiday season. If I have any sort of water damage, I will definitely work with Restoration 01 again without hesitation."
-          </p>
-          <footer class="mt-8">
-            <div class="flex justify-center gap-1 mb-3">
-              <i data-lucide="star" class="w-4 h-4 fill-[#E63946] text-[#E63946]"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-[#E63946] text-[#E63946]"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-[#E63946] text-[#E63946]"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-[#E63946] text-[#E63946]"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-[#E63946] text-[#E63946]"></i>
+        <!-- Review 1 -->
+        <div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition">
+          <div class="flex gap-0.5 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">"Nathan and Miguel were excellent communicators about the process of demolishing my soaked condo ceiling following a pipe freeze flood. They were always prompt at any time of day over call or text, and sent updates to both me and the other owner of the abode. They also had great personality which encouraged me to go with them after the initial quote, because they were genuine, knowledgeable, and friendly. God forbid I need it, I would go with these guys again."</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm" style="background:#D4890A;">CB</div>
+              <div>
+                <div class="font-semibold text-gray-900 text-sm">Chad B</div>
+                <div class="text-gray-400 text-xs">2 months ago</div>
+              </div>
             </div>
-            <p class="serif-display italic text-[#E63946] text-sm">— Radhika Bhatt</p>
-            <p class="text-gray-500 text-xs mt-1">3 months ago</p>
-            <span class="inline-block mt-2 bg-[#1a1a1a] border border-[#E63946]/20 text-gray-400 text-xs px-3 py-1 font-['Oswald'] tracking-widest uppercase">via Google</span>
-          </footer>
-        </blockquote>
-      </div>
-
-      <!-- Other Reviews Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-        <div class="bg-[#1a1a1a] border border-[#E63946]/15 p-7 hover:border-[#E63946]/40 transition">
-          <div class="text-[#E63946] serif-display text-4xl leading-none opacity-30 mb-3">&ldquo;</div>
-          <p class="serif-display italic text-gray-300 text-sm leading-relaxed mb-5">"Nathan and Miguel were excellent communicators about the process of demolishing my soaked condo ceiling following a pipe freeze flood. They were always prompt at any time of day over call or text, and sent updates to both me and the other owner of the abode. They also had great personality which encouraged me to go with them after the initial quote, because they were genuine, knowledgeable, and friendly. God forbid I need it, I would go with these guys again."</p>
-          <div class="flex gap-1 mb-2">
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#E63946] text-[#E63946]"></i>
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#E63946] text-[#E63946]"></i>
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#E63946] text-[#E63946]"></i>
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#E63946] text-[#E63946]"></i>
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#E63946] text-[#E63946]"></i>
+            <span class="text-xs px-2 py-1 rounded-full bg-white border border-gray-200 text-gray-500">via Google</span>
           </div>
-          <p class="serif-display italic text-[#E63946] text-xs">— Chad B.</p>
-          <p class="text-gray-600 text-xs mt-0.5">2 months ago</p>
-          <span class="inline-block mt-2 bg-[#111] border border-[#E63946]/15 text-gray-500 text-xs px-2 py-0.5 font-['Oswald'] tracking-widest uppercase">via Google</span>
         </div>
 
-        <div class="bg-[#1a1a1a] border border-[#E63946]/15 p-7 hover:border-[#E63946]/40 transition">
-          <div class="text-[#E63946] serif-display text-4xl leading-none opacity-30 mb-3">&ldquo;</div>
-          <p class="serif-display italic text-gray-300 text-sm leading-relaxed mb-5">"Nathan and Miguel provided excellent service and demonstrated sincere care of our house. They worked quickly to address all our concerns and insured that all was addressed and the damage could be repaired. We appreciated their knowledge and professionalism required to do the job properly."</p>
-          <div class="flex gap-1 mb-2">
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#E63946] text-[#E63946]"></i>
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#E63946] text-[#E63946]"></i>
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#E63946] text-[#E63946]"></i>
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#E63946] text-[#E63946]"></i>
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#E63946] text-[#E63946]"></i>
+        <!-- Review 2 -->
+        <div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition">
+          <div class="flex gap-0.5 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
           </div>
-          <p class="serif-display italic text-[#E63946] text-xs">— Bill Rizzo</p>
-          <p class="text-gray-600 text-xs mt-0.5">2 months ago</p>
-          <span class="inline-block mt-2 bg-[#111] border border-[#E63946]/15 text-gray-500 text-xs px-2 py-0.5 font-['Oswald'] tracking-widest uppercase">via Google</span>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">"Nathan and Miguel provided excellent service and demonstrated sincere care of our house. They worked quickly to address all our concerns and insured that all was addressed and the damage could be repaired. We appreciated their knowledge and professionalism required to do the job properly."</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm" style="background:#D4890A;">BR</div>
+              <div>
+                <div class="font-semibold text-gray-900 text-sm">Bill Rizzo</div>
+                <div class="text-gray-400 text-xs">2 months ago</div>
+              </div>
+            </div>
+            <span class="text-xs px-2 py-1 rounded-full bg-white border border-gray-200 text-gray-500">via Google</span>
+          </div>
         </div>
 
-        <div class="bg-[#1a1a1a] border border-[#E63946]/15 p-7 hover:border-[#E63946]/40 transition">
-          <div class="text-[#E63946] serif-display text-4xl leading-none opacity-30 mb-3">&ldquo;</div>
-          <p class="serif-display italic text-gray-300 text-sm leading-relaxed mb-5">"Restoration 1 has been helping us through our sewer backup. They have been open and straightforward with us so far through this stressful situation. Lucas came out and walked us through the price so we knew what to expect. Nathan came out to do the actual remediation and told us exactly what was going on and when a question arose he quickly asked us how we wanted to proceed. They have all been very transparent and helpful. If you are every in need of a restoration company i would highly recommend that they be your first call."</p>
-          <div class="flex gap-1 mb-2">
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#E63946] text-[#E63946]"></i>
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#E63946] text-[#E63946]"></i>
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#E63946] text-[#E63946]"></i>
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#E63946] text-[#E63946]"></i>
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#E63946] text-[#E63946]"></i>
+        <!-- Review 3 -->
+        <div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition">
+          <div class="flex gap-0.5 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
           </div>
-          <p class="serif-display italic text-[#E63946] text-xs">— John Crane</p>
-          <p class="text-gray-600 text-xs mt-0.5">4 months ago</p>
-          <span class="inline-block mt-2 bg-[#111] border border-[#E63946]/15 text-gray-500 text-xs px-2 py-0.5 font-['Oswald'] tracking-widest uppercase">via Google</span>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">"Lukas and his team were amazing to work with and I cannot recommend Restoration 01 enough! In a moment of distress, they provided prompt services, going above and beyond to ensure I had appropriate coverage in place for complete restoration after suffering from Cat 3 water damage. Lukas was very communicative throughout the entire process, which was incredibly helpful as my loss occurred right in the midst of the holiday season. If I have any sort of water damage, I will definitely work with Restoration 01 again without hesitation."</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm" style="background:#D4890A;">RB</div>
+              <div>
+                <div class="font-semibold text-gray-900 text-sm">Radhika Bhatt</div>
+                <div class="text-gray-400 text-xs">3 months ago</div>
+              </div>
+            </div>
+            <span class="text-xs px-2 py-1 rounded-full bg-white border border-gray-200 text-gray-500">via Google</span>
+          </div>
         </div>
 
-        <div class="bg-[#1a1a1a] border border-[#E63946]/15 p-7 hover:border-[#E63946]/40 transition">
-          <div class="text-[#E63946] serif-display text-4xl leading-none opacity-30 mb-3">&ldquo;</div>
-          <p class="serif-display italic text-gray-300 text-sm leading-relaxed mb-5">"I used this company for an emergency situation when a valve broke at my vacation home in my absence. They're not good at communicating anything- they don't mention when they're at the house or going to the house and they don't share any progress unless you press them for it. The crew that was here the first time used my ATVs without permission. They left beer cans and garbage all over the property outside which we had to clean up ourselves, left several windows unlocked, left exterior doors unlocked, they even left a couple windows OPEN (for weeks with the house unoccupied). They never finished the floor transition piece at my stairs as discussed many months ago. Then when they came to do the basement floors they left construction debris and wood that was supposed to be reused OUTSIDE to b..."</p>
-          <div class="flex gap-1 mb-2">
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-gray-600 text-gray-600"></i>
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-gray-700 text-gray-700"></i>
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-gray-700 text-gray-700"></i>
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-gray-700 text-gray-700"></i>
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-gray-700 text-gray-700"></i>
+        <!-- Review 4 -->
+        <div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition">
+          <div class="flex gap-0.5 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
           </div>
-          <p class="serif-display italic text-gray-400 text-xs">— Meghan Gandini</p>
-          <p class="text-gray-600 text-xs mt-0.5">a year ago</p>
-          <span class="inline-block mt-2 bg-[#111] border border-[#E63946]/15 text-gray-500 text-xs px-2 py-0.5 font-['Oswald'] tracking-widest uppercase">via Google</span>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">"Restoration 1 has been helping us through our sewer backup. They have been open and straightforward with us so far through this stressful situation. Lucas came out and walked us through the price so we knew what to expect. Nathan came out to do the actual remediation and told us exactly what was going on and when a question arose he quickly asked us how we wanted to proceed. They have all been very transparent and helpful. If you are every in need of a restoration company i would highly recommend that they be your first call."</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm" style="background:#D4890A;">JC</div>
+              <div>
+                <div class="font-semibold text-gray-900 text-sm">John Crane</div>
+                <div class="text-gray-400 text-xs">4 months ago</div>
+              </div>
+            </div>
+            <span class="text-xs px-2 py-1 rounded-full bg-white border border-gray-200 text-gray-500">via Google</span>
+          </div>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition border-l-4 border-red-300">
+          <div class="flex gap-0.5 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-current text-red-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-gray-300"></i>
+            <i data-lucide="star" class="w-4 h-4 text-gray-300"></i>
+            <i data-lucide="star" class="w-4 h-4 text-gray-300"></i>
+            <i data-lucide="star" class="w-4 h-4 text-gray-300"></i>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">"I used this company for an emergency situation when a valve broke at my vacation home in my absence. They're not good at communicating anything- they don't mention when they're at the house or going to the house and they don't share any progress unless you press them for it. The crew that was here the first time used my ATVs without permission. They left beer cans and garbage all over the property outside which we had to clean up ourselves, left several windows unlocked, left exterior doors unlocked, they even left a couple windows OPEN (for weeks with the house unoccupied). They never finished the floor transition piece at my stairs as discussed many months ago. Then when they came to do the basement floors they left construction debris and wood that was supposed to be reused OUTSIDE to b..."</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm bg-gray-400">MG</div>
+              <div>
+                <div class="font-semibold text-gray-900 text-sm">Meghan Gandini</div>
+                <div class="text-gray-400 text-xs">a year ago</div>
+              </div>
+            </div>
+            <span class="text-xs px-2 py-1 rounded-full bg-white border border-gray-200 text-gray-500">via Google</span>
+          </div>
         </div>
 
       </div>
@@ -572,96 +589,58 @@
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="animate-section py-28 bg-[#0f0f0f]">
-    <div class="max-w-4xl mx-auto px-4 md:px-8 lg:px-16">
-      <div class="mb-14 text-center">
-        <p class="font-['Oswald'] text-xs tracking-[0.4em] text-[#E63946] uppercase mb-4">Questions</p>
-        <h2 class="serif-display font-800 text-5xl md:text-6xl text-[#f5f5f0]">Frequently Asked</h2>
-      </div>
-      <div class="space-y-0">
+  <section id="faq" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-xs uppercase tracking-widest font-semibold mb-3" style="color:#D4890A;">Common Questions</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-12">Frequently Asked Questions</h2>
+      <div class="space-y-4">
 
-        <details class="border-b border-[#E63946]/15 group">
-          <summary class="flex items-center justify-between py-7 gap-4">
-            <span class="serif-display font-700 text-[#f5f5f0] text-lg group-open:text-[#E63946] transition">Do you offer 24/7 emergency restoration services in Alpharetta?</span>
-            <span class="text-[#E63946] flex-shrink-0 group-open:rotate-45 transition-transform duration-300">
-              <i data-lucide="chevron-right" class="w-5 h-5"></i>
-            </span>
+        <details class="bg-white rounded-xl shadow-sm overflow-hidden group">
+          <summary class="flex items-center justify-between px-6 py-5 font-semibold text-gray-900 text-base">
+            <span>What types of damage does Restoration 1 of North Atlanta handle?</span>
+            <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 flex-shrink-0 transition-transform group-open:rotate-90" style="color:#D4890A;"></i>
           </summary>
-          <div class="pb-7 pr-10">
-            <p class="serif-display italic text-gray-400 leading-relaxed">Yes — Restoration 1 of North Atlanta is available around the clock, every day of the year, including holidays. Emergency situations like water damage, flood, or structural failure don't wait for business hours, and neither do we. Call (678) 390-2145 anytime for immediate response.</p>
-          </div>
+          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">We handle water damage, fire and smoke damage, mold remediation, storm damage, and sewer backup cleanup. Our team is equipped to respond to both residential and commercial properties throughout the Alpharetta area. We also provide full reconstruction services once remediation is complete.</div>
         </details>
 
-        <details class="border-b border-[#E63946]/15 group">
-          <summary class="flex items-center justify-between py-7 gap-4">
-            <span class="serif-display font-700 text-[#f5f5f0] text-lg group-open:text-[#E63946] transition">What types of water damage can you remediate?</span>
-            <span class="text-[#E63946] flex-shrink-0 group-open:rotate-45 transition-transform duration-300">
-              <i data-lucide="chevron-right" class="w-5 h-5"></i>
-            </span>
+        <details class="bg-white rounded-xl shadow-sm overflow-hidden group">
+          <summary class="flex items-center justify-between px-6 py-5 font-semibold text-gray-900 text-base">
+            <span>Do you offer 24/7 emergency response in Alpharetta, GA?</span>
+            <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 flex-shrink-0 transition-transform group-open:rotate-90" style="color:#D4890A;"></i>
           </summary>
-          <div class="pb-7 pr-10">
-            <p class="serif-display italic text-gray-400 leading-relaxed">We handle all categories of water damage — from minor pipe leaks (Category 1) to grey water incidents (Category 2) and severely contaminated water such as sewage backups (Category 3). Our certified technicians assess the situation thoroughly and execute complete drying, sanitization, and structural restoration protocols.</p>
-          </div>
+          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">Yes, we are available 24 hours a day, 7 days a week, 365 days a year — including holidays. When disaster strikes, a rapid response is critical to minimizing damage, so we prioritize getting to your property as quickly as possible. Call us anytime at (678) 390-2145.</div>
         </details>
 
-        <details class="border-b border-[#E63946]/15 group">
-          <summary class="flex items-center justify-between py-7 gap-4">
-            <span class="serif-display font-700 text-[#f5f5f0] text-lg group-open:text-[#E63946] transition">Will you work directly with my insurance company?</span>
-            <span class="text-[#E63946] flex-shrink-0 group-open:rotate-45 transition-transform duration-300">
-              <i data-lucide="chevron-right" class="w-5 h-5"></i>
-            </span>
+        <details class="bg-white rounded-xl shadow-sm overflow-hidden group">
+          <summary class="flex items-center justify-between px-6 py-5 font-semibold text-gray-900 text-base">
+            <span>Will you work directly with my insurance company?</span>
+            <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 flex-shrink-0 transition-transform group-open:rotate-90" style="color:#D4890A;"></i>
           </summary>
-          <div class="pb-7 pr-10">
-            <p class="serif-display italic text-gray-400 leading-relaxed">Absolutely. We have extensive experience working with major insurance carriers and can help facilitate the claims process on your behalf. Our team provides detailed documentation, damage assessments, and itemized estimates that meet insurance requirements, reducing your stress during an already difficult time.</p>
-          </div>
+          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">Absolutely. We have extensive experience working alongside insurance adjusters and can help document damage, provide detailed estimates, and communicate directly with your insurer to help ensure your claim is handled properly. Our goal is to reduce the stress on you during an already difficult time.</div>
         </details>
 
-        <details class="border-b border-[#E63946]/15 group">
-          <summary class="flex items-center justify-between py-7 gap-4">
-            <span class="serif-display font-700 text-[#f5f5f0] text-lg group-open:text-[#E63946] transition">How long does a typical restoration or remodeling project take?</span>
-            <span class="text-[#E63946] flex-shrink-0 group-open:rotate-45 transition-transform duration-300">
-              <i data-lucide="chevron-right" class="w-5 h-5"></i>
-            </span>
+        <details class="bg-white rounded-xl shadow-sm overflow-hidden group">
+          <summary class="flex items-center justify-between px-6 py-5 font-semibold text-gray-900 text-base">
+            <span>How long does a typical water damage restoration take?</span>
+            <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 flex-shrink-0 transition-transform group-open:rotate-90" style="color:#D4890A;"></i>
           </summary>
-          <div class="pb-7 pr-10">
-            <p class="serif-display italic text-gray-400 leading-relaxed">Project timelines vary significantly based on the scope and type of work. Emergency drying and remediation may be complete in 3–7 days, while full construction or remodeling projects can range from a few weeks to several months. We provide a clear project schedule during your free estimate so you always know what to expect.</p>
-          </div>
+          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">The timeline varies based on the extent of damage, but most drying and remediation phases take between 3 to 7 days. Full reconstruction afterward can take anywhere from a few days to several weeks depending on the scope of work. We'll give you a clear project timeline during our initial assessment.</div>
         </details>
 
-        <details class="border-b border-[#E63946]/15 group">
-          <summary class="flex items-center justify-between py-7 gap-4">
-            <span class="serif-display font-700 text-[#f5f5f0] text-lg group-open:text-[#E63946] transition">Are you licensed and insured to operate in Georgia?</span>
-            <span class="text-[#E63946] flex-shrink-0 group-open:rotate-45 transition-transform duration-300">
-              <i data-lucide="chevron-right" class="w-5 h-5"></i>
-            </span>
+        <details class="bg-white rounded-xl shadow-sm overflow-hidden group">
+          <summary class="flex items-center justify-between px-6 py-5 font-semibold text-gray-900 text-base">
+            <span>Are you licensed and insured to work in Georgia?</span>
+            <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 flex-shrink-0 transition-transform group-open:rotate-90" style="color:#D4890A;"></i>
           </summary>
-          <div class="pb-7 pr-10">
-            <p class="serif-display italic text-gray-400 leading-relaxed">Yes. Restoration 1 of North Atlanta is fully licensed and insured to perform construction and restoration work in the state of Georgia. We carry comprehensive liability insurance and workers' compensation coverage to protect both our clients and our team on every project.</p>
-          </div>
+          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">Yes, Restoration 1 of North Atlanta is fully licensed and insured to perform construction and restoration work in the state of Georgia. We maintain comprehensive general liability insurance and workers' compensation coverage to protect our clients and our team on every project.</div>
         </details>
 
-        <details class="border-b border-[#E63946]/15 group">
-          <summary class="flex items-center justify-between py-7 gap-4">
-            <span class="serif-display font-700 text-[#f5f5f0] text-lg group-open:text-[#E63946] transition">What areas around Alpharetta do you serve?</span>
-            <span class="text-[#E63946] flex-shrink-0 group-open:rotate-45 transition-transform duration-300">
-              <i data-lucide="chevron-right" class="w-5 h-5"></i>
-            </span>
+        <details class="bg-white rounded-xl shadow-sm overflow-hidden group">
+          <summary class="flex items-center justify-between px-6 py-5 font-semibold text-gray-900 text-base">
+            <span>What areas do you serve around Alpharetta?</span>
+            <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 flex-shrink-0 transition-transform group-open:rotate-90" style="color:#D4890A;"></i>
           </summary>
-          <div class="pb-7 pr-10">
-            <p class="serif-display italic text-gray-400 leading-relaxed">We proudly serve Alpharetta and a wide range of communities throughout North Atlanta, including Johns Creek, Roswell, Milton, Cumming, Duluth, Suwanee, Marietta, Canton, and Woodstock. If you're unsure whether we cover your area, simply call us at (678) 390-2145 and we'll confirm right away.</p>
-          </div>
-        </details>
-
-        <details class="group">
-          <summary class="flex items-center justify-between py-7 gap-4">
-            <span class="serif-display font-700 text-[#f5f5f0] text-lg group-open:text-[#E63946] transition">Do you offer free estimates for construction and restoration projects?</span>
-            <span class="text-[#E63946] flex-shrink-0 group-open:rotate-45 transition-transform duration-300">
-              <i data-lucide="chevron-right" class="w-5 h-5"></i>
-            </span>
-          </summary>
-          <div class="pb-7 pr-10">
-            <p class="serif-display italic text-gray-400 leading-relaxed">Yes, we offer complimentary on-site estimates for all projects. Our team will visit your property, assess the scope of work, and provide transparent, itemized pricing with no hidden fees. We believe in straightforward communication so you can make informed decisions with complete confidence.</p>
-          </div>
+          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">We proudly serve Alpharetta and surrounding communities throughout North Atlanta including Roswell, Johns Creek, Cumming, Milton, Duluth, Suwanee, Sandy Springs, Peachtree City, and Marietta. If you're unsure whether we serve your location, give us a call and we'll be happy to confirm.</div>
         </details>
 
       </div>
@@ -669,163 +648,184 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="animate-section py-28 bg-[#0a0a0a]">
-    <div class="max-w-5xl mx-auto px-4 md:px-8 lg:px-16">
-      <div class="mb-14 text-center">
-        <p class="font-['Oswald'] text-xs tracking-[0.4em] text-[#E63946] uppercase mb-4">Reach Out</p>
-        <h2 class="serif-display font-800 text-5xl md:text-6xl text-[#f5f5f0]">Begin Your Restoration</h2>
-      </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div class="w-full h-[480px]">
+  <section id="contact" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-xs uppercase tracking-widest font-semibold mb-3 text-center" style="color:#D4890A;">Reach Out</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center">Get a Free Estimate</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        <!-- Left: Map -->
+        <div class="rounded-xl overflow-hidden min-h-[450px]">
           <iframe
             src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k&q=place_id:ChIJRwV-yZh19YgRWQYNrubNt_c"
-            width="100%" height="100%"
-            style="border:0;filter:sepia(30%) contrast(1.1) brightness(0.85);"
-            allowfullscreen="" loading="lazy"
+            width="100%"
+            height="100%"
+            style="border:0; min-height:450px;"
+            allowfullscreen=""
+            loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            title="Restoration 1 of North Atlanta location"
+            title="Restoration 1 of North Atlanta location map"
           ></iframe>
         </div>
-        <div class="bg-[#1a1a1a] border border-[#E63946]/50 p-8 max-w-md w-full mx-auto lg:mx-0">
-          <p class="font-['Oswald'] text-xs tracking-widest text-[#E63946] uppercase">Get Started</p>
-          <h3 class="serif-display italic text-3xl text-[#f5f5f0] mt-2">Get a Free Estimate</h3>
-          <p class="serif-display italic text-gray-400 text-base mt-1">We'll respond within the hour — 24/7.</p>
+        <!-- Right: Form -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full">
+          <p class="text-xs uppercase tracking-widest font-semibold" style="color:#D4890A;">GET STARTED</p>
+          <h3 class="text-3xl font-bold text-gray-900 mt-2">Get a Free Estimate</h3>
+          <p class="text-gray-500 text-sm mt-1">We'll respond within 1 business hour.</p>
           <div class="flex items-center gap-2 mt-3">
-            <i data-lucide="star" class="w-4 h-4 fill-[#E63946] text-[#E63946]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#E63946] text-[#E63946]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#E63946] text-[#E63946]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#E63946] text-[#E63946]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#E63946] text-[#E63946]"></i>
-            <span class="serif-display italic text-sm text-gray-400">4.9 out of 5 · 234 reviews</span>
+            <div class="flex gap-0.5">
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#D4890A;"></i>
+            </div>
+            <span class="text-sm text-gray-600">4.9 out of 5 · 234 reviews</span>
           </div>
-          <form onsubmit="return false;">
-            <input type="text" placeholder="Your Name" class="bg-[#111] border-0 border-b border-[#E63946]/30 focus:border-[#E63946] focus:ring-0 py-3 px-0 text-[#f5f5f0] placeholder-gray-600 w-full mt-6 serif-display italic text-sm outline-none block transition">
-            <input type="tel" placeholder="Phone Number" class="bg-[#111] border-0 border-b border-[#E63946]/30 focus:border-[#E63946] focus:ring-0 py-3 px-0 text-[#f5f5f0] placeholder-gray-600 w-full mt-4 serif-display italic text-sm outline-none block transition">
-            <input type="email" placeholder="Email Address" class="bg-[#111] border-0 border-b border-[#E63946]/30 focus:border-[#E63946] focus:ring-0 py-3 px-0 text-[#f5f5f0] placeholder-gray-600 w-full mt-4 serif-display italic text-sm outline-none block transition">
-            <select class="bg-[#111] border-0 border-b border-[#E63946]/30 focus:border-[#E63946] focus:ring-0 py-3 px-0 text-gray-600 w-full mt-4 serif-display italic text-sm outline-none block transition appearance-none">
+          <form class="mt-2" onsubmit="event.preventDefault();">
+            <input
+              type="text"
+              placeholder="Your Name"
+              class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-4 text-sm outline-none"
+              style="--tw-ring-color:#D4890A;"
+            />
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-4 text-sm outline-none"
+              style="--tw-ring-color:#D4890A;"
+            />
+            <input
+              type="email"
+              placeholder="Email Address"
+              class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-4 text-sm outline-none"
+              style="--tw-ring-color:#D4890A;"
+            />
+            <select
+              class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-4 text-sm outline-none text-gray-600"
+              style="--tw-ring-color:#D4890A;"
+            >
               <option value="" disabled selected>Select a Service</option>
-              <option value="general-contracting">General Contracting</option>
-              <option value="new-construction">New Construction</option>
-              <option value="commercial-build-outs">Commercial Build-Outs</option>
-              <option value="structural-work">Structural Work</option>
+              <option>General Contracting</option>
+              <option>New Construction</option>
+              <option>Commercial Build-Outs</option>
+              <option>Structural Work</option>
             </select>
-            <textarea rows="3" placeholder="Tell us about your project..." class="bg-[#111] border-0 border-b border-[#E63946]/30 focus:border-[#E63946] focus:ring-0 py-3 px-0 text-[#f5f5f0] placeholder-gray-600 w-full mt-4 serif-display italic text-sm outline-none block transition resize-none"></textarea>
-            <button type="submit" class="w-full border border-[#E63946] text-[#E63946] py-4 font-['Oswald'] font-semibold tracking-widest mt-6 hover:bg-[#E63946] hover:text-black transition uppercase text-sm">
-              Request Free Estimate
-            </button>
-            <p class="serif-display italic text-xs text-gray-600 mt-3 text-center">By submitting you agree to be contacted regarding your request.</p>
+            <textarea
+              rows="3"
+              placeholder="Tell us about your project..."
+              class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-4 text-sm outline-none resize-none"
+              style="--tw-ring-color:#D4890A;"
+            ></textarea>
+            <button
+              type="submit"
+              class="w-full rounded-lg py-4 font-bold mt-6 text-black uppercase tracking-wider text-sm transition hover:brightness-110"
+              style="background:#D4890A;"
+            >Request Free Estimate</button>
           </form>
+          <p class="text-xs text-gray-400 mt-3">By submitting you agree to be contacted regarding your request.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-[#0a0a0a] border-t border-[#E63946]" style="border-top-width:1px;">
-
-    <!-- Craftsmanship signature line -->
-    <div class="py-12 flex items-center justify-center gap-6 border-b border-[#E63946]/15 px-4">
-      <div class="h-px bg-[#E63946]/60" style="width:60px;"></div>
-      <span class="font-['Oswald'] text-xs tracking-widest text-[#E63946]" style="font-variant:small-caps;">— crafted in Alpharetta, GA —</span>
-      <div class="h-px bg-[#E63946]/60" style="width:60px;"></div>
+  <footer style="background:#0f0f0f;" class="text-white relative overflow-hidden">
+    <!-- Ghosted background image -->
+    <img
+      src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEG_9AW_z4zFtZlybfquBvS4IPGulz5EnTELa4-PDdRx__PI4n1KMe4ocCd7t2Yfj5ivlcwuz_8LwyXovxtfhcz-QDKSPPpwv48PmH7e29-zqb7bU61z5j0k6ICNF2mqDsR2M771tgcKoPwfaur5SgKIWmoM18j4AZdM0Y01Zcpcy1JcZVXgvQAujvQQlre32ZuVJhw-Vh-f9YHb3b75Mb-dhJjv08ah3hNzC9GS0A6wwk4cd1tAjhYEXWxeV3rIvbm3y_vcXXpqNiyVwzhpr3Sg2dvp6BkfKjZL0dlfvzQ0zA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none select-none"
+      aria-hidden="true"
+      onerror="this.style.display='none'"
+    />
+    <!-- Top CTA block -->
+    <div class="relative z-10 py-20 text-center px-4">
+      <p class="text-xs uppercase tracking-widest font-semibold" style="color:#D4890A;">START YOUR PROJECT</p>
+      <h3 class="text-4xl md:text-5xl font-bold max-w-3xl mx-auto mt-4 text-white">Let's build something together.</h3>
+      <a href="#contact" class="inline-block rounded-full px-10 py-4 text-black font-bold uppercase tracking-wider mt-8 text-sm transition hover:brightness-110" style="background:#D4890A;">Get a Free Estimate</a>
     </div>
-
-    <!-- Main footer grid -->
-    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-12 py-20 px-8">
-
-      <!-- Col 1: Business Identity -->
+    <!-- Thin divider -->
+    <div class="border-t border-white/10 relative z-10"></div>
+    <!-- Main Grid -->
+    <div class="relative z-10 grid grid-cols-2 md:grid-cols-5 gap-8 py-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
+      <!-- Col 1: Business Identity (col-span-2) -->
       <div class="col-span-2">
-        <p class="serif-display italic font-800 text-4xl md:text-5xl text-[#E63946] leading-tight">Restoration 1<br><em class="text-[#f5f5f0]/80 text-3xl">of North Atlanta</em></p>
-        <p class="serif-display italic text-gray-400 max-w-sm mt-4 text-sm leading-relaxed">Where disaster meets its match — restoring properties and peace of mind across North Atlanta's finest communities.</p>
-        <div class="mt-8 space-y-3">
+        <div class="text-3xl font-bold" style="font-family:'Oswald',sans-serif;">RESTORATION 1<br/><span style="color:#D4890A;">NORTH ATLANTA</span></div>
+        <p class="text-gray-400 max-w-sm mt-2 text-sm leading-relaxed">Expert restoration and construction craftsmanship for homes and businesses throughout North Atlanta.</p>
+        <div class="mt-6 space-y-3">
           <div class="flex items-start gap-3">
-            <i data-lucide="map-pin" class="w-4 h-4 text-[#E63946] mt-0.5 flex-shrink-0"></i>
-            <span class="serif-display italic text-sm text-gray-400">1360 Union Hill Rd STE C,<br>Alpharetta, GA 30004</span>
+            <i data-lucide="map-pin" class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:#D4890A;"></i>
+            <span class="text-gray-400 text-sm">1360 Union Hill Rd STE C, Alpharetta, GA 30004</span>
           </div>
           <div class="flex items-center gap-3">
-            <i data-lucide="phone" class="w-4 h-4 text-[#E63946] flex-shrink-0"></i>
-            <a href="tel:6783902145" class="serif-display italic text-sm text-gray-400 hover:text-[#E63946] transition">(678) 390-2145</a>
+            <i data-lucide="phone" class="w-4 h-4 flex-shrink-0" style="color:#D4890A;"></i>
+            <a href="tel:6783902145" class="text-gray-400 text-sm hover:text-white transition">(678) 390-2145</a>
+          </div>
+          <div class="flex items-start gap-3">
+            <i data-lucide="clock" class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:#D4890A;"></i>
+            <span class="text-gray-400 text-sm">Open 24 Hours · 7 Days a Week</span>
           </div>
           <div class="flex items-center gap-3">
-            <i data-lucide="clock" class="w-4 h-4 text-[#E63946] flex-shrink-0"></i>
-            <span class="serif-display italic text-sm text-gray-400">Open 24 Hours, 7 Days a Week</span>
-          </div>
-          <div class="flex items-center gap-3">
-            <i data-lucide="shield-check" class="w-4 h-4 text-[#E63946] flex-shrink-0"></i>
-            <span class="serif-display italic text-sm text-gray-400">Licensed &amp; Insured in Georgia</span>
-          </div>
-          <div class="flex items-center gap-3">
-            <i data-lucide="star" class="w-4 h-4 text-[#E63946] flex-shrink-0"></i>
-            <span class="serif-display italic text-sm text-gray-400">4.9 Google Rating · 234 Reviews</span>
+            <i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0" style="color:#D4890A;"></i>
+            <span class="text-gray-400 text-sm">Licensed &amp; Insured · 4.9 Google Rating</span>
           </div>
         </div>
       </div>
-
-      <!-- Col 2: Services -->
+      <!-- Col 2: Work -->
       <div>
-        <h4 class="font-['Oswald'] text-xs tracking-widest text-[#E63946] pb-3 border-b border-[#E63946]/30 mb-4 uppercase" style="font-variant:small-caps;">Services</h4>
-        <a href="#services" class="serif-display lowercase italic text-sm text-gray-400 hover:text-[#E63946] hover:underline underline-offset-4 transition block py-1">General Contracting</a>
-        <a href="#services" class="serif-display lowercase italic text-sm text-gray-400 hover:text-[#E63946] hover:underline underline-offset-4 transition block py-1">New Construction</a>
-        <a href="#services" class="serif-display lowercase italic text-sm text-gray-400 hover:text-[#E63946] hover:underline underline-offset-4 transition block py-1">Commercial Build-Outs</a>
-        <a href="#services" class="serif-display lowercase italic text-sm text-gray-400 hover:text-[#E63946] hover:underline underline-offset-4 transition block py-1">Structural Work</a>
-        <a href="#services" class="serif-display lowercase italic text-sm text-gray-400 hover:text-[#E63946] hover:underline underline-offset-4 transition block py-1">Home Remodeling</a>
-        <a href="#services" class="serif-display lowercase italic text-sm text-gray-400 hover:text-[#E63946] hover:underline underline-offset-4 transition block py-1">Kitchen Renovation</a>
-        <a href="#services" class="serif-display lowercase italic text-sm text-gray-400 hover:text-[#E63946] hover:underline underline-offset-4 transition block py-1">Bathroom Renovation</a>
-        <a href="#services" class="serif-display lowercase italic text-sm text-gray-400 hover:text-[#E63946] hover:underline underline-offset-4 transition block py-1">Basement Finishing</a>
-        <a href="#services" class="serif-display lowercase italic text-sm text-gray-400 hover:text-[#E63946] hover:underline underline-offset-4 transition block py-1">Custom Carpentry</a>
-        <a href="#services" class="serif-display lowercase italic text-sm text-gray-400 hover:text-[#E63946] hover:underline underline-offset-4 transition block py-1">Design-Build</a>
-        <a href="#services" class="serif-display lowercase italic text-sm text-gray-400 hover:text-[#E63946] hover:underline underline-offset-4 transition block py-1">Historic Restoration</a>
-        <a href="#services" class="serif-display lowercase italic text-sm text-gray-400 hover:text-[#E63946] hover:underline underline-offset-4 transition block py-1">Tenant Improvements</a>
+        <p class="text-xs uppercase tracking-widest font-semibold mb-4" style="color:#D4890A;">WORK</p>
+        <ul class="space-y-2">
+          <li><a href="#gallery" class="text-gray-400 hover:text-white transition text-sm">Gallery</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Services</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">General Contracting</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">New Construction</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Commercial Build-Outs</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Structural Work</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Home Remodeling</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Kitchen Renovation</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Bathroom Renovation</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Basement Finishing</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Custom Carpentry</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Design-Build</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Historic Restoration</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Tenant Improvements</a></li>
+        </ul>
       </div>
-
-      <!-- Col 3: Service Areas -->
+      <!-- Col 3: Company -->
       <div>
-        <h4 class="font-['Oswald'] text-xs tracking-widest text-[#E63946] pb-3 border-b border-[#E63946]/30 mb-4 uppercase" style="font-variant:small-caps;">Service Areas</h4>
-        <span class="serif-display lowercase italic text-sm text-gray-400 block py-1">Alpharetta, GA</span>
-        <span class="serif-display lowercase italic text-sm text-gray-400 block py-1">Johns Creek, GA</span>
-        <span class="serif-display lowercase italic text-sm text-gray-400 block py-1">Roswell, GA</span>
-        <span class="serif-display lowercase italic text-sm text-gray-400 block py-1">Milton, GA</span>
-        <span class="serif-display lowercase italic text-sm text-gray-400 block py-1">Cumming, GA</span>
-        <span class="serif-display lowercase italic text-sm text-gray-400 block py-1">Duluth, GA</span>
-        <span class="serif-display lowercase italic text-sm text-gray-400 block py-1">Suwanee, GA</span>
-        <span class="serif-display lowercase italic text-sm text-gray-400 block py-1">Marietta, GA</span>
-        <span class="serif-display lowercase italic text-sm text-gray-400 block py-1">Canton, GA</span>
-        <span class="serif-display lowercase italic text-sm text-gray-400 block py-1">Woodstock, GA</span>
+        <p class="text-xs uppercase tracking-widest font-semibold mb-4" style="color:#D4890A;">COMPANY</p>
+        <ul class="space-y-2">
+          <li><a href="#home" class="text-gray-400 hover:text-white transition text-sm">Home</a></li>
+          <li><a href="#about" class="text-gray-400 hover:text-white transition text-sm">About</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Services</a></li>
+          <li><a href="#gallery" class="text-gray-400 hover:text-white transition text-sm">Gallery</a></li>
+          <li><a href="#reviews" class="text-gray-400 hover:text-white transition text-sm">Reviews</a></li>
+          <li><a href="#faq" class="text-gray-400 hover:text-white transition text-sm">FAQ</a></li>
+          <li><a href="#contact" class="text-gray-400 hover:text-white transition text-sm">Contact</a></li>
+        </ul>
       </div>
-
-      <!-- Col 4: Atelier + Correspond -->
-      <div class="space-y-8">
-        <div>
-          <h4 class="font-['Oswald'] text-xs tracking-widest text-[#E63946] pb-3 border-b border-[#E63946]/30 mb-4 uppercase" style="font-variant:small-caps;">Atelier</h4>
-          <a href="#home" class="serif-display lowercase italic text-sm text-gray-400 hover:text-[#E63946] hover:underline underline-offset-4 transition block py-1">home</a>
-          <a href="#about" class="serif-display lowercase italic text-sm text-gray-400 hover:text-[#E63946] hover:underline underline-offset-4 transition block py-1">about</a>
-          <a href="#services" class="serif-display lowercase italic text-sm text-gray-400 hover:text-[#E63946] hover:underline underline-offset-4 transition block py-1">services</a>
-          <a href="#gallery" class="serif-display lowercase italic text-sm text-gray-400 hover:text-[#E63946] hover:underline underline-offset-4 transition block py-1">gallery</a>
-          <a href="#reviews" class="serif-display lowercase italic text-sm text-gray-400 hover:text-[#E63946] hover:underline underline-offset-4 transition block py-1">reviews</a>
-          <a href="#faq" class="serif-display lowercase italic text-sm text-gray-400 hover:text-[#E63946] hover:underline underline-offset-4 transition block py-1">faq</a>
-          <a href="#contact" class="serif-display lowercase italic text-sm text-gray-400 hover:text-[#E63946] hover:underline underline-offset-4 transition block py-1">contact</a>
-        </div>
-        <div>
-          <h4 class="font-['Oswald'] text-xs tracking-widest text-[#E63946] pb-3 border-b border-[#E63946]/30 mb-4 uppercase" style="font-variant:small-caps;">Correspond</h4>
-          <a href="tel:6783902145" class="serif-display lowercase italic text-sm text-gray-400 hover:text-[#E63946] hover:underline underline-offset-4 transition block py-1">(678) 390-2145</a>
-          <span class="serif-display lowercase italic text-sm text-gray-400 block py-1">1360 Union Hill Rd STE C</span>
-          <span class="serif-display lowercase italic text-sm text-gray-400 block py-1">Alpharetta, GA 30004</span>
-          <a href="#contact" class="serif-display lowercase italic text-sm text-gray-400 hover:text-[#E63946] hover:underline underline-offset-4 transition block py-1">free estimate</a>
-          <div class="mt-3 pt-3 border-t border-[#E63946]/15">
-            <span class="serif-display italic text-xs text-[#E63946]">Open 24/7 · Emergency Response</span>
-          </div>
-        </div>
+      <!-- Col 4: Service Areas -->
+      <div>
+        <p class="text-xs uppercase tracking-widest font-semibold mb-4" style="color:#D4890A;">SERVICE AREAS</p>
+        <ul class="space-y-2">
+          <li><span class="text-gray-400 text-sm">Alpharetta, GA</span></li>
+          <li><span class="text-gray-400 text-sm">Roswell, GA</span></li>
+          <li><span class="text-gray-400 text-sm">Johns Creek, GA</span></li>
+          <li><span class="text-gray-400 text-sm">Cumming, GA</span></li>
+          <li><span class="text-gray-400 text-sm">Milton, GA</span></li>
+          <li><span class="text-gray-400 text-sm">Duluth, GA</span></li>
+          <li><span class="text-gray-400 text-sm">Suwanee, GA</span></li>
+          <li><span class="text-gray-400 text-sm">Sandy Springs, GA</span></li>
+          <li><span class="text-gray-400 text-sm">Marietta, GA</span></li>
+          <li><span class="text-gray-400 text-sm">Peachtree City, GA</span></li>
+        </ul>
       </div>
-
     </div>
-
     <!-- Bottom bar -->
-    <div class="border-t border-[#E63946]/20 mx-8"></div>
-    <div class="py-10 text-center px-4">
-      <p class="serif-display italic text-gray-600 text-xs">&copy; 2025 Restoration 1 of North Atlanta. All rights reserved. Serving Alpharetta, GA and surrounding communities.</p>
-      <p class="serif-display italic text-[#E63946] text-xs mt-1">a construction atelier</p>
+    <div class="relative z-10 border-t border-white/10 py-6 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3">
+      <p class="text-gray-500 text-xs">&copy; 2025 Restoration 1 of North Atlanta. All rights reserved. · 1360 Union Hill Rd STE C, Alpharetta, GA 30004</p>
+      <p class="text-gray-500 text-xs" id="live-clock"></p>
     </div>
-
   </footer>
 
   <script>

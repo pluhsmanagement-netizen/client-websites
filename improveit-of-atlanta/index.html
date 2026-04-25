@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ImproveIT! of Atlanta | Premier Roofing Services in Atlanta, GA</title>
+  <title>ImproveIT! of Atlanta | Roofing Atlanta, GA</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
     details summary { list-style: none; cursor: pointer; }
     details summary::-webkit-details-marker { display: none; }
     .tab-btn { cursor: pointer; transition: all 0.2s ease; }
-    .tab-btn.active-tab { background-color: #2C2C2C; color: white; }
+    .tab-btn.active-tab { background-color: #0D0D0D; color: white; }
     .tab-btn.inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
     .tab-panel { display: block; }
     .tab-panel.hidden { display: none !important; }
@@ -38,843 +38,936 @@
     .animate-section.is-pending:target { opacity: 1 !important; transform: none !important; }
     .award-badge { filter: grayscale(100%); transition: filter 0.3s ease; }
     .award-badge:hover { filter: grayscale(0%); }
-    .gold { color: #C9A84C; }
-    .bg-gold { background-color: #C9A84C; }
-    .border-gold { border-color: #C9A84C; }
+    .service-card { background: #fff; border-radius: 12px; box-shadow: 0 4px 24px rgba(13,13,13,0.09); padding: 2rem; transition: box-shadow 0.3s, transform 0.3s; }
+    .service-card:hover { box-shadow: 0 8px 36px rgba(13,13,13,0.15); transform: translateY(-3px); }
+    .review-card { background: #fff; border-radius: 12px; box-shadow: 0 4px 18px rgba(13,13,13,0.08); padding: 2rem; border-top: 4px solid #D4890A; }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-[#f9f6f1] text-[#0D0D0D]">
 
-  <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-20">
-      <a href="#home" class="text-2xl font-bold tracking-wide text-gray-900" style="font-family:'Oswald',sans-serif;">IMPROVE<span class="gold">IT!</span> <span class="text-base font-normal text-gray-500">of Atlanta</span></a>
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#home" class="text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-yellow-600 transition">Home</a>
-        <a href="#about" class="text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-yellow-600 transition">About</a>
-        <a href="#services" class="text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-yellow-600 transition">Services</a>
-        <a href="#gallery" class="text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-yellow-600 transition">Gallery</a>
-        <a href="#reviews" class="text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-yellow-600 transition">Reviews</a>
-        <a href="#faq" class="text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-yellow-600 transition">FAQ</a>
-        <a href="#contact" class="bg-gold text-black text-sm font-bold uppercase tracking-wide px-6 py-2 rounded-full hover:opacity-90 transition">Free Estimate</a>
-      </div>
-      <button id="hamburger" class="md:hidden p-2 rounded-md text-gray-700"><i data-lucide="menu" class="w-6 h-6"></i></button>
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-[#f9f6f1] border-b border-[#0D0D0D]/10 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-20">
+    <a href="#home" class="flex items-center gap-2">
+      <span class="text-2xl font-bold tracking-tight text-[#0D0D0D]" style="font-family:'Oswald',sans-serif;">ImproveIT! <span class="text-[#D4890A]">Atlanta</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-semibold tracking-wide">
+      <a href="#home" class="hover:text-[#D4890A] transition">Home</a>
+      <a href="#about" class="hover:text-[#D4890A] transition">About</a>
+      <a href="#services" class="hover:text-[#D4890A] transition">Services</a>
+      <a href="#gallery" class="hover:text-[#D4890A] transition">Gallery</a>
+      <a href="#reviews" class="hover:text-[#D4890A] transition">Reviews</a>
+      <a href="#faq" class="hover:text-[#D4890A] transition">FAQ</a>
+      <a href="#contact" class="hover:text-[#D4890A] transition">Contact</a>
+      <a href="tel:6784985075" class="ml-2 bg-[#D4890A] text-white px-5 py-2 rounded-full font-bold hover:bg-[#F0A020] transition">(678) 498-5075</a>
     </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden bg-white border-t border-gray-100 md:hidden">
-      <a href="#home" class="mobile-nav-link block py-3 px-6 border-b border-gray-100 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:bg-gray-50">Home</a>
-      <a href="#about" class="mobile-nav-link block py-3 px-6 border-b border-gray-100 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:bg-gray-50">About</a>
-      <a href="#services" class="mobile-nav-link block py-3 px-6 border-b border-gray-100 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:bg-gray-50">Services</a>
-      <a href="#gallery" class="mobile-nav-link block py-3 px-6 border-b border-gray-100 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:bg-gray-50">Gallery</a>
-      <a href="#reviews" class="mobile-nav-link block py-3 px-6 border-b border-gray-100 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:bg-gray-50">Reviews</a>
-      <a href="#faq" class="mobile-nav-link block py-3 px-6 border-b border-gray-100 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:bg-gray-50">FAQ</a>
-      <a href="#contact" class="mobile-nav-link block py-3 px-6 text-sm font-bold uppercase tracking-wide gold hover:bg-gray-50">Free Estimate</a>
-    </div>
-  </nav>
+    <button id="hamburger" class="md:hidden p-2 rounded-lg hover:bg-[#0D0D0D]/10 transition">
+      <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden bg-[#f9f6f1] border-t border-[#0D0D0D]/10 md:hidden">
+    <a href="#home" class="mobile-nav-link block py-3 px-4 border-b border-[#0D0D0D]/10 font-semibold hover:bg-[#D4890A]/10 transition">Home</a>
+    <a href="#about" class="mobile-nav-link block py-3 px-4 border-b border-[#0D0D0D]/10 font-semibold hover:bg-[#D4890A]/10 transition">About</a>
+    <a href="#services" class="mobile-nav-link block py-3 px-4 border-b border-[#0D0D0D]/10 font-semibold hover:bg-[#D4890A]/10 transition">Services</a>
+    <a href="#gallery" class="mobile-nav-link block py-3 px-4 border-b border-[#0D0D0D]/10 font-semibold hover:bg-[#D4890A]/10 transition">Gallery</a>
+    <a href="#reviews" class="mobile-nav-link block py-3 px-4 border-b border-[#0D0D0D]/10 font-semibold hover:bg-[#D4890A]/10 transition">Reviews</a>
+    <a href="#faq" class="mobile-nav-link block py-3 px-4 border-b border-[#0D0D0D]/10 font-semibold hover:bg-[#D4890A]/10 transition">FAQ</a>
+    <a href="#contact" class="mobile-nav-link block py-3 px-4 border-b border-[#0D0D0D]/10 font-semibold hover:bg-[#D4890A]/10 transition">Contact</a>
+    <a href="tel:6784985075" class="block py-3 px-4 text-[#D4890A] font-bold">(678) 498-5075</a>
+  </div>
+</nav>
 
-  <!-- HERO -->
-  <section id="home" class="relative w-full h-screen min-h-[600px] flex items-end">
-    <div class="absolute inset-0 z-0">
-      <img
-        src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEH1-X147KpK3DgyCR8320p6E0JpZa7JZUCEekTNIDOYx2NfEVEyJBh0gUpvz7ginJ46BmeCzwrh5IhJXCUbl2xJlDUTanCGlJFmCYdPklJGvwMdb003B4sMU1l8t90JfbDbWDAp66qRgneotSrtfyTn6_B5-GLg1sKuekL0pvwTTn0UhtOr4WbJ-yDGBn5pptIGUMLZz5MZhPzVPVvGFbTHtKlR0snAoj-h19O6Sen3Ulf-qbbBt5pgEu5kQ5Dxq3cy2GwePIv3KxjgrgF3t6Tny97KRE-S3vvs9wvroj7QDA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-        alt="ImproveIT! of Atlanta roofing hero"
-        class="w-full h-full object-cover"
-        onerror="this.src='https://picsum.photos/seed/roofing-1/1600/900'"
-      >
-      <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);"></div>
-    </div>
-    <div class="relative z-10 px-6 md:px-16 pb-16 md:pb-24 max-w-4xl">
-      <span class="text-xs uppercase tracking-widest font-semibold gold mb-4 block">Atlanta's Premier Roofing Specialists</span>
-      <h1 class="text-5xl md:text-7xl font-bold text-white leading-none mb-4">Roofs Built<br>to Last a Lifetime</h1>
-      <p class="text-gray-300 text-lg md:text-xl max-w-xl mb-8">Expert installation, honest inspections, and storm-ready solutions — serving Atlanta, GA and surrounding communities.</p>
-      <div class="flex flex-wrap gap-4">
-        <a href="#contact" class="bg-gold text-black font-bold uppercase tracking-wider px-8 py-4 rounded-full hover:opacity-90 transition text-sm">Get a Free Estimate</a>
-        <a href="#gallery" class="border border-white/50 text-white font-semibold uppercase tracking-wider px-8 py-4 rounded-full hover:bg-white/10 transition text-sm">View Our Work</a>
-      </div>
-      <p class="text-gray-400 text-sm mt-6"><span class="gold">★★★★★</span>&nbsp; 4.8 Stars · 446 Google Reviews</p>
-    </div>
-    <div class="absolute bottom-6 right-6 z-10 hidden md:block">
-      <span id="live-clock" class="text-xs text-white/60 tracking-widest uppercase font-mono"></span>
-    </div>
-  </section>
-
-  <!-- STATS -->
-  <section class="animate-section bg-white py-12 px-4 md:px-8 lg:px-16 border-b border-gray-100">
-    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div class="bg-white rounded-lg p-6 text-center border border-gray-100 shadow-sm hover:shadow-md transition">
-        <div class="flex justify-center mb-3"><i data-lucide="star" class="w-7 h-7 gold"></i></div>
-        <div class="text-3xl font-bold text-gray-900 heading" data-count="446" data-suffix="+">446+</div>
-        <div class="text-sm text-gray-500 mt-1">5-Star Reviews</div>
-      </div>
-      <div class="bg-white rounded-lg p-6 text-center border border-gray-100 shadow-sm hover:shadow-md transition">
-        <div class="flex justify-center mb-3"><i data-lucide="home" class="w-7 h-7 gold"></i></div>
-        <div class="text-3xl font-bold text-gray-900 heading" data-count="1200" data-suffix="+">1200+</div>
-        <div class="text-sm text-gray-500 mt-1">Roofs Installed</div>
-      </div>
-      <div class="bg-white rounded-lg p-6 text-center border border-gray-100 shadow-sm hover:shadow-md transition">
-        <div class="flex justify-center mb-3"><i data-lucide="shield-check" class="w-7 h-7 gold"></i></div>
-        <div class="text-3xl font-bold text-gray-900 heading" data-count="100" data-suffix="%">100%</div>
-        <div class="text-sm text-gray-500 mt-1">Licensed &amp; Insured</div>
-      </div>
-      <div class="bg-white rounded-lg p-6 text-center border border-gray-100 shadow-sm hover:shadow-md transition">
-        <div class="flex justify-center mb-3"><i data-lucide="award" class="w-7 h-7 gold"></i></div>
-        <div class="text-3xl font-bold text-gray-900 heading" data-count="4" data-suffix=".8★">4.8★</div>
-        <div class="text-sm text-gray-500 mt-1">Google Rating</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery" class="animate-section py-24 px-4 md:px-8 lg:px-16 bg-gray-50">
-    <div class="max-w-7xl mx-auto">
-      <div class="mb-10">
-        <span class="text-xs uppercase tracking-widest gold font-semibold">Our Work</span>
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2">Crafted With Precision</h2>
-        <p class="text-gray-500 mt-2 max-w-xl">Every project reflects our commitment to quality roofing throughout Atlanta and surrounding communities.</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- Featured large -->
-        <div class="img-hover-wrap md:col-span-2 rounded-xl overflow-hidden h-[500px]">
-          <img
-            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEEtmjNXmhcjqx3p3nb4iNkZcXuOwfm8vTK1MyRqlnd3nCfsRlECBsipVjt0F-_59wL2soZBqibIQSp3WL4HrkvjOmQ7ON9Bkq9mOq6vZprqP-S_THTSICimTuqkhE12MqUATNIt4xs3pbb9mW9y9F0evGFTHEqF6BPl_sK3DNRR6aRfeStS_dDHG5DTG6rZV9nIQgiytH65sed38LKVaxWj8xMBSLNiDkOMqjJ77A6_AG52jqQ4JMXjZJaBUwon5vTxLN8DJM7T9MNaRyd8SXl_DaW_g0XGy1fiZ_9af7wTbnmjhdw_xtwkbISpB2lRRTtYz5pP3ZoY1_ypfxRjoUixoqCXXKfCz7OG1VoMKcH6QtuQVYb5bGRXMsM_nJC3QQsswXU4sN7HjjVWVcCKq7UHqm8-lSD-GqI0ACXeQF9cFbRYKY1Xr4JVElzyBSFA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-            alt="Roofing project Atlanta"
-            class="w-full h-full object-cover"
-            loading="lazy"
-            onerror="this.src='https://picsum.photos/seed/roofing-2/800/600'"
-          >
-        </div>
-        <!-- Right column stack -->
-        <div class="flex flex-col gap-4">
-          <div class="img-hover-wrap rounded-xl overflow-hidden h-[240px]">
-            <img
-              src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGqXs_xfKCIiehCpOFbd4IbIMmuRHf06hzLXRRUEv3Q-gGqQV2fBJGXDP8sT4bkoYXnLJQvtDXPjrXrt_QtIAFoVy9R_sYiMF_-u1X_FtqjSQyst125rhUe7BlURw-IPpYF_c07Rc2jswazyVBKOOdLAfuqRvm3qHOeeee81DQ0qd9Cx-rElOhnzujPiNCtO3nsx5OHlJWw_O1MgC3SI8Gi_L_XBjOV1KlceeL15yqfjBntzu2yvKzcne7AAYNQst5FELsAriU0bovwhrNa3SD8Ji2EN_QnqQC3L95azecZnw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-              alt="Roof installation Atlanta"
-              class="w-full h-full object-cover"
-              loading="lazy"
-              onerror="this.src='https://picsum.photos/seed/roofing-3/800/600'"
-            >
-          </div>
-          <div class="img-hover-wrap rounded-xl overflow-hidden h-[240px]">
-            <img
-              src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEHqeIzTz0MTLoet0Vkvw_pETfSqnV8N-maEgiUdEhuTasUJixdrhSAbCOe5AdKKrLHud24Xve9C5-m8Xh0OHg_p6vKfeYU9tC23bDaveS1VTeBySoaVXDYH0H5Ei2eMlKpUAj5VaQXO0VPKdithTSl_W0LsTN4U1s5tzcznqCcXgq7OmL83-5ROZewdk7S1iRAIoc2cCgQKqoEkDB4suRZ6IvegOCTzbuXVNfpm1v15KRXnRXcVVM4gx1eL3Glw-YvSa0WZ2a-OaQWzdVp_TUcaZ39wsMrSi8-h6ek38i_F_w&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-              alt="Shingle roofing Atlanta GA"
-              class="w-full h-full object-cover"
-              loading="lazy"
-              onerror="this.src='https://picsum.photos/seed/roofing-4/800/600'"
-            >
-          </div>
-        </div>
-        <!-- Row 2 -->
-        <div class="img-hover-wrap rounded-xl overflow-hidden h-[300px]">
-          <img
-            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEF8coloNfH8xwP4aJLHVH6YzUTZJHVD36nxBIWuvjFm0uU74N2RZjcNeZ1n3hi8f4DfOdLivIf6LMSSTNyfaBbmRJDfSrfMXkAANzsu6gSjgcdRWJVfeLm00sNRrcNmRDeycZ70PcdAa_N39qa-_oMduMVpv7_yN8bn5MOmFp36QMmHBX67gVaVIicFyGgCMdxNk6fBvSitX9p47GEzFfkgv0ETYO8JBqsSqlXDhYO1LU4l9qKJk1ETakQyuHMdbxQLf_Wa0UchMaTyjOCrZ8mJvhuXsavdMxXuH8kr5ps-tZ1C4UhKmhOCzBKEqMrWIcmpUdYYQY7A8cbTBkP5U0XkS6TJho5UgfaUIkh3-o28xj_VneKdyoovvhuvYbHiw-UyJau_a_iT4UFbKMSvjn0EmKwwHV2YwlxWbS6N52EcRdfC4APdsEc-bqz43-Mj&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-            alt="Metal roofing project"
-            class="w-full h-full object-cover"
-            loading="lazy"
-            onerror="this.src='https://picsum.photos/seed/roofing-5/800/600'"
-          >
-        </div>
-        <div class="img-hover-wrap rounded-xl overflow-hidden h-[300px]">
-          <img
-            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEHLg0evHYJ4iox85AvT3Nlwumua0RBTZh6XpiZxkfP2AlC2ubWzKRMxUhTnUNWGY_HzY4wbHJferPbccpl20F883erJHRHUxHSaOvpXbOdrOBy1gfM5cC-dAEq5QlLYVnKGZf8fuQ_hu-79gAgQZ0inoj4Ao-BiKfFylMpd_DIpAw1nKEQjfpMJoUc_oTWFcWgfELcJitngV9IzmH7e3iljqiAn1zOzWTS_JjMTcJnUu_O6LsKHhbrTavQvR--1PbW61ERSuNqQjSj12S5vmi0zFH8MoA3ACkt3bgEguLebkw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-            alt="Roof replacement Atlanta"
-            class="w-full h-full object-cover"
-            loading="lazy"
-            onerror="this.src='https://picsum.photos/seed/roofing-6/800/600'"
-          >
-        </div>
-        <div class="img-hover-wrap rounded-xl overflow-hidden h-[300px]">
-          <img
-            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGDBVhDeolI_aA1_MykCtB9EzcXmbgiK7uE0LvxAUb7MBH5wiToOQitkj8C4mMOro6sXi1eB83V-ziIBbViDraLUBnHTuYj0IH5kBj_nTU9vXFKHckEV0Sl_M4ld0LHm4blJ8K_wZUtXEoF7BxR3fxC12zAs229Sd3RbfQoLpjkBxIqxpAaLIYnwZVVNgU7GVSFMA9-FrbOjoIPVJ5r18xyBUQc6eQWGAByVKbNI_3g96J8tFpF7djUpaUa-19cPboB3vt01-8FcqcP2J4SJqWk7XzXr0Z7PALOFLDjP0qtRQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-            alt="Storm damage restoration"
-            class="w-full h-full object-cover"
-            loading="lazy"
-            onerror="this.src='https://picsum.photos/seed/roofing-7/800/600'"
-          >
-        </div>
-        <!-- Row 3 -->
-        <div class="img-hover-wrap md:col-span-2 rounded-xl overflow-hidden h-[280px]">
-          <img
-            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEHxycfAyJwd_u-MVpCnG3PZnQng6GSsA-_qgGmh8ee3mhruB2EWeW6-GF9BBOPs1GZLwNQyzSlw0wUzLoF_T6crlF51EQC_4gNNvYqu9Ac9g_YStA9O7qSgXE5vLuBMLS82Kah2QZ80VTIHXfrNpDmAMCrAxrYNoni2EkajBTP8ldyxL0Cr0HZHjLIKmUZY9PnpjSXBRZz6SkfO1LusQmdJyOwqUDW7sUm4BkfIWVoaGUzFk7EMze2o1Hnh8RbKGWSsV0O9Ql70MqQVWhHzsrveesWIIV0UbwY89_Fj0XGfsQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-            alt="Roofing crew at work"
-            class="w-full h-full object-cover"
-            loading="lazy"
-            onerror="this.src='https://picsum.photos/seed/roofing-8/800/600'"
-          >
-        </div>
-        <div class="img-hover-wrap rounded-xl overflow-hidden h-[280px]">
-          <img
-            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEHogWxio7LNBpNb6KcpJoUGYv5MPYRiEkUvN08iRqnxQSePukIyckGOIlYbOAe77UqkxbH-2EGuvsbl3tJFi6JsmLSmIV8Lc5Ml1k0TgDnse5gGgpRQv5ZbB5RwORDAm2vdzIWUc_T3KpWj6G67Zs6Bl-XWVV-pc9Z-ckUVCHUg4Zci4ukj-6Ko7aCwjcUi1zAgcDC5ETEnKqEO1Mslcz8IrDCWlpahUydeNqGR_QGRuVhhP0hgw3krr-VqY-LP0YYm_JtX23VUXBYuXrT1mJYIfNctwNN8Hs5cj2A2S7Nz0w&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-            alt="Completed roofing project Atlanta"
-            class="w-full h-full object-cover"
-            loading="lazy"
-            onerror="this.src='https://picsum.photos/seed/roofing-9/800/600'"
-          >
-        </div>
-        <div class="img-hover-wrap rounded-xl overflow-hidden h-[280px] md:col-span-3">
-          <img
-            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEHLo7JyzpypIoBjgynMJtAiW3TwXDeTOPJtvBqOeJAbEnOKIDxBYcJb0gEKMB3bCIaqlxQcA5Pxo571nDAel4vvqGmCB9F-AAKfc2xuMnlQYMpMwscy4sWbCgFwuhCErF1RcXC773ZPApWXBIvw-V0EXHtFuxHE7QJFCp39B6rPrmtL7YYYa8v37EMQN1SP3qljdo6c9fSFwNngp6eKzmDuP2WbcVKqSAfmkzg2kEjADVdtPZMf85uFfv4wAo85X5FxURRmcDjVpiJNM9pRi-xK-DMEr64gdgl53H6s-GQR_g&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-            alt="Panoramic Atlanta roofing project"
-            class="w-full h-full object-cover"
-            loading="lazy"
-            onerror="this.src='https://picsum.photos/seed/roofing-10/1200/400'"
-          >
-        </div>
-      </div>
-      <div class="mt-8 text-center">
-        <a href="#contact" class="arrow-cta gold font-semibold text-sm uppercase tracking-wide">Start Your Project <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="animate-section py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-white">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<!-- HERO -->
+<section id="home" class="animate-section pt-20 min-h-screen flex items-center">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 w-full py-12 md:py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Left -->
       <div>
-        <span class="text-xs uppercase tracking-widest gold font-semibold">About Us</span>
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6">Atlanta's Trusted<br>Roofing Team</h2>
-        <p class="text-gray-600 leading-relaxed mb-4">ImproveIT! of Atlanta is a locally owned roofing company dedicated to delivering exceptional craftsmanship and transparent service to homeowners across Atlanta, GA and the surrounding metro area. Our team of certified professionals handles everything from full roof replacements to storm damage restoration with the same care and precision we'd give our own homes.</p>
-        <p class="text-gray-600 leading-relaxed mb-8">We believe a great roof starts with an honest inspection and ends with a crew that takes pride in every shingle, seam, and detail. From your first call to the final walkthrough, we make the process seamless, reliable, and stress-free.</p>
-        <div class="grid grid-cols-2 gap-4">
+        <div class="inline-flex items-center gap-2 bg-[#D4890A]/15 text-[#D4890A] rounded-full px-4 py-1 text-xs font-bold tracking-widest uppercase mb-6">
+          <i data-lucide="map-pin" class="w-3 h-3"></i> Serving Atlanta, Georgia
+        </div>
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight text-[#0D0D0D] mb-3">
+          Atlanta's Trusted<br><span class="text-[#D4890A]">Roofing Neighbors</span>
+        </h1>
+        <p class="text-lg text-gray-600 mb-8 font-normal">Protecting Atlanta homes, one roof at a time.</p>
+        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+          <a href="#contact" class="bg-[#0D0D0D] text-white px-8 py-4 rounded-full font-bold text-base hover:bg-[#D4890A] transition text-center">Get a Free Estimate</a>
+          <a href="tel:6784985075" class="border-2 border-[#0D0D0D] text-[#0D0D0D] px-8 py-4 rounded-full font-bold text-base hover:bg-[#0D0D0D] hover:text-white transition text-center">(678) 498-5075</a>
+        </div>
+        <!-- Trust Badges -->
+        <div class="flex flex-wrap gap-4">
+          <div class="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm border border-gray-100">
+            <i data-lucide="shield-check" class="w-4 h-4 text-[#D4890A]"></i>
+            <span class="text-xs font-semibold uppercase tracking-wide">Licensed & Insured</span>
+          </div>
+          <div class="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm border border-gray-100">
+            <i data-lucide="check-circle" class="w-4 h-4 text-[#D4890A]"></i>
+            <span class="text-xs font-semibold uppercase tracking-wide">4.8 Google Rating</span>
+          </div>
+          <div class="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm border border-gray-100">
+            <i data-lucide="home" class="w-4 h-4 text-[#D4890A]"></i>
+            <span class="text-xs font-semibold uppercase tracking-wide">Local & Family-Owned</span>
+          </div>
+          <div class="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm border border-gray-100">
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A]"></i>
+            <span class="text-xs font-semibold uppercase tracking-wide">446+ Happy Neighbors</span>
+          </div>
+        </div>
+        <!-- Live Clock -->
+        <div class="mt-6 text-xs text-gray-400 font-semibold"><span id="live-clock"></span></div>
+      </div>
+      <!-- Right -->
+      <div class="img-hover-wrap rounded-2xl overflow-hidden shadow-2xl h-[480px] lg:h-[560px]">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEEQP1oPgQzXjMwFiVkryx42feQhbqkBPlDbRR5IhrAWHZEO2cQIGKBjaI918ziboTWzH3Yk66OAYtCPpypi0XpoTCaAvaCewIGKD9blCWABD80CFHznAfSAK2jnjz_B1ibIYgho1QMK6CzTz2vNTwg9DZu2nU3H1cgIJ7JizkgihqBRxbYfjelXldgXXJcdfvYgIiq7JkWfbmFeRMMW0DlzGVNXD5iCKMKwStlWN7UTFz7jDSu5ue4BSBIo-deuVZXyzVwNTFv_RYmiuzx41JVkNKDKBtRDVqkyLLu4wwpQkA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Atlanta Roofing Project by ImproveIT!" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-1/800/600'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER BAND -->
+<div class="bg-[#0D0D0D] text-white py-3 overflow-hidden">
+  <div class="ticker-track">
+    <span class="mx-8 text-xs font-bold tracking-widest uppercase text-[#D4890A]">★ SERVING ATLANTA</span>
+    <span class="mx-8 text-xs font-bold tracking-widest uppercase">LICENSED IN GEORGIA</span>
+    <span class="mx-8 text-xs font-bold tracking-widest uppercase text-[#D4890A]">★ LOCAL & FAMILY-OWNED</span>
+    <span class="mx-8 text-xs font-bold tracking-widest uppercase">TRUSTED NEIGHBORS</span>
+    <span class="mx-8 text-xs font-bold tracking-widest uppercase text-[#D4890A]">★ QUALITY WORK</span>
+    <span class="mx-8 text-xs font-bold tracking-widest uppercase">TRUSTED PROFESSIONALS</span>
+    <span class="mx-8 text-xs font-bold tracking-widest uppercase text-[#D4890A]">★ SERVING ATLANTA AREA</span>
+    <span class="mx-8 text-xs font-bold tracking-widest uppercase">CALL NOW: (678) 498-5075</span>
+    <!-- Duplicate for infinite loop -->
+    <span class="mx-8 text-xs font-bold tracking-widest uppercase text-[#D4890A]">★ SERVING ATLANTA</span>
+    <span class="mx-8 text-xs font-bold tracking-widest uppercase">LICENSED IN GEORGIA</span>
+    <span class="mx-8 text-xs font-bold tracking-widest uppercase text-[#D4890A]">★ LOCAL & FAMILY-OWNED</span>
+    <span class="mx-8 text-xs font-bold tracking-widest uppercase">TRUSTED NEIGHBORS</span>
+    <span class="mx-8 text-xs font-bold tracking-widest uppercase text-[#D4890A]">★ QUALITY WORK</span>
+    <span class="mx-8 text-xs font-bold tracking-widest uppercase">TRUSTED PROFESSIONALS</span>
+    <span class="mx-8 text-xs font-bold tracking-widest uppercase text-[#D4890A]">★ SERVING ATLANTA AREA</span>
+    <span class="mx-8 text-xs font-bold tracking-widest uppercase">CALL NOW: (678) 498-5075</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<section class="animate-section bg-[#D4890A] py-12 md:py-16">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div>
+        <div class="text-4xl md:text-5xl font-bold text-white" data-count="12" data-suffix="+">12+</div>
+        <div class="text-sm font-semibold text-white/80 mt-1 uppercase tracking-wide">Areas Served</div>
+      </div>
+      <div>
+        <div class="text-4xl md:text-5xl font-bold text-white" data-count="446" data-suffix="+">446+</div>
+        <div class="text-sm font-semibold text-white/80 mt-1 uppercase tracking-wide">Atlanta Neighbors</div>
+      </div>
+      <div>
+        <div class="text-4xl md:text-5xl font-bold text-white">4.8</div>
+        <div class="text-sm font-semibold text-white/80 mt-1 uppercase tracking-wide">Google Rating</div>
+      </div>
+      <div>
+        <div class="text-4xl md:text-5xl font-bold text-white" data-count="10" data-suffix="+">10+</div>
+        <div class="text-sm font-semibold text-white/80 mt-1 uppercase tracking-wide">Years Local</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="img-hover-wrap rounded-2xl overflow-hidden shadow-xl h-[420px]">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEH8wxKH1VkD0jDZq7xgm1BbWXyMju0wOAFSBlEX8dB-YkgXLWDLrn2dIiEKxA4KG8GlSpljJ5xwSfQJiU0T4NWsjnV79y7_Go_y6sfntXO_5qfXpcUCIlqA1Qj0tF2oTkuZeJwXmcdiP4IF4xXjtY9z5a-bp7sukS5rGsApqPFzOrAlbFHKwgj3Pd4JiaU-3NQymG05hlr8Tnn536hZWxP1_Lm-s-JTptLPzRsotuaCvUvd0TM-8ctSucjej2TrZe_4DkbJUm5rL0duu1wK0nkAOBSqqgN3mQzVb-Uvo49D_YLlZem1A6BhgDDN-UOibVexroR-Js5qNAuEaA83jFmkfPWpk4yJsa59yyQByw5XsLpXz46cqYwFkpW9RBYUJw0APdKHZJD9Oc3r8DU89oTN1MovNLLfbPrcQjS6AWyH_S80bMfCNYpW3bURKPWe&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="ImproveIT! Atlanta Roofing Team" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-2/800/600'">
+      </div>
+      <div>
+        <div class="text-xs font-bold tracking-widest uppercase text-[#D4890A] mb-3">Our Story</div>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-[#0D0D0D]">Rooted Right Here<br>in Atlanta</h2>
+        <p class="text-gray-600 text-base leading-relaxed mb-5">ImproveIT! of Atlanta was built on a simple promise: treat every Atlanta homeowner like a neighbor, because that's exactly who you are to us. We bring honest inspections, transparent pricing, and quality craftsmanship to every roof we touch in the greater Atlanta area.</p>
+        <p class="text-gray-600 text-base leading-relaxed mb-8">From Buckhead to Decatur, we've earned a 4.8-star reputation by putting community first — showing up on time, communicating every step of the way, and standing behind our work long after the last shingle is set.</p>
+        <div class="grid grid-cols-2 gap-4 mb-8">
           <div class="flex items-start gap-3">
-            <div class="rounded-full p-2 mt-0.5" style="background-color: rgba(201,168,76,0.15);"><i data-lucide="shield-check" class="w-5 h-5 gold"></i></div>
+            <div class="bg-[#D4890A]/15 rounded-full p-2 mt-0.5"><i data-lucide="shield-check" class="w-4 h-4 text-[#D4890A]"></i></div>
             <div>
-              <div class="font-bold text-gray-900 text-sm heading">Licensed &amp; Insured</div>
-              <div class="text-xs text-gray-500">Full coverage on every job</div>
+              <div class="font-bold text-sm">Licensed & Insured</div>
+              <div class="text-xs text-gray-500">Full coverage, no surprises</div>
             </div>
           </div>
           <div class="flex items-start gap-3">
-            <div class="rounded-full p-2 mt-0.5" style="background-color: rgba(201,168,76,0.15);"><i data-lucide="clock" class="w-5 h-5 gold"></i></div>
+            <div class="bg-[#D4890A]/15 rounded-full p-2 mt-0.5"><i data-lucide="clock" class="w-4 h-4 text-[#D4890A]"></i></div>
             <div>
-              <div class="font-bold text-gray-900 text-sm heading">On-Time Crews</div>
-              <div class="text-xs text-gray-500">We respect your schedule</div>
+              <div class="font-bold text-sm">24-Hour Response</div>
+              <div class="text-xs text-gray-500">Emergency service available</div>
             </div>
           </div>
           <div class="flex items-start gap-3">
-            <div class="rounded-full p-2 mt-0.5" style="background-color: rgba(201,168,76,0.15);"><i data-lucide="sun" class="w-5 h-5 gold"></i></div>
+            <div class="bg-[#D4890A]/15 rounded-full p-2 mt-0.5"><i data-lucide="home" class="w-4 h-4 text-[#D4890A]"></i></div>
             <div>
-              <div class="font-bold text-gray-900 text-sm heading">Free Inspections</div>
-              <div class="text-xs text-gray-500">No obligation, no pressure</div>
+              <div class="font-bold text-sm">Family-Owned</div>
+              <div class="text-xs text-gray-500">Atlanta neighbors serving you</div>
             </div>
           </div>
           <div class="flex items-start gap-3">
-            <div class="rounded-full p-2 mt-0.5" style="background-color: rgba(201,168,76,0.15);"><i data-lucide="cloud-rain" class="w-5 h-5 gold"></i></div>
+            <div class="bg-[#D4890A]/15 rounded-full p-2 mt-0.5"><i data-lucide="award" class="w-4 h-4 text-[#D4890A]"></i></div>
             <div>
-              <div class="font-bold text-gray-900 text-sm heading">Storm Specialists</div>
-              <div class="text-xs text-gray-500">Fast response after damage</div>
+              <div class="font-bold text-sm">Workmanship Warranty</div>
+              <div class="text-xs text-gray-500">We stand behind our work</div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="img-hover-wrap rounded-2xl overflow-hidden h-[480px] shadow-xl">
-        <img
-          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEHqeIzTz0MTLoet0Vkvw_pETfSqnV8N-maEgiUdEhuTasUJixdrhSAbCOe5AdKKrLHud24Xve9C5-m8Xh0OHg_p6vKfeYU9tC23bDaveS1VTeBySoaVXDYH0H5Ei2eMlKpUAj5VaQXO0VPKdithTSl_W0LsTN4U1s5tzcznqCcXgq7OmL83-5ROZewdk7S1iRAIoc2cCgQKqoEkDB4suRZ6IvegOCTzbuXVNfpm1v15KRXnRXcVVM4gx1eL3Glw-YvSa0WZ2a-OaQWzdVp_TUcaZ39wsMrSi8-h6ek38i_F_w&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-          alt="ImproveIT! of Atlanta roofing team"
-          class="w-full h-full object-cover"
-          loading="lazy"
-          onerror="this.src='https://picsum.photos/seed/roofing-11/800/600'"
-        >
+        <a href="#contact" class="inline-flex items-center gap-2 bg-[#0D0D0D] text-white px-7 py-3 rounded-full font-bold hover:bg-[#D4890A] transition">Get Your Free Estimate <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SERVICES -->
-  <section id="services" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-gray-50">
-    <div class="max-w-7xl mx-auto">
-      <div class="mb-8">
-        <span class="text-xs uppercase tracking-widest gold font-semibold">What We Do</span>
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2">Our Roofing Services</h2>
-        <p class="text-gray-500 mt-2 max-w-xl">From full replacements to specialty upgrades — every service delivered with expert precision in Atlanta, GA.</p>
-      </div>
-      <div class="flex flex-wrap gap-2 md:flex-nowrap mb-8 tabs-container">
-        <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-1">Roofing Services</button>
-        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-2">Repairs &amp; Restoration</button>
-        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-3">Specialty Services</button>
-      </div>
+<!-- SERVICES -->
+<section id="services" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-10 text-center">
+      <div class="text-xs font-bold tracking-widest uppercase text-[#D4890A] mb-3">What We Do</div>
+      <h2 class="text-4xl md:text-5xl font-bold text-[#0D0D0D]">Roofing Services<br>Atlanta Trusts</h2>
+      <p class="text-gray-500 mt-3 max-w-xl mx-auto">From full replacements to emergency repairs, we handle every roofing need for Atlanta homeowners.</p>
+    </div>
+    <div class="flex flex-wrap gap-2 md:flex-nowrap mb-8 tabs-container">
+      <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-1">Roofing Services</button>
+      <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-2">Repairs & Restoration</button>
+      <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-3">Specialty Services</button>
+    </div>
 
-      <div id="tab-panel-1" class="tab-panel">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
-            <div class="rounded-full w-12 h-12 flex items-center justify-center mb-4" style="background-color:rgba(201,168,76,0.15);"><i data-lucide="home" class="w-6 h-6 gold"></i></div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Roof Replacement</h3>
-            <p class="text-gray-500 text-sm leading-relaxed mb-4">Complete tear-off and replacement of your existing roof using premium materials built for Atlanta's climate. Our crews work efficiently to minimize disruption to your household.</p>
-            <a href="tel:6784985075" class="arrow-cta gold text-sm font-semibold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
-            <div class="rounded-full w-12 h-12 flex items-center justify-center mb-4" style="background-color:rgba(201,168,76,0.15);"><i data-lucide="hammer" class="w-6 h-6 gold"></i></div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">New Roof Installation</h3>
-            <p class="text-gray-500 text-sm leading-relaxed mb-4">Whether it's a new construction or addition, we deliver proper installation from day one with correct underlayment and code-compliant methods. Protect your investment with a roof built right the first time.</p>
-            <a href="tel:6784985075" class="arrow-cta gold text-sm font-semibold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
-            <div class="rounded-full w-12 h-12 flex items-center justify-center mb-4" style="background-color:rgba(201,168,76,0.15);"><i data-lucide="hard-hat" class="w-6 h-6 gold"></i></div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Asphalt Shingle Roofing</h3>
-            <p class="text-gray-500 text-sm leading-relaxed mb-4">We install top-rated asphalt shingles that offer lasting beauty and reliable protection for Atlanta homes. Choose from a wide range of colors and styles to complement your property's curb appeal.</p>
-            <a href="tel:6784985075" class="arrow-cta gold text-sm font-semibold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
-            <div class="rounded-full w-12 h-12 flex items-center justify-center mb-4" style="background-color:rgba(201,168,76,0.15);"><i data-lucide="ruler" class="w-6 h-6 gold"></i></div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Metal Roofing</h3>
-            <p class="text-gray-500 text-sm leading-relaxed mb-4">Metal roofing provides exceptional longevity, energy efficiency, and storm resistance perfect for Georgia weather. Our specialists ensure precise seaming and secure installation that lasts for decades.</p>
-            <a href="tel:6784985075" class="arrow-cta gold text-sm font-semibold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
+    <div id="tab-panel-1" class="tab-panel">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="service-card">
+          <div class="bg-[#D4890A]/15 w-12 h-12 rounded-full flex items-center justify-center mb-4"><i data-lucide="home" class="w-6 h-6 text-[#D4890A]"></i></div>
+          <h3 class="text-xl font-bold mb-2">Roof Replacement</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">When repairs aren't enough, we deliver full roof replacements with premium materials and precise installation. Atlanta homeowners count on us for a seamless, lasting result.</p>
+          <a href="tel:6784985075" class="arrow-cta text-[#D4890A] text-sm font-bold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
         </div>
-      </div>
-
-      <div id="tab-panel-2" class="tab-panel hidden">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
-            <div class="rounded-full w-12 h-12 flex items-center justify-center mb-4" style="background-color:rgba(201,168,76,0.15);"><i data-lucide="cloud-rain" class="w-6 h-6 gold"></i></div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Leak Repair</h3>
-            <p class="text-gray-500 text-sm leading-relaxed mb-4">We locate and fix roof leaks fast to prevent costly water damage to your home's interior and structure. Our thorough inspection ensures every source is sealed — not just the obvious ones.</p>
-            <a href="tel:6784985075" class="arrow-cta gold text-sm font-semibold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
-            <div class="rounded-full w-12 h-12 flex items-center justify-center mb-4" style="background-color:rgba(201,168,76,0.15);"><i data-lucide="shield-check" class="w-6 h-6 gold"></i></div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Storm Damage Restoration</h3>
-            <p class="text-gray-500 text-sm leading-relaxed mb-4">After a severe Atlanta storm, we respond quickly to assess damage and begin the restoration process. We also work directly with insurance companies to simplify your claims experience.</p>
-            <a href="tel:6784985075" class="arrow-cta gold text-sm font-semibold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
-            <div class="rounded-full w-12 h-12 flex items-center justify-center mb-4" style="background-color:rgba(201,168,76,0.15);"><i data-lucide="wrench" class="w-6 h-6 gold"></i></div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Gutter Repair</h3>
-            <p class="text-gray-500 text-sm leading-relaxed mb-4">Damaged or sagging gutters can lead to foundation and fascia issues if left unaddressed. We repair, realign, and seal your gutter system to keep water flowing away from your home efficiently.</p>
-            <a href="tel:6784985075" class="arrow-cta gold text-sm font-semibold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
-            <div class="rounded-full w-12 h-12 flex items-center justify-center mb-4" style="background-color:rgba(201,168,76,0.15);"><i data-lucide="home" class="w-6 h-6 gold"></i></div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Emergency Tarping</h3>
-            <p class="text-gray-500 text-sm leading-relaxed mb-4">When a storm tears through your roof unexpectedly, our team provides rapid emergency tarping to protect your home from further damage. We arrive promptly and secure your property until permanent repairs are made.</p>
-            <a href="tel:6784985075" class="arrow-cta gold text-sm font-semibold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
+        <div class="service-card">
+          <div class="bg-[#D4890A]/15 w-12 h-12 rounded-full flex items-center justify-center mb-4"><i data-lucide="hammer" class="w-6 h-6 text-[#D4890A]"></i></div>
+          <h3 class="text-xl font-bold mb-2">New Roof Installation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Building new in Atlanta? We install quality roofs from the ground up on new construction homes and additions. Expert craftsmanship guaranteed from day one.</p>
+          <a href="tel:6784985075" class="arrow-cta text-[#D4890A] text-sm font-bold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
         </div>
-      </div>
-
-      <div id="tab-panel-3" class="tab-panel hidden">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
-            <div class="rounded-full w-12 h-12 flex items-center justify-center mb-4" style="background-color:rgba(201,168,76,0.15);"><i data-lucide="sun" class="w-6 h-6 gold"></i></div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Skylight Installation</h3>
-            <p class="text-gray-500 text-sm leading-relaxed mb-4">Bring natural light into your Atlanta home with a professionally installed skylight that's properly flashed and sealed. We ensure a watertight fit that enhances your interior without compromising your roof's integrity.</p>
-            <a href="tel:6784985075" class="arrow-cta gold text-sm font-semibold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
-            <div class="rounded-full w-12 h-12 flex items-center justify-center mb-4" style="background-color:rgba(201,168,76,0.15);"><i data-lucide="wrench" class="w-6 h-6 gold"></i></div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Ventilation Upgrades</h3>
-            <p class="text-gray-500 text-sm leading-relaxed mb-4">Proper attic ventilation extends roof life and improves energy efficiency in Georgia's hot summers. We assess your current system and install ridge vents, soffit vents, or power ventilators as needed.</p>
-            <a href="tel:6784985075" class="arrow-cta gold text-sm font-semibold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
-            <div class="rounded-full w-12 h-12 flex items-center justify-center mb-4" style="background-color:rgba(201,168,76,0.15);"><i data-lucide="check-circle" class="w-6 h-6 gold"></i></div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Roof Inspections</h3>
-            <p class="text-gray-500 text-sm leading-relaxed mb-4">Our thorough roof inspections give you a complete picture of your roof's condition with no upselling or pressure tactics. Ideal for home buyers, sellers, and annual maintenance peace of mind.</p>
-            <a href="tel:6784985075" class="arrow-cta gold text-sm font-semibold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
-            <div class="rounded-full w-12 h-12 flex items-center justify-center mb-4" style="background-color:rgba(201,168,76,0.15);"><i data-lucide="award" class="w-6 h-6 gold"></i></div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Maintenance Plans</h3>
-            <p class="text-gray-500 text-sm leading-relaxed mb-4">Protect your roof investment with a scheduled maintenance plan that catches small issues before they become big repairs. Regular cleaning, inspection, and minor fixes keep your roof performing year after year.</p>
-            <a href="tel:6784985075" class="arrow-cta gold text-sm font-semibold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
+        <div class="service-card">
+          <div class="bg-[#D4890A]/15 w-12 h-12 rounded-full flex items-center justify-center mb-4"><i data-lucide="ruler" class="w-6 h-6 text-[#D4890A]"></i></div>
+          <h3 class="text-xl font-bold mb-2">Asphalt Shingle Roofing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Asphalt shingles offer Atlanta homeowners durability and curb appeal at an excellent value. We carry top-rated shingle lines with manufacturer-backed warranties.</p>
+          <a href="tel:6784985075" class="arrow-cta text-[#D4890A] text-sm font-bold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="bg-[#D4890A]/15 w-12 h-12 rounded-full flex items-center justify-center mb-4"><i data-lucide="shield-check" class="w-6 h-6 text-[#D4890A]"></i></div>
+          <h3 class="text-xl font-bold mb-2">Metal Roofing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Metal roofing delivers superior longevity and energy efficiency — ideal for Atlanta's hot, storm-prone climate. We install standing seam and metal shingle systems.</p>
+          <a href="tel:6784985075" class="arrow-cta text-[#D4890A] text-sm font-bold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- REVIEWS -->
-  <section id="reviews" class="animate-section py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-white">
-    <div class="max-w-7xl mx-auto">
-      <div class="mb-10">
-        <span class="text-xs uppercase tracking-widest gold font-semibold">Customer Reviews</span>
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2">What Atlanta Homeowners Say</h2>
-        <p class="text-gray-500 mt-2">4.8 stars across 446 verified Google reviews.</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-        <!-- Review 1 - Quinn Fortune (longest, featured) -->
-        <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 hover:shadow-md transition md:col-span-3 lg:col-span-1">
-          <div class="flex items-center gap-1 mb-3">
-            <i data-lucide="star" class="w-4 h-4 gold fill-current" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4 gold fill-current" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4 gold fill-current" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4 gold fill-current" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4 gold fill-current" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-          </div>
-          <p class="text-gray-700 text-sm leading-relaxed mb-4">"If anyone is reading these reviews, don't consider anyone else. ImproveIT! of Atlanta is the roofing company you should contract with. I am grateful for ImproveIT! of Atlanta!! From beginning to end, the process was seamless. Sonya delivered a clear and concise pitch that convinced me to schedule the roof inspection. Stephon was thorough and honest about what next steps would be. Christian provided exceptional communication as the liaison. Carlos and his team were efficient and professional in the installation of the roof. Everyone truly made this an amazing experience but Carlos was the glue that held it all together. He answered my endless questions, quickly communicated any updates via text and/or a phone call, and ensured my requests were completed. I couldn't be happier! Thank you"</p>
-          <div class="flex items-center justify-between mt-auto">
-            <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-full bg-gold flex items-center justify-center text-black font-bold text-sm">Q</div>
-              <div>
-                <div class="font-semibold text-gray-900 text-sm">Quinn Fortune</div>
-                <div class="text-xs text-gray-400">6 months ago</div>
-              </div>
-            </div>
-            <span class="text-xs bg-blue-50 text-blue-600 rounded-full px-3 py-1 font-medium">via Google</span>
-          </div>
+    <div id="tab-panel-2" class="tab-panel hidden">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="service-card">
+          <div class="bg-[#D4890A]/15 w-12 h-12 rounded-full flex items-center justify-center mb-4"><i data-lucide="cloud-rain" class="w-6 h-6 text-[#D4890A]"></i></div>
+          <h3 class="text-xl font-bold mb-2">Leak Repair</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">A leaking roof demands fast, accurate attention before water damage spreads inside your Atlanta home. We locate the source quickly and provide a durable fix.</p>
+          <a href="tel:6784985075" class="arrow-cta text-[#D4890A] text-sm font-bold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
         </div>
-
-        <!-- Review 2 - Glenda Wright -->
-        <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 hover:shadow-md transition">
-          <div class="flex items-center gap-1 mb-3">
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-          </div>
-          <p class="text-gray-700 text-sm leading-relaxed mb-4">"We highly recommend Improve It Atlanta to anyone seeking to replace their roof. The process was seamless, and our salesman, Thomas, answered all of our questions. The crew was on time, and they did a great job in giving us a roof we can expect to protect our home for years to come. If anyone needs a roof replaced, you won't regret calling Improve It Atlanta."</p>
-          <div class="flex items-center justify-between mt-auto">
-            <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-full bg-gray-300 flex items-center justify-center text-gray-700 font-bold text-sm">G</div>
-              <div>
-                <div class="font-semibold text-gray-900 text-sm">Glenda Wright</div>
-                <div class="text-xs text-gray-400">a month ago</div>
-              </div>
-            </div>
-            <span class="text-xs bg-blue-50 text-blue-600 rounded-full px-3 py-1 font-medium">via Google</span>
-          </div>
+        <div class="service-card">
+          <div class="bg-[#D4890A]/15 w-12 h-12 rounded-full flex items-center justify-center mb-4"><i data-lucide="sun" class="w-6 h-6 text-[#D4890A]"></i></div>
+          <h3 class="text-xl font-bold mb-2">Storm Damage Restoration</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Atlanta storms can leave devastating damage overnight. Our team handles full storm restoration and will work directly with your insurance adjuster to simplify the process.</p>
+          <a href="tel:6784985075" class="arrow-cta text-[#D4890A] text-sm font-bold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
         </div>
-
-        <!-- Review 3 - Ike Chandler -->
-        <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 hover:shadow-md transition">
-          <div class="flex items-center gap-1 mb-3">
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-          </div>
-          <p class="text-gray-700 text-sm leading-relaxed mb-4">"Quality is immaculate, and Mrs Saundra is a delight to converse with. She does an exceptional job at getting you the correct documents you need or request. Exceeded my expectations by far, and will recommend ImproveIT of Atlanta to family and friends!!!"</p>
-          <div class="flex items-center justify-between mt-auto">
-            <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-full bg-gray-300 flex items-center justify-center text-gray-700 font-bold text-sm">I</div>
-              <div>
-                <div class="font-semibold text-gray-900 text-sm">Ike Chandler</div>
-                <div class="text-xs text-gray-400">8 months ago</div>
-              </div>
-            </div>
-            <span class="text-xs bg-blue-50 text-blue-600 rounded-full px-3 py-1 font-medium">via Google</span>
-          </div>
+        <div class="service-card">
+          <div class="bg-[#D4890A]/15 w-12 h-12 rounded-full flex items-center justify-center mb-4"><i data-lucide="wrench" class="w-6 h-6 text-[#D4890A]"></i></div>
+          <h3 class="text-xl font-bold mb-2">Gutter Repair</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Faulty gutters compromise your entire roof system and can lead to foundation damage. We repair, reattach, and seal gutters to keep Atlanta's rainfall properly directed.</p>
+          <a href="tel:6784985075" class="arrow-cta text-[#D4890A] text-sm font-bold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
         </div>
-
-        <!-- Review 4 - Michael Meadows -->
-        <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 hover:shadow-md transition">
-          <div class="flex items-center gap-1 mb-3">
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-          </div>
-          <p class="text-gray-700 text-sm leading-relaxed mb-4">"A leading indicator of a roofing service provider begins AFTER the product has been delivered &amp; installed. 5 stars to ImproveIT of Atlanta for responding to a service call during the holiday period. Prompt, efficient &amp; professional."</p>
-          <div class="flex items-center justify-between mt-auto">
-            <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-full bg-gray-300 flex items-center justify-center text-gray-700 font-bold text-sm">M</div>
-              <div>
-                <div class="font-semibold text-gray-900 text-sm">Michael Meadows</div>
-                <div class="text-xs text-gray-400">3 months ago</div>
-              </div>
-            </div>
-            <span class="text-xs bg-blue-50 text-blue-600 rounded-full px-3 py-1 font-medium">via Google</span>
-          </div>
-        </div>
-
-        <!-- Review 5 - Sharla Edward -->
-        <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 hover:shadow-md transition">
-          <div class="flex items-center gap-1 mb-3">
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-          </div>
-          <p class="text-gray-700 text-sm leading-relaxed mb-4">"Good morning! This company is amazing! Sonja &amp; Gino where extremely helpful though out the process! The company came out &amp; did a great job! When I look at my roof I'm very happy. They are very professional. I'll definitely recommend this company to family and friends"</p>
-          <div class="flex items-center justify-between mt-auto">
-            <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-full bg-gray-300 flex items-center justify-center text-gray-700 font-bold text-sm">S</div>
-              <div>
-                <div class="font-semibold text-gray-900 text-sm">Sharla Edward</div>
-                <div class="text-xs text-gray-400">a year ago</div>
-              </div>
-            </div>
-            <span class="text-xs bg-blue-50 text-blue-600 rounded-full px-3 py-1 font-medium">via Google</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="animate-section py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-gray-50">
-    <div class="max-w-3xl mx-auto">
-      <div class="mb-10">
-        <span class="text-xs uppercase tracking-widest gold font-semibold">Questions Answered</span>
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2">Frequently Asked Questions</h2>
-      </div>
-      <div class="space-y-4">
-
-        <details class="bg-white rounded-xl border border-gray-100 shadow-sm group">
-          <summary class="flex items-center justify-between px-6 py-5">
-            <span class="font-semibold text-gray-900">How do I know if my roof needs to be replaced or just repaired?</span>
-            <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 transition-transform duration-200 group-open:rotate-90 flex-shrink-0 ml-4"></i>
-          </summary>
-          <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
-            If your roof is under 15 years old with isolated damage, a targeted repair is often the right call. However, widespread shingle deterioration, multiple leaks, or storm damage affecting large sections typically make a full replacement more cost-effective in the long run. Our free inspection will give you an honest assessment of your best options.
-          </div>
-        </details>
-
-        <details class="bg-white rounded-xl border border-gray-100 shadow-sm group">
-          <summary class="flex items-center justify-between px-6 py-5">
-            <span class="font-semibold text-gray-900">Does ImproveIT! of Atlanta work with homeowners insurance for storm damage?</span>
-            <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 transition-transform duration-200 group-open:rotate-90 flex-shrink-0 ml-4"></i>
-          </summary>
-          <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
-            Yes — we have extensive experience guiding Atlanta homeowners through the insurance claims process for storm and hail damage. We document damage thoroughly, communicate directly with your adjuster, and ensure nothing is overlooked so you receive the coverage you're entitled to.
-          </div>
-        </details>
-
-        <details class="bg-white rounded-xl border border-gray-100 shadow-sm group">
-          <summary class="flex items-center justify-between px-6 py-5">
-            <span class="font-semibold text-gray-900">How long does a typical roof replacement take in Atlanta?</span>
-            <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 transition-transform duration-200 group-open:rotate-90 flex-shrink-0 ml-4"></i>
-          </summary>
-          <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
-            Most residential roof replacements in Atlanta are completed in one to two days, depending on roof size, pitch, and weather conditions. We coordinate scheduling to minimize disruption and always leave your property clean and debris-free when we're done.
-          </div>
-        </details>
-
-        <details class="bg-white rounded-xl border border-gray-100 shadow-sm group">
-          <summary class="flex items-center justify-between px-6 py-5">
-            <span class="font-semibold text-gray-900">What roofing materials do you recommend for Atlanta's climate?</span>
-            <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 transition-transform duration-200 group-open:rotate-90 flex-shrink-0 ml-4"></i>
-          </summary>
-          <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
-            Georgia's heat, humidity, and frequent storm activity make impact-resistant architectural shingles and metal roofing excellent choices for durability and energy performance. We'll walk you through the pros and cons of each option based on your home's structure, budget, and aesthetic goals.
-          </div>
-        </details>
-
-        <details class="bg-white rounded-xl border border-gray-100 shadow-sm group">
-          <summary class="flex items-center justify-between px-6 py-5">
-            <span class="font-semibold text-gray-900">Is ImproveIT! of Atlanta licensed and insured?</span>
-            <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 transition-transform duration-200 group-open:rotate-90 flex-shrink-0 ml-4"></i>
-          </summary>
-          <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
-            Absolutely. ImproveIT! of Atlanta is fully licensed and insured to perform roofing work throughout the state of Georgia. We carry both general liability and workers' compensation coverage, protecting you as the homeowner from any on-site liability.
-          </div>
-        </details>
-
-        <details class="bg-white rounded-xl border border-gray-100 shadow-sm group">
-          <summary class="flex items-center justify-between px-6 py-5">
-            <span class="font-semibold text-gray-900">Do you offer any warranty on your roofing work?</span>
-            <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 transition-transform duration-200 group-open:rotate-90 flex-shrink-0 ml-4"></i>
-          </summary>
-          <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">
-            Yes — we stand behind every project with a workmanship warranty in addition to the manufacturer's material warranties, which can range from 25 years to lifetime coverage depending on the product selected. We'll explain all warranty details clearly before your project begins.
-          </div>
-        </details>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="animate-section py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-white">
-    <div class="max-w-5xl mx-auto">
-      <div class="mb-10">
-        <span class="text-xs uppercase tracking-widest gold font-semibold">Contact Us</span>
-        <h2 class="text-4xl font-bold text-gray-900 mt-2">Let's Talk About Your Roof</h2>
-      </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-        <!-- Map -->
-        <div class="rounded-xl overflow-hidden min-h-[450px] shadow-lg">
-          <iframe
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k&q=place_id:ChIJubt2BHgD9YgRPjZ2i1R_JY4"
-            width="100%"
-            height="100%"
-            style="border:0; min-height:450px; display:block;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="ImproveIT! of Atlanta Location"
-          ></iframe>
-        </div>
-        <!-- Form Card -->
-        <div class="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full">
-          <span class="text-xs uppercase tracking-widest font-semibold gold">Get Started</span>
-          <h3 class="text-3xl font-bold text-gray-900 mt-2">Get a Free Estimate</h3>
-          <p class="text-gray-500 text-sm mt-1">Reach out today — we'll respond within one business day.</p>
-          <div class="flex items-center gap-1 mt-3">
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#C9A84C;stroke:#C9A84C;"></i>
-            <span class="text-sm text-gray-500 ml-1">4.8 out of 5 · 446 reviews</span>
-          </div>
-          <form class="mt-4" onsubmit="return false;">
-            <input type="text" placeholder="Your Name" class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-4 text-sm outline-none" style="--tw-ring-color:#C9A84C;">
-            <input type="tel" placeholder="Phone Number" class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-4 text-sm outline-none" style="--tw-ring-color:#C9A84C;">
-            <input type="email" placeholder="Email Address" class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-4 text-sm outline-none" style="--tw-ring-color:#C9A84C;">
-            <select class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-4 text-sm text-gray-500 outline-none" style="--tw-ring-color:#C9A84C;">
-              <option value="" disabled selected>Select a Service</option>
-              <option>Roof Replacement</option>
-              <option>New Roof Installation</option>
-              <option>Asphalt Shingle Roofing</option>
-              <option>Metal Roofing</option>
-            </select>
-            <textarea rows="3" placeholder="Tell us about your project..." class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-4 text-sm outline-none resize-none" style="--tw-ring-color:#C9A84C;"></textarea>
-            <button type="submit" class="w-full bg-gold text-black rounded-lg py-4 font-bold mt-6 uppercase tracking-wider text-sm hover:opacity-90 transition">Request Free Estimate</button>
-            <p class="text-xs text-gray-400 mt-3 text-center">By submitting you agree to be contacted regarding your request.</p>
-          </form>
+        <div class="service-card">
+          <div class="bg-[#D4890A]/15 w-12 h-12 rounded-full flex items-center justify-center mb-4"><i data-lucide="shield-check" class="w-6 h-6 text-[#D4890A]"></i></div>
+          <h3 class="text-xl font-bold mb-2">Emergency Tarping</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">When disaster strikes, we respond fast with professional emergency tarping to protect your home from further damage. Available to Atlanta area homeowners in urgent need.</p>
+          <a href="tel:6784985075" class="arrow-cta text-[#D4890A] text-sm font-bold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer style="background-color:#0f0f0f;" class="text-white relative overflow-hidden">
-    <!-- Ghosted bg image -->
-    <div class="absolute inset-0 z-0">
-      <img
-        src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEHxycfAyJwd_u-MVpCnG3PZnQng6GSsA-_qgGmh8ee3mhruB2EWeW6-GF9BBOPs1GZLwNQyzSlw0wUzLoF_T6crlF51EQC_4gNNvYqu9Ac9g_YStA9O7qSgXE5vLuBMLS82Kah2QZ80VTIHXfrNpDmAMCrAxrYNoni2EkajBTP8ldyxL0Cr0HZHjLIKmUZY9PnpjSXBRZz6SkfO1LusQmdJyOwqUDW7sUm4BkfIWVoaGUzFk7EMze2o1Hnh8RbKGWSsV0O9Ql70MqQVWhHzsrveesWIIV0UbwY89_Fj0XGfsQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-        alt=""
-        class="w-full h-full object-cover opacity-10"
-        loading="lazy"
-        onerror="this.src='https://picsum.photos/seed/roofing-footer/1600/600'"
-      >
-    </div>
-    <!-- Content -->
-    <div class="relative z-10">
-      <!-- Top CTA -->
-      <div class="py-20 text-center px-4 border-b border-white/10">
-        <span class="text-xs uppercase tracking-widest font-semibold gold">Start Your Project</span>
-        <h3 class="text-4xl md:text-5xl font-bold max-w-3xl mx-auto mt-4 text-white">Let's build something together.</h3>
-        <a href="#contact" class="inline-block bg-gold text-black font-bold uppercase tracking-wider px-10 py-4 rounded-full mt-8 hover:opacity-90 transition text-sm">Get a Free Estimate</a>
-      </div>
-
-      <!-- Main Grid -->
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 py-16 px-8 max-w-7xl mx-auto border-b border-white/10">
-
-        <!-- Col 1-2: Business Identity -->
-        <div class="col-span-2">
-          <div class="text-3xl font-bold" style="font-family:'Oswald',sans-serif;">IMPROVE<span class="gold">IT!</span> <span class="text-xl font-normal text-gray-400">of Atlanta</span></div>
-          <p class="text-gray-400 max-w-sm mt-2 text-sm">Atlanta's trusted roofing specialists — delivering quality craftsmanship, honest inspections, and storm-ready solutions across the metro area.</p>
-          <div class="mt-6 space-y-2">
-            <div class="flex items-start gap-2 text-gray-400 text-sm">
-              <i data-lucide="map-pin" class="w-4 h-4 gold flex-shrink-0 mt-0.5"></i>
-              <span>3525 Piedmont Rd NE Bldg. 7 Ste. 210, Atlanta, GA 30305</span>
-            </div>
-            <div class="flex items-center gap-2 text-gray-400 text-sm">
-              <i data-lucide="phone" class="w-4 h-4 gold flex-shrink-0"></i>
-              <a href="tel:6784985075" class="hover:text-white transition">(678) 498-5075</a>
-            </div>
-            <div class="flex items-start gap-2 text-gray-400 text-sm">
-              <i data-lucide="clock" class="w-4 h-4 gold flex-shrink-0 mt-0.5"></i>
-              <span>Mon–Thu: 9AM–7PM | Fri: 9AM–3PM<br>Sat–Sun: Closed</span>
-            </div>
-            <div class="flex items-center gap-2 text-gray-400 text-sm">
-              <i data-lucide="shield-check" class="w-4 h-4 gold flex-shrink-0"></i>
-              <span>Licensed &amp; Insured · 4.8 Google Rating</span>
-            </div>
-          </div>
+    <div id="tab-panel-3" class="tab-panel hidden">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="service-card">
+          <div class="bg-[#D4890A]/15 w-12 h-12 rounded-full flex items-center justify-center mb-4"><i data-lucide="sun" class="w-6 h-6 text-[#D4890A]"></i></div>
+          <h3 class="text-xl font-bold mb-2">Skylight Installation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Bring natural light into your Atlanta home with professionally installed skylights sealed to prevent leaks for years. We handle the structural work and flashing with precision.</p>
+          <a href="tel:6784985075" class="arrow-cta text-[#D4890A] text-sm font-bold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
         </div>
+        <div class="service-card">
+          <div class="bg-[#D4890A]/15 w-12 h-12 rounded-full flex items-center justify-center mb-4"><i data-lucide="cloud-rain" class="w-6 h-6 text-[#D4890A]"></i></div>
+          <h3 class="text-xl font-bold mb-2">Ventilation Upgrades</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Poor attic ventilation leads to premature roof aging and high cooling bills — a serious concern in Atlanta summers. We assess and upgrade your ventilation for a healthier roof system.</p>
+          <a href="tel:6784985075" class="arrow-cta text-[#D4890A] text-sm font-bold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="bg-[#D4890A]/15 w-12 h-12 rounded-full flex items-center justify-center mb-4"><i data-lucide="hard-hat" class="w-6 h-6 text-[#D4890A]"></i></div>
+          <h3 class="text-xl font-bold mb-2">Roof Inspections</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Our thorough roof inspections give Atlanta homeowners a clear picture of their roof's condition with no pressure sales tactics. Honest findings, documented in writing.</p>
+          <a href="tel:6784985075" class="arrow-cta text-[#D4890A] text-sm font-bold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="bg-[#D4890A]/15 w-12 h-12 rounded-full flex items-center justify-center mb-4"><i data-lucide="check-circle" class="w-6 h-6 text-[#D4890A]"></i></div>
+          <h3 class="text-xl font-bold mb-2">Maintenance Plans</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">A regular maintenance plan keeps small issues from becoming costly Atlanta roof replacements. We offer scheduled check-ups that extend the life of your investment.</p>
+          <a href="tel:6784985075" class="arrow-cta text-[#D4890A] text-sm font-bold">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- Col 3: Work -->
+<!-- GALLERY -->
+<section id="gallery" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-10 text-center">
+      <div class="text-xs font-bold tracking-widest uppercase text-[#D4890A] mb-3">Our Work</div>
+      <h2 class="text-4xl md:text-5xl font-bold text-[#0D0D0D]">Atlanta Roofing Projects</h2>
+      <p class="text-gray-500 mt-3 max-w-xl mx-auto">Real jobs, real neighbors, real results — across Atlanta and surrounding communities.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="img-hover-wrap rounded-xl overflow-hidden shadow-md relative group h-64">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGyuQr-SprEFMmbtbKf7S0romsbIuWcjnB8i_01MIryZuyjRCEAO2BQ1OoiSBH_-1vV0V2H-rpqn1CRpIREFNnw_GKUcJpFySlepA9uP_fsqTY_pOnq_U7DA-layagaE7ifRwKWFykhm2p0TYjrcRW51BMr9wKRj2YDMpuySoELNAjR63jMQ34r6uAVfgsF3ZexfWv9xEFSeRjlNtJ06PbgwRc3CUwzs3XsHViTWPjVrmXIOmvzsDOAri0a2RNZX6_hv3Dt2P-EJsLH6n6gcLK_ZlAcXL3med8I9Pza7mcatg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Buckhead Roof Replacement" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-3/800/600'">
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0D0D0D]/80 to-transparent p-4">
+          <span class="text-white font-bold text-sm">Buckhead — Full Roof Replacement</span>
+        </div>
+      </div>
+      <div class="img-hover-wrap rounded-xl overflow-hidden shadow-md relative group h-64">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEFx1LGZmB0W5RtA7kfQzP4_Sw964tDPm4hF5wHrWVOSwHl2scE7oEWQC38KiHShZFZW3urpvdadp19TTapDb2AVCz9ZBU5VaChli8JxeN8CwgDRrqm01QLFnmtGWvdrofER-T8ltVQsuLIw_Ma3P3J0gs-6iv2XPdpC1w546S1s0veDA_ygluS_O9n_HrBSMZXfzwWsNwRoOdOZiw7j7LnJvR8Z6Ez7ijzCOm9EfeuC-BkLbWpx9b_qiitIBAwP92wK8Na6NBUH9QXLdZRdt1e1AqKhtIgmOmpZaKSfjRpOnA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Decatur Storm Damage Restoration" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-4/800/600'">
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0D0D0D]/80 to-transparent p-4">
+          <span class="text-white font-bold text-sm">Decatur — Storm Damage Restoration</span>
+        </div>
+      </div>
+      <div class="img-hover-wrap rounded-xl overflow-hidden shadow-md relative group h-64">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEF5RobgiQrTTXcPLaUJUVGe_DRWqln3r6igpnMY8hFauC_UnwVFZZxpG34iW3lpNdkkLlvzdZR66UvdxG_wq1rktC3ZUo0XxNv-RK6iPUEDegFxKEyBjb7HjeyGl9DTJ0ISTV7ib7Um04hVQcHJqwkQeYZrKdBWia1qZg58k60NcoUef9M9hlvWDHNFJB2z_c11GbZROTRzMW4lvNL1L7FoddlrBkZRIARmSruab6-LqunBhfoYhDwYUXEdtah5HxpCrhZ2jts2iz1uSyw7_HCRmoQglclz6-ayVnsyiP-6IiAR4Rkn3ETkrHEttvSykSGKr55SPefjHJVy9OYnMK1NVSrphPxDbUAqcpwx6-yQtbu0dx-E9hYpezuZG0RNyY75txDCRudmvOE9h407UTfSSrCKXO4wESCPgeloHWMqbMOgOHtDqFZ3xpO5BOrK&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Sandy Springs Metal Roofing" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-5/800/600'">
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0D0D0D]/80 to-transparent p-4">
+          <span class="text-white font-bold text-sm">Sandy Springs — Metal Roofing Install</span>
+        </div>
+      </div>
+      <div class="img-hover-wrap rounded-xl overflow-hidden shadow-md relative group h-64">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEF_vlapL_4LbgH7kOQ_tmZqtfmO8kCZsG7CgOFYTO-f8wRT9n6uc9V9iqT7M_QJW0Pkg8-e51274MF1hb0wkoa9-vqdxDD6tCWY65QSqJ_IQAD0qAI8zHbuEFtMrUGJt6fCdsru6LCV8Wy40VKZFMKNdkzh7eM4fYONdAuw4sNKDa7kHeBBQUfUh5yXDSq12No2BpdL4ZZ9JibMRJUTKjG6xB7p-lgnxLq4ziT-xvrTho71EjW1FBpavsayBbpp44lYzpdi5Xp0O8XYJYqtwTd0r_l9iQBFaFxlHZaFqJPPMw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Marietta Asphalt Shingle Roofing" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-6/800/600'">
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0D0D0D]/80 to-transparent p-4">
+          <span class="text-white font-bold text-sm">Marietta — Asphalt Shingle Re-Roof</span>
+        </div>
+      </div>
+      <div class="img-hover-wrap rounded-xl overflow-hidden shadow-md relative group h-64">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEEvT0-Jzp1rlbjN6F287soOZ_kOmMD6lBrZzz0ofwUKwxdg4Xv4Jbs1IuPs9gicNJE_WNkNnExkd_DOkV8RVPQx6ElXUSWlu2cMSJyKTXn4bIA2N7sdFH3I9uEpzChlLgPUOsNw5XnhTg4h2c2HvCakwerrbtxB1SoHrNbZW45SRxFfenXaDbckPlF9CwS4sQ6yuMG3Z1LKjgQ5vgduajCXrRHB_dFTU50CDdRpjisnFphSWi-I7-MNM9mqF6Pc2Mt3uQpWx5okZBtWREHjxWtDfJVM3jmBUrfCpWtuKKsrPg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Smyrna Leak Repair" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-7/800/600'">
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0D0D0D]/80 to-transparent p-4">
+          <span class="text-white font-bold text-sm">Smyrna — Emergency Leak Repair</span>
+        </div>
+      </div>
+      <div class="img-hover-wrap rounded-xl overflow-hidden shadow-md relative group h-64">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEEDz64wgUBV2uPA64yTFmJZcX_RlqvDM12xkHrdC3fV_Drco6qbpuk6WS6H-ZdxlPYWo2Az90sGvLJgTnGshovdUG7Ra2bhefM0mdpRA-ESB5dUs_4_4vRPd3sM11eihrZ8CJHksZelDkoONecI8Tbj6nNZt0Oz9tRGEJ1L70ctEOq3GuybpIuebK0oUMiLE-q7dF6wsf773r8MjZA5hFwspVKm5RR5wlhOvg3tY2XASPzZREfOvMm8obf3IiA_1_vcqpuw5Y4SAQDjv3gagxn3XmMYyBXJEVvPiOhkMCpzAw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roswell New Roof Installation" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-8/800/600'">
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0D0D0D]/80 to-transparent p-4">
+          <span class="text-white font-bold text-sm">Roswell — New Roof Installation</span>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-10">
+      <a href="#contact" class="inline-flex items-center gap-2 bg-[#D4890A] text-white px-8 py-4 rounded-full font-bold hover:bg-[#F0A020] transition">Start Your Project <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-10 text-center">
+      <div class="text-xs font-bold tracking-widest uppercase text-[#D4890A] mb-3">What Neighbors Say</div>
+      <h2 class="text-4xl md:text-5xl font-bold text-[#0D0D0D]">Real Atlanta Reviews</h2>
+      <div class="flex items-center justify-center gap-2 mt-4">
+        <div class="flex gap-1">
+          <i data-lucide="star" class="w-5 h-5 text-[#D4890A] fill-current"></i>
+          <i data-lucide="star" class="w-5 h-5 text-[#D4890A] fill-current"></i>
+          <i data-lucide="star" class="w-5 h-5 text-[#D4890A] fill-current"></i>
+          <i data-lucide="star" class="w-5 h-5 text-[#D4890A] fill-current"></i>
+          <i data-lucide="star" class="w-5 h-5 text-[#D4890A] fill-current"></i>
+        </div>
+        <span class="text-sm font-bold text-[#0D0D0D]">4.8 out of 5</span>
+        <span class="text-sm text-gray-500">· 446 Google Reviews</span>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Review 1 -->
+      <div class="review-card lg:col-span-1">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex gap-1">
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+          </div>
+          <span class="text-xs bg-[#D4890A]/15 text-[#D4890A] font-bold px-3 py-1 rounded-full">via Google</span>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">"If anyone is reading these reviews, don't consider anyone else. ImproveIT! of Atlanta is the roofing company you should contract with. I am grateful for ImproveIT! of Atlanta!! From beginning to end, the process was seamless. Sonya delivered a clear and concise pitch that convinced me to schedule the roof inspection. Stephon was thorough and honest about what next steps would be. Christian provided exceptional communication as the liaison. Carlos and his team were efficient and professional in the installation of the roof. Everyone truly made this an amazing experience but Carlos was the glue that held it all together. He answered my endless questions, quickly communicated any updates via text and/or a phone call, and ensured my requests were completed. I couldn't be happier! Thank you"</p>
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="font-bold text-sm">Quinn Fortune</div>
+            <div class="text-xs text-gray-400">Google · Atlanta · 6 months ago</div>
+          </div>
+          <div class="w-10 h-10 bg-[#D4890A] rounded-full flex items-center justify-center text-white font-bold text-sm">Q</div>
+        </div>
+      </div>
+      <!-- Review 2 -->
+      <div class="review-card">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex gap-1">
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+          </div>
+          <span class="text-xs bg-[#D4890A]/15 text-[#D4890A] font-bold px-3 py-1 rounded-full">via Google</span>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">"We highly recommend Improve It Atlanta to anyone seeking to replace their roof. The process was seamless, and our salesman, Thomas, answered all of our questions. The crew was on time, and they did a great job in giving us a roof we can expect to protect our home for years to come. If anyone needs a roof replaced, you won't regret calling Improve It Atlanta."</p>
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="font-bold text-sm">Glenda Wright</div>
+            <div class="text-xs text-gray-400">Google · Atlanta · a month ago</div>
+          </div>
+          <div class="w-10 h-10 bg-[#0D0D0D] rounded-full flex items-center justify-center text-white font-bold text-sm">G</div>
+        </div>
+      </div>
+      <!-- Review 3 -->
+      <div class="review-card">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex gap-1">
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+          </div>
+          <span class="text-xs bg-[#D4890A]/15 text-[#D4890A] font-bold px-3 py-1 rounded-full">via Google</span>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">"Quality is immaculate, and Mrs Saundra is a delight to converse with. She does an exceptional job at getting you the correct documents you need or request. Exceeded my expectations by far, and will recommend ImproveIT of Atlanta to family and friends!!!"</p>
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="font-bold text-sm">Ike Chandler</div>
+            <div class="text-xs text-gray-400">Google · Atlanta · 8 months ago</div>
+          </div>
+          <div class="w-10 h-10 bg-[#D4890A] rounded-full flex items-center justify-center text-white font-bold text-sm">I</div>
+        </div>
+      </div>
+      <!-- Review 4 -->
+      <div class="review-card">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex gap-1">
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+          </div>
+          <span class="text-xs bg-[#D4890A]/15 text-[#D4890A] font-bold px-3 py-1 rounded-full">via Google</span>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">"A leading indicator of a roofing service provider begins AFTER the product has been delivered & installed. 5 stars to ImproveIT of Atlanta for responding to a service call during the holiday period. Prompt, efficient & professional."</p>
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="font-bold text-sm">Michael Meadows</div>
+            <div class="text-xs text-gray-400">Google · Atlanta · 3 months ago</div>
+          </div>
+          <div class="w-10 h-10 bg-[#0D0D0D] rounded-full flex items-center justify-center text-white font-bold text-sm">M</div>
+        </div>
+      </div>
+      <!-- Review 5 -->
+      <div class="review-card">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex gap-1">
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+          </div>
+          <span class="text-xs bg-[#D4890A]/15 text-[#D4890A] font-bold px-3 py-1 rounded-full">via Google</span>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">"Good morning! This company is amazing! Sonja & Gino where extremely helpful though out the process! The company came out & did a great job! When I look at my roof I'm very happy. They are very professional. I'll definitely recommend this company to family and friends"</p>
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="font-bold text-sm">Sharla Edward</div>
+            <div class="text-xs text-gray-400">Google · Atlanta · a year ago</div>
+          </div>
+          <div class="w-10 h-10 bg-[#D4890A] rounded-full flex items-center justify-center text-white font-bold text-sm">S</div>
+        </div>
+      </div>
+      <!-- CTA Card -->
+      <div class="bg-[#0D0D0D] rounded-xl p-8 flex flex-col justify-between">
         <div>
-          <h4 class="text-xs uppercase tracking-widest font-semibold gold mb-4">Work</h4>
-          <ul class="space-y-2">
-            <li><a href="#gallery" class="text-gray-400 hover:text-white transition text-sm">Gallery</a></li>
-            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Services</a></li>
-            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Roof Replacement</a></li>
-            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">New Roof Installation</a></li>
-            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Asphalt Shingles</a></li>
-            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Metal Roofing</a></li>
-            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Leak Repair</a></li>
-            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Storm Restoration</a></li>
-            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Gutter Repair</a></li>
-            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Emergency Tarping</a></li>
-            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Skylight Installation</a></li>
-            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Maintenance Plans</a></li>
-          </ul>
+          <div class="text-[#D4890A] font-bold text-xs uppercase tracking-widest mb-3">Join 446+ Neighbors</div>
+          <h3 class="text-white text-2xl font-bold mb-3">Ready to Get Started?</h3>
+          <p class="text-white/70 text-sm leading-relaxed mb-6">Atlanta homeowners trust ImproveIT! for honest work, fair pricing, and results that last.</p>
         </div>
-
-        <!-- Col 4: Company -->
-        <div>
-          <h4 class="text-xs uppercase tracking-widest font-semibold gold mb-4">Company</h4>
-          <ul class="space-y-2">
-            <li><a href="#home" class="text-gray-400 hover:text-white transition text-sm">Home</a></li>
-            <li><a href="#about" class="text-gray-400 hover:text-white transition text-sm">About</a></li>
-            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Services</a></li>
-            <li><a href="#reviews" class="text-gray-400 hover:text-white transition text-sm">Reviews</a></li>
-            <li><a href="#faq" class="text-gray-400 hover:text-white transition text-sm">FAQ</a></li>
-            <li><a href="#contact" class="text-gray-400 hover:text-white transition text-sm">Contact</a></li>
-          </ul>
+        <div class="space-y-3">
+          <a href="#contact" class="block text-center bg-[#D4890A] text-white px-6 py-3 rounded-full font-bold hover:bg-[#F0A020] transition text-sm">Get a Free Estimate</a>
+          <a href="tel:6784985075" class="block text-center border border-white/30 text-white px-6 py-3 rounded-full font-bold hover:bg-white/10 transition text-sm">(678) 498-5075</a>
         </div>
-
-        <!-- Col 5: Service Areas -->
-        <div>
-          <h4 class="text-xs uppercase tracking-widest font-semibold gold mb-4">Service Areas</h4>
-          <ul class="space-y-2">
-            <li class="text-gray-400 text-sm">Atlanta, GA</li>
-            <li class="text-gray-400 text-sm">Sandy Springs</li>
-            <li class="text-gray-400 text-sm">Buckhead</li>
-            <li class="text-gray-400 text-sm">Decatur</li>
-            <li class="text-gray-400 text-sm">Marietta</li>
-            <li class="text-gray-400 text-sm">Smyrna</li>
-            <li class="text-gray-400 text-sm">Roswell</li>
-            <li class="text-gray-400 text-sm">Alpharetta</li>
-            <li class="text-gray-400 text-sm">Dunwoody</li>
-            <li class="text-gray-400 text-sm">Norcross</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- Bottom Bar -->
-      <div class="py-6 px-8 flex flex-col sm:flex-row justify-between items-center gap-2">
-        <p class="text-gray-500 text-xs">&copy; 2025 ImproveIT! of Atlanta. All rights reserved.</p>
-        <p class="text-gray-600 text-xs">Licensed &amp; Insured · Serving Atlanta, GA &amp; Surrounding Areas</p>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-  // Nav scroll shadow
-  (function(){
-    const nav = document.querySelector('nav');
-    if (!nav) return;
-    window.addEventListener('scroll', () => nav.classList.toggle('shadow-md', window.scrollY > 50));
-  })();
+<!-- SERVICE AREA MAP -->
+<section class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-10 text-center">
+      <div class="text-xs font-bold tracking-widest uppercase text-[#D4890A] mb-3">Where We Serve</div>
+      <h2 class="text-4xl md:text-5xl font-bold text-[#0D0D0D]">Serving Atlanta & Beyond</h2>
+      <p class="text-gray-500 mt-3 max-w-xl mx-auto">Proudly providing roofing services to homeowners across Atlanta and surrounding communities in Georgia.</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div class="rounded-2xl overflow-hidden shadow-xl h-[400px]">
+        <iframe title="ImproveIT! of Atlanta Location" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k&q=place_id:ChIJubt2BHgD9YgRPjZ2i1R_JY4" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div>
+        <div class="text-sm font-semibold uppercase tracking-widest text-[#D4890A] mb-4">Atlanta-Area Communities We Serve</div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <div class="flex items-center gap-2 bg-gray-50 rounded-lg px-4 py-3 border border-gray-100">
+            <i data-lucide="map-pin" class="w-4 h-4 text-[#D4890A] flex-shrink-0"></i>
+            <span class="text-sm font-semibold">Atlanta</span>
+          </div>
+          <div class="flex items-center gap-2 bg-gray-50 rounded-lg px-4 py-3 border border-gray-100">
+            <i data-lucide="map-pin" class="w-4 h-4 text-[#D4890A] flex-shrink-0"></i>
+            <span class="text-sm font-semibold">Buckhead</span>
+          </div>
+          <div class="flex items-center gap-2 bg-gray-50 rounded-lg px-4 py-3 border border-gray-100">
+            <i data-lucide="map-pin" class="w-4 h-4 text-[#D4890A] flex-shrink-0"></i>
+            <span class="text-sm font-semibold">Decatur</span>
+          </div>
+          <div class="flex items-center gap-2 bg-gray-50 rounded-lg px-4 py-3 border border-gray-100">
+            <i data-lucide="map-pin" class="w-4 h-4 text-[#D4890A] flex-shrink-0"></i>
+            <span class="text-sm font-semibold">Sandy Springs</span>
+          </div>
+          <div class="flex items-center gap-2 bg-gray-50 rounded-lg px-4 py-3 border border-gray-100">
+            <i data-lucide="map-pin" class="w-4 h-4 text-[#D4890A] flex-shrink-0"></i>
+            <span class="text-sm font-semibold">Marietta</span>
+          </div>
+          <div class="flex items-center gap-2 bg-gray-50 rounded-lg px-4 py-3 border border-gray-100">
+            <i data-lucide="map-pin" class="w-4 h-4 text-[#D4890A] flex-shrink-0"></i>
+            <span class="text-sm font-semibold">Smyrna</span>
+          </div>
+          <div class="flex items-center gap-2 bg-gray-50 rounded-lg px-4 py-3 border border-gray-100">
+            <i data-lucide="map-pin" class="w-4 h-4 text-[#D4890A] flex-shrink-0"></i>
+            <span class="text-sm font-semibold">Roswell</span>
+          </div>
+          <div class="flex items-center gap-2 bg-gray-50 rounded-lg px-4 py-3 border border-gray-100">
+            <i data-lucide="map-pin" class="w-4 h-4 text-[#D4890A] flex-shrink-0"></i>
+            <span class="text-sm font-semibold">Alpharetta</span>
+          </div>
+          <div class="flex items-center gap-2 bg-gray-50 rounded-lg px-4 py-3 border border-gray-100">
+            <i data-lucide="map-pin" class="w-4 h-4 text-[#D4890A] flex-shrink-0"></i>
+            <span class="text-sm font-semibold">Dunwoody</span>
+          </div>
+          <div class="flex items-center gap-2 bg-gray-50 rounded-lg px-4 py-3 border border-gray-100">
+            <i data-lucide="map-pin" class="w-4 h-4 text-[#D4890A] flex-shrink-0"></i>
+            <span class="text-sm font-semibold">Johns Creek</span>
+          </div>
+          <div class="flex items-center gap-2 bg-gray-50 rounded-lg px-4 py-3 border border-gray-100">
+            <i data-lucide="map-pin" class="w-4 h-4 text-[#D4890A] flex-shrink-0"></i>
+            <span class="text-sm font-semibold">Norcross</span>
+          </div>
+          <div class="flex items-center gap-2 bg-gray-50 rounded-lg px-4 py-3 border border-gray-100">
+            <i data-lucide="map-pin" class="w-4 h-4 text-[#D4890A] flex-shrink-0"></i>
+            <span class="text-sm font-semibold">Tucker</span>
+          </div>
+        </div>
+        <p class="text-gray-400 text-xs mt-5">Not sure if we serve your area? <a href="tel:6784985075" class="text-[#D4890A] font-bold hover:underline">Give us a call</a> — we're happy to help.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  // Hamburger
-  (function(){
-    const ham = document.getElementById('hamburger');
-    const menu = document.getElementById('mobile-menu');
-    if (ham && menu) ham.addEventListener('click', () => menu.classList.toggle('hidden'));
-    document.querySelectorAll('.mobile-nav-link').forEach(a => {
-      a.addEventListener('click', () => { if (menu) menu.classList.add('hidden'); });
-    });
-  })();
+<!-- FAQ -->
+<section id="faq" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-gray-50">
+  <div class="max-w-4xl mx-auto">
+    <div class="mb-10 text-center">
+      <div class="text-xs font-bold tracking-widest uppercase text-[#D4890A] mb-3">Got Questions?</div>
+      <h2 class="text-4xl md:text-5xl font-bold text-[#0D0D0D]">Frequently Asked Questions</h2>
+      <p class="text-gray-500 mt-3 max-w-xl mx-auto">Honest answers from your Atlanta roofing neighbors at ImproveIT!.</p>
+    </div>
+    <div class="space-y-4">
+      <details class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+        <summary class="flex items-center justify-between px-6 py-5 font-bold text-[#0D0D0D] hover:bg-gray-50 transition">
+          <span>How much does a roof replacement cost in Atlanta?</span>
+          <i data-lucide="chevron-right" class="w-5 h-5 text-[#D4890A] flex-shrink-0 transform transition-transform details-arrow"></i>
+        </summary>
+        <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">Roof replacement costs in Atlanta typically range from $7,000 to $20,000+, depending on your home's square footage, roof pitch, material choice, and the extent of any underlying damage. ImproveIT! of Atlanta provides free, no-obligation estimates so you know exactly what to expect before any work begins.</div>
+      </details>
+      <details class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+        <summary class="flex items-center justify-between px-6 py-5 font-bold text-[#0D0D0D] hover:bg-gray-50 transition">
+          <span>Do you serve my neighborhood in the Atlanta metro area?</span>
+          <i data-lucide="chevron-right" class="w-5 h-5 text-[#D4890A] flex-shrink-0"></i>
+        </summary>
+        <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">ImproveIT! of Atlanta proudly serves homeowners across the greater Atlanta area including Buckhead, Decatur, Sandy Springs, Marietta, Smyrna, Roswell, Alpharetta, Dunwoody, Johns Creek, Norcross, and Tucker. If you're unsure whether we cover your zip code, simply call us at (678) 498-5075 and we'll confirm immediately.</div>
+      </details>
+      <details class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+        <summary class="flex items-center justify-between px-6 py-5 font-bold text-[#0D0D0D] hover:bg-gray-50 transition">
+          <span>Will you help me with my insurance claim after storm damage?</span>
+          <i data-lucide="chevron-right" class="w-5 h-5 text-[#D4890A] flex-shrink-0"></i>
+        </summary>
+        <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">Absolutely. Atlanta's severe weather season can leave homeowners overwhelmed dealing with insurance companies. Our team has extensive experience working alongside insurance adjusters — we document the damage thoroughly, provide detailed estimates, and communicate directly with your insurer to streamline the claims process on your behalf.</div>
+      </details>
+      <details class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+        <summary class="flex items-center justify-between px-6 py-5 font-bold text-[#0D0D0D] hover:bg-gray-50 transition">
+          <span>How long does a roof replacement typically take?</span>
+          <i data-lucide="chevron-right" class="w-5 h-5 text-[#D4890A] flex-shrink-0"></i>
+        </summary>
+        <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">Most residential roof replacements in Atlanta are completed in one to two days, depending on the size and complexity of the roof. Our crews work efficiently and clean up thoroughly each day, minimizing disruption to your home and family. We'll give you a clear timeline before work begins.</div>
+      </details>
+      <details class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+        <summary class="flex items-center justify-between px-6 py-5 font-bold text-[#0D0D0D] hover:bg-gray-50 transition">
+          <span>Are you licensed and insured to work in Georgia?</span>
+          <i data-lucide="chevron-right" class="w-5 h-5 text-[#D4890A] flex-shrink-0"></i>
+        </summary>
+        <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">Yes. ImproveIT! of Atlanta is fully licensed in the state of Georgia and carries comprehensive liability insurance and workers' compensation coverage. We are happy to provide proof of insurance upon request so you can hire with complete peace of mind.</div>
+      </details>
+      <details class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+        <summary class="flex items-center justify-between px-6 py-5 font-bold text-[#0D0D0D] hover:bg-gray-50 transition">
+          <span>Do you offer any warranty on your roofing work?</span>
+          <i data-lucide="chevron-right" class="w-5 h-5 text-[#D4890A] flex-shrink-0"></i>
+        </summary>
+        <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">Yes — we stand behind our workmanship with a labor warranty in addition to the manufacturer's material warranty on shingles and roofing products. We want every Atlanta homeowner to feel confident that their investment is protected long after installation day.</div>
+      </details>
+      <details class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+        <summary class="flex items-center justify-between px-6 py-5 font-bold text-[#0D0D0D] hover:bg-gray-50 transition">
+          <span>What roofing materials work best for Atlanta's climate?</span>
+          <i data-lucide="chevron-right" class="w-5 h-5 text-[#D4890A] flex-shrink-0"></i>
+        </summary>
+        <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">Atlanta's climate — hot summers, high humidity, and occasional severe storms — calls for durable, weather-resistant materials. We recommend architectural asphalt shingles for budget-friendly durability, or metal roofing for superior longevity and energy efficiency. Our inspectors will walk you through the best options for your specific home and budget.</div>
+      </details>
+    </div>
+  </div>
+</section>
 
-  // TABS
-  (function(){
-    const buttons = Array.from(document.querySelectorAll('.tab-btn'));
-    const panels = Array.from(document.querySelectorAll('.tab-panel'));
-    if (!buttons.length || !panels.length) return;
-    function showByIndex(idx) {
-      panels.forEach(p => p.classList.add('hidden'));
-      buttons.forEach(b => { b.classList.remove('active-tab'); b.classList.add('inactive-tab'); });
-      if (panels[idx]) panels[idx].classList.remove('hidden');
-      if (buttons[idx]) { buttons[idx].classList.add('active-tab'); buttons[idx].classList.remove('inactive-tab'); }
-    }
-    function showById(id) { const i = panels.findIndex(p => p.id === id); if (i >= 0) showByIndex(i); }
-    buttons.forEach((btn, idx) => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const t = btn.getAttribute('data-target');
-        if (t) showById(t); else showByIndex(idx);
-      });
-    });
-    window.showTab = function(id){ showById(id); };
-    if (!panels.some(p => !p.classList.contains('hidden'))) showByIndex(0);
-  })();
+<!-- CONTACT -->
+<section id="contact" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16">
+  <div class="max-w-5xl mx-auto">
+    <div class="mb-10 text-center">
+      <div class="text-xs font-bold tracking-widest uppercase text-[#D4890A] mb-3">Ready to Start?</div>
+      <h2 class="text-4xl md:text-5xl font-bold text-[#0D0D0D]">Get in Touch With Your<br>Atlanta Roofing Neighbors</h2>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <!-- Map -->
+      <div class="rounded-2xl overflow-hidden shadow-xl h-[420px]">
+        <iframe title="ImproveIT! of Atlanta Map" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k&q=place_id:ChIJubt2BHgD9YgRPjZ2i1R_JY4" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <!-- Form -->
+      <div class="bg-white border-2 border-[#0D0D0D] p-8 rounded-2xl max-w-md w-full mx-auto">
+        <div class="text-xs font-bold tracking-widest uppercase text-[#0D0D0D] mb-1">GET STARTED</div>
+        <h3 class="text-3xl font-bold mt-2">Get a Free Estimate</h3>
+        <p class="text-gray-500 text-sm mt-1">We'll get back to you fast — usually same day.</p>
+        <div class="flex items-center gap-2 mt-3">
+          <div class="flex gap-0.5">
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#D4890A] fill-current"></i>
+          </div>
+          <span class="text-sm font-semibold text-[#0D0D0D]">4.8 out of 5</span>
+          <span class="text-xs text-gray-400">· 446 reviews</span>
+        </div>
+        <form class="mt-5 space-y-3" onsubmit="event.preventDefault();">
+          <input type="text" placeholder="Your Name" class="bg-gray-50 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#0D0D0D] focus:outline-none py-3 px-4 w-full text-sm">
+          <input type="tel" placeholder="Phone Number" class="bg-gray-50 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#0D0D0D] focus:outline-none py-3 px-4 w-full text-sm">
+          <input type="email" placeholder="Email Address" class="bg-gray-50 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#0D0D0D] focus:outline-none py-3 px-4 w-full text-sm">
+          <select class="bg-gray-50 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#0D0D0D] focus:outline-none py-3 px-4 w-full text-sm text-gray-600">
+            <option value="">Select a Service</option>
+            <option>Roof Replacement</option>
+            <option>New Roof Installation</option>
+            <option>Asphalt Shingle Roofing</option>
+            <option>Metal Roofing</option>
+          </select>
+          <textarea rows="3" placeholder="Tell us about your project..." class="bg-gray-50 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#0D0D0D] focus:outline-none py-3 px-4 w-full text-sm resize-none"></textarea>
+          <button type="submit" class="w-full bg-[#0D0D0D] text-white rounded-lg py-4 font-bold mt-2 hover:bg-[#D4890A] transition text-base">Send My Free Estimate Request</button>
+        </form>
+        <div class="flex items-center gap-2 mt-3">
+          <i data-lucide="shield-check" class="w-4 h-4 text-[#D4890A] flex-shrink-0"></i>
+          <span class="text-xs text-gray-500">Licensed & Insured · Atlanta Local</span>
+        </div>
+        <p class="text-xs text-gray-400 mt-2">By submitting you agree to be contacted regarding your request.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  // Counters
-  function animateCount(el, target, suffix) {
-    let start = 0;
-    const duration = 2000, steps = 60, inc = target / steps;
-    const t = setInterval(() => {
-      start += inc;
-      if (start >= target) { el.textContent = target + (suffix || ''); clearInterval(t); }
-      else el.textContent = Math.floor(start) + (suffix || '');
-    }, duration / steps);
+<!-- FOOTER -->
+<footer class="bg-[#0D0D0D] text-white">
+  <!-- Certifications Strip -->
+  <div class="py-10 border-b border-white/20">
+    <div class="flex flex-wrap justify-center gap-8 px-4">
+      <div class="flex items-center gap-2">
+        <i data-lucide="shield-check" class="w-5 h-5 text-[#D4890A]"></i>
+        <span class="uppercase tracking-wider text-xs font-semibold">Licensed</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i data-lucide="check-circle" class="w-5 h-5 text-[#D4890A]"></i>
+        <span class="uppercase tracking-wider text-xs font-semibold">Insured</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i data-lucide="award" class="w-5 h-5 text-[#D4890A]"></i>
+        <span class="uppercase tracking-wider text-xs font-semibold">4.8 Google Rating</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i data-lucide="home" class="w-5 h-5 text-[#D4890A]"></i>
+        <span class="uppercase tracking-wider text-xs font-semibold">Local & Family-Owned</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i data-lucide="heart" class="w-5 h-5 text-[#D4890A]"></i>
+        <span class="uppercase tracking-wider text-xs font-semibold">Community-First</span>
+      </div>
+    </div>
+  </div>
+  <!-- Proud Serving Banner -->
+  <div class="py-10 border-b border-white/20 text-center px-4">
+    <div class="uppercase tracking-widest text-xs font-bold" style="color:#D4890A;">PROUDLY SERVING</div>
+    <h3 class="text-3xl md:text-4xl font-bold mt-2">Atlanta & Surrounding Communities</h3>
+    <div class="flex flex-wrap justify-center gap-2 mt-6">
+      <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Atlanta</span>
+      <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Buckhead</span>
+      <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Decatur</span>
+      <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Sandy Springs</span>
+      <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Marietta</span>
+      <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Smyrna</span>
+      <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Roswell</span>
+      <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Alpharetta</span>
+      <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Dunwoody</span>
+      <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Johns Creek</span>
+      <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Norcross</span>
+      <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Tucker</span>
+    </div>
+  </div>
+  <!-- Main Grid -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-16 px-8 max-w-7xl mx-auto">
+    <!-- Col 1: Identity -->
+    <div class="col-span-2 md:col-span-1">
+      <div class="text-3xl font-bold" style="font-family:'Oswald',sans-serif;">ImproveIT! <span style="color:#D4890A;">Atlanta</span></div>
+      <p class="text-white/60 text-sm mt-2 leading-relaxed">Proudly serving Atlanta and surrounding communities.</p>
+      <div class="mt-6 space-y-3">
+        <div class="flex items-start gap-2 text-sm text-white/70">
+          <i data-lucide="map-pin" class="w-4 h-4 text-[#D4890A] flex-shrink-0 mt-0.5"></i>
+          <span>3525 Piedmont Rd NE Bldg. 7 Ste. 210, Atlanta, GA 30305</span>
+        </div>
+        <a href="tel:6784985075" class="flex items-center gap-2 text-sm text-white/70 hover:text-white transition">
+          <i data-lucide="phone" class="w-4 h-4 text-[#D4890A]"></i>
+          (678) 498-5075
+        </a>
+        <div class="flex items-start gap-2 text-sm text-white/70">
+          <i data-lucide="clock" class="w-4 h-4 text-[#D4890A] flex-shrink-0 mt-0.5"></i>
+          <div>
+            <div>Mon–Thu: 9:00 AM – 7:00 PM</div>
+            <div>Fri: 9:00 AM – 3:00 PM</div>
+            <div>Sat–Sun: Closed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Col 2: Services -->
+    <div>
+      <div class="uppercase tracking-wider text-sm font-bold pb-2 mb-4 border-b" style="color:#D4890A; border-color:rgba(212,137,10,0.3);">SERVICES</div>
+      <div class="space-y-0">
+        <a href="#services" class="text-white/70 hover:text-white transition text-sm block py-1">Roof Replacement</a>
+        <a href="#services" class="text-white/70 hover:text-white transition text-sm block py-1">New Roof Installation</a>
+        <a href="#services" class="text-white/70 hover:text-white transition text-sm block py-1">Asphalt Shingle Roofing</a>
+        <a href="#services" class="text-white/70 hover:text-white transition text-sm block py-1">Metal Roofing</a>
+        <a href="#services" class="text-white/70 hover:text-white transition text-sm block py-1">Leak Repair</a>
+        <a href="#services" class="text-white/70 hover:text-white transition text-sm block py-1">Storm Damage Restoration</a>
+        <a href="#services" class="text-white/70 hover:text-white transition text-sm block py-1">Gutter Repair</a>
+        <a href="#services" class="text-white/70 hover:text-white transition text-sm block py-1">Emergency Tarping</a>
+        <a href="#services" class="text-white/70 hover:text-white transition text-sm block py-1">Skylight Installation</a>
+        <a href="#services" class="text-white/70 hover:text-white transition text-sm block py-1">Ventilation Upgrades</a>
+        <a href="#services" class="text-white/70 hover:text-white transition text-sm block py-1">Roof Inspections</a>
+        <a href="#services" class="text-white/70 hover:text-white transition text-sm block py-1">Maintenance Plans</a>
+      </div>
+    </div>
+    <!-- Col 3: Company Nav -->
+    <div>
+      <div class="uppercase tracking-wider text-sm font-bold pb-2 mb-4 border-b" style="color:#D4890A; border-color:rgba(212,137,10,0.3);">COMPANY</div>
+      <div class="space-y-0">
+        <a href="#home" class="text-white/70 hover:text-white transition text-sm block py-1">Home</a>
+        <a href="#about" class="text-white/70 hover:text-white transition text-sm block py-1">About Us</a>
+        <a href="#services" class="text-white/70 hover:text-white transition text-sm block py-1">Services</a>
+        <a href="#gallery" class="text-white/70 hover:text-white transition text-sm block py-1">Project Gallery</a>
+        <a href="#reviews" class="text-white/70 hover:text-white transition text-sm block py-1">Reviews</a>
+        <a href="#faq" class="text-white/70 hover:text-white transition text-sm block py-1">FAQ</a>
+        <a href="#contact" class="text-white/70 hover:text-white transition text-sm block py-1">Contact</a>
+      </div>
+    </div>
+    <!-- Col 4: Resources -->
+    <div>
+      <div class="uppercase tracking-wider text-sm font-bold pb-2 mb-4 border-b" style="color:#D4890A; border-color:rgba(212,137,10,0.3);">RESOURCES</div>
+      <div class="space-y-0">
+        <a href="#home" class="text-white/70 hover:text-white transition text-sm block py-1">Home</a>
+        <a href="#reviews" class="text-white/70 hover:text-white transition text-sm block py-1">Customer Reviews</a>
+        <a href="#faq" class="text-white/70 hover:text-white transition text-sm block py-1">FAQ</a>
+        <a href="#contact" class="text-white/70 hover:text-white transition text-sm block py-1">Contact Us</a>
+        <a href="tel:6784985075" class="text-white/70 hover:text-white transition text-sm block py-1">Call (678) 498-5075</a>
+      </div>
+      <div class="mt-6 p-4 rounded-xl bg-white/5 border border-white/10">
+        <div class="text-xs text-white/50 uppercase tracking-wide mb-1">Atlanta Office</div>
+        <div class="text-sm font-semibold text-white">Licensed & Insured in GA</div>
+        <div class="flex gap-1 mt-2">
+          <i data-lucide="star" class="w-3 h-3 text-[#D4890A] fill-current"></i>
+          <i data-lucide="star" class="w-3 h-3 text-[#D4890A] fill-current"></i>
+          <i data-lucide="star" class="w-3 h-3 text-[#D4890A] fill-current"></i>
+          <i data-lucide="star" class="w-3 h-3 text-[#D4890A] fill-current"></i>
+          <i data-lucide="star" class="w-3 h-3 text-[#D4890A] fill-current"></i>
+          <span class="text-xs text-white/60 ml-1">4.8 Google</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bottom Bar -->
+  <div class="py-6 border-t border-white/20 px-8 flex flex-col sm:flex-row justify-between items-center gap-3 max-w-7xl mx-auto">
+    <span class="text-xs text-white/40">&copy; 2025 ImproveIT! of Atlanta. All rights reserved.</span>
+    <span class="text-xs text-white/40">Proud Atlanta neighbors</span>
+  </div>
+</footer>
+
+<script>
+// Nav scroll shadow
+(function(){
+  const nav = document.querySelector('nav');
+  if (!nav) return;
+  window.addEventListener('scroll', () => nav.classList.toggle('shadow-md', window.scrollY > 50));
+})();
+
+// Hamburger
+(function(){
+  const ham = document.getElementById('hamburger');
+  const menu = document.getElementById('mobile-menu');
+  if (ham && menu) ham.addEventListener('click', () => menu.classList.toggle('hidden'));
+  document.querySelectorAll('.mobile-nav-link').forEach(a => {
+    a.addEventListener('click', () => { if (menu) menu.classList.add('hidden'); });
+  });
+})();
+
+// TABS
+(function(){
+  const buttons = Array.from(document.querySelectorAll('.tab-btn'));
+  const panels = Array.from(document.querySelectorAll('.tab-panel'));
+  if (!buttons.length || !panels.length) return;
+  function showByIndex(idx) {
+    panels.forEach(p => p.classList.add('hidden'));
+    buttons.forEach(b => { b.classList.remove('active-tab'); b.classList.add('inactive-tab'); });
+    if (panels[idx]) panels[idx].classList.remove('hidden');
+    if (buttons[idx]) { buttons[idx].classList.add('active-tab'); buttons[idx].classList.remove('inactive-tab'); }
   }
-  const statObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const t = parseInt(e.target.dataset.count);
-        const s = e.target.dataset.suffix || '';
-        if (t) animateCount(e.target, t, s);
-        statObs.unobserve(e.target);
+  function showById(id) { const i = panels.findIndex(p => p.id === id); if (i >= 0) showByIndex(i); }
+  buttons.forEach((btn, idx) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const t = btn.getAttribute('data-target');
+      if (t) showById(t); else showByIndex(idx);
+    });
+  });
+  window.showTab = function(id){ showById(id); };
+  if (!panels.some(p => !p.classList.contains('hidden'))) showByIndex(0);
+})();
+
+// Counters
+function animateCount(el, target, suffix) {
+  let start = 0;
+  const duration = 2000, steps = 60, inc = target / steps;
+  const t = setInterval(() => {
+    start += inc;
+    if (start >= target) { el.textContent = target + (suffix || ''); clearInterval(t); }
+    else el.textContent = Math.floor(start) + (suffix || '');
+  }, duration / steps);
+}
+const statObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const t = parseInt(e.target.dataset.count);
+      const s = e.target.dataset.suffix || '';
+      if (t) animateCount(e.target, t, s);
+      statObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('[data-count]').forEach(el => statObs.observe(el));
+
+// Section reveal
+(function(){
+  const sections = document.querySelectorAll('.animate-section');
+  if (!sections.length) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('is-pending');
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.3 });
-  document.querySelectorAll('[data-count]').forEach(el => statObs.observe(el));
-
-  // Section reveal
-  (function(){
-    const sections = document.querySelectorAll('.animate-section');
-    if (!sections.length) return;
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.remove('is-pending');
-          entry.target.classList.add('is-visible');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-    sections.forEach(el => {
-      const r = el.getBoundingClientRect();
-      const inView = r.top < window.innerHeight && r.bottom > 0;
-      if (inView) el.classList.add('is-visible');
-      else { el.classList.add('is-pending'); obs.observe(el); }
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  sections.forEach(el => {
+    const r = el.getBoundingClientRect();
+    const inView = r.top < window.innerHeight && r.bottom > 0;
+    if (inView) el.classList.add('is-visible');
+    else { el.classList.add('is-pending'); obs.observe(el); }
+  });
+  setTimeout(() => {
+    document.querySelectorAll('.animate-section.is-pending').forEach(el => {
+      el.classList.remove('is-pending'); el.classList.add('is-visible');
     });
-    setTimeout(() => {
-      document.querySelectorAll('.animate-section.is-pending').forEach(el => {
-        el.classList.remove('is-pending'); el.classList.add('is-visible');
-      });
-    }, 2500);
-  })();
+  }, 2500);
+})();
 
-  // Hash-click reveal
-  (function(){
-    function revealTarget() {
-      const hash = window.location.hash;
-      if (!hash || hash.length < 2) return;
-      try {
-        const target = document.querySelector(hash);
-        if (target && target.classList.contains('animate-section')) {
-          target.classList.remove('is-pending');
-          target.classList.add('is-visible');
-        }
-      } catch(e) {}
-    }
-    window.addEventListener('hashchange', revealTarget);
-    setTimeout(revealTarget, 100);
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', () => {
-        const hash = a.getAttribute('href');
-        if (hash && hash.length > 1) {
-          try {
-            const target = document.querySelector(hash);
-            if (target && target.classList.contains('animate-section')) {
-              target.classList.remove('is-pending');
-              target.classList.add('is-visible');
-            }
-          } catch(e) {}
-        }
-      });
-    });
-  })();
-
-  // Live clock
-  function updateClock() {
-    const el = document.getElementById('live-clock');
-    if (el) el.textContent = 'Atlanta - ' + new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+// Hash-click reveal
+(function(){
+  function revealTarget() {
+    const hash = window.location.hash;
+    if (!hash || hash.length < 2) return;
+    try {
+      const target = document.querySelector(hash);
+      if (target && target.classList.contains('animate-section')) {
+        target.classList.remove('is-pending');
+        target.classList.add('is-visible');
+      }
+    } catch(e) {}
   }
-  updateClock();
-  setInterval(updateClock, 1000);
+  window.addEventListener('hashchange', revealTarget);
+  setTimeout(revealTarget, 100);
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', () => {
+      const hash = a.getAttribute('href');
+      if (hash && hash.length > 1) {
+        try {
+          const target = document.querySelector(hash);
+          if (target && target.classList.contains('animate-section')) {
+            target.classList.remove('is-pending');
+            target.classList.add('is-visible');
+          }
+        } catch(e) {}
+      }
+    });
+  });
+})();
 
-  // Lucide
-  (function(){
-    const render = () => { if (window.lucide) window.lucide.createIcons(); };
-    if (window.lucide) render();
-    else document.addEventListener('DOMContentLoaded', render);
-    setTimeout(render, 500);
-    setTimeout(render, 1500);
-  })();
-  </script>
+// Live clock
+function updateClock() {
+  const el = document.getElementById('live-clock');
+  if (el) el.textContent = 'Atlanta - ' + new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+}
+updateClock();
+setInterval(updateClock, 1000);
+
+// Lucide
+(function(){
+  const render = () => { if (window.lucide) window.lucide.createIcons(); };
+  if (window.lucide) render();
+  else document.addEventListener('DOMContentLoaded', render);
+  setTimeout(render, 500);
+  setTimeout(render, 1500);
+})();
+</script>
 </body>
 </html>

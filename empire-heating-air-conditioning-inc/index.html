@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empire Heating & Air Conditioning Inc | Decatur, GA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Roboto:wght@400;500&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html, body { overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Roboto', sans-serif; }
+    h1,h2,h3,h4,h5,h6,.heading { font-family: 'Rajdhani', sans-serif; }
+    .serif-display { font-family: 'Playfair Display', serif; }
+    .ticker-track { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { display: flex; animation: marquee 40s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    .tab-btn { cursor: pointer; transition: all 0.2s ease; }
+    .tab-btn.active-tab { background-color: #1A2744; color: white; }
+    .tab-btn.inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
+    .tab-panel { display: block; }
+    .tab-panel.hidden { display: none !important; }
+    .img-hover-wrap { overflow: hidden; }
+    .img-hover-wrap img { transition: transform 0.7s ease; }
+    .img-hover-wrap:hover img { transform: scale(1.05); }
+    .arrow-cta { border-bottom: 2px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s ease; }
+    .arrow-cta:hover { gap: 14px; }
+    .dotted-leader { flex: 1; border-bottom: 1px dotted currentColor; margin: 0 1rem; opacity: 0.3; align-self: end; padding-bottom: 0.5rem; }
+    section { scroll-margin-top: 96px; }
+    .animate-section { opacity: 1; transform: none; transition: opacity 0.6s ease, transform 0.6s ease; }
+    .animate-section.is-pending { opacity: 0; transform: translateY(24px); }
+    .animate-section.is-visible { opacity: 1; transform: none; }
+    .animate-section:target,
+    .animate-section.is-pending:target { opacity: 1 !important; transform: none !important; }
+    .award-badge { filter: grayscale(100%); transition: filter 0.3s ease; }
+    .award-badge:hover { filter: grayscale(0%); }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-20">
+      <a href="#home" class="text-2xl font-bold tracking-tight" style="font-family:'Rajdhani',sans-serif; color:#1A2744;">
+        EMPIRE <span style="color:#00B4D8;">H&A</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#home" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition">Home</a>
+        <a href="#about" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition">About</a>
+        <a href="#services" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition">Services</a>
+        <a href="#gallery" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition">Gallery</a>
+        <a href="#reviews" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition">Reviews</a>
+        <a href="#faq" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition">FAQ</a>
+        <a href="#contact" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition">Contact</a>
+        <a href="tel:4042940900" class="px-5 py-2 rounded-full text-sm font-bold text-white transition" style="background:#00B4D8;">(404) 294-0900</a>
+      </div>
+      <button id="hamburger" class="md:hidden p-2 rounded-lg" style="color:#1A2744;">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+      <a href="#home" class="mobile-nav-link block py-3 px-6 border-b border-gray-50 text-sm font-medium text-gray-700 hover:text-gray-900">Home</a>
+      <a href="#about" class="mobile-nav-link block py-3 px-6 border-b border-gray-50 text-sm font-medium text-gray-700 hover:text-gray-900">About</a>
+      <a href="#services" class="mobile-nav-link block py-3 px-6 border-b border-gray-50 text-sm font-medium text-gray-700 hover:text-gray-900">Services</a>
+      <a href="#gallery" class="mobile-nav-link block py-3 px-6 border-b border-gray-50 text-sm font-medium text-gray-700 hover:text-gray-900">Gallery</a>
+      <a href="#reviews" class="mobile-nav-link block py-3 px-6 border-b border-gray-50 text-sm font-medium text-gray-700 hover:text-gray-900">Reviews</a>
+      <a href="#faq" class="mobile-nav-link block py-3 px-6 border-b border-gray-50 text-sm font-medium text-gray-700 hover:text-gray-900">FAQ</a>
+      <a href="#contact" class="mobile-nav-link block py-3 px-6 border-b border-gray-50 text-sm font-medium text-gray-700 hover:text-gray-900">Contact</a>
+      <div class="px-6 py-4">
+        <a href="tel:4042940900" class="block text-center py-3 rounded-full text-sm font-bold text-white" style="background:#00B4D8;">(404) 294-0900</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="relative h-screen min-h-[600px] flex items-end">
+    <div class="absolute inset-0">
+      <img
+        src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEE4y6iY36Z4v-L6cEFZOTs7kXD17Te-rWBm5JFZLKOSPh0V_A_G1E365GnZ514vkd3s5O1019ceMsKtQcm1TLsmuKK2ZbcS9uUjZirNzYJ2YfErTmdyMc8zjPkwLgUM40LVoyHsq3_eJEwl4ux3hpx9ZYreYaPNPmSqGHlHu4EfhwOz3CkTl9_p4GhMxfODuqoGkdfE-ti9UGGZGt8V-GpxQZwEnP_Y9xBTsmTBOKlJxAjjAZNCXueyGACaNmqrXyWKhyuLVE_iDQujuZAIit9r7LKGb5E6uUARokCEBis_vg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+        alt="Empire Heating & Air Conditioning"
+        class="w-full h-full object-cover"
+        onerror="this.src='https://picsum.photos/seed/hvac-1/1600/900'"
+      >
+      <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(10,18,40,0.92) 0%, rgba(10,18,40,0.5) 50%, transparent 100%);"></div>
+    </div>
+    <div class="relative z-10 px-6 md:px-16 pb-20 md:pb-28 max-w-4xl">
+      <p class="text-xs tracking-widest uppercase font-semibold mb-4" style="color:#00B4D8;">Decatur, Georgia · HVAC Specialists</p>
+      <h1 class="text-6xl md:text-7xl font-bold text-white leading-none tracking-tight mb-4">Empire Heating<br>&amp; Air</h1>
+      <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-lg">Comfort crafted with precision — trusted by Decatur homeowners.</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#contact" class="px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wider text-black transition hover:opacity-90" style="background:#00B4D8;">Get a Free Estimate</a>
+        <a href="tel:4042940900" class="px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wider text-white border border-white/40 hover:border-white transition">(404) 294-0900</a>
+      </div>
+      <div class="mt-6">
+        <span id="live-clock" class="text-xs text-gray-400 tracking-wider"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="animate-section py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm border border-gray-100">
+          <div class="flex justify-center mb-3">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:#e0f7fc;">
+              <i data-lucide="star" class="w-5 h-5" style="color:#00B4D8;"></i>
+            </div>
+          </div>
+          <div class="text-3xl font-bold" style="color:#1A2744; font-family:'Rajdhani',sans-serif;"><span data-count="49" data-suffix="/5">0</span></div>
+          <div class="text-xs text-gray-500 mt-1 font-medium uppercase tracking-wider">Google Rating</div>
+        </div>
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm border border-gray-100">
+          <div class="flex justify-center mb-3">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:#e0f7fc;">
+              <i data-lucide="check-circle" class="w-5 h-5" style="color:#00B4D8;"></i>
+            </div>
+          </div>
+          <div class="text-3xl font-bold" style="color:#1A2744; font-family:'Rajdhani',sans-serif;"><span data-count="1152" data-suffix="">0</span></div>
+          <div class="text-xs text-gray-500 mt-1 font-medium uppercase tracking-wider">Verified Reviews</div>
+        </div>
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm border border-gray-100">
+          <div class="flex justify-center mb-3">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:#e0f7fc;">
+              <i data-lucide="shield-check" class="w-5 h-5" style="color:#00B4D8;"></i>
+            </div>
+          </div>
+          <div class="text-3xl font-bold" style="color:#1A2744; font-family:'Rajdhani',sans-serif;">100%</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium uppercase tracking-wider">Licensed &amp; Insured</div>
+        </div>
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm border border-gray-100">
+          <div class="flex justify-center mb-3">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:#e0f7fc;">
+              <i data-lucide="map-pin" class="w-5 h-5" style="color:#00B4D8;"></i>
+            </div>
+          </div>
+          <div class="text-3xl font-bold" style="color:#1A2744; font-family:'Rajdhani',sans-serif;"><span data-count="10" data-suffix="+">0</span></div>
+          <div class="text-xs text-gray-500 mt-1 font-medium uppercase tracking-wider">Service Areas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="animate-section py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-xs tracking-widest uppercase font-semibold mb-3" style="color:#00B4D8;">About Empire</p>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6" style="color:#1A2744;">Decatur's Trusted HVAC Experts</h2>
+          <p class="text-gray-600 leading-relaxed mb-4 max-w-2xl">Empire Heating &amp; Air Conditioning Inc has been serving homeowners and businesses across Decatur, GA and the greater Atlanta metro with professional, reliable HVAC solutions — from precision repairs and seasonal tune-ups to full system installations. Our team of certified technicians brings skill, honesty, and care to every job, no matter the size.</p>
+          <p class="text-gray-600 leading-relaxed mb-8 max-w-2xl">We're committed to transparent pricing, same-day response when available, and work that stands the test of Georgia's demanding climate. When comfort matters, Empire delivers.</p>
+          <div class="flex flex-wrap gap-6">
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-5 h-5" style="color:#00B4D8;"></i>
+              <span class="text-sm font-medium text-gray-700">Same-Day Service Available</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-5 h-5" style="color:#00B4D8;"></i>
+              <span class="text-sm font-medium text-gray-700">Licensed &amp; Insured</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-5 h-5" style="color:#00B4D8;"></i>
+              <span class="text-sm font-medium text-gray-700">Transparent Pricing</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-5 h-5" style="color:#00B4D8;"></i>
+              <span class="text-sm font-medium text-gray-700">Family-Owned Operation</span>
+            </div>
+          </div>
+        </div>
+        <div class="img-hover-wrap rounded-2xl overflow-hidden shadow-lg h-80 md:h-96">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFcNxAPPVj2m3Wy06Bio2TwJSEjDtp8Nyv8ev1fDNjQAHeR1Y6PUxFMhbJh1xP2795HKaJZZxQKRMHw5E9oPG0AxYZoj7J2jdmpjnVY5TfhseA18WMrpaJzw3YMx6h4c_xxUahRiddG2ODUn3J38XS4sHCfvfrkZmC4x4rUXqGFYfgMnBScRNiELkZs9ugmbs_E56LXkTolxCxljpI9bhlx9ZU6QDgVpsRaI-3HKeW4IwOYOW7nSrxLNaHAiyMRj8qpxTm0d7HoN07MHEWY4F5js-AqmgYWwGQoNHCDow5WXg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Empire HVAC Team"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/hvac-2/800/600'"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="animate-section py-24 px-4 md:px-8 lg:px-16 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <p class="text-xs tracking-widest uppercase font-semibold mb-3" style="color:#00B4D8;">Our Work</p>
+      <h2 class="text-4xl md:text-5xl font-bold mb-12" style="color:#1A2744;">Project Gallery</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Featured large -->
+        <div class="md:col-span-2 img-hover-wrap rounded-xl overflow-hidden" style="height:500px;">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEH2qvOnrPyUH0nSZ6QPUCuInI7q4vznz88FSPa-lIypsMhlNuZ3va2e99s4xI0dT-PjeMtgnrbbRrV3_HlzL2b6X3eHyvqfodX9MvkVdM5XBk3lS4l3NImoPYEPEDuPaUbQYnMfnNg_a3UnHdTiN5YVfTyPHDMtt28z8IlgTdsOrWMqXRws39pMdab8J7mA9X5rsDjenGxy49vR6mNz-XPeqloO45jmSDb6WQMFLa5-DfpblHangBmgNgBVZDT67YVKyr0OcXxSRZL4Axxk7wlcIK-XS9zYGGwLxKUJg8eu4Q&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="HVAC Installation"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/hvac-3/800/600'"
+          >
+        </div>
+        <div class="img-hover-wrap rounded-xl overflow-hidden" style="height:500px;">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFdSQpbHPBQDC4cV9g6WqCwPiycE0HrxilldhXBA_dSnM_u7PdrsIdFZ56YEpnO0DLAkf21g8C7pd8zWjjbxbKCQvOs5qGYtfA6G6cA7F_TyilzzWhDqvxs1MdSDPYefLjdjj9DPTjbOrt4X4cwfH2Pno2LX0AZsz_S0_lGKZnj2Sm4eoXRnyl5ds_49bFItJErbC1HRyuMxTBum8x5R8PRaLDmIBhWmbV1pezIEdvjF_l4SPqeTbpmB-1t4IlonBdcyBtPV9x-1hTyZCp08N8gcGnBPjVmpS7Gno-2QVJPgQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="HVAC Equipment"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/hvac-4/800/600'"
+          >
+        </div>
+        <!-- Row 2 -->
+        <div class="img-hover-wrap rounded-xl overflow-hidden h-64">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFX2bm3qAMdDrNLwEczfDIB8Kqn7N3L-E_Xmib3s_TdFNbaR4MsDkukqiL5OiUoNyLf_5Qf9tbNifyN8CKLzOFB2_ZoGNlKRU54dkRs-xHGNPkpLzfbqZ1ezI9Sxzby8QzjB4-TNHG5Jc45pDQSpEIcQbCzT1gkhkIRC6_YaaPdepkfuitbeEJF_XyYT5xmL-9xM-F5bhQZJ5heJU23nKjrf62pgyqHlfgxWs6nnBa-OJRrqLIYMeR2eDr810D-uynlQ9j3pbRQBlCpFGnQpunLJXzh5bjc7N2yHBktOiEqdEBB5asgbMBSTdeR9AlVXXZ2gd9LyLnfO-yyINwdPJ_Y1jGksl92TTzXaqALeruVJAsx34x_eclqIztWN3j-KZ9gJ68Bdnpn-MbKWG5aFErrT3epifZgtuBq3m8QjJjkoZmT&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Air Conditioning Unit"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/hvac-5/800/600'"
+          >
+        </div>
+        <div class="img-hover-wrap rounded-xl overflow-hidden h-64">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGoApk11wh3O0IZW0YQHX93sA1NmhqehhCVxQSBbfqxC6eHzeWSdlpiGb6FKyJMDxE6Fy-RMuqgp59fRSzWjXB726xrAPO3unsed2s19zSUn-h-zk_iSzmPSCY1rdgyB94RhKma4QlbIc9zmiNABTmhgORwfK1NtGJ6IrHMXao8PI3Qi9jo9kFpD3_ZYmNIGNoIaaOSVL4rehX881Q_YGC08buCRRRyvk1vTtFSaII8AJ-UWmpnmEam9bsw2g1YP0T9_ZToveuTFsRyn5UlZFTLoqee0AyAdI1lkRGqQa1lN4E-yxt99D9A5ZVocVThjwz7KwdxLymbOra3vmHY2t05rXasNOaTDfnQarHepyfAU_nLGBpDXxeC4ypjvg5HPJBBDKjf4bTLJfFdfwcG_uoHQNRZMhxcipMarsay75RjCcY&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Heating System"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/hvac-6/800/600'"
+          >
+        </div>
+        <div class="img-hover-wrap rounded-xl overflow-hidden h-64">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHtwkZ2ZodONRLG0JDUxRzJDzN9HAciXzOmbAbBzy7i6_y24dEjeFxrhH4Ufajaligs-PtrF6DcuW9aA9Oxf6FvpwiBw5OGnsAkp7LiWbcbEURrfreo8oahVv0tbrX4ZEa3W_mvn1J5JJNoXTXpMJ3QRpSjbMFaeG_grCmUO6vN3lF3a43cHq1oyifT8FDo2qI62xbDd2dGdIDc_eYDxN89mdZvI2_YQLoV4Fw0hudq-746zx4z8EbMRbRPrdTjLRsAHZOdQNhrWxZSwcIdYczdmrNGbrKrKkNA3Pq_tWSbIg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="HVAC Maintenance"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/hvac-7/800/600'"
+          >
+        </div>
+        <!-- Row 3 -->
+        <div class="md:col-span-2 img-hover-wrap rounded-xl overflow-hidden h-64">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGteyWz3ZdPoO9IMe6yS2Q7J_Ia_yHkBCq0xeY8ps1vBIGPrdvR4SspZCZ5qIBlEQJUVsSF3zpOWsYWxAY9dKUlovPD9fJXDswUQWs-B2r-XJe_qyWiq7DUtawxNN3uyHExY5rueszrkSYAr6GSyaZL-Fq1qsj6QwYWCKh0sDzgzFbFylbWRQouQszJ7FX71W_pxEP-ddDv_wX1YtChz81aXg9HLAlRaIq64MduwbncNH5sF5pykMMVj6LoXo0f6TTzRsldmhMuziimbrw__VuZv6RabJaFAfUuqUPNyLa0IyPVUa-IMItUpmRcOvoUq7ol8qxRc1nSIvsSqlQ0Jz5ZPM8RcwcXhwmARY5SsPhAMOucgjbipkgvKJQ-Wa1Bmf4tCUAAKEZa-sdHQOj3W_wbo04Bgke-4rBBSV149ITeRQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Professional HVAC Work"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/hvac-8/800/600'"
+          >
+        </div>
+        <div class="img-hover-wrap rounded-xl overflow-hidden h-64">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEH9_XgSDQp1wtJE_F71jSIS_m-WiZWwjRAFilXP_OXGr1yz9zRBgpwLqEDlWcV25jI7yKd34MidZVOyvVvW-VN_kAhwyhqmEkmhVypw1eP44tOQroOAxa082J_aqHIOqv9F00aoVZ9kjCm7bBfLtjIFZ-hVgFNV2J0E0orRn7DE04HlgZv-P3cOacqWMJWHpO1wZVOX4CDmbsz3WAoKihmSwwm3Ca2AugNJphZIhfKWYyaHHSUFP5d15wY6Mm81iNgRtyfPPzCPBKVNLZN0wTIDSrI6NkQ7OpJx2qsSjIyweQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="HVAC System Install"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/hvac-9/800/600'"
+          >
+        </div>
+        <div class="md:col-span-3 img-hover-wrap rounded-xl overflow-hidden h-64">
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEG8Ma9UVyGsg4a26Z6z1iTyhOFQVyfd39lQd9o_a_oNkAlZsHYcHxCvYgOAdWdELr8FcTIEg0j5vdFN4tJ4iVvmg7WfCocHRxJ3nN84Bi29US9R6tM_tLPDvvL19R7erbjzFsjRTRzMpVed3KiWWxhnBeZYFDiI62zDAZ2O8oXsri8sgO2fm0UOgzUsd6FbQPCM8sVBBQcRBUM_5-LP96n9voSjMZwrB8NY6pyqBvrdCQZyquZMly7FR49YkiGewrhfuziLvbu-1U90l68ORVbHmC1YL3MehSe9IYKCcz0QHixxaFgbuXlrmK94wknlCe_ZjIEo0pUfuO0Yb8BmeJT-jL_ZWNWTVzdKotsqL-xI1TflKQV58sJppmUEFzgrPXCE-khyTYDpjqoGuURR4omNTUlhxxF1QER25QTUcpeE_g&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+            alt="Empire HVAC Decatur GA"
+            class="w-full h-full object-cover object-center"
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/hvac-10/1200/400'"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-8">
+        <p class="text-xs tracking-widest uppercase font-semibold mb-3" style="color:#00B4D8;">What We Do</p>
+        <h2 class="text-4xl md:text-5xl font-bold" style="color:#1A2744;">Our Services</h2>
+      </div>
+      <div class="flex flex-wrap gap-2 md:flex-nowrap mb-8 tabs-container">
+        <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-1">Heating &amp; Cooling</button>
+        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-2">Installation</button>
+        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-3">Maintenance</button>
+      </div>
+
+      <div id="tab-panel-1" class="tab-panel">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:#e0f7fc;">
+              <i data-lucide="snowflake" class="w-5 h-5" style="color:#00B4D8;"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2" style="color:#1A2744;">AC Repair</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">Fast, accurate diagnosis and repair of all AC makes and models. We restore your cooling system quickly so you're not left sweating through a Georgia summer.</p>
+            <a href="tel:4042940900" class="arrow-cta text-sm font-semibold" style="color:#00B4D8;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:#e0f7fc;">
+              <i data-lucide="flame" class="w-5 h-5" style="color:#00B4D8;"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2" style="color:#1A2744;">Heating Repair</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">Expert repairs for gas, electric, and heat pump heating systems. Our technicians identify the root cause and fix it right the first time.</p>
+            <a href="tel:4042940900" class="arrow-cta text-sm font-semibold" style="color:#00B4D8;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:#e0f7fc;">
+              <i data-lucide="thermometer" class="w-5 h-5" style="color:#00B4D8;"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2" style="color:#1A2744;">Furnace Service</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">Comprehensive furnace inspections and repairs to keep your home warm and safe all winter. We service all major brands and system types.</p>
+            <a href="tel:4042940900" class="arrow-cta text-sm font-semibold" style="color:#00B4D8;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:#e0f7fc;">
+              <i data-lucide="wind" class="w-5 h-5" style="color:#00B4D8;"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2" style="color:#1A2744;">Heat Pump Service</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">Specialized heat pump diagnosis, repair, and servicing for year-round comfort. We handle both the cooling and heating functions of your system.</p>
+            <a href="tel:4042940900" class="arrow-cta text-sm font-semibold" style="color:#00B4D8;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-panel-2" class="tab-panel hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:#e0f7fc;">
+              <i data-lucide="snowflake" class="w-5 h-5" style="color:#00B4D8;"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2" style="color:#1A2744;">AC Installation</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">Professional installation of central air conditioning systems sized right for your home. We help you choose the best unit for efficiency and budget.</p>
+            <a href="tel:4042940900" class="arrow-cta text-sm font-semibold" style="color:#00B4D8;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:#e0f7fc;">
+              <i data-lucide="flame" class="w-5 h-5" style="color:#00B4D8;"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2" style="color:#1A2744;">Furnace Installation</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">New furnace installation by certified technicians, from equipment selection through final commissioning. We ensure safe, code-compliant setup every time.</p>
+            <a href="tel:4042940900" class="arrow-cta text-sm font-semibold" style="color:#00B4D8;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:#e0f7fc;">
+              <i data-lucide="wind" class="w-5 h-5" style="color:#00B4D8;"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2" style="color:#1A2744;">Ductwork Installation</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">Custom duct design and installation for new builds and retrofits. Properly installed ductwork maximizes efficiency and improves air quality throughout your home.</p>
+            <a href="tel:4042940900" class="arrow-cta text-sm font-semibold" style="color:#00B4D8;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:#e0f7fc;">
+              <i data-lucide="settings" class="w-5 h-5" style="color:#00B4D8;"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2" style="color:#1A2744;">Thermostat Upgrades</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">Upgrade to a smart or programmable thermostat for better comfort control and energy savings. We handle installation and setup for all major brands.</p>
+            <a href="tel:4042940900" class="arrow-cta text-sm font-semibold" style="color:#00B4D8;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-panel-3" class="tab-panel hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:#e0f7fc;">
+              <i data-lucide="shield-check" class="w-5 h-5" style="color:#00B4D8;"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2" style="color:#1A2744;">Preventive Maintenance</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">Scheduled maintenance plans that keep your HVAC system running at peak performance year-round. Prevent costly breakdowns before they happen.</p>
+            <a href="tel:4042940900" class="arrow-cta text-sm font-semibold" style="color:#00B4D8;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:#e0f7fc;">
+              <i data-lucide="settings" class="w-5 h-5" style="color:#00B4D8;"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2" style="color:#1A2744;">Tune-Ups</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">Seasonal HVAC tune-ups to optimize efficiency before peak heating and cooling seasons hit. A small investment that pays off in lower energy bills.</p>
+            <a href="tel:4042940900" class="arrow-cta text-sm font-semibold" style="color:#00B4D8;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:#e0f7fc;">
+              <i data-lucide="fan" class="w-5 h-5" style="color:#00B4D8;"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2" style="color:#1A2744;">Filter Replacement</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">Regular air filter replacement to maintain healthy indoor air quality and protect your equipment. We recommend the right filter type for your specific system.</p>
+            <a href="tel:4042940900" class="arrow-cta text-sm font-semibold" style="color:#00B4D8;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:#e0f7fc;">
+              <i data-lucide="wind" class="w-5 h-5" style="color:#00B4D8;"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2" style="color:#1A2744;">Duct Cleaning</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">Professional duct cleaning removes dust, allergens, and debris from your ductwork. Cleaner ducts mean better air quality and a more efficient system overall.</p>
+            <a href="tel:4042940900" class="arrow-cta text-sm font-semibold" style="color:#00B4D8;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <p class="text-xs tracking-widest uppercase font-semibold mb-3" style="color:#00B4D8;">What Clients Say</p>
+      <h2 class="text-4xl md:text-5xl font-bold mb-12" style="color:#1A2744;">Customer Reviews</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Review 1 -->
+        <div class="bg-gray-50 rounded-xl p-6 flex flex-col">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm" style="background:#1A2744;">DF</div>
+            <div>
+              <div class="font-semibold text-sm" style="color:#1A2744;">Dianne Fellows</div>
+              <div class="text-xs text-gray-400">2 months ago</div>
+            </div>
+            <span class="ml-auto text-xs font-semibold px-2 py-1 rounded-full" style="background:#e0f7fc; color:#00B4D8;">via Google</span>
+          </div>
+          <div class="flex gap-1 mb-3">
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed flex-1">"We are a local real estate company, Realty 2000 One, Inc. in Cape Canaveral. Our Property Management department has recommended the services of Empire Air, as well as others. We have been very pleased with the service, Brenden, the owner and his brother, Gio have extended to our owners. They are always readily available to discuss with our owners, their needs and to give the owners a choice of a replacement unit with a comparative a/c unit and the cost of each. Empire Air not only installs worn a/c units, but also does maintenance and troubleshooting. They have staff of professional a/c techs as well. It has been a pleasure doing business with Empire Air."</p>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-gray-50 rounded-xl p-6 flex flex-col">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm" style="background:#1A2744;">CN</div>
+            <div>
+              <div class="font-semibold text-sm" style="color:#1A2744;">Case Nichols</div>
+              <div class="text-xs text-gray-400">3 months ago</div>
+            </div>
+            <span class="ml-auto text-xs font-semibold px-2 py-1 rounded-full" style="background:#e0f7fc; color:#00B4D8;">via Google</span>
+          </div>
+          <div class="flex gap-1 mb-3">
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed flex-1">"Empire came out the same afternoon I called them and completed our repair within a couple days. When the technician arrived, he told me that he'd come up with a more affordable fix than previously proposed. Everything worked great and this would be the first company I call in the future for any HVAC needs. Highly recommend!"</p>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-gray-50 rounded-xl p-6 flex flex-col">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm" style="background:#1A2744;">JA</div>
+            <div>
+              <div class="font-semibold text-sm" style="color:#1A2744;">Jane Armistead</div>
+              <div class="text-xs text-gray-400">5 months ago</div>
+            </div>
+            <span class="ml-auto text-xs font-semibold px-2 py-1 rounded-full" style="background:#e0f7fc; color:#00B4D8;">via Google</span>
+          </div>
+          <div class="flex gap-1 mb-3">
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed flex-1">"The technician, Kobe (sp?), was on time &amp; since we had not met before he took time to listen to what we wanted from the service call. Our system is on the older side &amp; he gave us good input about our concerns with the unit. He was knowledgeable &amp; reassuring which we appreciate very much."</p>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="bg-gray-50 rounded-xl p-6 flex flex-col">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm" style="background:#6b7280;">NS</div>
+            <div>
+              <div class="font-semibold text-sm" style="color:#1A2744;">Nicoleta Serban</div>
+              <div class="text-xs text-gray-400">4 months ago</div>
+            </div>
+            <span class="ml-auto text-xs font-semibold px-2 py-1 rounded-full" style="background:#e0f7fc; color:#00B4D8;">via Google</span>
+          </div>
+          <div class="flex gap-1 mb-3">
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#d1d5db; fill:#d1d5db;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#d1d5db; fill:#d1d5db;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#d1d5db; fill:#d1d5db;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#d1d5db; fill:#d1d5db;"></i>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed flex-1">"I needed a repair to my heating/AC unit. I waited for a few days to get an appointment. Empire sent someone who spent quite a bit of time figuring out the repair needed. The repair quote was around $3000 with another wait for two weeks. I called a different provider who came the same day to evaluate and repair for $460. This is upsetting but unfortunately this has happened to another friend of mine so it is not just my situation. I wanted to share this for others to know that this is not the right business to hire."</p>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="bg-gray-50 rounded-xl p-6 flex flex-col">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm" style="background:#1A2744;">MA</div>
+            <div>
+              <div class="font-semibold text-sm" style="color:#1A2744;">Marc Akers</div>
+              <div class="text-xs text-gray-400">3 months ago</div>
+            </div>
+            <span class="ml-auto text-xs font-semibold px-2 py-1 rounded-full" style="background:#e0f7fc; color:#00B4D8;">via Google</span>
+          </div>
+          <div class="flex gap-1 mb-3">
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed flex-1">"Empire heating and air is extremely service oriented and has been there for us every time we needed them. The quality of their technicians is extremely high. They are knowledgeable, courteous, and thorough."</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-xs tracking-widest uppercase font-semibold mb-3" style="color:#00B4D8;">Common Questions</p>
+      <h2 class="text-4xl md:text-5xl font-bold mb-12" style="color:#1A2744;">FAQ</h2>
+
+      <details class="border-b border-gray-200 py-5 group">
+        <summary class="flex items-center justify-between font-semibold text-base" style="color:#1A2744;">
+          How often should I have my HVAC system serviced?
+          <i data-lucide="chevron-right" class="w-5 h-5 transition-transform group-open:rotate-90 flex-shrink-0 ml-4" style="color:#00B4D8;"></i>
+        </summary>
+        <p class="text-gray-600 text-sm leading-relaxed mt-3">Most HVAC professionals recommend scheduling maintenance at least twice a year — once in spring for your cooling system and once in fall for your heating system. Regular tune-ups extend equipment life, improve efficiency, and help catch small issues before they become expensive repairs.</p>
+      </details>
+
+      <details class="border-b border-gray-200 py-5 group">
+        <summary class="flex items-center justify-between font-semibold text-base" style="color:#1A2744;">
+          How do I know if I need to repair or replace my AC unit?
+          <i data-lucide="chevron-right" class="w-5 h-5 transition-transform group-open:rotate-90 flex-shrink-0 ml-4" style="color:#00B4D8;"></i>
+        </summary>
+        <p class="text-gray-600 text-sm leading-relaxed mt-3">As a general rule, if your unit is over 10–15 years old and the repair cost exceeds half the price of a new system, replacement is usually the smarter investment. Our technicians will always give you an honest assessment with pricing for both options so you can make the best decision for your budget.</p>
+      </details>
+
+      <details class="border-b border-gray-200 py-5 group">
+        <summary class="flex items-center justify-between font-semibold text-base" style="color:#1A2744;">
+          What areas does Empire Heating &amp; Air serve?
+          <i data-lucide="chevron-right" class="w-5 h-5 transition-transform group-open:rotate-90 flex-shrink-0 ml-4" style="color:#00B4D8;"></i>
+        </summary>
+        <p class="text-gray-600 text-sm leading-relaxed mt-3">We are based in Decatur, GA and serve the greater Atlanta metro area including Tucker, Clarkston, Stone Mountain, Avondale Estates, Lithonia, Chamblee, Doraville, Dunwoody, and surrounding communities. Call us at (404) 294-0900 to confirm service in your area.</p>
+      </details>
+
+      <details class="border-b border-gray-200 py-5 group">
+        <summary class="flex items-center justify-between font-semibold text-base" style="color:#1A2744;">
+          Do you offer same-day HVAC service?
+          <i data-lucide="chevron-right" class="w-5 h-5 transition-transform group-open:rotate-90 flex-shrink-0 ml-4" style="color:#00B4D8;"></i>
+        </summary>
+        <p class="text-gray-600 text-sm leading-relaxed mt-3">We do our best to accommodate same-day appointments when our schedule allows. Many customers have been able to get service the same afternoon they called. Contact us early in the day for the best chance of same-day availability at (404) 294-0900.</p>
+      </details>
+
+      <details class="border-b border-gray-200 py-5 group">
+        <summary class="flex items-center justify-between font-semibold text-base" style="color:#1A2744;">
+          What should I do if my AC stops working on a hot day?
+          <i data-lucide="chevron-right" class="w-5 h-5 transition-transform group-open:rotate-90 flex-shrink-0 ml-4" style="color:#00B4D8;"></i>
+        </summary>
+        <p class="text-gray-600 text-sm leading-relaxed mt-3">First, check that your thermostat is set correctly and your circuit breaker hasn't tripped. Replace your air filter if it's dirty, and ensure all vents are open. If the issue persists, call Empire at (404) 294-0900 and we'll get a technician out to diagnose and fix the problem as quickly as possible.</p>
+      </details>
+
+      <details class="border-b border-gray-200 py-5 group">
+        <summary class="flex items-center justify-between font-semibold text-base" style="color:#1A2744;">
+          Are your technicians licensed and insured?
+          <i data-lucide="chevron-right" class="w-5 h-5 transition-transform group-open:rotate-90 flex-shrink-0 ml-4" style="color:#00B4D8;"></i>
+        </summary>
+        <p class="text-gray-600 text-sm leading-relaxed mt-3">Yes. All Empire Heating &amp; Air Conditioning technicians are fully licensed and the company carries comprehensive insurance. You can trust that every job is performed to code, with your safety and satisfaction as the top priority.</p>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-xs tracking-widest uppercase font-semibold mb-3" style="color:#00B4D8;">Ready to Get Comfortable?</p>
+      <h2 class="text-4xl md:text-5xl font-bold mb-12" style="color:#1A2744;">Contact Us</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        <!-- Map -->
+        <div class="rounded-xl overflow-hidden min-h-[450px]">
+          <iframe
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k&q=place_id:ChIJKYVCyIIH9YgRioPGQA86KpI"
+            width="100%"
+            height="100%"
+            style="border:0; min-height:450px; display:block;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Empire Heating & Air Conditioning location">
+          </iframe>
+        </div>
+        <!-- Form Card -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full">
+          <p class="text-xs tracking-widest uppercase font-semibold" style="color:#00B4D8;">GET STARTED</p>
+          <h3 class="text-3xl font-bold mt-2" style="color:#1A2744;">Get a Free Estimate</h3>
+          <p class="text-gray-500 text-sm mt-1">Tell us about your HVAC needs and we'll be in touch shortly.</p>
+          <div class="flex items-center gap-1 mt-3">
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#f59e0b; fill:#f59e0b;"></i>
+            <span class="text-sm text-gray-600 ml-1">4.9 out of 5 · 1152 reviews</span>
+          </div>
+          <form onsubmit="return false;">
+            <input type="text" placeholder="Your Name" class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-4 text-sm outline-none" style="--tw-ring-color:#00B4D8;">
+            <input type="tel" placeholder="Phone Number" class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-3 text-sm outline-none" style="--tw-ring-color:#00B4D8;">
+            <input type="email" placeholder="Email Address" class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-3 text-sm outline-none" style="--tw-ring-color:#00B4D8;">
+            <select class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-3 text-sm outline-none text-gray-600" style="--tw-ring-color:#00B4D8;">
+              <option value="" disabled selected>Select a Service</option>
+              <option>AC Repair</option>
+              <option>Heating Repair</option>
+              <option>Furnace Service</option>
+              <option>Heat Pump Service</option>
+            </select>
+            <textarea rows="3" placeholder="Tell us about your project..." class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-3 text-sm outline-none resize-none" style="--tw-ring-color:#00B4D8;"></textarea>
+            <button type="submit" class="w-full py-4 rounded-lg font-bold mt-6 text-black uppercase tracking-wide text-sm transition hover:opacity-90" style="background:#00B4D8;">Request My Free Estimate</button>
+            <p class="text-xs text-gray-400 mt-3">By submitting you agree to be contacted regarding your request.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#0f0f0f;" class="text-white relative overflow-hidden">
+    <!-- Ghosted background image -->
+    <img
+      src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGteyWz3ZdPoO9IMe6yS2Q7J_Ia_yHkBCq0xeY8ps1vBIGPrdvR4SspZCZ5qIBlEQJUVsSF3zpOWsYWxAY9dKUlovPD9fJXDswUQWs-B2r-XJe_qyWiq7DUtawxNN3uyHExY5rueszrkSYAr6GSyaZL-Fq1qsj6QwYWCKh0sDzgzFbFylbWRQouQszJ7FX71W_pxEP-ddDv_wX1YtChz81aXg9HLAlRaIq64MduwbncNH5sF5pykMMVj6LoXo0f6TTzRsldmhMuziimbrw__VuZv6RabJaFAfUuqUPNyLa0IyPVUa-IMItUpmRcOvoUq7ol8qxRc1nSIvsSqlQ0Jz5ZPM8RcwcXhwmARY5SsPhAMOucgjbipkgvKJQ-Wa1Bmf4tCUAAKEZa-sdHQOj3W_wbo04Bgke-4rBBSV149ITeRQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover opacity-10"
+      aria-hidden="true"
+      loading="lazy"
+      onerror="this.src='https://picsum.photos/seed/hvac-footer/1600/900'"
+    >
+    <div class="relative z-10">
+      <!-- Top CTA Block -->
+      <div class="py-20 text-center px-4">
+        <p class="text-xs tracking-widest uppercase font-semibold" style="color:#00B4D8;">START YOUR PROJECT</p>
+        <h3 class="text-4xl md:text-5xl font-bold max-w-3xl mx-auto mt-4">Let's build something together.</h3>
+        <a href="#contact" class="inline-block rounded-full px-10 py-4 font-bold uppercase tracking-wider mt-8 text-black transition hover:opacity-90 text-sm" style="background:#00B4D8;">Get a Free Estimate</a>
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-white/10"></div>
+
+      <!-- Main Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 py-16 px-8">
+
+        <!-- Col 1: Business Identity -->
+        <div class="col-span-2">
+          <div class="text-3xl font-bold" style="font-family:'Rajdhani',sans-serif;">EMPIRE <span style="color:#00B4D8;">H&amp;A</span></div>
+          <p class="text-gray-400 max-w-sm mt-2 text-sm leading-relaxed">Comfort crafted with precision — trusted by Decatur homeowners for all their HVAC needs.</p>
+          <div class="mt-6 space-y-2">
+            <div class="flex items-start gap-2 text-gray-400 text-sm">
+              <i data-lucide="map-pin" class="w-4 h-4 mt-0.5 flex-shrink-0" style="color:#00B4D8;"></i>
+              <span>783 Dekalb Industrial Way, Decatur, GA 30033</span>
+            </div>
+            <div class="flex items-center gap-2 text-gray-400 text-sm">
+              <i data-lucide="phone" class="w-4 h-4 flex-shrink-0" style="color:#00B4D8;"></i>
+              <a href="tel:4042940900" class="hover:text-white transition">(404) 294-0900</a>
+            </div>
+            <div class="flex items-start gap-2 text-gray-400 text-sm">
+              <i data-lucide="clock" class="w-4 h-4 mt-0.5 flex-shrink-0" style="color:#00B4D8;"></i>
+              <span>Mon–Fri 8AM–5PM · Sat 9AM–12PM · Sun Closed</span>
+            </div>
+            <div class="flex items-center gap-2 text-sm mt-2">
+              <i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0" style="color:#00B4D8;"></i>
+              <span class="text-gray-400">Licensed &amp; Insured · 4.9 Google Rating</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Work -->
+        <div>
+          <p class="uppercase text-xs tracking-widest font-semibold mb-4" style="color:#00B4D8;">WORK</p>
+          <ul class="space-y-2">
+            <li><a href="#gallery" class="text-gray-400 hover:text-white transition text-sm">Gallery</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Services</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">AC Repair</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Heating Repair</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Furnace Service</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Heat Pump Service</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">AC Installation</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Furnace Installation</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Ductwork Installation</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Thermostat Upgrades</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Preventive Maintenance</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Tune-Ups</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Filter Replacement</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Duct Cleaning</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Company Nav -->
+        <div>
+          <p class="uppercase text-xs tracking-widest font-semibold mb-4" style="color:#00B4D8;">COMPANY</p>
+          <ul class="space-y-2">
+            <li><a href="#home" class="text-gray-400 hover:text-white transition text-sm">Home</a></li>
+            <li><a href="#about" class="text-gray-400 hover:text-white transition text-sm">About</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Services</a></li>
+            <li><a href="#gallery" class="text-gray-400 hover:text-white transition text-sm">Gallery</a></li>
+            <li><a href="#reviews" class="text-gray-400 hover:text-white transition text-sm">Reviews</a></li>
+            <li><a href="#faq" class="text-gray-400 hover:text-white transition text-sm">FAQ</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-white transition text-sm">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Service Areas + Visit -->
+        <div>
+          <p class="uppercase text-xs tracking-widest font-semibold mb-4" style="color:#00B4D8;">SERVICE AREAS</p>
+          <ul class="space-y-2 mb-8">
+            <li><span class="text-gray-400 text-sm">Decatur, GA</span></li>
+            <li><span class="text-gray-400 text-sm">Tucker, GA</span></li>
+            <li><span class="text-gray-400 text-sm">Stone Mountain, GA</span></li>
+            <li><span class="text-gray-400 text-sm">Clarkston, GA</span></li>
+            <li><span class="text-gray-400 text-sm">Avondale Estates, GA</span></li>
+            <li><span class="text-gray-400 text-sm">Lithonia, GA</span></li>
+            <li><span class="text-gray-400 text-sm">Chamblee, GA</span></li>
+            <li><span class="text-gray-400 text-sm">Doraville, GA</span></li>
+            <li><span class="text-gray-400 text-sm">Dunwoody, GA</span></li>
+            <li><span class="text-gray-400 text-sm">Conyers, GA</span></li>
+          </ul>
+          <p class="uppercase text-xs tracking-widest font-semibold mb-4" style="color:#00B4D8;">VISIT</p>
+          <ul class="space-y-2">
+            <li>
+              <a href="tel:4042940900" class="text-gray-400 hover:text-white transition text-sm flex items-center gap-2">
+                <i data-lucide="phone" class="w-3 h-3" style="color:#00B4D8;"></i>
+                (404) 294-0900
+              </a>
+            </li>
+            <li class="text-gray-400 text-sm flex items-start gap-2">
+              <i data-lucide="map-pin" class="w-3 h-3 mt-1 flex-shrink-0" style="color:#00B4D8;"></i>
+              783 Dekalb Industrial Way,<br>Decatur, GA 30033
+            </li>
+            <li class="text-gray-400 text-sm flex items-start gap-2">
+              <i data-lucide="clock" class="w-3 h-3 mt-1 flex-shrink-0" style="color:#00B4D8;"></i>
+              Mon–Fri 8AM–5PM<br>Sat 9AM–12PM
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-white/10 py-6 px-8 flex flex-col md:flex-row justify-between items-center gap-2">
+        <span class="text-gray-500 text-xs">&copy; 2025 Empire Heating &amp; Air Conditioning Inc. All rights reserved. Decatur, GA.</span>
+        <span class="text-gray-600 text-xs">Licensed &amp; Insured · Serving Greater Atlanta Metro</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  // Nav scroll shadow
+  (function(){
+    const nav = document.querySelector('nav');
+    if (!nav) return;
+    window.addEventListener('scroll', () => nav.classList.toggle('shadow-md', window.scrollY > 50));
+  })();
+
+  // Hamburger
+  (function(){
+    const ham = document.getElementById('hamburger');
+    const menu = document.getElementById('mobile-menu');
+    if (ham && menu) ham.addEventListener('click', () => menu.classList.toggle('hidden'));
+    document.querySelectorAll('.mobile-nav-link').forEach(a => {
+      a.addEventListener('click', () => { if (menu) menu.classList.add('hidden'); });
+    });
+  })();
+
+  // TABS
+  (function(){
+    const buttons = Array.from(document.querySelectorAll('.tab-btn'));
+    const panels = Array.from(document.querySelectorAll('.tab-panel'));
+    if (!buttons.length || !panels.length) return;
+    function showByIndex(idx) {
+      panels.forEach(p => p.classList.add('hidden'));
+      buttons.forEach(b => { b.classList.remove('active-tab'); b.classList.add('inactive-tab'); });
+      if (panels[idx]) panels[idx].classList.remove('hidden');
+      if (buttons[idx]) { buttons[idx].classList.add('active-tab'); buttons[idx].classList.remove('inactive-tab'); }
+    }
+    function showById(id) { const i = panels.findIndex(p => p.id === id); if (i >= 0) showByIndex(i); }
+    buttons.forEach((btn, idx) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const t = btn.getAttribute('data-target');
+        if (t) showById(t); else showByIndex(idx);
+      });
+    });
+    window.showTab = function(id){ showById(id); };
+    if (!panels.some(p => !p.classList.contains('hidden'))) showByIndex(0);
+  })();
+
+  // Counters
+  function animateCount(el, target, suffix) {
+    let start = 0;
+    const duration = 2000, steps = 60, inc = target / steps;
+    const t = setInterval(() => {
+      start += inc;
+      if (start >= target) { el.textContent = target + (suffix || ''); clearInterval(t); }
+      else el.textContent = Math.floor(start) + (suffix || '');
+    }, duration / steps);
+  }
+  const statObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const t = parseInt(e.target.dataset.count);
+        const s = e.target.dataset.suffix || '';
+        if (t) animateCount(e.target, t, s);
+        statObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('[data-count]').forEach(el => statObs.observe(el));
+
+  // Section reveal
+  (function(){
+    const sections = document.querySelectorAll('.animate-section');
+    if (!sections.length) return;
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('is-pending');
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    sections.forEach(el => {
+      const r = el.getBoundingClientRect();
+      const inView = r.top < window.innerHeight && r.bottom > 0;
+      if (inView) el.classList.add('is-visible');
+      else { el.classList.add('is-pending'); obs.observe(el); }
+    });
+    setTimeout(() => {
+      document.querySelectorAll('.animate-section.is-pending').forEach(el => {
+        el.classList.remove('is-pending'); el.classList.add('is-visible');
+      });
+    }, 2500);
+  })();
+
+  // Hash-click reveal
+  (function(){
+    function revealTarget() {
+      const hash = window.location.hash;
+      if (!hash || hash.length < 2) return;
+      try {
+        const target = document.querySelector(hash);
+        if (target && target.classList.contains('animate-section')) {
+          target.classList.remove('is-pending');
+          target.classList.add('is-visible');
+        }
+      } catch(e) {}
+    }
+    window.addEventListener('hashchange', revealTarget);
+    setTimeout(revealTarget, 100);
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', () => {
+        const hash = a.getAttribute('href');
+        if (hash && hash.length > 1) {
+          try {
+            const target = document.querySelector(hash);
+            if (target && target.classList.contains('animate-section')) {
+              target.classList.remove('is-pending');
+              target.classList.add('is-visible');
+            }
+          } catch(e) {}
+        }
+      });
+    });
+  })();
+
+  // Live clock
+  function updateClock() {
+    const el = document.getElementById('live-clock');
+    if (el) el.textContent = 'Decatur - ' + new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+
+  // Lucide
+  (function(){
+    const render = () => { if (window.lucide) window.lucide.createIcons(); };
+    if (window.lucide) render();
+    else document.addEventListener('DOMContentLoaded', render);
+    setTimeout(render, 500);
+    setTimeout(render, 1500);
+  })();
+  </script>
+</body>
+</html>

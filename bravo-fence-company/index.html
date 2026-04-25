@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bravo Fence Company | Marietta, GA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Manrope:wght@400;500&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html, body { overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Manrope', sans-serif; }
+    h1,h2,h3,h4,h5,h6,.heading { font-family: 'Inter', sans-serif; }
+    .serif-display { font-family: 'Playfair Display', serif; }
+    .ticker-track { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { display: flex; animation: marquee 40s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    .tab-btn { cursor: pointer; transition: all 0.2s ease; }
+    .tab-btn.active-tab { background-color: #5D4037; color: white; }
+    .tab-btn.inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
+    .tab-panel { display: block; }
+    .tab-panel.hidden { display: none !important; }
+    .img-hover-wrap { overflow: hidden; }
+    .img-hover-wrap img { transition: transform 0.7s ease; }
+    .img-hover-wrap:hover img { transform: scale(1.05); }
+    .arrow-cta { border-bottom: 2px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s ease; }
+    .arrow-cta:hover { gap: 14px; }
+    .dotted-leader { flex: 1; border-bottom: 1px dotted currentColor; margin: 0 1rem; opacity: 0.3; align-self: end; padding-bottom: 0.5rem; }
+    section { scroll-margin-top: 96px; }
+    .animate-section { opacity: 1; transform: none; transition: opacity 0.6s ease, transform 0.6s ease; }
+    .animate-section.is-pending { opacity: 0; transform: translateY(24px); }
+    .animate-section.is-visible { opacity: 1; transform: none; }
+    .animate-section:target, .animate-section.is-pending:target { opacity: 1 !important; transform: none !important; }
+    .award-badge { filter: grayscale(100%); transition: filter 0.3s ease; }
+    .award-badge:hover { filter: grayscale(0%); }
+    .hero-overlay { background: linear-gradient(to top, rgba(15,10,5,0.85) 0%, rgba(15,10,5,0.45) 50%, rgba(15,10,5,0.2) 100%); }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #A1887F; transition: width 0.3s ease; }
+    .nav-link:hover::after { width: 100%; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-20">
+    <a href="#home" class="flex items-center gap-2">
+      <span class="text-xl font-extrabold tracking-tight text-gray-900" style="font-family:'Inter',sans-serif;">BRAVO <span style="color:#8D6E63;">FENCE</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#home" class="nav-link text-sm font-semibold text-gray-700 hover:text-gray-900 transition-colors">Home</a>
+      <a href="#about" class="nav-link text-sm font-semibold text-gray-700 hover:text-gray-900 transition-colors">About</a>
+      <a href="#services" class="nav-link text-sm font-semibold text-gray-700 hover:text-gray-900 transition-colors">Services</a>
+      <a href="#gallery" class="nav-link text-sm font-semibold text-gray-700 hover:text-gray-900 transition-colors">Gallery</a>
+      <a href="#reviews" class="nav-link text-sm font-semibold text-gray-700 hover:text-gray-900 transition-colors">Reviews</a>
+      <a href="#faq" class="nav-link text-sm font-semibold text-gray-700 hover:text-gray-900 transition-colors">FAQ</a>
+      <a href="#contact" class="nav-link text-sm font-semibold text-gray-700 hover:text-gray-900 transition-colors">Contact</a>
+      <a href="tel:7709669970" class="ml-4 px-5 py-2.5 rounded-full text-white text-sm font-bold transition-all hover:opacity-90" style="background:#5D4037;">(770) 966-9970</a>
+    </div>
+    <button id="hamburger" class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100">
+      <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-3">
+    <a href="#home" class="mobile-nav-link text-sm font-semibold text-gray-700 py-2 border-b border-gray-50">Home</a>
+    <a href="#about" class="mobile-nav-link text-sm font-semibold text-gray-700 py-2 border-b border-gray-50">About</a>
+    <a href="#services" class="mobile-nav-link text-sm font-semibold text-gray-700 py-2 border-b border-gray-50">Services</a>
+    <a href="#gallery" class="mobile-nav-link text-sm font-semibold text-gray-700 py-2 border-b border-gray-50">Gallery</a>
+    <a href="#reviews" class="mobile-nav-link text-sm font-semibold text-gray-700 py-2 border-b border-gray-50">Reviews</a>
+    <a href="#faq" class="mobile-nav-link text-sm font-semibold text-gray-700 py-2 border-b border-gray-50">FAQ</a>
+    <a href="#contact" class="mobile-nav-link text-sm font-semibold text-gray-700 py-2 border-b border-gray-50">Contact</a>
+    <a href="tel:7709669970" class="mt-2 text-center px-5 py-3 rounded-full text-white text-sm font-bold" style="background:#5D4037;">(770) 966-9970</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="relative w-full h-screen min-h-[600px] flex items-end">
+  <div class="absolute inset-0 img-hover-wrap">
+    <img
+      src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHqoKNFnaybv_lLYEyVD6cbBM-nKQhmNx2pFqnoSS1IqaeoDpXXcnhO3ed_OvP0Sp5iZQpY-085w-Z6uJpBXn4qysK6aFMo6ojnzEy2mudZaEbBHc0Nwpzk6DZ2D_ic6Y_KAN6AqYA3bnq7JU8oGNNbcOMSgl0jNTUS490sNXiNnjzW0JlmCyrAZ7J3yP61kLnSbDGLvYEuK775gh52Il_ml5m73qYPEfKsj7nua7E6llLb6T_G-l9c4zGTTZOpEORccuuUoL-VS8Kj3GS7yxqHdV31N4b60yQvUrdAGwr5FIhGo0H-w8PpwXHy06aiZp2mXMVo8pAk9VLnM7-Lg3NbubRAqWVMAd6jLANUONErXgscefC-ZzsCq2LZ2-5td19oEsU0gnKEs0pdUfqeFlMA9mJOZMb8fApUTt_pkU3N1-myN9xrd4ru1RATiq5Q&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+      alt="Bravo Fence Company"
+      class="w-full h-full object-cover"
+      loading="lazy"
+      onerror="this.src='https://picsum.photos/seed/fence-1/1600/900'"
+    />
+  </div>
+  <div class="hero-overlay absolute inset-0"></div>
+  <div class="relative z-10 px-6 md:px-16 lg:px-24 pb-20 md:pb-28 max-w-4xl">
+    <span class="uppercase tracking-[0.2em] text-xs font-semibold mb-4 block" style="color:#A1887F;">Marietta, Georgia · Fencing Experts</span>
+    <h1 class="text-6xl md:text-7xl font-extrabold text-white leading-none mb-6" style="letter-spacing:-0.02em;">
+      Built to Last.<br />
+      <span style="color:#A1887F;">Crafted to Impress.</span>
+    </h1>
+    <p class="text-white/80 text-lg md:text-xl max-w-xl mb-8 font-medium">From wood privacy fences to custom commercial enclosures — Bravo Fence delivers quality workmanship backed by thousands of satisfied neighbors across Metro Atlanta.</p>
+    <div class="flex flex-wrap gap-4">
+      <a href="#contact" class="px-7 py-4 rounded-full text-white font-bold text-sm transition-all hover:opacity-90 shadow-lg" style="background:#5D4037;">Get a Free Estimate</a>
+      <a href="tel:7709669970" class="px-7 py-4 rounded-full text-white font-bold text-sm border border-white/40 hover:bg-white/10 transition-all">(770) 966-9970</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="animate-section py-16 px-4 md:px-8 lg:px-16 bg-white">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="bg-gray-50 rounded-xl p-6 flex flex-col items-center text-center gap-3">
+      <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background:#FBE9E7;">
+        <i data-lucide="star" class="w-6 h-6" style="color:#5D4037;"></i>
+      </div>
+      <div class="text-4xl font-extrabold text-gray-900" data-count="2212" data-suffix="">0</div>
+      <div class="text-sm text-gray-500 font-medium">5-Star Reviews</div>
+    </div>
+    <div class="bg-gray-50 rounded-xl p-6 flex flex-col items-center text-center gap-3">
+      <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background:#FBE9E7;">
+        <i data-lucide="fence" class="w-6 h-6" style="color:#5D4037;"></i>
+      </div>
+      <div class="text-4xl font-extrabold text-gray-900" data-count="4800" data-suffix="+">0</div>
+      <div class="text-sm text-gray-500 font-medium">Projects Completed</div>
+    </div>
+    <div class="bg-gray-50 rounded-xl p-6 flex flex-col items-center text-center gap-3">
+      <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background:#FBE9E7;">
+        <i data-lucide="map-pin" class="w-6 h-6" style="color:#5D4037;"></i>
+      </div>
+      <div class="text-4xl font-extrabold text-gray-900" data-count="30" data-suffix="+">0</div>
+      <div class="text-sm text-gray-500 font-medium">Cities Served</div>
+    </div>
+    <div class="bg-gray-50 rounded-xl p-6 flex flex-col items-center text-center gap-3">
+      <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background:#FBE9E7;">
+        <i data-lucide="shield-check" class="w-6 h-6" style="color:#5D4037;"></i>
+      </div>
+      <div class="text-4xl font-extrabold text-gray-900" style="font-family:'Inter',sans-serif;">4.8</div>
+      <div class="text-sm text-gray-500 font-medium">Average Rating</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="animate-section py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-white border-t border-gray-100">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <span class="uppercase tracking-[0.2em] text-xs font-semibold mb-4 block" style="color:#8D6E63;">About Bravo Fence</span>
+      <h2 class="text-4xl font-extrabold text-gray-900 mb-6 leading-tight">Marietta's Most Trusted Fence Installer</h2>
+      <p class="text-gray-600 text-base leading-relaxed mb-4 max-w-2xl">Bravo Fence Company has built its reputation across Marietta and Metro Atlanta by delivering precisely installed fences with an unwavering commitment to quality materials and honest, transparent pricing. Every project — from a backyard privacy fence to a large commercial enclosure — is handled with the same level of care and skill.</p>
+      <p class="text-gray-600 text-base leading-relaxed max-w-2xl">We believe a fence is more than a boundary; it's an investment in your property's security, privacy, and curb appeal. That's why our team works closely with each client from first quote to final post to ensure the finished product exceeds expectations every single time.</p>
+      <div class="mt-8 flex flex-wrap gap-8">
+        <div>
+          <div class="text-3xl font-extrabold text-gray-900" style="font-family:'Inter',sans-serif;">4.8★</div>
+          <div class="text-sm text-gray-500 mt-1">Google Rating</div>
+        </div>
+        <div>
+          <div class="text-3xl font-extrabold text-gray-900" style="font-family:'Inter',sans-serif;">2,212</div>
+          <div class="text-sm text-gray-500 mt-1">Verified Reviews</div>
+        </div>
+        <div>
+          <div class="text-3xl font-extrabold text-gray-900" style="font-family:'Inter',sans-serif;">Mon–Fri</div>
+          <div class="text-sm text-gray-500 mt-1">8 AM – 10 PM</div>
+        </div>
+      </div>
+    </div>
+    <div class="img-hover-wrap rounded-2xl overflow-hidden shadow-xl h-[420px]">
+      <img
+        src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEEEzcUSOn_g0UoOZU_iASvAnnqrMfthFnScoteX_z1x6hc62Df-_y7PFuKVPhAIVL1BKvjZBF4Hj0Wzug_cdCJH0uGrpJB4YaEsMMDOlBopMHhzxdYJZyzubZeuWRtbGZw67z_GXv_0rNGgJV8dDRwKYs46j26JMa29kQwjLFmbuOEgr49zbBv1uml0HnDAr7w56dVxTSvQF74CsUx40VJX4Av8bqRs-7Qqg7TRMR2lCQy0PFNsVpRLWP9SSrZeow3i3e3yp8P4cMtn_h3BtHaqWfyjagv4atphyw33wLhZmtrqSgBahZQq5aHvuws8pOH5ABMo-vOKO5YoAE3OJA27aec-niANAP75C6f8hopHs4a9ktH25m-NkQ8EhviqlaIjJ9T62Ou8KITqkzcYlnYnlau_PmZAn01R6WyFDo294rDpLJ7ydeSzUDleck2a&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+        alt="Bravo Fence Quality Work"
+        class="w-full h-full object-cover"
+        loading="lazy"
+        onerror="this.src='https://picsum.photos/seed/fence-2/800/600'"
+      />
+    </div>
+  </div>
+  <!-- Differentiators -->
+  <div class="max-w-7xl mx-auto mt-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="flex items-start gap-4">
+      <div class="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center mt-1" style="background:#FBE9E7;">
+        <i data-lucide="check-circle" class="w-5 h-5" style="color:#5D4037;"></i>
+      </div>
+      <div>
+        <div class="font-bold text-gray-900 text-sm">Transparent Quoting</div>
+        <div class="text-gray-500 text-xs mt-1">Detailed, itemized estimates so you know exactly what you're paying for — no surprises on install day.</div>
+      </div>
+    </div>
+    <div class="flex items-start gap-4">
+      <div class="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center mt-1" style="background:#FBE9E7;">
+        <i data-lucide="hard-hat" class="w-5 h-5" style="color:#5D4037;"></i>
+      </div>
+      <div>
+        <div class="font-bold text-gray-900 text-sm">Experienced Crews</div>
+        <div class="text-gray-500 text-xs mt-1">Every installation is led by seasoned professionals who take pride in precision, cleanliness, and craftsmanship.</div>
+      </div>
+    </div>
+    <div class="flex items-start gap-4">
+      <div class="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center mt-1" style="background:#FBE9E7;">
+        <i data-lucide="shield" class="w-5 h-5" style="color:#5D4037;"></i>
+      </div>
+      <div>
+        <div class="font-bold text-gray-900 text-sm">Quality Materials Only</div>
+        <div class="text-gray-500 text-xs mt-1">We source only high-grade wood, vinyl, and metal products built to withstand Georgia's climate for years to come.</div>
+      </div>
+    </div>
+    <div class="flex items-start gap-4">
+      <div class="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center mt-1" style="background:#FBE9E7;">
+        <i data-lucide="award" class="w-5 h-5" style="color:#5D4037;"></i>
+      </div>
+      <div>
+        <div class="font-bold text-gray-900 text-sm">Post-Install Support</div>
+        <div class="text-gray-500 text-xs mt-1">We stand behind every fence we build. If something's not right, we make it right — fast and with no hassle.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-8">
+      <span class="uppercase tracking-[0.2em] text-xs font-semibold mb-3 block" style="color:#8D6E63;">What We Do</span>
+      <h2 class="text-4xl font-extrabold text-gray-900">Our Fencing Services</h2>
+    </div>
+    <div class="flex flex-wrap gap-2 md:flex-nowrap mb-8 tabs-container">
+      <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-1">Fence Installation</button>
+      <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-2">Repair</button>
+      <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-3">Custom Fencing</button>
+    </div>
+
+    <div id="tab-panel-1" class="tab-panel">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background:#FBE9E7;">
+            <i data-lucide="tree-pine" class="w-6 h-6" style="color:#5D4037;"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Wood Fence Installation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Classic wood privacy and picket fences installed with precision-set posts for lasting stability. Choose from a variety of styles including shadowbox, board-on-board, and split-rail.</p>
+          <a href="tel:7709669970" class="arrow-cta text-sm font-semibold" style="color:#5D4037;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background:#FBE9E7;">
+            <i data-lucide="square" class="w-6 h-6" style="color:#5D4037;"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Vinyl Fence Installation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Low-maintenance vinyl fencing that holds its color and shape through Georgia's heat and humidity. Perfect for homeowners seeking a clean, long-lasting look without annual upkeep.</p>
+          <a href="tel:7709669970" class="arrow-cta text-sm font-semibold" style="color:#5D4037;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background:#FBE9E7;">
+            <i data-lucide="fence" class="w-6 h-6" style="color:#5D4037;"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Chain Link Installation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Durable chain link fencing ideal for securing large areas, pet containment, or commercial properties. Installed with galvanized or vinyl-coated wire for maximum weather resistance.</p>
+          <a href="tel:7709669970" class="arrow-cta text-sm font-semibold" style="color:#5D4037;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background:#FBE9E7;">
+            <i data-lucide="shield" class="w-6 h-6" style="color:#5D4037;"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Aluminum Fencing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Elegant aluminum fencing that combines the timeless look of wrought iron with rust-free, lightweight durability. Great for pool enclosures, front yards, and property boundaries.</p>
+          <a href="tel:7709669970" class="arrow-cta text-sm font-semibold" style="color:#5D4037;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-panel-2" class="tab-panel hidden">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background:#FBE9E7;">
+            <i data-lucide="hammer" class="w-6 h-6" style="color:#5D4037;"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Fence Repair</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Fast, reliable repair service for damaged wood, vinyl, or chain link fencing. We assess the full scope of damage and restore your fence to like-new condition quickly and affordably.</p>
+          <a href="tel:7709669970" class="arrow-cta text-sm font-semibold" style="color:#5D4037;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background:#FBE9E7;">
+            <i data-lucide="ruler" class="w-6 h-6" style="color:#5D4037;"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Post Replacement</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Rotted, leaning, or broken fence posts are replaced with properly set, concrete-anchored new posts. Structural integrity is restored without requiring a full fence replacement.</p>
+          <a href="tel:7709669970" class="arrow-cta text-sm font-semibold" style="color:#5D4037;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background:#FBE9E7;">
+            <i data-lucide="shield-check" class="w-6 h-6" style="color:#5D4037;"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Storm Damage Repair</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">We respond quickly after storms to repair downed panels, broken rails, and uprooted posts. Our team minimizes disruption and restores your fence's security without delay.</p>
+          <a href="tel:7709669970" class="arrow-cta text-sm font-semibold" style="color:#5D4037;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background:#FBE9E7;">
+            <i data-lucide="scissors" class="w-6 h-6" style="color:#5D4037;"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Gate Repair</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Sagging, sticking, or misaligned gates are adjusted and reinforced so they swing smoothly and latch securely. We service all gate types including walk gates and driveway entries.</p>
+          <a href="tel:7709669970" class="arrow-cta text-sm font-semibold" style="color:#5D4037;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-panel-3" class="tab-panel hidden">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background:#FBE9E7;">
+            <i data-lucide="ruler" class="w-6 h-6" style="color:#5D4037;"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Custom Designs</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Work with our team to design a one-of-a-kind fence tailored to your property's dimensions, style, and purpose. We bring your vision to life with custom height, spacing, and material combinations.</p>
+          <a href="tel:7709669970" class="arrow-cta text-sm font-semibold" style="color:#5D4037;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background:#FBE9E7;">
+            <i data-lucide="award" class="w-6 h-6" style="color:#5D4037;"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Decorative Fencing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Enhance your property's curb appeal with decorative fencing options including ornamental iron, lattice-top wood, and accent-panel designs. Beauty and function in one installation.</p>
+          <a href="tel:7709669970" class="arrow-cta text-sm font-semibold" style="color:#5D4037;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background:#FBE9E7;">
+            <i data-lucide="shield" class="w-6 h-6" style="color:#5D4037;"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Pool Fencing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Safety-compliant pool fencing installed to meet local code requirements while keeping your outdoor space visually polished. Aluminum and glass panel options available for a modern aesthetic.</p>
+          <a href="tel:7709669970" class="arrow-cta text-sm font-semibold" style="color:#5D4037;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background:#FBE9E7;">
+            <i data-lucide="hard-hat" class="w-6 h-6" style="color:#5D4037;"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Commercial Fencing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Heavy-duty perimeter fencing for commercial properties, warehouses, and industrial sites. We handle large-scale projects with coordinated scheduling to minimize business disruption.</p>
+          <a href="tel:7709669970" class="arrow-cta text-sm font-semibold" style="color:#5D4037;">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-10">
+      <span class="uppercase tracking-[0.2em] text-xs font-semibold mb-3 block" style="color:#8D6E63;">Our Work</span>
+      <h2 class="text-4xl font-extrabold text-gray-900">Project Gallery</h2>
+      <p class="text-gray-500 mt-2 max-w-xl">A curated look at our most recent installations across Marietta and Metro Atlanta.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <!-- Feature image col-span-2 -->
+      <div class="col-span-2 img-hover-wrap rounded-2xl overflow-hidden" style="height:500px;">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHZBoT7aF-SiRSx_d00h5zMf1Ef7hW29cZr4FYfdhOGVeui2-riiG5_CJBEVi3pGFWKxeegjHUthQHG8ME15csPqIYmgNNudlEY6yhZuuF8wTz8DMdHakfY8LRAVzJOpc3WB8K-_7UfWMcj4TepxvjL5pnhfxFM_BVXvpVka_tnU-Z2LWByupkwY5jX6lT6KuJ3M6u0WaBGXeb66WeAwssoTr-n9JMGp2xXKAv3Hslp05Uevqcl4Py1TZ6NtcWoBIGPbmmMfrRQ6KNm6iXwAPvvw-pB8xT9oxLYCp_50ms17kFqr-VoTXj6Y89mrIOgN8Mvd4V2QeMHkMy0_LE1y1-PedbNFMyiKc0klT5hcIoE9kpmpxb1zJCB94ej6jXhAcz5UepmEBK5giGa5yZLkgXn9tF11lOX09Xc4a8f3zrymx9F4FdianIWSXhFJg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Featured fence project"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/fence-3/1200/900'"
+        />
+      </div>
+      <div class="img-hover-wrap rounded-2xl overflow-hidden" style="height:500px;">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEE7q2o09KwXHIbw8VaH_0hiDwWrOP_5iDtvq_tetEq3Z9BCZNNdDATqeGGf7d7Kmi51Z4241DYnDG_Bpw5R-kcZ2DYD6f6pb3CFcuFI9vOdYgzgbgpSmRwKRSDzu05TaLEchIuu0oqdsprvMdd3VvmtMm-sbJ4G3STcfB67QaQ6qjrsChqwmO6rYLmc9crqplv-bCwSAEhNN69Z_cf68v57Voz9RDVwACHatrklcsSltDubz-hf8KmO2N4fi7ehqYJWNGzxH-UeaJ-z93iMyS2dna20Z-IhyYWlsHG2MhHAGgs3RPYcBUQ7mNeX-PJZFcCBZ5PlL5hOHkZir-vSkireYgbAgdpX61g4bPOIBmM0BYxocfHUMTi_pYSo7IvBGxi29k0QxE_z2do7zrdcIOU70MKgqSrEakbLtRMgilvYhh3D&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Fence installation project"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/fence-4/800/900'"
+        />
+      </div>
+      <div class="img-hover-wrap rounded-2xl overflow-hidden h-64">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFPeYfiC3Zd3CLpx4Se7Zqhxc732cEeTSkMKuyyZat4ayG_fQasgF_yz8AYBduWr7JwSnmKmL-fiTczDMPMdyiLZevsjwATFQcNaNjj5mPTRiIbjShiqiEftODBnhjre-kg3L4crudu-S9SQgMj5lf4PQpNzfFHCAAM5D-j8CdcSXzdKDJwBjWKwZW0Kdkovxl_gtzf3kS2w6UuEYE-65CJvDULEcigF86Myk69RWxGcDF_YpkDOUzm5Vvx-3SlVkWSJf-6fM-kALTH3cEw1xlQvGUv7IKiDk9AXZplDmVVt32vc2_WypqVf3fjCviOnXJ4RqUUR9qnKuXKqNvUOvMF8t5ht2j4oyhA0P9mDqkpI8ZA7dycISjjuFL_oWnJDN7A0Mv4zRVCw9-8F-VJby-XTAKvWa-XtOUUzb21tP9a4oqpX72AttFSKIMq_mFc&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Wood fence installation"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/fence-5/800/600'"
+        />
+      </div>
+      <div class="img-hover-wrap rounded-2xl overflow-hidden h-64">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGGLeykbYgKeERtSVOYtbDNCi4d6QvNp7EuMzQo7hmhng7AtAaLs5k9Jdvq483p0ts-1f8XFFcSwEQLHXtRAp55W6fpoYCfJ1_4d82GQxYkBFOBu6YfqSJsRf1OCFdjgbz9S7xF-AERPVddhAE3caoHutic-5IUu-fZLaMbbrpDuFFyFkn1RTMCE-l3BDpizwwhMUGPoCmA9HJPUC4bfRZl9g4orhopneHzStBT740X0-UZlQ8luNVKlwWO_c3PaHtozHMz7rNXcks-_sb55nNu5AQcl7eeClEl00gxlGwgNS7fXGpUDOPE1PGiMeSBnbHhB16cVNZLGX0bdPNWsEToGHoo6L3oZavhr6UNXjx-NlMgB6wsblR-2azWyuyIo3CHCB-W0GAxPhiBSysaMvV7IXZ62Ob7QyIpycF9IDBIgQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Vinyl fence project"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/fence-6/800/600'"
+        />
+      </div>
+      <div class="img-hover-wrap rounded-2xl overflow-hidden h-64">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEEHf5dyZKIrz1Cc_s6b5HTe8yZ0XoSJjh3YzdRMT6Rbf7Xn7JN3y3b0vfO5xQsKZcUlOjpI0M5Ugpia_JRQF3EeJDUb1or68uQNGWcWeVfdyATRRwtfAzDVPVWRr-PfJtnVamPwoBbreXpFH-DvZisDd5xzlaEm8q1NiuLzMbeV4ZLLlKR1co7d0t88MILLqFbNAZmGAwvOo3JSAgPV6xzTw4GrDe7vvRKokjTRmGn7T9a-NlJSPWTkcd7gEzV7XE2IufrnqUefmjgDH1oY2aIHt_dSYgQr4fKTh1lctl7auBu7KkU6QDmZiU5y07GPyAXVb-7jOHz0F1kDvJgPiF40HlRBKFm4jyKdSIBEal3Fy-csjjo2cZOe_QqQKQ4EsF5Lr_CDkHjkkpWPsOo1rkZGQ-T-zPARakow-BcC_UHlzzSj4CPIWev_Y-JbQ_2j&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Chain link fence"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/fence-7/800/600'"
+        />
+      </div>
+      <div class="img-hover-wrap rounded-2xl overflow-hidden h-64">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFpCASxH-qpQoYfCfnJ94E-FHyRvIvenlGU18VWD2hfD2Z6dvH9BN7Us_LyqfhOzt9by6qLT0b9mL9dmxwWRW2-QYt0edhxMD_hAqA3RYJi7VdNCsmIa69HDe8mceyhmXSeHzzeCBIJTkkfpJfBJaqGPoL1SRMWFyWL0kp6XxaeE5WpIcXY4Jek2_vPfI7uInhdnIr69Z6UoOh8P5f_s5qbB8kC3hxiDuzs5lP6EFVOxjKQvsjjOVmLEyGeLBRJpJEk2yUHQsJ_WMpSWPMhhhZkdCj-_Xk8krhAR0wKyQ9BgQemS_X2_YDlBtqYpOreKAOPOY77eV_0lsKYvVmeH37dtMlXEtuk26pnWmgwr_VwbT_LXV825jrDmWT2MCFmTbMYwufwAIUmUzVKmzvhZ--OWcUyf6ifofjzC1u7oP4G_Jw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Aluminum fencing"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/fence-8/800/600'"
+        />
+      </div>
+      <div class="img-hover-wrap rounded-2xl overflow-hidden h-64">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEF-JlqZWc4pl8BunXu79olFLXKddBttHKIkHwlEY2VuTGDxpYGv3VueSJJKdPMidWw_Zr1CfGvFCnSGQFM68PzyJgMUIJMzXt_wp1L2rK_oSM_BAMEGotTlltnKU7CVukF_NnpTFLcZXdDRrimrxJEqOqVYUpQCebnveI-nlDXOYbKVFtrUuYCY0e93yak4-Fu5yZ4SPLqK7KymQfqmRfxftVt8onp9QQxoYFh6yPVWqmibeP0CLXsWLmV5FoZq5d8MdyZC07KJA6zmb0IMNh_iJRIqzs0TphIyyI7J-c3J17NNE5xsIVwxTU-6MxbXn01eKW3AUM6qAtXV0sLfn9gS1B8AcgWFoUPCzPD5zQcQ0qJgHGW9jC6AFl1LViszJETp_63jr9cwP9e2KKTVocy986Vz9SiiJl6XK9CFO_QGzw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Custom fence design"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/fence-9/800/600'"
+        />
+      </div>
+      <div class="img-hover-wrap rounded-2xl overflow-hidden h-64">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGsduBBK5cAgt0YfCxDR_CBOhI0eNI-gw-dHfiahhkstPMsKaNQ8ntsqGnU7PI6tk-uRb_Glgs2EPBz2OJ9Mal9a-7k0PWLFrS8xrja8HzS8Nj0KobjzL5O4ZwOo5nWQFE8X7lMOg6SFFzlEmWwZ11aEV3DJdquY-qESU-nyTrJxYCqHtvyTppqR9qEsqw0BuQK_b0lrFof4r_g9ML3RYLutHKp1JHI0iFNuKETJCNunqBHSXPq_YqZEXRFEb7YALiGSZz0TV5hEwP4XNSqw2mm4MmXOEoZkDsbGVIlLNUO6pdg0MMrUcKeXDLQvu4A26fKeVw2u69AHmMmbTT83Jk2mthlyNTM6Un2ifAHLq2kUvrAaRjVPeun60uVYuUvCmZkhssxRbn_AD3txUC0JDwW9E2eYmcctKw6f5itR32lZA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Pool fence installation"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/fence-10/800/600'"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <div>
+        <span class="uppercase tracking-[0.2em] text-xs font-semibold mb-3 block" style="color:#8D6E63;">Customer Stories</span>
+        <h2 class="text-4xl font-extrabold text-gray-900">What Our Clients Say</h2>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="flex">
+          <i data-lucide="star" class="w-5 h-5" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-5 h-5" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-5 h-5" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-5 h-5" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-5 h-5" style="color:#F59E0B; fill:#F59E0B;"></i>
+        </div>
+        <span class="text-sm font-semibold text-gray-700">4.8 out of 5 · 2,212 reviews</span>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Review 1 -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm" style="background:#5D4037;">N</div>
+            <div>
+              <div class="font-bold text-gray-900 text-sm">Nathan Palmer</div>
+              <div class="text-gray-400 text-xs">2 months ago</div>
+            </div>
+          </div>
+          <span class="text-xs text-gray-400 border border-gray-200 rounded-full px-2 py-1">via Google</span>
+        </div>
+        <div class="flex gap-0.5">
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed">"Very happy with my new fence from Bravo! I received a phone call and scheduled an in-person quote within a few days of an online inquiry. Cameron was respectful and easy to do business with. Once I was ready to move forward, the install was scheduled just a couple weeks out. I got a 6ft privacy fence and a 6ft chain link for my backyard. Gates are sturdy as well as open and close smoothly. It was satisfying to watch my old fence being hauled away. Great job by all!"</p>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm" style="background:#8D6E63;">D</div>
+            <div>
+              <div class="font-bold text-gray-900 text-sm">Don Curtis</div>
+              <div class="text-gray-400 text-xs">2 months ago</div>
+            </div>
+          </div>
+          <span class="text-xs text-gray-400 border border-gray-200 rounded-full px-2 py-1">via Google</span>
+        </div>
+        <div class="flex gap-0.5">
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed">"Our neighbor selected Bravo (from three other companies) to install a fence and they were very happy with Bravo. As our wood fence was falling apart we also obtained three estimates and selected Bravo. We could not have been more happy with our experience, from the estimate process to installation! Our sales rep, Kiera Presley, was fantastic and most receptive. When installation was completed, there was a section/panel that seems odd, not consistent with the rest of the fence. I contacted Kiera about my concern and she worked very quickly to resolve to my complete satisfaction! I could not be happier with the final product and my overall experience with Bravo! Highly recommended!!!"</p>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm" style="background:#A1887F;">B</div>
+            <div>
+              <div class="font-bold text-gray-900 text-sm">Brandy</div>
+              <div class="text-gray-400 text-xs">6 months ago</div>
+            </div>
+          </div>
+          <span class="text-xs text-gray-400 border border-gray-200 rounded-full px-2 py-1">via Google</span>
+        </div>
+        <div class="flex gap-0.5">
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed">"A to Z my experience with the Bravo team has been amazing. Joey came out and did my consultation, explained my options, and pointed out 'all the things' so if I shopped with other companies I could have a true apples to apples quote summary. No one came close to the details or price and trust me … I shopped A LOT! Once I signed everything and set up the install date, I had a snafu and had to push the start date back a few weeks. Bravo was great & worked with me to set a new install date. I replaced a 1950's chain link fence with a 6' shadowbox privacy fence. It took 1.5 days start to finish and I now have the nicest fence in the whole neighborhood. So glad I went with them!"</p>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm" style="background:#5D4037;">S</div>
+            <div>
+              <div class="font-bold text-gray-900 text-sm">SJ W</div>
+              <div class="text-gray-400 text-xs">2 months ago</div>
+            </div>
+          </div>
+          <span class="text-xs text-gray-400 border border-gray-200 rounded-full px-2 py-1">via Google</span>
+        </div>
+        <div class="flex gap-0.5">
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed">"This was one of the best fences I've ever had installed. If you take a look around Atlanta you will see many quality BRAVO jobs. Easy estimate experience and $600 less expensive than other quotes. Now, I want my entire yard fenced with BRAVO."</p>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4 md:col-span-2 lg:col-span-2">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm" style="background:#8D6E63;">F</div>
+            <div>
+              <div class="font-bold text-gray-900 text-sm">Fannie McKenzie</div>
+              <div class="text-gray-400 text-xs">6 months ago</div>
+            </div>
+          </div>
+          <span class="text-xs text-gray-400 border border-gray-200 rounded-full px-2 py-1">via Google</span>
+        </div>
+        <div class="flex gap-0.5">
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed">"My experience with Bravo Fence proved to be GREAT!!! I was a nervous Nellie at the beginning of the process. I'm a senior citizen, and frankly, I was worried about being taken. First, Kiera (the young lady who was the manager of my project) was professional, patient and remarkably responsive (very timely). I couldn't have chosen a better person. Every question I asked (no matter how foolish) was answered and addressed to my satisfaction. Also, Jonathan (the young man who led the team that actually installed my western redwood cedar fence) was AWESOME!!! He had the PERFECT demeanor and skill set for the nervous Nellie that I was. He was seasoned to please, and please me they did. A new team from the painting department will come back in November to stain the fence after the wood dries."</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-white">
+  <div class="max-w-3xl mx-auto">
+    <span class="uppercase tracking-[0.2em] text-xs font-semibold mb-3 block" style="color:#8D6E63;">Questions Answered</span>
+    <h2 class="text-4xl font-extrabold text-gray-900 mb-10">Frequently Asked Questions</h2>
+
+    <div class="flex flex-col gap-3">
+      <details class="bg-gray-50 rounded-xl overflow-hidden group">
+        <summary class="flex items-center justify-between px-6 py-5 font-semibold text-gray-900 text-sm hover:bg-gray-100 transition-colors">
+          How long does a typical fence installation take in Marietta?
+          <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-90 flex-shrink-0"></i>
+        </summary>
+        <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">Most residential fence installations are completed within one to two days depending on the linear footage and material type. Larger commercial projects or custom designs may take longer, and our team will provide a clear timeline during the estimate process so you can plan accordingly.</div>
+      </details>
+
+      <details class="bg-gray-50 rounded-xl overflow-hidden group">
+        <summary class="flex items-center justify-between px-6 py-5 font-semibold text-gray-900 text-sm hover:bg-gray-100 transition-colors">
+          Do I need a permit to install a fence in Marietta, GA?
+          <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-90 flex-shrink-0"></i>
+        </summary>
+        <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">Permit requirements vary by fence height and property type within Cobb County and the City of Marietta. Our team is familiar with local regulations and will advise you on what is required before any work begins. We can assist with the permit process to keep your project on schedule.</div>
+      </details>
+
+      <details class="bg-gray-50 rounded-xl overflow-hidden group">
+        <summary class="flex items-center justify-between px-6 py-5 font-semibold text-gray-900 text-sm hover:bg-gray-100 transition-colors">
+          What fence material is best for Georgia's climate?
+          <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-90 flex-shrink-0"></i>
+        </summary>
+        <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">Georgia's heat, humidity, and occasional storms put stress on all fencing materials. Vinyl and aluminum are extremely low-maintenance in this climate, while pressure-treated wood and cedar hold up well when properly installed and sealed. We'll help you choose the right material based on your budget, aesthetics, and how much upkeep you want to manage.</div>
+      </details>
+
+      <details class="bg-gray-50 rounded-xl overflow-hidden group">
+        <summary class="flex items-center justify-between px-6 py-5 font-semibold text-gray-900 text-sm hover:bg-gray-100 transition-colors">
+          Can Bravo Fence handle large commercial or multi-property projects?
+          <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-90 flex-shrink-0"></i>
+        </summary>
+        <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">Absolutely. We work with property managers, developers, and business owners across Metro Atlanta on large-scale commercial fencing projects. Our crews are equipped to handle significant linear footage with coordinated scheduling to minimize disruption to daily operations.</div>
+      </details>
+
+      <details class="bg-gray-50 rounded-xl overflow-hidden group">
+        <summary class="flex items-center justify-between px-6 py-5 font-semibold text-gray-900 text-sm hover:bg-gray-100 transition-colors">
+          How do I get a quote from Bravo Fence Company?
+          <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-90 flex-shrink-0"></i>
+        </summary>
+        <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">Simply call us at (770) 966-9970 or submit the form on our contact page and a representative will reach out to schedule your free in-person estimate. Most consultations are available within a few business days and there is never any obligation to move forward after receiving your quote.</div>
+      </details>
+
+      <details class="bg-gray-50 rounded-xl overflow-hidden group">
+        <summary class="flex items-center justify-between px-6 py-5 font-semibold text-gray-900 text-sm hover:bg-gray-100 transition-colors">
+          What happens if my fence is damaged after installation?
+          <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-90 flex-shrink-0"></i>
+        </summary>
+        <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">We stand behind every fence we install. If you experience any issues with workmanship or materials, contact us directly and we will schedule a time to assess and correct the problem. Customer satisfaction is our top priority and we have a track record of resolving concerns quickly and professionally.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-gray-50">
+  <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+    <!-- Left: Map -->
+    <div class="rounded-xl overflow-hidden shadow-lg min-h-[450px] h-full">
+      <iframe
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k&q=place_id:ChIJdXLIv6Fq9YgRrOiJd83sp0U"
+        width="100%"
+        height="100%"
+        style="border:0; min-height:450px; display:block;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Bravo Fence Company Location"
+      ></iframe>
+    </div>
+    <!-- Right: Form -->
+    <div class="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full mx-auto lg:mx-0 flex flex-col justify-between">
+      <div>
+        <span class="text-xs tracking-widest font-semibold uppercase" style="color:#8D6E63;">Get Started</span>
+        <h3 class="text-3xl font-bold text-gray-900 mt-2">Get a Free Estimate</h3>
+        <p class="text-gray-500 text-sm mt-1">Tell us about your project and we'll get back to you promptly.</p>
+        <div class="flex items-center gap-2 mt-3">
+          <div class="flex gap-0.5">
+            <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+            <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          </div>
+          <span class="text-sm text-gray-600 font-medium">4.8 out of 5 · 2,212 reviews</span>
+        </div>
+        <form class="mt-4" onsubmit="return false;">
+          <input type="text" placeholder="Your Full Name" class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-4 text-sm text-gray-800 outline-none" style="focus:ring-color:#8D6E63;" />
+          <input type="email" placeholder="Email Address" class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-4 text-sm text-gray-800 outline-none" />
+          <input type="tel" placeholder="Phone Number" class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-4 text-sm text-gray-800 outline-none" />
+          <select class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-4 text-sm text-gray-600 outline-none">
+            <option value="" disabled selected>Select a Service</option>
+            <option>Wood Fence Installation</option>
+            <option>Vinyl Fence Installation</option>
+            <option>Chain Link Installation</option>
+            <option>Aluminum Fencing</option>
+            <option>Other</option>
+          </select>
+          <textarea rows="3" placeholder="Tell us about your project..." class="bg-gray-50 rounded-lg border-0 focus:ring-2 py-3 px-4 w-full mt-4 text-sm text-gray-800 outline-none resize-none"></textarea>
+          <button type="submit" class="w-full text-white rounded-lg py-4 font-bold mt-6 text-sm transition-opacity hover:opacity-90" style="background:#8D6E63;">Request My Free Estimate</button>
+          <p class="text-xs text-gray-400 mt-3 text-center">By submitting you agree to be contacted regarding your request.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="relative" style="background:#0f0f0f;">
+  <!-- Ghosted background image -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <img
+      src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHqoKNFnaybv_lLYEyVD6cbBM-nKQhmNx2pFqnoSS1IqaeoDpXXcnhO3ed_OvP0Sp5iZQpY-085w-Z6uJpBXn4qysK6aFMo6ojnzEy2mudZaEbBHc0Nwpzk6DZ2D_ic6Y_KAN6AqYA3bnq7JU8oGNNbcOMSgl0jNTUS490sNXiNnjzW0JlmCyrAZ7J3yP61kLnSbDGLvYEuK775gh52Il_ml5m73qYPEfKsj7nua7E6llLb6T_G-l9c4zGTTZOpEORccuuUoL-VS8Kj3GS7yxqHdV31N4b60yQvUrdAGwr5FIhGo0H-w8PpwXHy06aiZp2mXMVo8pAk9VLnM7-Lg3NbubRAqWVMAd6jLANUONErXgscefC-ZzsCq2LZ2-5td19oEsU0gnKEs0pdUfqeFlMA9mJOZMb8fApUTt_pkU3N1-myN9xrd4ru1RATiq5Q&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+      alt=""
+      class="w-full h-full object-cover opacity-10"
+      onerror="this.src='https://picsum.photos/seed/fence-bg/1600/900'"
+    />
+  </div>
+
+  <!-- Top CTA -->
+  <div class="relative z-10 py-20 text-center px-4">
+    <span class="uppercase tracking-[0.2em] text-xs font-semibold mb-4 block" style="color:#A1887F;">Ready to Get Started?</span>
+    <h3 class="text-5xl font-extrabold text-white mb-8 leading-tight">Start Your Project<br/><span style="color:#A1887F;">Today.</span></h3>
+    <a href="#contact" class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white transition-all hover:opacity-90 text-sm" style="background:#8D6E63;">
+      Get a Free Estimate <i data-lucide="arrow-right" class="w-4 h-4"></i>
+    </a>
+  </div>
+
+  <!-- Main Grid -->
+  <div class="relative z-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-5 gap-8 py-16 px-8 max-w-7xl mx-auto">
+    <!-- Col 1: Business Identity -->
+    <div class="col-span-2 md:col-span-1">
+      <div class="text-xl font-extrabold text-white mb-3" style="font-family:'Inter',sans-serif;">BRAVO <span style="color:#A1887F;">FENCE</span></div>
+      <p class="text-gray-400 text-xs leading-relaxed mb-4">Built to Last. Crafted to Impress. Serving Marietta and Metro Atlanta with quality fence installation and repair.</p>
+      <div class="text-gray-400 text-xs">
+        <div class="flex items-start gap-2 mb-2">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style="color:#A1887F;"></i>
+          <span>1190 Hayes Industrial Dr,<br/>Marietta, GA 30062</span>
+        </div>
+        <div class="flex items-center gap-2 mb-2">
+          <i data-lucide="phone" class="w-3.5 h-3.5 flex-shrink-0" style="color:#A1887F;"></i>
+          <a href="tel:7709669970" class="hover:text-white transition-colors">(770) 966-9970</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="clock" class="w-3.5 h-3.5 flex-shrink-0" style="color:#A1887F;"></i>
+          <span>Mon–Fri: 8AM–10PM</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Col 2: Services -->
+    <div>
+      <div class="text-white font-bold text-sm mb-4">Services</div>
+      <ul class="flex flex-col gap-2">
+        <li><a href="#services" class="text-gray-400 text-xs hover:text-white transition-colors">Wood Fence Installation</a></li>
+        <li><a href="#services" class="text-gray-400 text-xs hover:text-white transition-colors">Vinyl Fence Installation</a></li>
+        <li><a href="#services" class="text-gray-400 text-xs hover:text-white transition-colors">Chain Link Installation</a></li>
+        <li><a href="#services" class="text-gray-400 text-xs hover:text-white transition-colors">Aluminum Fencing</a></li>
+        <li><a href="#services" class="text-gray-400 text-xs hover:text-white transition-colors">Fence Repair</a></li>
+        <li><a href="#services" class="text-gray-400 text-xs hover:text-white transition-colors">Post Replacement</a></li>
+        <li><a href="#services" class="text-gray-400 text-xs hover:text-white transition-colors">Storm Damage Repair</a></li>
+        <li><a href="#services" class="text-gray-400 text-xs hover:text-white transition-colors">Gate Repair</a></li>
+        <li><a href="#services" class="text-gray-400 text-xs hover:text-white transition-colors">Custom Designs</a></li>
+        <li><a href="#services" class="text-gray-400 text-xs hover:text-white transition-colors">Decorative Fencing</a></li>
+        <li><a href="#services" class="text-gray-400 text-xs hover:text-white transition-colors">Pool Fencing</a></li>
+        <li><a href="#services" class="text-gray-400 text-xs hover:text-white transition-colors">Commercial Fencing</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 3: Service Areas -->
+    <div>
+      <div class="text-white font-bold text-sm mb-4">Service Areas</div>
+      <ul class="flex flex-col gap-2">
+        <li><span class="text-gray-400 text-xs">Marietta, GA</span></li>
+        <li><span class="text-gray-400 text-xs">Kennesaw, GA</span></li>
+        <li><span class="text-gray-400 text-xs">Smyrna, GA</span></li>
+        <li><span class="text-gray-400 text-xs">Acworth, GA</span></li>
+        <li><span class="text-gray-400 text-xs">Woodstock, GA</span></li>
+        <li><span class="text-gray-400 text-xs">Roswell, GA</span></li>
+        <li><span class="text-gray-400 text-xs">Alpharetta, GA</span></li>
+        <li><span class="text-gray-400 text-xs">Canton, GA</span></li>
+        <li><span class="text-gray-400 text-xs">Sandy Springs, GA</span></li>
+        <li><span class="text-gray-400 text-xs">Powder Springs, GA</span></li>
+      </ul>
+    </div>
+
+    <!-- Col 4: Navigation -->
+    <div>
+      <div class="text-white font-bold text-sm mb-4">Quick Links</div>
+      <ul class="flex flex-col gap-2">
+        <li><a href="#home" class="text-gray-400 text-xs hover:text-white transition-colors">Home</a></li>
+        <li><a href="#about" class="text-gray-400 text-xs hover:text-white transition-colors">About</a></li>
+        <li><a href="#services" class="text-gray-400 text-xs hover:text-white transition-colors">Services</a></li>
+        <li><a href="#gallery" class="text-gray-400 text-xs hover:text-white transition-colors">Gallery</a></li>
+        <li><a href="#reviews" class="text-gray-400 text-xs hover:text-white transition-colors">Reviews</a></li>
+        <li><a href="#faq" class="text-gray-400 text-xs hover:text-white transition-colors">FAQ</a></li>
+        <li><a href="#contact" class="text-gray-400 text-xs hover:text-white transition-colors">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 5: Trust Signals -->
+    <div>
+      <div class="text-white font-bold text-sm mb-4">Trust Signals</div>
+      <div class="flex flex-col gap-3">
+        <div class="flex items-center gap-2">
+          <i data-lucide="star" class="w-4 h-4" style="color:#F59E0B; fill:#F59E0B;"></i>
+          <span class="text-gray-400 text-xs">4.8 Google Rating</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="check-circle" class="w-4 h-4" style="color:#A1887F;"></i>
+          <span class="text-gray-400 text-xs">2,212 Verified Reviews</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="shield-check" class="w-4 h-4" style="color:#A1887F;"></i>
+          <span class="text-gray-400 text-xs">Licensed & Insured</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="map-pin" class="w-4 h-4" style="color:#A1887F;"></i>
+          <span class="text-gray-400 text-xs">Local Marietta Business</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="clock" class="w-4 h-4" style="color:#A1887F;"></i>
+          <span class="text-gray-400 text-xs" id="live-clock">Marietta</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="relative z-10 border-t border-white/10 py-6 px-8 flex flex-col md:flex-row justify-between items-center gap-3 max-w-7xl mx-auto">
+    <p class="text-gray-500 text-xs">&copy; 2025 Bravo Fence Company. All rights reserved. · 1190 Hayes Industrial Dr, Marietta, GA 30062</p>
+    <p class="text-gray-600 text-xs">Serving Marietta & Metro Atlanta</p>
+  </div>
+</footer>
+
+<script>
+(function(){const nav=document.querySelector('nav');if(!nav)return;window.addEventListener('scroll',()=>nav.classList.toggle('shadow-md',window.scrollY>50));})();
+(function(){const ham=document.getElementById('hamburger');const menu=document.getElementById('mobile-menu');if(ham&&menu)ham.addEventListener('click',()=>menu.classList.toggle('hidden'));document.querySelectorAll('.mobile-nav-link').forEach(a=>{a.addEventListener('click',()=>{if(menu)menu.classList.add('hidden');});});})();
+(function(){const buttons=Array.from(document.querySelectorAll('.tab-btn'));const panels=Array.from(document.querySelectorAll('.tab-panel'));if(!buttons.length||!panels.length)return;function showByIndex(idx){panels.forEach(p=>p.classList.add('hidden'));buttons.forEach(b=>{b.classList.remove('active-tab');b.classList.add('inactive-tab');});if(panels[idx])panels[idx].classList.remove('hidden');if(buttons[idx]){buttons[idx].classList.add('active-tab');buttons[idx].classList.remove('inactive-tab');}}function showById(id){const i=panels.findIndex(p=>p.id===id);if(i>=0)showByIndex(i);}buttons.forEach((btn,idx)=>{btn.addEventListener('click',(e)=>{e.preventDefault();const t=btn.getAttribute('data-target');if(t)showById(t);else showByIndex(idx);});});window.showTab=function(id){showById(id);};if(!panels.some(p=>!p.classList.contains('hidden')))showByIndex(0);})();
+function animateCount(el,target,suffix){let start=0;const duration=2000,steps=60,inc=target/steps;const t=setInterval(()=>{start+=inc;if(start>=target){el.textContent=target+(suffix||'');clearInterval(t);}else el.textContent=Math.floor(start)+(suffix||'');},duration/steps);}
+const statObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const t=parseInt(e.target.dataset.count);const s=e.target.dataset.suffix||'';if(t)animateCount(e.target,t,s);statObs.unobserve(e.target);}});},{threshold:0.3});
+document.querySelectorAll('[data-count]').forEach(el=>statObs.observe(el));
+(function(){const sections=document.querySelectorAll('.animate-section');if(!sections.length)return;const obs=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.remove('is-pending');entry.target.classList.add('is-visible');obs.unobserve(entry.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});sections.forEach(el=>{const r=el.getBoundingClientRect();const inView=r.top<window.innerHeight&&r.bottom>0;if(inView)el.classList.add('is-visible');else{el.classList.add('is-pending');obs.observe(el);}});setTimeout(()=>{document.querySelectorAll('.animate-section.is-pending').forEach(el=>{el.classList.remove('is-pending');el.classList.add('is-visible');});},2500);})();
+(function(){function revealTarget(){const hash=window.location.hash;if(!hash||hash.length<2)return;try{const target=document.querySelector(hash);if(target&&target.classList.contains('animate-section')){target.classList.remove('is-pending');target.classList.add('is-visible');}}catch(e){}}window.addEventListener('hashchange',revealTarget);setTimeout(revealTarget,100);document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',()=>{const hash=a.getAttribute('href');if(hash&&hash.length>1){try{const target=document.querySelector(hash);if(target&&target.classList.contains('animate-section')){target.classList.remove('is-pending');target.classList.add('is-visible');}}catch(e){}}});});})();
+function updateClock(){const el=document.getElementById('live-clock');if(el)el.textContent='Marietta - '+new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});}updateClock();setInterval(updateClock,1000);
+(function(){const render=()=>{if(window.lucide)window.lucide.createIcons();};if(window.lucide)render();else document.addEventListener('DOMContentLoaded',render);setTimeout(render,500);setTimeout(render,1500);})();
+</script>
+</body>
+</html>

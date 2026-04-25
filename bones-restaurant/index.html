@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bones Restaurant | Atlanta, GA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Manrope:wght@400;500&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  html, body { overflow-x: hidden; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Manrope', sans-serif; }
+  h1,h2,h3,h4,h5,h6,.heading { font-family: 'Inter', sans-serif; }
+  .serif-display { font-family: 'Playfair Display', serif; }
+  .ticker-track { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .marquee-track { display: flex; animation: marquee 40s linear infinite; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  details summary { list-style: none; cursor: pointer; }
+  details summary::-webkit-details-marker { display: none; }
+  .tab-btn { cursor: pointer; transition: all 0.2s ease; }
+  .tab-btn.active-tab { background-color: #1E3A5F; color: white; }
+  .tab-btn.inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
+  .tab-panel { display: block; }
+  .tab-panel.hidden { display: none !important; }
+  .img-hover-wrap { overflow: hidden; }
+  .img-hover-wrap img { transition: transform 0.7s ease; }
+  .img-hover-wrap:hover img { transform: scale(1.05); }
+  .arrow-cta { border-bottom: 2px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s ease; }
+  .arrow-cta:hover { gap: 14px; }
+  .dotted-leader { flex: 1; border-bottom: 1px dotted currentColor; margin: 0 1rem; opacity: 0.3; align-self: end; padding-bottom: 0.5rem; }
+  section { scroll-margin-top: 96px; }
+  .animate-section { opacity: 1; transform: none; transition: opacity 0.6s ease, transform 0.6s ease; }
+  .animate-section.is-pending { opacity: 0; transform: translateY(24px); }
+  .animate-section.is-visible { opacity: 1; transform: none; }
+  .animate-section:target, .animate-section.is-pending:target { opacity: 1 !important; transform: none !important; }
+  .award-badge { filter: grayscale(100%); transition: filter 0.3s ease; }
+  .award-badge:hover { filter: grayscale(0%); }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: #C9A84C !important; box-shadow: none !important; }
+  .process-step { position: relative; }
+  .process-step:not(:last-child)::after { content: ''; position: absolute; top: 2rem; left: calc(100% - 0px); width: 100%; height: 3px; background: #C9A84C; z-index: 0; }
+</style>
+</head>
+<body class="bg-black text-white">
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-black border-b-2 border-yellow-600 transition-all duration-300" style="border-color:#C9A84C">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-20">
+    <a href="#home" class="text-white font-black text-2xl tracking-widest uppercase" style="font-family:'Inter',sans-serif;">BONES<span style="color:#C9A84C">.</span></a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#home" class="text-white uppercase text-sm font-bold tracking-widest hover:text-yellow-400 transition-colors" style="color:#C9A84C;font-family:'Inter',sans-serif;">Home</a>
+      <a href="#about" class="text-gray-300 uppercase text-sm font-bold tracking-widest hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">About</a>
+      <a href="#services" class="text-gray-300 uppercase text-sm font-bold tracking-widest hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">Services</a>
+      <a href="#gallery" class="text-gray-300 uppercase text-sm font-bold tracking-widest hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">Gallery</a>
+      <a href="#reviews" class="text-gray-300 uppercase text-sm font-bold tracking-widest hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">Reviews</a>
+      <a href="#faq" class="text-gray-300 uppercase text-sm font-bold tracking-widest hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">FAQ</a>
+      <a href="#contact" class="text-gray-300 uppercase text-sm font-bold tracking-widest hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">Contact</a>
+    </div>
+    <div class="hidden md:flex items-center gap-4">
+      <span id="live-clock" class="text-xs text-gray-500 uppercase tracking-widest"></span>
+      <a href="tel:07131873405" class="px-5 py-2 font-black uppercase text-sm tracking-widest text-black" style="background:#C9A84C;font-family:'Inter',sans-serif;">CALL NOW</a>
+    </div>
+    <button id="hamburger" class="md:hidden text-white p-2">
+      <i data-lucide="menu" class="w-7 h-7"></i>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-black border-t border-gray-800 px-4 py-6 flex flex-col gap-5">
+    <a href="#home" class="mobile-nav-link uppercase font-black tracking-widest text-white text-sm" style="font-family:'Inter',sans-serif;">Home</a>
+    <a href="#about" class="mobile-nav-link uppercase font-black tracking-widest text-gray-300 text-sm" style="font-family:'Inter',sans-serif;">About</a>
+    <a href="#services" class="mobile-nav-link uppercase font-black tracking-widest text-gray-300 text-sm" style="font-family:'Inter',sans-serif;">Services</a>
+    <a href="#gallery" class="mobile-nav-link uppercase font-black tracking-widest text-gray-300 text-sm" style="font-family:'Inter',sans-serif;">Gallery</a>
+    <a href="#reviews" class="mobile-nav-link uppercase font-black tracking-widest text-gray-300 text-sm" style="font-family:'Inter',sans-serif;">Reviews</a>
+    <a href="#faq" class="mobile-nav-link uppercase font-black tracking-widest text-gray-300 text-sm" style="font-family:'Inter',sans-serif;">FAQ</a>
+    <a href="#contact" class="mobile-nav-link uppercase font-black tracking-widest text-gray-300 text-sm" style="font-family:'Inter',sans-serif;">Contact</a>
+    <a href="tel:07131873405" class="mt-2 px-5 py-3 font-black uppercase text-sm tracking-widest text-black text-center" style="background:#C9A84C;font-family:'Inter',sans-serif;">CALL NOW</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="relative min-h-screen flex flex-col justify-center items-center" style="padding-top:80px;">
+  <div class="absolute inset-0 bg-black">
+    <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEE5CqrtTbsJx0lEsRc-Lh7X0ksOsq6z-9WuQV_WnW7EOCrQczKaawxqVYY5lnLbN3g2tBaKJ2pbTE7hFfw9357MnZxtbuX4gjkXF_ZG7mBuq3pfdoyyGQTtVRUM7TJcUQateBd4k4BnRW2w7hkBpBwvNbcBpq-OAdcHfQDWCQ22bCke0oHrzx-J9BAbt2JWEanwAxhKms0bm5zyPyM3u7excTRIWpPIU5JtRQBeHbSiC9jaE68_a2fvpUC98rpg-E33rnnzAV3Xj1ygrKQlha-8gMjX4DeH255w9PM7hiR3zQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-1/1600/900'" alt="Bones Restaurant" class="w-full h-full object-cover opacity-30">
+  </div>
+  <div class="absolute inset-0" style="background:linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.85) 100%);"></div>
+  <div class="relative z-10 text-center px-4 max-w-6xl mx-auto">
+    <p class="uppercase tracking-widest text-sm font-bold mb-6" style="color:#C9A84C;font-family:'Inter',sans-serif;">— ATLANTA'S PREMIER EXPERIENCE —</p>
+    <h1 class="font-black leading-none uppercase" style="font-family:'Inter',sans-serif;">
+      <span class="block text-white" style="font-size:clamp(3rem,10vw,7rem);line-height:1;">BOLD</span>
+      <span class="block" style="font-size:clamp(3rem,10vw,7rem);line-height:1;color:#C9A84C;">FLAVORS.</span>
+      <span class="block text-white" style="font-size:clamp(3rem,10vw,7rem);line-height:1;">UNMATCHED.</span>
+    </h1>
+    <p class="uppercase text-gray-300 text-lg tracking-widest mt-8 mb-10 font-semibold" style="font-family:'Inter',sans-serif;">WHERE EVERY CUT IS A STATEMENT</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a href="#contact" class="px-10 py-4 font-black uppercase tracking-widest text-black text-sm" style="background:#C9A84C;font-family:'Inter',sans-serif;">RESERVE A TABLE</a>
+      <a href="tel:07131873405" class="px-10 py-4 font-black uppercase tracking-widest text-white text-sm border-2 flex items-center gap-3 hover:bg-white hover:text-black transition-colors" style="border-color:#C9A84C;font-family:'Inter',sans-serif;"><i data-lucide="phone" class="w-4 h-4"></i> 07131 873405</a>
+    </div>
+  </div>
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
+    <span class="uppercase text-xs tracking-widest text-gray-400 font-bold" style="font-family:'Inter',sans-serif;">SCROLL</span>
+    <div class="w-px h-8 bg-gray-500"></div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="bg-black border-t-2 border-b-2 py-3 overflow-hidden" style="border-color:#C9A84C">
+  <div class="ticker-track">
+    <span class="text-white uppercase tracking-widest font-bold text-sm px-8" style="font-family:'Inter',sans-serif;">QUALITY WORK</span>
+    <span style="color:#C9A84C;font-family:'Inter',sans-serif;" class="font-bold text-sm px-4">✦</span>
+    <span class="text-white uppercase tracking-widest font-bold text-sm px-8" style="font-family:'Inter',sans-serif;">TRUSTED PROFESSIONALS</span>
+    <span style="color:#C9A84C;font-family:'Inter',sans-serif;" class="font-bold text-sm px-4">✦</span>
+    <span class="text-white uppercase tracking-widest font-bold text-sm px-8" style="font-family:'Inter',sans-serif;">SERVING ATLANTA AREA</span>
+    <span style="color:#C9A84C;font-family:'Inter',sans-serif;" class="font-bold text-sm px-4">✦</span>
+    <span class="text-white uppercase tracking-widest font-bold text-sm px-8" style="font-family:'Inter',sans-serif;">CALL NOW</span>
+    <span style="color:#C9A84C;font-family:'Inter',sans-serif;" class="font-bold text-sm px-4">✦</span>
+    <span class="text-white uppercase tracking-widest font-bold text-sm px-8" style="font-family:'Inter',sans-serif;">QUALITY WORK</span>
+    <span style="color:#C9A84C;font-family:'Inter',sans-serif;" class="font-bold text-sm px-4">✦</span>
+    <span class="text-white uppercase tracking-widest font-bold text-sm px-8" style="font-family:'Inter',sans-serif;">TRUSTED PROFESSIONALS</span>
+    <span style="color:#C9A84C;font-family:'Inter',sans-serif;" class="font-bold text-sm px-4">✦</span>
+    <span class="text-white uppercase tracking-widest font-bold text-sm px-8" style="font-family:'Inter',sans-serif;">SERVING ATLANTA AREA</span>
+    <span style="color:#C9A84C;font-family:'Inter',sans-serif;" class="font-bold text-sm px-4">✦</span>
+    <span class="text-white uppercase tracking-widest font-bold text-sm px-8" style="font-family:'Inter',sans-serif;">CALL NOW</span>
+    <span style="color:#C9A84C;font-family:'Inter',sans-serif;" class="font-bold text-sm px-4">✦</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<section class="bg-gray-900 py-20">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-2 md:grid-cols-4 gap-0">
+    <div class="border-l-4 px-8 py-10" style="border-color:#C9A84C">
+      <div class="text-6xl font-black text-white" data-count="914" style="font-family:'Inter',sans-serif;"><span>914</span></div>
+      <div class="uppercase tracking-widest text-sm font-bold mt-2" style="color:#C9A84C;font-family:'Inter',sans-serif;">REVIEWS</div>
+    </div>
+    <div class="border-l-4 px-8 py-10" style="border-color:#C9A84C">
+      <div class="text-6xl font-black text-white" data-count="4" data-suffix=".6★" style="font-family:'Inter',sans-serif;"><span>4.6★</span></div>
+      <div class="uppercase tracking-widest text-sm font-bold mt-2" style="color:#C9A84C;font-family:'Inter',sans-serif;">STAR RATING</div>
+    </div>
+    <div class="border-l-4 px-8 py-10" style="border-color:#C9A84C">
+      <div class="text-6xl font-black text-white" data-count="7" data-suffix=" DAYS" style="font-family:'Inter',sans-serif;"><span>7 DAYS</span></div>
+      <div class="uppercase tracking-widest text-sm font-bold mt-2" style="color:#C9A84C;font-family:'Inter',sans-serif;">OPEN WEEKLY</div>
+    </div>
+    <div class="border-l-4 px-8 py-10" style="border-color:#C9A84C">
+      <div class="text-6xl font-black text-white" data-count="100" data-suffix="%" style="font-family:'Inter',sans-serif;"><span>100%</span></div>
+      <div class="uppercase tracking-widest text-sm font-bold mt-2" style="color:#C9A84C;font-family:'Inter',sans-serif;">SATISFACTION</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-black">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="uppercase text-xs tracking-widest font-bold mb-4" style="color:#C9A84C;font-family:'Inter',sans-serif;">— WHO WE ARE —</p>
+        <h2 class="font-black uppercase text-white leading-none mb-8" style="font-size:clamp(3rem,7vw,5rem);font-family:'Inter',sans-serif;">BUILT ON<br><span style="color:#C9A84C;">PASSION.</span><br>PROVEN BY<br>RESULTS.</h2>
+        <p class="text-gray-300 text-lg leading-relaxed mb-8">Bones Restaurant is Atlanta's boldest dining destination, delivering uncompromising cuts, handcrafted service, and an atmosphere that commands respect — every single visit. From expertly seared ribeyes to bespoke dining experiences, we don't just serve food; we craft unforgettable moments that keep Atlanta coming back.</p>
+        <p class="text-gray-400 text-base leading-relaxed mb-10">Our team holds itself to the highest standards so every guest leaves knowing they experienced something truly exceptional — no shortcuts, no compromises, just excellence on every plate.</p>
+        <div class="flex flex-wrap gap-4">
+          <span class="px-5 py-2 text-xs font-black uppercase tracking-widest border-2 text-white" style="border-color:#C9A84C;font-family:'Inter',sans-serif;">PREMIUM CUTS</span>
+          <span class="px-5 py-2 text-xs font-black uppercase tracking-widest border-2 text-white" style="border-color:#C9A84C;font-family:'Inter',sans-serif;">EXPERT CHEFS</span>
+          <span class="px-5 py-2 text-xs font-black uppercase tracking-widest border-2 text-white" style="border-color:#C9A84C;font-family:'Inter',sans-serif;">4.6 STAR RATED</span>
+          <span class="px-5 py-2 text-xs font-black uppercase tracking-widest border-2 text-white" style="border-color:#C9A84C;font-family:'Inter',sans-serif;">OPEN 7 DAYS</span>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="img-hover-wrap">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFD7Zy7r-M4EpoZqLTdCLBwWUWzOksj9jHnvHQ3vxm6obGRUXNR1pGOovzt-rh8MDFEioVh4zKf5oZ8tMGTbu0_9P78bmA69TSTmYb8Q2WYcPvA3rOJfEFklx51ukPwFiV9ivZKJ1f9PRlMlWq5Q8D1YAhv0EnyEyalQR7w-hnL3Qk5BHCjonPbPE-0CT37u0DYNWystdjrS01_YSps0HKmuRZN8h1d2RFERoJ6VCaGapvxUpaxsjsu0Vk1V-3BaaaFWrzzQbuQ7gMRbXGKfHn5NA2Y2KWxKkYsT2j8uGZ_7g&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-2/800/600'" alt="About Bones Restaurant" class="w-full h-96 object-cover border-2" style="border-color:#C9A84C;">
+        </div>
+        <div class="absolute -bottom-6 -left-6 bg-black border-2 p-6 hidden md:block" style="border-color:#C9A84C;">
+          <div class="text-5xl font-black" style="color:#C9A84C;font-family:'Inter',sans-serif;">914+</div>
+          <div class="uppercase text-xs tracking-widest text-white font-bold mt-1" style="font-family:'Inter',sans-serif;">HAPPY GUESTS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS STRIP -->
+<section class="py-20 px-4 md:px-8 lg:px-16 animate-section" style="background:#1E3A5F;">
+  <div class="max-w-7xl mx-auto">
+    <p class="uppercase text-xs tracking-widest font-bold mb-4 text-center" style="color:#C9A84C;font-family:'Inter',sans-serif;">— OUR PROCESS —</p>
+    <h2 class="text-white font-black uppercase text-center text-4xl md:text-5xl mb-16" style="font-family:'Inter',sans-serif;">HOW IT WORKS</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 relative">
+      <div class="flex flex-col items-center text-center">
+        <div class="w-16 h-16 rounded-full flex items-center justify-center border-3 mb-4 text-black font-black text-2xl" style="background:#C9A84C;font-family:'Inter',sans-serif;border:3px solid #C9A84C;">01</div>
+        <h3 class="uppercase font-black text-white text-lg mb-2" style="font-family:'Inter',sans-serif;">BOOK</h3>
+        <p class="text-gray-300 text-sm uppercase tracking-wide">CALL OR RESERVE ONLINE IN SECONDS</p>
+      </div>
+      <div class="flex flex-col items-center text-center">
+        <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-black font-black text-2xl" style="background:#C9A84C;font-family:'Inter',sans-serif;border:3px solid #C9A84C;">02</div>
+        <h3 class="uppercase font-black text-white text-lg mb-2" style="font-family:'Inter',sans-serif;">ARRIVE</h3>
+        <p class="text-gray-300 text-sm uppercase tracking-wide">WE WELCOME YOU IN STYLE</p>
+      </div>
+      <div class="flex flex-col items-center text-center">
+        <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-black font-black text-2xl" style="background:#C9A84C;font-family:'Inter',sans-serif;border:3px solid #C9A84C;">03</div>
+        <h3 class="uppercase font-black text-white text-lg mb-2" style="font-family:'Inter',sans-serif;">ORDER</h3>
+        <p class="text-gray-300 text-sm uppercase tracking-wide">CHOOSE FROM OUR PREMIUM SELECTION</p>
+      </div>
+      <div class="flex flex-col items-center text-center">
+        <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-black font-black text-2xl" style="background:#C9A84C;font-family:'Inter',sans-serif;border:3px solid #C9A84C;">04</div>
+        <h3 class="uppercase font-black text-white text-lg mb-2" style="font-family:'Inter',sans-serif;">INDULGE</h3>
+        <p class="text-gray-300 text-sm uppercase tracking-wide">EXPERIENCE PERFECTION ON YOUR PLATE</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-black">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-8">
+      <p class="uppercase text-xs tracking-widest font-bold mb-4" style="color:#C9A84C;font-family:'Inter',sans-serif;">— WHAT WE OFFER —</p>
+      <h2 class="text-white font-black uppercase leading-none" style="font-size:clamp(2.5rem,6vw,4.5rem);font-family:'Inter',sans-serif;">OUR<br><span style="color:#C9A84C;">SERVICES</span></h2>
+    </div>
+    <div class="flex flex-wrap gap-2 md:flex-nowrap mb-8 tabs-container">
+      <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-1" style="font-family:'Inter',sans-serif;">Our Services</button>
+      <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-2" style="font-family:'Inter',sans-serif;">Specialty Work</button>
+      <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-3" style="font-family:'Inter',sans-serif;">Additional Services</button>
+    </div>
+
+    <div id="tab-panel-1" class="tab-panel">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-black border-2 border-gray-800 p-8 rounded-none hover:border-yellow-600 transition-colors" style="border-color:inherit;">
+          <div class="text-6xl font-black mb-4" style="color:#C9A84C;font-family:'Inter',sans-serif;">01</div>
+          <div class="mb-4"><i data-lucide="star" class="w-8 h-8" style="color:#C9A84C;"></i></div>
+          <h3 class="text-2xl uppercase font-black text-white mb-3" style="font-family:'Inter',sans-serif;">CONSULTATION</h3>
+          <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">WE SIT DOWN WITH YOU TO UNDERSTAND YOUR EXACT NEEDS AND PREFERENCES. OUR TEAM CRAFTS A PERSONALIZED PLAN DESIGNED AROUND YOUR GOALS.</p>
+          <a href="tel:07131873405" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest border-b-2 pb-1 transition-all hover:gap-4" style="color:#C9A84C;border-color:#C9A84C;font-family:'Inter',sans-serif;">CALL NOW <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-black border-2 border-gray-800 p-8 rounded-none hover:border-yellow-600 transition-colors">
+          <div class="text-6xl font-black mb-4" style="color:#C9A84C;font-family:'Inter',sans-serif;">02</div>
+          <div class="mb-4"><i data-lucide="shield-check" class="w-8 h-8" style="color:#C9A84C;"></i></div>
+          <h3 class="text-2xl uppercase font-black text-white mb-3" style="font-family:'Inter',sans-serif;">ASSESSMENT</h3>
+          <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">THOROUGH EVALUATION OF YOUR REQUIREMENTS BEFORE ANY WORK BEGINS. WE LEAVE NOTHING TO CHANCE — PRECISION IS OUR STANDARD.</p>
+          <a href="tel:07131873405" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest border-b-2 pb-1 transition-all hover:gap-4" style="color:#C9A84C;border-color:#C9A84C;font-family:'Inter',sans-serif;">CALL NOW <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-black border-2 border-gray-800 p-8 rounded-none hover:border-yellow-600 transition-colors">
+          <div class="text-6xl font-black mb-4" style="color:#C9A84C;font-family:'Inter',sans-serif;">03</div>
+          <div class="mb-4"><i data-lucide="wrench" class="w-8 h-8" style="color:#C9A84C;"></i></div>
+          <h3 class="text-2xl uppercase font-black text-white mb-3" style="font-family:'Inter',sans-serif;">INSTALLATION</h3>
+          <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">PROFESSIONAL EXECUTION DELIVERED ON TIME AND BUILT TO LAST. EVERY INSTALLATION MEETS THE HIGHEST QUALITY BENCHMARKS.</p>
+          <a href="tel:07131873405" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest border-b-2 pb-1 transition-all hover:gap-4" style="color:#C9A84C;border-color:#C9A84C;font-family:'Inter',sans-serif;">CALL NOW <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+        <!-- Card 4 -->
+        <div class="bg-black border-2 border-gray-800 p-8 rounded-none hover:border-yellow-600 transition-colors">
+          <div class="text-6xl font-black mb-4" style="color:#C9A84C;font-family:'Inter',sans-serif;">04</div>
+          <div class="mb-4"><i data-lucide="check-circle" class="w-8 h-8" style="color:#C9A84C;"></i></div>
+          <h3 class="text-2xl uppercase font-black text-white mb-3" style="font-family:'Inter',sans-serif;">REPAIR</h3>
+          <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">FAST, RELIABLE REPAIRS THAT RESTORE PERFORMANCE TO FULL STRENGTH. WE DON'T PATCH — WE FIX IT RIGHT THE FIRST TIME.</p>
+          <a href="tel:07131873405" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest border-b-2 pb-1 transition-all hover:gap-4" style="color:#C9A84C;border-color:#C9A84C;font-family:'Inter',sans-serif;">CALL NOW <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-panel-2" class="tab-panel hidden">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-black border-2 border-gray-800 p-8 rounded-none hover:border-yellow-600 transition-colors">
+          <div class="text-6xl font-black mb-4" style="color:#C9A84C;font-family:'Inter',sans-serif;">01</div>
+          <div class="mb-4"><i data-lucide="sparkles" class="w-8 h-8" style="color:#C9A84C;"></i></div>
+          <h3 class="text-2xl uppercase font-black text-white mb-3" style="font-family:'Inter',sans-serif;">SPECIALTY WORK</h3>
+          <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">COMPLEX CHALLENGES DEMAND SPECIALIZED EXPERTISE AND WE DELIVER. OUR SKILLED TEAM TACKLES PROJECTS OTHERS WON'T TOUCH.</p>
+          <a href="tel:07131873405" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest border-b-2 pb-1 transition-all hover:gap-4" style="color:#C9A84C;border-color:#C9A84C;font-family:'Inter',sans-serif;">CALL NOW <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+        <div class="bg-black border-2 border-gray-800 p-8 rounded-none hover:border-yellow-600 transition-colors">
+          <div class="text-6xl font-black mb-4" style="color:#C9A84C;font-family:'Inter',sans-serif;">02</div>
+          <div class="mb-4"><i data-lucide="home" class="w-8 h-8" style="color:#C9A84C;"></i></div>
+          <h3 class="text-2xl uppercase font-black text-white mb-3" style="font-family:'Inter',sans-serif;">CUSTOM PROJECTS</h3>
+          <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">BESPOKE SOLUTIONS DESIGNED EXCLUSIVELY AROUND YOUR VISION. WE BUILD EXACTLY WHAT YOU NEED WITH PRECISION CRAFTSMANSHIP.</p>
+          <a href="tel:07131873405" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest border-b-2 pb-1 transition-all hover:gap-4" style="color:#C9A84C;border-color:#C9A84C;font-family:'Inter',sans-serif;">CALL NOW <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+        <div class="bg-black border-2 border-gray-800 p-8 rounded-none hover:border-yellow-600 transition-colors">
+          <div class="text-6xl font-black mb-4" style="color:#C9A84C;font-family:'Inter',sans-serif;">03</div>
+          <div class="mb-4"><i data-lucide="award" class="w-8 h-8" style="color:#C9A84C;"></i></div>
+          <h3 class="text-2xl uppercase font-black text-white mb-3" style="font-family:'Inter',sans-serif;">PREMIUM SERVICE</h3>
+          <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">TOP-TIER DELIVERY FOR CLIENTS WHO ACCEPT NOTHING LESS THAN THE BEST. WHITE-GLOVE TREATMENT FROM START TO FINISH.</p>
+          <a href="tel:07131873405" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest border-b-2 pb-1 transition-all hover:gap-4" style="color:#C9A84C;border-color:#C9A84C;font-family:'Inter',sans-serif;">CALL NOW <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+        <div class="bg-black border-2 border-gray-800 p-8 rounded-none hover:border-yellow-600 transition-colors">
+          <div class="text-6xl font-black mb-4" style="color:#C9A84C;font-family:'Inter',sans-serif;">04</div>
+          <div class="mb-4"><i data-lucide="clock" class="w-8 h-8" style="color:#C9A84C;"></i></div>
+          <h3 class="text-2xl uppercase font-black text-white mb-3" style="font-family:'Inter',sans-serif;">EXPEDITED SERVICE</h3>
+          <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">WHEN TIME IS CRITICAL WE ACCELERATE WITHOUT SACRIFICING QUALITY. FAST-TRACKED DELIVERY THAT STILL EXCEEDS EVERY STANDARD.</p>
+          <a href="tel:07131873405" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest border-b-2 pb-1 transition-all hover:gap-4" style="color:#C9A84C;border-color:#C9A84C;font-family:'Inter',sans-serif;">CALL NOW <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-panel-3" class="tab-panel hidden">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-black border-2 border-gray-800 p-8 rounded-none hover:border-yellow-600 transition-colors">
+          <div class="text-6xl font-black mb-4" style="color:#C9A84C;font-family:'Inter',sans-serif;">01</div>
+          <div class="mb-4"><i data-lucide="shield-check" class="w-8 h-8" style="color:#C9A84C;"></i></div>
+          <h3 class="text-2xl uppercase font-black text-white mb-3" style="font-family:'Inter',sans-serif;">MAINTENANCE PLANS</h3>
+          <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">SCHEDULED UPKEEP THAT KEEPS EVERYTHING RUNNING AT PEAK PERFORMANCE. PROACTIVE CARE SAVES YOU TIME AND MONEY LONG-TERM.</p>
+          <a href="tel:07131873405" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest border-b-2 pb-1 transition-all hover:gap-4" style="color:#C9A84C;border-color:#C9A84C;font-family:'Inter',sans-serif;">CALL NOW <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+        <div class="bg-black border-2 border-gray-800 p-8 rounded-none hover:border-yellow-600 transition-colors">
+          <div class="text-6xl font-black mb-4" style="color:#C9A84C;font-family:'Inter',sans-serif;">02</div>
+          <div class="mb-4"><i data-lucide="check-circle" class="w-8 h-8" style="color:#C9A84C;"></i></div>
+          <h3 class="text-2xl uppercase font-black text-white mb-3" style="font-family:'Inter',sans-serif;">WARRANTY COVERAGE</h3>
+          <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">COMPREHENSIVE PROTECTION THAT BACKS EVERY JOB WE COMPLETE. IF SOMETHING ISN'T RIGHT WE MAKE IT RIGHT — NO QUESTIONS ASKED.</p>
+          <a href="tel:07131873405" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest border-b-2 pb-1 transition-all hover:gap-4" style="color:#C9A84C;border-color:#C9A84C;font-family:'Inter',sans-serif;">CALL NOW <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+        <div class="bg-black border-2 border-gray-800 p-8 rounded-none hover:border-yellow-600 transition-colors">
+          <div class="text-6xl font-black mb-4" style="color:#C9A84C;font-family:'Inter',sans-serif;">03</div>
+          <div class="mb-4"><i data-lucide="star" class="w-8 h-8" style="color:#C9A84C;"></i></div>
+          <h3 class="text-2xl uppercase font-black text-white mb-3" style="font-family:'Inter',sans-serif;">INSPECTIONS</h3>
+          <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">DETAILED INSPECTIONS THAT IDENTIFY ISSUES BEFORE THEY BECOME PROBLEMS. THOROUGH, DOCUMENTED, AND DELIVERED WITH FULL TRANSPARENCY.</p>
+          <a href="tel:07131873405" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest border-b-2 pb-1 transition-all hover:gap-4" style="color:#C9A84C;border-color:#C9A84C;font-family:'Inter',sans-serif;">CALL NOW <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+        <div class="bg-black border-2 border-gray-800 p-8 rounded-none hover:border-yellow-600 transition-colors">
+          <div class="text-6xl font-black mb-4" style="color:#C9A84C;font-family:'Inter',sans-serif;">04</div>
+          <div class="mb-4"><i data-lucide="phone" class="w-8 h-8" style="color:#C9A84C;"></i></div>
+          <h3 class="text-2xl uppercase font-black text-white mb-3" style="font-family:'Inter',sans-serif;">EMERGENCY SERVICE</h3>
+          <p class="text-sm text-gray-400 uppercase tracking-wide leading-relaxed mb-6">RAPID RESPONSE WHEN YOU NEED US MOST — WE DON'T LEAVE YOU WAITING. URGENT SITUATIONS GET IMMEDIATE ATTENTION FROM OUR TEAM.</p>
+          <a href="tel:07131873405" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest border-b-2 pb-1 transition-all hover:gap-4" style="color:#C9A84C;border-color:#C9A84C;font-family:'Inter',sans-serif;">CALL NOW <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="animate-section py-20 md:py-28 bg-gray-950">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 mb-12">
+    <p class="uppercase text-xs tracking-widest font-bold mb-4" style="color:#C9A84C;font-family:'Inter',sans-serif;">— OUR WORK —</p>
+    <h2 class="text-white font-black uppercase" style="font-size:clamp(2.5rem,6vw,4.5rem);font-family:'Inter',sans-serif;">THE<br><span style="color:#C9A84C;">GALLERY</span></h2>
+  </div>
+  <div class="overflow-x-auto pb-6">
+    <div class="flex gap-4 px-4 md:px-8 lg:px-16" style="min-width:max-content;">
+      <div class="img-hover-wrap w-96 h-72 flex-shrink-0 border-2 border-black">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEE5CqrtTbsJx0lEsRc-Lh7X0ksOsq6z-9WuQV_WnW7EOCrQczKaawxqVYY5lnLbN3g2tBaKJ2pbTE7hFfw9357MnZxtbuX4gjkXF_ZG7mBuq3pfdoyyGQTtVRUM7TJcUQateBd4k4BnRW2w7hkBpBwvNbcBpq-OAdcHfQDWCQ22bCke0oHrzx-J9BAbt2JWEanwAxhKms0bm5zyPyM3u7excTRIWpPIU5JtRQBeHbSiC9jaE68_a2fvpUC98rpg-E33rnnzAV3Xj1ygrKQlha-8gMjX4DeH255w9PM7hiR3zQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-10/800/600'" alt="Gallery 1" class="w-full h-full object-cover">
+      </div>
+      <div class="img-hover-wrap w-96 h-72 flex-shrink-0 border-2 border-black">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFD7Zy7r-M4EpoZqLTdCLBwWUWzOksj9jHnvHQ3vxm6obGRUXNR1pGOovzt-rh8MDFEioVh4zKf5oZ8tMGTbu0_9P78bmA69TSTmYb8Q2WYcPvA3rOJfEFklx51ukPwFiV9ivZKJ1f9PRlMlWq5Q8D1YAhv0EnyEyalQR7w-hnL3Qk5BHCjonPbPE-0CT37u0DYNWystdjrS01_YSps0HKmuRZN8h1d2RFERoJ6VCaGapvxUpaxsjsu0Vk1V-3BaaaFWrzzQbuQ7gMRbXGKfHn5NA2Y2KWxKkYsT2j8uGZ_7g&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-11/800/600'" alt="Gallery 2" class="w-full h-full object-cover">
+      </div>
+      <div class="img-hover-wrap w-96 h-72 flex-shrink-0 border-2 border-black">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGf1CSFvEfXw2CE09VvAgZ8eR-376X-YhEdySpKvH4lS-jzKApLEqZcMbGBH5ioaptbZUtRSRXj9tgUa_mU-U_HiVw1C6Pi10GmTYKy8wH9mYM71VXvrbDAU6P3-gLIxnLVM018KLvRBg1XDTQQaeF8pwQbC8xK_429t6HGKGY1qPqSRXa3z_5GZ_Zu7dq5EJ3pt5N1eJxkVgtAKgLg7ZGJtwtAL8Jc_OXtWWWzEt_tYWdbryjsjdHqgQtvJvGY_LYn_e9BNJHvwkF2fHowU-BsgEqjACNEwO3Hlbx8Q0B7Pw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-12/800/600'" alt="Gallery 3" class="w-full h-full object-cover">
+      </div>
+      <div class="img-hover-wrap w-96 h-72 flex-shrink-0 border-2 border-black">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEF8x3fcYDFFYuN8D8h7G0EzdMf74AkPDAannDqAuSLy6RYTbTOyx3KDHIuTwcpO2gBSrMjPLo6cvvdXzoMsAI8THttLVvsyr7RsNLq7QChm23VKlFq9_ix4zMGGQDMorWkubt0rYYmAqKGlogRaZ6xBJHF-bPzRoEmn2vUt_twkp8oAohHB9Fi-Vvz7yhioBvO98zCUWfGYi1EFnEuomXm3Z17-6jh5reEBNtvTspPs13uP8hEYqGBM--tLGhdhGwvgq_2_TAn2x-zjqJY3jbBLWZ-NNa3cwuGQD71pmuMh2_gsAD0LoM9EKataZIO_NUxN63Nxtwq6kluWPuy4uR3LcLiQrdkx6XQ3ftReVcNI6EwXkXR1ROU4198PUy_IzM8bP7r5M7-isBomkJwFwFAdvWLYOwTZPSETvsPiIkhOOzYj&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-13/800/600'" alt="Gallery 4" class="w-full h-full object-cover">
+      </div>
+      <div class="img-hover-wrap w-96 h-72 flex-shrink-0 border-2 border-black">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFXcwiaC1mIg19Rl6DC9o32wCOr_c64OFE5vHVDuUB2yW2WNJmhyvsF9dyNY4WSE30NX7He2bxqgTs4EUe-jb9l3ya1lX9mmzSIodsIHju3aXzjow3Ke0fWKW7TPckvmciVnIwsxUbSEOYS2klCeicWNbhaYgndDeB2SPX04f1q29ilITlH1h6cFK6MYfTYasEih-_FVBBqkRH_-83v1P6YCre6Of_6gUOc6UkPmT0XEYl-uKW_yCZGWvaxuu5PBVH_IkyOZ3fcsI32Ujbw-jiF3UvA19SwLQ21MpET1RrSCQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-14/800/600'" alt="Gallery 5" class="w-full h-full object-cover">
+      </div>
+      <div class="img-hover-wrap w-96 h-72 flex-shrink-0 border-2 border-black">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEEvutrTJgLe2b5thBZeCZAg5PlzSvmt73gG3HFP_i6xFi8r4fbMjdcUpBbEb6YLDTGo8icqdNEXtZeeiTxFut6XFozia-PzxfjbyDU-8n_-ymsvPRSDeRd3BZbJkM-3ceJpv9NiJHjuuL0tUjcVaPAsEWG0c8cj2rBoc2xgK5ernjHJtvkwY0e3frNIpvdk6Zn2Df-hT9PE6gzBla0D8hTRGwstozrn0BGa3IT3P_HvVu2x2aPtzA5a5ud1uS9kBz43txW21zxf6a_fTdl5mPGfR-cEczjyW1MXwBXyxGzQe7d94ZZPrLIUt2UGjjaJ1l2ksL_Mi03FUvbsxJ0VXd292G2H65RQgmgK9uF_d8XVAYSD11DGk5vXtVUf2EOZJYYLX5KlDbvjzO5s_QQgybKluMShrXDQTtR8s8WatDnpBw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-15/800/600'" alt="Gallery 6" class="w-full h-full object-cover">
+      </div>
+      <div class="img-hover-wrap w-96 h-72 flex-shrink-0 border-2 border-black">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEFbeEtkTnL8Hto732TnuKTa9YGeK-VqFL8SBey4x7UR8qkjHtiTPaO3Hyvg97O0_c-kj7GREzhrM32xf-LQSqp_-hIdG1h3uNpToFZkzL3fwgFH0DX4omO481i_jlLdVECN_XjNEGooHViPp40fJnb834-LWh-Ioe4Y8nFipX0GiSPhjcmQUl6itwdnhHwBBj5nSDn0eSy8AUQ-tEH4Cbx0Lmd50AzdfmqgfNlMh3FzBlwRNtJbKb4O33a_sCpjemxZeD6LsD6T3O3qF6oROJcIfqkAhI63n68R4codRks8QsUb-NCdX-lVzHuGy63ZOO7BVd58rVGWVMePU0O1-SHEa9dTcMZZPM_hRxWX0t3DuacBSQan0jtE59Mgf2-bBsdp8PXraPwUef2e3RK3a_ATbWdS1ohzmFwU_5mkaZTNz9A&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-16/800/600'" alt="Gallery 7" class="w-full h-full object-cover">
+      </div>
+      <div class="img-hover-wrap w-96 h-72 flex-shrink-0 border-2 border-black">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGox1Wx0vv2gUOcstZhFEO_WohSp_ggjAtiyw61dlyzyKkQQS0nNPMAPwXbntfvvX72RYkHTGdT0o7tQ--JFGq8bi3iMHXAXFlgFiV2qawXplP4Td3e6oEg24IRmdOH7WQM7PcUAZ6qrxyrEO4FORVzEItZaXFu2SdjgfaFHrtRNTEAGknW_d3iZklEByR64BGgGD6F-NL5h6taWqa0xYn4O0EbLGDD7jI4HYMRffeOjmDmwYCvulYzzeoUJe9NbQrqDwasQ6SMcTekh7KWjMMqvvAj0K6hq-8DTOQGFe2Dpg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-17/800/600'" alt="Gallery 8" class="w-full h-full object-cover">
+      </div>
+      <div class="img-hover-wrap w-96 h-72 flex-shrink-0 border-2 border-black">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEF56MjLOFmK7KUve8Xmk7Vq85u7lw6XGJt0CMD5b6VxGkmdJEyhEm5HaI0NpjV4oKMm70fBrJC5NEHAl8N76tNPZey0m5B4-PkupKRgw6jAJ0h1oygebyxEdhAOFTi4TyEWgDDSjvLk6SBnapauqxGsqOreGSK025P1vi8SVw3POcc50DY-aheTj54cqHrLRGy689l_D0kMYqF3AjoQF_1kxQ7OffHtBe7-9m78wZ4J8uwiF_oAgjnPlgqzvoeAFz8J9cmh_QnFW3ZYm2v1dJgPDJ6YqhVLN_jnUWPAlrg1zw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-18/800/600'" alt="Gallery 9" class="w-full h-full object-cover">
+      </div>
+      <div class="img-hover-wrap w-96 h-72 flex-shrink-0 border-2 border-black">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEG2wG0cfiNGa7LYeiux5ye_GjQytd9XCYo-WOSxEnBpZ454zJEjMC3kX6TvVAqh2MZRRHuQO3sMzc1fuM3S2sL7egeE-C7_sWNzjibvJZYVrRyfJhz6yvZI9gnbeQ69ucujAcqNarX4wP2PP68Cuf_1j3kpQuMle169g4feI2r8ED8HUHCu9wjJmmnEvlIplTDHwvXgDUXnmVOsqnJyLPes6hUK9t76fG_wl-1D9i5nhJ4eoYSwo7ekSij-kouSLD_jGGjRUg-w7i76D-y-c67zJccU13SXj0VA23HN0omnVysYHSH5RMAhdJZG2vUI9j-e-MHmty41Bpaiy4tlGwBWDbNBxVz5NtY-yT5zr01o4giggbFBhGmGb6Q4_q6mSkhFpV891PPFwPFuhZldaX5dXGCpj5p9JAt4BZ-R7CQIPPDn&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-19/800/600'" alt="Gallery 10" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-black">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-16">
+      <p class="uppercase text-xs tracking-widest font-bold mb-4" style="color:#C9A84C;font-family:'Inter',sans-serif;">— WHAT PEOPLE SAY —</p>
+      <h2 class="text-white font-black uppercase" style="font-size:clamp(2.5rem,6vw,4.5rem);font-family:'Inter',sans-serif;">CLIENT<br><span style="color:#C9A84C;">REVIEWS</span></h2>
+    </div>
+
+    <!-- Review 1 -->
+    <div class="border-b-2 border-gray-800 py-10 flex flex-col md:flex-row gap-6 md:gap-12 items-start">
+      <div class="text-6xl font-black flex-shrink-0" style="color:#C9A84C;font-family:'Inter',sans-serif;">01</div>
+      <div class="flex-1">
+        <p class="text-xl uppercase italic text-white leading-relaxed mb-4">"Very good birthday experience! Table was nicely decorated and Natalie is really really nice!! The amount of food is also quite much. Definitely recommended!"</p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="uppercase font-black text-white tracking-widest text-sm" style="font-family:'Inter',sans-serif;">TONGYU ZHAO</p>
+            <span class="text-xs uppercase tracking-widest text-gray-500 font-semibold">A YEAR AGO</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="flex gap-1">
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+            </div>
+            <span class="text-xs uppercase tracking-widest text-gray-400 font-bold border px-2 py-1" style="border-color:#C9A84C;color:#C9A84C;font-family:'Inter',sans-serif;">VIA GOOGLE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review 2 -->
+    <div class="border-b-2 border-gray-800 py-10 flex flex-col md:flex-row gap-6 md:gap-12 items-start">
+      <div class="text-6xl font-black flex-shrink-0" style="color:#C9A84C;font-family:'Inter',sans-serif;">02</div>
+      <div class="flex-1">
+        <p class="text-xl uppercase italic text-white leading-relaxed mb-4">"I've walked past this place a couple of times this week and thought it would be a good place to eat. I went this evening and wow what an absolute treat it was. The atmosphere is extremely classy. The lighting and mood music set the scene and the service is very professional. The restaurant is a celebration of different steaks and I chose Rinderfleisch with chips and a hearty salad. The knife and fork were presented in a very fancy box and the steak was decorated with fine salad. The Krauterbutter I ordered came in a bowl of its own and they were very generous with the amount they served. The steak was cooked to perfection and the salad was a perfect accompaniment. I had two pints of Krombacher Weizen to wash the whole lot down. I highly highly recommend this place. They even have..."</p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="uppercase font-black text-white tracking-widest text-sm" style="font-family:'Inter',sans-serif;">JULIAN HOMER</p>
+            <span class="text-xs uppercase tracking-widest text-gray-500 font-semibold">3 YEARS AGO</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="flex gap-1">
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+            </div>
+            <span class="text-xs uppercase tracking-widest text-gray-400 font-bold border px-2 py-1" style="border-color:#C9A84C;color:#C9A84C;font-family:'Inter',sans-serif;">VIA GOOGLE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review 3 -->
+    <div class="border-b-2 border-gray-800 py-10 flex flex-col md:flex-row gap-6 md:gap-12 items-start">
+      <div class="text-6xl font-black flex-shrink-0" style="color:#C9A84C;font-family:'Inter',sans-serif;">03</div>
+      <div class="flex-1">
+        <p class="text-xl uppercase italic text-white leading-relaxed mb-4">"I had a craving for meat and I wasn't disappointed when I came to Blackbones on a whim with my fiancé. We were lucky to get a seat because we didn't make a reservation haha. The service was great and the food was fantastic. My medium rare steak was on point. I had the blackpepper steak 🥩 which I loved but my fiancé felt that the peppers were over powering the meat for him. He had a dry aged flank steak, it was 👨‍🍳 💋. All in all would come back again (like for real we are going back with my fiancé's family to celebrate a birthday) and would very much recommend to friend and family! 💕"</p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="uppercase font-black text-white tracking-widest text-sm" style="font-family:'Inter',sans-serif;">JIA YI LEE</p>
+            <span class="text-xs uppercase tracking-widest text-gray-500 font-semibold">3 YEARS AGO</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="flex gap-1">
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+            </div>
+            <span class="text-xs uppercase tracking-widest text-gray-400 font-bold border px-2 py-1" style="border-color:#C9A84C;color:#C9A84C;font-family:'Inter',sans-serif;">VIA GOOGLE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review 4 -->
+    <div class="border-b-2 border-gray-800 py-10 flex flex-col md:flex-row gap-6 md:gap-12 items-start">
+      <div class="text-6xl font-black flex-shrink-0" style="color:#C9A84C;font-family:'Inter',sans-serif;">04</div>
+      <div class="flex-1">
+        <p class="text-xl uppercase italic text-white leading-relaxed mb-4">"Might be the best Ribeye I ever had! My girlfriend had Lam and was also perfectly cooked. I had my ribeye medium-rare and was so tender that I could really just eat it with a spoon if I wanted. The staff was also very nice and helpful."</p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="uppercase font-black text-white tracking-widest text-sm" style="font-family:'Inter',sans-serif;">RASMUS RAMGAARD</p>
+            <span class="text-xs uppercase tracking-widest text-gray-500 font-semibold">4 YEARS AGO</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="flex gap-1">
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+            </div>
+            <span class="text-xs uppercase tracking-widest text-gray-400 font-bold border px-2 py-1" style="border-color:#C9A84C;color:#C9A84C;font-family:'Inter',sans-serif;">VIA GOOGLE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review 5 -->
+    <div class="border-b-2 border-gray-800 py-10 flex flex-col md:flex-row gap-6 md:gap-12 items-start">
+      <div class="text-6xl font-black flex-shrink-0" style="color:#C9A84C;font-family:'Inter',sans-serif;">05</div>
+      <div class="flex-1">
+        <p class="text-xl uppercase italic text-white leading-relaxed mb-4">"Very good service in English. Food was good. Sweet potatoes fries are a must have."</p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="uppercase font-black text-white tracking-widest text-sm" style="font-family:'Inter',sans-serif;">ISMAEL CRUZ</p>
+            <span class="text-xs uppercase tracking-widest text-gray-500 font-semibold">2 YEARS AGO</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="flex gap-1">
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+            </div>
+            <span class="text-xs uppercase tracking-widest text-gray-400 font-bold border px-2 py-1" style="border-color:#C9A84C;color:#C9A84C;font-family:'Inter',sans-serif;">VIA GOOGLE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-gray-950">
+  <div class="max-w-5xl mx-auto">
+    <p class="uppercase text-xs tracking-widest font-bold mb-4" style="color:#C9A84C;font-family:'Inter',sans-serif;">— GOT QUESTIONS? —</p>
+    <h2 class="text-white font-black uppercase mb-16" style="font-size:clamp(2.5rem,6vw,4.5rem);font-family:'Inter',sans-serif;">FREQUENTLY<br><span style="color:#C9A84C;">ASKED</span></h2>
+
+    <details class="border-3 border-gray-700 mb-4 group" style="border-width:3px;">
+      <summary class="uppercase font-black text-xl py-6 px-6 text-white flex justify-between items-center group-open:text-black" style="font-family:'Inter',sans-serif;background:inherit;" onclick="this.closest('details').open ? this.style.background='' : this.style.background='#C9A84C'">
+        DO YOU ACCEPT WALK-INS OR IS RESERVATION REQUIRED?
+        <i data-lucide="chevron-right" class="w-6 h-6 flex-shrink-0 transition-transform group-open:rotate-90"></i>
+      </summary>
+      <div class="px-6 pb-6 text-gray-300 text-base leading-relaxed border-t-2 border-gray-700 pt-4">
+        We welcome both walk-ins and reservations, though we strongly recommend booking ahead during peak hours and weekends to guarantee your preferred table. Reservations can be made by calling us directly at 07131 873405. Walk-in availability depends on capacity at the time of your visit.
+      </div>
+    </details>
+
+    <details class="border-3 border-gray-700 mb-4 group" style="border-width:3px;">
+      <summary class="uppercase font-black text-xl py-6 px-6 text-white flex justify-between items-center" style="font-family:'Inter',sans-serif;" onclick="this.closest('details').open ? this.style.background='' : this.style.background='#C9A84C'">
+        WHAT ARE YOUR OPENING HOURS?
+        <i data-lucide="chevron-right" class="w-6 h-6 flex-shrink-0 transition-transform group-open:rotate-90"></i>
+      </summary>
+      <div class="px-6 pb-6 text-gray-300 text-base leading-relaxed border-t-2 border-gray-700 pt-4">
+        We are open Monday through Thursday from 12:00–2:30 PM and 5:00–11:00 PM. Friday hours are 5:00–11:30 PM, Saturday 12:00–11:30 PM, and Sunday 5:00–10:00 PM. We are open seven days a week so there is always a perfect time to visit.
+      </div>
+    </details>
+
+    <details class="border-3 border-gray-700 mb-4 group" style="border-width:3px;">
+      <summary class="uppercase font-black text-xl py-6 px-6 text-white flex justify-between items-center" style="font-family:'Inter',sans-serif;" onclick="this.closest('details').open ? this.style.background='' : this.style.background='#C9A84C'">
+        DO YOU CATER FOR SPECIAL OCCASIONS AND EVENTS?
+        <i data-lucide="chevron-right" class="w-6 h-6 flex-shrink-0 transition-transform group-open:rotate-90"></i>
+      </summary>
+      <div class="px-6 pb-6 text-gray-300 text-base leading-relaxed border-t-2 border-gray-700 pt-4">
+        Absolutely — we specialize in making celebrations unforgettable. Whether it is a birthday, anniversary, or corporate event, our team will coordinate table decorations, personalized menus, and dedicated service. Contact us in advance so we can prepare everything to your exact specifications.
+      </div>
+    </details>
+
+    <details class="border-3 border-gray-700 mb-4 group" style="border-width:3px;">
+      <summary class="uppercase font-black text-xl py-6 px-6 text-white flex justify-between items-center" style="font-family:'Inter',sans-serif;" onclick="this.closest('details').open ? this.style.background='' : this.style.background='#C9A84C'">
+        WHAT TYPES OF STEAKS DO YOU SERVE?
+        <i data-lucide="chevron-right" class="w-6 h-6 flex-shrink-0 transition-transform group-open:rotate-90"></i>
+      </summary>
+      <div class="px-6 pb-6 text-gray-300 text-base leading-relaxed border-t-2 border-gray-700 pt-4">
+        Our menu celebrates premium cuts including Ribeye, dry-aged Flank Steak, Rinderfleisch, and seasonal specialty cuts. All steaks are prepared by our expert kitchen team and cooked precisely to your requested doneness. We also offer accompaniments like herb butter, salads, and premium sides.
+      </div>
+    </details>
+
+    <details class="border-3 border-gray-700 mb-4 group" style="border-width:3px;">
+      <summary class="uppercase font-black text-xl py-6 px-6 text-white flex justify-between items-center" style="font-family:'Inter',sans-serif;" onclick="this.closest('details').open ? this.style.background='' : this.style.background='#C9A84C'">
+        DO YOU OFFER VEGETARIAN OR NON-MEAT OPTIONS?
+        <i data-lucide="chevron-right" class="w-6 h-6 flex-shrink-0 transition-transform group-open:rotate-90"></i>
+      </summary>
+      <div class="px-6 pb-6 text-gray-300 text-base leading-relaxed border-t-2 border-gray-700 pt-4">
+        While we are a steak-focused restaurant, we do offer a selection of hearty salads, premium sides, and non-beef protein options to accommodate guests with different preferences. Please call ahead or ask your server for the current available alternatives. We are always happy to accommodate dietary requirements.
+      </div>
+    </details>
+
+    <details class="border-3 border-gray-700 mb-4 group" style="border-width:3px;">
+      <summary class="uppercase font-black text-xl py-6 px-6 text-white flex justify-between items-center" style="font-family:'Inter',sans-serif;" onclick="this.closest('details').open ? this.style.background='' : this.style.background='#C9A84C'">
+        IS PARKING AVAILABLE NEAR THE RESTAURANT?
+        <i data-lucide="chevron-right" class="w-6 h-6 flex-shrink-0 transition-transform group-open:rotate-90"></i>
+      </summary>
+      <div class="px-6 pb-6 text-gray-300 text-base leading-relaxed border-t-2 border-gray-700 pt-4">
+        Yes, there are parking options available in the surrounding area near Sülmerstraße 40. We recommend arriving a few minutes early to allow time to find a convenient spot. Public transportation connections are also readily accessible for those coming from across the Atlanta area.
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-black">
+  <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+    <!-- Left: Map -->
+    <div class="w-full min-h-96 lg:min-h-full" style="min-height:500px;">
+      <iframe
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k&q=place_id:ChIJhdZndEMvmEcRTcn2m1_VMGs"
+        width="100%"
+        height="100%"
+        style="border:2px solid #C9A84C;min-height:500px;display:block;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Bones Restaurant Location">
+      </iframe>
+    </div>
+    <!-- Right: Form -->
+    <div class="bg-black border-2 p-8" style="border-color:#C9A84C;max-width:28rem;">
+      <p class="text-xs tracking-widest uppercase font-bold" style="color:#C9A84C;font-family:'Inter',sans-serif;">GET STARTED</p>
+      <h3 class="text-3xl font-black uppercase text-white mt-2" style="font-family:'Inter',sans-serif;">GET A FREE ESTIMATE</h3>
+      <p class="text-gray-400 uppercase text-sm mt-1 tracking-wide" style="font-family:'Inter',sans-serif;">WE RESPOND WITHIN 24 HOURS</p>
+      <div class="flex items-center gap-2 mt-3">
+        <div class="flex gap-1">
+          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-current" style="color:#C9A84C;"></i>
+        </div>
+        <span class="text-sm text-gray-400" style="font-family:'Inter',sans-serif;">4.6 out of 5 · 914 reviews</span>
+      </div>
+      <form action="#" method="POST" class="mt-4">
+        <input type="text" name="name" placeholder="YOUR FULL NAME" required class="bg-gray-900 border-0 border-b-2 border-gray-700 focus:border-yellow-500 focus:ring-0 py-3 px-0 text-white uppercase w-full mt-4 text-sm tracking-wide placeholder-gray-600" style="font-family:'Inter',sans-serif;">
+        <input type="email" name="email" placeholder="YOUR EMAIL ADDRESS" required class="bg-gray-900 border-0 border-b-2 border-gray-700 focus:border-yellow-500 focus:ring-0 py-3 px-0 text-white uppercase w-full mt-4 text-sm tracking-wide placeholder-gray-600" style="font-family:'Inter',sans-serif;">
+        <input type="tel" name="phone" placeholder="YOUR PHONE NUMBER" class="bg-gray-900 border-0 border-b-2 border-gray-700 focus:border-yellow-500 focus:ring-0 py-3 px-0 text-white uppercase w-full mt-4 text-sm tracking-wide placeholder-gray-600" style="font-family:'Inter',sans-serif;">
+        <select name="service" class="bg-gray-900 border-0 border-b-2 border-gray-700 focus:border-yellow-500 focus:ring-0 py-3 px-0 text-white uppercase w-full mt-4 text-sm tracking-wide appearance-none" style="font-family:'Inter',sans-serif;">
+          <option value="" disabled selected>SELECT A SERVICE</option>
+          <option value="consultation">CONSULTATION</option>
+          <option value="assessment">ASSESSMENT</option>
+          <option value="installation">INSTALLATION</option>
+          <option value="repair">REPAIR</option>
+        </select>
+        <textarea name="message" rows="3" placeholder="TELL US ABOUT YOUR PROJECT" class="bg-gray-900 border-0 border-b-2 border-gray-700 focus:border-yellow-500 focus:ring-0 py-3 px-0 text-white uppercase w-full mt-4 text-sm tracking-wide placeholder-gray-600 resize-none" style="font-family:'Inter',sans-serif;"></textarea>
+        <button type="submit" class="w-full py-4 font-black uppercase text-black text-sm tracking-widest mt-6 hover:opacity-90 transition-opacity" style="background:#C9A84C;font-family:'Inter',sans-serif;">SUBMIT REQUEST</button>
+        <p class="text-xs text-gray-600 uppercase mt-3 tracking-wide" style="font-family:'Inter',sans-serif;">By submitting you agree to be contacted regarding your request.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-black" style="border-top:4px solid #C9A84C;">
+  <!-- CTA Strip -->
+  <div class="py-12 px-4 md:px-8 lg:px-16 flex flex-col md:flex-row justify-between items-center gap-8" style="background:#1E3A5F;">
+    <h2 class="text-5xl font-black uppercase text-white leading-none" style="font-family:'Inter',sans-serif;">READY TO<br>GET STARTED?</h2>
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a href="#contact" class="px-8 py-4 font-black uppercase tracking-widest text-black text-sm text-center" style="background:#C9A84C;font-family:'Inter',sans-serif;">BOOK A TABLE</a>
+      <a href="tel:07131873405" class="px-8 py-4 font-black uppercase tracking-widest text-white text-sm border-2 border-white flex items-center justify-center gap-3 hover:bg-white hover:text-black transition-colors" style="font-family:'Inter',sans-serif;"><i data-lucide="phone" class="w-4 h-4"></i> 07131 873405</a>
+    </div>
+  </div>
+
+  <!-- Main Footer -->
+  <div class="py-20 px-4 md:px-8 lg:px-16 grid grid-cols-2 md:grid-cols-5 gap-8">
+    <!-- Col 1: Business Identity -->
+    <div class="col-span-2 md:col-span-1">
+      <div class="text-white font-black text-2xl tracking-widest uppercase mb-4" style="font-family:'Inter',sans-serif;">BONES<span style="color:#C9A84C;">.</span></div>
+      <p class="text-gray-400 text-sm leading-relaxed mb-4 uppercase tracking-wide">WHERE EVERY CUT IS A STATEMENT</p>
+      <p class="text-gray-500 text-xs leading-relaxed">Sülmerstraße 40<br>74072 Heilbronn, Germany</p>
+      <a href="tel:07131873405" class="text-xs mt-3 block font-bold uppercase tracking-widest" style="color:#C9A84C;font-family:'Inter',sans-serif;">07131 873405</a>
+    </div>
+
+    <!-- Col 2: Services -->
+    <div>
+      <h4 class="uppercase font-black text-white text-sm tracking-widest mb-6" style="font-family:'Inter',sans-serif;">SERVICES</h4>
+      <ul class="space-y-3">
+        <li><a href="#services" class="text-gray-400 text-sm uppercase tracking-wide hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">Consultation</a></li>
+        <li><a href="#services" class="text-gray-400 text-sm uppercase tracking-wide hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">Assessment</a></li>
+        <li><a href="#services" class="text-gray-400 text-sm uppercase tracking-wide hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">Installation</a></li>
+        <li><a href="#services" class="text-gray-400 text-sm uppercase tracking-wide hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">Repair</a></li>
+        <li><a href="#services" class="text-gray-400 text-sm uppercase tracking-wide hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">Specialty Work</a></li>
+        <li><a href="#services" class="text-gray-400 text-sm uppercase tracking-wide hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">Custom Projects</a></li>
+        <li><a href="#services" class="text-gray-400 text-sm uppercase tracking-wide hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">Premium Service</a></li>
+        <li><a href="#services" class="text-gray-400 text-sm uppercase tracking-wide hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">Expedited Service</a></li>
+        <li><a href="#services" class="text-gray-400 text-sm uppercase tracking-wide hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">Maintenance Plans</a></li>
+        <li><a href="#services" class="text-gray-400 text-sm uppercase tracking-wide hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">Warranty Coverage</a></li>
+        <li><a href="#services" class="text-gray-400 text-sm uppercase tracking-wide hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">Inspections</a></li>
+        <li><a href="#services" class="text-gray-400 text-sm uppercase tracking-wide hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">Emergency Service</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 3: Service Areas -->
+    <div>
+      <h4 class="uppercase font-black text-white text-sm tracking-widest mb-6" style="font-family:'Inter',sans-serif;">SERVICE AREAS</h4>
+      <ul class="space-y-3">
+        <li><span class="text-gray-400 text-sm uppercase tracking-wide" style="font-family:'Inter',sans-serif;">Atlanta, GA</span></li>
+        <li><span class="text-gray-400 text-sm uppercase tracking-wide" style="font-family:'Inter',sans-serif;">Decatur, GA</span></li>
+        <li><span class="text-gray-400 text-sm uppercase tracking-wide" style="font-family:'Inter',sans-serif;">Sandy Springs, GA</span></li>
+        <li><span class="text-gray-400 text-sm uppercase tracking-wide" style="font-family:'Inter',sans-serif;">Marietta, GA</span></li>
+        <li><span class="text-gray-400 text-sm uppercase tracking-wide" style="font-family:'Inter',sans-serif;">Smyrna, GA</span></li>
+        <li><span class="text-gray-400 text-sm uppercase tracking-wide" style="font-family:'Inter',sans-serif;">Roswell, GA</span></li>
+        <li><span class="text-gray-400 text-sm uppercase tracking-wide" style="font-family:'Inter',sans-serif;">Alpharetta, GA</span></li>
+        <li><span class="text-gray-400 text-sm uppercase tracking-wide" style="font-family:'Inter',sans-serif;">Norcross, GA</span></li>
+        <li><span class="text-gray-400 text-sm uppercase tracking-wide" style="font-family:'Inter',sans-serif;">Dunwoody, GA</span></li>
+      </ul>
+    </div>
+
+    <!-- Col 4: Site Nav -->
+    <div>
+      <h4 class="uppercase font-black text-white text-sm tracking-widest mb-6" style="font-family:'Inter',sans-serif;">NAVIGATE</h4>
+      <ul class="space-y-3">
+        <li><a href="#home" class="text-gray-400 text-sm uppercase tracking-wide hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">Home</a></li>
+        <li><a href="#about" class="text-gray-400 text-sm uppercase tracking-wide hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">About</a></li>
+        <li><a href="#services" class="text-gray-400 text-sm uppercase tracking-wide hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">Services</a></li>
+        <li><a href="#gallery" class="text-gray-400 text-sm uppercase tracking-wide hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">Gallery</a></li>
+        <li><a href="#reviews" class="text-gray-400 text-sm uppercase tracking-wide hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">Reviews</a></li>
+        <li><a href="#faq" class="text-gray-400 text-sm uppercase tracking-wide hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">FAQ</a></li>
+        <li><a href="#contact" class="text-gray-400 text-sm uppercase tracking-wide hover:text-white transition-colors" style="font-family:'Inter',sans-serif;">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 5: Trust Signals -->
+    <div>
+      <h4 class="uppercase font-black text-white text-sm tracking-widest mb-6" style="font-family:'Inter',sans-serif;">TRUST SIGNALS</h4>
+      <div class="space-y-4">
+        <div class="flex items-start gap-3">
+          <i data-lucide="star" class="w-5 h-5 flex-shrink-0 mt-0.5" style="color:#C9A84C;"></i>
+          <div>
+            <p class="text-white text-sm font-black uppercase" style="font-family:'Inter',sans-serif;">4.6 STAR RATED</p>
+            <p class="text-gray-500 text-xs uppercase">914 GOOGLE REVIEWS</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <i data-lucide="clock" class="w-5 h-5 flex-shrink-0 mt-0.5" style="color:#C9A84C;"></i>
+          <div>
+            <p class="text-white text-sm font-black uppercase" style="font-family:'Inter',sans-serif;">OPEN 7 DAYS</p>
+            <p class="text-gray-500 text-xs uppercase">LUNCH & DINNER</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <i data-lucide="shield-check" class="w-5 h-5 flex-shrink-0 mt-0.5" style="color:#C9A84C;"></i>
+          <div>
+            <p class="text-white text-sm font-black uppercase" style="font-family:'Inter',sans-serif;">QUALITY GUARANTEE</p>
+            <p class="text-gray-500 text-xs uppercase">EVERY VISIT</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <i data-lucide="award" class="w-5 h-5 flex-shrink-0 mt-0.5" style="color:#C9A84C;"></i>
+          <div>
+            <p class="text-white text-sm font-black uppercase" style="font-family:'Inter',sans-serif;">PREMIUM CUTS</p>
+            <p class="text-gray-500 text-xs uppercase">EXPERTLY PREPARED</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="px-4 md:px-8 lg:px-16 py-6 flex flex-col md:flex-row justify-between items-center gap-4 border-t-2" style="background:#0a0a0a;border-color:#C9A84C;">
+    <p class="text-gray-600 text-xs uppercase tracking-widest" style="font-family:'Inter',sans-serif;">© 2024 BONES RESTAURANT. ALL RIGHTS RESERVED.</p>
+    <p class="text-gray-700 text-xs uppercase tracking-widest" style="font-family:'Inter',sans-serif;">ATLANTA, GA · 07131 873405</p>
+  </div>
+</footer>
+
+<script>
+(function(){const nav=document.querySelector('nav');if(!nav)return;window.addEventListener('scroll',()=>nav.classList.toggle('shadow-md',window.scrollY>50));})();
+(function(){const ham=document.getElementById('hamburger');const menu=document.getElementById('mobile-menu');if(ham&&menu)ham.addEventListener('click',()=>menu.classList.toggle('hidden'));document.querySelectorAll('.mobile-nav-link').forEach(a=>{a.addEventListener('click',()=>{if(menu)menu.classList.add('hidden');});});})();
+(function(){const buttons=Array.from(document.querySelectorAll('.tab-btn'));const panels=Array.from(document.querySelectorAll('.tab-panel'));if(!buttons.length||!panels.length)return;function showByIndex(idx){panels.forEach(p=>p.classList.add('hidden'));buttons.forEach(b=>{b.classList.remove('active-tab');b.classList.add('inactive-tab');});if(panels[idx])panels[idx].classList.remove('hidden');if(buttons[idx]){buttons[idx].classList.add('active-tab');buttons[idx].classList.remove('inactive-tab');}}function showById(id){const i=panels.findIndex(p=>p.id===id);if(i>=0)showByIndex(i);}buttons.forEach((btn,idx)=>{btn.addEventListener('click',(e)=>{e.preventDefault();const t=btn.getAttribute('data-target');if(t)showById(t);else showByIndex(idx);});});window.showTab=function(id){showById(id);};if(!panels.some(p=>!p.classList.contains('hidden')))showByIndex(0);})();
+function animateCount(el,target,suffix){let start=0;const duration=2000,steps=60,inc=target/steps;const t=setInterval(()=>{start+=inc;if(start>=target){el.textContent=target+(suffix||'');clearInterval(t);}else el.textContent=Math.floor(start)+(suffix||'');},duration/steps);}
+const statObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const t=parseInt(e.target.dataset.count);const s=e.target.dataset.suffix||'';if(t)animateCount(e.target,t,s);statObs.unobserve(e.target);}});},{threshold:0.3});
+document.querySelectorAll('[data-count]').forEach(el=>statObs.observe(el));
+(function(){const sections=document.querySelectorAll('.animate-section');if(!sections.length)return;const obs=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.remove('is-pending');entry.target.classList.add('is-visible');obs.unobserve(entry.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});sections.forEach(el=>{const r=el.getBoundingClientRect();const inView=r.top<window.innerHeight&&r.bottom>0;if(inView)el.classList.add('is-visible');else{el.classList.add('is-pending');obs.observe(el);}});setTimeout(()=>{document.querySelectorAll('.animate-section.is-pending').forEach(el=>{el.classList.remove('is-pending');el.classList.add('is-visible');});},2500);})();
+(function(){function revealTarget(){const hash=window.location.hash;if(!hash||hash.length<2)return;try{const target=document.querySelector(hash);if(target&&target.classList.contains('animate-section')){target.classList.remove('is-pending');target.classList.add('is-visible');}}catch(e){}}window.addEventListener('hashchange',revealTarget);setTimeout(revealTarget,100);document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',()=>{const hash=a.getAttribute('href');if(hash&&hash.length>1){try{const target=document.querySelector(hash);if(target&&target.classList.contains('animate-section')){target.classList.remove('is-pending');target.classList.add('is-visible');}}catch(e){}}});});})();
+function updateClock(){const el=document.getElementById('live-clock');if(el)el.textContent='Atlanta - '+new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});}updateClock();setInterval(updateClock,1000);
+(function(){const render=()=>{if(window.lucide)window.lucide.createIcons();};if(window.lucide)render();else document.addEventListener('DOMContentLoaded',render);setTimeout(render,500);setTimeout(render,1500);})();
+</script>
+</body>
+</html>

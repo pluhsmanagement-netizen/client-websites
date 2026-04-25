@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fox Fence Company | Acworth, GA | Local Fencing Experts</title>
+  <title>Fox Fence Company | Acworth, GA</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Manrope:wght@400;500&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
@@ -40,181 +40,105 @@
     .award-badge:hover { filter: grayscale(0%); }
   </style>
 </head>
-<body class="bg-stone-50 text-stone-800">
+<body class="bg-[#f8f8f5] text-gray-900">
 
   <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-stone-200 transition-shadow duration-300">
-    <div class="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-20">
-      <a href="#home" class="flex items-center gap-2">
-        <span class="text-2xl font-bold" style="font-family:'Inter',sans-serif; color:#4E342E;">Fox Fence</span>
-        <span class="text-2xl font-bold" style="font-family:'Inter',sans-serif; color:#C8A97E;">Company</span>
-      </a>
-      <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
-        <a href="#home" class="text-stone-700 hover:text-[#4E342E] transition">Home</a>
-        <a href="#about" class="text-stone-700 hover:text-[#4E342E] transition">About</a>
-        <a href="#services" class="text-stone-700 hover:text-[#4E342E] transition">Services</a>
-        <a href="#gallery" class="text-stone-700 hover:text-[#4E342E] transition">Gallery</a>
-        <a href="#reviews" class="text-stone-700 hover:text-[#4E342E] transition">Reviews</a>
-        <a href="#faq" class="text-stone-700 hover:text-[#4E342E] transition">FAQ</a>
-        <a href="#contact" class="text-stone-700 hover:text-[#4E342E] transition">Contact</a>
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#f8f8f5] border-b border-gray-200 transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-16 md:h-20">
+      <a href="#home" class="serif-display italic text-xl md:text-2xl text-[#4E342E] font-bold tracking-tight">Fox Fence Company</a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#home" class="serif-display text-sm text-gray-700 hover:text-[#4E342E] transition">Home</a>
+        <a href="#about" class="serif-display text-sm text-gray-700 hover:text-[#4E342E] transition">About</a>
+        <a href="#services" class="serif-display text-sm text-gray-700 hover:text-[#4E342E] transition">Services</a>
+        <a href="#gallery" class="serif-display text-sm text-gray-700 hover:text-[#4E342E] transition">Gallery</a>
+        <a href="#reviews" class="serif-display text-sm text-gray-700 hover:text-[#4E342E] transition">Reviews</a>
+        <a href="#faq" class="serif-display text-sm text-gray-700 hover:text-[#4E342E] transition">FAQ</a>
+        <a href="#contact" class="serif-display text-sm text-gray-700 hover:text-[#4E342E] transition">Contact</a>
+        <a href="tel:7709755858" class="ml-4 bg-[#4E342E] text-white serif-display italic text-sm px-5 py-2 rounded-full hover:bg-[#3a271f] transition">(770) 975-5858</a>
       </div>
-      <div class="hidden md:flex items-center gap-3">
-        <span id="live-clock" class="text-xs text-stone-400 font-medium"></span>
-        <a href="tel:7709755858" class="bg-[#4E342E] text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-[#3a2620] transition flex items-center gap-2">
-          <i data-lucide="phone" class="w-4 h-4"></i> (770) 975-5858
-        </a>
-      </div>
-      <button id="hamburger" class="md:hidden p-2 text-stone-700">
+      <button id="hamburger" class="md:hidden p-2 text-gray-700">
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
     </div>
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden bg-white border-t border-stone-100">
-      <a href="#home" class="mobile-nav-link block py-3 px-4 border-b border-stone-100 text-sm font-semibold text-stone-700 hover:text-[#4E342E]">Home</a>
-      <a href="#about" class="mobile-nav-link block py-3 px-4 border-b border-stone-100 text-sm font-semibold text-stone-700 hover:text-[#4E342E]">About</a>
-      <a href="#services" class="mobile-nav-link block py-3 px-4 border-b border-stone-100 text-sm font-semibold text-stone-700 hover:text-[#4E342E]">Services</a>
-      <a href="#gallery" class="mobile-nav-link block py-3 px-4 border-b border-stone-100 text-sm font-semibold text-stone-700 hover:text-[#4E342E]">Gallery</a>
-      <a href="#reviews" class="mobile-nav-link block py-3 px-4 border-b border-stone-100 text-sm font-semibold text-stone-700 hover:text-[#4E342E]">Reviews</a>
-      <a href="#faq" class="mobile-nav-link block py-3 px-4 border-b border-stone-100 text-sm font-semibold text-stone-700 hover:text-[#4E342E]">FAQ</a>
-      <a href="#contact" class="mobile-nav-link block py-3 px-4 border-b border-stone-100 text-sm font-semibold text-stone-700 hover:text-[#4E342E]">Contact</a>
-      <div class="px-4 py-3">
-        <a href="tel:7709755858" class="block bg-[#4E342E] text-white text-center py-3 rounded-full text-sm font-bold">(770) 975-5858</a>
-      </div>
+    <div id="mobile-menu" class="hidden bg-[#f8f8f5] border-t border-gray-200">
+      <a href="#home" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 serif-display text-gray-800 hover:text-[#4E342E]">Home</a>
+      <a href="#about" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 serif-display text-gray-800 hover:text-[#4E342E]">About</a>
+      <a href="#services" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 serif-display text-gray-800 hover:text-[#4E342E]">Services</a>
+      <a href="#gallery" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 serif-display text-gray-800 hover:text-[#4E342E]">Gallery</a>
+      <a href="#reviews" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 serif-display text-gray-800 hover:text-[#4E342E]">Reviews</a>
+      <a href="#faq" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 serif-display text-gray-800 hover:text-[#4E342E]">FAQ</a>
+      <a href="#contact" class="mobile-nav-link block py-3 px-4 serif-display text-gray-800 hover:text-[#4E342E]">Contact</a>
+      <a href="tel:7709755858" class="mobile-nav-link block py-3 px-4 text-[#4E342E] font-semibold serif-display">(770) 975-5858</a>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section id="home" class="animate-section pt-20 min-h-screen flex items-center bg-stone-50">
-    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16 md:py-24">
-      <!-- Left -->
-      <div>
-        <span class="inline-flex items-center gap-2 bg-[#C8A97E]/20 text-[#4E342E] text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
-          <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Serving Acworth, Georgia
-        </span>
-        <h1 class="text-5xl md:text-6xl font-extrabold text-stone-900 leading-tight mb-4">
-          Your Neighbors.<br>
-          <span style="color:#4E342E;">Your Fence.</span>
-        </h1>
-        <p class="text-lg text-stone-600 mb-8 max-w-md">Locally rooted, community trusted. Fox Fence Company has been protecting Acworth yards and businesses with quality craftsmanship you can count on.</p>
-        <div class="flex flex-wrap gap-4 mb-10">
-          <a href="#contact" class="bg-[#4E342E] text-white px-7 py-3.5 rounded-full font-bold text-sm hover:bg-[#3a2620] transition flex items-center gap-2">
-            Get a Free Estimate <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </a>
-          <a href="tel:7709755858" class="border-2 border-[#4E342E] text-[#4E342E] px-7 py-3.5 rounded-full font-bold text-sm hover:bg-[#4E342E] hover:text-white transition flex items-center gap-2">
-            <i data-lucide="phone" class="w-4 h-4"></i> (770) 975-5858
-          </a>
-        </div>
-        <!-- Trust Badges -->
-        <div class="flex flex-wrap gap-5">
-          <div class="flex items-center gap-2 text-stone-600 text-sm font-semibold">
-            <i data-lucide="shield-check" class="w-5 h-5 text-[#4E342E]"></i> Licensed & Insured
-          </div>
-          <div class="flex items-center gap-2 text-stone-600 text-sm font-semibold">
-            <i data-lucide="check-circle" class="w-5 h-5 text-[#4E342E]"></i> Family-Owned
-          </div>
-          <div class="flex items-center gap-2 text-stone-600 text-sm font-semibold">
-            <i data-lucide="star" class="w-5 h-5 text-[#C8A97E]"></i> 4.1 Google Rating
-          </div>
-          <div class="flex items-center gap-2 text-stone-600 text-sm font-semibold">
-            <i data-lucide="check-circle" class="w-5 h-5 text-[#4E342E]"></i> Free Estimates
-          </div>
-        </div>
+  <section id="home" class="animate-section pt-32 md:pt-40 pb-20 md:pb-32 px-4 md:px-8 lg:px-16 min-h-screen flex flex-col justify-between bg-[#f8f8f5]">
+    <div class="max-w-7xl mx-auto w-full">
+      <p class="uppercase tracking-widest text-xs text-[#4E342E] font-semibold mb-8">— Fencing, Acworth GA</p>
+      <h1 class="serif-display text-7xl md:text-9xl font-bold text-gray-900 leading-none tracking-tight max-w-5xl">
+        Fences<br><em class="text-[#4E342E]">Built</em><br>to Last.
+      </h1>
+    </div>
+    <div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row md:justify-between md:items-end mt-16 gap-8">
+      <div class="flex items-center gap-3 text-sm text-gray-500 serif-display italic">
+        <span id="live-clock" class="text-gray-400"></span>
+        <span class="mx-2 text-gray-300">·</span>
+        <span>Mon–Fri 8am–5pm</span>
       </div>
-      <!-- Right -->
-      <div class="img-hover-wrap rounded-2xl shadow-2xl overflow-hidden h-[420px] md:h-[520px]">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEFNfX88Ip8mkiylym5sjsVB8U3UQYuGeuJUgKcE0sWR30IIOu27GaAVfpOWJ2oO0h-QudRZLLSP6dNZCi3Fo6G7f0fmll65vbnSsQmwd4SceC_kqbQlDPYWhLw5JhKdA0XuFKm7566eU4ubCBTv0224zzHqsCukWysn3oQV_H466jpsX0Ignf51poRS3B1O-SF-zUWDuVTBsn2Eg_56rnPFOc-IzHeEtb8YfXJAYPjPf3pn2wTHdEnyztE4aNZvrhdUASbRNMmXwv7jEFRqbR-o7YKw-U0FjY46ALtEDSihyw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Fox Fence Company - Acworth GA" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/fence-1/800/600'">
+      <div class="md:text-right max-w-sm">
+        <p class="serif-display italic text-gray-600 text-lg mb-4">Craftsmanship you can trust, installations that stand the test of time — serving Acworth and beyond.</p>
+        <a href="#contact" class="arrow-cta serif-display italic text-[#4E342E] text-base font-semibold">
+          Get a Free Estimate <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- TICKER BAND -->
-  <div class="bg-[#4E342E] py-3 overflow-hidden">
-    <div class="ticker-track">
-      <span class="text-white text-xs font-bold uppercase tracking-widest px-8">SERVING ACWORTH</span>
-      <span class="text-[#C8A97E] px-4">—</span>
-      <span class="text-white text-xs font-bold uppercase tracking-widest px-8">LICENSED IN GEORGIA</span>
-      <span class="text-[#C8A97E] px-4">—</span>
-      <span class="text-white text-xs font-bold uppercase tracking-widest px-8">LOCAL &amp; FAMILY-OWNED</span>
-      <span class="text-[#C8A97E] px-4">—</span>
-      <span class="text-white text-xs font-bold uppercase tracking-widest px-8">TRUSTED NEIGHBORS</span>
-      <span class="text-[#C8A97E] px-4">—</span>
-      <span class="text-white text-xs font-bold uppercase tracking-widest px-8">SERVING ACWORTH</span>
-      <span class="text-[#C8A97E] px-4">—</span>
-      <span class="text-white text-xs font-bold uppercase tracking-widest px-8">LICENSED IN GEORGIA</span>
-      <span class="text-[#C8A97E] px-4">—</span>
-      <span class="text-white text-xs font-bold uppercase tracking-widest px-8">LOCAL &amp; FAMILY-OWNED</span>
-      <span class="text-[#C8A97E] px-4">—</span>
-      <span class="text-white text-xs font-bold uppercase tracking-widest px-8">TRUSTED NEIGHBORS</span>
-      <span class="text-[#C8A97E] px-4">—</span>
-    </div>
-  </div>
-
-  <!-- STATS -->
-  <section class="animate-section bg-white py-16 px-4 md:px-8 lg:px-16">
-    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-      <div class="bg-stone-50 rounded-2xl p-8 border border-stone-100 shadow-sm">
-        <div class="text-4xl font-extrabold text-[#4E342E]" data-count="12" data-suffix="+">12+</div>
-        <div class="text-sm text-stone-500 font-medium mt-2">Areas Served</div>
-      </div>
-      <div class="bg-stone-50 rounded-2xl p-8 border border-stone-100 shadow-sm">
-        <div class="text-4xl font-extrabold text-[#4E342E]" data-count="84" data-suffix="+">84+</div>
-        <div class="text-sm text-stone-500 font-medium mt-2">Acworth Neighbors</div>
-      </div>
-      <div class="bg-stone-50 rounded-2xl p-8 border border-stone-100 shadow-sm">
-        <div class="text-4xl font-extrabold text-[#4E342E]">4.1</div>
-        <div class="text-sm text-stone-500 font-medium mt-2">Google Rating</div>
-      </div>
-      <div class="bg-stone-50 rounded-2xl p-8 border border-stone-100 shadow-sm">
-        <div class="text-4xl font-extrabold text-[#4E342E]" data-count="10" data-suffix="+">10+</div>
-        <div class="text-sm text-stone-500 font-medium mt-2">Years Local</div>
-      </div>
+  <!-- PULL-QUOTE STATS -->
+  <section class="animate-section py-32 md:py-40 px-4 md:px-8 bg-[#4E342E] text-center">
+    <p class="serif-display text-9xl font-bold text-[#C8A97E] leading-none" data-count="84" data-suffix="+">84+</p>
+    <p class="serif-display italic text-xl text-[#E0C99E] mt-6 max-w-xl mx-auto">"Eighty-four satisfied neighbors have trusted Fox Fence Company to define, protect, and beautify their properties."</p>
+    <div class="flex justify-center items-center gap-1 mt-6">
+      <i data-lucide="star" class="w-4 h-4 text-[#C8A97E] fill-current"></i>
+      <i data-lucide="star" class="w-4 h-4 text-[#C8A97E] fill-current"></i>
+      <i data-lucide="star" class="w-4 h-4 text-[#C8A97E] fill-current"></i>
+      <i data-lucide="star" class="w-4 h-4 text-[#C8A97E] fill-current"></i>
+      <i data-lucide="star" class="w-4 h-4 text-[#C8A97E] fill-current"></i>
+      <span class="serif-display italic text-[#E0C99E] text-sm ml-2">4.1 on Google</span>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-stone-50">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-      <div class="img-hover-wrap rounded-2xl overflow-hidden shadow-xl h-[420px]">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEEI1D52NHo9xWaDE5j59TR1IzV576OtjGyOSzjd9TA6b3DFBKxC_rvwUK9dV2qy42AGaTMTMl3k29KPg96R74bbESZvWuxDVR2jpcedc7rkliCrHqeqgS_oFV0OAcI3ASsiugHExIXbIomkIg4cHjweIX48xMXnaxMtG_rjPsr1Xr7aNuq15Q4BWz4oL2pU4iFUz93JPsHSCppD7mAoTqkflz_yhnyXPRtWaIr1y_eVoMR3Yw4va-QInAK1vnRCQKR4pWwcPLQERC-mUPDSI9qELqgslKoVdLFXBPY3wFIQsA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Fox Fence Company team in Acworth" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/fence-2/800/600'">
+  <section id="about" class="animate-section py-32 md:py-40 px-4 md:px-8 lg:px-16 bg-[#f8f8f5]">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start">
+      <div>
+        <p class="uppercase tracking-widest text-xs text-[#4E342E] font-semibold mb-6">— Our Story</p>
+        <h2 class="serif-display text-5xl font-bold text-gray-900 leading-tight">A Tradition of <em class="text-[#4E342E]">Excellence</em> in Acworth.</h2>
       </div>
       <div>
-        <span class="text-xs font-bold uppercase tracking-widest text-[#C8A97E] mb-3 block">Our Story</span>
-        <h2 class="text-4xl md:text-5xl font-extrabold text-stone-900 mb-6 leading-tight">Built on Community,<br><span style="color:#4E342E;">Built to Last</span></h2>
-        <p class="text-stone-600 leading-relaxed mb-5">Fox Fence Company is a locally owned and operated fencing business proudly rooted in Acworth, Georgia — we know this community because we're part of it. From residential wood fences to commercial installations, our team brings honest craftsmanship, fair pricing, and genuine neighborly care to every project we take on.</p>
-        <p class="text-stone-600 leading-relaxed mb-8">We believe a fence is more than just a boundary — it's an investment in your home, your family's safety, and your neighborhood's character. That's why every project we tackle gets the same attention we'd give our own backyard.</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-          <div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-stone-100 shadow-sm">
-            <i data-lucide="shield-check" class="w-5 h-5 text-[#4E342E] mt-0.5 flex-shrink-0"></i>
-            <div>
-              <div class="font-bold text-stone-800 text-sm">Licensed &amp; Insured</div>
-              <div class="text-xs text-stone-500 mt-0.5">Fully licensed in Georgia for your peace of mind</div>
-            </div>
+        <p class="text-gray-700 text-lg leading-relaxed max-w-md">Fox Fence Company has been a trusted name in fencing throughout Acworth, Georgia, delivering expert installations and quality craftsmanship to residential and commercial clients across the greater Atlanta metro area. From initial estimate to final post, our team approaches every project with precision, care, and a deep commitment to lasting results.</p>
+        <blockquote class="serif-display italic text-[#4E342E] text-xl my-8 border-l-2 border-[#C8A97E] pl-6 max-w-md">"Every fence we build is a promise kept — to quality, to our neighbors, and to the land it stands on."</blockquote>
+        <p class="text-gray-700 text-lg leading-relaxed max-w-md">Whether you're enclosing a backyard for your family, protecting a commercial property, or simply refreshing aging pickets, Fox Fence brings the same level of professionalism and attention to detail that has earned us the trust of over 84 customers in Acworth and surrounding communities.</p>
+        <div class="mt-10 grid grid-cols-2 gap-6">
+          <div class="flex items-start gap-3">
+            <i data-lucide="shield-check" class="w-5 h-5 text-[#4E342E] mt-1 flex-shrink-0"></i>
+            <span class="text-gray-700 text-sm">Licensed &amp; Insured in Georgia</span>
           </div>
-          <div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-stone-100 shadow-sm">
-            <i data-lucide="check-circle" class="w-5 h-5 text-[#4E342E] mt-0.5 flex-shrink-0"></i>
-            <div>
-              <div class="font-bold text-stone-800 text-sm">Free Estimates</div>
-              <div class="text-xs text-stone-500 mt-0.5">No pressure, no cost consultations</div>
-            </div>
+          <div class="flex items-start gap-3">
+            <i data-lucide="hard-hat" class="w-5 h-5 text-[#4E342E] mt-1 flex-shrink-0"></i>
+            <span class="text-gray-700 text-sm">Professional Installation Crews</span>
           </div>
-          <div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-stone-100 shadow-sm">
-            <i data-lucide="hammer" class="w-5 h-5 text-[#4E342E] mt-0.5 flex-shrink-0"></i>
-            <div>
-              <div class="font-bold text-stone-800 text-sm">Quality Craftsmanship</div>
-              <div class="text-xs text-stone-500 mt-0.5">Expert installation on every job</div>
-            </div>
+          <div class="flex items-start gap-3">
+            <i data-lucide="check-circle" class="w-5 h-5 text-[#4E342E] mt-1 flex-shrink-0"></i>
+            <span class="text-gray-700 text-sm">Free Estimates, No Obligation</span>
           </div>
-          <div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-stone-100 shadow-sm">
-            <i data-lucide="heart" class="w-5 h-5 text-[#4E342E] mt-0.5 flex-shrink-0"></i>
-            <div>
-              <div class="font-bold text-stone-800 text-sm">Family-Owned</div>
-              <div class="text-xs text-stone-500 mt-0.5">Real people who care about their neighbors</div>
-            </div>
+          <div class="flex items-start gap-3">
+            <i data-lucide="award" class="w-5 h-5 text-[#4E342E] mt-1 flex-shrink-0"></i>
+            <span class="text-gray-700 text-sm">Family-Owned &amp; Operated</span>
           </div>
         </div>
-        <a href="#contact" class="inline-flex items-center gap-2 bg-[#4E342E] text-white px-7 py-3.5 rounded-full font-bold text-sm hover:bg-[#3a2620] transition">
-          Get Your Free Estimate <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
       </div>
     </div>
   </section>
@@ -222,731 +146,616 @@
   <!-- SERVICES -->
   <section id="services" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-white">
     <div class="max-w-7xl mx-auto">
-      <div class="mb-10 text-center">
-        <span class="text-xs font-bold uppercase tracking-widest text-[#C8A97E] mb-3 block">What We Do</span>
-        <h2 class="text-4xl md:text-5xl font-extrabold text-stone-900">Fencing Services<br><span style="color:#4E342E;">For Every Need</span></h2>
-        <p class="text-stone-500 mt-4 max-w-xl mx-auto">From brand-new installations to storm repairs, Fox Fence has Acworth covered.</p>
+      <div class="mb-12 border-b border-gray-200 pb-8">
+        <p class="uppercase tracking-widest text-xs text-[#4E342E] font-semibold mb-4">— What We Do</p>
+        <h2 class="serif-display text-5xl font-bold text-gray-900">Our Services</h2>
       </div>
-      <div class="flex flex-wrap gap-2 md:flex-nowrap mb-8 tabs-container">
+      <div class="flex flex-wrap gap-2 md:flex-nowrap mb-10 tabs-container">
         <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-1">Fence Installation</button>
         <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-2">Repair</button>
         <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-3">Custom Fencing</button>
       </div>
 
+      <!-- Tab Panel 1 -->
       <div id="tab-panel-1" class="tab-panel">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="bg-stone-50 rounded-2xl p-7 border border-stone-100 shadow-sm hover:shadow-md transition">
-            <i data-lucide="tree-pine" class="w-8 h-8 text-[#4E342E] mb-4"></i>
-            <h3 class="text-lg font-bold text-stone-900 mb-2">Wood Fence Installation</h3>
-            <p class="text-stone-500 text-sm leading-relaxed mb-5">Classic privacy and beauty with locally sourced wood. We install privacy, picket, and split-rail styles built to handle Georgia weather.</p>
-            <a href="tel:7709755858" class="arrow-cta text-[#4E342E] font-bold text-sm">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border border-gray-200">
+          <!-- Card 1 -->
+          <div class="border-r border-gray-200 p-8 hover:bg-[#f8f8f5] transition group">
+            <p class="serif-display text-4xl font-bold text-[#C8A97E] mb-2">01.</p>
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="fence" class="w-5 h-5 text-[#4E342E]"></i>
+              <h3 class="serif-display text-xl font-semibold text-gray-900">Wood Fence Installation</h3>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">Classic wood privacy fences installed with precision for lasting beauty and security. We source quality lumber suited to Georgia's climate and your property's needs.</p>
+            <a href="tel:7709755858" class="arrow-cta serif-display italic text-[#4E342E] text-sm">Call to learn more <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
           </div>
-          <div class="bg-stone-50 rounded-2xl p-7 border border-stone-100 shadow-sm hover:shadow-md transition">
-            <i data-lucide="fence" class="w-8 h-8 text-[#4E342E] mb-4"></i>
-            <h3 class="text-lg font-bold text-stone-900 mb-2">Vinyl Fence Installation</h3>
-            <p class="text-stone-500 text-sm leading-relaxed mb-5">Low-maintenance and long-lasting vinyl fencing for Acworth homes. Never paint, never rot — just clean curb appeal year after year.</p>
-            <a href="tel:7709755858" class="arrow-cta text-[#4E342E] font-bold text-sm">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          <!-- Card 2 -->
+          <div class="border-r border-gray-200 p-8 hover:bg-[#f8f8f5] transition group">
+            <p class="serif-display text-4xl font-bold text-[#C8A97E] mb-2">02.</p>
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="square" class="w-5 h-5 text-[#4E342E]"></i>
+              <h3 class="serif-display text-xl font-semibold text-gray-900">Vinyl Fence Installation</h3>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">Low-maintenance vinyl fencing that retains its appearance for decades without painting or staining. Available in a variety of styles to complement any home.</p>
+            <a href="tel:7709755858" class="arrow-cta serif-display italic text-[#4E342E] text-sm">Call to learn more <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
           </div>
-          <div class="bg-stone-50 rounded-2xl p-7 border border-stone-100 shadow-sm hover:shadow-md transition">
-            <i data-lucide="square" class="w-8 h-8 text-[#4E342E] mb-4"></i>
-            <h3 class="text-lg font-bold text-stone-900 mb-2">Chain Link Installation</h3>
-            <p class="text-stone-500 text-sm leading-relaxed mb-5">Durable and affordable chain link solutions for residential and commercial properties. Great for pet enclosures, yards, and security perimeters.</p>
-            <a href="tel:7709755858" class="arrow-cta text-[#4E342E] font-bold text-sm">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          <!-- Card 3 -->
+          <div class="border-r border-gray-200 p-8 hover:bg-[#f8f8f5] transition group">
+            <p class="serif-display text-4xl font-bold text-[#C8A97E] mb-2">03.</p>
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="ruler" class="w-5 h-5 text-[#4E342E]"></i>
+              <h3 class="serif-display text-xl font-semibold text-gray-900">Chain Link Installation</h3>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">Durable and cost-effective chain link fencing for residential and commercial properties. Ideal for perimeters, sports areas, and pet enclosures throughout Acworth.</p>
+            <a href="tel:7709755858" class="arrow-cta serif-display italic text-[#4E342E] text-sm">Call to learn more <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
           </div>
-          <div class="bg-stone-50 rounded-2xl p-7 border border-stone-100 shadow-sm hover:shadow-md transition">
-            <i data-lucide="shield" class="w-8 h-8 text-[#4E342E] mb-4"></i>
-            <h3 class="text-lg font-bold text-stone-900 mb-2">Aluminum Fencing</h3>
-            <p class="text-stone-500 text-sm leading-relaxed mb-5">Elegant aluminum fencing that never rusts, never fades, and always impresses. Perfect for adding timeless style to any Acworth property.</p>
-            <a href="tel:7709755858" class="arrow-cta text-[#4E342E] font-bold text-sm">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          <!-- Card 4 -->
+          <div class="p-8 hover:bg-[#f8f8f5] transition group">
+            <p class="serif-display text-4xl font-bold text-[#C8A97E] mb-2">04.</p>
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="shield" class="w-5 h-5 text-[#4E342E]"></i>
+              <h3 class="serif-display text-xl font-semibold text-gray-900">Aluminum Fencing</h3>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">Elegant aluminum fencing combines classic curb appeal with rust-free durability. A premium choice for pool surrounds, gardens, and front yard boundaries.</p>
+            <a href="tel:7709755858" class="arrow-cta serif-display italic text-[#4E342E] text-sm">Call to learn more <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
           </div>
         </div>
       </div>
 
+      <!-- Tab Panel 2 -->
       <div id="tab-panel-2" class="tab-panel hidden">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="bg-stone-50 rounded-2xl p-7 border border-stone-100 shadow-sm hover:shadow-md transition">
-            <i data-lucide="hammer" class="w-8 h-8 text-[#4E342E] mb-4"></i>
-            <h3 class="text-lg font-bold text-stone-900 mb-2">Fence Repair</h3>
-            <p class="text-stone-500 text-sm leading-relaxed mb-5">From broken boards to sagging panels, we restore your fence to full strength fast. Our repairs are built to last just as long as a new installation.</p>
-            <a href="tel:7709755858" class="arrow-cta text-[#4E342E] font-bold text-sm">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border border-gray-200">
+          <!-- Card 1 -->
+          <div class="border-r border-gray-200 p-8 hover:bg-[#f8f8f5] transition group">
+            <p class="serif-display text-4xl font-bold text-[#C8A97E] mb-2">01.</p>
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="hammer" class="w-5 h-5 text-[#4E342E]"></i>
+              <h3 class="serif-display text-xl font-semibold text-gray-900">Fence Repair</h3>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">Expert repairs for damaged, leaning, or deteriorating fences of all materials and styles. We restore structural integrity and appearance quickly and affordably.</p>
+            <a href="tel:7709755858" class="arrow-cta serif-display italic text-[#4E342E] text-sm">Call to learn more <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
           </div>
-          <div class="bg-stone-50 rounded-2xl p-7 border border-stone-100 shadow-sm hover:shadow-md transition">
-            <i data-lucide="ruler" class="w-8 h-8 text-[#4E342E] mb-4"></i>
-            <h3 class="text-lg font-bold text-stone-900 mb-2">Post Replacement</h3>
-            <p class="text-stone-500 text-sm leading-relaxed mb-5">Rotten or leaning posts undermine your entire fence line. We replace posts properly — set in concrete for a solid foundation that lasts for years.</p>
-            <a href="tel:7709755858" class="arrow-cta text-[#4E342E] font-bold text-sm">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          <!-- Card 2 -->
+          <div class="border-r border-gray-200 p-8 hover:bg-[#f8f8f5] transition group">
+            <p class="serif-display text-4xl font-bold text-[#C8A97E] mb-2">02.</p>
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="hard-hat" class="w-5 h-5 text-[#4E342E]"></i>
+              <h3 class="serif-display text-xl font-semibold text-gray-900">Post Replacement</h3>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">Rotted or broken fence posts compromise your entire fence line — we replace them with properly set, concrete-anchored posts for lasting stability.</p>
+            <a href="tel:7709755858" class="arrow-cta serif-display italic text-[#4E342E] text-sm">Call to learn more <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
           </div>
-          <div class="bg-stone-50 rounded-2xl p-7 border border-stone-100 shadow-sm hover:shadow-md transition">
-            <i data-lucide="shield-check" class="w-8 h-8 text-[#4E342E] mb-4"></i>
-            <h3 class="text-lg font-bold text-stone-900 mb-2">Storm Damage Repair</h3>
-            <p class="text-stone-500 text-sm leading-relaxed mb-5">Georgia storms can take a toll on any fence. We respond promptly to storm damage and get your property secured and looking great again quickly.</p>
-            <a href="tel:7709755858" class="arrow-cta text-[#4E342E] font-bold text-sm">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          <!-- Card 3 -->
+          <div class="border-r border-gray-200 p-8 hover:bg-[#f8f8f5] transition group">
+            <p class="serif-display text-4xl font-bold text-[#C8A97E] mb-2">03.</p>
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="shield-check" class="w-5 h-5 text-[#4E342E]"></i>
+              <h3 class="serif-display text-xl font-semibold text-gray-900">Storm Damage Repair</h3>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">Georgia storms can leave fences battered and unsafe. Our crew responds promptly to assess and repair storm-damaged fencing to restore your property's protection.</p>
+            <a href="tel:7709755858" class="arrow-cta serif-display italic text-[#4E342E] text-sm">Call to learn more <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
           </div>
-          <div class="bg-stone-50 rounded-2xl p-7 border border-stone-100 shadow-sm hover:shadow-md transition">
-            <i data-lucide="scissors" class="w-8 h-8 text-[#4E342E] mb-4"></i>
-            <h3 class="text-lg font-bold text-stone-900 mb-2">Gate Repair</h3>
-            <p class="text-stone-500 text-sm leading-relaxed mb-5">Squeaky, sagging, or broken gates are a safety concern and an eyesore. We repair and realign gates of all types so they swing smoothly and latch securely.</p>
-            <a href="tel:7709755858" class="arrow-cta text-[#4E342E] font-bold text-sm">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          <!-- Card 4 -->
+          <div class="p-8 hover:bg-[#f8f8f5] transition group">
+            <p class="serif-display text-4xl font-bold text-[#C8A97E] mb-2">04.</p>
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="scissors" class="w-5 h-5 text-[#4E342E]"></i>
+              <h3 class="serif-display text-xl font-semibold text-gray-900">Gate Repair</h3>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">Sagging, misaligned, or damaged gates repaired or replaced by experienced technicians. We work with wood, vinyl, chain link, and aluminum gate systems.</p>
+            <a href="tel:7709755858" class="arrow-cta serif-display italic text-[#4E342E] text-sm">Call to learn more <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
           </div>
         </div>
       </div>
 
+      <!-- Tab Panel 3 -->
       <div id="tab-panel-3" class="tab-panel hidden">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="bg-stone-50 rounded-2xl p-7 border border-stone-100 shadow-sm hover:shadow-md transition">
-            <i data-lucide="hard-hat" class="w-8 h-8 text-[#4E342E] mb-4"></i>
-            <h3 class="text-lg font-bold text-stone-900 mb-2">Custom Designs</h3>
-            <p class="text-stone-500 text-sm leading-relaxed mb-5">Have a unique vision for your property? We build custom fence designs tailored to your exact specs, style preferences, and site requirements.</p>
-            <a href="tel:7709755858" class="arrow-cta text-[#4E342E] font-bold text-sm">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border border-gray-200">
+          <!-- Card 1 -->
+          <div class="border-r border-gray-200 p-8 hover:bg-[#f8f8f5] transition group">
+            <p class="serif-display text-4xl font-bold text-[#C8A97E] mb-2">01.</p>
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="ruler" class="w-5 h-5 text-[#4E342E]"></i>
+              <h3 class="serif-display text-xl font-semibold text-gray-900">Custom Designs</h3>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">Work with our team to design a fence uniquely suited to your property's architecture and landscape. Custom dimensions, styles, and finishes available.</p>
+            <a href="tel:7709755858" class="arrow-cta serif-display italic text-[#4E342E] text-sm">Call to learn more <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
           </div>
-          <div class="bg-stone-50 rounded-2xl p-7 border border-stone-100 shadow-sm hover:shadow-md transition">
-            <i data-lucide="star" class="w-8 h-8 text-[#4E342E] mb-4"></i>
-            <h3 class="text-lg font-bold text-stone-900 mb-2">Decorative Fencing</h3>
-            <p class="text-stone-500 text-sm leading-relaxed mb-5">Enhance your curb appeal with decorative fencing options that blend beauty and function. We help you find the style that complements your home perfectly.</p>
-            <a href="tel:7709755858" class="arrow-cta text-[#4E342E] font-bold text-sm">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          <!-- Card 2 -->
+          <div class="border-r border-gray-200 p-8 hover:bg-[#f8f8f5] transition group">
+            <p class="serif-display text-4xl font-bold text-[#C8A97E] mb-2">02.</p>
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="tree-pine" class="w-5 h-5 text-[#4E342E]"></i>
+              <h3 class="serif-display text-xl font-semibold text-gray-900">Decorative Fencing</h3>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">Enhance your curb appeal with ornamental and decorative fence styles that blend beauty with function. Perfect for garden borders, entries, and accent fencing.</p>
+            <a href="tel:7709755858" class="arrow-cta serif-display italic text-[#4E342E] text-sm">Call to learn more <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
           </div>
-          <div class="bg-stone-50 rounded-2xl p-7 border border-stone-100 shadow-sm hover:shadow-md transition">
-            <i data-lucide="shield" class="w-8 h-8 text-[#4E342E] mb-4"></i>
-            <h3 class="text-lg font-bold text-stone-900 mb-2">Pool Fencing</h3>
-            <p class="text-stone-500 text-sm leading-relaxed mb-5">Keep your family safe around the pool with code-compliant pool fencing solutions. We install aluminum and vinyl options that look great and meet Georgia safety standards.</p>
-            <a href="tel:7709755858" class="arrow-cta text-[#4E342E] font-bold text-sm">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          <!-- Card 3 -->
+          <div class="border-r border-gray-200 p-8 hover:bg-[#f8f8f5] transition group">
+            <p class="serif-display text-4xl font-bold text-[#C8A97E] mb-2">03.</p>
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="shield" class="w-5 h-5 text-[#4E342E]"></i>
+              <h3 class="serif-display text-xl font-semibold text-gray-900">Pool Fencing</h3>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">Georgia code-compliant pool fencing installed with safety and aesthetics in mind. We offer aluminum, vinyl, and ornamental options to complement your outdoor living space.</p>
+            <a href="tel:7709755858" class="arrow-cta serif-display italic text-[#4E342E] text-sm">Call to learn more <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
           </div>
-          <div class="bg-stone-50 rounded-2xl p-7 border border-stone-100 shadow-sm hover:shadow-md transition">
-            <i data-lucide="square" class="w-8 h-8 text-[#4E342E] mb-4"></i>
-            <h3 class="text-lg font-bold text-stone-900 mb-2">Commercial Fencing</h3>
-            <p class="text-stone-500 text-sm leading-relaxed mb-5">From warehouses to office parks, we supply and install commercial-grade fencing for Acworth businesses that need security and professional appearance.</p>
-            <a href="tel:7709755858" class="arrow-cta text-[#4E342E] font-bold text-sm">Call Us <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          <!-- Card 4 -->
+          <div class="p-8 hover:bg-[#f8f8f5] transition group">
+            <p class="serif-display text-4xl font-bold text-[#C8A97E] mb-2">04.</p>
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="square" class="w-5 h-5 text-[#4E342E]"></i>
+              <h3 class="serif-display text-xl font-semibold text-gray-900">Commercial Fencing</h3>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">Heavy-duty commercial fence solutions for businesses, warehouses, and industrial sites throughout Acworth and the greater Atlanta area. Built for security and endurance.</p>
+            <a href="tel:7709755858" class="arrow-cta serif-display italic text-[#4E342E] text-sm">Call to learn more <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- GALLERY -->
-  <section id="gallery" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-stone-50">
+  <section id="gallery" class="animate-section py-32 md:py-40 px-4 md:px-8 lg:px-16 bg-[#f8f8f5]">
     <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-12">
-        <span class="text-xs font-bold uppercase tracking-widest text-[#C8A97E] mb-3 block">Our Work</span>
-        <h2 class="text-4xl md:text-5xl font-extrabold text-stone-900">Projects Right Here<br><span style="color:#4E342E;">In Our Community</span></h2>
-        <p class="text-stone-500 mt-4 max-w-lg mx-auto">Every project is a neighbor's yard we take pride in. Browse some of our recent work across Acworth and surrounding areas.</p>
+      <div class="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-4 border-b border-gray-200 pb-8">
+        <div>
+          <p class="uppercase tracking-widest text-xs text-[#4E342E] font-semibold mb-4">— Portfolio</p>
+          <h2 class="serif-display text-5xl font-bold text-gray-900">Recent Work</h2>
+        </div>
+        <a href="#contact" class="arrow-cta serif-display italic text-[#4E342E] text-sm self-end mb-1">Request your estimate <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        <div class="img-hover-wrap rounded-2xl overflow-hidden shadow-md group relative">
-          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEFIs_pOFTalafJJta3jCf1zvUO8tt9z2EE0vNfJ5m4kbkEtErzYnh9IKlZKlWOQ4ebnxsYN987DwOz179dUwY9lM8t80VMWNcH4wWcQYqNziOvftBONbubjv5HGeABpv2ba3DCrwp72HBbqQNYL9tawrAzzYggF7Qd5WcgO1KJ6UbhfrUBnGlKHP5_hjzWu4k300bOiukV6PlyRq0uSD-melLu4tUlSlLaMocA-qadjg6Z2QfX_dzuU0-aLuWnMUoAzOVPtzW7JNhpHqEs4rcucU_p5w6A6QJJ-eS2wqlADTQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Wood fence installation Acworth" class="w-full h-64 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/fence-3/800/600'">
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-5">
-            <span class="text-white font-bold text-sm">Wood Privacy Fence · Acworth, GA</span>
-          </div>
+
+      <!-- Row 1: large + small -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+        <div class="img-hover-wrap md:col-span-2 h-80 md:h-[520px] overflow-hidden rounded-sm">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEFykH_qnYkwPBD82htGVBXAyLiBTfowV_IIB84zkkoH85qz4bWN896A9Doi4aa_gtBZaWJ_hxiLzxaIT01fgHkXnrYVTB-GuEL1Vl4RnOm6LBrImE_ac_TTvrhIFjrtmfeK-KuIE2UXSE_n6nMZj8kYna6Z9Qn2Ar-iVe6bppo4JJFnIVl_xR0q7LbGlkgRTi9eKzucjo42ZZ-j00mKK8y5ZfkeikYeJNYYGeUejB1GmsHlW8QYeZ6fXA2pN91O75G-ifNd1jYB7Vl39LEGnGiKCxjPhgBRfiCuGH--1VypIA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" alt="Fox Fence installation project" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/fence-1/800/600'">
         </div>
-        <div class="img-hover-wrap rounded-2xl overflow-hidden shadow-md group relative">
-          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEEi27H-UnMZPSNDcI9UgpM0pMqk1loqVYDA-IrWaf3qaRQmYUf-QMOz6ZqIvTCZxeXrPcwKjcSQAbiWDXSrz4fRIhYk53t0YqEWhXoLsfgnPKF7YG3q395mS_1Ukhp2ic8DmWzcxH8GpwEDq2V9RaGGmzzw5DdY5jq2Sw95OrrHAB3iTXfCA7v3BC-SzGZnkyCxOwQzo6wql7Sssf2aZuVODgT13Rfmv_Fs_S7j41mibMrMZc0N1ZOaPfBeAfZgFnVqDlBzBNYbUKEAtzchfJtAAwjJbaY7pyfPbtp8jiCbPM_bQOJdozxS6RSrvdNNBd2JB103Wam_pkQcfF-tT__TzAzxxjV42vwSfvr0ACSvitUWskJ-ZNMNt71LZz42mU3myBYTYtC3Jy5HC6FwDLDuNUwoLCDDJVH8VvBEg5S7Lzo&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Aluminum fence installation" class="w-full h-64 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/fence-4/800/600'">
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-5">
-            <span class="text-white font-bold text-sm">Aluminum Fence · Kennesaw, GA</span>
+        <div class="flex flex-col gap-4">
+          <div class="img-hover-wrap h-48 md:h-[252px] overflow-hidden rounded-sm">
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEEqw0iBSRMChIaPYngvpj_5Ipeox4M3R9SIKQ6xTkIrUR0XxThKwnuY4qd00LvZoHWOO1CuGWPiBpX_sWTWrghJYfszTJOJUdZocmOrt_U3ySyEpDC1jMGD0fKbMUbFXvIMJNZfmeNpv-5X3IiIylx7hftwwdsawBF600pOaPaj_qLEo4HheftnhQTqqg4NpUx7jQQuvM-Y6HQ5K0pN11SSxFLLEXmtNNTONGW6Kh9U-WNGvbja8lbb69PzQ6aeCMA34Z3puhN8yRWp9GB7FioWPGGu5isOBJeuuiZ7I4-cGg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" alt="Vinyl fence installation Acworth" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/fence-2/800/600'">
           </div>
-        </div>
-        <div class="img-hover-wrap rounded-2xl overflow-hidden shadow-md group relative">
-          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEFtjm2lMvRFRrCgckOQOqs5ikIAWPmqx99II1tyCrvLfS8F1uXqgl2ILc4bKXnRPBSjp1fsVqh3OzU99UE-NezY9yD2majlIxm7T5NlOakuDlOHjfLa8uNo3dgd9Wi5EyWx_vK4ajsWQsCKPJuARydVkX-zIi5ImYt-uyKp8P3uhGl7yvqbTleYGB--nOYZEXn8sEv6ggYNU4OwxT9ZKSFhqEENBvhs4Go8J3DzfG9cx3qfviYyu0377hcnivXHtSx2grFDLbn-XuzOAjCX7tcBVtIvhV6R1jnsF391Pm-k9Q&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Vinyl fence installation" class="w-full h-64 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/fence-5/800/600'">
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-5">
-            <span class="text-white font-bold text-sm">Vinyl Privacy Fence · Woodstock, GA</span>
-          </div>
-        </div>
-        <div class="img-hover-wrap rounded-2xl overflow-hidden shadow-md group relative">
-          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGiGyYJs2iCowdbCSMkrU3yBEc4-z2h_2WJcBSxTUrEUls76aPLpXK5FChbh9plXugUSWTycUjX-krHYDaaKbcjwvEG9abm1LsKfnYiiJqy5Y3Q2cHVx0UMzasn1rFfwVYhBSGUGaiFtA1qGOK6uR2Y9fmans17xlvO5Nl6dhzlF2yA1z-xZY6BtmheSTMHN8bEmQC3ATYccK89NNZBWUci93TjcvePoflTzSNBpxNduJS4MfWuiwOgRO8XeFfCs2O3PRS3-_H_2c5Jloh3U4sGdSdFs3nCzTqEzNN5Id6z9XI-x5kNZPgXhENocgwcAFqVhcKm2BF59Lk4Q3DFYcbc3kuxKQMEGrhj3p688nTRgRI_Esvi-7FwIb25ZHF70Wm-gKviFFahYco3xeSXarhF3cc_J_b19u0zb5SALndUxkP2&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Iron fence installation" class="w-full h-64 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/fence-6/800/600'">
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-5">
-            <span class="text-white font-bold text-sm">Iron Fence · Canton, GA</span>
-          </div>
-        </div>
-        <div class="img-hover-wrap rounded-2xl overflow-hidden shadow-md group relative">
-          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEENrMtg_PIJnezkgYOTH5fdXuTtkxPBh81oeAeZUT1D9C6PhDHxlItpMFMhdBuxelv9wXod3fU5Y4GeoadAAZ1T_l4eX8TIfk367Wmvu9vDgHEoDCrwNK_fUtsLn6DGXdzmbm3JmXF5_d4TsvrEXjPTm-CS5k9FryKiZRoNM82A9EJ1SdyC0B7okLf66LELym7hBPORBy6_MBsTAN4gRo_fyWjN2wnnBxa9gUgWpSY1xSFy1VaYe7D8SkWSwrUsSW1iZgRYKXCFOBM0obw59VAfMl2ITULO1_JYvaMczSlHiA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Pool fencing Acworth" class="w-full h-64 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/fence-7/800/600'">
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-5">
-            <span class="text-white font-bold text-sm">Pool Fencing · Acworth, GA</span>
-          </div>
-        </div>
-        <div class="img-hover-wrap rounded-2xl overflow-hidden shadow-md group relative">
-          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGtus9kktGlJRs1vv_GIR5eoMeu2kyK26l8RZDm4F9attzgquD8z7RXpAf9J98kCepTK2kIj0uvOqoPey7d_ZTHc0QU8vQRYW-rGQ4BB3cI25OCbcq4CchNtawHidV6EjFFlNRKtv6aKetyrdXr--2ekTBwZSiyWU2wE9D9dlMUZc0qPWywYlTYG6f7NtW3vziHJYBQdx9BXDEOFS810yEjOIi0CSw4X7jUQs5vTDNU6vZGVomgDQpFWT2w03gWJG2ND6MzIXQ5THTUR5MZbf3aL8DdQbb9aFvaOFuv8eyo_8McePNGbrHdZuTSYxVdcddkhXQh5rH-aOwB7ed3pf53U9vq2Nkol7QG5rn1qu_XlHJsZmtLZlkTcuRHfMhno5rjiJDJSLBHxMKAuFIUojzsH6opWLMdbYyP_qATzzESXw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Commercial fencing project" class="w-full h-64 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/fence-8/800/600'">
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-5">
-            <span class="text-white font-bold text-sm">Commercial Fencing · Marietta, GA</span>
+          <div class="img-hover-wrap h-48 md:h-[252px] overflow-hidden rounded-sm">
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGN17eY5CQmN-r7rxhi_MlB1G1xi3SnhNanhia_OpD1uGg-cTt45goWKZktmOCYwYeiUPT7iq0HoGr0Z7T8Qu8kKVvgTWuEDaTmppG77J3xtgbeW0xlrM6s1dASExyO-_eyrqxm4vgOVlUwm7GzB8R-_Kty8wmPuXEtxsW5iDl3MRCEr8PYTt71H0KZyuXc4OJkonds-nd9EIb0V-2lE1LAwEsWu6UJKoopk5qG4KLNhPNoOBW_53R4GrVs2ng2-tpfIiwN-mXOg4G1znbftedmumjPKp7X-Ve8TD-8bziYyA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" alt="Wood fence Georgia" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/fence-3/800/600'">
           </div>
         </div>
       </div>
+
+      <!-- Row 2: two equal -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div class="img-hover-wrap h-64 md:h-80 overflow-hidden rounded-sm">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEHcd48q8581Ft2nCbk4-H0LU2y-_arPlFFwTM5FlY9rIACcDuW5g3Xhi1nve0DrkG4VEZscitJOlShZYAHNIDnlg4prpC9QRp9rlQtRrhY3trIzzaxePqrbWxzRegmrb8tCPcfsL9O_--j44IlZtJ_gdwFqRc2JohtdbA8_gvAuL9Re1CZKDK2kSTtaF_PJf5cr1aiDrky7kD_6JbOewfCCX6KSwFO9Mc4vzQvoKy5dAvHaxMSHNc3PMkDSewMb3qFiSHbrBXCjijUmryladbHPPrnMsAsHVNwepOOdjJIIgypq4W5wtQa6rvdSN0oR86zOwo7mEEHUume_sekO_dRTHy2_luNnYCjoIXPG8oDPM1dIuaYUBVASP_vR5fPcot4CXTBcwpMCAefmHB5DQSsXpyoWnqO0Y1NaRi0LDxveaJE&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" alt="Aluminum fence Acworth GA" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/fence-4/800/600'">
+        </div>
+        <div class="img-hover-wrap h-64 md:h-80 overflow-hidden rounded-sm">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEFNxppfXjJhQgYq6KIixIoL28h-CPCx65Pdg3EcwGJiDg-3LFLmb3ErLkfublvkgkmzpH6UAK8omQgcrN4vnUwqX3cxzwvUzf06sT2UpEXhW27KT-4-6E-70fpktcSaDNPBoScQMCKjhxEufme4H8Iilscm7HTL2XwRsZE0njZJIKn3z-T_nKmJkYFk5ueFDvjerfZOCkFKOCQ1tFMuSlc14TMwRnSJOQqk8tKedAQZHHSFaUOqeT8R1BbvSdPB4SC2fv9fpyoNlBPvAfizRb0E6lEUBiedOk6q7rfj9hOxcw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" alt="Custom fence design Georgia" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/fence-5/800/600'">
+        </div>
+      </div>
+
+      <!-- Row 3: three equal -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="img-hover-wrap h-56 overflow-hidden rounded-sm">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEHnMBoJ1VYpXxN__U6A7Oi_sfhfAL1G7SPDxlsoCrkL6qtAyWT2LmiTdcS8UuCTbDNLnIgVLsYiSGK9scxmpSKGXrTCXd2cBinH5ggUAZvqriG51mzqTHy1leFvtKPV_oyKo1jHaVr_oGd-G6tbagkA6YMKO17xxTpyJX2VhB8daWmsLxqh8mSX2f2KlbmBbL3v8YhjBhSbsjzKrM8TwQxKlQ4_LtgrVhE8uvF9-wy5NeU2LnIzeWIe_44-EuOD2dlhanm_Fpxq9xkmm9DA5fUUXim2o-dw1WxYifMhHbfTxe9gYXI2xG22uV5gx1oUFoTzaoPMZJD2wadT59MCzSLetuhY5RYKAta7XXS6NCrmvXF3zr-tEtbYqBPWR9clPyfTr40Wlg77PGHIAOaLeA5kHDKzs23OAWDPkAj9KNjvvvfZ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" alt="Fence project Acworth" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/fence-6/800/600'">
+        </div>
+        <div class="img-hover-wrap h-56 overflow-hidden rounded-sm">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEHgd6_gEK0f9o0vz8g3yzq5khkijZQRJTC1sJnwdkaOL0uMK3LnmN011uDb5mMpe0PadYHmy-iTHC8b7cCrBJCbPOkTQVAQPNeDQ76HCw8Bdk-B0AVGyWYTv7XwBlWeoZvp98Q98xo4QbCsEaRQFRajFMI6_h79GGaNMh-8tyo90SlyrQ6L6lVvlRcMZsD1OeWQHYEJKRoKhzGTCJpYpvKUHVOrqBu-orS4573-bWPYL71bS1_--etvCG--8qZrIu--ANkvqx4IPGiqtwVAvNb6diJI65NhZEW5Xm6mj6Q3Ww&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" alt="Privacy fence installation" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/fence-7/800/600'">
+        </div>
+        <div class="img-hover-wrap h-56 overflow-hidden rounded-sm">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGpPs_9Ud-1KLy6PGiOwWfXdyUzkcfYP6X5AzS66BR5cwImLgUU2Q2GmiVurAgdgW_Vy2pF2K-eHFfDEKYHNxl_QCDQAO7Y07sXoeZlQwJbeWBdR8-vQGnfr76GifCQDIKn6DAwhQ6COLaHkzGj9spsTTY9_SRh6BsllMaDILHaIKlTBbVBEIPK8O7h80xiv9tmpjXoxdspxhA5XRZAoOhw2ikDVgY1ummLRNqReNmwHhJJXKopLbawT_uqfJFy-zH91d9gmPExV8rCyspzvutFiwtU1436Lm5--WmrRK_zeiTuWr0PngdCfBA8SExijp2MF0DVeAO33H-aSKZk6M1g0QWCxsYbWmAhdihAPIv5xxWZBGZH3Co7Un-dEoTt_q8KbrjVkWP5goAmYe7r2eB-rtv-CgkRC3XeTq8qwTRrNA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" alt="Commercial fence Acworth GA" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/fence-8/800/600'">
+        </div>
+      </div>
+
+      <p class="serif-display italic text-gray-500 text-sm text-center mt-6">A selection of residential and commercial projects completed by Fox Fence Company across Acworth, GA.</p>
     </div>
   </section>
 
   <!-- REVIEWS -->
-  <section id="reviews" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-white">
+  <section id="reviews" class="animate-section py-32 md:py-40 px-4 md:px-8 lg:px-16 bg-white">
     <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-12">
-        <span class="text-xs font-bold uppercase tracking-widest text-[#C8A97E] mb-3 block">Testimonials</span>
-        <h2 class="text-4xl md:text-5xl font-extrabold text-stone-900">What Our Neighbors<br><span style="color:#4E342E;">Are Saying</span></h2>
-        <div class="flex items-center justify-center gap-2 mt-5">
-          <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
-          <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
-          <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
-          <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
-          <i data-lucide="star" class="w-5 h-5 text-stone-300"></i>
-          <span class="text-stone-500 text-sm ml-1 font-medium">4.1 out of 5 · 84 Google Reviews</span>
+      <p class="uppercase tracking-widest text-xs text-[#4E342E] font-semibold mb-12 text-center">— Client Voices</p>
+
+      <!-- Hero Quote -->
+      <div class="text-center mb-20 max-w-4xl mx-auto">
+        <p class="serif-display text-9xl font-bold text-[#E0C99E] leading-none select-none">"</p>
+        <blockquote class="serif-display italic text-3xl text-gray-800 max-w-3xl mx-auto -mt-8 leading-snug">
+          The Fox Fence representative that came to give us an estimate was very friendly and knowledgeable. He made great suggestions that helped us choose the best path to install the new fence so it would last longer. Fox Fence installation crew were very professional, friendly and knowledgeable. They installed the fence quickly, without any damage to the landscaping, and cleaned up everything before they left. The office staff were very friendly and helpful working out the details with our HOA board. We were very satisfied, and would recommend Fox Fence to anyone that is interested in purchasing a fence.
+        </blockquote>
+        <div class="mt-8 flex flex-col items-center gap-2">
+          <div class="flex gap-1">
+            <i data-lucide="star" class="w-4 h-4 text-[#C8A97E] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C8A97E] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C8A97E] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C8A97E] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C8A97E] fill-current"></i>
+          </div>
+          <p class="text-gray-500 text-sm serif-display" style="font-variant: small-caps; letter-spacing: 0.08em;">Richard Elliot · <span class="text-xs normal-case italic text-gray-400">2 months ago</span></p>
+          <span class="text-xs bg-gray-100 text-gray-500 px-3 py-1 rounded-full serif-display">via Google</span>
         </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <!-- Review 1 -->
-        <div class="bg-stone-50 rounded-2xl p-7 border border-stone-100 shadow-sm flex flex-col">
-          <div class="flex items-center gap-1 mb-4">
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-          </div>
-          <p class="text-stone-600 text-sm leading-relaxed flex-1 mb-5">"The Fox Fence representative that came to give us an estimate was very friendly and knowledgeable. He made great suggestions that helped us choose the best path to install the new fence so it would last longer. Fox Fence installation crew were very professional, friendly and knowledgeable. They installed the fence quickly, without any damage to the landscaping, and cleaned up everything before they left. The office staff were very friendly and helpful working out the details with our HOA board. We were very satisfied, and would recommend Fox Fence to anyone that is interested in purchasing a fence."</p>
-          <div class="flex items-center justify-between mt-auto">
-            <div>
-              <div class="font-bold text-stone-900 text-sm">Richard Elliot</div>
-              <div class="text-xs text-stone-400 mt-0.5">2 months ago</div>
-            </div>
-            <span class="bg-[#C8A97E]/20 text-[#4E342E] text-xs font-bold px-3 py-1 rounded-full">via Google · Acworth</span>
-          </div>
-        </div>
+      <!-- Other Reviews -->
+      <div class="border-t border-gray-200 pt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
 
         <!-- Review 2 -->
-        <div class="bg-stone-50 rounded-2xl p-7 border border-stone-100 shadow-sm flex flex-col">
-          <div class="flex items-center gap-1 mb-4">
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+        <div class="border border-gray-100 p-8 hover:border-gray-300 transition rounded-sm">
+          <div class="flex gap-1 mb-4">
+            <i data-lucide="star" class="w-3 h-3 text-[#C8A97E] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#C8A97E] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#C8A97E] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#C8A97E] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#C8A97E] fill-current"></i>
           </div>
-          <p class="text-stone-600 text-sm leading-relaxed flex-1 mb-5">"What a great company to deal with! We had over 300' of 25 year old privacy fence replaced around our back yard. The entire team at Fox was very responsive & punctual from estimate to scheduling to completion. The new fence is exactly what we wanted and looks fantastic. They also removed and hauled off the old fence and they did it all at, what we thought was, a very reasonable price."</p>
-          <div class="flex items-center justify-between mt-auto">
-            <div>
-              <div class="font-bold text-stone-900 text-sm">David Warren</div>
-              <div class="text-xs text-stone-400 mt-0.5">2 months ago</div>
-            </div>
-            <span class="bg-[#C8A97E]/20 text-[#4E342E] text-xs font-bold px-3 py-1 rounded-full">via Google · Acworth</span>
+          <p class="serif-display italic text-gray-700 text-base leading-relaxed mb-6">"What a great company to deal with! We had over 300' of 25 year old privacy fence replaced around our back yard. The entire team at Fox was very responsive &amp; punctual from estimate to scheduling to completion. The new fence is exactly what we wanted and looks fantastic. They also removed and hauled off the old fence and they did it all at, what we thought was, a very reasonable price."</p>
+          <div class="flex items-center justify-between">
+            <p class="text-gray-600 text-sm serif-display" style="font-variant: small-caps; letter-spacing: 0.06em;">David Warren <span class="normal-case italic text-gray-400 text-xs">· 2 months ago</span></p>
+            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded-full serif-display">via Google</span>
           </div>
         </div>
 
         <!-- Review 3 -->
-        <div class="bg-stone-50 rounded-2xl p-7 border border-stone-100 shadow-sm flex flex-col">
-          <div class="flex items-center gap-1 mb-4">
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+        <div class="border border-gray-100 p-8 hover:border-gray-300 transition rounded-sm">
+          <div class="flex gap-1 mb-4">
+            <i data-lucide="star" class="w-3 h-3 text-[#C8A97E] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#C8A97E] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#C8A97E] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#C8A97E] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#C8A97E] fill-current"></i>
           </div>
-          <p class="text-stone-600 text-sm leading-relaxed flex-1 mb-5">"We could not be more happy about the job that Fox Fence did for us. We needed fences on two houses and fox was prompt, courteous, and very professional. They also gave us a very good quote. They came in with a great crew and got both fences done in 2 days. I highly recommend them."</p>
-          <div class="flex items-center justify-between mt-auto">
-            <div>
-              <div class="font-bold text-stone-900 text-sm">Greg Frick</div>
-              <div class="text-xs text-stone-400 mt-0.5">2 months ago</div>
-            </div>
-            <span class="bg-[#C8A97E]/20 text-[#4E342E] text-xs font-bold px-3 py-1 rounded-full">via Google · Acworth</span>
+          <p class="serif-display italic text-gray-700 text-base leading-relaxed mb-6">"We could not be more happy about the job that Fox Fence did for us. We needed fences on two houses and fox was prompt, courteous, and very professional. They also gave us a very good quote. They came in with a great crew and got both fences done in 2 days. I highly recommend them."</p>
+          <div class="flex items-center justify-between">
+            <p class="text-gray-600 text-sm serif-display" style="font-variant: small-caps; letter-spacing: 0.06em;">Greg Frick <span class="normal-case italic text-gray-400 text-xs">· 2 months ago</span></p>
+            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded-full serif-display">via Google</span>
           </div>
         </div>
 
         <!-- Review 4 -->
-        <div class="bg-stone-50 rounded-2xl p-7 border border-stone-100 shadow-sm flex flex-col">
-          <div class="flex items-center gap-1 mb-4">
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+        <div class="border border-gray-100 p-8 hover:border-gray-300 transition rounded-sm">
+          <div class="flex gap-1 mb-4">
+            <i data-lucide="star" class="w-3 h-3 text-[#C8A97E] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#C8A97E] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#C8A97E] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#C8A97E] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#C8A97E] fill-current"></i>
           </div>
-          <p class="text-stone-600 text-sm leading-relaxed flex-1 mb-5">"We had a split rail fence that was 25 years old beginning to need replacing. Tom gave us a fair estimate to replace. We replaced it with a 5 ft iron fence. The new fence looks great and the posts were set in concrete. The quality and workmanship were excellent. I highly recommend Fox fence."</p>
-          <div class="flex items-center justify-between mt-auto">
-            <div>
-              <div class="font-bold text-stone-900 text-sm">Bill Sanders</div>
-              <div class="text-xs text-stone-400 mt-0.5">a month ago</div>
-            </div>
-            <span class="bg-[#C8A97E]/20 text-[#4E342E] text-xs font-bold px-3 py-1 rounded-full">via Google · Acworth</span>
+          <p class="serif-display italic text-gray-700 text-base leading-relaxed mb-6">"We had a split rail fence that was 25 years old beginning to need replacing. Tom gave us a fair estimate to replace. We replaced it with a 5 ft iron fence. The new fence looks great and the posts were set in concrete. The quality and workmanship were excellent. I highly recommend Fox fence."</p>
+          <div class="flex items-center justify-between">
+            <p class="text-gray-600 text-sm serif-display" style="font-variant: small-caps; letter-spacing: 0.06em;">Bill Sanders <span class="normal-case italic text-gray-400 text-xs">· a month ago</span></p>
+            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded-full serif-display">via Google</span>
           </div>
         </div>
 
         <!-- Review 5 -->
-        <div class="bg-stone-50 rounded-2xl p-7 border border-stone-100 shadow-sm flex flex-col md:col-span-2 lg:col-span-1">
-          <div class="flex items-center gap-1 mb-4">
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+        <div class="border border-gray-100 p-8 hover:border-gray-300 transition rounded-sm">
+          <div class="flex gap-1 mb-4">
+            <i data-lucide="star" class="w-3 h-3 text-[#C8A97E] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#C8A97E] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#C8A97E] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#C8A97E] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#C8A97E] fill-current"></i>
           </div>
-          <p class="text-stone-600 text-sm leading-relaxed flex-1 mb-5">"Great company! Steve was very thorough in his explanation/quote and easy to work with. But the real star of the show was the installer Alex and his crew — they did a fantastic job!! They worked non-stop to get the fence done in one day and it looks great! They are poster children for a team that shows up, works hard and gets the job done. They are the type of crew any employer would be lucky to have! I am thrilled with the result!"</p>
-          <div class="flex items-center justify-between mt-auto">
-            <div>
-              <div class="font-bold text-stone-900 text-sm">Paul Frese</div>
-              <div class="text-xs text-stone-400 mt-0.5">4 months ago</div>
-            </div>
-            <span class="bg-[#C8A97E]/20 text-[#4E342E] text-xs font-bold px-3 py-1 rounded-full">via Google · Acworth</span>
+          <p class="serif-display italic text-gray-700 text-base leading-relaxed mb-6">"Great company! Steve was very thorough in his explanation/quote and easy to work with. But the real star of the show was the installer Alex and his crew — they did a fantastic job!! They worked non-stop to get the fence done in one day and it looks great! They are poster children for a team that shows up, works hard and gets the job done. They are the type of crew any employer would be lucky to have! I am thrilled with the result!"</p>
+          <div class="flex items-center justify-between">
+            <p class="text-gray-600 text-sm serif-display" style="font-variant: small-caps; letter-spacing: 0.06em;">Paul Frese <span class="normal-case italic text-gray-400 text-xs">· 4 months ago</span></p>
+            <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded-full serif-display">via Google</span>
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICE AREA MAP -->
-  <section class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-stone-50">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-12">
-        <span class="text-xs font-bold uppercase tracking-widest text-[#C8A97E] mb-3 block">Where We Work</span>
-        <h2 class="text-4xl md:text-5xl font-extrabold text-stone-900">Proud to Serve<br><span style="color:#4E342E;">Northwest Georgia</span></h2>
-        <p class="text-stone-500 mt-4 max-w-lg mx-auto">From our home base in Acworth to communities throughout Cobb, Cherokee, and surrounding counties — Fox Fence is never far away.</p>
-      </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <div class="rounded-2xl overflow-hidden shadow-xl h-[400px]">
-          <iframe
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k&q=place_id:ChIJpb9Znz059YgRQK37vDnQw9o"
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Fox Fence Company location in Acworth GA">
-          </iframe>
-        </div>
-        <div>
-          <h3 class="text-2xl font-bold text-stone-900 mb-6">Areas We Serve</h3>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            <div class="flex items-center gap-2 bg-white rounded-xl p-3 border border-stone-100 shadow-sm">
-              <i data-lucide="map-pin" class="w-4 h-4 text-[#4E342E] flex-shrink-0"></i>
-              <span class="text-sm font-medium text-stone-700">Acworth, GA</span>
-            </div>
-            <div class="flex items-center gap-2 bg-white rounded-xl p-3 border border-stone-100 shadow-sm">
-              <i data-lucide="map-pin" class="w-4 h-4 text-[#4E342E] flex-shrink-0"></i>
-              <span class="text-sm font-medium text-stone-700">Kennesaw, GA</span>
-            </div>
-            <div class="flex items-center gap-2 bg-white rounded-xl p-3 border border-stone-100 shadow-sm">
-              <i data-lucide="map-pin" class="w-4 h-4 text-[#4E342E] flex-shrink-0"></i>
-              <span class="text-sm font-medium text-stone-700">Marietta, GA</span>
-            </div>
-            <div class="flex items-center gap-2 bg-white rounded-xl p-3 border border-stone-100 shadow-sm">
-              <i data-lucide="map-pin" class="w-4 h-4 text-[#4E342E] flex-shrink-0"></i>
-              <span class="text-sm font-medium text-stone-700">Woodstock, GA</span>
-            </div>
-            <div class="flex items-center gap-2 bg-white rounded-xl p-3 border border-stone-100 shadow-sm">
-              <i data-lucide="map-pin" class="w-4 h-4 text-[#4E342E] flex-shrink-0"></i>
-              <span class="text-sm font-medium text-stone-700">Canton, GA</span>
-            </div>
-            <div class="flex items-center gap-2 bg-white rounded-xl p-3 border border-stone-100 shadow-sm">
-              <i data-lucide="map-pin" class="w-4 h-4 text-[#4E342E] flex-shrink-0"></i>
-              <span class="text-sm font-medium text-stone-700">Cartersville, GA</span>
-            </div>
-            <div class="flex items-center gap-2 bg-white rounded-xl p-3 border border-stone-100 shadow-sm">
-              <i data-lucide="map-pin" class="w-4 h-4 text-[#4E342E] flex-shrink-0"></i>
-              <span class="text-sm font-medium text-stone-700">Dallas, GA</span>
-            </div>
-            <div class="flex items-center gap-2 bg-white rounded-xl p-3 border border-stone-100 shadow-sm">
-              <i data-lucide="map-pin" class="w-4 h-4 text-[#4E342E] flex-shrink-0"></i>
-              <span class="text-sm font-medium text-stone-700">Smyrna, GA</span>
-            </div>
-            <div class="flex items-center gap-2 bg-white rounded-xl p-3 border border-stone-100 shadow-sm">
-              <i data-lucide="map-pin" class="w-4 h-4 text-[#4E342E] flex-shrink-0"></i>
-              <span class="text-sm font-medium text-stone-700">Holly Springs, GA</span>
-            </div>
-          </div>
-          <div class="mt-8 bg-[#4E342E]/5 border border-[#4E342E]/20 rounded-2xl p-5">
-            <p class="text-stone-700 text-sm font-medium">Not seeing your city? Give us a call — we may still be able to help!</p>
-            <a href="tel:7709755858" class="inline-flex items-center gap-2 mt-3 text-[#4E342E] font-bold text-sm arrow-cta">
-              Call (770) 975-5858 <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-white">
+  <section id="faq" class="animate-section py-32 md:py-40 px-4 md:px-8 lg:px-16 bg-[#f8f8f5]">
     <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-12">
-        <span class="text-xs font-bold uppercase tracking-widest text-[#C8A97E] mb-3 block">Common Questions</span>
-        <h2 class="text-4xl md:text-5xl font-extrabold text-stone-900">Questions From<br><span style="color:#4E342E;">Our Neighbors</span></h2>
-      </div>
-      <div class="space-y-4">
+      <p class="uppercase tracking-widest text-xs text-[#4E342E] font-semibold mb-6">— Questions</p>
+      <h2 class="serif-display text-5xl font-bold text-gray-900 mb-16">Frequently Asked Questions</h2>
 
-        <details class="bg-stone-50 rounded-2xl border border-stone-100 shadow-sm group">
-          <summary class="flex items-center justify-between px-7 py-5">
-            <span class="font-bold text-stone-900 text-base">Do you offer free estimates in Acworth and nearby areas?</span>
-            <i data-lucide="chevron-right" class="w-5 h-5 text-[#4E342E] transition-transform duration-200 group-open:rotate-90 flex-shrink-0"></i>
-          </summary>
-          <div class="px-7 pb-6 text-stone-600 text-sm leading-relaxed">
-            Yes — Fox Fence Company offers free, no-obligation estimates to homeowners and businesses throughout Acworth and the surrounding communities. We'll come out, assess your property, and provide a clear, fair quote with no pressure to commit.
-          </div>
-        </details>
+      <details class="border-b border-gray-200 group">
+        <summary class="serif-display text-2xl font-semibold text-gray-900 py-8 flex items-center justify-between">
+          What types of fencing do you install?
+          <i data-lucide="chevron-right" class="w-5 h-5 text-[#4E342E] flex-shrink-0 transition-transform group-open:rotate-90"></i>
+        </summary>
+        <p class="serif-display text-lg text-gray-600 leading-relaxed max-w-3xl pb-8">Fox Fence Company installs wood, vinyl, chain link, aluminum, and custom ornamental fencing for both residential and commercial properties. We work with homeowners and businesses throughout Acworth, GA and surrounding communities to find the right material and style for every budget and purpose.</p>
+      </details>
 
-        <details class="bg-stone-50 rounded-2xl border border-stone-100 shadow-sm group">
-          <summary class="flex items-center justify-between px-7 py-5">
-            <span class="font-bold text-stone-900 text-base">What types of fencing do you install?</span>
-            <i data-lucide="chevron-right" class="w-5 h-5 text-[#4E342E] transition-transform duration-200 group-open:rotate-90 flex-shrink-0"></i>
-          </summary>
-          <div class="px-7 pb-6 text-stone-600 text-sm leading-relaxed">
-            We install a wide range of fencing types including wood privacy fences, vinyl fencing, chain link, aluminum, iron, and custom decorative fences. Whether you need a residential backyard fence or a commercial-grade security solution, we have the materials and expertise to get it done right.
-          </div>
-        </details>
+      <details class="border-b border-gray-200 group">
+        <summary class="serif-display text-2xl font-semibold text-gray-900 py-8 flex items-center justify-between">
+          How do I get an estimate?
+          <i data-lucide="chevron-right" class="w-5 h-5 text-[#4E342E] flex-shrink-0 transition-transform group-open:rotate-90"></i>
+        </summary>
+        <p class="serif-display text-lg text-gray-600 leading-relaxed max-w-3xl pb-8">Simply call us at (770) 975-5858 or fill out our online contact form and one of our representatives will schedule a convenient time to visit your property. Estimates are always free with no obligation, and our team will walk you through your options on-site.</p>
+      </details>
 
-        <details class="bg-stone-50 rounded-2xl border border-stone-100 shadow-sm group">
-          <summary class="flex items-center justify-between px-7 py-5">
-            <span class="font-bold text-stone-900 text-base">How long does a typical fence installation take?</span>
-            <i data-lucide="chevron-right" class="w-5 h-5 text-[#4E342E] transition-transform duration-200 group-open:rotate-90 flex-shrink-0"></i>
-          </summary>
-          <div class="px-7 pb-6 text-stone-600 text-sm leading-relaxed">
-            Most residential fence installations are completed in one to two days, depending on the length of the fence line, the type of material, and any site conditions. Our experienced crews work efficiently to minimize disruption to your yard and schedule, and they always clean up thoroughly before leaving.
-          </div>
-        </details>
+      <details class="border-b border-gray-200 group">
+        <summary class="serif-display text-2xl font-semibold text-gray-900 py-8 flex items-center justify-between">
+          How long does fence installation take?
+          <i data-lucide="chevron-right" class="w-5 h-5 text-[#4E342E] flex-shrink-0 transition-transform group-open:rotate-90"></i>
+        </summary>
+        <p class="serif-display text-lg text-gray-600 leading-relaxed max-w-3xl pb-8">Most residential fence installations are completed within one to two days depending on the size of the project and the materials selected. Our crews are known for working efficiently without cutting corners — many customers are surprised by how quickly a quality fence goes up.</p>
+      </details>
 
-        <details class="bg-stone-50 rounded-2xl border border-stone-100 shadow-sm group">
-          <summary class="flex items-center justify-between px-7 py-5">
-            <span class="font-bold text-stone-900 text-base">Are you licensed and insured to work in Georgia?</span>
-            <i data-lucide="chevron-right" class="w-5 h-5 text-[#4E342E] transition-transform duration-200 group-open:rotate-90 flex-shrink-0"></i>
-          </summary>
-          <div class="px-7 pb-6 text-stone-600 text-sm leading-relaxed">
-            Yes, Fox Fence Company is fully licensed and insured to operate in the state of Georgia. You can have complete confidence knowing your project is being handled by a professional, accountable team — protecting both your property and your peace of mind throughout the entire process.
-          </div>
-        </details>
+      <details class="border-b border-gray-200 group">
+        <summary class="serif-display text-2xl font-semibold text-gray-900 py-8 flex items-center justify-between">
+          Are you licensed and insured in Georgia?
+          <i data-lucide="chevron-right" class="w-5 h-5 text-[#4E342E] flex-shrink-0 transition-transform group-open:rotate-90"></i>
+        </summary>
+        <p class="serif-display text-lg text-gray-600 leading-relaxed max-w-3xl pb-8">Yes — Fox Fence Company is fully licensed and insured to operate in the state of Georgia. You can have confidence that every installation meets local code requirements and that your property is protected throughout the project from start to finish.</p>
+      </details>
 
-        <details class="bg-stone-50 rounded-2xl border border-stone-100 shadow-sm group">
-          <summary class="flex items-center justify-between px-7 py-5">
-            <span class="font-bold text-stone-900 text-base">Do you work with HOA communities in Acworth?</span>
-            <i data-lucide="chevron-right" class="w-5 h-5 text-[#4E342E] transition-transform duration-200 group-open:rotate-90 flex-shrink-0"></i>
-          </summary>
-          <div class="px-7 pb-6 text-stone-600 text-sm leading-relaxed">
-            Absolutely. We have experience working with HOA boards throughout Acworth and the greater Cobb and Cherokee County areas. Our office team is happy to assist in coordinating approvals and ensuring your fence design meets your community's guidelines before installation begins.
-          </div>
-        </details>
+      <details class="border-b border-gray-200 group">
+        <summary class="serif-display text-2xl font-semibold text-gray-900 py-8 flex items-center justify-between">
+          Do you handle HOA fence requirements?
+          <i data-lucide="chevron-right" class="w-5 h-5 text-[#4E342E] flex-shrink-0 transition-transform group-open:rotate-90"></i>
+        </summary>
+        <p class="serif-display text-lg text-gray-600 leading-relaxed max-w-3xl pb-8">Absolutely. Our team is experienced working with HOA boards and their specific guidelines for fence style, height, materials, and placement. We assist homeowners with documentation and communication so the process stays smooth from approval to installation.</p>
+      </details>
 
-        <details class="bg-stone-50 rounded-2xl border border-stone-100 shadow-sm group">
-          <summary class="flex items-center justify-between px-7 py-5">
-            <span class="font-bold text-stone-900 text-base">What areas do you serve beyond Acworth?</span>
-            <i data-lucide="chevron-right" class="w-5 h-5 text-[#4E342E] transition-transform duration-200 group-open:rotate-90 flex-shrink-0"></i>
-          </summary>
-          <div class="px-7 pb-6 text-stone-600 text-sm leading-relaxed">
-            In addition to our home base in Acworth, GA, we proudly serve Kennesaw, Marietta, Woodstock, Canton, Cartersville, Dallas, Smyrna, Holly Springs, and many communities throughout northwest Georgia. If you're not sure whether we cover your area, just give us a call at (770) 975-5858 and we'll let you know.
-          </div>
-        </details>
+      <details class="group">
+        <summary class="serif-display text-2xl font-semibold text-gray-900 py-8 flex items-center justify-between">
+          What areas do you serve near Acworth?
+          <i data-lucide="chevron-right" class="w-5 h-5 text-[#4E342E] flex-shrink-0 transition-transform group-open:rotate-90"></i>
+        </summary>
+        <p class="serif-display text-lg text-gray-600 leading-relaxed max-w-3xl pb-8">In addition to Acworth, we proudly serve Kennesaw, Marietta, Canton, Woodstock, Dallas, Powder Springs, Smyrna, Cartersville, and surrounding Cherokee and Cobb County communities. If you're within the greater Atlanta metro area, contact us to confirm service availability at your address.</p>
+      </details>
 
-        <details class="bg-stone-50 rounded-2xl border border-stone-100 shadow-sm group">
-          <summary class="flex items-center justify-between px-7 py-5">
-            <span class="font-bold text-stone-900 text-base">Can you repair my existing fence instead of replacing it?</span>
-            <i data-lucide="chevron-right" class="w-5 h-5 text-[#4E342E] transition-transform duration-200 group-open:rotate-90 flex-shrink-0"></i>
-          </summary>
-          <div class="px-7 pb-6 text-stone-600 text-sm leading-relaxed">
-            Yes, we offer complete fence repair services including board replacement, post replacement, gate repair, and storm damage restoration. During your free estimate, we'll honestly assess whether repair or full replacement makes the most sense for your situation — and we'll always recommend what's best for your budget and long-term value.
-          </div>
-        </details>
-
-      </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-stone-50">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-12">
-        <span class="text-xs font-bold uppercase tracking-widest text-[#C8A97E] mb-3 block">Get In Touch</span>
-        <h2 class="text-4xl md:text-5xl font-extrabold text-stone-900">Ready to Get Started?<br><span style="color:#4E342E;">We'd Love to Help.</span></h2>
+  <section id="contact" class="animate-section py-32 md:py-40 px-4 md:px-8 lg:px-16 bg-white">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <!-- Left: Map -->
+      <div class="w-full h-[480px] overflow-hidden rounded-sm shadow-sm">
+        <iframe
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k&q=place_id:ChIJpb9Znz059YgRQK37vDnQw9o"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Fox Fence Company Location"></iframe>
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-        <!-- Map -->
-        <div class="rounded-2xl overflow-hidden shadow-xl h-[420px]">
-          <iframe
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k&q=place_id:ChIJpb9Znz059YgRQK37vDnQw9o"
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Fox Fence Company - 131 Holt Dr, Acworth GA">
-          </iframe>
+      <!-- Right: Form -->
+      <div class="bg-[#f8f8f5] p-8 border border-gray-200 rounded-sm">
+        <p class="serif-display italic text-xs tracking-widest text-gray-500 uppercase">get started</p>
+        <h3 class="serif-display italic text-3xl font-bold text-gray-900 mt-2">Get a Free Estimate</h3>
+        <p class="serif-display text-gray-600 text-base mt-1">Tell us about your project and we'll be in touch.</p>
+        <div class="flex items-center gap-1 mt-3">
+          <i data-lucide="star" class="w-4 h-4 text-[#C8A97E] fill-current"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#C8A97E] fill-current"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#C8A97E] fill-current"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#C8A97E] fill-current"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#C8A97E] fill-current"></i>
+          <span class="serif-display text-sm text-gray-500 ml-2">4.1 out of 5 · 84 reviews</span>
         </div>
-        <!-- Form -->
-        <div class="bg-white border-2 border-[#4E342E] p-8 rounded-2xl max-w-md w-full mx-auto lg:mx-0 shadow-lg">
-          <span class="text-xs uppercase tracking-widest font-semibold text-[#4E342E] block mb-2">GET STARTED</span>
-          <h3 class="text-3xl font-bold text-stone-900 mt-2">Get a Free Estimate</h3>
-          <p class="text-gray-600 text-sm mt-1">No pressure, no cost. Just honest advice from your local fence experts.</p>
-          <div class="flex items-center gap-1 mt-3">
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-            <i data-lucide="star" class="w-4 h-4 text-stone-300"></i>
-            <span class="text-stone-500 text-xs ml-1">4.1 out of 5 · 84 reviews</span>
-          </div>
-          <form class="mt-4" onsubmit="return false;">
-            <input type="text" placeholder="Your Name" class="bg-gray-50 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#4E342E] focus:outline-none py-3 px-4 w-full mt-4 text-sm" required>
-            <input type="tel" placeholder="Phone Number" class="bg-gray-50 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#4E342E] focus:outline-none py-3 px-4 w-full mt-3 text-sm" required>
-            <input type="email" placeholder="Email Address" class="bg-gray-50 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#4E342E] focus:outline-none py-3 px-4 w-full mt-3 text-sm">
-            <select class="bg-gray-50 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#4E342E] focus:outline-none py-3 px-4 w-full mt-3 text-sm text-gray-600">
-              <option value="">Select a Service</option>
-              <option>Wood Fence Installation</option>
-              <option>Vinyl Fence Installation</option>
-              <option>Chain Link Installation</option>
-              <option>Aluminum Fencing</option>
-            </select>
-            <textarea rows="3" placeholder="Tell us about your project..." class="bg-gray-50 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#4E342E] focus:outline-none py-3 px-4 w-full mt-3 text-sm resize-none"></textarea>
-            <button type="submit" class="w-full bg-[#4E342E] text-white rounded-lg py-4 font-bold mt-6 hover:bg-[#3a2620] transition text-sm">
-              Request My Free Estimate
-            </button>
-            <div class="flex items-center gap-1.5 mt-2">
-              <i data-lucide="shield-check" class="w-3.5 h-3.5 text-[#4E342E]"></i>
-              <span class="text-xs text-gray-500">Licensed &amp; Insured · Acworth Local</span>
-            </div>
-            <p class="text-xs text-gray-400 mt-2">By submitting you agree to be contacted regarding your request.</p>
-          </form>
-        </div>
+        <form onsubmit="return false;">
+          <input type="text" placeholder="Your Name" class="bg-white border-0 border-b border-gray-300 focus:ring-0 focus:border-black py-3 px-0 serif-display w-full mt-6 text-gray-800 placeholder-gray-400 outline-none" style="font-family: 'Playfair Display', serif;">
+          <input type="tel" placeholder="Phone Number" class="bg-white border-0 border-b border-gray-300 focus:ring-0 focus:border-black py-3 px-0 serif-display w-full mt-4 text-gray-800 placeholder-gray-400 outline-none" style="font-family: 'Playfair Display', serif;">
+          <input type="email" placeholder="Email Address" class="bg-white border-0 border-b border-gray-300 focus:ring-0 focus:border-black py-3 px-0 serif-display w-full mt-4 text-gray-800 placeholder-gray-400 outline-none" style="font-family: 'Playfair Display', serif;">
+          <select class="bg-white border-0 border-b border-gray-300 focus:ring-0 focus:border-black py-3 px-0 serif-display w-full mt-4 text-gray-500 outline-none appearance-none" style="font-family: 'Playfair Display', serif;">
+            <option value="" disabled selected>Select a Service</option>
+            <option>Wood Fence Installation</option>
+            <option>Vinyl Fence Installation</option>
+            <option>Chain Link Installation</option>
+            <option>Aluminum Fencing</option>
+          </select>
+          <textarea rows="3" placeholder="Tell us about your project..." class="bg-white border-0 border-b border-gray-300 focus:ring-0 focus:border-black py-3 px-0 serif-display w-full mt-4 text-gray-800 placeholder-gray-400 outline-none resize-none" style="font-family: 'Playfair Display', serif;"></textarea>
+          <button type="submit" class="w-full mt-6 py-4 bg-[#4E342E] text-white serif-display font-semibold tracking-wide hover:bg-[#3a271f] transition rounded-sm">Request Free Estimate</button>
+          <p class="serif-display italic text-xs text-gray-400 mt-3">By submitting you agree to be contacted regarding your request.</p>
+        </form>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer style="background-color:#4E342E;" class="text-white">
-
-    <!-- Certifications Strip -->
-    <div class="py-10 border-b border-white/20">
-      <div class="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto px-4">
-        <div class="flex items-center gap-2">
-          <i data-lucide="shield-check" class="w-4 h-4 text-[#C8A97E]"></i>
-          <span class="uppercase tracking-wider text-xs font-semibold">Licensed</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <i data-lucide="check-circle" class="w-4 h-4 text-[#C8A97E]"></i>
-          <span class="uppercase tracking-wider text-xs font-semibold">Insured</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <i data-lucide="award" class="w-4 h-4 text-[#C8A97E]"></i>
-          <span class="uppercase tracking-wider text-xs font-semibold">4.1 Google Rating</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <i data-lucide="heart" class="w-4 h-4 text-[#C8A97E]"></i>
-          <span class="uppercase tracking-wider text-xs font-semibold">Local &amp; Family-Owned</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <i data-lucide="check-circle" class="w-4 h-4 text-[#C8A97E]"></i>
-          <span class="uppercase tracking-wider text-xs font-semibold">Community-First</span>
-        </div>
-      </div>
+  <footer class="bg-[#f8f8f5] text-gray-900">
+    <!-- Signature Line -->
+    <div class="border-t border-gray-300 w-full"></div>
+    <div class="text-center py-10 border-b border-gray-300">
+      <p class="serif-display italic text-sm text-gray-600">a acworth fencing practice</p>
     </div>
 
-    <!-- Proudly Serving Banner -->
-    <div class="py-10 border-b border-white/20 text-center px-4">
-      <span class="uppercase tracking-widest text-xs font-semibold" style="color:#C8A97E;">PROUDLY SERVING</span>
-      <h3 class="text-3xl md:text-4xl font-bold mt-2 text-white">Northwest Georgia Communities</h3>
-      <div class="flex flex-wrap justify-center gap-2 mt-6">
-        <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Acworth</span>
-        <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Kennesaw</span>
-        <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Marietta</span>
-        <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Woodstock</span>
-        <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Canton</span>
-        <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Cartersville</span>
-        <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Dallas</span>
-        <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Smyrna</span>
-        <span class="rounded-full bg-white/10 px-4 py-2 text-sm">Holly Springs</span>
+    <!-- Main Grid -->
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-12 py-20 px-8">
+
+      <!-- Col 1: Business Identity -->
+      <div class="col-span-2">
+        <p class="serif-display italic text-5xl font-bold text-gray-900">Fox Fence Company</p>
+        <p class="serif-display text-gray-700 text-lg max-w-sm mt-4 leading-relaxed">Expert fencing installation and repair serving Acworth, Georgia and the greater Atlanta metro area — built right, built to last.</p>
+        <p class="serif-display italic text-sm text-gray-500 mt-6">Licensed in Georgia · Fully Insured</p>
+        <p class="serif-display text-sm text-gray-500 mt-2">4.1 Google Rating · 84 Reviews</p>
       </div>
+
+      <!-- Col 2: Service Areas -->
+      <div>
+        <h4 class="serif-display tracking-wide text-sm pb-4 border-b border-gray-300 mb-4" style="font-variant: small-caps;">Service Areas</h4>
+        <ul class="space-y-2">
+          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Acworth</a></li>
+          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Kennesaw</a></li>
+          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Marietta</a></li>
+          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Canton</a></li>
+          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Woodstock</a></li>
+          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Dallas</a></li>
+          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Powder Springs</a></li>
+          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Cartersville</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Services -->
+      <div>
+        <h4 class="serif-display tracking-wide text-sm pb-4 border-b border-gray-300 mb-4" style="font-variant: small-caps;">Services</h4>
+        <ul class="space-y-2">
+          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Wood Fence Installation</a></li>
+          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Vinyl Fence Installation</a></li>
+          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Chain Link Installation</a></li>
+          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Aluminum Fencing</a></li>
+          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Fence Repair</a></li>
+          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Storm Damage Repair</a></li>
+          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Custom &amp; Pool Fencing</a></li>
+          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Commercial Fencing</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Company + Contact -->
+      <div>
+        <h4 class="serif-display tracking-wide text-sm pb-4 border-b border-gray-300 mb-4" style="font-variant: small-caps;">Company</h4>
+        <ul class="space-y-2 mb-8">
+          <li><a href="#home" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Home</a></li>
+          <li><a href="#about" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">About</a></li>
+          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Services</a></li>
+          <li><a href="#gallery" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Gallery</a></li>
+          <li><a href="#reviews" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Reviews</a></li>
+          <li><a href="#faq" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">FAQ</a></li>
+          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Contact</a></li>
+        </ul>
+        <h4 class="serif-display tracking-wide text-sm pb-4 border-b border-gray-300 mb-4" style="font-variant: small-caps;">Contact</h4>
+        <a href="tel:7709755858" class="serif-display text-lg text-gray-900 hover:text-[#4E342E] transition block mb-3">(770) 975-5858</a>
+        <address class="not-italic">
+          <p class="serif-display text-sm text-gray-600 leading-relaxed">131 Holt Dr<br>Acworth, GA 30101</p>
+        </address>
+        <p class="serif-display text-sm text-gray-600 mt-3 leading-relaxed">Mon–Fri: 8:00 AM – 5:00 PM<br>Sat–Sun: Closed</p>
+      </div>
+
     </div>
 
-    <!-- Main Footer Grid -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-16 px-8 max-w-7xl mx-auto">
-
-      <!-- Col 1: Identity -->
-      <div class="col-span-2 md:col-span-1">
-        <div class="text-3xl font-bold" style="font-family:'Inter',sans-serif;">Fox Fence Company</div>
-        <p class="text-white/70 text-sm mt-2 leading-relaxed">Proudly serving Acworth and surrounding communities.</p>
-        <div class="mt-6 space-y-3">
-          <div class="flex items-start gap-2 text-white/80 text-sm">
-            <i data-lucide="map-pin" class="w-4 h-4 text-[#C8A97E] mt-0.5 flex-shrink-0"></i>
-            131 Holt Dr, Acworth, GA 30101
-          </div>
-          <div class="flex items-center gap-2 text-white/80 text-sm">
-            <i data-lucide="phone" class="w-4 h-4 text-[#C8A97E] flex-shrink-0"></i>
-            <a href="tel:7709755858" class="hover:text-white transition">(770) 975-5858</a>
-          </div>
-          <div class="flex items-start gap-2 text-white/80 text-sm">
-            <i data-lucide="clock" class="w-4 h-4 text-[#C8A97E] mt-0.5 flex-shrink-0"></i>
-            <div>
-              Mon–Fri: 8:00 AM – 5:00 PM<br>
-              Sat–Sun: Closed
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Col 2: Services -->
-      <div>
-        <h4 class="uppercase tracking-wider text-sm font-semibold border-b pb-2 mb-4" style="color:#C8A97E; border-color:rgba(200,169,126,0.3);">SERVICES</h4>
-        <a href="#services" class="block text-white/80 hover:text-white transition text-sm py-1">Wood Fence Installation</a>
-        <a href="#services" class="block text-white/80 hover:text-white transition text-sm py-1">Vinyl Fence Installation</a>
-        <a href="#services" class="block text-white/80 hover:text-white transition text-sm py-1">Chain Link Installation</a>
-        <a href="#services" class="block text-white/80 hover:text-white transition text-sm py-1">Aluminum Fencing</a>
-        <a href="#services" class="block text-white/80 hover:text-white transition text-sm py-1">Fence Repair</a>
-        <a href="#services" class="block text-white/80 hover:text-white transition text-sm py-1">Post Replacement</a>
-        <a href="#services" class="block text-white/80 hover:text-white transition text-sm py-1">Storm Damage Repair</a>
-        <a href="#services" class="block text-white/80 hover:text-white transition text-sm py-1">Gate Repair</a>
-        <a href="#services" class="block text-white/80 hover:text-white transition text-sm py-1">Custom Designs</a>
-        <a href="#services" class="block text-white/80 hover:text-white transition text-sm py-1">Pool Fencing</a>
-        <a href="#services" class="block text-white/80 hover:text-white transition text-sm py-1">Commercial Fencing</a>
-      </div>
-
-      <!-- Col 3: Company -->
-      <div>
-        <h4 class="uppercase tracking-wider text-sm font-semibold border-b pb-2 mb-4" style="color:#C8A97E; border-color:rgba(200,169,126,0.3);">COMPANY</h4>
-        <a href="#home" class="block text-white/80 hover:text-white transition text-sm py-1">Home</a>
-        <a href="#about" class="block text-white/80 hover:text-white transition text-sm py-1">About Us</a>
-        <a href="#services" class="block text-white/80 hover:text-white transition text-sm py-1">Services</a>
-        <a href="#gallery" class="block text-white/80 hover:text-white transition text-sm py-1">Gallery</a>
-        <a href="#reviews" class="block text-white/80 hover:text-white transition text-sm py-1">Reviews</a>
-        <a href="#faq" class="block text-white/80 hover:text-white transition text-sm py-1">FAQ</a>
-        <a href="#contact" class="block text-white/80 hover:text-white transition text-sm py-1">Contact</a>
-      </div>
-
-      <!-- Col 4: Resources -->
-      <div>
-        <h4 class="uppercase tracking-wider text-sm font-semibold border-b pb-2 mb-4" style="color:#C8A97E; border-color:rgba(200,169,126,0.3);">RESOURCES</h4>
-        <a href="#home" class="block text-white/80 hover:text-white transition text-sm py-1">Home</a>
-        <a href="#reviews" class="block text-white/80 hover:text-white transition text-sm py-1">Reviews</a>
-        <a href="#faq" class="block text-white/80 hover:text-white transition text-sm py-1">FAQ</a>
-        <a href="#contact" class="block text-white/80 hover:text-white transition text-sm py-1">Contact</a>
-        <div class="mt-6 bg-white/10 rounded-xl p-4">
-          <div class="text-xs font-bold uppercase tracking-wider mb-1" style="color:#C8A97E;">Trust</div>
-          <div class="text-white/80 text-xs leading-relaxed">Licensed &amp; Insured in Georgia<br>4.1 Google Rating · 84 Reviews<br>Serving Acworth &amp; Surrounding Areas</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom Bar -->
-    <div class="border-t border-white/20 py-6 px-8 flex flex-col sm:flex-row justify-between items-center gap-3 max-w-7xl mx-auto">
-      <span class="text-xs text-white/50">&copy; 2025 Fox Fence Company. All rights reserved.</span>
-      <span class="text-xs text-white/50">Proud Acworth neighbors</span>
+    <!-- Bottom Row -->
+    <div class="border-t border-gray-300 py-8 px-8 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="serif-display italic text-gray-500 text-sm">© 2025 Fox Fence Company. All rights reserved. Acworth, Georgia.</p>
     </div>
   </footer>
 
   <script>
-// Nav scroll shadow
-(function(){
-  const nav = document.querySelector('nav');
-  if (!nav) return;
-  window.addEventListener('scroll', () => nav.classList.toggle('shadow-md', window.scrollY > 50));
-})();
+  // Nav scroll shadow
+  (function(){
+    const nav = document.querySelector('nav');
+    if (!nav) return;
+    window.addEventListener('scroll', () => nav.classList.toggle('shadow-md', window.scrollY > 50));
+  })();
 
-// Hamburger
-(function(){
-  const ham = document.getElementById('hamburger');
-  const menu = document.getElementById('mobile-menu');
-  if (ham && menu) ham.addEventListener('click', () => menu.classList.toggle('hidden'));
-  document.querySelectorAll('.mobile-nav-link').forEach(a => {
-    a.addEventListener('click', () => { if (menu) menu.classList.add('hidden'); });
-  });
-})();
-
-// TABS
-(function(){
-  const buttons = Array.from(document.querySelectorAll('.tab-btn'));
-  const panels = Array.from(document.querySelectorAll('.tab-panel'));
-  if (!buttons.length || !panels.length) return;
-  function showByIndex(idx) {
-    panels.forEach(p => p.classList.add('hidden'));
-    buttons.forEach(b => { b.classList.remove('active-tab'); b.classList.add('inactive-tab'); });
-    if (panels[idx]) panels[idx].classList.remove('hidden');
-    if (buttons[idx]) { buttons[idx].classList.add('active-tab'); buttons[idx].classList.remove('inactive-tab'); }
-  }
-  function showById(id) { const i = panels.findIndex(p => p.id === id); if (i >= 0) showByIndex(i); }
-  buttons.forEach((btn, idx) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const t = btn.getAttribute('data-target');
-      if (t) showById(t); else showByIndex(idx);
+  // Hamburger
+  (function(){
+    const ham = document.getElementById('hamburger');
+    const menu = document.getElementById('mobile-menu');
+    if (ham && menu) ham.addEventListener('click', () => menu.classList.toggle('hidden'));
+    document.querySelectorAll('.mobile-nav-link').forEach(a => {
+      a.addEventListener('click', () => { if (menu) menu.classList.add('hidden'); });
     });
-  });
-  window.showTab = function(id){ showById(id); };
-  if (!panels.some(p => !p.classList.contains('hidden'))) showByIndex(0);
-})();
+  })();
 
-// Counters
-function animateCount(el, target, suffix) {
-  let start = 0;
-  const duration = 2000, steps = 60, inc = target / steps;
-  const t = setInterval(() => {
-    start += inc;
-    if (start >= target) { el.textContent = target + (suffix || ''); clearInterval(t); }
-    else el.textContent = Math.floor(start) + (suffix || '');
-  }, duration / steps);
-}
-const statObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const t = parseInt(e.target.dataset.count);
-      const s = e.target.dataset.suffix || '';
-      if (t) animateCount(e.target, t, s);
-      statObs.unobserve(e.target);
+  // TABS
+  (function(){
+    const buttons = Array.from(document.querySelectorAll('.tab-btn'));
+    const panels = Array.from(document.querySelectorAll('.tab-panel'));
+    if (!buttons.length || !panels.length) return;
+    function showByIndex(idx) {
+      panels.forEach(p => p.classList.add('hidden'));
+      buttons.forEach(b => { b.classList.remove('active-tab'); b.classList.add('inactive-tab'); });
+      if (panels[idx]) panels[idx].classList.remove('hidden');
+      if (buttons[idx]) { buttons[idx].classList.add('active-tab'); buttons[idx].classList.remove('inactive-tab'); }
     }
-  });
-}, { threshold: 0.3 });
-document.querySelectorAll('[data-count]').forEach(el => statObs.observe(el));
-
-// Section reveal
-(function(){
-  const sections = document.querySelectorAll('.animate-section');
-  if (!sections.length) return;
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove('is-pending');
-        entry.target.classList.add('is-visible');
-        obs.unobserve(entry.target);
-      }
+    function showById(id) { const i = panels.findIndex(p => p.id === id); if (i >= 0) showByIndex(i); }
+    buttons.forEach((btn, idx) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const t = btn.getAttribute('data-target');
+        if (t) showById(t); else showByIndex(idx);
+      });
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  sections.forEach(el => {
-    const r = el.getBoundingClientRect();
-    const inView = r.top < window.innerHeight && r.bottom > 0;
-    if (inView) el.classList.add('is-visible');
-    else { el.classList.add('is-pending'); obs.observe(el); }
-  });
-  setTimeout(() => {
-    document.querySelectorAll('.animate-section.is-pending').forEach(el => {
-      el.classList.remove('is-pending'); el.classList.add('is-visible');
-    });
-  }, 2500);
-})();
+    window.showTab = function(id){ showById(id); };
+    if (!panels.some(p => !p.classList.contains('hidden'))) showByIndex(0);
+  })();
 
-// Hash-click reveal
-(function(){
-  function revealTarget() {
-    const hash = window.location.hash;
-    if (!hash || hash.length < 2) return;
-    try {
-      const target = document.querySelector(hash);
-      if (target && target.classList.contains('animate-section')) {
-        target.classList.remove('is-pending');
-        target.classList.add('is-visible');
-      }
-    } catch(e) {}
+  // Counters
+  function animateCount(el, target, suffix) {
+    let start = 0;
+    const duration = 2000, steps = 60, inc = target / steps;
+    const t = setInterval(() => {
+      start += inc;
+      if (start >= target) { el.textContent = target + (suffix || ''); clearInterval(t); }
+      else el.textContent = Math.floor(start) + (suffix || '');
+    }, duration / steps);
   }
-  window.addEventListener('hashchange', revealTarget);
-  setTimeout(revealTarget, 100);
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', () => {
-      const hash = a.getAttribute('href');
-      if (hash && hash.length > 1) {
-        try {
-          const target = document.querySelector(hash);
-          if (target && target.classList.contains('animate-section')) {
-            target.classList.remove('is-pending');
-            target.classList.add('is-visible');
-          }
-        } catch(e) {}
+  const statObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const t = parseInt(e.target.dataset.count);
+        const s = e.target.dataset.suffix || '';
+        if (t) animateCount(e.target, t, s);
+        statObs.unobserve(e.target);
       }
     });
-  });
-})();
+  }, { threshold: 0.3 });
+  document.querySelectorAll('[data-count]').forEach(el => statObs.observe(el));
 
-// Live clock
-function updateClock() {
-  const el = document.getElementById('live-clock');
-  if (el) el.textContent = 'Acworth - ' + new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-}
-updateClock();
-setInterval(updateClock, 1000);
+  // Section reveal
+  (function(){
+    const sections = document.querySelectorAll('.animate-section');
+    if (!sections.length) return;
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('is-pending');
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    sections.forEach(el => {
+      const r = el.getBoundingClientRect();
+      const inView = r.top < window.innerHeight && r.bottom > 0;
+      if (inView) el.classList.add('is-visible');
+      else { el.classList.add('is-pending'); obs.observe(el); }
+    });
+    setTimeout(() => {
+      document.querySelectorAll('.animate-section.is-pending').forEach(el => {
+        el.classList.remove('is-pending'); el.classList.add('is-visible');
+      });
+    }, 2500);
+  })();
 
-// Lucide
-(function(){
-  const render = () => { if (window.lucide) window.lucide.createIcons(); };
-  if (window.lucide) render();
-  else document.addEventListener('DOMContentLoaded', render);
-  setTimeout(render, 500);
-  setTimeout(render, 1500);
-})();
+  // Hash-click reveal
+  (function(){
+    function revealTarget() {
+      const hash = window.location.hash;
+      if (!hash || hash.length < 2) return;
+      try {
+        const target = document.querySelector(hash);
+        if (target && target.classList.contains('animate-section')) {
+          target.classList.remove('is-pending');
+          target.classList.add('is-visible');
+        }
+      } catch(e) {}
+    }
+    window.addEventListener('hashchange', revealTarget);
+    setTimeout(revealTarget, 100);
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', () => {
+        const hash = a.getAttribute('href');
+        if (hash && hash.length > 1) {
+          try {
+            const target = document.querySelector(hash);
+            if (target && target.classList.contains('animate-section')) {
+              target.classList.remove('is-pending');
+              target.classList.add('is-visible');
+            }
+          } catch(e) {}
+        }
+      });
+    });
+  })();
+
+  // Live clock
+  function updateClock() {
+    const el = document.getElementById('live-clock');
+    if (el) el.textContent = 'Acworth - ' + new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+
+  // Lucide
+  (function(){
+    const render = () => { if (window.lucide) window.lucide.createIcons(); };
+    if (window.lucide) render();
+    else document.addEventListener('DOMContentLoaded', render);
+    setTimeout(render, 500);
+    setTimeout(render, 1500);
+  })();
   </script>
 
 </body>

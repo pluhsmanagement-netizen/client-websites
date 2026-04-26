@@ -1552,24 +1552,28 @@ section {
     revealEls.forEach(el => el.classList.add('visible'));
   }
 
-  // Email form
+  // Email form — wired to Beehiiv via /api/subscribe
   const form = document.getElementById('signupForm');
   const success = document.getElementById('signupSuccess');
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = document.getElementById('emailInput').value;
     if (!email) return;
-
-    // TODO: Wire to your email provider. Options:
-    //   - Mailchimp: replace with their JSONP form action URL
-    //   - ConvertKit: their /v3/forms/{id}/subscribe API
-    //   - Resend / Loops: more dev-friendly, REST-based
-    //   - Beehiiv: simple form action
-    // For now this is just visual feedback.
-    console.log('subscribe:', email);
-
-    form.style.display = 'none';
-    success.classList.add('show');
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        success.classList.add('show');
+      } else {
+        alert('something went wrong. try again?');
+      }
+    } catch (err) {
+      alert('network error. try again?');
+    }
   });
 
   // Painting + merch checkout via stripe payment links

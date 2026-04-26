@@ -1076,7 +1076,88 @@ section {
   .footer-cols { grid-template-columns: subgrid; grid-column: 2 / -1; }
 }
 
-/* ─── Reveal animations ─── */
+/* ─── Soon block ─── */
+.soon-section {
+  background: var(--bg-deep);
+  padding: 120px 24px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.soon-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(204, 154, 153, 0.08) 0%, transparent 60%);
+  pointer-events: none; z-index: 0;
+}
+.soon-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  position: relative; z-index: 1;
+  text-align: center;
+  padding: 60px 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.soon-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin: 0 0 32px 0;
+  opacity: 0;
+  transition: opacity 0.6s ease 0.1s;
+}
+.soon-inner.visible .soon-eyebrow { opacity: 1; }
+.soon-word {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+  font-size: clamp(120px, 22vw, 280px);
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  color: var(--ink);
+  margin: 0;
+  display: inline-block;
+}
+.soon-word .char {
+  display: inline-block;
+  opacity: 0;
+}
+.soon-inner.visible .soon-word .char { animation: glitchIn 0.45s steps(4) forwards; }
+.soon-inner.visible .soon-word .char:nth-child(1) { animation-delay: 0.20s; }
+.soon-inner.visible .soon-word .char:nth-child(2) { animation-delay: 0.42s; }
+.soon-inner.visible .soon-word .char:nth-child(3) { animation-delay: 0.64s; }
+.soon-inner.visible .soon-word .char:nth-child(4) { animation-delay: 0.86s; }
+.soon-inner.visible .soon-word .char:nth-child(5) { animation-delay: 1.08s; animation-name: glitchInRose; }
+@keyframes glitchIn {
+  0%   { opacity: 0; transform: translateX(-4px) skewX(-12deg); filter: blur(8px); color: var(--rose); }
+  30%  { opacity: 0.55; transform: translateX(3px) skewX(8deg); filter: blur(2px); color: var(--rose); }
+  60%  { opacity: 0.55; transform: translateX(-1px) skewX(-2deg); filter: blur(1px); color: var(--ink); }
+  100% { opacity: 0.55; transform: translateX(0) skewX(0); filter: blur(0); color: var(--ink); }
+}
+@keyframes glitchInRose {
+  0%   { opacity: 0; transform: translateX(-4px); filter: blur(8px); color: var(--rose); }
+  100% { opacity: 0.7; transform: translateX(0); filter: blur(0); color: var(--rose); }
+}
+.soon-cooking {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(16px, 1.7vw, 19px);
+  color: var(--ink-soft);
+  margin: 32px 0 0 0;
+  letter-spacing: 0.01em;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.9s var(--ease) 1.6s, transform 0.9s var(--ease) 1.6s;
+}
+.soon-inner.visible .soon-cooking { opacity: 1; transform: translateY(0); }
+.soon-cooking em { color: var(--rose); font-style: italic; }
+     /* ─── Reveal animations ─── */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -1184,195 +1265,17 @@ section {
   </div>
 </section>
 
-<!-- ─── MUSIC ─── -->
-<section id="music">
-  <div class="section-inner">
-    <div class="section-head reveal">
-      <div class="section-head-left">
-        <span class="section-num">/ 02</span>
-        <span class="eyebrow">music</span>
-        <h2 class="section-title">the <span class="accent">catalog</span></h2>
+<!-- ─── SOON BLOCK (replaces music + paintings + merch) ─── -->
+    <span id="music"></span><span id="paintings"></span><span id="merch"></span>
+    <section class="soon-section reveal">
+      <div class="soon-inner">
+        <p class="soon-eyebrow">— music · paintings · merch —</p>
+        <h2 class="soon-word">
+          <span class="char">s</span><span class="char">o</span><span class="char">o</span><span class="char">n</span><span class="char dot">.</span>
+        </h2>
+        <p class="soon-cooking">the work is <em>cooking</em>.</p>
       </div>
-      <a href="#" class="section-link">
-        all platforms
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-
-    <div class="music-grid">
-      <!-- Featured: full profile player — auto-shows your latest tracks -->
-      <div class="music-card music-card-feature reveal">
-        <div class="music-card-meta">
-          <span class="music-card-num">/ 01</span>
-          <span class="music-card-tag">soundcloud · catalog</span>
-        </div>
-        <!-- This embed shows your full SoundCloud profile. As you upload tracks, they appear here. -->
-        <iframe width="100%" height="400" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pluhs&color=%23cc9a99&inverse=true&auto_play=false&show_user=true&hide_related=true&show_comments=false&show_reposts=false&visual=true"></iframe>
-      </div>
-
-      <!-- Individual tracks — SWAP THESE in once tracks are uploaded.
-           To get the embed URL: SoundCloud track → Share → Embed → copy iframe → grab the src URL -->
-      <div class="music-card reveal">
-        <div class="music-card-meta">
-          <span class="music-card-num">/ 02</span>
-          <span class="music-card-tag">latest single</span>
-        </div>
-        <iframe width="100%" height="166" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pluhs&color=%23cc9a99&inverse=true&auto_play=false&show_user=false&hide_related=true"></iframe>
-      </div>
-
-      <div class="music-card reveal">
-        <div class="music-card-meta">
-          <span class="music-card-num">/ 03</span>
-          <span class="music-card-tag">loosie</span>
-        </div>
-        <iframe width="100%" height="166" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pluhs&color=%23cc9a99&inverse=true&auto_play=false&show_user=false&hide_related=true"></iframe>
-      </div>
-
-      <div class="music-card reveal">
-        <div class="music-card-meta">
-          <span class="music-card-num">/ 04</span>
-          <span class="music-card-tag">unreleased</span>
-        </div>
-        <iframe width="100%" height="166" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pluhs&color=%23cc9a99&inverse=true&auto_play=false&show_user=false&hide_related=true"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── PAINTINGS ─── -->
-<section id="paintings">
-  <div class="section-inner">
-    <div class="section-head reveal">
-      <div class="section-head-left">
-        <span class="section-num">/ 03</span>
-        <span class="eyebrow">paintings</span>
-        <h2 class="section-title">original <span class="accent">work</span></h2>
-      </div>
-      <a href="#" class="section-link">
-        all paintings
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-
-    <div class="gallery">
-      <!-- Each painting: replace data-stripe-link with your Stripe payment link.
-           To create one: stripe dashboard → products → add product → payment links → copy URL. -->
-      <a class="painting reveal" href="#" data-stripe-link="https://buy.stripe.com/REPLACE_WITH_LINK_1">
-        <div class="painting-img">
-          <div class="painting-img-placeholder">— painting 01 —</div>
-          <span class="painting-status">available</span>
-        </div>
-        <div class="painting-meta">
-          <span class="painting-name">midnight bloom</span>
-          <span class="painting-price">$1,200</span>
-        </div>
-      </a>
-
-      <a class="painting reveal" href="#" data-stripe-link="https://buy.stripe.com/REPLACE_WITH_LINK_2">
-        <div class="painting-img">
-          <div class="painting-img-placeholder">— painting 02 —</div>
-          <span class="painting-status">available</span>
-        </div>
-        <div class="painting-meta">
-          <span class="painting-name">soft static</span>
-          <span class="painting-price">$850</span>
-        </div>
-      </a>
-
-      <a class="painting reveal" href="#" data-stripe-link="">
-        <div class="painting-img">
-          <div class="painting-img-placeholder">— painting 03 —</div>
-          <span class="painting-status sold">sold</span>
-        </div>
-        <div class="painting-meta">
-          <span class="painting-name">the wait</span>
-          <span class="painting-price" style="color: var(--ink-mute)">—</span>
-        </div>
-      </a>
-
-      <a class="painting reveal" href="#" data-stripe-link="https://buy.stripe.com/REPLACE_WITH_LINK_4">
-        <div class="painting-img">
-          <div class="painting-img-placeholder">— painting 04 —</div>
-          <span class="painting-status">available</span>
-        </div>
-        <div class="painting-meta">
-          <span class="painting-name">parallel</span>
-          <span class="painting-price">$1,400</span>
-        </div>
-      </a>
-
-      <a class="painting reveal" href="#" data-stripe-link="https://buy.stripe.com/REPLACE_WITH_LINK_5">
-        <div class="painting-img">
-          <div class="painting-img-placeholder">— painting 05 —</div>
-          <span class="painting-status">available</span>
-        </div>
-        <div class="painting-meta">
-          <span class="painting-name">echo (ii)</span>
-          <span class="painting-price">$950</span>
-        </div>
-      </a>
-
-      <a class="painting reveal" href="#" data-stripe-link="">
-        <div class="painting-img">
-          <div class="painting-img-placeholder">— painting 06 —</div>
-          <span class="painting-status sold">sold</span>
-        </div>
-        <div class="painting-meta">
-          <span class="painting-name">low season</span>
-          <span class="painting-price" style="color: var(--ink-mute)">—</span>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ─── MERCH ─── -->
-<section id="merch">
-  <div class="section-inner">
-    <div class="section-head reveal">
-      <div class="section-head-left">
-        <span class="section-num">/ 04</span>
-        <span class="eyebrow">merch</span>
-        <h2 class="section-title">the <span class="accent">drop</span></h2>
-      </div>
-      <a href="#" class="section-link">
-        full shop
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-
-    <div class="merch-grid">
-      <a class="merch-card reveal" href="#" data-stripe-link="https://buy.stripe.com/REPLACE_MERCH_1">
-        <div class="merch-img">— shirt 01 —</div>
-        <div class="merch-meta">
-          <div class="merch-name">tour tee · black</div>
-          <div class="merch-price">$45</div>
-        </div>
-      </a>
-      <a class="merch-card reveal" href="#" data-stripe-link="https://buy.stripe.com/REPLACE_MERCH_2">
-        <div class="merch-img">— hoodie —</div>
-        <div class="merch-meta">
-          <div class="merch-name">heavyweight hoodie</div>
-          <div class="merch-price">$95</div>
-        </div>
-      </a>
-      <a class="merch-card reveal" href="#" data-stripe-link="https://buy.stripe.com/REPLACE_MERCH_3">
-        <div class="merch-img">— print —</div>
-        <div class="merch-meta">
-          <div class="merch-name">poster (ltd. 100)</div>
-          <div class="merch-price">$35</div>
-        </div>
-      </a>
-      <a class="merch-card reveal" href="#" data-stripe-link="https://buy.stripe.com/REPLACE_MERCH_4">
-        <div class="merch-img">— vinyl —</div>
-        <div class="merch-meta">
-          <div class="merch-name">vinyl · pre-order</div>
-          <div class="merch-price">$30</div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
+    </section>
 
 <!-- ─── SHOWS ─── -->
 <section id="shows">

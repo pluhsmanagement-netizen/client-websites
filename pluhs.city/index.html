@@ -1086,7 +1086,13 @@ section {
 .soon-section::before {
   content: '';
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(204, 154, 153, 0.08) 0%, transparent 60%);
+  background-image:
+    linear-gradient(to right, var(--hairline) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--hairline) 1px, transparent 1px),
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(204, 154, 153, 0.08) 0%, transparent 60%);
+  background-size: 80px 80px, 80px 80px, 100% 100%;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 80%);
   pointer-events: none; z-index: 0;
 }
 .soon-inner {

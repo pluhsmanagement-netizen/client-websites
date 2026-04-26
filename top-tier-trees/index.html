@@ -1,282 +1,955 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Top Tier Trees | Professional Tree Services</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Tier Trees | #1 Rated Tree Service in Marietta, GA</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Lato', sans-serif; }
-    h1, h2, h3, .headline { font-family: 'Playfair Display', serif; }
-    .active-tab { background-color: #01579b; color: #fff; border-color: #01579b; }
-    .inactive-tab { background-color: transparent; color: #01579b; border-color: #01579b; }
-    details summary::-webkit-details-marker { display: none; }
-    details[open] summary .faq-arrow { transform: rotate(180deg); }
-    .faq-arrow { transition: transform 0.3s ease; }
-    .nav-scrolled { background-color: #fff !important; box-shadow: 0 2px 20px rgba(0,0,0,0.1); }
-    .nav-scrolled a { color: #1a1a1a !important; }
-    .nav-scrolled .nav-phone { color: #01579b !important; }
-    .nav-scrolled .nav-logo { color: #01579b !important; }
-    .hero-clip { clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
+    html, body { overflow-x: hidden; }
     html { scroll-behavior: smooth; }
-    .star-filled { fill: #facc15; color: #facc15; }
+    body { font-family: 'Lato', sans-serif; }
+    h1,h2,h3,h4,h5,h6,.heading { font-family: 'Playfair Display', sans-serif; }
+    .serif-display { font-family: 'Playfair Display', serif; }
+    .ticker-track { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { display: flex; animation: marquee 40s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    .tab-btn { cursor: pointer; transition: all 0.2s ease; }
+    .tab-btn.active-tab { background-color: #004023; color: white; }
+    .tab-btn.inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
+    .tab-panel { display: block; }
+    .tab-panel.hidden { display: none !important; }
+    .img-hover-wrap { overflow: hidden; }
+    .img-hover-wrap img { transition: transform 0.7s ease; }
+    .img-hover-wrap:hover img { transform: scale(1.05); }
+    .arrow-cta { border-bottom: 2px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s ease; }
+    .arrow-cta:hover { gap: 14px; }
+    .dotted-leader { flex: 1; border-bottom: 1px dotted currentColor; margin: 0 1rem; opacity: 0.3; align-self: end; padding-bottom: 0.5rem; }
+    section { scroll-margin-top: 96px; }
+    .animate-section { opacity: 1; transform: none; transition: opacity 0.6s ease, transform 0.6s ease; }
+    .animate-section.is-pending { opacity: 0; transform: translateY(24px); }
+    .animate-section.is-visible { opacity: 1; transform: none; }
+    .animate-section:target,
+    .animate-section.is-pending:target { opacity: 1 !important; transform: none !important; }
+    .award-badge { filter: grayscale(100%); transition: filter 0.3s ease; }
+    .award-badge:hover { filter: grayscale(0%); }
   </style>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#01579b',
-            secondary: '#ff6f00',
-          },
-          fontFamily: {
-            display: ['Playfair Display', 'serif'],
-            body: ['Lato', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
 </head>
 <body class="bg-white text-gray-900">
 
   <!-- NAV -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="nav-logo text-white text-2xl font-black" style="font-family:'Playfair Display',serif;">
-        Top Tier <span style="color:#ff6f00;">Trees</span>
-      </a>
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-20">
+      <a href="#home" class="flex items-center gap-3"><img src="https://toptiertrees.com/wp-content/uploads/2022/02/TopTierTreesLogo_RGB-2.png" alt="Top Tier Trees" class="h-12 md:h-14 w-auto object-contain max-w-[200px]"></a>
       <div class="hidden md:flex items-center gap-8">
-        <a href="#about" class="text-white hover:text-orange-300 transition-colors font-semibold text-sm uppercase tracking-wide">About</a>
-        <a href="#services" class="text-white hover:text-orange-300 transition-colors font-semibold text-sm uppercase tracking-wide">Services</a>
-        <a href="#gallery" class="text-white hover:text-orange-300 transition-colors font-semibold text-sm uppercase tracking-wide">Gallery</a>
-        <a href="#reviews" class="text-white hover:text-orange-300 transition-colors font-semibold text-sm uppercase tracking-wide">Reviews</a>
-        <a href="#contact" class="text-white hover:text-orange-300 transition-colors font-semibold text-sm uppercase tracking-wide">Contact</a>
-        <a href="tel:6784080080" class="nav-phone text-white font-black text-lg tracking-wide" style="color:#ff6f00;">(678) 408-0080</a>
+        <a href="#home" class="text-sm font-semibold text-gray-700 hover:text-[#004023] transition">Home</a>
+        <a href="#about" class="text-sm font-semibold text-gray-700 hover:text-[#004023] transition">About</a>
+        <a href="#services" class="text-sm font-semibold text-gray-700 hover:text-[#004023] transition">Services</a>
+        <a href="#gallery" class="text-sm font-semibold text-gray-700 hover:text-[#004023] transition">Gallery</a>
+        <a href="#reviews" class="text-sm font-semibold text-gray-700 hover:text-[#004023] transition">Reviews</a>
+        <a href="#faq" class="text-sm font-semibold text-gray-700 hover:text-[#004023] transition">FAQ</a>
+        <a href="#contact" class="text-sm font-semibold text-gray-700 hover:text-[#004023] transition">Contact</a>
+        <a href="tel:6784080080" class="bg-[#ff6900] text-white text-sm font-bold px-5 py-2.5 rounded-full hover:bg-[#e05c00] transition">(678) 408-0080</a>
       </div>
-      <button id="hamburger" class="md:hidden text-white p-2" aria-label="Open menu">
-        <i data-lucide="menu" class="w-7 h-7"></i>
+      <button id="hamburger" class="md:hidden p-2 rounded-lg hover:bg-gray-100">
+        <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
     </div>
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-2xl px-6 py-6 flex flex-col gap-4">
-      <a href="#about" class="text-gray-900 font-semibold text-sm uppercase tracking-wide hover:text-primary">About</a>
-      <a href="#services" class="text-gray-900 font-semibold text-sm uppercase tracking-wide hover:text-primary">Services</a>
-      <a href="#gallery" class="text-gray-900 font-semibold text-sm uppercase tracking-wide hover:text-primary">Gallery</a>
-      <a href="#reviews" class="text-gray-900 font-semibold text-sm uppercase tracking-wide hover:text-primary">Reviews</a>
-      <a href="#contact" class="text-gray-900 font-semibold text-sm uppercase tracking-wide hover:text-primary">Contact</a>
-      <a href="tel:6784080080" class="font-black text-xl text-primary">(678) 408-0080</a>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+      <a href="#home" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold text-gray-700 hover:text-[#004023]">Home</a>
+      <a href="#about" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold text-gray-700 hover:text-[#004023]">About</a>
+      <a href="#services" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold text-gray-700 hover:text-[#004023]">Services</a>
+      <a href="#gallery" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold text-gray-700 hover:text-[#004023]">Gallery</a>
+      <a href="#reviews" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold text-gray-700 hover:text-[#004023]">Reviews</a>
+      <a href="#faq" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold text-gray-700 hover:text-[#004023]">FAQ</a>
+      <a href="#contact" class="mobile-nav-link block py-3 px-4 border-b border-gray-100 text-sm font-semibold text-gray-700 hover:text-[#004023]">Contact</a>
+      <div class="px-4 py-4">
+        <a href="tel:6784080080" class="block bg-[#ff6900] text-white text-center font-bold px-5 py-3 rounded-full">(678) 408-0080</a>
+      </div>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="relative bg-primary hero-clip min-h-screen flex items-center overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-[#012d50] via-[#01579b] to-[#0277bd] opacity-95"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-32 flex flex-col lg:flex-row items-center gap-12 w-full">
-      <!-- Text: 60% -->
-      <div class="lg:w-[58%] w-full">
-        <div class="flex items-center gap-2 mb-6">
-          <div class="flex gap-1">
-            <i data-lucide="star" class="w-5 h-5 star-filled"></i>
-            <i data-lucide="star" class="w-5 h-5 star-filled"></i>
-            <i data-lucide="star" class="w-5 h-5 star-filled"></i>
-            <i data-lucide="star" class="w-5 h-5 star-filled"></i>
-            <i data-lucide="star" class="w-5 h-5 star-filled"></i>
-          </div>
-          <span class="text-white font-semibold text-sm">5.0 Stars · 839 Reviews</span>
-        </div>
-        <h1 class="text-6xl lg:text-8xl font-black text-white leading-none mb-6" style="font-family:'Playfair Display',serif;">
-          Top Tier<br /><span style="color:#ff6f00;">Trees</span>
-        </h1>
-        <p class="text-blue-100 text-xl lg:text-2xl font-light mb-10 max-w-lg leading-relaxed">
-          Professional certified arborist services. From emergency removal to expert pruning — we bring top-tier care to every tree.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="tel:6784080080" class="rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 bg-secondary border-secondary text-white hover:bg-orange-700 hover:border-orange-700 transition-colors text-center">
-            Call Now: (678) 408-0080
-          </a>
-          <a href="#contact" class="rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 border-white text-white hover:bg-white hover:text-primary transition-colors text-center">
-            Free Estimate
-          </a>
-        </div>
+  <section id="home" class="relative h-screen min-h-[600px] flex items-end">
+    <div class="absolute inset-0">
+      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-t8r0v2qVBoNhIEQbjEXiGhhQZMJ82nQIUGvl-GbPLYfKbezRO8FrtHo3zfv1cCO4vLQ4OERjoFbSxLPtGCNwmKPIYtng9D06z-GpXxGoByFAj5jrWFxiniw82EGeD9eaQ3nhIozP0X_4DgIN4ISgzt_WB7X5oB3vm8CyPkcrjYNPcSr3OY_YNUyTxR8IhC9H5YTGvBaeOmGZKRS5HeTr-A59T2_QCto3zCTgxcUeGTdZoDFRO2kcu92R_kWF2J0CaR0DbKeLboKoX-ptzwCqNDAd2z5JpVuOzb5WTQdFQ78A&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Top Tier Trees - Professional Tree Service Marietta GA" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/landscaping-1/1600/900'">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+    </div>
+    <div class="relative z-10 px-4 md:px-8 lg:px-16 pb-20 md:pb-28 max-w-4xl">
+      <p class="text-[#ff6900] tracking-widest uppercase text-xs font-bold mb-4">Marietta, Georgia's Most Trusted</p>
+      <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight">#1 Rated Tree Service<br>in Marietta, GA</h1>
+      <p class="text-gray-200 text-lg md:text-xl mt-4 max-w-xl">Certified arborists. Family owned. One call handles it all.</p>
+      <div class="flex flex-wrap gap-4 mt-8">
+        <a href="#contact" class="bg-[#ff6900] text-white font-bold px-8 py-4 rounded-full hover:bg-[#e05c00] transition text-sm uppercase tracking-wider">Get Free Estimate</a>
+        <a href="tel:6784080080" class="border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white hover:text-gray-900 transition text-sm uppercase tracking-wider">(678) 408-0080</a>
       </div>
-      <!-- Image: 42% floating right -->
-      <div class="lg:w-[42%] w-full flex justify-center lg:justify-end lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8 lg:pr-8">
-        <img
-          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGfXxV_tRfLavaOYTorhq_e_8g2scI5H__nc7movxoC3DFWptUsHJGEaMWCXUI8AQGEtIZhzbsMhPShXbynfJrX10qNkhRZcaaku3Unx-OA670fXbGWNxiNWwFS3JSveRqknqLBX-BgWtByi7gRdOY4u7I6aschHAoB4eGToY9Qx51IwnnwexBkcb0lm8pRm1Suti58IbcxwbMMQx7YoeHv9l6KsrPNwQQs8u26ho8ONSw8QbiQB_RGTOLEf_kU85Y7XnhWJYP5CvP9yI_OAJ8LXywo4OBTHV4AsyswRDk_rg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-          alt="Top Tier Trees Professional Service"
-          loading="eager"
-          class="rounded-2xl shadow-2xl w-full max-w-md lg:max-w-lg object-cover h-80 lg:h-[500px]"
-          onerror="this.onerror=null;this.src='https://picsum.photos/seed/tree-hero-1/800/600';"
-        />
+      <div class="flex items-center gap-2 mt-8">
+        <div class="flex">
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+        </div>
+        <span class="text-white text-sm">5.0 · 842 Google Reviews</span>
+      </div>
+    </div>
+    <div class="absolute bottom-6 right-6 z-10 bg-black/50 backdrop-blur-sm rounded-full px-4 py-2">
+      <span id="live-clock" class="text-white text-xs font-mono"></span>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="animate-section py-12 px-4 md:px-8 lg:px-16 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div class="bg-white rounded-lg p-6 shadow-md border border-gray-100 flex flex-col items-center text-center">
+          <div class="w-12 h-12 rounded-full bg-[#004023]/10 flex items-center justify-center mb-3">
+            <i data-lucide="star" class="w-6 h-6 text-[#004023]"></i>
+          </div>
+          <span class="text-3xl font-bold text-[#004023]" data-count="842" data-suffix="">0</span>
+          <span class="text-xs text-gray-500 mt-1 font-semibold uppercase tracking-wider">5-Star Reviews</span>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow-md border border-gray-100 flex flex-col items-center text-center">
+          <div class="w-12 h-12 rounded-full bg-[#ff6900]/10 flex items-center justify-center mb-3">
+            <i data-lucide="shield-check" class="w-6 h-6 text-[#ff6900]"></i>
+          </div>
+          <span class="text-3xl font-bold text-[#004023]" data-count="100" data-suffix="%">0</span>
+          <span class="text-xs text-gray-500 mt-1 font-semibold uppercase tracking-wider">Licensed & Insured</span>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow-md border border-gray-100 flex flex-col items-center text-center">
+          <div class="w-12 h-12 rounded-full bg-[#004023]/10 flex items-center justify-center mb-3">
+            <i data-lucide="leaf" class="w-6 h-6 text-[#004023]"></i>
+          </div>
+          <span class="text-3xl font-bold text-[#004023]" data-count="24" data-suffix="/7">0</span>
+          <span class="text-xs text-gray-500 mt-1 font-semibold uppercase tracking-wider">Emergency Service</span>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow-md border border-gray-100 flex flex-col items-center text-center">
+          <div class="w-12 h-12 rounded-full bg-[#ff6900]/10 flex items-center justify-center mb-3">
+            <i data-lucide="award" class="w-6 h-6 text-[#ff6900]"></i>
+          </div>
+          <span class="text-3xl font-bold text-[#004023]">ISA</span>
+          <span class="text-xs text-gray-500 mt-1 font-semibold uppercase tracking-wider">Certified Arborists</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex flex-col lg:flex-row gap-16 items-center">
-        <div class="lg:w-1/2">
-          <img
-            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEG9Er2LM6lvgoDLVu_kiGOhINMgyyUJtcjZBvYbv38SxBEHTXNYeI9qwO4ERbhcX4EVrnN9nhI8tgP-sRXCmpjCrnDb7d9JKB1OHQznLsxcqHVKjhMa0Lh5G9mevLOixsEfN_LpjdsYdLXs5anK7WctVj2Mse7742YPDLINLZSvfR9DGXzBbhCPZdbvtgcnd1xoUKGMPbb5e8baXIAdHAIMnBUU7N0N9I2t5egYT0E-iv3Lih4v4xVRzXdZHFKzoNfxmBATTX78WrjM1DfgCzIA1py6NgRpU0nLCGoEU0OBlA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-            alt="About Top Tier Trees"
-            class="rounded-2xl shadow-2xl w-full h-96 object-cover"
-            onerror="this.onerror=null;this.src='https://picsum.photos/seed/tree-about-2/800/600';"
-          />
-        </div>
-        <div class="lg:w-1/2">
-          <p class="text-secondary font-black uppercase tracking-widest text-sm mb-3">About Us</p>
-          <h2 class="text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight" style="font-family:'Playfair Display',serif;">
-            Certified Arborists You Can Trust
-          </h2>
-          <p class="text-gray-600 text-lg leading-relaxed mb-6">
-            Top Tier Trees is a premier tree care company staffed by certified arborists dedicated to the health, safety, and beauty of your trees. We respond fast, work clean, and treat every property with the utmost respect.
-          </p>
-          <p class="text-gray-600 text-lg leading-relaxed mb-8">
-            From same-day emergency removals to complex 100-foot canopy climbs, our team brings expertise, professionalism, and genuine care to every project. When you call us, a real person answers — and a certified expert shows up.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <div class="flex items-center gap-3">
-              <div class="bg-primary/10 p-3 rounded-2xl">
-                <i data-lucide="shield-check" class="w-6 h-6 text-primary"></i>
-              </div>
-              <span class="font-bold text-gray-800">Certified Arborists</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="bg-primary/10 p-3 rounded-2xl">
-                <i data-lucide="clock" class="w-6 h-6 text-primary"></i>
-              </div>
-              <span class="font-bold text-gray-800">Same-Day Response</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="bg-primary/10 p-3 rounded-2xl">
-                <i data-lucide="users" class="w-6 h-6 text-primary"></i>
-              </div>
-              <span class="font-bold text-gray-800">839 Happy Clients</span>
-            </div>
+  <section id="about" class="animate-section py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="img-hover-wrap rounded-2xl overflow-hidden shadow-xl h-[400px] md:h-[500px]">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-sgwkLjkD4L2HuTpypMo19Iu7bN6bbSVmKSV3Gr1EmCGBlsR30sc8QaOak69hu1U-Dy4Ti5z8B_pfoVIX44bRdiFbsMYCQ19ak2jsI1RxUOCrp53YdFExX8KspbjrDAbhrSWAHKXeD5XuOPO_t7w4QW8YC8bmFxLSiD8I7UYp2n9O0MOiFOkae-WJng-h35VWv_-YEwXIT6vYlc0Ke-ZEBqT8bptIOSdp7qecmPcsa1gv2Y4ruksavyof0i2GBSxr3pY9DVdp1vxN9P2i1hoU0nqF6Iy-bXtCZTJwlrAXDXXw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Top Tier Trees Team at Work" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/landscaping-2/800/600'">
+      </div>
+      <div>
+        <p class="text-[#ff6900] text-xs font-bold uppercase tracking-widest mb-3">About Top Tier Trees</p>
+        <h2 class="text-4xl font-bold text-gray-900 leading-tight">Family-Owned. Locally Rooted.<br>Expert Arborists.</h2>
+        <p class="text-gray-600 mt-6 leading-relaxed max-w-2xl">Top Tier Trees is Marietta's premier tree care company — locally based, family-owned, and operated by ISA Certified Arborists who care deeply about the health of your trees and the safety of your property. We provide professional tree service throughout Marietta, GA and surrounding communities, offering arboricultural expertise tailored to your individual needs. From a single call for a minor concern to complex commercial projects, we handle it all — no need to deal with multiple contractors.</p>
+        <p class="text-gray-600 mt-4 leading-relaxed max-w-2xl">Our skilled arborist representatives are trained in the latest safety techniques, and we offer proactive annual tree care planning for commercial properties to keep your business safe year-round. You can call us with an emergency or a minor concern for a free quote — we're always here to help.</p>
+        <div class="grid grid-cols-2 gap-4 mt-8">
+          <div class="flex items-start gap-3">
+            <i data-lucide="check-circle" class="w-5 h-5 text-[#ff6900] mt-0.5 shrink-0"></i>
+            <span class="text-sm text-gray-700 font-semibold">Family-Owned & Operated</span>
           </div>
+          <div class="flex items-start gap-3">
+            <i data-lucide="check-circle" class="w-5 h-5 text-[#ff6900] mt-0.5 shrink-0"></i>
+            <span class="text-sm text-gray-700 font-semibold">ISA Certified Arborists</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <i data-lucide="check-circle" class="w-5 h-5 text-[#ff6900] mt-0.5 shrink-0"></i>
+            <span class="text-sm text-gray-700 font-semibold">One Call, All Services</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <i data-lucide="check-circle" class="w-5 h-5 text-[#ff6900] mt-0.5 shrink-0"></i>
+            <span class="text-sm text-gray-700 font-semibold">Free Quotes Always</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <i data-lucide="check-circle" class="w-5 h-5 text-[#ff6900] mt-0.5 shrink-0"></i>
+            <span class="text-sm text-gray-700 font-semibold">Annual Care Planning</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <i data-lucide="check-circle" class="w-5 h-5 text-[#ff6900] mt-0.5 shrink-0"></i>
+            <span class="text-sm text-gray-700 font-semibold">24/7 Emergency Response</span>
+          </div>
+        </div>
+        <a href="#contact" class="inline-flex items-center gap-2 mt-8 bg-[#004023] text-white font-bold px-7 py-3.5 rounded-full hover:bg-[#002f1a] transition text-sm uppercase tracking-wider">Get a Free Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS & AFFILIATIONS -->
+  <section id="awards" class="animate-section py-16 px-4 md:px-8 lg:px-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto text-center">
+      <p class="text-[#ff6900] text-xs font-bold uppercase tracking-widest mb-2">Trusted & Certified</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Awards & Affiliations</h2>
+      <div class="flex flex-wrap justify-center items-center gap-8 mt-10">
+        <div class="flex flex-col items-center">
+          <img src="https://cdn-ildjnhf.nitrocdn.com/cdjunRRhdTXWzjGrYmWAPXKungEvBNtP/assets/images/optimized/rev-26a18bf/toptiertrees.com/wp-content/uploads/2025/04/TCIA-Member-logo.webp" alt="TCIA Member, logo" class="award-badge max-h-[120px] w-auto object-contain" onerror="this.style.display='none'">
+          <p class="text-xs text-gray-500 mt-2">TCIA Member, logo</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://cdn-ildjnhf.nitrocdn.com/cdjunRRhdTXWzjGrYmWAPXKungEvBNtP/assets/images/optimized/rev-26a18bf/toptiertrees.com/wp-content/uploads/2025/04/BBB-Accredited-Business-logo.webp" alt="BBB Accredited Business, logo" class="award-badge max-h-[120px] w-auto object-contain" onerror="this.style.display='none'">
+          <p class="text-xs text-gray-500 mt-2">BBB Accredited Business, logo</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://cdn-ildjnhf.nitrocdn.com/cdjunRRhdTXWzjGrYmWAPXKungEvBNtP/assets/images/optimized/rev-26a18bf/toptiertrees.com/wp-content/uploads/2025/04/Certified-Arborist-ISA-logo.webp" alt="Certified Arborist ISA, logo" class="award-badge max-h-[120px] w-auto object-contain" onerror="this.style.display='none'">
+          <p class="text-xs text-gray-500 mt-2">Certified Arborist ISA, logo</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://cdn-ildjnhf.nitrocdn.com/cdjunRRhdTXWzjGrYmWAPXKungEvBNtP/assets/images/optimized/rev-26a18bf/toptiertrees.com/wp-content/uploads/2022/03/check__.png" alt="check" class="award-badge max-h-[120px] w-auto object-contain" onerror="this.style.display='none'">
+          <p class="text-xs text-gray-500 mt-2">check</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://cdn-ildjnhf.nitrocdn.com/cdjunRRhdTXWzjGrYmWAPXKungEvBNtP/assets/images/optimized/rev-26a18bf/toptiertrees.com/wp-content/uploads/2024/03/Mariettas-Expert-Tree-Care-Service-speclist-crane-in-use.png" alt="Marietta" class="award-badge max-h-[120px] w-auto object-contain" onerror="this.style.display='none'">
+          <p class="text-xs text-gray-500 mt-2">Marietta</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://cdn-ildjnhf.nitrocdn.com/cdjunRRhdTXWzjGrYmWAPXKungEvBNtP/assets/images/optimized/rev-26a18bf/toptiertrees.com/wp-content/uploads/2025/04/Trust-Dale-make-it-right-badge.webp" alt="Trust Dale make it right, badge" class="award-badge max-h-[120px] w-auto object-contain" onerror="this.style.display='none'">
+          <p class="text-xs text-gray-500 mt-2">Trust Dale make it right, badge</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SERVICES -->
-  <section id="services" class="py-24 bg-gray-50 animate-section">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-14">
-        <p class="text-secondary font-black uppercase tracking-widest text-sm mb-3">What We Do</p>
-        <h2 class="text-5xl lg:text-6xl font-black text-gray-900 mb-4" style="font-family:'Playfair Display',serif;">Our Services</h2>
-        <p class="text-gray-500 text-lg max-w-xl mx-auto">Comprehensive tree care from certified professionals — every job done right the first time.</p>
+  <section id="services" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-8">
+        <p class="text-[#ff6900] text-xs font-bold uppercase tracking-widest mb-2">What We Do</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Our Tree Services</h2>
+        <p class="text-gray-500 mt-3 max-w-xl">Comprehensive tree care for residential and commercial properties throughout Marietta, GA and beyond.</p>
       </div>
-
-      <!-- Tabs -->
-      <div class="flex flex-wrap justify-center gap-3 mb-10">
-        <button onclick="showTab('tab1', this)" class="tab-btn active-tab rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 transition-all">Removal & Safety</button>
-        <button onclick="showTab('tab2', this)" class="tab-btn inactive-tab rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 transition-all">Trimming & Care</button>
-        <button onclick="showTab('tab3', this)" class="tab-btn inactive-tab rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 transition-all">Specialty Services</button>
+      <div class="flex flex-wrap gap-2 md:flex-nowrap mb-8 tabs-container">
+        <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-1">Tree Services</button>
+        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-2">Removal &amp; Trimming</button>
+        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold" data-target="tab-panel-3">Health &amp; Care</button>
       </div>
 
       <!-- Tab 1 -->
-      <div id="tab1" class="tab-panel grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white shadow-xl rounded-2xl p-8 flex flex-col gap-4">
-          <div class="bg-primary/10 p-4 rounded-2xl w-fit">
-            <i data-lucide="tree-pine" class="w-8 h-8 text-primary"></i>
+      <div id="tab-panel-1" class="tab-panel">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-white rounded-xl shadow-md border border-gray-100 p-6 hover:shadow-lg transition">
+            <div class="w-10 h-10 rounded-full bg-[#004023]/10 flex items-center justify-center mb-4">
+              <i data-lucide="tree-deciduous" class="w-5 h-5 text-[#004023]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Expert Tree Service</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Marietta's top-rated, ISA certified tree service professionals ready to tackle any project. We bring arboricultural expertise and the right equipment to every job on your property.</p>
+            <a href="tel:6784080080" class="arrow-cta text-[#004023] font-bold text-sm">Call for Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
           </div>
-          <h3 class="text-xl font-black text-gray-900" style="font-family:'Playfair Display',serif;">Tree Removal</h3>
-          <p class="text-gray-500 leading-relaxed">Safe, efficient removal of trees of any size — including towering 100-foot specimens with complex surroundings.</p>
-          <a href="tel:6784080080" class="mt-auto rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 bg-primary border-primary text-white hover:bg-blue-800 transition-colors text-center">Call Now</a>
-        </div>
-        <div class="bg-white shadow-xl rounded-2xl p-8 flex flex-col gap-4">
-          <div class="bg-primary/10 p-4 rounded-2xl w-fit">
-            <i data-lucide="cloud-lightning" class="w-8 h-8 text-primary"></i>
+          <!-- Card 2 -->
+          <div class="bg-white rounded-xl shadow-md border border-gray-100 p-6 hover:shadow-lg transition">
+            <div class="w-10 h-10 rounded-full bg-[#004023]/10 flex items-center justify-center mb-4">
+              <i data-lucide="axe" class="w-5 h-5 text-[#004023]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Tree Care &amp; Removal</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Safe, efficient tree removal by certified professionals who prioritize protecting your home and landscaping. We use ropes, rigging, and heavy equipment to safely bring down trees of any size.</p>
+            <a href="tel:6784080080" class="arrow-cta text-[#004023] font-bold text-sm">Call for Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
           </div>
-          <h3 class="text-xl font-black text-gray-900" style="font-family:'Playfair Display',serif;">Emergency Tree Removal</h3>
-          <p class="text-gray-500 leading-relaxed">Storm damage? Fallen tree? We respond same day to protect your property and restore safety fast.</p>
-          <a href="tel:6784080080" class="mt-auto rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 bg-primary border-primary text-white hover:bg-blue-800 transition-colors text-center">Call Now</a>
-        </div>
-        <div class="bg-white shadow-xl rounded-2xl p-8 flex flex-col gap-4">
-          <div class="bg-primary/10 p-4 rounded-2xl w-fit">
-            <i data-lucide="shield-check" class="w-8 h-8 text-primary"></i>
+          <!-- Card 3 -->
+          <div class="bg-white rounded-xl shadow-md border border-gray-100 p-6 hover:shadow-lg transition">
+            <div class="w-10 h-10 rounded-full bg-[#ff6900]/10 flex items-center justify-center mb-4">
+              <i data-lucide="scissors" class="w-5 h-5 text-[#ff6900]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Tree Trimming &amp; Pruning</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Expert trimming and pruning to enhance tree health, appearance, and safety around your property. Our arborists know exactly where and how to cut to promote healthy regrowth.</p>
+            <a href="tel:6784080080" class="arrow-cta text-[#004023] font-bold text-sm">Call for Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
           </div>
-          <h3 class="text-xl font-black text-gray-900" style="font-family:'Playfair Display',serif;">Hazard Assessment</h3>
-          <p class="text-gray-500 leading-relaxed">Certified arborists evaluate tree stability and risk to keep your family and property safe year-round.</p>
-          <a href="tel:6784080080" class="mt-auto rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 bg-primary border-primary text-white hover:bg-blue-800 transition-colors text-center">Call Now</a>
+          <!-- Card 4 -->
+          <div class="bg-white rounded-xl shadow-md border border-gray-100 p-6 hover:shadow-lg transition">
+            <div class="w-10 h-10 rounded-full bg-[#ff6900]/10 flex items-center justify-center mb-4">
+              <i data-lucide="truck" class="w-5 h-5 text-[#ff6900]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Emergency Tree Removal</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">24/7 emergency response when a fallen or damaged tree threatens your home or business. We arrive fast, work safely, and communicate directly with your insurance adjuster if needed.</p>
+            <a href="tel:6784080080" class="arrow-cta text-[#004023] font-bold text-sm">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <!-- Card 5 -->
+          <div class="bg-white rounded-xl shadow-md border border-gray-100 p-6 hover:shadow-lg transition">
+            <div class="w-10 h-10 rounded-full bg-[#004023]/10 flex items-center justify-center mb-4">
+              <i data-lucide="sprout" class="w-5 h-5 text-[#004023]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Stump Grinding</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Professional stump grinding that eliminates trip hazards and unsightly remnants after tree removal. We grind stumps below grade and clean up all debris, leaving your yard ready to use.</p>
+            <a href="tel:6784080080" class="arrow-cta text-[#004023] font-bold text-sm">Call for Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
         </div>
       </div>
 
       <!-- Tab 2 -->
-      <div id="tab2" class="tab-panel hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white shadow-xl rounded-2xl p-8 flex flex-col gap-4">
-          <div class="bg-primary/10 p-4 rounded-2xl w-fit">
-            <i data-lucide="scissors" class="w-8 h-8 text-primary"></i>
+      <div id="tab-panel-2" class="tab-panel hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-white rounded-xl shadow-md border border-gray-100 p-6 hover:shadow-lg transition">
+            <div class="w-10 h-10 rounded-full bg-[#004023]/10 flex items-center justify-center mb-4">
+              <i data-lucide="leaf" class="w-5 h-5 text-[#004023]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Tree Maintenance</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Ongoing tree maintenance programs to keep your landscape healthy, beautiful, and safe year-round. We tailor a maintenance schedule based on your specific tree species and property conditions.</p>
+            <a href="tel:6784080080" class="arrow-cta text-[#004023] font-bold text-sm">Call for Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
           </div>
-          <h3 class="text-xl font-black text-gray-900" style="font-family:'Playfair Display',serif;">Tree Trimming</h3>
-          <p class="text-gray-500 leading-relaxed">Precision trimming and shaping to improve tree health, appearance, and clearance from structures.</p>
-          <a href="tel:6784080080" class="mt-auto rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 bg-primary border-primary text-white hover:bg-blue-800 transition-colors text-center">Call Now</a>
-        </div>
-        <div class="bg-white shadow-xl rounded-2xl p-8 flex flex-col gap-4">
-          <div class="bg-primary/10 p-4 rounded-2xl w-fit">
-            <i data-lucide="wind" class="w-8 h-8 text-primary"></i>
+          <!-- Card 2 -->
+          <div class="bg-white rounded-xl shadow-md border border-gray-100 p-6 hover:shadow-lg transition">
+            <div class="w-10 h-10 rounded-full bg-[#ff6900]/10 flex items-center justify-center mb-4">
+              <i data-lucide="shield" class="w-5 h-5 text-[#ff6900]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Systemic Insect Treatment</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Targeted systemic treatments to protect your trees from damaging insects and pests before they cause serious harm. Our certified arborists identify threats early and apply proven solutions.</p>
+            <a href="tel:6784080080" class="arrow-cta text-[#004023] font-bold text-sm">Call for Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
           </div>
-          <h3 class="text-xl font-black text-gray-900" style="font-family:'Playfair Display',serif;">Crown Reduction</h3>
-          <p class="text-gray-500 leading-relaxed">Reduce wind resistance and weight distribution while preserving the natural form of your mature trees.</p>
-          <a href="tel:6784080080" class="mt-auto rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 bg-primary border-primary text-white hover:bg-blue-800 transition-colors text-center">Call Now</a>
-        </div>
-        <div class="bg-white shadow-xl rounded-2xl p-8 flex flex-col gap-4">
-          <div class="bg-primary/10 p-4 rounded-2xl w-fit">
-            <i data-lucide="search" class="w-8 h-8 text-primary"></i>
+          <!-- Card 3 -->
+          <div class="bg-white rounded-xl shadow-md border border-gray-100 p-6 hover:shadow-lg transition">
+            <div class="w-10 h-10 rounded-full bg-[#004023]/10 flex items-center justify-center mb-4">
+              <i data-lucide="tree-deciduous" class="w-5 h-5 text-[#004023]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Commercial Tree Care</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Comprehensive commercial tree care services designed to keep your business properties safe and visually impressive. We offer proactive annual tree care planning to protect your investment year-round.</p>
+            <a href="tel:6784080080" class="arrow-cta text-[#004023] font-bold text-sm">Call for Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
           </div>
-          <h3 class="text-xl font-black text-gray-900" style="font-family:'Playfair Display',serif;">Tree Health Diagnosis</h3>
-          <p class="text-gray-500 leading-relaxed">Expert diagnosis of disease, pest damage, and structural issues with treatment recommendations from a certified arborist.</p>
-          <a href="tel:6784080080" class="mt-auto rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 bg-primary border-primary text-white hover:bg-blue-800 transition-colors text-center">Call Now</a>
+          <!-- Card 4 -->
+          <div class="bg-white rounded-xl shadow-md border border-gray-100 p-6 hover:shadow-lg transition">
+            <div class="w-10 h-10 rounded-full bg-[#ff6900]/10 flex items-center justify-center mb-4">
+              <i data-lucide="scissors" class="w-5 h-5 text-[#ff6900]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Commercial Tree Trimming</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Professional trimming services for commercial properties that enhance curb appeal and reduce liability. Our crews work efficiently to minimize disruption to your business operations.</p>
+            <a href="tel:6784080080" class="arrow-cta text-[#004023] font-bold text-sm">Call for Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <!-- Card 5 -->
+          <div class="bg-white rounded-xl shadow-md border border-gray-100 p-6 hover:shadow-lg transition">
+            <div class="w-10 h-10 rounded-full bg-[#004023]/10 flex items-center justify-center mb-4">
+              <i data-lucide="axe" class="w-5 h-5 text-[#004023]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Commercial Tree Pruning</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Expert pruning solutions tailored for commercial landscapes to promote structural integrity and longevity of your trees. We follow ISA best practices to ensure safe and effective results every time.</p>
+            <a href="tel:6784080080" class="arrow-cta text-[#004023] font-bold text-sm">Call for Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
         </div>
       </div>
 
       <!-- Tab 3 -->
-      <div id="tab3" class="tab-panel hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white shadow-xl rounded-2xl p-8 flex flex-col gap-4">
-          <div class="bg-primary/10 p-4 rounded-2xl w-fit">
-            <i data-lucide="hammer" class="w-8 h-8 text-primary"></i>
+      <div id="tab-panel-3" class="tab-panel hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-white rounded-xl shadow-md border border-gray-100 p-6 hover:shadow-lg transition">
+            <div class="w-10 h-10 rounded-full bg-[#004023]/10 flex items-center justify-center mb-4">
+              <i data-lucide="axe" class="w-5 h-5 text-[#004023]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Commercial Tree Removal</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Large-scale commercial tree removal executed safely and efficiently with minimal impact on your operations. We handle permitting, heavy equipment, and full cleanup for a seamless experience.</p>
+            <a href="tel:6784080080" class="arrow-cta text-[#004023] font-bold text-sm">Call for Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
           </div>
-          <h3 class="text-xl font-black text-gray-900" style="font-family:'Playfair Display',serif;">Stump Grinding</h3>
-          <p class="text-gray-500 leading-relaxed">Complete stump removal grinding to below ground level — leaving your yard clean and ready for landscaping.</p>
-          <a href="tel:6784080080" class="mt-auto rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 bg-primary border-primary text-white hover:bg-blue-800 transition-colors text-center">Call Now</a>
+          <!-- Card 2 -->
+          <div class="bg-white rounded-xl shadow-md border border-gray-100 p-6 hover:shadow-lg transition">
+            <div class="w-10 h-10 rounded-full bg-[#ff6900]/10 flex items-center justify-center mb-4">
+              <i data-lucide="shield-check" class="w-5 h-5 text-[#ff6900]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Commercial Tree Inventory</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Detailed tree inventories that give you a complete picture of your commercial property's tree assets and risks. Our arborists document species, health, and maintenance needs for proactive long-term planning.</p>
+            <a href="tel:6784080080" class="arrow-cta text-[#004023] font-bold text-sm">Call for Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-white rounded-xl shadow-md border border-gray-100 p-6 hover:shadow-lg transition">
+            <div class="w-10 h-10 rounded-full bg-[#004023]/10 flex items-center justify-center mb-4">
+              <i data-lucide="phone" class="w-5 h-5 text-[#004023]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Contact &amp; Free Estimates</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Reach out for a free, no-obligation estimate on any tree care need — emergency or minor concern. A live person answers your call and we schedule a certified arborist visit at your convenience.</p>
+            <a href="tel:6784080080" class="arrow-cta text-[#004023] font-bold text-sm">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <!-- Card 4 -->
+          <div class="bg-white rounded-xl shadow-md border border-gray-100 p-6 hover:shadow-lg transition">
+            <div class="w-10 h-10 rounded-full bg-[#ff6900]/10 flex items-center justify-center mb-4">
+              <i data-lucide="truck" class="w-5 h-5 text-[#ff6900]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">24/7 Emergency Tree Removal</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Around-the-clock emergency tree removal when storm damage or fallen trees create immediate hazards. We mobilize quickly with the crew and equipment needed to make your property safe again.</p>
+            <a href="tel:6784080080" class="arrow-cta text-[#004023] font-bold text-sm">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <!-- Card 5 -->
+          <div class="bg-white rounded-xl shadow-md border border-gray-100 p-6 hover:shadow-lg transition">
+            <div class="w-10 h-10 rounded-full bg-[#004023]/10 flex items-center justify-center mb-4">
+              <i data-lucide="tree-pine" class="w-5 h-5 text-[#004023]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Tree Removal</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Professional residential tree removal handled with precision, care, and respect for your property. From permit acquisition to final cleanup, we manage every detail so you don't have to.</p>
+            <a href="tel:6784080080" class="arrow-cta text-[#004023] font-bold text-sm">Call for Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
         </div>
-        <div class="bg-white shadow-xl rounded-2xl p-8 flex flex-col gap-4">
-          <div class="bg-primary/10 p-4 rounded-2xl w-fit">
-            <i data-lucide="home" class="w-8 h-8 text-primary"></i>
-          </div>
-          <h3 class="text-xl font-black text-gray-900" style="font-family:'Playfair Display',serif;">Land Clearing</h3>
-          <p class="text-gray-500 leading-relaxed">Full-scale land clearing for construction, landscaping, or lot preparation — efficient and thorough cleanup included.</p>
-          <a href="tel:6784080080" class="mt-auto rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 bg-primary border-primary text-white hover:bg-blue-800 transition-colors text-center">Call Now</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="animate-section py-24 px-4 md:px-8 lg:px-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <p class="text-[#ff6900] text-xs font-bold uppercase tracking-widest mb-2">Our Work</p>
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Project Gallery</h2>
         </div>
-        <div class="bg-white shadow-xl rounded-2xl p-8 flex flex-col gap-4">
-          <div class="bg-primary/10 p-4 rounded-2xl w-fit">
-            <i data-lucide="droplets" class="w-8 h-8 text-primary"></i>
-          </div>
-          <h3 class="text-xl font-black text-gray-900" style="font-family:'Playfair Display',serif;">Deep Root Fertilization</h3>
-          <p class="text-gray-500 leading-relaxed">Nourish trees from the roots up with professional deep root fertilization to boost vitality and longevity.</p>
-          <a href="tel:6784080080" class="mt-auto rounded-none px-8 py-4 font-black text-lg uppercase tracking-wider border-2 bg-primary border-primary text-white hover:bg-blue-800 transition-colors text-center">Call Now</a>
+        <a href="#contact" class="arrow-cta text-[#004023] font-bold text-sm self-start md:self-auto">Start Your Project <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Featured large -->
+        <div class="img-hover-wrap md:col-span-2 rounded-2xl overflow-hidden h-[500px]">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-t8r0v2qVBoNhIEQbjEXiGhhQZMJ82nQIUGvl-GbPLYfKbezRO8FrtHo3zfv1cCO4vLQ4OERjoFbSxLPtGCNwmKPIYtng9D06z-GpXxGoByFAj5jrWFxiniw82EGeD9eaQ3nhIozP0X_4DgIN4ISgzt_WB7X5oB3vm8CyPkcrjYNPcSr3OY_YNUyTxR8IhC9H5YTGvBaeOmGZKRS5HeTr-A59T2_QCto3zCTgxcUeGTdZoDFRO2kcu92R_kWF2J0CaR0DbKeLboKoX-ptzwCqNDAd2z5JpVuOzb5WTQdFQ78A&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Top Tier Trees Project 1" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/landscaping-11/800/600'">
+        </div>
+        <!-- Right col top -->
+        <div class="img-hover-wrap rounded-2xl overflow-hidden h-[240px]">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-sgwkLjkD4L2HuTpypMo19Iu7bN6bbSVmKSV3Gr1EmCGBlsR30sc8QaOak69hu1U-Dy4Ti5z8B_pfoVIX44bRdiFbsMYCQ19ak2jsI1RxUOCrp53YdFExX8KspbjrDAbhrSWAHKXeD5XuOPO_t7w4QW8YC8bmFxLSiD8I7UYp2n9O0MOiFOkae-WJng-h35VWv_-YEwXIT6vYlc0Ke-ZEBqT8bptIOSdp7qecmPcsa1gv2Y4ruksavyof0i2GBSxr3pY9DVdp1vxN9P2i1hoU0nqF6Iy-bXtCZTJwlrAXDXXw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Top Tier Trees Project 2" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/landscaping-12/800/600'">
+        </div>
+        <!-- Right col bottom -->
+        <div class="img-hover-wrap rounded-2xl overflow-hidden h-[240px]">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-sxub11JxsHL72Nwaf0UyNjyQFyb7dkopZQob_GAvEjDaBIyUwrGdml7VM5jaQW3VtUb9Cxv7N_s4vzslxelZ4OF8fc9n7aPU2W13JWmdOZUaCknmCo9emhcoDzdTkW5icTkptsRubTc39ZkfT0GMuzdasca9bVxxs3tj-9AqM3_ARyV0vnijqmZbh3IA1l04DLsoFl_qQ6evrlN2pI8TQriNdGhMz7i_nnmXab13iJHaUs8m4GGupp7kudwzWLxW-cg9dLkRu-ADUgLl50NMq6KxNzqiOGZ4srELlw9F7GkA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Top Tier Trees Project 3" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/landscaping-13/800/600'">
+        </div>
+        <!-- Row 2 -->
+        <div class="img-hover-wrap rounded-2xl overflow-hidden h-[280px]">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-tsYANCkr3o_Hh26SadP_R6qNj9kkd9BboJeSj2MK8GYbRhEfbm11U9kxYEcEa57AVGuc9tpREaaZZWGTZLkwOdrlv0UKuYpIlTk2E9ysfusED-o6oJRRxulm8m2vEB9-5cfSpA-YbgTNACcoQgVfjcSbGKR_vQWrFiLDb-NPVsASQC8aLvy1rWeb5BHJqhE4CqrQ-TOTHq_i7PTEiQrOnxTB84YHl-XeXQNCO7d3N1DcLwsz0uCm2rK63B3RcrSw1rpeNkfh-c3EONFJbGYRDHCyKnXBquiKaWktB8dohUxg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Top Tier Trees Project 4" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/landscaping-14/800/600'">
+        </div>
+        <div class="img-hover-wrap rounded-2xl overflow-hidden h-[280px]">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-snqOsKU5Z_wWaAMaAsdmcWhXvOY43hbokQrkvSsa-_ph5Yi7LyoNlxoqsex1Dn-lUc2qdkllzS0ydKuIoRU3x1Z3g3J34n4kmK_w1dU26RjqxBhzkJZrHriG101npzxWO_rSlIjSGcTq3XRcZmbRtT7VG2WMGPqYeD6iLLaObhMRuNU0H8H8zR70Twc1dMGuYzYqNByjU3XLVhG7bAXe_48pTpgRZEi3ZFLXNMcMc7i4hgrUNKYkLg7rVCCgBfpJM_CMUmoQIPKC0xT2SZn0RQ3xNDanH2D8Mx5nngH0AWhA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Top Tier Trees Project 5" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/landscaping-15/800/600'">
+        </div>
+        <div class="img-hover-wrap rounded-2xl overflow-hidden h-[280px]">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-tsH52mVquzsfu5iofIagqIt8hmcv6qV_lIRCuNKIUqz0HN21re1qTteQHjd-GKTHok_6vHyH-JdUrSBzC-pySs6dAQll__SQ7FlG1FMwN_IrQampQg_IcBjvLt8JNKDGMk6OBc7dPU1AmoBf7mHsPTe7INRjoU_1mPiIYYkqMsO3zE1z1ETIBJs6q024u6hUBRZpiujpf10GzDMoWybVqon4c0mTz2HD92-h5-3VrBXnjZbPu09FpX4zbNVhqgdUt13g2tGGoY28uZ7yljI0R1o_Ljwi5eFfnuZpEvh73-jw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Top Tier Trees Project 6" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/landscaping-16/800/600'">
+        </div>
+        <!-- Row 3 -->
+        <div class="img-hover-wrap rounded-2xl overflow-hidden h-[260px]">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-vxC5PcF1BLWDd8V1ErRwPYG4hkhPShAaKp09xR-SMNwjhppuIsSBUAZbUkQCf19BYeq2mFAn8Drvwhu2Lv7OapTcpjzaFaxQubjFXxgUL0AgEM9q3fNBp7cKK7jqOTeaQCKHSXKPMb6Q9BL3ywri93h_f_9wipIMc_HSR8s6mUg_GBwHIvatLmevURLu18ZDW4a39HTnYZXoEfGpTA5nJPvMeeiEZFQ4u8xrIEZGRhPA7MsFf6TtqLIrmYAgPFhruhfTvWg5WrvPg4MCT3d3jWCokhjQu5yw19xwwUXMFxHA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Top Tier Trees Project 7" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/landscaping-17/800/600'">
+        </div>
+        <div class="img-hover-wrap rounded-2xl overflow-hidden h-[260px]">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-satBbc6voVIECH99-agjyOGsEf2V6oZXQvQf_YNUgMHlS1jbqgW3_eTyMdbjl0q7DheAZRZQcRINcIkd_5C-qJJNL4sJZPTJ40pwwMMA2ozyTS3Z657uBq6ORn5kyVf5REABNiCQ3Q_bPDDRs3JlnHgcDYunFXoz1X0_4ch3hg5oY4Q3RR4lVFBTmgtBdhsOfsXJyNfe-Sj6hMGY3kZG9dizWLTUPwGJ6s8TxLlly-V_kdkMDUqJ2fx4UPzS93jb1gLkS0cPLnO-2U1UZTLF7l84nP_0jUs5ga_DUiEdmiZw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Top Tier Trees Project 8" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/landscaping-18/800/600'">
+        </div>
+        <div class="img-hover-wrap rounded-2xl overflow-hidden h-[260px]">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-syi0BGK_uzzxZohZQIT-s6yopK5QunX5UEumcXt3LeEBak-tiRJTyQh6f_7yiEhw58xvAi0q_CagBTBG40d_mUVIAgPtRx7_jlUGosfkSGKfNv6hkilFrZK5gBaXTsInVSQGQImNHtRNPH1T14rEBo69EobzkHqxadl9zokg75w4hJ_SUsRhekb9KLmsZguYZPqLT_sqomoyhOhWlNL2tC-WYyysDfY8ZNmHyTfmmlGItHDv_vAJGowBWze2M6MsfCzpu2QHKHJRrO8JR1xAnnmfDXp_NlyHsEJgZQ_RCkiA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Top Tier Trees Project 9" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/landscaping-19/800/600'">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GALLERY -->
-  <section id="gallery" class="py-24 bg-white animate-section">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-14">
-        <p class="text-secondary font-black uppercase tracking-widest text-sm mb-3">Our Work</p>
-        <h2 class="text-5xl lg:text-6xl font-black text-gray-900 mb-4" style="font-family:'Playfair Display',serif;">Project Gallery</h2>
-        <p class="text-gray-500 text-lg max-w-xl mx-auto">See the Top Tier Trees difference — professional results, clean worksites, every time.</p>
+  <!-- REVIEWS -->
+  <section id="reviews" class="animate-section py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-12 text-center">
+        <p class="text-[#ff6900] text-xs font-bold uppercase tracking-widest mb-2">What Clients Say</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Real Reviews from Real Customers</h2>
+        <div class="flex items-center justify-center gap-2 mt-4">
+          <div class="flex">
+            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+          </div>
+          <span class="text-gray-600 font-semibold">5.0 out of 5 · 842 Reviews on Google</span>
+        </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGfXxV_tRfLavaOYTorhq_e_8g2scI5H__nc7movxoC3DFWptUsHJGEaMWCXUI8AQGEtIZhzbsMhPShXbynfJrX10qNkhRZcaaku3Unx-OA670fXbGWNxiNWwFS3JSveRqknqLBX-BgWtByi7gRdOY4u7I6aschHAoB4eGToY9Qx51IwnnwexBkcb0lm8pRm1Suti58IbcxwbMMQx7YoeHv9l6KsrPNwQQs8u26ho8ONSw8QbiQB_RGTOLEf_kU85Y7XnhWJYP5CvP9yI_OAJ8LXywo4OBTHV4AsyswRDk_rg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Tree service project 1" class="h-64 w-full object-cover rounded-xl shadow-lg" onerror="this.onerror=null;this.src='https://picsum.photos/seed/treework-1/800/600';" />
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEG9Er2LM6lvgoDLVu_kiGOhINMgyyUJtcjZBvYbv38SxBEHTXNYeI9qwO4ERbhcX4EVrnN9nhI8tgP-sRXCmpjCrnDb7d9JKB1OHQznLsxcqHVKjhMa0Lh5G9mevLOixsEfN_LpjdsYdLXs5anK7WctVj2Mse7742YPDLINLZSvfR9DGXzBbhCPZdbvtgcnd1xoUKGMPbb5e8baXIAdHAIMnBUU7N0N9I2t5egYT0E-iv3Lih4v4xVRzXdZHFKzoNfxmBATTX78WrjM1DfgCzIA1py6NgRpU0nLCGoEU0OBlA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Tree service project 2" class="h-64 w-full object-cover rounded-xl shadow-lg" onerror="this.onerror=null;this.src='https://picsum.photos/seed/treework-2/800/600';" />
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEE8I4bsXOEudgLwv0zfk0rba-4OQti1D-YNg93mAZQrjBoi9Xlt1C4HUSKsIynrHHiX8SmBNtmEBkl5wtXfrlPRTplGLc6xfxbzJZxcJMUhO8j-rjbcPVCXWmze2Mk4wwktD7yf7MEJr2uX2GmU5YcsNTlbDd4vMYSj6A9IpL0ydMzKzKHES7PjY3vOptuVPx42MbURy61RlMeYuohnpk3o8FVu0th7g5TRuHHeeI2oQgr22h8QY6edABcKfrhDqBjU3pTO9Xd4cI_bvOjAZ1ls5hMLvgswW5-svRgKuZ0ojQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Tree service project 3" class="h-64 w-full object-cover rounded-xl shadow-lg" onerror="this.onerror=null;this.src='https://picsum.photos/seed/treework-3/800/600';" />
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGUo1v3XdkxkvzZhf6lT40IW4ltOeZpnKPdH-
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Review 1 -->
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:shadow-md transition flex flex-col">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-[#004023] flex items-center justify-center text-white font-bold text-sm shrink-0">SN</div>
+            <div>
+              <p class="font-bold text-gray-900 text-sm">Stacey Newpher</p>
+              <p class="text-xs text-gray-400">6 months ago</p>
+            </div>
+            <span class="ml-auto text-xs bg-blue-50 text-blue-600 font-semibold px-2 py-1 rounded-full">via Google</span>
+          </div>
+          <div class="flex mb-3">
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed flex-grow">"If you need a tree removed, Top Tier Trees is highly recommended! When I initially called for an estimate, a live person took my call. A certified arborist, Thomas Joliff, came out as scheduled and on time. He evaluated 2 trees on my property, gave me a fair, competitive estimate, and told me what to expect regarding a timeline for city permits to be obtained prior to the work being done on a day that I was able to select. The crew showed up on time and worked as a team to get the job done. It was amazing to watch how they would clearly communicate with one another to guide large branches gently down with ropes and direct big sections of the trunk to fall away from the house using ropes and heavy equipment in order to ensure safety and avoid damage. They cleaned up everything as they work..."</p>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:shadow-md transition flex flex-col">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-[#ff6900] flex items-center justify-center text-white font-bold text-sm shrink-0">YO</div>
+            <div>
+              <p class="font-bold text-gray-900 text-sm">Yarden Operations</p>
+              <p class="text-xs text-gray-400">a month ago</p>
+            </div>
+            <span class="ml-auto text-xs bg-blue-50 text-blue-600 font-semibold px-2 py-1 rounded-full">via Google</span>
+          </div>
+          <div class="flex mb-3">
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed flex-grow">"Working with Top Tier Trees is as enchanting of an experience as going to Disney World. Every step of the way you're reassured, every promise made is kept. Every expectation that is set is surpassed. This is a finally tuned operation that's trustworthy, reliable, communicative, proactive and brings joy to all who come in contact with them. These are the stewards of true problem-solving in every sense. Thank you Kevin and team for all that you do for the community you serve. The team here at Yarden Ops is grateful for ya'll. Keep up the fantastic work."</p>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:shadow-md transition flex flex-col">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-[#004023] flex items-center justify-center text-white font-bold text-sm shrink-0">BJ</div>
+            <div>
+              <p class="font-bold text-gray-900 text-sm">Bruce Jackson</p>
+              <p class="text-xs text-gray-400">3 months ago</p>
+            </div>
+            <span class="ml-auto text-xs bg-blue-50 text-blue-600 font-semibold px-2 py-1 rounded-full">via Google</span>
+          </div>
+          <div class="flex mb-3">
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed flex-grow">"This company came out same day for assessment then to do the work. Awesome crew. Within an hour the completely removed the tree that had fallen as well as cleaned up the whole area. You wouldn't even know a tree was there if it wasn't for the hole in the ground. I highly recommend this company. They were also so willing to speak to my insurance adjusters on my behalf which I know is a big comfort for some people."</p>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:shadow-md transition flex flex-col">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-[#ff6900] flex items-center justify-center text-white font-bold text-sm shrink-0">WF</div>
+            <div>
+              <p class="font-bold text-gray-900 text-sm">Whitney W Frank</p>
+              <p class="text-xs text-gray-400">6 months ago</p>
+            </div>
+            <span class="ml-auto text-xs bg-blue-50 text-blue-600 font-semibold px-2 py-1 rounded-full">via Google</span>
+          </div>
+          <div class="flex mb-3">
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed flex-grow">"If you need a tree cut down, call Top Tiers Trees - they are the best! I had a very complicated situation with a huge (over 100ft tall and over 5ft diameter) hollow, decaying tulip poplar tree in my backyard that was not accessible from my property for the required crane and removal equipment. Top Tier found a solution through a neighboring property, negotiated on my behalf for their equipment access, and successfully, with no damage to any property, cut my tree down. It took two days and so much effort on their part! They cleaned up and left my property in better condition than when they started. Communication from Damon Clark was exceptional! He went above and beyond to solve what seemed like a dire situation and made it so much better than I expected. I highly recommend Top Tier Tr..."</p>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:shadow-md transition flex flex-col">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-[#004023] flex items-center justify-center text-white font-bold text-sm shrink-0">VI</div>
+            <div>
+              <p class="font-bold text-gray-900 text-sm">VISIV Outdoor Lighting</p>
+              <p class="text-xs text-gray-400">6 months ago</p>
+            </div>
+            <span class="ml-auto text-xs bg-blue-50 text-blue-600 font-semibold px-2 py-1 rounded-full">via Google</span>
+          </div>
+          <div class="flex mb-3">
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed flex-grow">"Amazing business! Had a great experience working with CHAPMAN & JEN. The entire tree removal process was efficient and clean. Communication was clear and constant throughout the entire process. Top Tier has all the necessary equipment and manpower to handle any job. The pricing was AMAZING! I will continue to do business with them and refer all my friends and family to them. Ask for Chapman! He will take good care of you. Thank you Jen for helping coordinate this project as well!"</p>
+        </div>
+
+        <!-- CTA card -->
+        <div class="bg-[#004023] rounded-2xl p-6 flex flex-col items-center justify-center text-center">
+          <div class="flex mb-4">
+            <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-yellow-400"></i>
+          </div>
+          <p class="text-white text-3xl font-bold">842</p>
+          <p class="text-white/80 text-sm mt-1">5-Star Google Reviews</p>
+          <p class="text-white/60 text-xs mt-4 leading-relaxed">Marietta's most trusted tree service — rated #1 by hundreds of happy homeowners and businesses.</p>
+          <a href="#contact" class="mt-6 bg-[#ff6900] text-white font-bold px-6 py-3 rounded-full text-sm hover:bg-[#e05c00] transition uppercase tracking-wider">Get Your Free Quote</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="animate-section py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <div class="mb-10 text-center">
+        <p class="text-[#ff6900] text-xs font-bold uppercase tracking-widest mb-2">Common Questions</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-3">
+
+        <details class="bg-white rounded-xl border border-gray-100 shadow-sm group">
+          <summary class="flex items-center justify-between px-6 py-5">
+            <span class="font-bold text-gray-900 pr-4">Do you offer free estimates for tree removal in Marietta, GA?</span>
+            <span class="shrink-0 w-6 h-6 rounded-full border-2 border-[#004023] flex items-center justify-center text-[#004023] group-open:bg-[#004023] group-open:text-white transition">
+              <i data-lucide="chevron-right" class="w-4 h-4 group-open:rotate-90 transition-transform"></i>
+            </span>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">Yes! You can call us with an emergency or a minor concern for a free quote — no obligation required. A live person answers your call and we'll schedule a certified arborist to visit your property at a time that works for you.</div>
+        </details>
+
+        <details class="bg-white rounded-xl border border-gray-100 shadow-sm group">
+          <summary class="flex items-center justify-between px-6 py-5">
+            <span class="font-bold text-gray-900 pr-4">Are you licensed and insured for tree service in Georgia?</span>
+            <span class="shrink-0 w-6 h-6 rounded-full border-2 border-[#004023] flex items-center justify-center text-[#004023] group-open:bg-[#004023] group-open:text-white transition">
+              <i data-lucide="chevron-right" class="w-4 h-4 group-open:rotate-90 transition-transform"></i>
+            </span>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">Absolutely. Top Tier Trees is fully licensed and insured, with ISA Certified Arborists on staff. Our skilled arbor representatives are trained in the latest safety techniques so you can trust we'll protect your property and our crew throughout every project.</div>
+        </details>
+
+        <details class="bg-white rounded-xl border border-gray-100 shadow-sm group">
+          <summary class="flex items-center justify-between px-6 py-5">
+            <span class="font-bold text-gray-900 pr-4">Do you provide 24/7 emergency tree removal services?</span>
+            <span class="shrink-0 w-6 h-6 rounded-full border-2 border-[#004023] flex items-center justify-center text-[#004023] group-open:bg-[#004023] group-open:text-white transition">
+              <i data-lucide="chevron-right" class="w-4 h-4 group-open:rotate-90 transition-transform"></i>
+            </span>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">Yes. We provide 24/7 emergency tree removal for storm-damaged or fallen trees that pose an immediate danger. We mobilize quickly with the crew and heavy equipment needed to make your property safe, and we're happy to speak with your insurance adjuster on your behalf.</div>
+        </details>
+
+        <details class="bg-white rounded-xl border border-gray-100 shadow-sm group">
+          <summary class="flex items-center justify-between px-6 py-5">
+            <span class="font-bold text-gray-900 pr-4">Do you handle commercial tree care for businesses in Marietta?</span>
+            <span class="shrink-0 w-6 h-6 rounded-full border-2 border-[#004023] flex items-center justify-center text-[#004023] group-open:bg-[#004023] group-open:text-white transition">
+              <i data-lucide="chevron-right" class="w-4 h-4 group-open:rotate-90 transition-transform"></i>
+            </span>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">Yes — we specialize in commercial tree care and offer proactive annual tree care planning for commercial properties to keep your business safe year-round. From trimming and pruning to full removal and tree inventories, we handle everything so you don't need multiple contractors.</div>
+        </details>
+
+        <details class="bg-white rounded-xl border border-gray-100 shadow-sm group">
+          <summary class="flex items-center justify-between px-6 py-5">
+            <span class="font-bold text-gray-900 pr-4">What areas do you serve beyond Marietta, GA?</span>
+            <span class="shrink-0 w-6 h-6 rounded-full border-2 border-[#004023] flex items-center justify-center text-[#004023] group-open:bg-[#004023] group-open:text-white transition">
+              <i data-lucide="chevron-right" class="w-4 h-4 group-open:rotate-90 transition-transform"></i>
+            </span>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">Top Tier Trees serves Marietta, East Cobb, Kennesaw, Roswell, Woodstock, Sandy Springs, Smyrna, Acworth, Canton, and the surrounding areas of metro Atlanta. If you're not sure we cover your location, just give us a call — we're happy to help.</div>
+        </details>
+
+        <details class="bg-white rounded-xl border border-gray-100 shadow-sm group">
+          <summary class="flex items-center justify-between px-6 py-5">
+            <span class="font-bold text-gray-900 pr-4">How does the tree removal process work from start to finish?</span>
+            <span class="shrink-0 w-6 h-6 rounded-full border-2 border-[#004023] flex items-center justify-center text-[#004023] group-open:bg-[#004023] group-open:text-white transition">
+              <i data-lucide="chevron-right" class="w-4 h-4 group-open:rotate-90 transition-transform"></i>
+            </span>
+          </summary>
+          <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">It starts with a free estimate from one of our ISA Certified Arborists who evaluates your trees and provides a competitive quote. We handle any required city permits, schedule the work at your convenience, and our crew arrives on time with all necessary equipment. After the job, we perform a thorough cleanup leaving your property in better condition than we found it.</div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="animate-section py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-10 text-center">
+        <p class="text-[#ff6900] text-xs font-bold uppercase tracking-widest mb-2">Get Started</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Request a Free Estimate</h2>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        <!-- Map -->
+        <div class="rounded-xl overflow-hidden shadow-xl min-h-[450px]">
+          <iframe
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k&q=place_id:ChIJ5WhLwr0U9YgRmunvnEiNuCw"
+            width="100%" height="100%" style="border:0; min-height:450px;"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Top Tier Trees Location - Marietta, GA">
+          </iframe>
+        </div>
+        <!-- Form -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full">
+          <p class="text-[#ff6900] text-xs font-bold uppercase tracking-widest">Get Started</p>
+          <h3 class="text-3xl font-bold text-gray-900 mt-2">Get a Free Estimate</h3>
+          <p class="text-gray-500 text-sm mt-1">Speak with a certified arborist. No pressure, no obligation.</p>
+          <div class="flex items-center gap-2 mt-3">
+            <div class="flex">
+              <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+              <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+              <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+              <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+              <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            </div>
+            <span class="text-sm text-gray-600 font-semibold">5 out of 5 · 842 reviews</span>
+          </div>
+          <form onsubmit="return false;" class="mt-2">
+            <input type="text" placeholder="Your Full Name" class="bg-gray-50 rounded-lg border-0 focus:ring-2 focus:ring-orange-400 py-3 px-4 w-full mt-4 text-sm outline-none">
+            <input type="tel" placeholder="Phone Number" class="bg-gray-50 rounded-lg border-0 focus:ring-2 focus:ring-orange-400 py-3 px-4 w-full mt-4 text-sm outline-none">
+            <input type="email" placeholder="Email Address" class="bg-gray-50 rounded-lg border-0 focus:ring-2 focus:ring-orange-400 py-3 px-4 w-full mt-4 text-sm outline-none">
+            <select class="bg-gray-50 rounded-lg border-0 focus:ring-2 focus:ring-orange-400 py-3 px-4 w-full mt-4 text-sm text-gray-500 outline-none">
+              <option value="">Select a Service</option>
+              <option>Expert Tree Service in Marietta, GA</option>
+              <option>Tree Care &amp; Tree Removal</option>
+              <option>Tree Trimming &amp; Pruning</option>
+              <option>Emergency Tree Removal</option>
+              <option>Stump Grinding</option>
+            </select>
+            <textarea rows="3" placeholder="Tell us about your project..." class="bg-gray-50 rounded-lg border-0 focus:ring-2 focus:ring-orange-400 py-3 px-4 w-full mt-4 text-sm outline-none resize-none"></textarea>
+            <button type="submit" class="w-full bg-[#ff6900] text-white rounded-lg py-4 font-bold mt-6 uppercase tracking-wider text-sm hover:bg-[#e05c00] transition">Request Free Estimate</button>
+          </form>
+          <p class="text-xs text-gray-400 mt-3 text-center">By submitting you agree to be contacted regarding your request.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background-color: #0f0f0f;" class="text-white relative overflow-hidden">
+    <!-- Ghosted bg -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-uyHqg7mxA4cEHOPOsBY-6a7NKbEQsnlq_xkuscDX3wfzj6XZ46-1Yrful-XPAV6HLnNnGBmQQEFkhIom0kRmpQrb6uYvaQB2yyET9CiTvA6LU9zUyxNtBnLD8d__0pbrkFyXakNLbMUgPcg6RoGrm2rO5awvQDqhJCwE5xvNt4Aa0H5lO164skCfo5zZI8-CXq5LtndtU2suwvLhhG1rvGRZuXR7_k_IMVgR-61pTjMTs-jtUq--doue8Pf3L8N8iIWnp4DRd65DlC1HOEh2ic9K7YnvOzSQ8x6F3OVlZIIA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="" class="w-full h-full object-cover opacity-10" loading="lazy" onerror="this.style.display='none'">
+    </div>
+
+    <!-- Top CTA -->
+    <div class="relative z-10 py-20 text-center px-4 border-b border-white/10">
+      <p class="text-[#ff6900] text-xs font-bold uppercase tracking-widest">Start Your Project</p>
+      <h3 class="text-4xl md:text-5xl font-bold max-w-3xl mx-auto mt-4 text-white">Let's build something<br>beautiful — together.</h3>
+      <a href="tel:6784080080" class="inline-block bg-[#ff6900] text-black font-bold uppercase tracking-wider px-10 py-4 rounded-full mt-8 hover:bg-[#e05c00] transition">Call (678) 408-0080</a>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="relative z-10 grid grid-cols-2 md:grid-cols-5 gap-8 py-16 px-8 max-w-7xl mx-auto border-b border-white/10">
+
+      <!-- Col 1: Business Identity -->
+      <div class="col-span-2">
+        <img src="https://toptiertrees.com/wp-content/uploads/2022/02/TopTierTreesLogo_RGB-2.png" alt="Top Tier Trees" class="h-12 w-auto object-contain mb-4 max-w-[180px]" onerror="this.outerHTML='<div class=\'text-2xl font-bold mb-4\'>Top Tier Trees</div>'">
+        <p class="text-gray-400 max-w-sm mt-2 text-sm leading-relaxed">Certified arborists. Family owned. One call handles it all. Marietta's #1 rated tree service — serving East Cobb and surrounding communities with expert care and trusted results.</p>
+        <div class="mt-6 space-y-3">
+          <div class="flex items-start gap-3">
+            <i data-lucide="map-pin" class="w-4 h-4 text-[#ff6900] mt-0.5 shrink-0"></i>
+            <span class="text-gray-400 text-sm">1531 Gresham Rd NE, Marietta, GA 30062</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <i data-lucide="phone" class="w-4 h-4 text-[#ff6900] shrink-0"></i>
+            <a href="tel:6784080080" class="text-gray-400 text-sm hover:text-white transition">(678) 408-0080</a>
+          </div>
+          <div class="flex items-start gap-3">
+            <i data-lucide="clock" class="w-4 h-4 text-[#ff6900] mt-0.5 shrink-0"></i>
+            <div class="text-gray-400 text-sm">
+              <p>Mon–Fri: 8:00 AM – 5:30 PM</p>
+              <p>Sat–Sun: Closed</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 flex items-center gap-1">
+          <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          <span class="text-gray-400 text-xs">5.0 Google Rating · 842 Reviews · Licensed &amp; Insured</span>
+        </div>
+      </div>
+
+      <!-- Col 2: Work -->
+      <div>
+        <h4 class="text-[#ff6900] text-xs font-bold uppercase tracking-widest mb-4">Work</h4>
+        <ul class="space-y-2">
+          <li><a href="#gallery" class="text-gray-400 hover:text-white transition text-sm">Gallery</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Services</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Tree Removal</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Tree Trimming &amp; Pruning</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Emergency Tree Removal</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Stump Grinding</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Commercial Tree Care</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Tree Maintenance</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Systemic Insect Treatment</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Company -->
+      <div>
+        <h4 class="text-[#ff6900] text-xs font-bold uppercase tracking-widest mb-4">Company</h4>
+        <ul class="space-y-2">
+          <li><a href="#home" class="text-gray-400 hover:text-white transition text-sm">Home</a></li>
+          <li><a href="#about" class="text-gray-400 hover:text-white transition text-sm">About</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm">Services</a></li>
+          <li><a href="#gallery" class="text-gray-400 hover:text-white transition text-sm">Gallery</a></li>
+          <li><a href="#reviews" class="text-gray-400 hover:text-white transition text-sm">Reviews</a></li>
+          <li><a href="#faq" class="text-gray-400 hover:text-white transition text-sm">FAQ</a></li>
+          <li><a href="#contact" class="text-gray-400 hover:text-white transition text-sm">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Service Areas -->
+      <div>
+        <h4 class="text-[#ff6900] text-xs font-bold uppercase tracking-widest mb-4">Service Areas</h4>
+        <ul class="space-y-2">
+          <li><span class="text-gray-400 text-sm">Marietta, GA</span></li>
+          <li><span class="text-gray-400 text-sm">East Cobb</span></li>
+          <li><span class="text-gray-400 text-sm">Kennesaw</span></li>
+          <li><span class="text-gray-400 text-sm">Roswell</span></li>
+          <li><span class="text-gray-400 text-sm">Woodstock</span></li>
+          <li><span class="text-gray-400 text-sm">Sandy Springs</span></li>
+          <li><span class="text-gray-400 text-sm">Smyrna</span></li>
+          <li><span class="text-gray-400 text-sm">Acworth</span></li>
+          <li><span class="text-gray-400 text-sm">Canton</span></li>
+          <li><span class="text-gray-400 text-sm">Surrounding Areas</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="relative z-10 py-6 px-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 max-w-7xl mx-auto">
+      <p class="text-gray-500 text-xs">&copy; 2025 Top Tier Trees. All rights reserved. Marietta, GA. Licensed &amp; Insured.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://www.facebook.com/TopTierTrees/" target="_blank" rel="noopener noreferrer" aria-label="facebook" class="text-gray-400 hover:text-white transition">
+          <i data-lucide="facebook" class="w-5 h-5"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/top-tier-trees/about/" target="_blank" rel="noopener noreferrer" aria-label="linkedin" class="text-gray-400 hover:text-white transition">
+          <i data-lucide="linkedin" class="w-5 h-5"></i>
+        </a>
+        <a href="https://www.instagram.com/toptiertrees/" target="_blank" rel="noopener noreferrer" aria-label="instagram" class="text-gray-400 hover:text-white transition">
+          <i data-lucide="instagram" class="w-5 h-5"></i>
+        </a>
+        <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x88f514bdc24b68e5:0x2cb88d489cefe99a?source=g.page.share" target="_blank" rel="noopener noreferrer" aria-label="google" class="text-gray-400 hover:text-white transition">
+          <i data-lucide="map-pin" class="w-5 h-5"></i>
+        </a>
+        <a href="https://www.youtube.com/@toptiertrees9082" target="_blank" rel="noopener noreferrer" aria-label="youtube" class="text-gray-400 hover:text-white transition">
+          <i data-lucide="youtube" class="w-5 h-5"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  // Nav scroll shadow
+  (function(){
+    const nav = document.querySelector('nav');
+    if (!nav) return;
+    window.addEventListener('scroll', () => nav.classList.toggle('shadow-md', window.scrollY > 50));
+  })();
+
+  // Hamburger
+  (function(){
+    const ham = document.getElementById('hamburger');
+    const menu = document.getElementById('mobile-menu');
+    if (ham && menu) ham.addEventListener('click', () => menu.classList.toggle('hidden'));
+    document.querySelectorAll('.mobile-nav-link').forEach(a => {
+      a.addEventListener('click', () => { if (menu) menu.classList.add('hidden'); });
+    });
+  })();
+
+  // TABS
+  (function(){
+    const buttons = Array.from(document.querySelectorAll('.tab-btn'));
+    const panels = Array.from(document.querySelectorAll('.tab-panel'));
+    if (!buttons.length || !panels.length) return;
+    function showByIndex(idx) {
+      panels.forEach(p => p.classList.add('hidden'));
+      buttons.forEach(b => { b.classList.remove('active-tab'); b.classList.add('inactive-tab'); });
+      if (panels[idx]) panels[idx].classList.remove('hidden');
+      if (buttons[idx]) { buttons[idx].classList.add('active-tab'); buttons[idx].classList.remove('inactive-tab'); }
+    }
+    function showById(id) { const i = panels.findIndex(p => p.id === id); if (i >= 0) showByIndex(i); }
+    buttons.forEach((btn, idx) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const t = btn.getAttribute('data-target');
+        if (t) showById(t); else showByIndex(idx);
+      });
+    });
+    window.showTab = function(id){ showById(id); };
+    if (!panels.some(p => !p.classList.contains('hidden'))) showByIndex(0);
+  })();
+
+  // Counters
+  function animateCount(el, target, suffix) {
+    let start = 0;
+    const duration = 2000, steps = 60, inc = target / steps;
+    const t = setInterval(() => {
+      start += inc;
+      if (start >= target) { el.textContent = target + (suffix || ''); clearInterval(t); }
+      else el.textContent = Math.floor(start) + (suffix || '');
+    }, duration / steps);
+  }
+  const statObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const t = parseInt(e.target.dataset.count);
+        const s = e.target.dataset.suffix || '';
+        if (t) animateCount(e.target, t, s);
+        statObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('[data-count]').forEach(el => statObs.observe(el));
+
+  // Section reveal
+  (function(){
+    const sections = document.querySelectorAll('.animate-section');
+    if (!sections.length) return;
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('is-pending');
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    sections.forEach(el => {
+      const r = el.getBoundingClientRect();
+      const inView = r.top < window.innerHeight && r.bottom > 0;
+      if (inView) el.classList.add('is-visible');
+      else { el.classList.add('is-pending'); obs.observe(el); }
+    });
+    setTimeout(() => {
+      document.querySelectorAll('.animate-section.is-pending').forEach(el => {
+        el.classList.remove('is-pending'); el.classList.add('is-visible');
+      });
+    }, 2500);
+  })();
+
+  // Hash-click reveal
+  (function(){
+    function revealTarget() {
+      const hash = window.location.hash;
+      if (!hash || hash.length < 2) return;
+      try {
+        const target = document.querySelector(hash);
+        if (target && target.classList.contains('animate-section')) {
+          target.classList.remove('is-pending');
+          target.classList.add('is-visible');
+        }
+      } catch(e) {}
+    }
+    window.addEventListener('hashchange', revealTarget);
+    setTimeout(revealTarget, 100);
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', () => {
+        const hash = a.getAttribute('href');
+        if (hash && hash.length > 1) {
+          try {
+            const target = document.querySelector(hash);
+            if (target && target.classList.contains('animate-section')) {
+              target.classList.remove('is-pending');
+              target.classList.add('is-visible');
+            }
+          } catch(e) {}
+        }
+      });
+    });
+  })();
+
+  // Live clock
+  function updateClock() {
+    const el = document.getElementById('live-clock');
+    if (el) el.textContent = 'Marietta - ' + new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+
+  // Lucide
+  (function(){
+    const render = () => { if (window.lucide) window.lucide.createIcons(); };
+    if (window.lucide) render();
+    else document.addEventListener('DOMContentLoaded', render);
+    setTimeout(render, 500);
+    setTimeout(render, 1500);
+  })();
+  </script>
+
+</body>
+</html>

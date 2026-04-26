@@ -3,300 +3,843 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boutte Tree, Inc. — Atlanta's Premier Tree Service</title>
+  <title>Boutte Tree, Inc. — Atlanta, GA Tree Services</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Manrope:wght@400;500&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     html, body { overflow-x: hidden; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Manrope', sans-serif; }
     h1,h2,h3,h4,h5,h6,.heading { font-family: 'Inter', sans-serif; }
+    .serif-display { font-family: 'Playfair Display', serif; }
     .ticker-track { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
     @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     .marquee-track { display: flex; animation: marquee 40s linear infinite; }
     @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     details summary { list-style: none; cursor: pointer; }
     details summary::-webkit-details-marker { display: none; }
-    .active-tab { background-color: #1E3A5F; color: white; }
-    .inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
+    .tab-btn { cursor: pointer; transition: all 0.2s ease; }
+    .tab-btn.active-tab { background-color: #1E3A5F; color: white; }
+    .tab-btn.inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
+    .tab-panel { display: block; }
+    .tab-panel.hidden { display: none !important; }
     .img-hover-wrap { overflow: hidden; }
     .img-hover-wrap img { transition: transform 0.7s ease; }
     .img-hover-wrap:hover img { transform: scale(1.05); }
     .arrow-cta { border-bottom: 2px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s ease; }
     .arrow-cta:hover { gap: 14px; }
+    .dotted-leader { flex: 1; border-bottom: 1px dotted currentColor; margin: 0 1rem; opacity: 0.3; align-self: end; padding-bottom: 0.5rem; }
     section { scroll-margin-top: 96px; }
     .animate-section { opacity: 1; transform: none; transition: opacity 0.6s ease, transform 0.6s ease; }
     .animate-section.is-pending { opacity: 0; transform: translateY(24px); }
     .animate-section.is-visible { opacity: 1; transform: none; }
-    .service-card { border-bottom: 2px solid #e5e7eb; border-radius: 0; background: white; padding: 1.5rem; position: relative; transition: border-left 0.2s ease; }
-    .service-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0; background-color: #C9A84C; transition: width 0.2s ease; }
-    .service-card:hover::before { width: 4px; }
-    .hero-overlay { background: linear-gradient(135deg, rgba(30,58,95,0.92) 0%, rgba(30,58,95,0.75) 60%, rgba(201,168,76,0.3) 100%); }
-    .review-row { border-bottom: 1px solid #e5e7eb; padding: 1.5rem 0; display: flex; align-items: flex-start; gap: 1.5rem; }
-    .faq-icon { transition: transform 0.3s ease; }
-    details[open] .faq-icon { transform: rotate(45deg); }
+    .animate-section:target,
+    .animate-section.is-pending:target { opacity: 1 !important; transform: none !important; }
+    .award-badge { filter: grayscale(100%); transition: filter 0.3s ease; }
+    .award-badge:hover { filter: grayscale(0%); }
+    .service-rule { border-top: 1px solid #e5e7eb; }
+    .review-compact { border-top: 1px solid #e5e7eb; }
   </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-[#f8f8f5] text-gray-900">
 
   <!-- NAV -->
-  <nav style="background-color: #1E3A5F;" class="fixed top-0 left-0 right-0 z-50 border-b-4 transition-all duration-300" id="main-nav" style="border-bottom-color: #C9A84C;">
-    <div class="px-4 md:px-8 lg:px-16 flex items-center justify-between h-16 md:h-20">
-      <!-- Logo wordmark -->
-      <a href="#home" class="flex items-center gap-2">
-        <span class="heading font-black text-xl md:text-2xl tracking-widest uppercase" style="color: #C9A84C;">BOUTTE</span>
-        <span class="heading font-black text-xl md:text-2xl tracking-widest uppercase text-white">TREE, INC.</span>
-      </a>
-
-      <!-- Desktop Nav Links -->
-      <div class="hidden md:flex items-center gap-6 lg:gap-8">
-        <a href="#home" class="text-white uppercase tracking-widest text-xs font-bold hover:text-yellow-300 transition-colors">Home</a>
-        <a href="#about" class="text-white uppercase tracking-widest text-xs font-bold hover:text-yellow-300 transition-colors">About</a>
-        <a href="#services" class="text-white uppercase tracking-widest text-xs font-bold hover:text-yellow-300 transition-colors">Services</a>
-        <a href="#gallery" class="text-white uppercase tracking-widest text-xs font-bold hover:text-yellow-300 transition-colors">Gallery</a>
-        <a href="#reviews" class="text-white uppercase tracking-widest text-xs font-bold hover:text-yellow-300 transition-colors">Reviews</a>
-        <a href="#faq" class="text-white uppercase tracking-widest text-xs font-bold hover:text-yellow-300 transition-colors">FAQ</a>
-        <a href="#contact" class="text-white uppercase tracking-widest text-xs font-bold hover:text-yellow-300 transition-colors">Contact</a>
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#f8f8f5] transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-20">
+      <a href="#home" class="serif-display italic text-2xl text-[#1E3A5F] font-bold tracking-tight">Boutte Tree, Inc.</a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#home" class="serif-display text-sm text-gray-600 hover:text-[#1E3A5F] transition">Home</a>
+        <a href="#about" class="serif-display text-sm text-gray-600 hover:text-[#1E3A5F] transition">About</a>
+        <a href="#services" class="serif-display text-sm text-gray-600 hover:text-[#1E3A5F] transition">Services</a>
+        <a href="#gallery" class="serif-display text-sm text-gray-600 hover:text-[#1E3A5F] transition">Gallery</a>
+        <a href="#reviews" class="serif-display text-sm text-gray-600 hover:text-[#1E3A5F] transition">Reviews</a>
+        <a href="#faq" class="serif-display text-sm text-gray-600 hover:text-[#1E3A5F] transition">FAQ</a>
+        <a href="#contact" class="serif-display text-sm text-gray-600 hover:text-[#1E3A5F] transition">Contact</a>
+        <a href="tel:4047995472" class="serif-display text-sm bg-[#1E3A5F] text-white px-5 py-2 rounded-full hover:bg-[#162d4a] transition">(404) 799-5472</a>
       </div>
-
-      <!-- Phone pill -->
-      <a href="tel:4047995472" class="hidden md:inline-flex items-center gap-2 border-2 border-white text-white font-bold text-sm px-5 py-2 rounded-full hover:bg-white transition-colors uppercase tracking-wider" style="hover:color: #1E3A5F;">
-        <i data-lucide="phone" class="w-4 h-4"></i>
-        (404) 799-5472
-      </a>
-
-      <!-- Hamburger -->
-      <button id="hamburger" class="md:hidden text-white" aria-label="Open menu">
-        <i data-lucide="menu" class="w-7 h-7"></i>
+      <button id="hamburger" class="md:hidden text-gray-700 p-2">
+        <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
     </div>
-
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden" style="background-color: #1E3A5F;">
-      <a href="#home" class="mobile-nav-link block py-3 px-4 border-b border-blue-800 text-white uppercase tracking-widest text-sm font-bold">Home</a>
-      <a href="#about" class="mobile-nav-link block py-3 px-4 border-b border-blue-800 text-white uppercase tracking-widest text-sm font-bold">About</a>
-      <a href="#services" class="mobile-nav-link block py-3 px-4 border-b border-blue-800 text-white uppercase tracking-widest text-sm font-bold">Services</a>
-      <a href="#gallery" class="mobile-nav-link block py-3 px-4 border-b border-blue-800 text-white uppercase tracking-widest text-sm font-bold">Gallery</a>
-      <a href="#reviews" class="mobile-nav-link block py-3 px-4 border-b border-blue-800 text-white uppercase tracking-widest text-sm font-bold">Reviews</a>
-      <a href="#faq" class="mobile-nav-link block py-3 px-4 border-b border-blue-800 text-white uppercase tracking-widest text-sm font-bold">FAQ</a>
-      <a href="#contact" class="mobile-nav-link block py-3 px-4 border-b border-blue-800 text-white uppercase tracking-widest text-sm font-bold">Contact</a>
-      <a href="tel:4047995472" class="mobile-nav-link block py-4 px-4 text-center font-black uppercase tracking-widest text-sm" style="color: #C9A84C;">(404) 799-5472</a>
+    <div id="mobile-menu" class="hidden bg-[#f8f8f5] border-t border-gray-200 md:hidden">
+      <a href="#home" class="mobile-nav-link serif-display block py-3 px-4 border-b border-gray-100 text-gray-700 hover:text-[#1E3A5F]">Home</a>
+      <a href="#about" class="mobile-nav-link serif-display block py-3 px-4 border-b border-gray-100 text-gray-700 hover:text-[#1E3A5F]">About</a>
+      <a href="#services" class="mobile-nav-link serif-display block py-3 px-4 border-b border-gray-100 text-gray-700 hover:text-[#1E3A5F]">Services</a>
+      <a href="#gallery" class="mobile-nav-link serif-display block py-3 px-4 border-b border-gray-100 text-gray-700 hover:text-[#1E3A5F]">Gallery</a>
+      <a href="#reviews" class="mobile-nav-link serif-display block py-3 px-4 border-b border-gray-100 text-gray-700 hover:text-[#1E3A5F]">Reviews</a>
+      <a href="#faq" class="mobile-nav-link serif-display block py-3 px-4 border-b border-gray-100 text-gray-700 hover:text-[#1E3A5F]">FAQ</a>
+      <a href="#contact" class="mobile-nav-link serif-display block py-3 px-4 border-b border-gray-100 text-gray-700 hover:text-[#1E3A5F]">Contact</a>
+      <div class="px-4 py-4">
+        <a href="tel:4047995472" class="serif-display block text-center bg-[#1E3A5F] text-white px-5 py-3 rounded-full hover:bg-[#162d4a] transition">(404) 799-5472</a>
+      </div>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section id="home" class="relative min-h-screen flex flex-col items-center justify-center text-center pt-20" style="background-color: #1E3A5F;">
-    <div class="absolute inset-0 overflow-hidden">
-      <img
-        src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEEeffkDQV0iIiBpM9uJe1P1yIWYrdXKBhSqu-ogEH5Pfd2PZmFFBO6IC4Uu9Ey50la51Jb9OQOzESnovW3rCg73BXGQ4vE48Za61FC55z0R4qqgHuIMVqCluT7TSMu8qXXkzES28NHzNyGHmYXpxOKsOq5maY1H8VsPuZEdZ2BuvILYrbCUjVbF0bmgxyEgmzue7u21RoZTGG8Xe1EbvVFezKoCD-Gx3OBIRkmAAqT0_uhuGTejNC8FzYx2e0Eay_6MPF4VPvHJY4it0XsgbqPhoPPUX7sNhIf6oBjlC3j3zw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-        alt="Boutte Tree background"
-        class="w-full h-full object-cover opacity-30"
-        loading="eager"
-        onerror="this.src='https://picsum.photos/seed/contractor-hero/1600/900'"
-      >
-    </div>
-    <div class="hero-overlay absolute inset-0"></div>
-    <div class="relative z-10 px-4 md:px-8 max-w-5xl mx-auto">
-      <p class="uppercase tracking-widest text-sm font-bold mb-4" style="color: #C9A84C;">Atlanta's Trusted Tree Experts</p>
-      <h1 class="heading font-black text-5xl md:text-7xl lg:text-8xl text-white leading-none mb-6">
-        EXPERT<br>
-        <span style="color: #C9A84C;">TREE</span><br>
-        CARE
+  <section id="home" class="animate-section pt-32 md:pt-40 pb-32 md:pb-40 px-4 md:px-8 lg:px-16 bg-[#f8f8f5] relative">
+    <div class="max-w-7xl mx-auto">
+      <p class="uppercase tracking-widest text-xs text-gray-400 serif-display mb-8">— Home Services, Atlanta GA</p>
+      <h1 class="serif-display text-7xl md:text-9xl font-bold text-[#1E3A5F] leading-none tracking-tight max-w-5xl">
+        Atlanta's<br/><em class="italic">Finest</em><br/>Arborists.
       </h1>
-      <p class="text-gray-200 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-        Professional tree services across Atlanta and metro Georgia. Licensed, insured, and available 24/7 for all your tree care needs.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
-        <a href="tel:4047995472" class="inline-flex items-center gap-2 font-black uppercase tracking-widest px-8 py-4 text-sm transition-all hover:opacity-90" style="background-color: #C9A84C; color: #1E3A5F;">
-          <i data-lucide="phone" class="w-4 h-4"></i>
-          Call (404) 799-5472
-        </a>
-        <a href="#contact" class="inline-flex items-center gap-2 font-black uppercase tracking-widest px-8 py-4 text-sm border-2 border-white text-white hover:bg-white transition-all" style="hover:color: #1E3A5F;">
-          Get Free Estimate
-        </a>
-      </div>
-      <div class="mt-16 flex items-center justify-center gap-3">
-        <div class="flex">
-          <span class="text-yellow-400 text-xl">★★★★★</span>
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between mt-16 gap-8">
+        <div class="flex gap-6 flex-wrap">
+          <div class="flex items-center gap-2">
+            <i data-lucide="shield-check" class="w-5 h-5 text-[#C9A84C]"></i>
+            <span class="serif-display text-sm text-gray-600 italic">Licensed &amp; Insured</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="clock" class="w-5 h-5 text-[#C9A84C]"></i>
+            <span class="serif-display text-sm text-gray-600 italic">24/7 Emergency Response</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="star" class="w-5 h-5 text-[#C9A84C]"></i>
+            <span class="serif-display text-sm text-gray-600 italic">4.8 Stars · 484 Reviews</span>
+          </div>
         </div>
-        <span class="text-white text-sm font-bold">4.8 Stars · 484 Reviews</span>
+        <div class="max-w-sm">
+          <p class="serif-display italic text-gray-600 text-base leading-relaxed mb-4">Expert tree care rooted in precision, safety, and respect for Atlanta's urban canopy.</p>
+          <a href="#contact" class="arrow-cta serif-display text-[#1E3A5F] font-semibold text-base">
+            Get a Free Estimate <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white animate-bounce">
-      <i data-lucide="chevron-down" class="w-6 h-6 opacity-60"></i>
     </div>
   </section>
 
-  <!-- TICKER BAND -->
-  <div class="animate-section overflow-hidden py-3" style="background-color: #111111;">
-    <div class="ticker-track">
-      <span class="text-sm font-bold tracking-widest uppercase mx-4" style="color: #C9A84C;">LICENSED &amp; INSURED</span>
-      <span class="text-white text-sm font-bold tracking-widest uppercase mx-4">·</span>
-      <span class="text-sm font-bold tracking-widest uppercase mx-4" style="color: white;">SERVING ATLANTA</span>
-      <span class="text-white text-sm font-bold tracking-widest uppercase mx-4">·</span>
-      <span class="text-sm font-bold tracking-widest uppercase mx-4" style="color: #C9A84C;">FREE ESTIMATES</span>
-      <span class="text-white text-sm font-bold tracking-widest uppercase mx-4">·</span>
-      <span class="text-sm font-bold tracking-widest uppercase mx-4" style="color: white;">CALL TODAY</span>
-      <span class="text-white text-sm font-bold tracking-widest uppercase mx-4">·</span>
-      <span class="text-sm font-bold tracking-widest uppercase mx-4" style="color: #C9A84C;">OPEN 24 HOURS</span>
-      <span class="text-white text-sm font-bold tracking-widest uppercase mx-4">·</span>
-      <span class="text-sm font-bold tracking-widest uppercase mx-4" style="color: white;">EMERGENCY SERVICE</span>
-      <span class="text-white text-sm font-bold tracking-widest uppercase mx-4">·</span>
-      <!-- repeated for seamless loop -->
-      <span class="text-sm font-bold tracking-widest uppercase mx-4" style="color: #C9A84C;">LICENSED &amp; INSURED</span>
-      <span class="text-white text-sm font-bold tracking-widest uppercase mx-4">·</span>
-      <span class="text-sm font-bold tracking-widest uppercase mx-4" style="color: white;">SERVING ATLANTA</span>
-      <span class="text-white text-sm font-bold tracking-widest uppercase mx-4">·</span>
-      <span class="text-sm font-bold tracking-widest uppercase mx-4" style="color: #C9A84C;">FREE ESTIMATES</span>
-      <span class="text-white text-sm font-bold tracking-widest uppercase mx-4">·</span>
-      <span class="text-sm font-bold tracking-widest uppercase mx-4" style="color: white;">CALL TODAY</span>
-      <span class="text-white text-sm font-bold tracking-widest uppercase mx-4">·</span>
-      <span class="text-sm font-bold tracking-widest uppercase mx-4" style="color: #C9A84C;">OPEN 24 HOURS</span>
-      <span class="text-white text-sm font-bold tracking-widest uppercase mx-4">·</span>
-      <span class="text-sm font-bold tracking-widest uppercase mx-4" style="color: white;">EMERGENCY SERVICE</span>
-      <span class="text-white text-sm font-bold tracking-widest uppercase mx-4">·</span>
+  <!-- PULL QUOTE / STATS -->
+  <section class="animate-section py-32 md:py-40 px-4 md:px-8 bg-[#1E3A5F] text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="serif-display text-9xl font-bold text-[#C9A84C] leading-none" data-count="484" data-suffix="+">484+</p>
+      <p class="serif-display italic text-xl text-white/80 mt-6 max-w-xl mx-auto leading-relaxed">Five-star reviews from Atlanta homeowners who trust Boutte Tree with their most valued trees.</p>
     </div>
-  </div>
-
-  <!-- STATS BAR -->
-  <div class="animate-section py-12 bg-white border-b border-gray-100">
-    <div class="px-4 md:px-8 lg:px-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center border border-gray-100">
-        <i data-lucide="star" class="w-8 h-8 mb-3" style="color: #C9A84C;"></i>
-        <span class="heading font-black text-4xl md:text-5xl" style="color: #1E3A5F;" data-count="48" data-suffix="/5">4.8/5</span>
-        <span class="text-gray-500 text-sm mt-1 uppercase tracking-widest">avg rating</span>
-      </div>
-      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center border border-gray-100">
-        <i data-lucide="users" class="w-8 h-8 mb-3" style="color: #C9A84C;"></i>
-        <span class="heading font-black text-4xl md:text-5xl" style="color: #1E3A5F;" data-count="484" data-suffix="+">484+</span>
-        <span class="text-gray-500 text-sm mt-1 uppercase tracking-widest">happy clients</span>
-      </div>
-      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center border border-gray-100">
-        <i data-lucide="award" class="w-8 h-8 mb-3" style="color: #C9A84C;"></i>
-        <span class="heading font-black text-4xl md:text-5xl" style="color: #1E3A5F;" data-count="10" data-suffix="+">10+</span>
-        <span class="text-gray-500 text-sm mt-1 uppercase tracking-widest">years experience</span>
-      </div>
-      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center border border-gray-100">
-        <i data-lucide="map-pin" class="w-8 h-8 mb-3" style="color: #C9A84C;"></i>
-        <span class="heading font-black text-4xl md:text-5xl" style="color: #1E3A5F;" data-count="20" data-suffix="+">20+</span>
-        <span class="text-gray-500 text-sm mt-1 uppercase tracking-widest">areas served</span>
-      </div>
-    </div>
-  </div>
+  </section>
 
   <!-- ABOUT -->
-  <section id="about" class="py-24 md:py-32 bg-gray-50">
-    <div class="px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+  <section id="about" class="animate-section py-32 md:py-40 px-4 md:px-8 lg:px-16 bg-[#f8f8f5]">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         <div>
-          <p class="uppercase tracking-widest text-sm font-bold mb-4" style="color: #C9A84C;">Who We Are</p>
-          <h2 class="heading font-black text-4xl md:text-5xl lg:text-6xl leading-tight mb-8" style="color: #1E3A5F;">
-            Atlanta's Most Trusted Tree Specialists
-          </h2>
-          <hr class="border-t-2 mb-8 w-24" style="border-color: #C9A84C;">
-          <p class="text-gray-600 text-lg leading-relaxed mb-6">
-            Boutte Tree, Inc. is a full-service tree care company dedicated to keeping Atlanta's trees healthy, beautiful, and safe. We bring expertise, professionalism, and a genuine passion for arboriculture to every job — from routine trimming to complex emergency removals.
-          </p>
-          <p class="text-gray-600 text-lg leading-relaxed mb-10">
-            Serving homeowners and businesses across metro Atlanta, our certified team uses industry-leading techniques and equipment to deliver results that protect your property and preserve the natural beauty of your landscape.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="#services" class="arrow-cta font-bold text-base" style="color: #1E3A5F;">
-              Explore Our Services <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-            <a href="tel:4047995472" class="arrow-cta font-bold text-base" style="color: #C9A84C;">
-              Call Us Now <i data-lucide="phone" class="w-4 h-4"></i>
-            </a>
+          <p class="uppercase tracking-widest text-xs text-gray-400 serif-display mb-6">— About Boutte Tree</p>
+          <h2 class="serif-display text-5xl font-bold text-[#1E3A5F] leading-tight">Certified Arborists.<br/><em class="italic">True Professionals.</em></h2>
+          <div class="mt-8 w-16 border-t-2 border-[#C9A84C]"></div>
+          <div class="mt-8 flex gap-6 flex-wrap">
+            <div class="text-center">
+              <p class="serif-display text-3xl font-bold text-[#1E3A5F]">24/7</p>
+              <p class="serif-display text-xs text-gray-500 italic mt-1">Emergency Service</p>
+            </div>
+            <div class="w-px bg-gray-200"></div>
+            <div class="text-center">
+              <p class="serif-display text-3xl font-bold text-[#1E3A5F]">4.8★</p>
+              <p class="serif-display text-xs text-gray-500 italic mt-1">Google Rating</p>
+            </div>
+            <div class="w-px bg-gray-200"></div>
+            <div class="text-center">
+              <p class="serif-display text-3xl font-bold text-[#1E3A5F]">484+</p>
+              <p class="serif-display text-xs text-gray-500 italic mt-1">Five-Star Reviews</p>
+            </div>
           </div>
         </div>
-        <div class="img-hover-wrap rounded-2xl overflow-hidden shadow-2xl h-96 lg:h-[520px]">
-          <img
-            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGgOnYRxylpfbbtIt5sNEoXnhgRt-Obx_ZHMIqNRFORTbSqCjRt5gwiFv_kWy4JO8C-Nluq1ScOUylAbFoYPnXN7W_Q63hD835ZdxyevLUWgoXy4tvYcflZ0iVkKOENtQbMrqzYGTF-YzFBrqE35jhWfFl9fjpklg7Sd3-pbTsMtggBTrZ4t2qMpG8o8HcvRdGAHZWv27v6zthbkZafPpXHVO5BbwGvLQ6ks1wT6UAkn4at5Y6M2zmC1z5M3XPrpZ004sqcf08C_fRicLq2hILib8tYOEm1JFKDHLeH89FAnA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-            alt="Boutte Tree team at work"
-            class="w-full h-full object-cover"
-            loading="lazy"
-            onerror="this.src='https://picsum.photos/seed/contractor-about/800/600'"
-          >
+        <div>
+          <p class="serif-display text-gray-700 text-lg leading-relaxed">Boutte Tree, Inc. is Atlanta's trusted team of certified arborists, delivering expert tree care across the greater Atlanta metro with a commitment to safety, ecological stewardship, and genuine craftsmanship. From routine pruning to complex removals near power lines, our ISA-certified professionals bring deep knowledge and care to every project.</p>
+          <blockquote class="serif-display italic text-[#1E3A5F] text-xl leading-relaxed border-l-4 border-[#C9A84C] pl-6 my-8">
+            "There's a difference between a tree guy and an actual legit arborist."
+          </blockquote>
+          <p class="serif-display text-gray-700 text-lg leading-relaxed">We serve residential and commercial clients throughout Atlanta, GA and surrounding communities, offering everything from precision trimming and health assessments to emergency storm response and fertilization programs. Every job, big or small, receives the same meticulous attention that has earned us hundreds of five-star reviews.</p>
+          <div class="mt-10 grid grid-cols-2 gap-4">
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-5 h-5 text-[#C9A84C] mt-0.5 flex-shrink-0"></i>
+              <span class="serif-display text-sm text-gray-600">ISA Certified Arborists on staff</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-5 h-5 text-[#C9A84C] mt-0.5 flex-shrink-0"></i>
+              <span class="serif-display text-sm text-gray-600">24/7 emergency tree response</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-5 h-5 text-[#C9A84C] mt-0.5 flex-shrink-0"></i>
+              <span class="serif-display text-sm text-gray-600">Fully licensed &amp; insured in Georgia</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-5 h-5 text-[#C9A84C] mt-0.5 flex-shrink-0"></i>
+              <span class="serif-display text-sm text-gray-600">Thorough cleanup after every job</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SERVICES -->
-  <section id="services" class="animate-section py-24 md:py-32 bg-white">
-    <div class="px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
-      <div class="text-center mb-12">
-        <p class="uppercase tracking-widest text-sm font-bold mb-3" style="color: #C9A84C;">What We Offer</p>
-        <h2 class="heading font-black text-4xl md:text-5xl" style="color: #1E3A5F;">Professional Tree Services</h2>
+  <section id="services" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-10">
+        <p class="uppercase tracking-widest text-xs text-gray-400 serif-display mb-4">— What We Offer</p>
+        <h2 class="serif-display text-5xl font-bold text-[#1E3A5F] leading-tight"><em class="italic">Expert</em> Tree Services<br/>in Atlanta, GA</h2>
+      </div>
+      <div class="flex flex-wrap gap-2 md:flex-nowrap mb-10 tabs-container">
+        <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold serif-display" data-target="tab-panel-1">Our Services</button>
+        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold serif-display" data-target="tab-panel-2">Specialty Work</button>
+        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold serif-display" data-target="tab-panel-3">Additional Services</button>
       </div>
 
-      <!-- Tabs -->
-      <div class="flex flex-wrap gap-2 md:flex-nowrap mb-8">
-        <button class="tab-btn flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 transition-all font-bold uppercase tracking-wider active-tab" onclick="showTab('tab-panel-1', this)">Our Services</button>
-        <button class="tab-btn flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 transition-all font-bold uppercase tracking-wider inactive-tab" onclick="showTab('tab-panel-2', this)">How We Help</button>
-        <button class="tab-btn flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 transition-all font-bold uppercase tracking-wider inactive-tab" onclick="showTab('tab-panel-3', this)">Why Choose Us</button>
-      </div>
-
-      <!-- Tab Panel 1 -->
       <div id="tab-panel-1" class="tab-panel">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Card 1 -->
-          <div class="service-card">
-            <i data-lucide="tree-pine" class="w-8 h-8 mb-4" style="color: #C9A84C;"></i>
-            <h3 class="heading font-bold text-xl mb-3" style="color: #1E3A5F;">Tree Removal</h3>
-            <p class="text-gray-600 text-sm leading-relaxed mb-4">Safe, efficient removal of hazardous, diseased, or unwanted trees of any size. Our crew ensures your property stays clean and protected throughout the process.</p>
-            <a href="tel:4047995472" class="arrow-cta text-sm font-bold" style="color: #C9A84C;">get a free quote <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0">
+          <!-- 01 -->
+          <div class="service-rule pt-8 pb-8 pr-0 lg:pr-8 border-b border-gray-100">
+            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">01.</p>
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="sparkles" class="w-5 h-5 text-[#1E3A5F]"></i>
+              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Consultation</h3>
+            </div>
+            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">Our certified arborists provide personalized consultations to assess your trees' health, risks, and care needs. We walk your property with you and offer honest, expert recommendations with no upselling.</p>
+            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
+              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
           </div>
-          <!-- Card 2 -->
-          <div class="service-card">
-            <i data-lucide="scissors" class="w-8 h-8 mb-4" style="color: #C9A84C;"></i>
-            <h3 class="heading font-bold text-xl mb-3" style="color: #1E3A5F;">Tree Trimming & Pruning</h3>
-            <p class="text-gray-600 text-sm leading-relaxed mb-4">Expert trimming and pruning to maintain tree health, improve aesthetics, and prevent dangerous overgrowth near structures and power lines. We handle trees of all shapes and sizes.</p>
-            <a href="tel:4047995472" class="arrow-cta text-sm font-bold" style="color: #C9A84C;">get a free quote <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+          <!-- 02 -->
+          <div class="service-rule pt-8 pb-8 px-0 lg:px-8 border-b border-gray-100">
+            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">02.</p>
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="shield-check" class="w-5 h-5 text-[#1E3A5F]"></i>
+              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Assessment</h3>
+            </div>
+            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">We conduct thorough tree health and structural assessments to identify disease, pest activity, or storm damage before it becomes a hazard. Our detailed reports give you a clear picture of your property's tree health.</p>
+            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
+              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
           </div>
-          <!-- Card 3 -->
-          <div class="service-card">
-            <i data-lucide="zap" class="w-8 h-8 mb-4" style="color: #E17055;"></i>
-            <h3 class="heading font-bold text-xl mb-3" style="color: #1E3A5F;">Emergency Tree Service</h3>
-            <p class="text-gray-600 text-sm leading-relaxed mb-4">Available 24/7 for storm damage, fallen trees, and urgent safety hazards. We respond fast to protect your home and family when it matters most.</p>
-            <a href="tel:4047995472" class="arrow-cta text-sm font-bold" style="color: #C9A84C;">get a free quote <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+          <!-- 03 -->
+          <div class="service-rule pt-8 pb-8 pl-0 lg:pl-8 border-b border-gray-100">
+            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">03.</p>
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="wrench" class="w-5 h-5 text-[#1E3A5F]"></i>
+              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Installation</h3>
+            </div>
+            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">From sourcing the perfect specimen to expert planting and staking, we handle tree installation with long-term vitality in mind. We match species to your Atlanta soil conditions for lasting results.</p>
+            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
+              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+          <!-- 04 -->
+          <div class="service-rule pt-8 pb-8 pr-0 lg:pr-8 lg:col-span-1">
+            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">04.</p>
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="home" class="w-5 h-5 text-[#1E3A5F]"></i>
+              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Repair</h3>
+            </div>
+            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">Storm damage, split limbs, or declining crowns — our repair services restore structural integrity and beauty to your trees. We use industry-leading cabling and bracing techniques to save trees others might remove.</p>
+            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
+              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
           </div>
         </div>
       </div>
 
-      <!-- Tab Panel 2 -->
       <div id="tab-panel-2" class="tab-panel hidden">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Card 1 -->
-          <div class="service-card">
-            <i data-lucide="shield" class="w-8 h-8 mb-4" style="color: #C9A84C;"></i>
-            <h3 class="heading font-bold text-xl mb-3" style="color: #1E3A5F;">Storm Damage Cleanup</h3>
-            <p class="text-gray-600 text-sm leading-relaxed mb-4">After severe weather, we clear debris, remove hazardous limbs, and restore your property quickly. Our experienced team works efficiently to minimize disruption to your daily life.</p>
-            <a href="tel:4047995472" class="arrow-cta text-sm font-bold" style="color: #C9A84C;">get a free quote <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0">
+          <div class="service-rule pt-8 pb-8 pr-0 lg:pr-8 border-b border-gray-100">
+            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">01.</p>
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="star" class="w-5 h-5 text-[#1E3A5F]"></i>
+              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Specialty Work</h3>
+            </div>
+            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">Complex removals, high-angle rigging, and precision work near power lines, structures, or sensitive landscapes are our specialty. Our crews are trained for the most technically demanding tree jobs in Atlanta.</p>
+            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
+              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
           </div>
-          <!-- Card 2 -->
-          <div class="service-card">
-            <i data-lucide="leaf" class="w-8 h-8 mb-4" style="color: #C9A84C;"></i>
-            <h3 class="heading font-bold text-xl mb-3" style="color: #1E3A5F;">Tree Health Assessment</h3>
-            <p class="text-gray-600 text-sm leading-relaxed mb-4">Our certified arborists evaluate tree health, identify diseases, pest infestations, and structural weaknesses before they become major problems. Early detection saves your trees and your budget.</p>
-            <a href="tel:4047995472" class="arrow-cta text-sm font-bold" style="color: #C9A84C;">get a free quote <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+          <div class="service-rule pt-8 pb-8 px-0 lg:px-8 border-b border-gray-100">
+            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">02.</p>
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="sparkles" class="w-5 h-5 text-[#1E3A5F]"></i>
+              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Custom Projects</h3>
+            </div>
+            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">Whether you're designing a new landscape or transforming an existing one, we partner with homeowners and designers on custom tree-focused projects. No scope is too unique for our experienced arborist team.</p>
+            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
+              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
           </div>
-          <!-- Card 3 -->
-          <div class="service-card">
-            <i data-lucide="droplets" class="w-8 h-8 mb-4" style="color: #C9A84C;"></i>
-            <h3 class="heading font-bold text-xl mb-3" style="color: #1E3A5F;">Tree Fertilization</h3>
-            <p class="text-gray-600 text-sm leading-relaxed mb-4">Deep root fertilization programs that boost tree vigor, increase disease resistance, and promote lush, healthy growth year-round. Customized nutrient plans for each species on your property.</p>
-            <a href="tel:4047995472" class="arrow-cta text-sm font-bold" style="color: #C9A84C;">get a free quote <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+          <div class="service-rule pt-8 pb-8 pl-0 lg:pl-8 border-b border-gray-100">
+            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">03.</p>
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="award" class="w-5 h-5 text-[#1E3A5F]"></i>
+              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Premium Service</h3>
+            </div>
+            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">Our white-glove service tier delivers priority scheduling, senior arborist oversight, and a dedicated project manager for your most important tree care needs. Ideal for estates, commercial properties, and complex landscapes.</p>
+            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
+              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+          <div class="service-rule pt-8 pb-8 pr-0 lg:pr-8">
+            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">04.</p>
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="clock" class="w-5 h-5 text-[#1E3A5F]"></i>
+              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Expedited Service</h3>
+            </div>
+            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">When timing is critical — a sale closing, a storm threat, or an HOA deadline — our expedited scheduling gets your job done fast without compromising quality. Available seven days a week across Atlanta.</p>
+            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
+              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
           </div>
         </div>
       </div>
 
-      <!-- Tab Panel 3 -->
       <div id="tab-panel-3" class="tab-panel hidden">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Card 1 -->
-          <div class="service-card">
-            <i data-lucide="stump" class="w-8 h-8 mb-4" style="color: #C9A84C;"></i>
-            <h3 class="heading font-bold text-xl mb-3" style="color: #1E3A5F;">Stump Grinding & Removal</h3>
-            <p class="text
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0">
+          <div class="service-rule pt-8 pb-8 pr-0 lg:pr-8 border-b border-gray-100">
+            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">01.</p>
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="check-circle" class="w-5 h-5 text-[#1E3A5F]"></i>
+              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Maintenance Plans</h3>
+            </div>
+            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">Our annual and seasonal maintenance plans keep your trees healthy year-round with scheduled pruning, fertilization, and health checkups. Plans are tailored to your specific tree species and property layout.</p>
+            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
+              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+          <div class="service-rule pt-8 pb-8 px-0 lg:px-8 border-b border-gray-100">
+            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">02.</p>
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="shield-check" class="w-5 h-5 text-[#1E3A5F]"></i>
+              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Warranty Coverage</h3>
+            </div>
+            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">We stand behind our work with warranty coverage on select services, giving you peace of mind long after the crew has packed up. Ask your arborist about eligible services at time of estimate.</p>
+            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
+              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+          <div class="service-rule pt-8 pb-8 pl-0 lg:pl-8 border-b border-gray-100">
+            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">03.</p>
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="star" class="w-5 h-5 text-[#1E3A5F]"></i>
+              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Inspections</h3>
+            </div>
+            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">Pre-storm, post-storm, and routine safety inspections by our certified arborists identify hidden risks before they become expensive problems. Inspection reports are detailed and ready for insurance or HOA purposes.</p>
+            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
+              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+          <div class="service-rule pt-8 pb-8 pr-0 lg:pr-8">
+            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">04.</p>
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="phone" class="w-5 h-5 text-[#1E3A5F]"></i>
+              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Emergency Service</h3>
+            </div>
+            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">Storms don't wait, and neither do we. Boutte Tree's 24/7 emergency crews respond rapidly to downed trees, hazardous limbs, and urgent removals across Atlanta and surrounding communities. We're open every day of the year.</p>
+            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
+              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="animate-section py-32 md:py-40 px-4 md:px-8 lg:px-16 bg-[#f8f8f5]">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-end justify-between mb-12">
+        <div>
+          <p class="uppercase tracking-widest text-xs text-gray-400 serif-display mb-4">— Our Work</p>
+          <h2 class="serif-display text-5xl font-bold text-[#1E3A5F] leading-tight"><em class="italic">The Craft</em><br/>in Detail</h2>
+        </div>
+        <a href="#contact" class="hidden md:flex arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
+          Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- Row 1: large + medium -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+        <div class="img-hover-wrap md:col-span-2 rounded-none overflow-hidden">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-sH9x8tbx8G6LEZ9CIdkJ6ly9dLO0budR4Ht3Bz5UI600pR39anWZ7WzZg7gzZypDZRCnm_iiNt65u4oGsIPKzuKu_Dyk1ZwaFFzO14T7asMJduYp7erpQ-pcgm2aJC1gXCEK85CfyfBFfC8cxRFvxc767gISttu09k0XWZPTzNTweoV-UrY1JhdEZIVpwR7ZAlKrbQqpyh9H0uGMbTohVtNjGqHRtDW2TkuZ6p1XANTPOLivBQzlLyj6RBZEICOj6w1mjRcQL72RGqV0SfTF_lUYUZpdAT4LrKaWdq2VPvZA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Boutte Tree precision trimming Atlanta" class="w-full h-80 md:h-[500px] object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-1/800/600'">
+          <p class="serif-display italic text-xs text-gray-400 mt-2">Precision crown pruning, Atlanta residential property</p>
+        </div>
+        <div class="img-hover-wrap rounded-none overflow-hidden">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-tJe4JhbZjm703cCCipPAB4SfRi2s6MDZBeHXUiuAhZP4zHR_rGRlTP8OWvm7vgDsajyzlAtl2dFIrlY8sSdXoluaOP6xNn5GlFYwlBxPDqDBg2-v688W3CjKqiaVUNc-tVUAByRhUWSYiwbmOmRLEPhlmtNjfpR_MDUpIYSnh2kwS7XB8fdGVQFDqGjMs0wllIIiktHAA3PJ9fSOeg4K44ja2ZjVnLXTPDGUOwkh7zt3Sq2_i9yO0GVPfDJowMYHUB3CHlYOWGF0seUgV3mCNRgockQvP9VgfXbhnyRQxobQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Boutte Tree arborist crew at work" class="w-full h-80 md:h-[500px] object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-2/800/600'">
+          <p class="serif-display italic text-xs text-gray-400 mt-2">Expert arborist rigging, Buckhead, Atlanta</p>
+        </div>
+      </div>
+
+      <!-- Row 2: two equal -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div class="img-hover-wrap rounded-none overflow-hidden">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-ujdlX8rdWB1rG4RgSoKRqtylRByUhsmZKm1R77OgHdrrNkJffa1Oeo2Z-lR2jkq79inBtRCILkcGmrMtL4Sug1zR6jJxRqmi7ohs3bBW1YZFGeIP6JOY1gZPqH2L_xJjAu2g94ltxLP-EBIqSWmGKpsKlbywVMmp0tDOiGs6OzTgEdeSzQro7qS7CAbE6Q-pQDMs01LLxHETED-ZRPoT89ARn8vkj9Vivdkg4W7EifQiPobguwxREZ2-FPJbpayIOnG2EnbH4TpU_BdXQPuwcjyw62z6G7CJz4Jo7UH7RBcg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Boutte Tree tree removal Atlanta" class="w-full h-64 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-3/800/600'">
+          <p class="serif-display italic text-xs text-gray-400 mt-2">Controlled tree removal, NW Atlanta</p>
+        </div>
+        <div class="img-hover-wrap rounded-none overflow-hidden">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-u_TLPAwkavBISlD4smNxQehLTJV2qh2LBYG-KYNQIoVRNON16FXts69375-4hl74LMWbTCnBF3ooCdBNt1XRx-YbCuWwOE0fWKdZZ-JqeaL4mdfNX8T_F8bcxcMZdiqKjBZGK4kyZdq7wUoQ1Roer-YKfR4nv1RcljGteTWsZK4ff2sVMhIqzfrIgrrgeth8BaM6wQ5KUzz29XaYkxXTVAWrpi5BDOpcRZvR_xMLxm50TDmoutGV5k4hw0jvbv68lvVIs6I8FXnNnd7D6-3wuDsTgpX0t1jEWnYp1LO9iTcw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Boutte Tree oak pruning Atlanta GA" class="w-full h-64 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-4/800/600'">
+          <p class="serif-display italic text-xs text-gray-400 mt-2">White oak preservation and pruning, Atlanta</p>
+        </div>
+      </div>
+
+      <!-- Row 3: three equal -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="img-hover-wrap rounded-none overflow-hidden">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-tW9UfhJGzB0ZRpBQZf8I5zertuJohrlSHLwIfhA9pN8etCcRFCziDOxdC565_ZDa8n69BJ_kIWa3oAPbOQQPh_5-XZk_CjdR_pp9Ahr4wlCvLTzkd0SwUT2kh66Qy55GYK2biB77JlZxdAnylmrwpzxP9c2b-QPefo-awWcJKmhdr0Q2aD6z5MsyGdOI00PEhjsxdjHlfTTv3MUk-FZ86tHyB_dp6F9dJsU6yLxdLzqU42ePVKf5HA9KJQVf6hsPYFN-zXIm0491l-4jMMYksChgcAjciektwxgEYjZMU5JQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Boutte Tree power line trimming" class="w-full h-56 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-5/800/600'">
+          <p class="serif-display italic text-xs text-gray-400 mt-2">Power line clearance, Atlanta utility corridor</p>
+        </div>
+        <div class="img-hover-wrap rounded-none overflow-hidden">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-ttPDYduZl8AlNxtMs8g4lvLB8QxNJp4hXGONC6a0hxRrh_o7kwns1vWT1p_RcDNu2m9-wg5M2n4ZaYgWJoTz-kzqlAl2eZPJ-OGBv5bzprX_zJyaBJwP6EQBafs5euPSolXy6oYn_3MuJU_U91s001akMCma5XvAnhG1fMNSm6lQCyc8RSlThaUoKkv93Cb7Kg-qdAQ6NPqzDf8rOBrH-rSXc54I0WVe-VcUNyxnnSGfC63w9Rumcv6cCsjIn7N4CIXrLkoBcEiOxUekyKKca-D2kdeqARbskbtJFZ7deVBQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Boutte Tree stump grinding Atlanta" class="w-full h-56 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-6/800/600'">
+          <p class="serif-display italic text-xs text-gray-400 mt-2">Professional stump grinding, Midtown Atlanta</p>
+        </div>
+        <div class="img-hover-wrap rounded-none overflow-hidden">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-u7ruKqXO4h8j8TO7J0a2tmWj89Oma0rQxtoHQH_u8VDb6o4xamPX0YfMs97dXUybUEsC-FIJfiEY6F3y86K1tFIm9DCSbRM3GApGHiKx6tqF06DcbTxKOtvQ9FMqNxLfaacHe79oCS0AR5HOzu81Nv7Fc1WgMMLrQM49SHzNbkSEIuWpQ-WhK_wJrAiY8JxOMZcA0XnxqxgumDB5XewOrP6Jrw0Iv_IIDJAGSQef218Qwyc-Jklg87YlUlmDLbq-Y8Do1PnsQ5WA0BcjBywX0UXTZJ48jr6v8ES3nUqJTHQp_xD8r6ToEbrcBTb-E9SqgX4YtwUjHr6QpAq_VbhVw172PyaMSQeXcHxWbhtdCflQ2dpgTnEyzy4edNyueekXMgpvfI6-uF9DK-v8BqGBqmKv2pye2ALTJiqqoys6Wly0RaJPGsxkjjz41Fbtvk&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Boutte Tree magnolia pruning" class="w-full h-56 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-7/800/600'">
+          <p class="serif-display italic text-xs text-gray-400 mt-2">Magnolia shaping and seasonal care, Atlanta</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="animate-section py-32 md:py-40 px-4 md:px-8 lg:px-16 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <p class="uppercase tracking-widest text-xs text-gray-400 serif-display text-center mb-4">— Client Reviews</p>
+
+      <!-- Hero quote -->
+      <div class="text-center mb-20">
+        <p class="serif-display text-9xl text-[#C9A84C] leading-none font-bold" style="line-height:0.7;">&ldquo;</p>
+        <blockquote class="serif-display italic text-3xl text-[#1E3A5F] max-w-3xl mx-auto mt-6 leading-relaxed">
+          There's a difference between a tree guy &amp; an actual legit arborist. I chose them. Pricing was in range. Scheduling was a breeze with customer service. Crew arrived on time. They crushed it. Job well done. Highly recommend Boutte!
+        </blockquote>
+        <div class="flex justify-center gap-1 mt-6">
+          <i data-lucide="star" class="w-5 h-5 text-[#C9A84C] fill-current"></i>
+          <i data-lucide="star" class="w-5 h-5 text-[#C9A84C] fill-current"></i>
+          <i data-lucide="star" class="w-5 h-5 text-[#C9A84C] fill-current"></i>
+          <i data-lucide="star" class="w-5 h-5 text-[#C9A84C] fill-current"></i>
+          <i data-lucide="star" class="w-5 h-5 text-[#C9A84C] fill-current"></i>
+        </div>
+        <p class="serif-display text-sm tracking-widest uppercase text-gray-500 mt-3" style="font-variant: small-caps;">Keith AAA &mdash; 2 months ago</p>
+        <span class="inline-block serif-display text-xs bg-gray-100 text-gray-500 px-3 py-1 rounded-full mt-2">via Google</span>
+      </div>
+
+      <!-- Compact reviews -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-0 max-w-5xl mx-auto">
+
+        <div class="review-compact py-10 pr-0 md:pr-12 border-b border-gray-100">
+          <div class="flex items-center gap-1 mb-3">
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+          </div>
+          <p class="serif-display italic text-gray-700 text-lg leading-relaxed mb-4">"Carlos, Osvaldo and Erick did a great job trimming my tree off the power lines. I was worried Georgia Power would hack off half my tree, whereas these guys insured my tree was healthy, happy and still looked like a tree. Bonus, they love my dog :)"</p>
+          <p class="serif-display text-sm font-semibold text-[#1E3A5F]" style="font-variant: small-caps;">Lindsey Eltinge</p>
+          <p class="serif-display text-xs text-gray-400 mt-1">2 months ago &nbsp;·&nbsp; <span class="inline-block bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">via Google</span></p>
+        </div>
+
+        <div class="review-compact py-10 pl-0 md:pl-12 border-b border-gray-100">
+          <div class="flex items-center gap-1 mb-3">
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+          </div>
+          <p class="serif-display italic text-gray-700 text-lg leading-relaxed mb-4">"Alex was very helpful in the assessment and estimate. Scheduling was quick and easy. Ricardo and team were excellent on the day of the trimming. They showed up when expected and double checked the tree branches before cutting. Then they did a great job cleaning up after the work."</p>
+          <p class="serif-display text-sm font-semibold text-[#1E3A5F]" style="font-variant: small-caps;">Autumn Norris</p>
+          <p class="serif-display text-xs text-gray-400 mt-1">a month ago &nbsp;·&nbsp; <span class="inline-block bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">via Google</span></p>
+        </div>
+
+        <div class="review-compact py-10 pr-0 md:pr-12 border-b border-gray-100 md:border-b-0">
+          <div class="flex items-center gap-1 mb-3">
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+          </div>
+          <p class="serif-display italic text-gray-700 text-lg leading-relaxed mb-4">"Our massive white oak had recently started looking unhealthy and dropping large dead limbs. Jeremy quickly came out to perform a thorough assessment to confirm the tree was healthy enough to keep. Just a few days later Benji, Dan, and Eduardo came out and spent all day pruning and the result is great. Very impressed with the promptness, friendliness and care for our tree which is close to lots of obstacles (power lines, houses). Highly recommend this crew and Boutte as a whole."</p>
+          <p class="serif-display text-sm font-semibold text-[#1E3A5F]" style="font-variant: small-caps;">Parker Saunders</p>
+          <p class="serif-display text-xs text-gray-400 mt-1">2 months ago &nbsp;·&nbsp; <span class="inline-block bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">via Google</span></p>
+        </div>
+
+        <div class="review-compact py-10 pl-0 md:pl-12">
+          <div class="flex items-center gap-1 mb-3">
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+          </div>
+          <p class="serif-display italic text-gray-700 text-lg leading-relaxed mb-4">"Boutte tree consistently sends knowledgeable and pleasant people. I use them for a variety of services - pruning a huge magnolia perfectly, fertilizing all trees and bushes annually, sourcing and planting the exact Japanese maple I wanted and more. Today I was especially pleased to meet the first 2 women Boutte has hired. Kudos to Boutte."</p>
+          <p class="serif-display text-sm font-semibold text-[#1E3A5F]" style="font-variant: small-caps;">Marcia Wood</p>
+          <p class="serif-display text-xs text-gray-400 mt-1">2 months ago &nbsp;·&nbsp; <span class="inline-block bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">via Google</span></p>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-16">
+        <p class="serif-display italic text-gray-500 text-sm">4.8 stars across 484 verified Google reviews &mdash; Atlanta, GA</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="animate-section py-32 md:py-40 px-4 md:px-8 lg:px-16 bg-[#f8f8f5]">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-16">
+        <p class="uppercase tracking-widest text-xs text-gray-400 serif-display mb-4">— Common Questions</p>
+        <h2 class="serif-display text-5xl font-bold text-[#1E3A5F] leading-tight"><em class="italic">Frequently</em><br/>Asked Questions</h2>
+      </div>
+      <div class="max-w-4xl">
+
+        <details class="group border-b border-gray-200">
+          <summary class="flex items-center justify-between py-8 cursor-pointer">
+            <span class="serif-display text-2xl font-bold text-[#1E3A5F] pr-8">How do I know if a tree on my Atlanta property needs to be removed?</span>
+            <span class="text-[#C9A84C] flex-shrink-0">
+              <i data-lucide="chevron-right" class="w-6 h-6 transition-transform duration-300 group-open:rotate-90"></i>
+            </span>
+          </summary>
+          <div class="pb-8">
+            <p class="serif-display text-gray-600 text-lg leading-relaxed max-w-3xl">Signs that a tree may need removal include large dead branches, significant lean toward structures, visible trunk decay, fungal growth at the base, or roots lifting pavement. A certified arborist assessment is always the best first step — many trees that appear declining can be saved with proper care. Our Boutte Tree arborists will give you an honest evaluation and only recommend removal when truly necessary.</p>
+          </div>
+        </details>
+
+        <details class="group border-b border-gray-200">
+          <summary class="flex items-center justify-between py-8 cursor-pointer">
+            <span class="serif-display text-2xl font-bold text-[#1E3A5F] pr-8">Does Boutte Tree provide emergency service after storms?</span>
+            <span class="text-[#C9A84C] flex-shrink-0">
+              <i data-lucide="chevron-right" class="w-6 h-6 transition-transform duration-300 group-open:rotate-90"></i>
+            </span>
+          </summary>
+          <div class="pb-8">
+            <p class="serif-display text-gray-600 text-lg leading-relaxed max-w-3xl">Yes — Boutte Tree operates 24 hours a day, 7 days a week, including holidays, for emergency storm response throughout Atlanta and the surrounding metro area. If a tree or large limb has fallen on your home, vehicle, or is blocking access, call us immediately at (404) 799-5472. Our crews mobilize quickly to secure your property and remove hazards safely.</p>
+          </div>
+        </details>
+
+        <details class="group border-b border-gray-200">
+          <summary class="flex items-center justify-between py-8 cursor-pointer">
+            <span class="serif-display text-2xl font-bold text-[#1E3A5F] pr-8">What is the best time of year to prune trees in Georgia?</span>
+            <span class="text-[#C9A84C] flex-shrink-0">
+              <i data-lucide="chevron-right" class="w-6 h-6 transition-transform duration-300 group-open:rotate-90"></i>
+            </span>
+          </summary>
+          <div class="pb-8">
+            <p class="serif-display text-gray-600 text-lg leading-relaxed max-w-3xl">For most deciduous trees in Georgia, late winter — when trees are dormant — is the ideal pruning window as it minimizes stress and promotes vigorous spring growth. However, dead, diseased, or hazardous limbs can and should be removed any time of year. Flowering trees like dogwoods and cherries are best pruned immediately after they bloom. Our arborists will advise you on species-specific timing during your consultation.</p>
+          </div>
+        </details>
+
+        <details class="group border-b border-gray-200">
+          <summary class="flex items-center justify-between py-8 cursor-pointer">
+            <span class="serif-display text-2xl font-bold text-[#1E3A5F] pr-8">Are you licensed and insured to work in Atlanta, GA?</span>
+            <span class="text-[#C9A84C] flex-shrink-0">
+              <i data-lucide="chevron-right" class="w-6 h-6 transition-transform duration-300 group-open:rotate-90"></i>
+            </span>
+          </summary>
+          <div class="pb-8">
+            <p class="serif-display text-gray-600 text-lg leading-relaxed max-w-3xl">Absolutely. Boutte Tree, Inc. is fully licensed in the state of Georgia and carries comprehensive liability insurance and workers' compensation coverage, protecting both your property and our crew. We're happy to provide proof of insurance upon request before any work begins. We strongly encourage all homeowners to verify insurance with any tree service company they consider hiring.</p>
+          </div>
+        </details>
+
+        <details class="group border-b border-gray-200">
+          <summary class="flex items-center justify-between py-8 cursor-pointer">
+            <span class="serif-display text-2xl font-bold text-[#1E3A5F] pr-8">How much does tree removal or trimming cost in Atlanta?</span>
+            <span class="text-[#C9A84C] flex-shrink-0">
+              <i data-lucide="chevron-right" class="w-6 h-6 transition-transform duration-300 group-open:rotate-90"></i>
+            </span>
+          </summary>
+          <div class="pb-8">
+            <p class="serif-display text-gray-600 text-lg leading-relaxed max-w-3xl">Tree service pricing in Atlanta varies based on tree size, species, location, proximity to structures, and access to your property. We provide free, no-obligation estimates for every job — what you're quoted is what you pay, with no hidden fees. Our pricing is competitive with the Atlanta market, and we believe in transparent, fair quotes that reflect the level of expertise and care our certified arborists bring to every project.</p>
+          </div>
+        </details>
+
+        <details class="group border-b border-gray-200">
+          <summary class="flex items-center justify-between py-8 cursor-pointer">
+            <span class="serif-display text-2xl font-bold text-[#1E3A5F] pr-8">What areas around Atlanta does Boutte Tree serve?</span>
+            <span class="text-[#C9A84C] flex-shrink-0">
+              <i data-lucide="chevron-right" class="w-6 h-6 transition-transform duration-300 group-open:rotate-90"></i>
+            </span>
+          </summary>
+          <div class="pb-8">
+            <p class="serif-display text-gray-600 text-lg leading-relaxed max-w-3xl">Boutte Tree serves Atlanta and the surrounding metro area including Decatur, Marietta, Sandy Springs, Smyrna, Tucker, Chamblee, Norcross, East Point, College Park, and beyond. If you're unsure whether we cover your area, give us a call at (404) 799-5472 — we're happy to confirm service availability and get your free estimate scheduled as soon as possible.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="animate-section py-32 md:py-40 px-4 md:px-8 lg:px-16 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Left: Map -->
+        <div>
+          <iframe
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k&q=place_id:ChIJ3zaD_uQa9YgRBsmJ0UX5UsU"
+            width="100%"
+            height="480"
+            class="w-full h-[480px] object-cover border-0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Boutte Tree, Inc. location map Atlanta GA"
+          ></iframe>
+        </div>
+        <!-- Right: Form -->
+        <div class="bg-[#f8f8f5] p-8 border border-gray-200">
+          <p class="serif-display italic text-xs tracking-widest text-gray-500 uppercase">get started</p>
+          <h3 class="serif-display italic text-3xl font-bold text-[#1E3A5F] mt-2">Get a Free Estimate</h3>
+          <p class="serif-display text-gray-600 text-base mt-1">Tell us about your trees — we'll get back to you promptly.</p>
+          <div class="flex items-center gap-2 mt-3">
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
+            <span class="serif-display text-sm text-gray-500 ml-1">4.8 out of 5 &middot; 484 reviews</span>
+          </div>
+          <form action="https://formspree.io/f/placeholder" method="POST" class="mt-4">
+            <input type="text" name="name" placeholder="Your Name" required
+              class="bg-white border-0 border-b border-gray-300 focus:ring-0 focus:border-black py-3 px-0 serif-display w-full mt-4 text-gray-800 placeholder-gray-400 outline-none" style="font-family:'Playfair Display',serif;">
+            <input type="email" name="email" placeholder="Email Address" required
+              class="bg-white border-0 border-b border-gray-300 focus:ring-0 focus:border-black py-3 px-0 serif-display w-full mt-4 text-gray-800 placeholder-gray-400 outline-none" style="font-family:'Playfair Display',serif;">
+            <input type="tel" name="phone" placeholder="Phone Number"
+              class="bg-white border-0 border-b border-gray-300 focus:ring-0 focus:border-black py-3 px-0 serif-display w-full mt-4 text-gray-800 placeholder-gray-400 outline-none" style="font-family:'Playfair Display',serif;">
+            <select name="service"
+              class="bg-white border-0 border-b border-gray-300 focus:ring-0 focus:border-black py-3 px-0 serif-display w-full mt-4 text-gray-600 outline-none" style="font-family:'Playfair Display',serif;">
+              <option value="" disabled selected>Select a Service</option>
+              <option value="Consultation">Consultation</option>
+              <option value="Assessment">Assessment</option>
+              <option value="Installation">Installation</option>
+              <option value="Repair">Repair</option>
+            </select>
+            <textarea name="message" rows="3" placeholder="Tell us about your project..."
+              class="bg-white border-0 border-b border-gray-300 focus:ring-0 focus:border-black py-3 px-0 serif-display w-full mt-4 text-gray-800 placeholder-gray-400 outline-none resize-none" style="font-family:'Playfair Display',serif;"></textarea>
+            <button type="submit"
+              class="w-full bg-[#1E3A5F] text-white py-4 font-semibold serif-display mt-6 hover:bg-[#162d4a] transition" style="font-family:'Playfair Display',serif;">
+              Request Free Estimate
+            </button>
+          </form>
+          <p class="serif-display italic text-xs text-gray-400 mt-3">By submitting you agree to be contacted regarding your request.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#f8f8f5] text-gray-900">
+    <!-- Signature line -->
+    <div class="border-t border-gray-300">
+      <p class="serif-display italic text-sm text-gray-600 text-center py-10 border-b border-gray-300">a atlanta home services practice</p>
+    </div>
+
+    <!-- Main grid -->
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-12 py-20 px-8 max-w-7xl mx-auto">
+
+      <!-- Col 1: Business Identity -->
+      <div class="col-span-2">
+        <p class="serif-display italic text-5xl font-bold text-gray-900">Boutte Tree, Inc.</p>
+        <p class="serif-display text-gray-700 text-lg max-w-sm mt-4 leading-relaxed">Atlanta's trusted team of certified arborists delivering expert tree care with precision, safety, and genuine craftsmanship throughout the greater Atlanta metro.</p>
+        <p class="serif-display italic text-sm text-gray-500 mt-6">Licensed in Georgia &mdash; Fully Insured</p>
+        <p class="serif-display italic text-sm text-gray-500 mt-1">4.8 Google Rating &middot; 484 Reviews</p>
+        <p class="serif-display text-sm text-gray-500 mt-1">Open 24 Hours &middot; 7 Days a Week</p>
+      </div>
+
+      <!-- Col 2: Service Areas -->
+      <div>
+        <h4 class="serif-display tracking-wide text-sm pb-4 border-b border-gray-300 mb-4 font-semibold uppercase" style="font-variant: small-caps;">Service Areas</h4>
+        <ul class="space-y-2">
+          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Atlanta, GA</a></li>
+          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Decatur</a></li>
+          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Marietta</a></li>
+          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Sandy Springs</a></li>
+          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Smyrna</a></li>
+          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Tucker</a></li>
+          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Chamblee</a></li>
+          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Norcross</a></li>
+          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">East Point</a></li>
+          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">College Park</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Services -->
+      <div>
+        <h4 class="serif-display tracking-wide text-sm pb-4 border-b border-gray-300 mb-4 font-semibold uppercase" style="font-variant: small-caps;">Services</h4>
+        <ul class="space-y-2">
+          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Consultation</a></li>
+          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Assessment</a></li>
+          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Installation</a></li>
+          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Repair</a></li>
+          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Specialty Work</a></li>
+          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Custom Projects</a></li>
+          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Premium Service</a></li>
+          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Maintenance Plans</a></li>
+          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Emergency Service</a></li>
+          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Inspections</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Company + Contact -->
+      <div>
+        <h4 class="serif-display tracking-wide text-sm pb-4 border-b border-gray-300 mb-4 font-semibold uppercase" style="font-variant: small-caps;">Company</h4>
+        <ul class="space-y-2 mb-8">
+          <li><a href="#home" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Home</a></li>
+          <li><a href="#about" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">About</a></li>
+          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Services</a></li>
+          <li><a href="#gallery" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Gallery</a></li>
+          <li><a href="#reviews" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Reviews</a></li>
+          <li><a href="#faq" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">FAQ</a></li>
+          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Contact</a></li>
+        </ul>
+        <h4 class="serif-display tracking-wide text-sm pb-4 border-b border-gray-300 mb-4 font-semibold uppercase" style="font-variant: small-caps;">Contact</h4>
+        <a href="tel:4047995472" class="serif-display text-lg text-[#1E3A5F] font-semibold block hover:underline">(404) 799-5472</a>
+        <p class="serif-display text-sm text-gray-600 mt-3 leading-relaxed">
+          2158 Bolton Rd NW<br>
+          Atlanta, GA 30318
+        </p>
+        <p class="serif-display text-sm text-gray-500 mt-3">Open 24 Hours Daily</p>
+        <p class="serif-display text-xs text-gray-400 mt-1" id="live-clock"></p>
+      </div>
+
+    </div>
+
+    <!-- Bottom row -->
+    <div class="py-8 border-t border-gray-300 px-8 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="serif-display italic text-gray-500 text-sm">&copy; 2025 Boutte Tree, Inc. &mdash; All rights reserved. Atlanta, GA.</p>
+    </div>
+  </footer>
+
+  <script>
+  // Nav scroll shadow
+  (function(){
+    const nav = document.querySelector('nav');
+    if (!nav) return;
+    window.addEventListener('scroll', () => nav.classList.toggle('shadow-md', window.scrollY > 50));
+  })();
+
+  // Hamburger
+  (function(){
+    const ham = document.getElementById('hamburger');
+    const menu = document.getElementById('mobile-menu');
+    if (ham && menu) ham.addEventListener('click', () => menu.classList.toggle('hidden'));
+    document.querySelectorAll('.mobile-nav-link').forEach(a => {
+      a.addEventListener('click', () => { if (menu) menu.classList.add('hidden'); });
+    });
+  })();
+
+  // TABS
+  (function(){
+    const buttons = Array.from(document.querySelectorAll('.tab-btn'));
+    const panels = Array.from(document.querySelectorAll('.tab-panel'));
+    if (!buttons.length || !panels.length) return;
+    function showByIndex(idx) {
+      panels.forEach(p => p.classList.add('hidden'));
+      buttons.forEach(b => { b.classList.remove('active-tab'); b.classList.add('inactive-tab'); });
+      if (panels[idx]) panels[idx].classList.remove('hidden');
+      if (buttons[idx]) { buttons[idx].classList.add('active-tab'); buttons[idx].classList.remove('inactive-tab'); }
+    }
+    function showById(id) { const i = panels.findIndex(p => p.id === id); if (i >= 0) showByIndex(i); }
+    buttons.forEach((btn, idx) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const t = btn.getAttribute('data-target');
+        if (t) showById(t); else showByIndex(idx);
+      });
+    });
+    window.showTab = function(id){ showById(id); };
+    if (!panels.some(p => !p.classList.contains('hidden'))) showByIndex(0);
+  })();
+
+  // Counters
+  function animateCount(el, target, suffix) {
+    let start = 0;
+    const duration = 2000, steps = 60, inc = target / steps;
+    const t = setInterval(() => {
+      start += inc;
+      if (start >= target) { el.textContent = target + (suffix || ''); clearInterval(t); }
+      else el.textContent = Math.floor(start) + (suffix || '');
+    }, duration / steps);
+  }
+  const statObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const t = parseInt(e.target.dataset.count);
+        const s = e.target.dataset.suffix || '';
+        if (t) animateCount(e.target, t, s);
+        statObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('[data-count]').forEach(el => statObs.observe(el));
+
+  // Section reveal
+  (function(){
+    const sections = document.querySelectorAll('.animate-section');
+    if (!sections.length) return;
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('is-pending');
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    sections.forEach(el => {
+      const r = el.getBoundingClientRect();
+      const inView = r.top < window.innerHeight && r.bottom > 0;
+      if (inView) el.classList.add('is-visible');
+      else { el.classList.add('is-pending'); obs.observe(el); }
+    });
+    setTimeout(() => {
+      document.querySelectorAll('.animate-section.is-pending').forEach(el => {
+        el.classList.remove('is-pending'); el.classList.add('is-visible');
+      });
+    }, 2500);
+  })();
+
+  // Hash-click reveal
+  (function(){
+    function revealTarget() {
+      const hash = window.location.hash;
+      if (!hash || hash.length < 2) return;
+      try {
+        const target = document.querySelector(hash);
+        if (target && target.classList.contains('animate-section')) {
+          target.classList.remove('is-pending');
+          target.classList.add('is-visible');
+        }
+      } catch(e) {}
+    }
+    window.addEventListener('hashchange', revealTarget);
+    setTimeout(revealTarget, 100);
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', () => {
+        const hash = a.getAttribute('href');
+        if (hash && hash.length > 1) {
+          try {
+            const target = document.querySelector(hash);
+            if (target && target.classList.contains('animate-section')) {
+              target.classList.remove('is-pending');
+              target.classList.add('is-visible');
+            }
+          } catch(e) {}
+        }
+      });
+    });
+  })();
+
+  // Live clock
+  function updateClock() {
+    const el = document.getElementById('live-clock');
+    if (el) el.textContent = 'Atlanta - ' + new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+
+  // Lucide
+  (function(){
+    const render = () => { if (window.lucide) window.lucide.createIcons(); };
+    if (window.lucide) render();
+    else document.addEventListener('DOMContentLoaded', render);
+    setTimeout(render, 500);
+    setTimeout(render, 1500);
+  })();
+  </script>
+
+</body>
+</html>

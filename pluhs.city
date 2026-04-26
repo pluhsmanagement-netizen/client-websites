@@ -641,8 +641,10 @@ section {
   width: 100%;
   border: 0;
 }
+.music-card-feature { grid-column: 1 / -1; }
 @media (min-width: 800px) {
   .music-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .music-card-feature { grid-column: 1 / -1; }
 }
 
 /* ─── Paintings ─── */
@@ -1174,7 +1176,7 @@ section {
               listen now
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </a>
-            <a href="#" class="btn btn-ghost">spotify</a>
+            <a href="https://soundcloud.com/pluhs" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">soundcloud</a>
           </div>
         </div>
       </div>
@@ -1198,42 +1200,40 @@ section {
     </div>
 
     <div class="music-grid">
-      <!-- Music card 1 — Spotify embed example -->
-      <div class="music-card reveal">
+      <!-- Featured: full profile player — auto-shows your latest tracks -->
+      <div class="music-card music-card-feature reveal">
         <div class="music-card-meta">
           <span class="music-card-num">/ 01</span>
-          <span class="music-card-tag">spotify · single</span>
+          <span class="music-card-tag">soundcloud · catalog</span>
         </div>
-        <!-- REPLACE the src with your actual Spotify track/album embed URL.
-             Get it from: spotify track → ⋯ → share → embed track -->
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4cOdK2wGLETKBW3PvgPWqT?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <!-- This embed shows your full SoundCloud profile. As you upload tracks, they appear here. -->
+        <iframe width="100%" height="400" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pluhs&color=%23cc9a99&inverse=true&auto_play=false&show_user=true&hide_related=true&show_comments=false&show_reposts=false&visual=true"></iframe>
       </div>
 
-      <!-- Music card 2 — SoundCloud embed example -->
+      <!-- Individual tracks — SWAP THESE in once tracks are uploaded.
+           To get the embed URL: SoundCloud track → Share → Embed → copy iframe → grab the src URL -->
       <div class="music-card reveal">
         <div class="music-card-meta">
           <span class="music-card-num">/ 02</span>
-          <span class="music-card-tag">soundcloud · loosie</span>
+          <span class="music-card-tag">latest single</span>
         </div>
-        <!-- REPLACE the url= param with your actual SoundCloud track URL.
-             Get it from: soundcloud track → share → embed → copy iframe -->
-        <iframe width="100%" height="166" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/293&color=%23cc9a99&inverse=true&auto_play=false&show_user=false"></iframe>
+        <iframe width="100%" height="166" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pluhs&color=%23cc9a99&inverse=true&auto_play=false&show_user=false&hide_related=true"></iframe>
       </div>
 
       <div class="music-card reveal">
         <div class="music-card-meta">
           <span class="music-card-num">/ 03</span>
-          <span class="music-card-tag">spotify · ep</span>
+          <span class="music-card-tag">loosie</span>
         </div>
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/2noRn2Aes5aoNVsU6iWThc?utm_source=generator&theme=0" width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe width="100%" height="166" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pluhs&color=%23cc9a99&inverse=true&auto_play=false&show_user=false&hide_related=true"></iframe>
       </div>
 
       <div class="music-card reveal">
         <div class="music-card-meta">
           <span class="music-card-num">/ 04</span>
-          <span class="music-card-tag">unreleased · soundcloud</span>
+          <span class="music-card-tag">unreleased</span>
         </div>
-        <iframe width="100%" height="166" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/294&color=%23cc9a99&inverse=true&auto_play=false&show_user=false"></iframe>
+        <iframe width="100%" height="166" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pluhs&color=%23cc9a99&inverse=true&auto_play=false&show_user=false&hide_related=true"></iframe>
       </div>
     </div>
   </div>
@@ -1482,30 +1482,22 @@ section {
     </div>
 
     <div class="footer-platforms">
-      <a href="#" class="platform-link" aria-label="spotify">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-        spotify
-      </a>
-      <a href="#" class="platform-link" aria-label="apple music">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.997 6.124c0-.738-.065-1.47-.24-2.19-.317-1.31-1.062-2.31-2.18-3.043C21.003.517 20.373.285 19.7.164c-.517-.093-1.038-.135-1.564-.15-.04-.003-.083-.01-.124-.013H5.988c-.152.01-.303.017-.455.026C4.786.07 4.043.15 3.34.428 2.004.958 1.04 1.88.475 3.208c-.192.448-.292.925-.363 1.408-.056.392-.088.785-.1 1.18 0 .032-.007.062-.01.093v12.223c.01.14.017.283.027.424.05.815.193 1.612.547 2.355.65 1.36 1.71 2.27 3.116 2.79.625.23 1.273.36 1.938.42.27.024.541.034.812.05.014.001.031.005.045.008h12.224c.4-.024.802-.034 1.2-.078.68-.072 1.337-.234 1.96-.518 1.36-.625 2.282-1.673 2.797-3.082.235-.642.366-1.31.428-1.99.024-.235.034-.47.05-.706v-.025c.002-.04.008-.082.01-.123V6.247c-.002-.04-.008-.082-.01-.123zm-9.105 8.66c-.114.92-.71 1.605-1.61 1.79-.917.193-1.752.06-2.5-.524-.76-.594-1.083-1.388-.96-2.348.12-.954.74-1.633 1.65-1.812.918-.18 1.752-.05 2.498.527.76.583 1.084 1.378.962 2.337z"/></svg>
-        apple music
-      </a>
-      <a href="#" class="platform-link" aria-label="soundcloud">
+      <a href="https://soundcloud.com/pluhs" target="_blank" rel="noopener noreferrer" class="platform-link" aria-label="soundcloud">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.1.101.1.05 0 .09-.041.099-.1l.265-2.105-.265-2.154c0-.057-.045-.1-.099-.1zm-.677.892c-.05 0-.092.04-.1.099L.21 14.479l.188 1.243c.008.058.049.099.099.099.05 0 .09-.041.099-.099l.222-1.243-.222-1.263c-.009-.058-.05-.099-.099-.099zm1.405-1.135c-.064 0-.115.052-.123.118l-.221 2.405.221 2.317c.008.067.059.117.123.117.062 0 .115-.05.123-.117l.252-2.317-.252-2.405c-.008-.066-.061-.118-.123-.118zm.728-.063c-.07 0-.123.057-.131.13l-.205 2.475.205 2.395c.008.072.06.128.131.128.07 0 .123-.057.13-.128l.234-2.395-.234-2.475c-.007-.073-.06-.13-.13-.13zm.745-.34c-.077 0-.139.063-.146.144l-.193 2.834.193 2.405c.008.078.069.142.146.142.077 0 .138-.064.146-.142l.219-2.405-.219-2.834c-.008-.081-.069-.144-.146-.144zm.764.057c-.085 0-.156.068-.165.157l-.18 2.764.18 2.402c.009.085.08.155.165.155s.157-.07.166-.155l.205-2.402-.205-2.764c-.009-.089-.08-.157-.166-.157zm.851-.215c-.092 0-.171.077-.18.173l-.165 2.984.165 2.385c.009.092.088.169.18.169.092 0 .172-.077.181-.169l.187-2.385-.187-2.984c-.009-.096-.089-.173-.181-.173zm.842-.077c-.1 0-.184.084-.193.187l-.146 3.061.146 2.371c.009.099.093.183.193.183s.184-.084.192-.183l.166-2.371-.166-3.061c-.008-.103-.092-.187-.192-.187zm.857-.1c-.107 0-.196.09-.205.198l-.131 3.16.131 2.354c.009.108.098.198.205.198.107 0 .196-.09.204-.198l.149-2.354-.149-3.16c-.008-.108-.097-.198-.204-.198zm.88-.026c-.115 0-.21.094-.219.21l-.117 3.183.117 2.336c.009.115.104.21.219.21.115 0 .209-.095.218-.21l.131-2.336-.131-3.183c-.009-.116-.103-.21-.218-.21zm.886.005c-.122 0-.224.1-.232.222l-.105 3.179.105 2.318c.008.123.11.224.232.224.123 0 .224-.101.232-.224l.117-2.318-.117-3.179c-.008-.122-.109-.222-.232-.222zm.898-.087c-.13 0-.237.105-.245.235l-.092 3.265.092 2.299c.008.13.115.236.245.236.13 0 .237-.106.245-.236l.103-2.299-.103-3.265c-.008-.13-.115-.235-.245-.235zm.911-.038c-.137 0-.25.112-.258.249l-.078 3.302.078 2.281c.008.138.121.249.258.249.137 0 .25-.111.258-.249l.087-2.281-.087-3.302c-.008-.137-.121-.249-.258-.249zm.929.017c-.145 0-.263.118-.27.262l-.066 3.285.066 2.262c.007.145.125.262.27.262.145 0 .263-.117.271-.262l.072-2.262-.072-3.285c-.008-.144-.126-.262-.271-.262zm6.79-3.31c-.494 0-.97.099-1.404.275C15.515 6.057 14.046 5 12.32 5c-1.97 0-3.554 1.4-3.71 3.293v.001c-.005.06-.025.117-.025.18v8.16c0 .064.014.124.024.184l.002.024c.156 1.892 1.74 3.293 3.71 3.293h7.99c2.038 0 3.69-1.65 3.69-3.69 0-2.039-1.65-3.69-3.689-3.69z"/></svg>
         soundcloud
       </a>
-      <a href="#" class="platform-link" aria-label="instagram">
+      <a href="https://instagram.com/pluhs.city" target="_blank" rel="noopener noreferrer" class="platform-link" aria-label="instagram">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         instagram
       </a>
-      <a href="#" class="platform-link" aria-label="youtube">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        youtube
-      </a>
-      <a href="#" class="platform-link" aria-label="tiktok">
+      <a href="https://tiktok.com/@itspluhs" target="_blank" rel="noopener noreferrer" class="platform-link" aria-label="tiktok">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.66a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.09z"/></svg>
         tiktok
       </a>
+      <span class="platform-link platform-soon" aria-label="spotify coming soon" style="opacity: 0.4; cursor: default;">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+        spotify · soon
+      </span>
     </div>
 
     <div class="footer-bottom">

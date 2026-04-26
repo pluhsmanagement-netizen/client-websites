@@ -1,845 +1,559 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boutte Tree, Inc. — Atlanta, GA Tree Services</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Manrope:wght@400;500&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-  <style>
-    html, body { overflow-x: hidden; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Manrope', sans-serif; }
-    h1,h2,h3,h4,h5,h6,.heading { font-family: 'Inter', sans-serif; }
-    .serif-display { font-family: 'Playfair Display', serif; }
-    .ticker-track { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
-    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    .marquee-track { display: flex; animation: marquee 40s linear infinite; }
-    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    details summary { list-style: none; cursor: pointer; }
-    details summary::-webkit-details-marker { display: none; }
-    .tab-btn { cursor: pointer; transition: all 0.2s ease; }
-    .tab-btn.active-tab { background-color: #1E3A5F; color: white; }
-    .tab-btn.inactive-tab { background-color: white; color: #6b7280; border: 1px solid #e5e7eb; }
-    .tab-panel { display: block; }
-    .tab-panel.hidden { display: none !important; }
-    .img-hover-wrap { overflow: hidden; }
-    .img-hover-wrap img { transition: transform 0.7s ease; }
-    .img-hover-wrap:hover img { transform: scale(1.05); }
-    .arrow-cta { border-bottom: 2px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s ease; }
-    .arrow-cta:hover { gap: 14px; }
-    .dotted-leader { flex: 1; border-bottom: 1px dotted currentColor; margin: 0 1rem; opacity: 0.3; align-self: end; padding-bottom: 0.5rem; }
-    section { scroll-margin-top: 96px; }
-    .animate-section { opacity: 1; transform: none; transition: opacity 0.6s ease, transform 0.6s ease; }
-    .animate-section.is-pending { opacity: 0; transform: translateY(24px); }
-    .animate-section.is-visible { opacity: 1; transform: none; }
-    .animate-section:target,
-    .animate-section.is-pending:target { opacity: 1 !important; transform: none !important; }
-    .award-badge { filter: grayscale(100%); transition: filter 0.3s ease; }
-    .award-badge:hover { filter: grayscale(0%); }
-    .service-rule { border-top: 1px solid #e5e7eb; }
-    .review-compact { border-top: 1px solid #e5e7eb; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Boutte Tree — Board Certified Master Arborists serving Atlanta since 2003. Plant Health Care, Consultations, Commercial & Residential Tree Services." />
+<meta name="theme-color" content="#1B4332" />
+<title>Boutte Tree | Atlanta's Master Arborists Since 2003</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --green-900: #0F2E1E;
+  --green-800: #1B4332;
+  --green-700: #2D6A4F;
+  --green-600: #40916C;
+  --green-50:  #ECF1ED;
+  --char-900:  #0E0E0F;
+  --char-800:  #1C1E1D;
+  --char-700:  #2A2D2C;
+  --stone-600: #5A5F5C;
+  --stone-400: #8B918D;
+  --stone-200: #D5D7D3;
+  --stone-100: #E8EAE6;
+  --bone:      #F2F1EC;
+  --paper:     #FFFFFF;
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --container: 1240px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--char-800);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+::selection { background: var(--green-800); color: #fff; }
+.container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+
+.utility-bar { background: var(--char-900); color: rgba(255,255,255,0.85); font-size: 12px; letter-spacing: 0.06em; }
+.utility-bar .container { display: flex; justify-content: space-between; align-items: center; padding: 10px 32px; flex-wrap: wrap; gap: 8px; }
+.utility-left { display: flex; align-items: center; gap: 14px; }
+.utility-left .pill { background: var(--green-700); color: #fff; padding: 2px 10px; border-radius: 999px; font-weight: 600; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+.utility-right { display: flex; gap: 22px; align-items: center; }
+.utility-right a { display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s var(--ease); }
+.utility-right a:hover { color: var(--green-600); }
+
+.site-header { position: sticky; top: 0; background: var(--paper); border-bottom: 1px solid var(--stone-100); z-index: 100; transition: box-shadow 0.3s var(--ease); }
+.site-header.scrolled { box-shadow: 0 1px 0 var(--stone-100), 0 8px 30px rgba(14, 14, 15, 0.04); }
+.nav-container { max-width: var(--container); margin: 0 auto; padding: 18px 32px; display: flex; align-items: center; gap: 32px; }
+.logo-link { flex-shrink: 0; }
+.logo-img { height: 56px; width: auto; max-width: 240px; object-fit: contain; }
+.primary-nav { display: flex; gap: 32px; margin-left: auto; }
+.primary-nav a { font-size: 14px; font-weight: 500; letter-spacing: 0.02em; color: var(--char-800); padding: 6px 0; position: relative; transition: color 0.2s var(--ease); }
+.primary-nav a::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 0; height: 2px; background: var(--green-700); transition: width 0.3s var(--ease); }
+.primary-nav a:hover { color: var(--green-800); }
+.primary-nav a:hover::after { width: 100%; }
+.nav-cta { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: var(--green-800); color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 2px; transition: background 0.2s var(--ease); }
+.nav-cta:hover { background: var(--green-900); }
+.nav-toggle { display: none; background: transparent; border: 0; width: 32px; height: 32px; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; margin-left: auto; }
+.nav-toggle span { display: block; width: 24px; height: 2px; background: var(--char-800); transition: transform 0.3s var(--ease), opacity 0.3s; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-menu { display: none; }
+.mobile-menu.open { display: flex; flex-direction: column; padding: 16px 32px 24px; border-top: 1px solid var(--stone-100); }
+.mobile-menu a { padding: 14px 0; font-size: 16px; font-weight: 500; border-bottom: 1px solid var(--stone-100); }
+.mobile-menu a:last-child { border-bottom: 0; }
+.mobile-cta { margin-top: 12px; background: var(--green-800); color: #fff !important; text-align: center; border-radius: 2px; padding: 14px !important; }
+
+.hero { position: relative; padding: 100px 0 120px; background: var(--bone); overflow: hidden; border-bottom: 1px solid var(--stone-200); }
+.hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(to right, var(--stone-200) 1px, transparent 1px); background-size: 80px 100%; opacity: 0.4; pointer-events: none; }
+.hero-grid { position: relative; display: grid; grid-template-columns: 1.3fr 1fr; gap: 80px; align-items: center; }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green-800); margin-bottom: 28px; padding: 8px 14px; background: rgba(27, 67, 50, 0.08); border-left: 3px solid var(--green-700); }
+.hero-title { font-family: var(--font-display); font-weight: 600; font-size: clamp(44px, 6.5vw, 84px); line-height: 1.02; letter-spacing: -0.02em; color: var(--char-900); margin-bottom: 28px; max-width: 14ch; }
+.hero-title .accent { color: var(--green-800); }
+.hero-sub { font-size: 18px; line-height: 1.6; color: var(--stone-600); max-width: 540px; margin-bottom: 40px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 56px; }
+
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; border: 2px solid transparent; cursor: pointer; transition: all 0.25s var(--ease); white-space: nowrap; }
+.btn-primary { background: var(--green-800); color: #fff; }
+.btn-primary:hover { background: var(--green-900); transform: translateY(-2px); }
+.btn-primary svg { transition: transform 0.3s var(--ease); }
+.btn-primary:hover svg { transform: translateX(4px); }
+.btn-ghost { background: transparent; color: var(--char-900); border-color: var(--char-900); }
+.btn-ghost:hover { background: var(--char-900); color: #fff; }
+.btn-light { background: #fff; color: var(--green-900); }
+.btn-light:hover { transform: translateY(-2px); }
+.btn-outline-light { background: transparent; color: #fff; border-color: rgba(255,255,255,0.3); }
+.btn-outline-light:hover { background: rgba(255,255,255,0.06); border-color: #fff; }
+
+.hero-meta { display: grid; grid-template-columns: repeat(3, auto); gap: 36px; padding-top: 32px; border-top: 1px solid var(--stone-200); max-width: 600px; }
+.hero-meta .meta-item { display: flex; flex-direction: column; gap: 4px; }
+.hero-meta .meta-num { font-family: var(--font-display); font-weight: 600; font-size: 32px; line-height: 1; color: var(--green-800); }
+.hero-meta .meta-label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--stone-600); }
+
+.hero-visual { position: relative; aspect-ratio: 4/5; background: var(--char-900); overflow: hidden; }
+.hero-visual::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 20%, rgba(64, 145, 108, 0.15) 0%, transparent 50%), radial-gradient(circle at 70% 80%, rgba(45, 106, 79, 0.20) 0%, transparent 60%); }
+.hero-visual svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero-visual-stamp { position: absolute; bottom: 24px; left: 24px; right: 24px; display: flex; justify-content: space-between; align-items: flex-end; color: rgba(255,255,255,0.85); z-index: 2; }
+.hero-visual-stamp .stamp-label { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
+.hero-visual-stamp .stamp-val { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: #fff; }
+
+.authority { background: var(--char-900); color: #fff; padding: 28px 0; border-bottom: 4px solid var(--green-700); }
+.authority .container { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+.authority-label { font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green-600); flex-shrink: 0; }
+.authority-list { display: flex; flex-wrap: wrap; gap: 28px; list-style: none; }
+.authority-list li { font-size: 13px; font-weight: 500; letter-spacing: 0.04em; color: rgba(255,255,255,0.7); position: relative; padding-left: 18px; }
+.authority-list li::before { content: ''; position: absolute; left: 0; top: 50%; width: 8px; height: 1px; background: var(--green-600); }
+
+.section-head { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: end; margin-bottom: 64px; padding-bottom: 32px; border-bottom: 1px solid var(--stone-200); }
+.section-num { font-family: var(--font-display); font-size: 14px; font-weight: 600; color: var(--green-700); letter-spacing: 0.08em; }
+.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green-700); margin-bottom: 12px; }
+.section-title { font-family: var(--font-display); font-weight: 600; font-size: clamp(34px, 4.4vw, 56px); line-height: 1.05; letter-spacing: -0.015em; color: var(--char-900); }
+.section-lede { font-size: 17px; line-height: 1.6; color: var(--stone-600); margin-top: 16px; max-width: 560px; }
+
+.services { padding: 120px 0; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.service-card { border-right: 1px solid var(--stone-200); border-bottom: 1px solid var(--stone-200); padding: 44px 36px; position: relative; transition: background 0.3s var(--ease); }
+.service-card:nth-child(3n) { border-right: 0; }
+.service-card:nth-last-child(-n+3) { border-bottom: 0; }
+.service-card:hover { background: var(--green-50); }
+.service-num { font-family: var(--font-display); font-size: 13px; font-weight: 600; color: var(--green-700); letter-spacing: 0.1em; margin-bottom: 24px; }
+.service-icon { width: 44px; height: 44px; color: var(--green-800); margin-bottom: 20px; }
+.service-icon svg { width: 100%; height: 100%; }
+.service-card h3 { font-family: var(--font-display); font-weight: 600; font-size: 24px; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 12px; color: var(--char-900); }
+.service-card p { font-size: 15px; line-height: 1.6; color: var(--stone-600); }
+
+.process { padding: 120px 0; background: var(--char-900); color: #fff; }
+.process .section-title { color: #fff; }
+.process .eyebrow { color: var(--green-600); }
+.process .section-lede { color: rgba(255,255,255,0.7); }
+.process .section-head { border-bottom-color: rgba(255,255,255,0.1); }
+.process-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,0.1); }
+.process-step { padding: 48px 32px 0; border-right: 1px solid rgba(255,255,255,0.1); }
+.process-step:last-child { border-right: 0; }
+.process-step .step-num { font-family: var(--font-display); font-size: 56px; font-weight: 600; line-height: 1; color: var(--green-600); margin-bottom: 20px; }
+.process-step h3 { font-family: var(--font-display); font-weight: 600; font-size: 22px; margin-bottom: 12px; color: #fff; letter-spacing: -0.01em; }
+.process-step p { font-size: 15px; line-height: 1.65; color: rgba(255,255,255,0.7); }
+.process-step a { color: var(--green-600); border-bottom: 1px solid var(--green-600); padding-bottom: 1px; }
+
+.about { padding: 120px 0; background: var(--bone); border-top: 1px solid var(--stone-200); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.about-image { position: relative; aspect-ratio: 4/5; background: var(--char-800); overflow: hidden; }
+.about-image-pattern { position: absolute; inset: 0; background: radial-gradient(circle at 30% 30%, rgba(64, 145, 108, 0.18) 0%, transparent 50%), radial-gradient(circle at 70% 70%, rgba(27, 67, 50, 0.5) 0%, transparent 60%); }
+.about-image svg.tree-mark { position: absolute; inset: 0; margin: auto; width: 65%; height: auto; color: rgba(64, 145, 108, 0.6); }
+.about-image-stamp { position: absolute; top: 24px; left: 24px; color: rgba(255,255,255,0.7); font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.about-image-stamp::before { content: ''; display: inline-block; width: 28px; height: 1px; background: rgba(255,255,255,0.5); vertical-align: middle; margin-right: 10px; }
+.about-cred { position: absolute; bottom: 24px; right: 24px; background: var(--paper); padding: 14px 20px; border-left: 4px solid var(--green-700); }
+.about-cred strong { display: block; font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--char-900); line-height: 1.2; }
+.about-cred span { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--stone-600); }
+.about-copy .section-title { text-align: left; margin-bottom: 24px; }
+.about-copy p { font-size: 16px; line-height: 1.7; color: var(--stone-600); margin-bottom: 16px; }
+.about-quote { font-family: var(--font-display); font-size: 22px; line-height: 1.4; color: var(--char-900); padding: 24px 0 24px 24px; border-left: 3px solid var(--green-700); margin: 28px 0; font-weight: 500; }
+.about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--stone-200); }
+.stat .stat-num { font-family: var(--font-display); font-size: 36px; font-weight: 600; line-height: 1; color: var(--char-900); margin-bottom: 6px; }
+.stat .stat-num span { font-size: 22px; color: var(--green-700); }
+.stat .stat-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--stone-600); }
+
+.cta { padding: 120px 32px; background: var(--green-900); color: #fff; position: relative; overflow: hidden; }
+.cta::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 80px 100%; pointer-events: none; }
+.cta-inner { position: relative; max-width: var(--container); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.cta-title { font-family: var(--font-display); font-weight: 600; font-size: clamp(36px, 5vw, 64px); line-height: 1.05; letter-spacing: -0.015em; color: #fff; margin: 14px 0 20px; }
+.cta-sub { font-size: 17px; line-height: 1.6; color: rgba(255, 255, 255, 0.7); }
+.cta-actions { display: flex; flex-direction: column; gap: 14px; }
+.cta-actions .btn { justify-content: center; }
+
+.site-footer { background: var(--char-900); color: rgba(255,255,255,0.65); padding: 80px 0 32px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 56px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.footer-brand p { font-size: 14px; line-height: 1.7; margin-top: 20px; max-width: 340px; }
+.footer-logo { height: 60px; width: auto; margin-bottom: 8px; background: #fff; padding: 10px 14px; border-radius: 4px; max-width: 240px; object-fit: contain; }
+.footer-social { display: flex; gap: 10px; margin-top: 24px; }
+.footer-social a { width: 40px; height: 40px; border-radius: 2px; border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.7); transition: all 0.2s var(--ease); }
+.footer-social a:hover { background: var(--green-700); border-color: var(--green-700); color: #fff; }
+.footer-col h4 { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #fff; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.footer-col a, .footer-col p { display: block; font-size: 14px; line-height: 2; color: rgba(255,255,255,0.6); transition: color 0.2s var(--ease); }
+.footer-col a:hover { color: var(--green-600); }
+.footer-address { padding-top: 8px; }
+.footer-bottom { padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; letter-spacing: 0.04em; color: rgba(255,255,255,0.4); }
+
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 960px) {
+  .primary-nav, .nav-cta { display: none; }
+  .nav-toggle { display: flex; }
+  .utility-bar { display: none; }
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .hero-visual { aspect-ratio: 16/10; max-width: 600px; }
+  .section-head { grid-template-columns: 1fr; gap: 16px; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .service-card:nth-child(3n) { border-right: 1px solid var(--stone-200); }
+  .service-card:nth-child(2n) { border-right: 0; }
+  .service-card:nth-last-child(-n+3) { border-bottom: 1px solid var(--stone-200); }
+  .service-card:nth-last-child(-n+2) { border-bottom: 0; }
+  .process-grid { grid-template-columns: 1fr; }
+  .process-step { border-right: 0; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 40px 0; }
+  .process-step:last-child { border-bottom: 0; }
+  .about-grid { grid-template-columns: 1fr; gap: 60px; }
+  .about-image { max-width: 480px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .footer-brand { grid-column: 1 / -1; }
+  .cta-inner { grid-template-columns: 1fr; gap: 40px; }
+  .cta-actions { flex-direction: row; flex-wrap: wrap; }
+}
+@media (max-width: 600px) {
+  .container, .nav-container { padding: 0 20px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card { border-right: 0 !important; border-bottom: 1px solid var(--stone-200) !important; }
+  .service-card:last-child { border-bottom: 0 !important; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .about-stats { grid-template-columns: 1fr; gap: 16px; }
+  .hero-meta { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .services, .process, .about, .cta { padding: 80px 0; }
+  .cta { padding: 80px 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+</style>
 </head>
-<body class="bg-[#f8f8f5] text-gray-900">
+<body>
 
-  <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#f8f8f5] transition-shadow duration-300">
-    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-20">
-      <a href="#home" class="serif-display italic text-2xl text-[#1E3A5F] font-bold tracking-tight">Boutte Tree, Inc.</a>
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#home" class="serif-display text-sm text-gray-600 hover:text-[#1E3A5F] transition">Home</a>
-        <a href="#about" class="serif-display text-sm text-gray-600 hover:text-[#1E3A5F] transition">About</a>
-        <a href="#services" class="serif-display text-sm text-gray-600 hover:text-[#1E3A5F] transition">Services</a>
-        <a href="#gallery" class="serif-display text-sm text-gray-600 hover:text-[#1E3A5F] transition">Gallery</a>
-        <a href="#reviews" class="serif-display text-sm text-gray-600 hover:text-[#1E3A5F] transition">Reviews</a>
-        <a href="#faq" class="serif-display text-sm text-gray-600 hover:text-[#1E3A5F] transition">FAQ</a>
-        <a href="#contact" class="serif-display text-sm text-gray-600 hover:text-[#1E3A5F] transition">Contact</a>
-        <a href="tel:4047995472" class="serif-display text-sm bg-[#1E3A5F] text-white px-5 py-2 rounded-full hover:bg-[#162d4a] transition">(404) 799-5472</a>
-      </div>
-      <button id="hamburger" class="md:hidden text-gray-700 p-2">
-        <i data-lucide="menu" class="w-6 h-6"></i>
-      </button>
+<div class="utility-bar">
+  <div class="container">
+    <div class="utility-left">
+      <span class="pill">ISA Master Arborist</span>
+      <span>Serving Atlanta &amp; Metro Area Since 2003</span>
     </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden bg-[#f8f8f5] border-t border-gray-200 md:hidden">
-      <a href="#home" class="mobile-nav-link serif-display block py-3 px-4 border-b border-gray-100 text-gray-700 hover:text-[#1E3A5F]">Home</a>
-      <a href="#about" class="mobile-nav-link serif-display block py-3 px-4 border-b border-gray-100 text-gray-700 hover:text-[#1E3A5F]">About</a>
-      <a href="#services" class="mobile-nav-link serif-display block py-3 px-4 border-b border-gray-100 text-gray-700 hover:text-[#1E3A5F]">Services</a>
-      <a href="#gallery" class="mobile-nav-link serif-display block py-3 px-4 border-b border-gray-100 text-gray-700 hover:text-[#1E3A5F]">Gallery</a>
-      <a href="#reviews" class="mobile-nav-link serif-display block py-3 px-4 border-b border-gray-100 text-gray-700 hover:text-[#1E3A5F]">Reviews</a>
-      <a href="#faq" class="mobile-nav-link serif-display block py-3 px-4 border-b border-gray-100 text-gray-700 hover:text-[#1E3A5F]">FAQ</a>
-      <a href="#contact" class="mobile-nav-link serif-display block py-3 px-4 border-b border-gray-100 text-gray-700 hover:text-[#1E3A5F]">Contact</a>
-      <div class="px-4 py-4">
-        <a href="tel:4047995472" class="serif-display block text-center bg-[#1E3A5F] text-white px-5 py-3 rounded-full hover:bg-[#162d4a] transition">(404) 799-5472</a>
-      </div>
+    <div class="utility-right">
+      <a href="tel:4047995472"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 404-799-5472</a>
+      <a href="mailto:info@bouttetree.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@bouttetree.com</a>
     </div>
-  </nav>
+  </div>
+</div>
 
-  <!-- HERO -->
-  <section id="home" class="animate-section pt-32 md:pt-40 pb-32 md:pb-40 px-4 md:px-8 lg:px-16 bg-[#f8f8f5] relative">
-    <div class="max-w-7xl mx-auto">
-      <p class="uppercase tracking-widest text-xs text-gray-400 serif-display mb-8">— Home Services, Atlanta GA</p>
-      <h1 class="serif-display text-7xl md:text-9xl font-bold text-[#1E3A5F] leading-none tracking-tight max-w-5xl">
-        Atlanta's<br/><em class="italic">Finest</em><br/>Arborists.
-      </h1>
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between mt-16 gap-8">
-        <div class="flex gap-6 flex-wrap">
-          <div class="flex items-center gap-2">
-            <i data-lucide="shield-check" class="w-5 h-5 text-[#C9A84C]"></i>
-            <span class="serif-display text-sm text-gray-600 italic">Licensed &amp; Insured</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <i data-lucide="clock" class="w-5 h-5 text-[#C9A84C]"></i>
-            <span class="serif-display text-sm text-gray-600 italic">24/7 Emergency Response</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <i data-lucide="star" class="w-5 h-5 text-[#C9A84C]"></i>
-            <span class="serif-display text-sm text-gray-600 italic">4.8 Stars · 484 Reviews</span>
-          </div>
-        </div>
-        <div class="max-w-sm">
-          <p class="serif-display italic text-gray-600 text-base leading-relaxed mb-4">Expert tree care rooted in precision, safety, and respect for Atlanta's urban canopy.</p>
-          <a href="#contact" class="arrow-cta serif-display text-[#1E3A5F] font-semibold text-base">
-            Get a Free Estimate <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+<header class="site-header" id="siteHeader">
+  <div class="nav-container">
+    <a href="#" class="logo-link" aria-label="Boutte Tree home">
+      <img src="data:image/jpeg;base64,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" alt="Boutte Tree" class="logo-img" />
+    </a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Request a Quote</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" id="navToggle"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:4047995472" class="mobile-cta">Call 404-799-5472</a>
+  </div>
+</header>
 
-  <!-- PULL QUOTE / STATS -->
-  <section class="animate-section py-32 md:py-40 px-4 md:px-8 bg-[#1E3A5F] text-center">
-    <div class="max-w-4xl mx-auto">
-      <p class="serif-display text-9xl font-bold text-[#C9A84C] leading-none" data-count="484" data-suffix="+">484+</p>
-      <p class="serif-display italic text-xl text-white/80 mt-6 max-w-xl mx-auto leading-relaxed">Five-star reviews from Atlanta homeowners who trust Boutte Tree with their most valued trees.</p>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="animate-section py-32 md:py-40 px-4 md:px-8 lg:px-16 bg-[#f8f8f5]">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-        <div>
-          <p class="uppercase tracking-widest text-xs text-gray-400 serif-display mb-6">— About Boutte Tree</p>
-          <h2 class="serif-display text-5xl font-bold text-[#1E3A5F] leading-tight">Certified Arborists.<br/><em class="italic">True Professionals.</em></h2>
-          <div class="mt-8 w-16 border-t-2 border-[#C9A84C]"></div>
-          <div class="mt-8 flex gap-6 flex-wrap">
-            <div class="text-center">
-              <p class="serif-display text-3xl font-bold text-[#1E3A5F]">24/7</p>
-              <p class="serif-display text-xs text-gray-500 italic mt-1">Emergency Service</p>
-            </div>
-            <div class="w-px bg-gray-200"></div>
-            <div class="text-center">
-              <p class="serif-display text-3xl font-bold text-[#1E3A5F]">4.8★</p>
-              <p class="serif-display text-xs text-gray-500 italic mt-1">Google Rating</p>
-            </div>
-            <div class="w-px bg-gray-200"></div>
-            <div class="text-center">
-              <p class="serif-display text-3xl font-bold text-[#1E3A5F]">484+</p>
-              <p class="serif-display text-xs text-gray-500 italic mt-1">Five-Star Reviews</p>
-            </div>
-          </div>
-        </div>
-        <div>
-          <p class="serif-display text-gray-700 text-lg leading-relaxed">Boutte Tree, Inc. is Atlanta's trusted team of certified arborists, delivering expert tree care across the greater Atlanta metro with a commitment to safety, ecological stewardship, and genuine craftsmanship. From routine pruning to complex removals near power lines, our ISA-certified professionals bring deep knowledge and care to every project.</p>
-          <blockquote class="serif-display italic text-[#1E3A5F] text-xl leading-relaxed border-l-4 border-[#C9A84C] pl-6 my-8">
-            "There's a difference between a tree guy and an actual legit arborist."
-          </blockquote>
-          <p class="serif-display text-gray-700 text-lg leading-relaxed">We serve residential and commercial clients throughout Atlanta, GA and surrounding communities, offering everything from precision trimming and health assessments to emergency storm response and fertilization programs. Every job, big or small, receives the same meticulous attention that has earned us hundreds of five-star reviews.</p>
-          <div class="mt-10 grid grid-cols-2 gap-4">
-            <div class="flex items-start gap-3">
-              <i data-lucide="check-circle" class="w-5 h-5 text-[#C9A84C] mt-0.5 flex-shrink-0"></i>
-              <span class="serif-display text-sm text-gray-600">ISA Certified Arborists on staff</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <i data-lucide="check-circle" class="w-5 h-5 text-[#C9A84C] mt-0.5 flex-shrink-0"></i>
-              <span class="serif-display text-sm text-gray-600">24/7 emergency tree response</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <i data-lucide="check-circle" class="w-5 h-5 text-[#C9A84C] mt-0.5 flex-shrink-0"></i>
-              <span class="serif-display text-sm text-gray-600">Fully licensed &amp; insured in Georgia</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <i data-lucide="check-circle" class="w-5 h-5 text-[#C9A84C] mt-0.5 flex-shrink-0"></i>
-              <span class="serif-display text-sm text-gray-600">Thorough cleanup after every job</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="animate-section py-20 md:py-28 px-4 md:px-8 lg:px-16 bg-white">
-    <div class="max-w-7xl mx-auto">
-      <div class="mb-10">
-        <p class="uppercase tracking-widest text-xs text-gray-400 serif-display mb-4">— What We Offer</p>
-        <h2 class="serif-display text-5xl font-bold text-[#1E3A5F] leading-tight"><em class="italic">Expert</em> Tree Services<br/>in Atlanta, GA</h2>
-      </div>
-      <div class="flex flex-wrap gap-2 md:flex-nowrap mb-10 tabs-container">
-        <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold serif-display" data-target="tab-panel-1">Our Services</button>
-        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold serif-display" data-target="tab-panel-2">Specialty Work</button>
-        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-3 py-2 md:px-6 md:py-3 rounded-full font-semibold serif-display" data-target="tab-panel-3">Additional Services</button>
-      </div>
-
-      <div id="tab-panel-1" class="tab-panel">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0">
-          <!-- 01 -->
-          <div class="service-rule pt-8 pb-8 pr-0 lg:pr-8 border-b border-gray-100">
-            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">01.</p>
-            <div class="flex items-center gap-3 mb-3">
-              <i data-lucide="sparkles" class="w-5 h-5 text-[#1E3A5F]"></i>
-              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Consultation</h3>
-            </div>
-            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">Our certified arborists provide personalized consultations to assess your trees' health, risks, and care needs. We walk your property with you and offer honest, expert recommendations with no upselling.</p>
-            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
-              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-          <!-- 02 -->
-          <div class="service-rule pt-8 pb-8 px-0 lg:px-8 border-b border-gray-100">
-            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">02.</p>
-            <div class="flex items-center gap-3 mb-3">
-              <i data-lucide="shield-check" class="w-5 h-5 text-[#1E3A5F]"></i>
-              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Assessment</h3>
-            </div>
-            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">We conduct thorough tree health and structural assessments to identify disease, pest activity, or storm damage before it becomes a hazard. Our detailed reports give you a clear picture of your property's tree health.</p>
-            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
-              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-          <!-- 03 -->
-          <div class="service-rule pt-8 pb-8 pl-0 lg:pl-8 border-b border-gray-100">
-            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">03.</p>
-            <div class="flex items-center gap-3 mb-3">
-              <i data-lucide="wrench" class="w-5 h-5 text-[#1E3A5F]"></i>
-              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Installation</h3>
-            </div>
-            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">From sourcing the perfect specimen to expert planting and staking, we handle tree installation with long-term vitality in mind. We match species to your Atlanta soil conditions for lasting results.</p>
-            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
-              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-          <!-- 04 -->
-          <div class="service-rule pt-8 pb-8 pr-0 lg:pr-8 lg:col-span-1">
-            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">04.</p>
-            <div class="flex items-center gap-3 mb-3">
-              <i data-lucide="home" class="w-5 h-5 text-[#1E3A5F]"></i>
-              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Repair</h3>
-            </div>
-            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">Storm damage, split limbs, or declining crowns — our repair services restore structural integrity and beauty to your trees. We use industry-leading cabling and bracing techniques to save trees others might remove.</p>
-            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
-              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div id="tab-panel-2" class="tab-panel hidden">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0">
-          <div class="service-rule pt-8 pb-8 pr-0 lg:pr-8 border-b border-gray-100">
-            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">01.</p>
-            <div class="flex items-center gap-3 mb-3">
-              <i data-lucide="star" class="w-5 h-5 text-[#1E3A5F]"></i>
-              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Specialty Work</h3>
-            </div>
-            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">Complex removals, high-angle rigging, and precision work near power lines, structures, or sensitive landscapes are our specialty. Our crews are trained for the most technically demanding tree jobs in Atlanta.</p>
-            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
-              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-          <div class="service-rule pt-8 pb-8 px-0 lg:px-8 border-b border-gray-100">
-            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">02.</p>
-            <div class="flex items-center gap-3 mb-3">
-              <i data-lucide="sparkles" class="w-5 h-5 text-[#1E3A5F]"></i>
-              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Custom Projects</h3>
-            </div>
-            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">Whether you're designing a new landscape or transforming an existing one, we partner with homeowners and designers on custom tree-focused projects. No scope is too unique for our experienced arborist team.</p>
-            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
-              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-          <div class="service-rule pt-8 pb-8 pl-0 lg:pl-8 border-b border-gray-100">
-            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">03.</p>
-            <div class="flex items-center gap-3 mb-3">
-              <i data-lucide="award" class="w-5 h-5 text-[#1E3A5F]"></i>
-              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Premium Service</h3>
-            </div>
-            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">Our white-glove service tier delivers priority scheduling, senior arborist oversight, and a dedicated project manager for your most important tree care needs. Ideal for estates, commercial properties, and complex landscapes.</p>
-            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
-              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-          <div class="service-rule pt-8 pb-8 pr-0 lg:pr-8">
-            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">04.</p>
-            <div class="flex items-center gap-3 mb-3">
-              <i data-lucide="clock" class="w-5 h-5 text-[#1E3A5F]"></i>
-              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Expedited Service</h3>
-            </div>
-            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">When timing is critical — a sale closing, a storm threat, or an HOA deadline — our expedited scheduling gets your job done fast without compromising quality. Available seven days a week across Atlanta.</p>
-            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
-              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div id="tab-panel-3" class="tab-panel hidden">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0">
-          <div class="service-rule pt-8 pb-8 pr-0 lg:pr-8 border-b border-gray-100">
-            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">01.</p>
-            <div class="flex items-center gap-3 mb-3">
-              <i data-lucide="check-circle" class="w-5 h-5 text-[#1E3A5F]"></i>
-              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Maintenance Plans</h3>
-            </div>
-            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">Our annual and seasonal maintenance plans keep your trees healthy year-round with scheduled pruning, fertilization, and health checkups. Plans are tailored to your specific tree species and property layout.</p>
-            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
-              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-          <div class="service-rule pt-8 pb-8 px-0 lg:px-8 border-b border-gray-100">
-            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">02.</p>
-            <div class="flex items-center gap-3 mb-3">
-              <i data-lucide="shield-check" class="w-5 h-5 text-[#1E3A5F]"></i>
-              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Warranty Coverage</h3>
-            </div>
-            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">We stand behind our work with warranty coverage on select services, giving you peace of mind long after the crew has packed up. Ask your arborist about eligible services at time of estimate.</p>
-            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
-              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-          <div class="service-rule pt-8 pb-8 pl-0 lg:pl-8 border-b border-gray-100">
-            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">03.</p>
-            <div class="flex items-center gap-3 mb-3">
-              <i data-lucide="star" class="w-5 h-5 text-[#1E3A5F]"></i>
-              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Inspections</h3>
-            </div>
-            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">Pre-storm, post-storm, and routine safety inspections by our certified arborists identify hidden risks before they become expensive problems. Inspection reports are detailed and ready for insurance or HOA purposes.</p>
-            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
-              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-          <div class="service-rule pt-8 pb-8 pr-0 lg:pr-8">
-            <p class="serif-display text-4xl font-bold text-[#C9A84C] italic mb-3">04.</p>
-            <div class="flex items-center gap-3 mb-3">
-              <i data-lucide="phone" class="w-5 h-5 text-[#1E3A5F]"></i>
-              <h3 class="serif-display text-2xl font-bold text-[#1E3A5F]">Emergency Service</h3>
-            </div>
-            <p class="serif-display text-gray-600 text-lg leading-relaxed mb-6">Storms don't wait, and neither do we. Boutte Tree's 24/7 emergency crews respond rapidly to downed trees, hazardous limbs, and urgent removals across Atlanta and surrounding communities. We're open every day of the year.</p>
-            <a href="tel:4047995472" class="arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
-              Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery" class="animate-section py-32 md:py-40 px-4 md:px-8 lg:px-16 bg-[#f8f8f5]">
-    <div class="max-w-7xl mx-auto">
-      <div class="flex items-end justify-between mb-12">
-        <div>
-          <p class="uppercase tracking-widest text-xs text-gray-400 serif-display mb-4">— Our Work</p>
-          <h2 class="serif-display text-5xl font-bold text-[#1E3A5F] leading-tight"><em class="italic">The Craft</em><br/>in Detail</h2>
-        </div>
-        <a href="#contact" class="hidden md:flex arrow-cta serif-display text-[#1E3A5F] text-sm font-semibold">
-          Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-eyebrow">EST. 2003 — Atlanta, GA</div>
+      <h1 class="hero-title">Expert tree care from Atlanta's <span class="accent">Master Arborists.</span></h1>
+      <p class="hero-sub">Plant Health Care, certified consultations, and large residential projects — handled with the precision of professionals who've been doing this for over twenty years.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">
+          Request a Consultation
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
+        <a href="tel:4047995472" class="btn btn-ghost">404-799-5472</a>
       </div>
-
-      <!-- Row 1: large + medium -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-        <div class="img-hover-wrap md:col-span-2 rounded-none overflow-hidden">
-          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-sH9x8tbx8G6LEZ9CIdkJ6ly9dLO0budR4Ht3Bz5UI600pR39anWZ7WzZg7gzZypDZRCnm_iiNt65u4oGsIPKzuKu_Dyk1ZwaFFzO14T7asMJduYp7erpQ-pcgm2aJC1gXCEK85CfyfBFfC8cxRFvxc767gISttu09k0XWZPTzNTweoV-UrY1JhdEZIVpwR7ZAlKrbQqpyh9H0uGMbTohVtNjGqHRtDW2TkuZ6p1XANTPOLivBQzlLyj6RBZEICOj6w1mjRcQL72RGqV0SfTF_lUYUZpdAT4LrKaWdq2VPvZA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Boutte Tree precision trimming Atlanta" class="w-full h-80 md:h-[500px] object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-1/800/600'">
-          <p class="serif-display italic text-xs text-gray-400 mt-2">Precision crown pruning, Atlanta residential property</p>
-        </div>
-        <div class="img-hover-wrap rounded-none overflow-hidden">
-          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-tJe4JhbZjm703cCCipPAB4SfRi2s6MDZBeHXUiuAhZP4zHR_rGRlTP8OWvm7vgDsajyzlAtl2dFIrlY8sSdXoluaOP6xNn5GlFYwlBxPDqDBg2-v688W3CjKqiaVUNc-tVUAByRhUWSYiwbmOmRLEPhlmtNjfpR_MDUpIYSnh2kwS7XB8fdGVQFDqGjMs0wllIIiktHAA3PJ9fSOeg4K44ja2ZjVnLXTPDGUOwkh7zt3Sq2_i9yO0GVPfDJowMYHUB3CHlYOWGF0seUgV3mCNRgockQvP9VgfXbhnyRQxobQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Boutte Tree arborist crew at work" class="w-full h-80 md:h-[500px] object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-2/800/600'">
-          <p class="serif-display italic text-xs text-gray-400 mt-2">Expert arborist rigging, Buckhead, Atlanta</p>
-        </div>
-      </div>
-
-      <!-- Row 2: two equal -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-        <div class="img-hover-wrap rounded-none overflow-hidden">
-          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-ujdlX8rdWB1rG4RgSoKRqtylRByUhsmZKm1R77OgHdrrNkJffa1Oeo2Z-lR2jkq79inBtRCILkcGmrMtL4Sug1zR6jJxRqmi7ohs3bBW1YZFGeIP6JOY1gZPqH2L_xJjAu2g94ltxLP-EBIqSWmGKpsKlbywVMmp0tDOiGs6OzTgEdeSzQro7qS7CAbE6Q-pQDMs01LLxHETED-ZRPoT89ARn8vkj9Vivdkg4W7EifQiPobguwxREZ2-FPJbpayIOnG2EnbH4TpU_BdXQPuwcjyw62z6G7CJz4Jo7UH7RBcg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Boutte Tree tree removal Atlanta" class="w-full h-64 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-3/800/600'">
-          <p class="serif-display italic text-xs text-gray-400 mt-2">Controlled tree removal, NW Atlanta</p>
-        </div>
-        <div class="img-hover-wrap rounded-none overflow-hidden">
-          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-u_TLPAwkavBISlD4smNxQehLTJV2qh2LBYG-KYNQIoVRNON16FXts69375-4hl74LMWbTCnBF3ooCdBNt1XRx-YbCuWwOE0fWKdZZ-JqeaL4mdfNX8T_F8bcxcMZdiqKjBZGK4kyZdq7wUoQ1Roer-YKfR4nv1RcljGteTWsZK4ff2sVMhIqzfrIgrrgeth8BaM6wQ5KUzz29XaYkxXTVAWrpi5BDOpcRZvR_xMLxm50TDmoutGV5k4hw0jvbv68lvVIs6I8FXnNnd7D6-3wuDsTgpX0t1jEWnYp1LO9iTcw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Boutte Tree oak pruning Atlanta GA" class="w-full h-64 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-4/800/600'">
-          <p class="serif-display italic text-xs text-gray-400 mt-2">White oak preservation and pruning, Atlanta</p>
-        </div>
-      </div>
-
-      <!-- Row 3: three equal -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="img-hover-wrap rounded-none overflow-hidden">
-          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-tW9UfhJGzB0ZRpBQZf8I5zertuJohrlSHLwIfhA9pN8etCcRFCziDOxdC565_ZDa8n69BJ_kIWa3oAPbOQQPh_5-XZk_CjdR_pp9Ahr4wlCvLTzkd0SwUT2kh66Qy55GYK2biB77JlZxdAnylmrwpzxP9c2b-QPefo-awWcJKmhdr0Q2aD6z5MsyGdOI00PEhjsxdjHlfTTv3MUk-FZ86tHyB_dp6F9dJsU6yLxdLzqU42ePVKf5HA9KJQVf6hsPYFN-zXIm0491l-4jMMYksChgcAjciektwxgEYjZMU5JQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Boutte Tree power line trimming" class="w-full h-56 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-5/800/600'">
-          <p class="serif-display italic text-xs text-gray-400 mt-2">Power line clearance, Atlanta utility corridor</p>
-        </div>
-        <div class="img-hover-wrap rounded-none overflow-hidden">
-          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-ttPDYduZl8AlNxtMs8g4lvLB8QxNJp4hXGONC6a0hxRrh_o7kwns1vWT1p_RcDNu2m9-wg5M2n4ZaYgWJoTz-kzqlAl2eZPJ-OGBv5bzprX_zJyaBJwP6EQBafs5euPSolXy6oYn_3MuJU_U91s001akMCma5XvAnhG1fMNSm6lQCyc8RSlThaUoKkv93Cb7Kg-qdAQ6NPqzDf8rOBrH-rSXc54I0WVe-VcUNyxnnSGfC63w9Rumcv6cCsjIn7N4CIXrLkoBcEiOxUekyKKca-D2kdeqARbskbtJFZ7deVBQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Boutte Tree stump grinding Atlanta" class="w-full h-56 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-6/800/600'">
-          <p class="serif-display italic text-xs text-gray-400 mt-2">Professional stump grinding, Midtown Atlanta</p>
-        </div>
-        <div class="img-hover-wrap rounded-none overflow-hidden">
-          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-u7ruKqXO4h8j8TO7J0a2tmWj89Oma0rQxtoHQH_u8VDb6o4xamPX0YfMs97dXUybUEsC-FIJfiEY6F3y86K1tFIm9DCSbRM3GApGHiKx6tqF06DcbTxKOtvQ9FMqNxLfaacHe79oCS0AR5HOzu81Nv7Fc1WgMMLrQM49SHzNbkSEIuWpQ-WhK_wJrAiY8JxOMZcA0XnxqxgumDB5XewOrP6Jrw0Iv_IIDJAGSQef218Qwyc-Jklg87YlUlmDLbq-Y8Do1PnsQ5WA0BcjBywX0UXTZJ48jr6v8ES3nUqJTHQp_xD8r6ToEbrcBTb-E9SqgX4YtwUjHr6QpAq_VbhVw172PyaMSQeXcHxWbhtdCflQ2dpgTnEyzy4edNyueekXMgpvfI6-uF9DK-v8BqGBqmKv2pye2ALTJiqqoys6Wly0RaJPGsxkjjz41Fbtvk&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Boutte Tree magnolia pruning" class="w-full h-56 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-7/800/600'">
-          <p class="serif-display italic text-xs text-gray-400 mt-2">Magnolia shaping and seasonal care, Atlanta</p>
-        </div>
+      <div class="hero-meta">
+        <div class="meta-item"><div class="meta-num">20+</div><div class="meta-label">Years in Atlanta</div></div>
+        <div class="meta-item"><div class="meta-num">ISA</div><div class="meta-label">Master Arborist</div></div>
+        <div class="meta-item"><div class="meta-num">5★</div><div class="meta-label">Google Rated</div></div>
       </div>
     </div>
-  </section>
-
-  <!-- REVIEWS -->
-  <section id="reviews" class="animate-section py-32 md:py-40 px-4 md:px-8 lg:px-16 bg-white">
-    <div class="max-w-7xl mx-auto">
-      <p class="uppercase tracking-widest text-xs text-gray-400 serif-display text-center mb-4">— Client Reviews</p>
-
-      <!-- Hero quote -->
-      <div class="text-center mb-20">
-        <p class="serif-display text-9xl text-[#C9A84C] leading-none font-bold" style="line-height:0.7;">&ldquo;</p>
-        <blockquote class="serif-display italic text-3xl text-[#1E3A5F] max-w-3xl mx-auto mt-6 leading-relaxed">
-          There's a difference between a tree guy &amp; an actual legit arborist. I chose them. Pricing was in range. Scheduling was a breeze with customer service. Crew arrived on time. They crushed it. Job well done. Highly recommend Boutte!
-        </blockquote>
-        <div class="flex justify-center gap-1 mt-6">
-          <i data-lucide="star" class="w-5 h-5 text-[#C9A84C] fill-current"></i>
-          <i data-lucide="star" class="w-5 h-5 text-[#C9A84C] fill-current"></i>
-          <i data-lucide="star" class="w-5 h-5 text-[#C9A84C] fill-current"></i>
-          <i data-lucide="star" class="w-5 h-5 text-[#C9A84C] fill-current"></i>
-          <i data-lucide="star" class="w-5 h-5 text-[#C9A84C] fill-current"></i>
-        </div>
-        <p class="serif-display text-sm tracking-widest uppercase text-gray-500 mt-3" style="font-variant: small-caps;">Keith AAA &mdash; 2 months ago</p>
-        <span class="inline-block serif-display text-xs bg-gray-100 text-gray-500 px-3 py-1 rounded-full mt-2">via Google</span>
-      </div>
-
-      <!-- Compact reviews -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-0 max-w-5xl mx-auto">
-
-        <div class="review-compact py-10 pr-0 md:pr-12 border-b border-gray-100">
-          <div class="flex items-center gap-1 mb-3">
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-          </div>
-          <p class="serif-display italic text-gray-700 text-lg leading-relaxed mb-4">"Carlos, Osvaldo and Erick did a great job trimming my tree off the power lines. I was worried Georgia Power would hack off half my tree, whereas these guys insured my tree was healthy, happy and still looked like a tree. Bonus, they love my dog :)"</p>
-          <p class="serif-display text-sm font-semibold text-[#1E3A5F]" style="font-variant: small-caps;">Lindsey Eltinge</p>
-          <p class="serif-display text-xs text-gray-400 mt-1">2 months ago &nbsp;·&nbsp; <span class="inline-block bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">via Google</span></p>
-        </div>
-
-        <div class="review-compact py-10 pl-0 md:pl-12 border-b border-gray-100">
-          <div class="flex items-center gap-1 mb-3">
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-          </div>
-          <p class="serif-display italic text-gray-700 text-lg leading-relaxed mb-4">"Alex was very helpful in the assessment and estimate. Scheduling was quick and easy. Ricardo and team were excellent on the day of the trimming. They showed up when expected and double checked the tree branches before cutting. Then they did a great job cleaning up after the work."</p>
-          <p class="serif-display text-sm font-semibold text-[#1E3A5F]" style="font-variant: small-caps;">Autumn Norris</p>
-          <p class="serif-display text-xs text-gray-400 mt-1">a month ago &nbsp;·&nbsp; <span class="inline-block bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">via Google</span></p>
-        </div>
-
-        <div class="review-compact py-10 pr-0 md:pr-12 border-b border-gray-100 md:border-b-0">
-          <div class="flex items-center gap-1 mb-3">
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-          </div>
-          <p class="serif-display italic text-gray-700 text-lg leading-relaxed mb-4">"Our massive white oak had recently started looking unhealthy and dropping large dead limbs. Jeremy quickly came out to perform a thorough assessment to confirm the tree was healthy enough to keep. Just a few days later Benji, Dan, and Eduardo came out and spent all day pruning and the result is great. Very impressed with the promptness, friendliness and care for our tree which is close to lots of obstacles (power lines, houses). Highly recommend this crew and Boutte as a whole."</p>
-          <p class="serif-display text-sm font-semibold text-[#1E3A5F]" style="font-variant: small-caps;">Parker Saunders</p>
-          <p class="serif-display text-xs text-gray-400 mt-1">2 months ago &nbsp;·&nbsp; <span class="inline-block bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">via Google</span></p>
-        </div>
-
-        <div class="review-compact py-10 pl-0 md:pl-12">
-          <div class="flex items-center gap-1 mb-3">
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-          </div>
-          <p class="serif-display italic text-gray-700 text-lg leading-relaxed mb-4">"Boutte tree consistently sends knowledgeable and pleasant people. I use them for a variety of services - pruning a huge magnolia perfectly, fertilizing all trees and bushes annually, sourcing and planting the exact Japanese maple I wanted and more. Today I was especially pleased to meet the first 2 women Boutte has hired. Kudos to Boutte."</p>
-          <p class="serif-display text-sm font-semibold text-[#1E3A5F]" style="font-variant: small-caps;">Marcia Wood</p>
-          <p class="serif-display text-xs text-gray-400 mt-1">2 months ago &nbsp;·&nbsp; <span class="inline-block bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">via Google</span></p>
-        </div>
-
-      </div>
-
-      <div class="text-center mt-16">
-        <p class="serif-display italic text-gray-500 text-sm">4.8 stars across 484 verified Google reviews &mdash; Atlanta, GA</p>
+    <div class="hero-visual">
+      <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="trunkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#2D6A4F" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="#1B4332" stop-opacity="0.1"/>
+          </linearGradient>
+        </defs>
+        <path d="M200 460 Q198 380 200 320 Q205 240 200 180 Q195 140 200 100" stroke="url(#trunkGrad)" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path d="M200 320 Q160 300 130 280" stroke="rgba(64,145,108,0.4)" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M200 280 Q240 260 280 250" stroke="rgba(64,145,108,0.4)" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M200 220 Q150 200 110 180" stroke="rgba(64,145,108,0.4)" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M200 180 Q260 170 290 150" stroke="rgba(64,145,108,0.4)" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="130" cy="280" r="18" fill="rgba(64,145,108,0.15)"/>
+        <circle cx="280" cy="250" r="22" fill="rgba(64,145,108,0.12)"/>
+        <circle cx="110" cy="180" r="20" fill="rgba(64,145,108,0.18)"/>
+        <circle cx="290" cy="150" r="24" fill="rgba(64,145,108,0.15)"/>
+        <circle cx="200" cy="100" r="40" fill="rgba(64,145,108,0.10)"/>
+        <circle cx="160" cy="130" r="26" fill="rgba(64,145,108,0.13)"/>
+        <circle cx="240" cy="120" r="30" fill="rgba(64,145,108,0.11)"/>
+        <line x1="40" y1="460" x2="360" y2="460" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      </svg>
+      <div class="hero-visual-stamp">
+        <div><div class="stamp-label">Atlanta</div><div class="stamp-val">33.7490° N</div></div>
+        <div style="text-align: right"><div class="stamp-label">Established</div><div class="stamp-val">2003</div></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FAQ -->
-  <section id="faq" class="animate-section py-32 md:py-40 px-4 md:px-8 lg:px-16 bg-[#f8f8f5]">
-    <div class="max-w-7xl mx-auto">
-      <div class="mb-16">
-        <p class="uppercase tracking-widest text-xs text-gray-400 serif-display mb-4">— Common Questions</p>
-        <h2 class="serif-display text-5xl font-bold text-[#1E3A5F] leading-tight"><em class="italic">Frequently</em><br/>Asked Questions</h2>
-      </div>
-      <div class="max-w-4xl">
+<section class="authority">
+  <div class="container">
+    <div class="authority-label">Recognized By</div>
+    <ul class="authority-list">
+      <li>ISA Board Certified Master Arborist</li>
+      <li>Angi Super Service Award · 2017–2021</li>
+      <li>Best Tree Services Atlanta · 2019</li>
+      <li>HomeAdvisor Top Rated · 2023</li>
+      <li>Fully Licensed &amp; Insured</li>
+    </ul>
+  </div>
+</section>
 
-        <details class="group border-b border-gray-200">
-          <summary class="flex items-center justify-between py-8 cursor-pointer">
-            <span class="serif-display text-2xl font-bold text-[#1E3A5F] pr-8">How do I know if a tree on my Atlanta property needs to be removed?</span>
-            <span class="text-[#C9A84C] flex-shrink-0">
-              <i data-lucide="chevron-right" class="w-6 h-6 transition-transform duration-300 group-open:rotate-90"></i>
-            </span>
-          </summary>
-          <div class="pb-8">
-            <p class="serif-display text-gray-600 text-lg leading-relaxed max-w-3xl">Signs that a tree may need removal include large dead branches, significant lean toward structures, visible trunk decay, fungal growth at the base, or roots lifting pavement. A certified arborist assessment is always the best first step — many trees that appear declining can be saved with proper care. Our Boutte Tree arborists will give you an honest evaluation and only recommend removal when truly necessary.</p>
-          </div>
-        </details>
-
-        <details class="group border-b border-gray-200">
-          <summary class="flex items-center justify-between py-8 cursor-pointer">
-            <span class="serif-display text-2xl font-bold text-[#1E3A5F] pr-8">Does Boutte Tree provide emergency service after storms?</span>
-            <span class="text-[#C9A84C] flex-shrink-0">
-              <i data-lucide="chevron-right" class="w-6 h-6 transition-transform duration-300 group-open:rotate-90"></i>
-            </span>
-          </summary>
-          <div class="pb-8">
-            <p class="serif-display text-gray-600 text-lg leading-relaxed max-w-3xl">Yes — Boutte Tree operates 24 hours a day, 7 days a week, including holidays, for emergency storm response throughout Atlanta and the surrounding metro area. If a tree or large limb has fallen on your home, vehicle, or is blocking access, call us immediately at (404) 799-5472. Our crews mobilize quickly to secure your property and remove hazards safely.</p>
-          </div>
-        </details>
-
-        <details class="group border-b border-gray-200">
-          <summary class="flex items-center justify-between py-8 cursor-pointer">
-            <span class="serif-display text-2xl font-bold text-[#1E3A5F] pr-8">What is the best time of year to prune trees in Georgia?</span>
-            <span class="text-[#C9A84C] flex-shrink-0">
-              <i data-lucide="chevron-right" class="w-6 h-6 transition-transform duration-300 group-open:rotate-90"></i>
-            </span>
-          </summary>
-          <div class="pb-8">
-            <p class="serif-display text-gray-600 text-lg leading-relaxed max-w-3xl">For most deciduous trees in Georgia, late winter — when trees are dormant — is the ideal pruning window as it minimizes stress and promotes vigorous spring growth. However, dead, diseased, or hazardous limbs can and should be removed any time of year. Flowering trees like dogwoods and cherries are best pruned immediately after they bloom. Our arborists will advise you on species-specific timing during your consultation.</p>
-          </div>
-        </details>
-
-        <details class="group border-b border-gray-200">
-          <summary class="flex items-center justify-between py-8 cursor-pointer">
-            <span class="serif-display text-2xl font-bold text-[#1E3A5F] pr-8">Are you licensed and insured to work in Atlanta, GA?</span>
-            <span class="text-[#C9A84C] flex-shrink-0">
-              <i data-lucide="chevron-right" class="w-6 h-6 transition-transform duration-300 group-open:rotate-90"></i>
-            </span>
-          </summary>
-          <div class="pb-8">
-            <p class="serif-display text-gray-600 text-lg leading-relaxed max-w-3xl">Absolutely. Boutte Tree, Inc. is fully licensed in the state of Georgia and carries comprehensive liability insurance and workers' compensation coverage, protecting both your property and our crew. We're happy to provide proof of insurance upon request before any work begins. We strongly encourage all homeowners to verify insurance with any tree service company they consider hiring.</p>
-          </div>
-        </details>
-
-        <details class="group border-b border-gray-200">
-          <summary class="flex items-center justify-between py-8 cursor-pointer">
-            <span class="serif-display text-2xl font-bold text-[#1E3A5F] pr-8">How much does tree removal or trimming cost in Atlanta?</span>
-            <span class="text-[#C9A84C] flex-shrink-0">
-              <i data-lucide="chevron-right" class="w-6 h-6 transition-transform duration-300 group-open:rotate-90"></i>
-            </span>
-          </summary>
-          <div class="pb-8">
-            <p class="serif-display text-gray-600 text-lg leading-relaxed max-w-3xl">Tree service pricing in Atlanta varies based on tree size, species, location, proximity to structures, and access to your property. We provide free, no-obligation estimates for every job — what you're quoted is what you pay, with no hidden fees. Our pricing is competitive with the Atlanta market, and we believe in transparent, fair quotes that reflect the level of expertise and care our certified arborists bring to every project.</p>
-          </div>
-        </details>
-
-        <details class="group border-b border-gray-200">
-          <summary class="flex items-center justify-between py-8 cursor-pointer">
-            <span class="serif-display text-2xl font-bold text-[#1E3A5F] pr-8">What areas around Atlanta does Boutte Tree serve?</span>
-            <span class="text-[#C9A84C] flex-shrink-0">
-              <i data-lucide="chevron-right" class="w-6 h-6 transition-transform duration-300 group-open:rotate-90"></i>
-            </span>
-          </summary>
-          <div class="pb-8">
-            <p class="serif-display text-gray-600 text-lg leading-relaxed max-w-3xl">Boutte Tree serves Atlanta and the surrounding metro area including Decatur, Marietta, Sandy Springs, Smyrna, Tucker, Chamblee, Norcross, East Point, College Park, and beyond. If you're unsure whether we cover your area, give us a call at (404) 799-5472 — we're happy to confirm service availability and get your free estimate scheduled as soon as possible.</p>
-          </div>
-        </details>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="animate-section py-32 md:py-40 px-4 md:px-8 lg:px-16 bg-white">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <!-- Left: Map -->
-        <div>
-          <iframe
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k&q=place_id:ChIJ3zaD_uQa9YgRBsmJ0UX5UsU"
-            width="100%"
-            height="480"
-            class="w-full h-[480px] object-cover border-0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Boutte Tree, Inc. location map Atlanta GA"
-          ></iframe>
-        </div>
-        <!-- Right: Form -->
-        <div class="bg-[#f8f8f5] p-8 border border-gray-200">
-          <p class="serif-display italic text-xs tracking-widest text-gray-500 uppercase">get started</p>
-          <h3 class="serif-display italic text-3xl font-bold text-[#1E3A5F] mt-2">Get a Free Estimate</h3>
-          <p class="serif-display text-gray-600 text-base mt-1">Tell us about your trees — we'll get back to you promptly.</p>
-          <div class="flex items-center gap-2 mt-3">
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 text-[#C9A84C] fill-current"></i>
-            <span class="serif-display text-sm text-gray-500 ml-1">4.8 out of 5 &middot; 484 reviews</span>
-          </div>
-          <form action="https://formspree.io/f/placeholder" method="POST" class="mt-4">
-            <input type="text" name="name" placeholder="Your Name" required
-              class="bg-white border-0 border-b border-gray-300 focus:ring-0 focus:border-black py-3 px-0 serif-display w-full mt-4 text-gray-800 placeholder-gray-400 outline-none" style="font-family:'Playfair Display',serif;">
-            <input type="email" name="email" placeholder="Email Address" required
-              class="bg-white border-0 border-b border-gray-300 focus:ring-0 focus:border-black py-3 px-0 serif-display w-full mt-4 text-gray-800 placeholder-gray-400 outline-none" style="font-family:'Playfair Display',serif;">
-            <input type="tel" name="phone" placeholder="Phone Number"
-              class="bg-white border-0 border-b border-gray-300 focus:ring-0 focus:border-black py-3 px-0 serif-display w-full mt-4 text-gray-800 placeholder-gray-400 outline-none" style="font-family:'Playfair Display',serif;">
-            <select name="service"
-              class="bg-white border-0 border-b border-gray-300 focus:ring-0 focus:border-black py-3 px-0 serif-display w-full mt-4 text-gray-600 outline-none" style="font-family:'Playfair Display',serif;">
-              <option value="" disabled selected>Select a Service</option>
-              <option value="Consultation">Consultation</option>
-              <option value="Assessment">Assessment</option>
-              <option value="Installation">Installation</option>
-              <option value="Repair">Repair</option>
-            </select>
-            <textarea name="message" rows="3" placeholder="Tell us about your project..."
-              class="bg-white border-0 border-b border-gray-300 focus:ring-0 focus:border-black py-3 px-0 serif-display w-full mt-4 text-gray-800 placeholder-gray-400 outline-none resize-none" style="font-family:'Playfair Display',serif;"></textarea>
-            <button type="submit"
-              class="w-full bg-[#1E3A5F] text-white py-4 font-semibold serif-display mt-6 hover:bg-[#162d4a] transition" style="font-family:'Playfair Display',serif;">
-              Request Free Estimate
-            </button>
-          </form>
-          <p class="serif-display italic text-xs text-gray-400 mt-3">By submitting you agree to be contacted regarding your request.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-[#f8f8f5] text-gray-900">
-    <!-- Signature line -->
-    <div class="border-t border-gray-300">
-      <p class="serif-display italic text-sm text-gray-600 text-center py-10 border-b border-gray-300">a atlanta home services practice</p>
-    </div>
-
-    <!-- Main grid -->
-    <div class="grid grid-cols-2 md:grid-cols-5 gap-12 py-20 px-8 max-w-7xl mx-auto">
-
-      <!-- Col 1: Business Identity -->
-      <div class="col-span-2">
-        <p class="serif-display italic text-5xl font-bold text-gray-900">Boutte Tree, Inc.</p>
-        <p class="serif-display text-gray-700 text-lg max-w-sm mt-4 leading-relaxed">Atlanta's trusted team of certified arborists delivering expert tree care with precision, safety, and genuine craftsmanship throughout the greater Atlanta metro.</p>
-        <p class="serif-display italic text-sm text-gray-500 mt-6">Licensed in Georgia &mdash; Fully Insured</p>
-        <p class="serif-display italic text-sm text-gray-500 mt-1">4.8 Google Rating &middot; 484 Reviews</p>
-        <p class="serif-display text-sm text-gray-500 mt-1">Open 24 Hours &middot; 7 Days a Week</p>
-      </div>
-
-      <!-- Col 2: Service Areas -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
       <div>
-        <h4 class="serif-display tracking-wide text-sm pb-4 border-b border-gray-300 mb-4 font-semibold uppercase" style="font-variant: small-caps;">Service Areas</h4>
-        <ul class="space-y-2">
-          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Atlanta, GA</a></li>
-          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Decatur</a></li>
-          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Marietta</a></li>
-          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Sandy Springs</a></li>
-          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Smyrna</a></li>
-          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Tucker</a></li>
-          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Chamblee</a></li>
-          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Norcross</a></li>
-          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">East Point</a></li>
-          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">College Park</a></li>
-        </ul>
+        <div class="section-num">/ 01</div>
+        <p class="eyebrow">Services</p>
       </div>
-
-      <!-- Col 3: Services -->
       <div>
-        <h4 class="serif-display tracking-wide text-sm pb-4 border-b border-gray-300 mb-4 font-semibold uppercase" style="font-variant: small-caps;">Services</h4>
-        <ul class="space-y-2">
-          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Consultation</a></li>
-          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Assessment</a></li>
-          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Installation</a></li>
-          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Repair</a></li>
-          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Specialty Work</a></li>
-          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Custom Projects</a></li>
-          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Premium Service</a></li>
-          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Maintenance Plans</a></li>
-          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Emergency Service</a></li>
-          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Inspections</a></li>
-        </ul>
+        <h2 class="section-title">Comprehensive tree care for residential &amp; commercial properties.</h2>
+        <p class="section-lede">From preventive Plant Health Care to large-scale removal, we handle every project with the precision your property requires.</p>
       </div>
+    </div>
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <div class="service-num">01 / 06</div>
+        <div class="service-icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 42V22"/><path d="M24 22c-6 0-10-4-10-10 0-3 2-6 4-7 0-3 3-6 6-6s6 3 6 6c2 1 4 4 4 7 0 6-4 10-10 10z"/><path d="M16 42h16"/></svg></div>
+        <h3>Plant Health Care</h3>
+        <p>Proactive treatments, soil enrichment, and disease management to keep your trees thriving year-round.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-num">02 / 06</div>
+        <div class="service-icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="22" cy="22" r="10"/><line x1="30" y1="30" x2="40" y2="40"/><path d="M22 18v8M18 22h8"/></svg></div>
+        <h3>Arborist Consultations</h3>
+        <p>On-site assessments and customized care plans developed by Board Certified Master Arborists.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-num">03 / 06</div>
+        <div class="service-icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 40h32"/><path d="M14 40V20l10-10 10 10v20"/><path d="M20 40V28h8v12"/></svg></div>
+        <h3>Residential Projects</h3>
+        <p>Large-scale pruning, removal, and storm response — executed with care for your home and landscape.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-num">04 / 06</div>
+        <div class="service-icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="14" width="32" height="24" rx="1"/><path d="M16 14V8h16v6"/><line x1="14" y1="22" x2="34" y2="22"/></svg></div>
+        <h3>Commercial Services</h3>
+        <p>Reliable maintenance contracts for property managers, HOAs, and commercial landscapes.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-num">05 / 06</div>
+        <div class="service-icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6v36"/><path d="M24 14c-4-4-10-4-14 0 4 4 10 4 14 0z"/><path d="M24 22c4-4 10-4 14 0-4 4-10 4-14 0z"/><path d="M24 30c-4-4-10-4-14 0 4 4 10 4 14 0z"/></svg></div>
+        <h3>Sick Tree Diagnosis</h3>
+        <p>Identify pests, fungi, and stressors early — and treat them before they spread.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-num">06 / 06</div>
+        <div class="service-icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 36L36 12"/><path d="M12 12l8 8"/><path d="M28 28l8 8"/><circle cx="12" cy="36" r="3"/><circle cx="36" cy="12" r="3"/></svg></div>
+        <h3>Precision Pruning</h3>
+        <p>Structural and aesthetic pruning that protects long-term tree health and form.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-      <!-- Col 4: Company + Contact -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-head">
       <div>
-        <h4 class="serif-display tracking-wide text-sm pb-4 border-b border-gray-300 mb-4 font-semibold uppercase" style="font-variant: small-caps;">Company</h4>
-        <ul class="space-y-2 mb-8">
-          <li><a href="#home" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Home</a></li>
-          <li><a href="#about" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">About</a></li>
-          <li><a href="#services" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Services</a></li>
-          <li><a href="#gallery" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Gallery</a></li>
-          <li><a href="#reviews" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Reviews</a></li>
-          <li><a href="#faq" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">FAQ</a></li>
-          <li><a href="#contact" class="serif-display text-gray-700 hover:text-black underline-offset-4 hover:underline transition text-sm">Contact</a></li>
-        </ul>
-        <h4 class="serif-display tracking-wide text-sm pb-4 border-b border-gray-300 mb-4 font-semibold uppercase" style="font-variant: small-caps;">Contact</h4>
-        <a href="tel:4047995472" class="serif-display text-lg text-[#1E3A5F] font-semibold block hover:underline">(404) 799-5472</a>
-        <p class="serif-display text-sm text-gray-600 mt-3 leading-relaxed">
-          2158 Bolton Rd NW<br>
-          Atlanta, GA 30318
-        </p>
-        <p class="serif-display text-sm text-gray-500 mt-3">Open 24 Hours Daily</p>
-        <p class="serif-display text-xs text-gray-400 mt-1" id="live-clock"></p>
+        <div class="section-num">/ 02</div>
+        <p class="eyebrow">Process</p>
       </div>
-
+      <div>
+        <h2 class="section-title">Three steps from consultation to completed care plan.</h2>
+        <p class="section-lede">No surprises. No upsells. A direct path from your first call to a property your trees can thrive on.</p>
+      </div>
     </div>
-
-    <!-- Bottom row -->
-    <div class="py-8 border-t border-gray-300 px-8 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="serif-display italic text-gray-500 text-sm">&copy; 2025 Boutte Tree, Inc. &mdash; All rights reserved. Atlanta, GA.</p>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="step-num">01</div>
+        <h3>Schedule</h3>
+        <p>Submit the contact form or call <a href="tel:4047995472">404-799-5472</a> to schedule a Master Arborist visit.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">02</div>
+        <h3>Inspect</h3>
+        <p>Our arborist examines your tree canopy on-site and identifies health issues, structural concerns, and risks.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">03</div>
+        <h3>Care Plan</h3>
+        <p>You receive a customized written plan detailing the work we recommend — and the reasoning behind it.</p>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-  // Nav scroll shadow
-  (function(){
-    const nav = document.querySelector('nav');
-    if (!nav) return;
-    window.addEventListener('scroll', () => nav.classList.toggle('shadow-md', window.scrollY > 50));
-  })();
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-image reveal">
+      <div class="about-image-pattern"></div>
+      <svg class="tree-mark" viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M100 240 L100 130" stroke="currentColor" stroke-width="3" fill="none"/>
+        <path d="M100 200 L75 175" stroke="currentColor" stroke-width="2" fill="none"/>
+        <path d="M100 180 L130 160" stroke="currentColor" stroke-width="2" fill="none"/>
+        <path d="M100 150 L70 130" stroke="currentColor" stroke-width="2" fill="none"/>
+        <path d="M100 130 L135 110" stroke="currentColor" stroke-width="2" fill="none"/>
+        <circle cx="75" cy="175" r="10" fill="currentColor" opacity="0.4"/>
+        <circle cx="130" cy="160" r="12" fill="currentColor" opacity="0.4"/>
+        <circle cx="70" cy="130" r="11" fill="currentColor" opacity="0.4"/>
+        <circle cx="135" cy="110" r="13" fill="currentColor" opacity="0.4"/>
+        <circle cx="100" cy="100" r="20" fill="currentColor" opacity="0.3"/>
+        <circle cx="80" cy="80" r="14" fill="currentColor" opacity="0.35"/>
+        <circle cx="120" cy="75" r="16" fill="currentColor" opacity="0.32"/>
+      </svg>
+      <div class="about-image-stamp">Boutte Tree · Est. 2003</div>
+      <div class="about-cred">
+        <strong>ISA Master Arborist</strong>
+        <span>Board Certified</span>
+      </div>
+    </div>
+    <div class="about-copy">
+      <div class="section-num" style="margin-bottom: 8px;">/ 03</div>
+      <p class="eyebrow">About Boutte Tree</p>
+      <h2 class="section-title">Atlanta's arborists for over twenty years.</h2>
+      <p>We provide the best-in-class tree service in Atlanta and the metro area — including Plant Health Care, Commercial Clients, Consultations, and Large Residential Projects. By focusing on training and safety, we care for your trees at the highest professional standard.</p>
+      <blockquote class="about-quote">Your property is in expert hands. No job is too small. No tree is too tall.</blockquote>
+      <div class="about-stats">
+        <div class="stat"><div class="stat-num">20<span>+</span></div><div class="stat-label">Years Active</div></div>
+        <div class="stat"><div class="stat-num">5<span>.0</span></div><div class="stat-label">Google Rating</div></div>
+        <div class="stat"><div class="stat-num">ISA</div><div class="stat-label">Certified</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  // Hamburger
-  (function(){
-    const ham = document.getElementById('hamburger');
-    const menu = document.getElementById('mobile-menu');
-    if (ham && menu) ham.addEventListener('click', () => menu.classList.toggle('hidden'));
-    document.querySelectorAll('.mobile-nav-link').forEach(a => {
-      a.addEventListener('click', () => { if (menu) menu.classList.add('hidden'); });
-    });
-  })();
+<section class="cta" id="contact">
+  <div class="cta-inner">
+    <div>
+      <p class="eyebrow" style="color: var(--green-600); margin-bottom: 12px;">Get Started</p>
+      <h2 class="cta-title">Schedule your consultation.</h2>
+      <p class="cta-sub">A Master Arborist will walk your property with you, identify concerns, and write a clear care plan. No obligation.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="tel:4047995472" class="btn btn-light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call 404-799-5472</a>
+      <a href="mailto:info@bouttetree.com" class="btn btn-outline-light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Email Us</a>
+    </div>
+  </div>
+</section>
 
-  // TABS
-  (function(){
-    const buttons = Array.from(document.querySelectorAll('.tab-btn'));
-    const panels = Array.from(document.querySelectorAll('.tab-panel'));
-    if (!buttons.length || !panels.length) return;
-    function showByIndex(idx) {
-      panels.forEach(p => p.classList.add('hidden'));
-      buttons.forEach(b => { b.classList.remove('active-tab'); b.classList.add('inactive-tab'); });
-      if (panels[idx]) panels[idx].classList.remove('hidden');
-      if (buttons[idx]) { buttons[idx].classList.add('active-tab'); buttons[idx].classList.remove('inactive-tab'); }
-    }
-    function showById(id) { const i = panels.findIndex(p => p.id === id); if (i >= 0) showByIndex(i); }
-    buttons.forEach((btn, idx) => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const t = btn.getAttribute('data-target');
-        if (t) showById(t); else showByIndex(idx);
-      });
-    });
-    window.showTab = function(id){ showById(id); };
-    if (!panels.some(p => !p.classList.contains('hidden'))) showByIndex(0);
-  })();
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="data:image/jpeg;base64,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" alt="Boutte Tree" class="footer-logo" />
+        <p>Board Certified Master Arborists serving the Atlanta metro area. Plant Health Care, consultations, residential, and commercial tree work since 2003.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M22 12c0-5.5-4.5-10-10-10S2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="Google"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M22 11h-9.4v3.8h5.4c-.5 2.6-2.7 4.2-5.4 4.2-3.3 0-6-2.7-6-6s2.7-6 6-6c1.5 0 2.9.6 4 1.5l2.7-2.7C17.4 4.2 15 3.2 12.6 3.2 7.6 3.2 3.6 7.2 3.6 12.2s4 9 9 9c5.2 0 8.6-3.6 8.6-8.7 0-.5-.1-1-.2-1.5z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Plant Health Care</a>
+        <a href="#services">Consultations</a>
+        <a href="#services">Residential</a>
+        <a href="#services">Commercial</a>
+        <a href="#services">Sick Trees</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#about">About</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+        <a href="/privacy.html">Privacy Policy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:4047995472">404-799-5472</a>
+        <a href="mailto:info@bouttetree.com">info@bouttetree.com</a>
+        <p class="footer-address">Atlanta, Georgia<br/>Mon–Fri · 8am–5pm</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Boutte Tree, Inc. All rights reserved.</p>
+      <p>Licensed &amp; Insured · ISA Member</p>
+    </div>
+  </div>
+</footer>
 
-  // Counters
-  function animateCount(el, target, suffix) {
-    let start = 0;
-    const duration = 2000, steps = 60, inc = target / steps;
-    const t = setInterval(() => {
-      start += inc;
-      if (start >= target) { el.textContent = target + (suffix || ''); clearInterval(t); }
-      else el.textContent = Math.floor(start) + (suffix || '');
-    }, duration / steps);
+<script>
+(function () {
+  'use strict';
+  const header = document.getElementById('siteHeader');
+  if (header) {
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 12);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   }
-  const statObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const t = parseInt(e.target.dataset.count);
-        const s = e.target.dataset.suffix || '';
-        if (t) animateCount(e.target, t, s);
-        statObs.unobserve(e.target);
-      }
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
     });
-  }, { threshold: 0.3 });
-  document.querySelectorAll('[data-count]').forEach(el => statObs.observe(el));
-
-  // Section reveal
-  (function(){
-    const sections = document.querySelectorAll('.animate-section');
-    if (!sections.length) return;
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.remove('is-pending');
-          entry.target.classList.add('is-visible');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-    sections.forEach(el => {
-      const r = el.getBoundingClientRect();
-      const inView = r.top < window.innerHeight && r.bottom > 0;
-      if (inView) el.classList.add('is-visible');
-      else { el.classList.add('is-pending'); obs.observe(el); }
-    });
-    setTimeout(() => {
-      document.querySelectorAll('.animate-section.is-pending').forEach(el => {
-        el.classList.remove('is-pending'); el.classList.add('is-visible');
-      });
-    }, 2500);
-  })();
-
-  // Hash-click reveal
-  (function(){
-    function revealTarget() {
-      const hash = window.location.hash;
-      if (!hash || hash.length < 2) return;
-      try {
-        const target = document.querySelector(hash);
-        if (target && target.classList.contains('animate-section')) {
-          target.classList.remove('is-pending');
-          target.classList.add('is-visible');
-        }
-      } catch(e) {}
-    }
-    window.addEventListener('hashchange', revealTarget);
-    setTimeout(revealTarget, 100);
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
+    mobileMenu.querySelectorAll('a').forEach((a) => {
       a.addEventListener('click', () => {
-        const hash = a.getAttribute('href');
-        if (hash && hash.length > 1) {
-          try {
-            const target = document.querySelector(hash);
-            if (target && target.classList.contains('animate-section')) {
-              target.classList.remove('is-pending');
-              target.classList.add('is-visible');
-            }
-          } catch(e) {}
-        }
+        mobileMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
       });
     });
-  })();
-
-  // Live clock
-  function updateClock() {
-    const el = document.getElementById('live-clock');
-    if (el) el.textContent = 'Atlanta - ' + new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
   }
-  updateClock();
-  setInterval(updateClock, 1000);
-
-  // Lucide
-  (function(){
-    const render = () => { if (window.lucide) window.lucide.createIcons(); };
-    if (window.lucide) render();
-    else document.addEventListener('DOMContentLoaded', render);
-    setTimeout(render, 500);
-    setTimeout(render, 1500);
-  })();
-  </script>
-
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && reveals.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    reveals.forEach((el) => io.observe(el));
+  } else {
+    reveals.forEach((el) => el.classList.add('visible'));
+  }
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#') return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      const offset = (header ? header.offsetHeight : 0) + 8;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+})();
+</script>
 </body>
 </html>

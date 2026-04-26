@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Southeast Restoration | Canton, GA — Construction & Restoration</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html, body { overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; -webkit-font-smoothing: antialiased; color: #1C1E1D; }
+    h1,h2,h3,h4,h5,h6,.heading { font-family: 'Fraunces', Georgia, serif; }
+    .serif-display, .italic-display { font-family: 'Fraunces', Georgia, serif; font-style: italic; }
+    ::selection { background: #212121; color: #fff; }
+    .ticker-track { display: flex; animation: ticker 40s linear infinite; white-space: nowrap; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { display: flex; animation: marquee 40s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    .tab-btn { cursor: pointer; transition: all 0.2s ease; letter-spacing: 0.04em; }
+    .tab-btn.active-tab { background-color: #212121; color: white; }
+    .tab-btn.inactive-tab { background-color: white; color: #5A5F5C; border: 1px solid #D5D7D3; }
+    .tab-panel { display: block; }
+    .tab-panel.hidden { display: none !important; }
+    .img-hover-wrap { overflow: hidden; }
+    .img-hover-wrap img { transition: transform 0.7s ease; }
+    .img-hover-wrap:hover img { transform: scale(1.04); }
+    .arrow-cta { border-bottom: 1px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.25s ease; font-weight: 500; }
+    .arrow-cta:hover { gap: 14px; }
+    .dotted-leader { flex: 1; border-bottom: 1px dotted currentColor; margin: 0 1rem; opacity: 0.25; align-self: end; padding-bottom: 0.5rem; }
+    .hairline-rule { border-top: 1px solid #D5D7D3; }
+    .section-num { font-family: 'Fraunces', serif; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; color: #212121; }
+    .eyebrow-label { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #212121; }
+    section { scroll-margin-top: 96px; }
+    .animate-section { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
+    .animate-section.is-pending { opacity: 0; transform: translateY(24px); }
+    .animate-section.is-visible { opacity: 1; transform: none; }
+    .animate-section:target,
+    .animate-section.is-pending:target { opacity: 1 !important; transform: none !important; }
+    .award-badge { filter: grayscale(100%); transition: filter 0.3s ease; }
+    .award-badge:hover { filter: grayscale(0%); }
+    .btn-premium { display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; border: 2px solid transparent; cursor: pointer; transition: all 0.25s ease; }
+    .btn-premium-primary { background: #212121; color: #fff; }
+    .btn-premium-primary:hover { background: #212121; transform: translateY(-2px); filter: brightness(0.9); }
+    .btn-premium-ghost { background: transparent; color: #1C1E1D; border-color: #1C1E1D; }
+    .btn-premium-ghost:hover { background: #1C1E1D; color: #fff; }
+    .accent-bar { display: inline-block; width: 32px; height: 2px; background: #FFC300; margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body class="bg-white">
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-stone-200 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-20">
+    <a href="#home" class="flex items-center gap-3">
+      <span style="font-family:'Fraunces',serif;font-style:italic;font-size:1.35rem;font-weight:700;color:#212121;letter-spacing:-0.01em;">Southeast <span style="color:#FFC300;">Restoration</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#home" class="text-sm font-medium text-stone-700 hover:text-stone-900 transition">Home</a>
+      <a href="#about" class="text-sm font-medium text-stone-700 hover:text-stone-900 transition">About</a>
+      <a href="#services" class="text-sm font-medium text-stone-700 hover:text-stone-900 transition">Services</a>
+      <a href="#gallery" class="text-sm font-medium text-stone-700 hover:text-stone-900 transition">Gallery</a>
+      <a href="#reviews" class="text-sm font-medium text-stone-700 hover:text-stone-900 transition">Reviews</a>
+      <a href="#faq" class="text-sm font-medium text-stone-700 hover:text-stone-900 transition">FAQ</a>
+      <a href="#contact" class="text-sm font-medium text-stone-700 hover:text-stone-900 transition">Contact</a>
+    </div>
+    <div class="hidden md:flex items-center gap-4">
+      <span id="live-clock" class="text-xs text-stone-500 font-medium tracking-wide"></span>
+      <a href="tel:7703453500" class="btn-premium btn-premium-primary text-xs py-3 px-5">
+        <i data-lucide="phone" class="w-3.5 h-3.5"></i> (770) 345-3500
+      </a>
+    </div>
+    <button id="hamburger" class="md:hidden p-2 text-stone-800">
+      <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden bg-white border-t border-stone-200">
+    <a href="#home" class="mobile-nav-link block py-4 px-4 border-b border-stone-200 text-sm font-medium text-stone-700">Home</a>
+    <a href="#about" class="mobile-nav-link block py-4 px-4 border-b border-stone-200 text-sm font-medium text-stone-700">About</a>
+    <a href="#services" class="mobile-nav-link block py-4 px-4 border-b border-stone-200 text-sm font-medium text-stone-700">Services</a>
+    <a href="#gallery" class="mobile-nav-link block py-4 px-4 border-b border-stone-200 text-sm font-medium text-stone-700">Gallery</a>
+    <a href="#reviews" class="mobile-nav-link block py-4 px-4 border-b border-stone-200 text-sm font-medium text-stone-700">Reviews</a>
+    <a href="#faq" class="mobile-nav-link block py-4 px-4 border-b border-stone-200 text-sm font-medium text-stone-700">FAQ</a>
+    <a href="#contact" class="mobile-nav-link block py-4 px-4 border-b border-stone-200 text-sm font-medium text-stone-700">Contact</a>
+    <div class="p-4">
+      <a href="tel:7703453500" class="btn-premium btn-premium-primary w-full justify-center text-xs">
+        <i data-lucide="phone" class="w-3.5 h-3.5"></i> (770) 345-3500
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="animate-section pt-20" style="min-height:80vh;">
+  <div class="flex flex-col lg:flex-row" style="min-height:calc(80vh - 80px);">
+    <!-- Left -->
+    <div class="flex-1 flex flex-col justify-center px-6 md:px-12 lg:px-20 py-16 md:py-24 bg-white">
+      <div class="hairline-rule w-12 mb-6"></div>
+      <p class="eyebrow-label mb-6 tracking-[0.28em]">Canton · Est. 2016</p>
+      <h1 class="heading text-5xl md:text-6xl lg:text-7xl leading-[1.05] font-semibold text-stone-900 mb-6" style="max-width:560px;">
+        Restoration<br>done <span style="font-style:italic;color:#1C1E1D;">right</span>,<br>every time.
+      </h1>
+      <p class="italic-display text-xl md:text-2xl text-stone-500 mb-10" style="font-style:italic;max-width:400px;">Serving Canton & Cherokee County neighbors since 2016.</p>
+      <div class="flex flex-wrap gap-3 mb-10">
+        <a href="#contact" class="btn-premium btn-premium-primary">
+          Get a Free Quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <a href="tel:7703453500" class="btn-premium btn-premium-ghost">
+          <i data-lucide="phone" class="w-4 h-4"></i> Call Us Now
+        </a>
+      </div>
+      <!-- Trust badges row -->
+      <div class="flex flex-wrap gap-6 items-center">
+        <span class="flex items-center gap-2 text-xs font-medium text-stone-600">
+          <i data-lucide="shield-check" class="w-4 h-4 text-stone-800"></i> Licensed & Insured
+        </span>
+        <span class="flex items-center gap-2 text-xs font-medium text-stone-600">
+          <i data-lucide="star" class="w-4 h-4 text-stone-800"></i> 4.9★ · 977 Reviews
+        </span>
+        <span class="flex items-center gap-2 text-xs font-medium text-stone-600">
+          <i data-lucide="clock" class="w-4 h-4 text-stone-800"></i> Open 24 Hours
+        </span>
+        <span class="flex items-center gap-2 text-xs font-medium text-stone-600">
+          <i data-lucide="map-pin" class="w-4 h-4 text-stone-800"></i> Canton, GA Local
+        </span>
+      </div>
+    </div>
+    <!-- Right -->
+    <div class="relative lg:w-[50%] min-h-[420px] lg:min-h-full img-hover-wrap" style="aspect-ratio:4/5;max-height:90vh;">
+      <img
+        src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-tv6HaDwyeCxOxpzQaXHSf30GO6jqICAEZBPuV50s6bDaFPz7g2s4rd5p633iAlUmRKTwl-lHodG5XKjU7duGB9bUZDWhy7KdlpaZMU3unvCjRRMmVsIyOciKiCso96FeKndFkk5L2UlJaPAkDIbyxmQcVnOdIl7BD26OHKxPRWgS5LhwwiAga7f0Jv2yU9crC984m90hdYX7LARfr3dKlN0f4N9U5OIWmkvv6V136ZP0DnNJsqoQJP5WrM7yTwLYTrqDAP0HnLOth_LLR0CHTfSKhHzAqZR7DVqqkMQ0VUQA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+        alt="Southeast Restoration — Canton, GA Project"
+        loading="lazy"
+        onerror="this.src='https://picsum.photos/seed/construction-1/800/600'"
+        class="w-full h-full object-cover"
+        style="max-height:90vh;"
+      >
+      <!-- Corner stamps -->
+      <div class="absolute top-5 left-5 bg-white/90 border border-stone-200 px-4 py-2 backdrop-blur-sm">
+        <p class="text-xs font-semibold tracking-widest text-stone-800 uppercase">Southeast Restoration · Canton</p>
+      </div>
+      <div class="absolute bottom-5 right-5 bg-[#212121] text-white px-5 py-3 text-center">
+        <p class="text-2xl font-bold" style="font-family:'Fraunces',serif;">4.9★</p>
+        <p class="text-xs font-medium tracking-widest uppercase text-stone-300 mt-0.5">977 Reviews</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER BAND -->
+<div class="bg-[#212121] py-4 overflow-hidden">
+  <div class="ticker-track">
+    <span class="text-xs font-semibold tracking-[0.22em] text-stone-100 uppercase px-8">FREE QUOTES</span>
+    <span class="text-[#FFC300] px-4">·</span>
+    <span class="text-xs font-semibold tracking-[0.22em] text-stone-100 uppercase px-8">FAST RESPONSE</span>
+    <span class="text-[#FFC300] px-4">·</span>
+    <span class="text-xs font-semibold tracking-[0.22em] text-stone-100 uppercase px-8">LICENSED & INSURED</span>
+    <span class="text-[#FFC300] px-4">·</span>
+    <span class="text-xs font-semibold tracking-[0.22em] text-stone-100 uppercase px-8">LOCAL EXPERTS</span>
+    <span class="text-[#FFC300] px-4">·</span>
+    <span class="text-xs font-semibold tracking-[0.22em] text-stone-100 uppercase px-8">CANTON, GA</span>
+    <span class="text-[#FFC300] px-4">·</span>
+    <span class="text-xs font-semibold tracking-[0.22em] text-stone-100 uppercase px-8">24/7 AVAILABLE</span>
+    <span class="text-[#FFC300] px-4">·</span>
+    <!-- Duplicate for seamless loop -->
+    <span class="text-xs font-semibold tracking-[0.22em] text-stone-100 uppercase px-8">FREE QUOTES</span>
+    <span class="text-[#FFC300] px-4">·</span>
+    <span class="text-xs font-semibold tracking-[0.22em] text-stone-100 uppercase px-8">FAST RESPONSE</span>
+    <span class="text-[#FFC300] px-4">·</span>
+    <span class="text-xs font-semibold tracking-[0.22em] text-stone-100 uppercase px-8">LICENSED & INSURED</span>
+    <span class="text-[#FFC300] px-4">·</span>
+    <span class="text-xs font-semibold tracking-[0.22em] text-stone-100 uppercase px-8">LOCAL EXPERTS</span>
+    <span class="text-[#FFC300] px-4">·</span>
+    <span class="text-xs font-semibold tracking-[0.22em] text-stone-100 uppercase px-8">CANTON, GA</span>
+    <span class="text-[#FFC300] px-4">·</span>
+    <span class="text-xs font-semibold tracking-[0.22em] text-stone-100 uppercase px-8">24/7 AVAILABLE</span>
+    <span class="text-[#FFC300] px-4">·</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<section class="animate-section bg-[#fafaf8] border-y border-stone-200">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-stone-200">
+      <div class="p-10 md:p-14 text-center">
+        <p class="heading text-5xl font-semibold text-stone-900" data-count="12" data-suffix="+">12+</p>
+        <p class="text-xs font-semibold tracking-widest uppercase text-stone-500 mt-3">Areas Served</p>
+      </div>
+      <div class="p-10 md:p-14 text-center">
+        <p class="heading text-5xl font-semibold text-stone-900" data-count="977" data-suffix="+">977+</p>
+        <p class="text-xs font-semibold tracking-widest uppercase text-stone-500 mt-3">Canton Neighbors</p>
+      </div>
+      <div class="p-10 md:p-14 text-center">
+        <p class="heading text-5xl font-semibold text-stone-900">4.9<span class="text-[#FFC300]">★</span></p>
+        <p class="text-xs font-semibold tracking-widest uppercase text-stone-500 mt-3">Google Rating</p>
+      </div>
+      <div class="p-10 md:p-14 text-center">
+        <p class="heading text-5xl font-semibold text-stone-900" data-count="10" data-suffix="+">10+</p>
+        <p class="text-xs font-semibold tracking-widest uppercase text-stone-500 mt-3">Years Local</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <!-- Left: Image -->
+      <div class="relative img-hover-wrap">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-u4FxoOtYZjhGlQMlhjUz2OelvP7u8UznlB4MrlFl_ukH-0IF3RZ6ugBk-CDzS_Y1OK3XCBb9YFKYl-ZajYnJn5IZjRrJo3dJPsZwRPkuSBYEBj_MhlJPMYjUvsnix83KYjihlYqdF_d72DxREvgXRmRgrpFHcUyZdrxEbfg1ukvAhTXCtUI9pBJGntwV9S6o4bcDis-T6lTo6VIfxKPhkvFaJJ0FMWdPz8CAs7YoTuZkHESIO_3a7o_2MNXOuHsXmeGGC_7NWStb464PGGNfe-xR4hnefoI1o7B0Z6fkcPzSFAj2GnNtbtT3ePDuu28lzyTPjBUMAQ1_J9Y60vsy0nPd1ZtBBntPQ9CuC6q4WY6Wh9EcQmzxb-KGEg2riKgrZTehzyyACxwCF92SI5Wxcqmp5V3fQSQ6hEOk6VPZsO9fHmUfhHNX44Vy4DRk1D&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Southeast Restoration team — Canton, GA"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/construction-2/800/600'"
+          class="w-full object-cover"
+          style="aspect-ratio:4/5;"
+        >
+        <!-- Stamp -->
+        <div class="absolute bottom-0 left-0 bg-[#212121] text-white p-6" style="max-width:240px;">
+          <p class="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-1">Licensed & Insured</p>
+          <p class="text-sm font-semibold text-white">Canton, GA · Est. 2016</p>
+        </div>
+        <!-- Credential card -->
+        <div class="absolute -bottom-6 right-0 md:-right-8 bg-white border border-stone-200 p-5 shadow-sm" style="max-width:200px;">
+          <div class="flex items-center gap-2 mb-2">
+            <i data-lucide="award" class="w-5 h-5 text-[#FFC300]"></i>
+            <span class="text-xs font-semibold tracking-wider uppercase text-stone-700">Top Rated</span>
+          </div>
+          <p class="heading text-3xl font-semibold text-stone-900">4.9<span class="text-[#FFC300]">★</span></p>
+          <p class="text-xs text-stone-500 mt-1">977 Google reviews</p>
+        </div>
+      </div>
+      <!-- Right: Story -->
+      <div class="pt-8 lg:pt-0">
+        <div class="section-num mb-2">/03</div>
+        <p class="eyebrow-label mb-6">Our Story</p>
+        <h2 class="heading text-5xl font-semibold leading-tight text-stone-900 mb-8">
+          Built from<br><span style="font-style:italic;">community,</span><br>built to last.
+        </h2>
+        <p class="text-base text-stone-600 leading-relaxed mb-5">
+          Southeast Restoration was founded with one mission: to give Canton and Cherokee County homeowners a restoration and construction partner they could genuinely trust — not just a contractor, but a neighbor. We respond fast, communicate clearly, and treat every home as if it were our own.
+        </p>
+        <p class="text-base text-stone-600 leading-relaxed mb-10">
+          From emergency water damage mitigation to full structural rebuilds, our team brings deep technical expertise paired with the kind of personal accountability you only get from a company that's rooted in the community it serves.
+        </p>
+        <!-- Pull quote -->
+        <div class="border-l-2 border-[#FFC300] pl-6 mb-10">
+          <p class="italic-display text-xl text-stone-800 leading-relaxed" style="font-style:italic;">"You would think these guys were working on their own house."</p>
+          <p class="text-xs font-semibold tracking-widest uppercase text-stone-500 mt-3">— GAHen · Verified Google Review</p>
+        </div>
+        <!-- 3-stat row -->
+        <div class="grid grid-cols-3 border-t border-stone-200 pt-8 gap-4">
+          <div>
+            <p class="heading text-3xl font-semibold text-stone-900">24/7</p>
+            <p class="text-xs font-semibold tracking-widest uppercase text-stone-500 mt-1">Emergency Ready</p>
+          </div>
+          <div class="border-l border-stone-200 pl-4">
+            <p class="heading text-3xl font-semibold text-stone-900">977+</p>
+            <p class="text-xs font-semibold tracking-widest uppercase text-stone-500 mt-1">Happy Clients</p>
+          </div>
+          <div class="border-l border-stone-200 pl-4">
+            <p class="heading text-3xl font-semibold text-stone-900">12+</p>
+            <p class="text-xs font-semibold tracking-widest uppercase text-stone-500 mt-1">Areas Served</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-[#fafaf8]">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-12">
+      <div class="section-num mb-2">/04</div>
+      <p class="eyebrow-label mb-4">Services</p>
+      <h2 class="heading text-4xl md:text-5xl font-semibold text-stone-900 leading-tight" style="max-width:540px;">
+        Work you can <span style="font-style:italic;">stand behind.</span>
+      </h2>
+    </div>
+    <div class="flex flex-wrap gap-2 md:flex-nowrap mb-10 tabs-container">
+      <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-4 py-3 md:px-7 md:py-3.5 rounded-sm font-semibold" data-target="tab-panel-1">Construction</button>
+      <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-4 py-3 md:px-7 md:py-3.5 rounded-sm font-semibold" data-target="tab-panel-2">Remodeling</button>
+      <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-4 py-3 md:px-7 md:py-3.5 rounded-sm font-semibold" data-target="tab-panel-3">Specialty Projects</button>
+    </div>
+
+    <!-- Tab 1 -->
+    <div id="tab-panel-1" class="tab-panel">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-white border border-stone-200 p-10" style="border-radius:0;">
+          <p class="text-xs font-semibold tracking-widest text-stone-400 mb-6">01 / 04</p>
+          <i data-lucide="hard-hat" class="w-12 h-12 text-stone-900 mb-6"></i>
+          <h3 class="heading text-2xl font-semibold mb-3" style="font-style:italic;">General Contracting</h3>
+          <p class="text-sm text-stone-600 leading-relaxed mb-6">From project planning to final punch-list, we manage every phase of your build with accountability and precision. Canton homeowners rely on us for seamless project coordination start to finish.</p>
+          <a href="tel:7703453500" class="arrow-cta text-sm font-semibold text-stone-900">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-white border border-stone-200 p-10" style="border-radius:0;">
+          <p class="text-xs font-semibold tracking-widest text-stone-400 mb-6">02 / 04</p>
+          <i data-lucide="building-2" class="w-12 h-12 text-stone-900 mb-6"></i>
+          <h3 class="heading text-2xl font-semibold mb-3" style="font-style:italic;">New Construction</h3>
+          <p class="text-sm text-stone-600 leading-relaxed mb-6">We break ground on new residential and commercial structures built to code and built to endure Cherokee County's varied seasons. Our crews bring craftsmanship and discipline to every new build.</p>
+          <a href="tel:7703453500" class="arrow-cta text-sm font-semibold text-stone-900">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-white border border-stone-200 p-10" style="border-radius:0;">
+          <p class="text-xs font-semibold tracking-widest text-stone-400 mb-6">03 / 04</p>
+          <i data-lucide="truck" class="w-12 h-12 text-stone-900 mb-6"></i>
+          <h3 class="heading text-2xl font-semibold mb-3" style="font-style:italic;">Commercial Build-Outs</h3>
+          <p class="text-sm text-stone-600 leading-relaxed mb-6">Tenant-ready commercial interiors delivered on schedule and within budget. We work alongside property managers, landlords, and business owners throughout the Canton metro area.</p>
+          <a href="tel:7703453500" class="arrow-cta text-sm font-semibold text-stone-900">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <!-- Card 4 -->
+        <div class="bg-white border border-stone-200 p-10" style="border-radius:0;">
+          <p class="text-xs font-semibold tracking-widest text-stone-400 mb-6">04 / 04</p>
+          <i data-lucide="hammer" class="w-12 h-12 text-stone-900 mb-6"></i>
+          <h3 class="heading text-2xl font-semibold mb-3" style="font-style:italic;">Structural Work</h3>
+          <p class="text-sm text-stone-600 leading-relaxed mb-6">Load-bearing walls, foundations, beams, and framing — structural work demands expertise and zero shortcuts. Our licensed crews execute with the precision your property deserves.</p>
+          <a href="tel:7703453500" class="arrow-cta text-sm font-semibold text-stone-900">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2 -->
+    <div id="tab-panel-2" class="tab-panel hidden">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white border border-stone-200 p-10" style="border-radius:0;">
+          <p class="text-xs font-semibold tracking-widest text-stone-400 mb-6">01 / 04</p>
+          <i data-lucide="hammer" class="w-12 h-12 text-stone-900 mb-6"></i>
+          <h3 class="heading text-2xl font-semibold mb-3" style="font-style:italic;">Home Remodeling</h3>
+          <p class="text-sm text-stone-600 leading-relaxed mb-6">We transform existing spaces into beautifully functional homes — from single-room refreshes to whole-home renovations. Every project is approached with the same care we'd give our own families.</p>
+          <a href="tel:7703453500" class="arrow-cta text-sm font-semibold text-stone-900">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="bg-white border border-stone-200 p-10" style="border-radius:0;">
+          <p class="text-xs font-semibold tracking-widest text-stone-400 mb-6">02 / 04</p>
+          <i data-lucide="wrench" class="w-12 h-12 text-stone-900 mb-6"></i>
+          <h3 class="heading text-2xl font-semibold mb-3" style="font-style:italic;">Kitchen Renovation</h3>
+          <p class="text-sm text-stone-600 leading-relaxed mb-6">Custom cabinetry, countertops, layout redesigns, and full kitchen overhauls delivered with attention to detail. We help Canton families fall back in love with the heart of their home.</p>
+          <a href="tel:7703453500" class="arrow-cta text-sm font-semibold text-stone-900">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="bg-white border border-stone-200 p-10" style="border-radius:0;">
+          <p class="text-xs font-semibold tracking-widest text-stone-400 mb-6">03 / 04</p>
+          <i data-lucide="ruler" class="w-12 h-12 text-stone-900 mb-6"></i>
+          <h3 class="heading text-2xl font-semibold mb-3" style="font-style:italic;">Bathroom Renovation</h3>
+          <p class="text-sm text-stone-600 leading-relaxed mb-6">From tile work to full gut-and-rebuild bathroom renovations, we handle every fixture and finish with quality materials and a clean job-site guarantee throughout the project.</p>
+          <a href="tel:7703453500" class="arrow-cta text-sm font-semibold text-stone-900">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="bg-white border border-stone-200 p-10" style="border-radius:0;">
+          <p class="text-xs font-semibold tracking-widest text-stone-400 mb-6">04 / 04</p>
+          <i data-lucide="building-2" class="w-12 h-12 text-stone-900 mb-6"></i>
+          <h3 class="heading text-2xl font-semibold mb-3" style="font-style:italic;">Basement Finishing</h3>
+          <p class="text-sm text-stone-600 leading-relaxed mb-6">Unlock the full potential of your home's footprint with a professionally finished basement — entertainment spaces, home offices, or in-law suites, designed and built to your vision.</p>
+          <a href="tel:7703453500" class="arrow-cta text-sm font-semibold text-stone-900">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 3 -->
+    <div id="tab-panel-3" class="tab-panel hidden">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white border border-stone-200 p-10" style="border-radius:0;">
+          <p class="text-xs font-semibold tracking-widest text-stone-400 mb-6">01 / 04</p>
+          <i data-lucide="hammer" class="w-12 h-12 text-stone-900 mb-6"></i>
+          <h3 class="heading text-2xl font-semibold mb-3" style="font-style:italic;">Custom Carpentry</h3>
+          <p class="text-sm text-stone-600 leading-relaxed mb-6">Built-ins, trim work, custom shelving, and architectural millwork crafted to the exact specifications of your space. Our carpenters bring old-school precision to every bespoke detail.</p>
+          <a href="tel:7703453500" class="arrow-cta text-sm font-semibold text-stone-900">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="bg-white border border-stone-200 p-10" style="border-radius:0;">
+          <p class="text-xs font-semibold tracking-widest text-stone-400 mb-6">02 / 04</p>
+          <i data-lucide="ruler" class="w-12 h-12 text-stone-900 mb-6"></i>
+          <h3 class="heading text-2xl font-semibold mb-3" style="font-style:italic;">Design-Build</h3>
+          <p class="text-sm text-stone-600 leading-relaxed mb-6">A single-source solution where design intent and construction execution are unified under one team. This approach eliminates miscommunication and keeps your project on time and on budget.</p>
+          <a href="tel:7703453500" class="arrow-cta text-sm font-semibold text-stone-900">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="bg-white border border-stone-200 p-10" style="border-radius:0;">
+          <p class="text-xs font-semibold tracking-widest text-stone-400 mb-6">03 / 04</p>
+          <i data-lucide="hard-hat" class="w-12 h-12 text-stone-900 mb-6"></i>
+          <h3 class="heading text-2xl font-semibold mb-3" style="font-style:italic;">Historic Restoration</h3>
+          <p class="text-sm text-stone-600 leading-relaxed mb-6">Preserving the character of older Canton-area homes while bringing them up to modern standards. We treat every historic property with the respect and skill its heritage demands.</p>
+          <a href="tel:7703453500" class="arrow-cta text-sm font-semibold text-stone-900">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="bg-white border border-stone-200 p-10" style="border-radius:0;">
+          <p class="text-xs font-semibold tracking-widest text-stone-400 mb-6">04 / 04</p>
+          <i data-lucide="building-2" class="w-12 h-12 text-stone-900 mb-6"></i>
+          <h3 class="heading text-2xl font-semibold mb-3" style="font-style:italic;">Tenant Improvements</h3>
+          <p class="text-sm text-stone-600 leading-relaxed mb-6">Commercial interior improvements designed to meet both tenant needs and landlord specifications. We coordinate with all stakeholders to minimize disruption and maximize the finished result.</p>
+          <a href="tel:7703453500" class="arrow-cta text-sm font-semibold text-stone-900">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-12">
+      <div class="section-num mb-2">/05</div>
+      <p class="eyebrow-label mb-4">Our Work</p>
+      <h2 class="heading text-4xl md:text-5xl font-semibold leading-tight text-stone-900" style="max-width:480px;">
+        Projects that speak <span style="font-style:italic;">for themselves.</span>
+      </h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Photo 1 -->
+      <div class="img-hover-wrap">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-uQnRRksc6rkQNIrHtmct9D3yFCSsETVu1ikXjD17rh1LZ_OhG067efrOprGMcIQnd2kX0nvzDd3FkNQUwmMQBfxM0tV_pwjPJ_zXeeVwGmJ3_IsoSb-9E6FSyFq4vOie62UBh3DAoeJBd-3A63zxJFl8ZcoQRNUSX4cxcPTzbhcW3WESTpkRBjBmLNqScapWvwcCIrDM_kNCQRci4_tg624P7Ct7n4fAmRU9f3ZtvCTUWzeWxtiP8HJpJoYcO96DfwTxqcyC_OT-Xvz4_6chMAkgHIqeYxta08KD7l2VpswurLZRv16PY8J5MnRd8GsCjdpo8vdN7AG0uv9bLYaGIBl6UB5JKvkhidc57p_dOmZwGaO-VM9rVFikTUTAXK5Hd9h127mfdbFHVM3poikperTCvs5GPi7U7gYubsajBaQA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Canton, GA — Restoration Project"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/construction-3/800/600'"
+          class="w-full object-cover"
+          style="aspect-ratio:4/3;"
+        >
+        <div class="pt-3">
+          <p class="heading text-sm font-semibold" style="font-style:italic;">Canton, GA — Water Damage Restoration</p>
+          <p class="text-xs text-stone-500 mt-1 font-medium tracking-wide">Cherokee County · 2024</p>
+        </div>
+      </div>
+      <!-- Photo 2 -->
+      <div class="img-hover-wrap">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-vC8Bb3vcYVMyWG9f9H0ecQw5Pa4M8SJfxUOHnrpDqxziujbfdBfQG9nONO_FTjxcKahn6s2Y1hFjfSxJwjjQTA7-uEoQDDvMB-tsBMxXR06nbcoeyW3KokMzkFbauueUGR75VJfLWxfGaqLl-cxHGjiz99lBk0Te829TWzzpqH_yWqfom7zTHke9vxH_88CcjYwMSMB478FVXou-SO16fVumuyRUSIB3qyyoFzO6UgRQUXgFdYeF5ZKgyTGVpIszpp5K5QqarQyi0AJGVL9PSDkpKxHZifR4VyBBg73BUbvvlt9t2Obk7Z1rbeiqe5t1drqeutpMru2eQ7jVsNecADSU7PblZR_3CE28ArEUv9HGj2_RCuT8gu6FR7Ad_hBCBVf2bRs04HtdyHhLaopsCCqkymCuhanAJQvBoLSv61zAHR6V-aykUjZCdeGRF7&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Woodstock, GA — Roofing Project"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/construction-4/800/600'"
+          class="w-full object-cover"
+          style="aspect-ratio:4/3;"
+        >
+        <div class="pt-3">
+          <p class="heading text-sm font-semibold" style="font-style:italic;">Woodstock, GA — Roof Repair & Rebuild</p>
+          <p class="text-xs text-stone-500 mt-1 font-medium tracking-wide">Cherokee County · Spring 2024</p>
+        </div>
+      </div>
+      <!-- Photo 3 -->
+      <div class="img-hover-wrap">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-ulvsl0Yk3vP28QK9e3gNZ-TzX2_zQPoLv7WzW_yGgL0FfVhxR63DdG70AgmDSOxYE7fa5_21aeQNKsPr24KT5eaQYXsObMMjIBh-_0EYvUA7zFT-PiXxFMc2e_Hhd9rwgzSbd6ZZz1BXTwKEPsngvZUttNcOcwq2MstBA2byFoa0CU9Gm70JEE9UGQS8u17J_vKfoR0iC8zfQFSVZ-EWxrPNdlke-OhjNMYavQfTHec2E1E-ICLaBBJdmpiiyB1iq4YdhHS2qpKhObv1rD5wM0aMNYXajKmBx9BHTAnjIiY2Dxf0THGwh0V8relYuSzW3d9pVIUYzDrna1x6zYEL-c--D3XbUKuqgxPIsPq7pMfcSl2dIz4rhr6i0ydD-k8rYvvkdPuhfHHSEuyBwWUULZ1VIhjXljh9nTpK3VFnB64ErxCHaBMb47UlrmQQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Ball Ground, GA — Structural Restoration"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/construction-5/800/600'"
+          class="w-full object-cover"
+          style="aspect-ratio:4/3;"
+        >
+        <div class="pt-3">
+          <p class="heading text-sm font-semibold" style="font-style:italic;">Ball Ground, GA — Structural Restoration</p>
+          <p class="text-xs text-stone-500 mt-1 font-medium tracking-wide">North Cherokee · Fall 2023</p>
+        </div>
+      </div>
+      <!-- Photo 4 -->
+      <div class="img-hover-wrap">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-ttQqu3jSbovEtYXN1HkvuGC8FzIUx6cUxYqqNf5QRwd1tRd9VlpjengWGd_0_7QIyT7p1spQYcHLwqb2EBmf9OQ7nALSqQc9eD8GAjCQupyMscWxBXgzb99pGbwosHcDr45yZJYm_kWY7QlQJK8sCrar6r3LAUb1R-wDpfW0O1Mz7L3og179ynIhAuNVfp0MzP5G3Qmuqm227LuZOfgye7P50I-DhsDX_LIebP39WA9jPM67SgXA-rZeQd-LzT_ZiQP1YD035PRC9mNf7eD1SKSmn79_f78l3KG9S9EDwIs99CxzuB9lOFUEs7zZ0xBP1oIDYMWxTcKU-shATORxSRwVaWGsrNrJKOI4cIQNRSY4pmuaMApkk9v5XRPRRfGLYRy80Ts9YlU0jkQDraVYT2s4KOxiPAnYn4MK9vVeIq9bDlTIzoJwYE1r7EKvbn&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Canton, GA — Kitchen Renovation"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/construction-6/800/600'"
+          class="w-full object-cover"
+          style="aspect-ratio:4/3;"
+        >
+        <div class="pt-3">
+          <p class="heading text-sm font-semibold" style="font-style:italic;">Canton, GA — Full Kitchen Renovation</p>
+          <p class="text-xs text-stone-500 mt-1 font-medium tracking-wide">Mountain Brook · Winter 2024</p>
+        </div>
+      </div>
+      <!-- Photo 5 -->
+      <div class="img-hover-wrap">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-tWQxyAgJQ7fsB-SfldWfiIjHT6HyCCbb2FisjAFmJO_CVEIXekmM-kuZAgG0Tv8_ds8qstirAOHlXnPNeBfAkafLQlqOwpR7-S4xnAUSSF8QkxFRvDtPA7j5CqiaLRaAEce9LCL-RvplwLovPmCJcE7ZzOdRJw5nJagm3WKDsK54r46hLVhe6jcbzX2XLmWUh3MNmDuFDWdxDCmiU0wf_Rw9S_WUau5EeriSuSvmh4dRkYs_HAobmUl-KWKjHn-cea_YUizerTTrzT3j_dHVBx8kDm5caOVynTbW7exPitif53koON60bTnyyZeUlgVqrH9AR59rnVssNJkSLm3pB8TwKcU1DH-Ip9i24W7L7hkEX2JgvPw0v8YMyqQUg0nXU0Zlo33VHYQHLs17P29QDQeSp5Pf-8gqcb6QEJPqsgO0dVv9hjxQHIWNQUZpcE&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Holly Springs, GA — Commercial Build-Out"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/construction-7/800/600'"
+          class="w-full object-cover"
+          style="aspect-ratio:4/3;"
+        >
+        <div class="pt-3">
+          <p class="heading text-sm font-semibold" style="font-style:italic;">Holly Springs, GA — Commercial Build-Out</p>
+          <p class="text-xs text-stone-500 mt-1 font-medium tracking-wide">Cherokee County · Spring 2024</p>
+        </div>
+      </div>
+      <!-- Photo 6 -->
+      <div class="img-hover-wrap">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-vnyITzjZtkCjPfbWZXMXUqdZIW56nmWxx4Lj3dMn2eApDwC2f1uCNy0aQ4TBhUG1JXFYjOMVfTeS5x68_kAe0iZeubA7rsXAaUPW_AniUpY-tUsYSza7MLuockqPXrXuHLDYu0UI3Ge5fD6aaQGQKkYd4Er9OWWUzN6QC-0B0jzGl_NYzuyDnKnLPKj8tksYml2Qrxv2TK_rBGCoj4Z3qFQhEg3yWK658uSDCaoVhkvn5NKYo_GIEJzfu1zjAULkv-Rh2bBi1xYn_ngsjtstr7LJJwCSKkMzW6MZTEN--GLluPBX_2fkJh_uqZgv4U1E6XvJT4FFF9A93RJj9rrwkcwuCwEQUkIuiMGcU1W8FkuOfYDvxjRE0mjxcTxjfCobh3Rkc0IAL2jMfeJJikWB1qw4yraqsmnQV9mzj0vlIC-g9I1zxgeya2-Ir2-Lb1&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Alpharetta, GA — Basement Finishing"
+          loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/construction-8/800/600'"
+          class="w-full object-cover"
+          style="aspect-ratio:4/3;"
+        >
+        <div class="pt-3">
+          <p class="heading text-sm font-semibold" style="font-style:italic;">Alpharetta, GA — Basement Finishing</p>
+          <p class="text-xs text-stone-500 mt-1 font-medium tracking-wide">North Fulton · Summer 2023</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-[#fafaf8]">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-12">
+      <div class="section-num mb-2">/06</div>
+      <p class="eyebrow-label mb-4">Client Reviews</p>
+      <h2 class="heading text-4xl md:text-5xl font-semibold text-stone-900 leading-tight" style="max-width:520px;">
+        What Canton <span style="font-style:italic;">neighbors</span> say.
+      </h2>
+    </div>
+
+    <!-- Hero review -->
+    <div class="bg-[#212121] text-white p-10 md:p-16 mb-6">
+      <div class="flex gap-1 mb-6">
+        <i data-lucide="star" class="w-5 h-5 text-[#FFC300]" fill="#FFC300" style="fill:#FFC300;"></i>
+        <i data-lucide="star" class="w-5 h-5 text-[#FFC300]" fill="#FFC300" style="fill:#FFC300;"></i>
+        <i data-lucide="star" class="w-5 h-5 text-[#FFC300]" fill="#FFC300" style="fill:#FFC300;"></i>
+        <i data-lucide="star" class="w-5 h-5 text-[#FFC300]" fill="#FFC300" style="fill:#FFC300;"></i>
+        <i data-lucide="star" class="w-5 h-5 text-[#FFC300]" fill="#FFC300" style="fill:#FFC300;"></i>
+      </div>
+      <p class="heading text-xl md:text-2xl font-semibold leading-relaxed text-stone-100 mb-8" style="font-style:italic; max-width:820px;">"I was fortunate enough to get Ian, Dmitriy, and Cody. This is the 'dream team' of restoration services. They made the whole process, which can be very stressful, easy. The best way to put it — you would think these guys were working on their own house. They advised, advocated, and assisted my wife and I all along the way."</p>
+      <div class="flex items-center justify-between flex-wrap gap-4">
+        <div>
+          <p class="text-sm font-semibold text-white tracking-wide">GAHen</p>
+          <p class="text-xs text-stone-400 mt-0.5">a month ago</p>
+        </div>
+        <span class="text-xs font-semibold tracking-widest uppercase border border-stone-600 text-stone-300 px-4 py-2" style="font-style:italic;font-family:'Fraunces',serif;">via Google</span>
+      </div>
+    </div>
+
+    <!-- Grid reviews -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Review 2 -->
+      <div class="bg-white border border-stone-200 p-10">
+        <div class="flex gap-1 mb-5">
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+        </div>
+        <p class="heading text-lg leading-relaxed text-stone-800 mb-6" style="font-style:italic;">"I cannot say enough good about Southeast Restoration. Bubba, Dmitri, Cody, Johnny and a crew of nothing but 5-star technicians have come to our rescue at Corso Atlanta countless times. I can always count on Southeast to be super responsive and communicative every step of the way."</p>
+        <div class="hairline-rule pt-5 flex items-center justify-between">
+          <div>
+            <p class="text-sm font-semibold text-stone-900">Alan Erwin</p>
+            <p class="text-xs text-stone-400 mt-0.5">a month ago</p>
+          </div>
+          <span class="text-xs font-semibold tracking-widest uppercase text-stone-500 border border-stone-200 px-3 py-1.5" style="font-style:italic;font-family:'Fraunces',serif;">via Google</span>
+        </div>
+      </div>
+      <!-- Review 3 -->
+      <div class="bg-white border border-stone-200 p-10">
+        <div class="flex gap-1 mb-5">
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+        </div>
+        <p class="heading text-lg leading-relaxed text-stone-800 mb-6" style="font-style:italic;">"Southeast Restoration was wonderful to work with from start to finish. The entire team was thorough, responsive, and easy to communicate with throughout the process. Our project manager, Jarrad Kinder, kept us exceptionally well informed every step of the way and made the entire experience smooth and stress free."</p>
+        <div class="hairline-rule pt-5 flex items-center justify-between">
+          <div>
+            <p class="text-sm font-semibold text-stone-900">Katie Parker</p>
+            <p class="text-xs text-stone-400 mt-0.5">a month ago</p>
+          </div>
+          <span class="text-xs font-semibold tracking-widest uppercase text-stone-500 border border-stone-200 px-3 py-1.5" style="font-style:italic;font-family:'Fraunces',serif;">via Google</span>
+        </div>
+      </div>
+      <!-- Review 4 -->
+      <div class="bg-white border border-stone-200 p-10">
+        <div class="flex gap-1 mb-5">
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+        </div>
+        <p class="heading text-lg leading-relaxed text-stone-800 mb-6" style="font-style:italic;">"A HUGE shoutout to Britt, my project manager from Southeast Restoration, for a job well done. I practically have a brand new home & I get to sleep in my own bed tonight! I'm so excited to be spending Christmas at home with my family!"</p>
+        <div class="hairline-rule pt-5 flex items-center justify-between">
+          <div>
+            <p class="text-sm font-semibold text-stone-900">Cassey Hembree</p>
+            <p class="text-xs text-stone-400 mt-0.5">4 months ago</p>
+          </div>
+          <span class="text-xs font-semibold tracking-widest uppercase text-stone-500 border border-stone-200 px-3 py-1.5" style="font-style:italic;font-family:'Fraunces',serif;">via Google</span>
+        </div>
+      </div>
+      <!-- Review 5 -->
+      <div class="bg-white border border-stone-200 p-10">
+        <div class="flex gap-1 mb-5">
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+        </div>
+        <p class="heading text-lg leading-relaxed text-stone-800 mb-6" style="font-style:italic;">"They did a great job fixing my roof after the tree fell on it. Good and consistent communication on the work in progress and expected completion timings. They negotiated most of the work with the insurance company and tied up all the loose ends that were missed by insurance. Absolutely recommend working with the team of Dave, Bob and Noah along with the contractors they brought in to finish the job."</p>
+        <div class="hairline-rule pt-5 flex items-center justify-between">
+          <div>
+            <p class="text-sm font-semibold text-stone-900">Shyam Kotecha</p>
+            <p class="text-xs text-stone-400 mt-0.5">a month ago</p>
+          </div>
+          <span class="text-xs font-semibold tracking-widest uppercase text-stone-500 border border-stone-200 px-3 py-1.5" style="font-style:italic;font-family:'Fraunces',serif;">via Google</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA MAP STRIP -->
+<section class="animate-section py-16 px-4 md:px-8 lg:px-16 bg-white border-y border-stone-200">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-8">
+      <div class="section-num mb-2">/07</div>
+      <p class="eyebrow-label mb-2">Service Area</p>
+      <h2 class="heading text-3xl font-semibold text-stone-900" style="font-style:italic;">Rooted in Canton, reaching across Cherokee County.</h2>
+    </div>
+    <div class="flex flex-wrap gap-3 mb-8">
+      <span class="border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 bg-stone-50">Canton, GA</span>
+      <span class="border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 bg-stone-50">Woodstock, GA</span>
+      <span class="border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 bg-stone-50">Ball Ground, GA</span>
+      <span class="border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 bg-stone-50">Holly Springs, GA</span>
+      <span class="border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 bg-stone-50">Jasper, GA</span>
+      <span class="border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 bg-stone-50">Alpharetta, GA</span>
+      <span class="border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 bg-stone-50">Cumming, GA</span>
+      <span class="border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 bg-stone-50">Dahlonega, GA</span>
+      <span class="border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 bg-stone-50">Dawsonville, GA</span>
+      <span class="border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 bg-stone-50">Cartersville, GA</span>
+    </div>
+    <p class="text-sm text-stone-500 font-medium">Not sure if we serve your area? <a href="tel:7703453500" class="text-stone-900 font-semibold underline">Call us at (770) 345-3500</a> — we'll let you know right away.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-[#fafaf8]">
+  <div class="max-w-4xl mx-auto">
+    <div class="mb-12">
+      <div class="section-num mb-2">/08</div>
+      <p class="eyebrow-label mb-4">Frequently Asked</p>
+      <h2 class="heading text-4xl md:text-5xl font-semibold text-stone-900 leading-tight">
+        Questions <span style="font-style:italic;">answered.</span>
+      </h2>
+    </div>
+    <div class="divide-y divide-stone-200 border-t border-stone-200">
+      <!-- FAQ 1 -->
+      <details class="group">
+        <summary class="flex items-center justify-between py-6 text-base font-semibold text-stone-900 hover:text-stone-700 transition">
+          What areas do you serve?
+          <span class="ml-4 text-[#FFC300] transition-transform group-open:rotate-45">
+            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+          </span>
+        </summary>
+        <p class="text-sm text-stone-600 leading-relaxed pb-6">Southeast Restoration serves Canton, Woodstock, Ball Ground, Holly Springs, Jasper, Alpharetta, Cumming, Dahlonega, Dawsonville, Cartersville, and the surrounding Cherokee County area. If you're unsure whether we cover your location, give us a call at (770) 345-3500 and we'll confirm immediately.</p>
+      </details>
+      <!-- FAQ 2 -->
+      <details class="group">
+        <summary class="flex items-center justify-between py-6 text-base font-semibold text-stone-900 hover:text-stone-700 transition">
+          Are you available for emergency restoration services?
+          <span class="ml-4 text-[#FFC300] transition-transform group-open:rotate-45">
+            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+          </span>
+        </summary>
+        <p class="text-sm text-stone-600 leading-relaxed pb-6">Yes — Southeast Restoration operates 24 hours a day, 7 days a week, 365 days a year. Whether it's a burst pipe at 2am or storm damage on a holiday weekend, we respond fast and get to work. Emergency response is a cornerstone of how we serve our Canton neighbors.</p>
+      </details>
+      <!-- FAQ 3 -->
+      <details class="group">
+        <summary class="flex items-center justify-between py-6 text-base font-semibold text-stone-900 hover:text-stone-700 transition">
+          Do you work directly with insurance companies?
+          <span class="ml-4 text-[#FFC300] transition-transform group-open:rotate-45">
+            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+          </span>
+        </summary>
+        <p class="text-sm text-stone-600 leading-relaxed pb-6">Absolutely. Our team has extensive experience navigating insurance claims and will advocate on your behalf throughout the process. We work to ensure your claim covers the full scope of damage and coordinate directly with adjusters so you don't have to manage the paperwork alone.</p>
+      </details>
+      <!-- FAQ 4 -->
+      <details class="group">
+        <summary class="flex items-center justify-between py-6 text-base font-semibold text-stone-900 hover:text-stone-700 transition">
+          How long does a typical restoration project take?
+          <span class="ml-4 text-[#FFC300] transition-transform group-open:rotate-45">
+            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+          </span>
+        </summary>
+        <p class="text-sm text-stone-600 leading-relaxed pb-6">Project timelines vary based on scope — mitigation work can begin same-day and be completed within days, while full reconstruction projects may span several weeks. Your dedicated project manager will give you a realistic timeline at the outset and communicate proactively if anything changes.</p>
+      </details>
+      <!-- FAQ 5 -->
+      <details class="group">
+        <summary class="flex items-center justify-between py-6 text-base font-semibold text-stone-900 hover:text-stone-700 transition">
+          Is Southeast Restoration licensed and insured?
+          <span class="ml-4 text-[#FFC300] transition-transform group-open:rotate-45">
+            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+          </span>
+        </summary>
+        <p class="text-sm text-stone-600 leading-relaxed pb-6">Yes. Southeast Restoration is fully licensed and insured to operate in Georgia. We carry all required coverages to protect you, your property, and our team throughout every phase of a project. We're happy to provide documentation upon request before work begins.</p>
+      </details>
+      <!-- FAQ 6 -->
+      <details class="group">
+        <summary class="flex items-center justify-between py-6 text-base font-semibold text-stone-900 hover:text-stone-700 transition">
+          How do I get a quote for my project?
+          <span class="ml-4 text-[#FFC300] transition-transform group-open:rotate-45">
+            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+          </span>
+        </summary>
+        <p class="text-sm text-stone-600 leading-relaxed pb-6">Getting started is simple. You can call us directly at (770) 345-3500, fill out the contact form on this page, or stop by our Canton office at 120 Mountain Brook Dr. We offer free estimates and will walk through the project scope with you before any work begins — no pressure, no obligation.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <div class="mb-12">
+      <div class="section-num mb-2">/09</div>
+      <p class="eyebrow-label mb-4">Contact</p>
+      <h2 class="heading text-4xl md:text-5xl font-semibold text-stone-900 leading-tight">
+        Let's get to <span style="font-style:italic;">work.</span>
+      </h2>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <!-- Left: Map -->
+      <div>
+        <iframe
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k&q=place_id:ChIJgTgYQjxv9YgRNZuxyNfj4r0"
+          class="w-full border border-stone-200"
+          style="height:480px;border:none;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Southeast Restoration — Canton, GA"
+        ></iframe>
+        <div class="mt-4 flex items-center gap-3">
+          <i data-lucide="map-pin" class="w-4 h-4 text-stone-500 flex-shrink-0"></i>
+          <p class="text-xs text-stone-500 font-medium">120 Mountain Brook Dr, Canton, GA 30115</p>
+        </div>
+        <div class="mt-2 flex items-center gap-3">
+          <i data-lucide="clock" class="w-4 h-4 text-stone-500 flex-shrink-0"></i>
+          <p class="text-xs text-stone-500 font-medium">Open 24 hours · 7 days a week</p>
+        </div>
+      </div>
+      <!-- Right: Form card -->
+      <div class="bg-white border p-10 max-w-md w-full" style="border-color: rgba(33,33,33,0.3);">
+        <p class="eyebrow-label" style="color:#212121;">Get Started</p>
+        <h3 class="heading text-3xl font-semibold mt-2 text-stone-900" style="font-style:italic;">Request a Free Quote</h3>
+        <p class="text-stone-600 text-sm mt-1">We'll be in touch within the hour.</p>
+        <div class="flex items-center gap-1 mt-3">
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+          <i data-lucide="star" class="w-4 h-4 text-[#FFC300]" style="fill:#FFC300;"></i>
+          <span class="text-sm text-stone-600 ml-1">4.9 out of 5 · 977 reviews</span>
+        </div>
+        <form onsubmit="return false;">
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:outline-none py-3 px-4 w-full mt-4 text-sm font-medium text-stone-900 placeholder-stone-400"
+            style="border-radius:0;"
+          >
+          <input
+            type="tel"
+            placeholder="Phone Number"
+            class="bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:outline-none py-3 px-4 w-full mt-3 text-sm font-medium text-stone-900 placeholder-stone-400"
+            style="border-radius:0;"
+          >
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:outline-none py-3 px-4 w-full mt-3 text-sm font-medium text-stone-900 placeholder-stone-400"
+            style="border-radius:0;"
+          >
+          <select
+            class="bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-stone-900 focus:outline-none py-3 px-4 w-full mt-3 text-sm font-medium text-stone-600"
+            style="border-radius:0;"
+          >
+            <option value="" disabled selected>Select a Service</option>
+            <option>General Contracting</option>
+            <option>New Construction</option>
+            <option>Commercial Build-Outs</option>
+            <option>Structural Work</option>
+          </select>
+          <button
+            type="submit"
+            class="w-full bg-[#212121] text-white py-4 font-bold tracking-widest uppercase text-sm mt-6 transition hover:bg-stone-800"
+            style="border-radius:0;"
+          >
+            Request Free Quote
+          </button>
+        </form>
+        <div class="flex items-center gap-2 mt-3">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-stone-400"></i>
+          <span class="text-xs text-stone-500" style="font-family:'Fraunces',serif;font-style:italic;">Licensed & Insured · Canton Local</span>
+        </div>
+        <p class="text-xs text-stone-400 mt-2" style="font-style:italic;">By submitting you agree to be contacted regarding your request.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#212121] text-stone-100">
+  <!-- Trust strip -->
+  <div class="border-b py-12 px-4" style="border-color:rgba(255,255,255,0.1);">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-center gap-10">
+      <div class="flex items-center gap-3">
+        <i data-lucide="shield-check" class="w-5 h-5 text-[#FFC300]"></i>
+        <span class="text-xs font-semibold tracking-widest uppercase text-stone-300">Licensed</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <i data-lucide="check-circle" class="w-5 h-5 text-[#FFC300]"></i>
+        <span class="text-xs font-semibold tracking-widest uppercase text-stone-300">Insured</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <i data-lucide="award" class="w-5 h-5 text-[#FFC300]"></i>
+        <span class="text-xs font-semibold tracking-widest uppercase text-stone-300">4.9★ Google</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <i data-lucide="heart" class="w-5 h-5 text-[#FFC300]"></i>
+        <span class="text-xs font-semibold tracking-widest uppercase text-stone-300">Local &amp; Family-Owned</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <i data-lucide="star" class="w-5 h-5 text-[#FFC300]"></i>
+        <span class="text-xs font-semibold tracking-widest uppercase text-stone-300">Community-First</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Proudly serving banner -->
+  <div class="border-b py-12 px-4 text-center" style="border-color:rgba(255,255,255,0.1);">
+    <p class="text-xs font-semibold tracking-[0.22em] uppercase text-[#FFC300]">Proudly Serving</p>
+    <h3 class="heading text-4xl font-semibold mt-3 text-white" style="font-style:italic;">Canton &amp; beyond</h3>
+    <div class="flex flex-wrap justify-center gap-2 mt-6">
+      <span class="border px-4 py-2 text-sm font-medium text-stone-300" style="border-color:rgba(255,255,255,0.2);border-radius:0;">Canton</span>
+      <span class="border px-4 py-2 text-sm font-medium text-stone-300" style="border-color:rgba(255,255,255,0.2);border-radius:0;">Woodstock</span>
+      <span class="border px-4 py-2 text-sm font-medium text-stone-300" style="border-color:rgba(255,255,255,0.2);border-radius:0;">Ball Ground</span>
+      <span class="border px-4 py-2 text-sm font-medium text-stone-300" style="border-color:rgba(255,255,255,0.2);border-radius:0;">Holly Springs</span>
+      <span class="border px-4 py-2 text-sm font-medium text-stone-300" style="border-color:rgba(255,255,255,0.2);border-radius:0;">Jasper</span>
+      <span class="border px-4 py-2 text-sm font-medium text-stone-300" style="border-color:rgba(255,255,255,0.2);border-radius:0;">Alpharetta</span>
+      <span class="border px-4 py-2 text-sm font-medium text-stone-300" style="border-color:rgba(255,255,255,0.2);border-radius:0;">Cumming</span>
+      <span class="border px-4 py-2 text-sm font-medium text-stone-300" style="border-color:rgba(255,255,255,0.2);border-radius:0;">Dahlonega</span>
+      <span class="border px-4 py-2 text-sm font-medium text-stone-300" style="border-color:rgba(255,255,255,0.2);border-radius:0;">Dawsonville</span>
+      <span class="border px-4 py-2 text-sm font-medium text-stone-300" style="border-color:rgba(255,255,255,0.2);border-radius:0;">Cartersville</span>
+    </div>
+  </div>
+
+  <!-- Main grid -->
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 py-20 px-4 md:px-8">
+    <!-- Col 1: Identity -->
+    <div class="col-span-2 md:col-span-1">
+      <h4 class="heading text-3xl font-semibold text-white" style="font-style:italic;">Southeast<br><span class="text-[#FFC300]">Restoration</span></h4>
+      <p class="text-stone-400 text-sm mt-3 max-w-xs leading-relaxed" style="font-style:italic;">Proudly serving Canton since 2016.</p>
+      <div class="mt-6 space-y-3">
+        <div class="flex items-center gap-2">
+          <i data-lucide="map-pin" class="w-4 h-4 text-[#FFC300] flex-shrink-0"></i>
+          <span class="text-xs text-stone-400">120 Mountain Brook Dr, Canton, GA 30115</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="phone" class="w-4 h-4 text-[#FFC300] flex-shrink-0"></i>
+          <a href="tel:7703453500" class="text-xs text-stone-400 hover:text-white transition">(770) 345-3500</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="clock" class="w-4 h-4 text-[#FFC300] flex-shrink-0"></i>
+          <span class="text-xs text-stone-400">Open 24 hours · 7 days a week</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Col 2: Services -->
+    <div>
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FFC300] pb-3 border-b mb-4" style="border-color:rgba(255,195,0,0.2);">Services</p>
+      <a href="#services" class="block text-sm text-stone-400 hover:text-white transition py-1">General Contracting</a>
+      <a href="#services" class="block text-sm text-stone-400 hover:text-white transition py-1">New Construction</a>
+      <a href="#services" class="block text-sm text-stone-400 hover:text-white transition py-1">Commercial Build-Outs</a>
+      <a href="#services" class="block text-sm text-stone-400 hover:text-white transition py-1">Structural Work</a>
+      <a href="#services" class="block text-sm text-stone-400 hover:text-white transition py-1">Home Remodeling</a>
+      <a href="#services" class="block text-sm text-stone-400 hover:text-white transition py-1">Kitchen Renovation</a>
+      <a href="#services" class="block text-sm text-stone-400 hover:text-white transition py-1">Bathroom Renovation</a>
+      <a href="#services" class="block text-sm text-stone-400 hover:text-white transition py-1">Basement Finishing</a>
+      <a href="#services" class="block text-sm text-stone-400 hover:text-white transition py-1">Custom Carpentry</a>
+      <a href="#services" class="block text-sm text-stone-400 hover:text-white transition py-1">Design-Build</a>
+      <a href="#services" class="block text-sm text-stone-400 hover:text-white transition py-1">Historic Restoration</a>
+      <a href="#services" class="block text-sm text-stone-400 hover:text-white transition py-1">Tenant Improvements</a>
+    </div>
+
+    <!-- Col 3: Company -->
+    <div>
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FFC300] pb-3 border-b mb-4" style="border-color:rgba(255,195,0,0.2);">Company</p>
+      <a href="#home" class="block text-sm text-stone-400 hover:text-white transition py-1">Home</a>
+      <a href="#about" class="block text-sm text-stone-400 hover:text-white transition py-1">About</a>
+      <a href="#services" class="block text-sm text-stone-400 hover:text-white transition py-1">Services</a>
+      <a href="#gallery" class="block text-sm text-stone-400 hover:text-white transition py-1">Gallery</a>
+      <a href="#reviews" class="block text-sm text-stone-400 hover:text-white transition py-1">Reviews</a>
+      <a href="#faq" class="block text-sm text-stone-400 hover:text-white transition py-1">FAQ</a>
+      <a href="#contact" class="block text-sm text-stone-400 hover:text-white transition py-1">Contact</a>
+    </div>
+
+    <!-- Col 4: Resources / Trust -->
+    <div>
+      <p class="text-xs font-semibold tracking-widest uppercase text-[#FFC300] pb-3 border-b mb-4" style="border-color:rgba(255,195,0,0.2);">Resources</p>
+      <a href="#contact" class="block text-sm text-stone-400 hover:text-white transition py-1">Get a Free Quote</a>
+      <a href="tel:7703453500" class="block text-sm text-stone-400 hover:text-white transition py-1">Call (770) 345-3500</a>
+      <a href="#faq" class="block text-sm text-stone-400 hover:text-white transition py-1">FAQ</a>
+      <div class="mt-6 pt-6 border-t space-y-2" style="border-color:rgba(255,255,255,0.1);">
+        <p class="text-xs text-stone-500 font-semibold tracking-widest uppercase mb-3">Trust</p>
+        <p class="text-xs text-stone-500">Licensed &amp; Insured · Georgia</p>
+        <p class="text-xs text-stone-500">4.9★ Google · 977 Reviews</p>
+        <p class="text-xs text-stone-500">Cherokee County &amp; beyond</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t py-8 px-4 md:px-8" style="border-color:rgba(255,255,255,0.1);">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-stone-500">&copy; 2025 Southeast Restoration. All rights reserved. · Canton, GA 30115</p>
+      <p class="heading text-xs text-[#FFC300]" style="font-style:italic;">Proud Canton neighbors.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- JS -->
+<script>
+// Nav scroll shadow
+(function(){
+  const nav = document.querySelector('nav');
+  if (!nav) return;
+  window.addEventListener('scroll', () => nav.classList.toggle('shadow-md', window.scrollY > 50));
+})();
+
+// Hamburger
+(function(){
+  const ham = document.getElementById('hamburger');
+  const menu = document.getElementById('mobile-menu');
+  if (ham && menu) ham.addEventListener('click', () => menu.classList.toggle('hidden'));
+  document.querySelectorAll('.mobile-nav-link').forEach(a => {
+    a.addEventListener('click', () => { if (menu) menu.classList.add('hidden'); });
+  });
+})();
+
+// TABS
+(function(){
+  const buttons = Array.from(document.querySelectorAll('.tab-btn'));
+  const panels = Array.from(document.querySelectorAll('.tab-panel'));
+  if (!buttons.length || !panels.length) return;
+  function showByIndex(idx) {
+    panels.forEach(p => p.classList.add('hidden'));
+    buttons.forEach(b => { b.classList.remove('active-tab'); b.classList.add('inactive-tab'); });
+    if (panels[idx]) panels[idx].classList.remove('hidden');
+    if (buttons[idx]) { buttons[idx].classList.add('active-tab'); buttons[idx].classList.remove('inactive-tab'); }
+  }
+  function showById(id) { const i = panels.findIndex(p => p.id === id); if (i >= 0) showByIndex(i); }
+  buttons.forEach((btn, idx) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const t = btn.getAttribute('data-target');
+      if (t) showById(t); else showByIndex(idx);
+    });
+  });
+  window.showTab = function(id){ showById(id); };
+  if (!panels.some(p => !p.classList.contains('hidden'))) showByIndex(0);
+})();
+
+// Counters
+function animateCount(el, target, suffix) {
+  let start = 0;
+  const duration = 2000, steps = 60, inc = target / steps;
+  const t = setInterval(() => {
+    start += inc;
+    if (start >= target) { el.textContent = target + (suffix || ''); clearInterval(t); }
+    else el.textContent = Math.floor(start) + (suffix || '');
+  }, duration / steps);
+}
+const statObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const t = parseInt(e.target.dataset.count);
+      const s = e.target.dataset.suffix || '';
+      if (t) animateCount(e.target, t, s);
+      statObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('[data-count]').forEach(el => statObs.observe(el));
+
+// Section reveal
+(function(){
+  const sections = document.querySelectorAll('.animate-section');
+  if (!sections.length) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('is-pending');
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  sections.forEach(el => {
+    const r = el.getBoundingClientRect();
+    const inView = r.top < window.innerHeight && r.bottom > 0;
+    if (inView) el.classList.add('is-visible');
+    else { el.classList.add('is-pending'); obs.observe(el); }
+  });
+  setTimeout(() => {
+    document.querySelectorAll('.animate-section.is-pending').forEach(el => {
+      el.classList.remove('is-pending'); el.classList.add('is-visible');
+    });
+  }, 2500);
+})();
+
+// Hash-click reveal
+(function(){
+  function revealTarget() {
+    const hash = window.location.hash;
+    if (!hash || hash.length < 2) return;
+    try {
+      const target = document.querySelector(hash);
+      if (target && target.classList.contains('animate-section')) {
+        target.classList.remove('is-pending');
+        target.classList.add('is-visible');
+      }
+    } catch(e) {}
+  }
+  window.addEventListener('hashchange', revealTarget);
+  setTimeout(revealTarget, 100);
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', () => {
+      const hash = a.getAttribute('href');
+      if (hash && hash.length > 1) {
+        try {
+          const target = document.querySelector(hash);
+          if (target && target.classList.contains('animate-section')) {
+            target.classList.remove('is-pending');
+            target.classList.add('is-visible');
+          }
+        } catch(e) {}
+      }
+    });
+  });
+})();
+
+// Live clock
+function updateClock() {
+  const el = document.getElementById('live-clock');
+  if (el) el.textContent = 'Canton — ' + new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+}
+updateClock();
+setInterval(updateClock, 1000);
+
+// Lucide
+(function(){
+  const render = () => { if (window.lucide) window.lucide.createIcons(); };
+  if (window.lucide) render();
+  else document.addEventListener('DOMContentLoaded', render);
+  setTimeout(render, 500);
+  setTimeout(render, 1500);
+})();
+</script>
+</body>
+</html>

@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Georgia In Home Services | Atlanta, GA | Roofing & Remodeling</title>
+  <title>Georgia In Home Services | Atlanta, GA | Roofing & Home Remodeling</title>
+  <meta name="description" content="Georgia In Home Services — Atlanta's premier roofing, remodeling, and restoration company. Licensed, bonded, insured. 24/7 emergency response. Call (404) 434-2436.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,8 +22,8 @@
     details summary { list-style: none; cursor: pointer; }
     details summary::-webkit-details-marker { display: none; }
     .tab-btn { cursor: pointer; transition: all 0.2s ease; letter-spacing: 0.04em; }
-    .tab-btn.active-tab { background-color: #fb8e28; color: white; }
-    .tab-btn.inactive-tab { background-color: white; color: #5A5F5C; border: 1px solid #D5D7D3; }
+    .tab-btn.active-tab { background-color: #3c6df0; color: white; }
+    .tab-btn.inactive-tab { background-color: #1C1E1D; color: #9ca3af; border: 1px solid rgba(60,109,240,0.3); }
     .tab-panel { display: block; }
     .tab-panel.hidden { display: none !important; }
     .img-hover-wrap { overflow: hidden; }
@@ -32,985 +33,1044 @@
     .arrow-cta:hover { gap: 14px; }
     .dotted-leader { flex: 1; border-bottom: 1px dotted currentColor; margin: 0 1rem; opacity: 0.25; align-self: end; padding-bottom: 0.5rem; }
     .hairline-rule { border-top: 1px solid #D5D7D3; }
-    .section-num { font-family: 'Fraunces', serif; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; color: #fb8e28; }
-    .eyebrow-label { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #fb8e28; }
+    .section-num { font-family: 'Fraunces', serif; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; color: #3c6df0; }
+    .eyebrow-label { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #3c6df0; }
     section { scroll-margin-top: 96px; }
     .animate-section { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
     .animate-section.is-pending { opacity: 0; transform: translateY(24px); }
     .animate-section.is-visible { opacity: 1; transform: none; }
     .animate-section:target,
     .animate-section.is-pending:target { opacity: 1 !important; transform: none !important; }
-    .award-badge { filter: grayscale(100%); transition: filter 0.3s ease; }
-    .award-badge:hover { filter: grayscale(0%); }
+    .award-badge { filter: grayscale(100%) invert(1); transition: filter 0.3s ease; }
+    .award-badge:hover { filter: grayscale(0%) invert(1); }
     .btn-premium { display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; border: 2px solid transparent; cursor: pointer; transition: all 0.25s ease; }
-    .btn-premium-primary { background: #fb8e28; color: #fff; }
-    .btn-premium-primary:hover { background: #fb8e28; transform: translateY(-2px); filter: brightness(0.9); }
-    .btn-premium-ghost { background: transparent; color: #1C1E1D; border-color: #1C1E1D; }
-    .btn-premium-ghost:hover { background: #1C1E1D; color: #fff; }
-    .gallery-img { filter: grayscale(60%); transition: filter 0.5s ease; }
+    .btn-premium-primary { background: #3c6df0; color: #fff; }
+    .btn-premium-primary:hover { background: #3c6df0; transform: translateY(-2px); filter: brightness(0.9); }
+    .btn-premium-ghost { background: transparent; color: #ffffff; border-color: #ffffff; }
+    .btn-premium-ghost:hover { background: #ffffff; color: #1C1E1D; }
+    .service-card { background: #1C1E1D; border: 1px solid rgba(60,109,240,0.3); padding: 2.5rem; transition: background 0.3s ease, border-color 0.3s ease; }
+    .service-card:hover { background: rgba(60,109,240,0.08); border-color: #3c6df0; }
+    .gallery-img { filter: grayscale(100%); transition: filter 0.5s ease; }
     .gallery-img:hover { filter: grayscale(0%); }
+    details[open] summary { background: rgba(60,109,240,0.06); border-left: 3px solid #3c6df0; padding-left: 1rem; }
+    details[open] { border-color: #3c6df0; }
+    .process-step { border-left: 1px solid rgba(60,109,240,0.3); }
+    .nav-link { font-size: 13px; font-weight: 500; letter-spacing: 0.06em; color: rgba(255,255,255,0.75); transition: color 0.2s ease; text-transform: uppercase; }
+    .nav-link:hover { color: #3c6df0; }
   </style>
 </head>
-<body class="bg-white">
+<body class="bg-[#1C1E1D]">
 
-  <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-stone-200 transition-shadow duration-300">
-    <div class="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-20">
-      <a href="#home" class="flex items-center gap-3"><img src="https://www.georgiainhomeservices.com/#logo" alt="Georgia In Home Services" class="h-12 md:h-14 w-auto object-contain max-w-[200px]"></a>
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#home" class="text-sm font-medium text-stone-700 hover:text-[#fb8e28] transition-colors">Home</a>
-        <a href="#about" class="text-sm font-medium text-stone-700 hover:text-[#fb8e28] transition-colors">About</a>
-        <a href="#services" class="text-sm font-medium text-stone-700 hover:text-[#fb8e28] transition-colors">Services</a>
-        <a href="#gallery" class="text-sm font-medium text-stone-700 hover:text-[#fb8e28] transition-colors">Gallery</a>
-        <a href="#reviews" class="text-sm font-medium text-stone-700 hover:text-[#fb8e28] transition-colors">Reviews</a>
-        <a href="#faq" class="text-sm font-medium text-stone-700 hover:text-[#fb8e28] transition-colors">FAQ</a>
-        <a href="#contact" class="btn-premium btn-premium-primary text-xs">Get a Quote</a>
-      </div>
-      <button id="hamburger" class="md:hidden p-2 text-stone-700">
-        <i data-lucide="menu" class="w-6 h-6"></i>
-      </button>
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-[#1C1E1D]/95 backdrop-blur-sm border-b border-white/10 transition-shadow duration-300">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-20">
+    <a href="#home" class="flex items-center gap-3"><img src="https://www.georgiainhomeservices.com/#logo" alt="Georgia In Home Services" class="h-12 md:h-14 w-auto object-contain max-w-[200px]"></a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
+      <a href="#reviews" class="nav-link">Reviews</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="tel:4044342436" class="btn-premium btn-premium-primary text-xs">
+        <i data-lucide="phone" class="w-4 h-4"></i>
+        (404) 434-2436
+      </a>
     </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-stone-200">
-      <a href="#home" class="mobile-nav-link block py-4 px-4 border-b border-stone-200 text-sm font-medium text-stone-700">Home</a>
-      <a href="#about" class="mobile-nav-link block py-4 px-4 border-b border-stone-200 text-sm font-medium text-stone-700">About</a>
-      <a href="#services" class="mobile-nav-link block py-4 px-4 border-b border-stone-200 text-sm font-medium text-stone-700">Services</a>
-      <a href="#gallery" class="mobile-nav-link block py-4 px-4 border-b border-stone-200 text-sm font-medium text-stone-700">Gallery</a>
-      <a href="#reviews" class="mobile-nav-link block py-4 px-4 border-b border-stone-200 text-sm font-medium text-stone-700">Reviews</a>
-      <a href="#faq" class="mobile-nav-link block py-4 px-4 border-b border-stone-200 text-sm font-medium text-stone-700">FAQ</a>
-      <a href="#contact" class="mobile-nav-link block py-4 px-4 text-sm font-bold text-[#fb8e28]">Get a Quote</a>
+    <button id="hamburger" class="md:hidden text-white p-2">
+      <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-[#1C1E1D] border-t border-white/10">
+    <a href="#home" class="mobile-nav-link block py-4 px-4 border-b border-white/10 text-white/80 text-sm uppercase tracking-widest">Home</a>
+    <a href="#about" class="mobile-nav-link block py-4 px-4 border-b border-white/10 text-white/80 text-sm uppercase tracking-widest">About</a>
+    <a href="#services" class="mobile-nav-link block py-4 px-4 border-b border-white/10 text-white/80 text-sm uppercase tracking-widest">Services</a>
+    <a href="#gallery" class="mobile-nav-link block py-4 px-4 border-b border-white/10 text-white/80 text-sm uppercase tracking-widest">Gallery</a>
+    <a href="#reviews" class="mobile-nav-link block py-4 px-4 border-b border-white/10 text-white/80 text-sm uppercase tracking-widest">Reviews</a>
+    <a href="#faq" class="mobile-nav-link block py-4 px-4 border-b border-white/10 text-white/80 text-sm uppercase tracking-widest">FAQ</a>
+    <a href="#contact" class="mobile-nav-link block py-4 px-4 border-b border-white/10 text-white/80 text-sm uppercase tracking-widest">Contact</a>
+    <div class="p-4">
+      <a href="tel:4044342436" class="btn-premium btn-premium-primary w-full justify-center">
+        <i data-lucide="phone" class="w-4 h-4"></i>
+        (404) 434-2436
+      </a>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- HERO -->
-  <section id="home" class="min-h-[80vh] flex flex-col md:flex-row pt-20">
-    <!-- Left -->
-    <div class="flex-1 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 bg-white">
-      <div class="flex items-center gap-3 mb-6">
-        <span class="eyebrow-label">Atlanta · Est. 2016</span>
-        <span class="hairline-rule flex-1 max-w-[60px]"></span>
+<!-- HERO -->
+<section id="home" class="relative min-h-screen flex items-center" style="background: linear-gradient(135deg, rgba(28,30,29,0.90) 0%, rgba(28,30,29,0.70) 60%, rgba(60,109,240,0.15) 100%), url('https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGSAhQl8BgWfItTCELSc8tzOuX08s3BjndX8lVo6H-l8AqBpm5nYmrf95MNkSxU4IpSCmA7PtM1qRSBDnzYOchZcCHf9y58JYVO3PfFAtIdg95hC3S_sX6C2aRbpXC0dVg9H9Uw3wL5JElHTOa0p1GXrUHS1Ajp94aoTCNAWK-tZSJP5qbk6PLAAtI0GOs4lnNl_fKarstSCSdDvK4UNVtDERMtHr-5lVZ0QKePEJ7-UMkyk0Us6tEMFeggb5HaspomqBhvIkitoPFK5FOmX-ReFi7KEy2Igkjlz7beCuII5Q&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k') center/cover no-repeat;">
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-16 pt-32 pb-24">
+    <div class="grid grid-cols-12 gap-6">
+      <div class="col-span-12 lg:col-span-8">
+        <!-- Eyebrow -->
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-px h-10 bg-[#3c6df0]"></div>
+          <span class="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/70">Est. 1996 — Atlanta, GA</span>
+        </div>
+        <!-- Headline -->
+        <h1 class="text-6xl md:text-8xl font-extrabold text-white leading-[0.95] mb-6" style="font-family:'Inter',sans-serif; font-weight:800;">
+          Atlanta's<br>
+          <em class="font-normal not-italic" style="font-family:'Fraunces',serif; font-style:italic; color:#3c6df0;">Premier</em><br>
+          Roof &amp; Remodel
+        </h1>
+        <!-- Sub -->
+        <p class="text-lg text-white/75 max-w-xl mb-3 leading-relaxed" style="font-family:'Inter',sans-serif;">
+          Roofing, remodeling, restoration — and 24/7 emergency response when water or fire strikes. Licensed, bonded, and insured since 1996.
+        </p>
+        <p class="text-sm text-[#3c6df0] font-semibold tracking-[0.12em] uppercase mb-10">Where craftsmanship meets accountability.</p>
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-4">
+          <a href="#contact" class="btn-premium btn-premium-primary">
+            <i data-lucide="hammer" class="w-4 h-4"></i>
+            Get a Free Estimate
+          </a>
+          <a href="tel:4044342436" class="btn-premium btn-premium-ghost">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            (404) 434-2436
+          </a>
+        </div>
       </div>
-      <h1 class="font-bold text-5xl md:text-6xl leading-tight text-stone-900 mb-4" style="font-family:'Fraunces',serif;">
-        Atlanta's Most<br><em class="italic text-[#fb8e28]">Trusted</em> Roof<br>& Remodel Team
-      </h1>
-      <p class="italic-display text-xl text-stone-500 mt-2 mb-8" style="font-family:'Fraunces',serif; font-style:italic;">
-        Serving Atlanta & Atlanta-area neighbors since 1996.
+    </div>
+  </div>
+  <!-- Bottom-right stamp -->
+  <div class="absolute bottom-8 right-6 md:right-12 text-right">
+    <div class="text-white/50 text-[10px] tracking-[0.18em] uppercase mb-1">Google Rating</div>
+    <div class="text-white font-semibold text-sm tracking-wide">4.8★ · 325 Reviews</div>
+  </div>
+  <!-- Emergency badge bottom-left -->
+  <div class="absolute bottom-8 left-4 md:left-12">
+    <div class="border border-[#3c6df0]/50 bg-[#3c6df0]/10 px-4 py-2 backdrop-blur-sm">
+      <div class="text-[10px] tracking-[0.18em] uppercase text-[#3c6df0] font-semibold">24/7 Emergency Response</div>
+      <div class="text-white text-sm font-medium mt-0.5">Water &amp; Fire Damage</div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER BAND -->
+<div class="bg-[#0E0E0F] py-4 overflow-hidden border-y border-white/5">
+  <div class="ticker-track">
+    <span class="text-white text-xs font-semibold tracking-[0.22em] uppercase px-8">Serving Atlanta</span>
+    <span class="text-[#3c6df0] mx-4">·</span>
+    <span class="text-white text-xs font-semibold tracking-[0.22em] uppercase px-8">Licensed in Georgia</span>
+    <span class="text-[#3c6df0] mx-4">·</span>
+    <span class="text-white text-xs font-semibold tracking-[0.22em] uppercase px-8">Local &amp; Family-Owned</span>
+    <span class="text-[#3c6df0] mx-4">·</span>
+    <span class="text-white text-xs font-semibold tracking-[0.22em] uppercase px-8">Trusted Neighbors</span>
+    <span class="text-[#3c6df0] mx-4">·</span>
+    <span class="text-white text-xs font-semibold tracking-[0.22em] uppercase px-8">24/7 Emergency Response</span>
+    <span class="text-[#3c6df0] mx-4">·</span>
+    <span class="text-white text-xs font-semibold tracking-[0.22em] uppercase px-8">4.8 Stars · 325 Reviews</span>
+    <span class="text-[#3c6df0] mx-4">·</span>
+    <!-- Repeat for seamless loop -->
+    <span class="text-white text-xs font-semibold tracking-[0.22em] uppercase px-8">Serving Atlanta</span>
+    <span class="text-[#3c6df0] mx-4">·</span>
+    <span class="text-white text-xs font-semibold tracking-[0.22em] uppercase px-8">Licensed in Georgia</span>
+    <span class="text-[#3c6df0] mx-4">·</span>
+    <span class="text-white text-xs font-semibold tracking-[0.22em] uppercase px-8">Local &amp; Family-Owned</span>
+    <span class="text-[#3c6df0] mx-4">·</span>
+    <span class="text-white text-xs font-semibold tracking-[0.22em] uppercase px-8">Trusted Neighbors</span>
+    <span class="text-[#3c6df0] mx-4">·</span>
+    <span class="text-white text-xs font-semibold tracking-[0.22em] uppercase px-8">24/7 Emergency Response</span>
+    <span class="text-[#3c6df0] mx-4">·</span>
+    <span class="text-white text-xs font-semibold tracking-[0.22em] uppercase px-8">4.8 Stars · 325 Reviews</span>
+    <span class="text-[#3c6df0] mx-4">·</span>
+  </div>
+</div>
+
+<!-- STATS BAND -->
+<div class="bg-[#0E0E0F] py-20 px-4 md:px-8 lg:px-16">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-0">
+    <div class="border-l border-[#3c6df0]/40 pl-8 py-6">
+      <div class="text-6xl font-semibold text-[#3c6df0]" style="font-family:'Fraunces',serif;" data-count="28" data-suffix="+">28+</div>
+      <div class="text-xs tracking-[0.22em] uppercase text-white/50 mt-2">Years in Business</div>
+    </div>
+    <div class="border-l border-[#3c6df0]/40 pl-8 py-6">
+      <div class="text-6xl font-semibold text-[#3c6df0]" style="font-family:'Fraunces',serif;" data-count="325" data-suffix="">325</div>
+      <div class="text-xs tracking-[0.22em] uppercase text-white/50 mt-2">Verified Reviews</div>
+    </div>
+    <div class="border-l border-[#3c6df0]/40 pl-8 py-6">
+      <div class="text-6xl font-semibold text-[#3c6df0]" style="font-family:'Fraunces',serif;" data-count="24" data-suffix="/7">24/7</div>
+      <div class="text-xs tracking-[0.22em] uppercase text-white/50 mt-2">Emergency Response</div>
+    </div>
+    <div class="border-l border-[#3c6df0]/40 pl-8 py-6">
+      <div class="text-6xl font-semibold text-[#3c6df0]" style="font-family:'Fraunces',serif;" data-count="4" data-suffix=".8★">4.8★</div>
+      <div class="text-xs tracking-[0.22em] uppercase text-white/50 mt-2">Google Rating</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-[#1C1E1D]">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+    <!-- Left: Image -->
+    <div class="relative">
+      <div class="img-hover-wrap aspect-[4/5] relative overflow-hidden">
+        <img
+          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGrvlyQaN9m-ynKtEVPMpXGz9lbDOieojf4MVyKB7KTCiAEr418_Lr-lgLXhAopH42cgjElo0C_REvVtJ_jquaTptU_cGbnaBSSMeUznCEJoxEr3ihQPWgwvxaUNpItP13kuTfTDvaESqPnvRPc2QAp0CU12-0ywX3Zy_5l9_qXPqTB7NwnQl1a9Bg8NsN2wkK4DQyoP16KRId0e8LAlNHNqWMbYq5UaSRp6Yi8BO4H5NTFqT0UN88I_tMOPdyOwIoNglElI4Yhw8LX6zPZ50UlmZP7dxxz34_hG1RUYg3IsVSAvxMOyd7cGxKPAtJJc9JQio4jRA_4B7Czprg--HOfiA5knYPX5wod-UW8JnYg2PzJRxsyx6Ea_2vR-MHCduOxBEhV0NBffuzeHjr4oPCgaVzHQDY90C5ibCqeY63wejxQRcKwBKBZAOuaaNBA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
+          alt="Georgia In Home Services — Atlanta roofing and remodeling"
+          loading="lazy"
+          class="w-full h-full object-cover"
+          style="mix-blend-mode: luminosity; opacity:0.9;"
+          onerror="this.src='https://picsum.photos/seed/roofing-about/800/1000'"
+        >
+        <!-- Blue tint overlay -->
+        <div class="absolute inset-0 bg-[#3c6df0]/10 pointer-events-none"></div>
+      </div>
+      <!-- Bottom-left caption -->
+      <div class="absolute bottom-4 left-4 text-[10px] tracking-[0.16em] uppercase text-white/50">Georgia In Home Services · Est. 1996</div>
+      <!-- Credential card -->
+      <div class="absolute bottom-4 right-4 bg-[#0E0E0F] border-l-4 border-[#3c6df0] p-4 max-w-[200px]">
+        <div class="text-[10px] tracking-[0.16em] uppercase text-[#3c6df0] font-semibold mb-1">Licensed</div>
+        <div class="text-white text-sm font-medium">Bonded &amp; Insured</div>
+        <div class="text-white/40 text-xs mt-1">Georgia Certified</div>
+      </div>
+    </div>
+    <!-- Right: Content -->
+    <div>
+      <div class="section-num mb-2">/03</div>
+      <p class="eyebrow-label mb-4">About Us</p>
+      <h2 class="text-5xl font-extrabold text-white mb-6 leading-tight" style="font-family:'Inter',sans-serif; font-weight:800;">
+        Built on Honesty.<br>Delivered with Skill.
+      </h2>
+      <p class="text-white/65 text-base leading-relaxed mb-6">
+        Established in 1996, Georgia In Home Services is a licensed, bonded, and insured general contractor serving the greater Atlanta area. Our home improvement services span the full spectrum — from roofing and siding to complete kitchen and bathroom remodels, deck building, painting, new construction, and full-scale restoration after water or fire damage.
       </p>
-      <div class="flex flex-wrap gap-4 mb-10">
-        <a href="#contact" class="btn-premium btn-premium-primary">
-          Get a Free Quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
-        <a href="tel:4044342436" class="btn-premium btn-premium-ghost">
-          <i data-lucide="phone" class="w-4 h-4"></i> (404) 434-2436
-        </a>
-      </div>
-      <!-- Trust badges -->
-      <div class="flex flex-wrap gap-6 items-center text-xs font-medium text-stone-500">
-        <span class="flex items-center gap-2">
-          <i data-lucide="shield-check" class="w-4 h-4 text-[#fb8e28]"></i> Licensed &amp; Insured
-        </span>
-        <span class="flex items-center gap-2">
-          <i data-lucide="clock" class="w-4 h-4 text-[#fb8e28]"></i> 24/7 Emergency
-        </span>
-        <span class="flex items-center gap-2">
-          <i data-lucide="star" class="w-4 h-4 text-[#fb8e28]"></i> 4.8★ Google Rating
-        </span>
-        <span class="flex items-center gap-2">
-          <i data-lucide="home" class="w-4 h-4 text-[#fb8e28]"></i> Family-Owned
-        </span>
-      </div>
-    </div>
-    <!-- Right -->
-    <div class="flex-1 relative min-h-[400px] md:min-h-[80vh] img-hover-wrap">
-      <img
-        src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-t6cOkYV-xyICEKz5jtzmz4ZAflsgFbCwLXF2E14B0e6Ysx6L9t7gzm1d2ZpcbDxNOTw-9ACEV8nLKWwLJHhVGZyl3p348EKDNb39nBtQ6N2i904mdj2ImqP0crP3XMmebBHCranIjhhwueZP1h90Iuz4iCeQk9WSRltaTx2mow2T9JI0jZxKIEzb4Z58SvlEXP19tJ62heWIgeEw-nk8YLf27HnwdW2yDH_Xgj4j4LXZsoX_A94TtDR_SwKbrnW5DySJli_28DyUAzXmNhInAIyZ4-g0J1yeAtrAJDfs8ilw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-        alt="Georgia In Home Services Project"
-        class="w-full h-full object-cover"
-        style="aspect-ratio:4/5; filter:grayscale(10%);"
-        loading="lazy"
-        onerror="this.src='https://picsum.photos/seed/roofing-1/800/600'"
-      >
-      <!-- Corner stamps -->
-      <div class="absolute bottom-6 left-6 bg-white/95 border border-stone-200 px-4 py-3">
-        <p class="text-xs font-semibold tracking-widest text-stone-700 uppercase">Georgia In Home Services</p>
-        <p class="text-xs text-stone-500 mt-0.5">Atlanta, Georgia</p>
-      </div>
-      <div class="absolute top-6 right-6 bg-[#fb8e28] text-white px-4 py-3 flex items-center gap-2">
-        <i data-lucide="star" class="w-4 h-4"></i>
-        <span class="text-sm font-bold">4.8★</span>
-        <span class="text-xs opacity-80">Google</span>
+      <!-- Pull quote -->
+      <blockquote class="border-l-2 border-[#3c6df0] pl-6 my-8">
+        <p class="text-[#3c6df0] text-xl leading-relaxed" style="font-family:'Fraunces',serif; font-style:italic;">
+          "We treat your property as if it were our own — every project, every time."
+        </p>
+      </blockquote>
+      <p class="text-white/65 text-base leading-relaxed mb-8">
+        What sets our team apart is transparency. No hidden costs, no surprise invoices — just clear communication, honest estimates, and workmanship that holds up for decades. Whether you're navigating an insurance claim after storm damage or planning a dream kitchen renovation, our team is with you from the first call to the final walk-through.
+      </p>
+      <!-- Trust row -->
+      <div class="flex flex-wrap gap-6">
+        <div class="flex items-center gap-2">
+          <i data-lucide="shield-check" class="w-5 h-5 text-[#3c6df0]"></i>
+          <span class="text-white/70 text-sm">Licensed &amp; Insured</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="clock" class="w-5 h-5 text-[#3c6df0]"></i>
+          <span class="text-white/70 text-sm">24/7 Emergency Response</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="award" class="w-5 h-5 text-[#3c6df0]"></i>
+          <span class="text-white/70 text-sm">4.8★ Google Rating</span>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- TICKER BAND -->
-  <div class="bg-stone-900 text-stone-100 py-4 overflow-hidden">
-    <div class="ticker-track">
-      <span class="ticker-item flex items-center gap-6 px-6 text-xs font-semibold tracking-[0.22em]">
-        FREE QUOTES <span style="color:#3c6df0">·</span>
-        FAST RESPONSE <span style="color:#3c6df0">·</span>
-        LICENSED &amp; INSURED <span style="color:#3c6df0">·</span>
-        LOCAL EXPERTS <span style="color:#3c6df0">·</span>
-        24/7 EMERGENCY SERVICE <span style="color:#3c6df0">·</span>
-        WATER &amp; FIRE DAMAGE <span style="color:#3c6df0">·</span>
-        ROOFING &amp; REMODELING <span style="color:#3c6df0">·</span>
-        ATLANTA, GA <span style="color:#3c6df0">·</span>
-        FREE QUOTES <span style="color:#3c6df0">·</span>
-        FAST RESPONSE <span style="color:#3c6df0">·</span>
-        LICENSED &amp; INSURED <span style="color:#3c6df0">·</span>
-        LOCAL EXPERTS <span style="color:#3c6df0">·</span>
-        24/7 EMERGENCY SERVICE <span style="color:#3c6df0">·</span>
-        WATER &amp; FIRE DAMAGE <span style="color:#3c6df0">·</span>
-        ROOFING &amp; REMODELING <span style="color:#3c6df0">·</span>
-        ATLANTA, GA <span style="color:#3c6df0">·</span>
-      </span>
-      <span class="ticker-item flex items-center gap-6 px-6 text-xs font-semibold tracking-[0.22em]">
-        FREE QUOTES <span style="color:#3c6df0">·</span>
-        FAST RESPONSE <span style="color:#3c6df0">·</span>
-        LICENSED &amp; INSURED <span style="color:#3c6df0">·</span>
-        LOCAL EXPERTS <span style="color:#3c6df0">·</span>
-        24/7 EMERGENCY SERVICE <span style="color:#3c6df0">·</span>
-        WATER &amp; FIRE DAMAGE <span style="color:#3c6df0">·</span>
-        ROOFING &amp; REMODELING <span style="color:#3c6df0">·</span>
-        ATLANTA, GA <span style="color:#3c6df0">·</span>
-        FREE QUOTES <span style="color:#3c6df0">·</span>
-        FAST RESPONSE <span style="color:#3c6df0">·</span>
-        LICENSED &amp; INSURED <span style="color:#3c6df0">·</span>
-        LOCAL EXPERTS <span style="color:#3c6df0">·</span>
-        24/7 EMERGENCY SERVICE <span style="color:#3c6df0">·</span>
-        WATER &amp; FIRE DAMAGE <span style="color:#3c6df0">·</span>
-        ROOFING &amp; REMODELING <span style="color:#3c6df0">·</span>
-        ATLANTA, GA <span style="color:#3c6df0">·</span>
-      </span>
+<!-- AWARDS & AFFILIATIONS -->
+<section id="awards" class="animate-section py-20 px-4 md:px-8 lg:px-16 bg-[#0E0E0F]">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-12">
+      <div class="section-num mb-2">/04</div>
+      <h2 class="text-3xl text-white" style="font-family:'Fraunces',serif; font-style:italic; font-weight:500;">Certifications &amp; Affiliations</h2>
+    </div>
+    <div class="flex flex-wrap justify-center items-center gap-12 mt-4">
+      <div class="flex flex-col items-center">
+        <img src="https://www.georgiainhomeservices.com/wp-content/uploads/2025/10/AAA_Accredited_12_25-300x123.png" alt="AAA Accredited" class="award-badge max-h-[120px] w-auto object-contain" onerror="this.style.display='none'">
+        <p class="text-xs text-white/30 mt-2 italic" style="font-family:'Fraunces',serif;">Certification</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="https://www.georgiainhomeservices.com/wp-content/uploads/2025/10/yelp-badge-300x276.png" alt="Yelp Badge" class="award-badge max-h-[120px] w-auto object-contain" onerror="this.style.display='none'">
+        <p class="text-xs text-white/30 mt-2 italic" style="font-family:'Fraunces',serif;">Certification</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="https://www.georgiainhomeservices.com/wp-content/uploads/2025/10/Icons-IICRC-Certified-002-300x126.png" alt="IICRC Certified" class="award-badge max-h-[120px] w-auto object-contain" onerror="this.style.display='none'">
+        <p class="text-xs text-white/30 mt-2 italic" style="font-family:'Fraunces',serif;">Certification</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="https://www.georgiainhomeservices.com/wp-content/uploads/2025/10/georgia-in-home-services-GAF-Master-Elite-Logo.png" alt="GAF Master Elite" class="award-badge max-h-[120px] w-auto object-contain" onerror="this.style.display='none'">
+        <p class="text-xs text-white/30 mt-2 italic" style="font-family:'Fraunces',serif;">Certification</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-[#1C1E1D]">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-12">
+      <div class="section-num mb-2">/01</div>
+      <p class="eyebrow-label mb-4">Services</p>
+      <h2 class="text-5xl font-extrabold text-white leading-tight" style="font-family:'Inter',sans-serif; font-weight:800;">
+        What We <em style="font-family:'Fraunces',serif; font-style:italic; color:#3c6df0;">Build</em>
+      </h2>
+    </div>
+    <div class="flex flex-wrap gap-2 md:flex-nowrap mb-10 tabs-container">
+      <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-4 py-3 md:px-7 md:py-3.5 rounded-sm font-semibold" data-target="tab-panel-1">Roofing Services</button>
+      <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-4 py-3 md:px-7 md:py-3.5 rounded-sm font-semibold" data-target="tab-panel-2">Repairs &amp; Restoration</button>
+      <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-4 py-3 md:px-7 md:py-3.5 rounded-sm font-semibold" data-target="tab-panel-3">Specialty Services</button>
+    </div>
+
+    <!-- Tab 1 -->
+    <div id="tab-panel-1" class="tab-panel">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="service-card">
+          <div class="text-2xl font-semibold text-[#3c6df0] mb-6" style="font-family:'Fraunces',serif;">01 / 05</div>
+          <i data-lucide="home" class="w-12 h-12 text-[#3c6df0] mb-4"></i>
+          <h3 class="text-2xl font-bold text-white mb-3" style="font-family:'Inter',sans-serif; font-weight:700;">Decks</h3>
+          <p class="text-white/65 text-base leading-relaxed mb-6">Custom deck design and construction that extends your living space outdoors. We build to code with premium materials chosen for Atlanta's climate.</p>
+          <a href="tel:4044342436" class="arrow-cta text-[#3c6df0] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+        <!-- Card 2 -->
+        <div class="service-card">
+          <div class="text-2xl font-semibold text-[#3c6df0] mb-6" style="font-family:'Fraunces',serif;">02 / 05</div>
+          <i data-lucide="hard-hat" class="w-12 h-12 text-[#3c6df0] mb-4"></i>
+          <h3 class="text-2xl font-bold text-white mb-3" style="font-family:'Inter',sans-serif; font-weight:700;">New Construction</h3>
+          <p class="text-white/65 text-base leading-relaxed mb-6">From ground-up home builds to full additions, our licensed team delivers precision framing, roofing, and finishing in the Atlanta metro area.</p>
+          <a href="tel:4044342436" class="arrow-cta text-[#3c6df0] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+        <!-- Card 3 -->
+        <div class="service-card">
+          <div class="text-2xl font-semibold text-[#3c6df0] mb-6" style="font-family:'Fraunces',serif;">03 / 05</div>
+          <i data-lucide="sun" class="w-12 h-12 text-[#3c6df0] mb-4"></i>
+          <h3 class="text-2xl font-bold text-white mb-3" style="font-family:'Inter',sans-serif; font-weight:700;">Painting</h3>
+          <p class="text-white/65 text-base leading-relaxed mb-6">Interior and exterior painting with thorough surface preparation and clean, professional finishes. Color consultations available for remodeling projects.</p>
+          <a href="tel:4044342436" class="arrow-cta text-[#3c6df0] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+        <!-- Card 4 -->
+        <div class="service-card">
+          <div class="text-2xl font-semibold text-[#3c6df0] mb-6" style="font-family:'Fraunces',serif;">04 / 05</div>
+          <i data-lucide="hammer" class="w-12 h-12 text-[#3c6df0] mb-4"></i>
+          <h3 class="text-2xl font-bold text-white mb-3" style="font-family:'Inter',sans-serif; font-weight:700;">Remodeling</h3>
+          <p class="text-white/65 text-base leading-relaxed mb-6">Kitchen, bathroom, and whole-home remodeling that transforms outdated spaces into modern, functional living areas — on time and on budget.</p>
+          <a href="tel:4044342436" class="arrow-cta text-[#3c6df0] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+        <!-- Card 5 -->
+        <div class="service-card">
+          <div class="text-2xl font-semibold text-[#3c6df0] mb-6" style="font-family:'Fraunces',serif;">05 / 05</div>
+          <i data-lucide="shield-check" class="w-12 h-12 text-[#3c6df0] mb-4"></i>
+          <h3 class="text-2xl font-bold text-white mb-3" style="font-family:'Inter',sans-serif; font-weight:700;">Restoration</h3>
+          <p class="text-white/65 text-base leading-relaxed mb-6">Full-service restoration services for homes damaged by water, fire, or structural failure. We rebuild with the same care as original new construction.</p>
+          <a href="tel:4044342436" class="arrow-cta text-[#3c6df0] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2 -->
+    <div id="tab-panel-2" class="tab-panel hidden">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="service-card">
+          <div class="text-2xl font-semibold text-[#3c6df0] mb-6" style="font-family:'Fraunces',serif;">01 / 05</div>
+          <i data-lucide="cloud-rain" class="w-12 h-12 text-[#3c6df0] mb-4"></i>
+          <h3 class="text-2xl font-bold text-white mb-3" style="font-family:'Inter',sans-serif; font-weight:700;">Roofing Emergency</h3>
+          <p class="text-white/65 text-base leading-relaxed mb-6">24/7 emergency roofing response for Atlanta homeowners. Storm damage, active leaks, fallen trees — we deploy fast and secure your property immediately.</p>
+          <a href="tel:4044342436" class="arrow-cta text-[#3c6df0] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="text-2xl font-semibold text-[#3c6df0] mb-6" style="font-family:'Fraunces',serif;">02 / 05</div>
+          <i data-lucide="home" class="w-12 h-12 text-[#3c6df0] mb-4"></i>
+          <h3 class="text-2xl font-bold text-white mb-3" style="font-family:'Inter',sans-serif; font-weight:700;">Siding</h3>
+          <p class="text-white/65 text-base leading-relaxed mb-6">Siding installation, repair, and replacement in a range of materials including fiber cement, vinyl, and wood. Improved curb appeal and weather protection.</p>
+          <a href="tel:4044342436" class="arrow-cta text-[#3c6df0] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="text-2xl font-semibold text-[#3c6df0] mb-6" style="font-family:'Fraunces',serif;">03 / 05</div>
+          <i data-lucide="phone" class="w-12 h-12 text-[#3c6df0] mb-4"></i>
+          <h3 class="text-2xl font-bold text-white mb-3" style="font-family:'Inter',sans-serif; font-weight:700;">Contact Us</h3>
+          <p class="text-white/65 text-base leading-relaxed mb-6">Reach our team any time at (404) 434-2436. We respond promptly to inquiries, provide honest estimates, and never charge for consultations.</p>
+          <a href="tel:4044342436" class="arrow-cta text-[#3c6df0] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="text-2xl font-semibold text-[#3c6df0] mb-6" style="font-family:'Fraunces',serif;">04 / 05</div>
+          <i data-lucide="shield-check" class="w-12 h-12 text-[#3c6df0] mb-4"></i>
+          <h3 class="text-2xl font-bold text-white mb-3" style="font-family:'Inter',sans-serif; font-weight:700;">IICRC Certified Water &amp; Fire Restoration</h3>
+          <p class="text-white/65 text-base leading-relaxed mb-6">Certified restoration for water and fire-damaged properties. We work directly with insurance adjusters to get your claim handled and your home rebuilt right.</p>
+          <a href="tel:4044342436" class="arrow-cta text-[#3c6df0] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="text-2xl font-semibold text-[#3c6df0] mb-6" style="font-family:'Fraunces',serif;">05 / 05</div>
+          <i data-lucide="award" class="w-12 h-12 text-[#3c6df0] mb-4"></i>
+          <h3 class="text-2xl font-bold text-white mb-3" style="font-family:'Inter',sans-serif; font-weight:700;">BBB Accredited — A+ Rating</h3>
+          <p class="text-white/65 text-base leading-relaxed mb-6">20 consecutive years of A+ accreditation with the Better Business Bureau — a testament to our integrity, consistency, and customer-first approach.</p>
+          <a href="tel:4044342436" class="arrow-cta text-[#3c6df0] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 3 -->
+    <div id="tab-panel-3" class="tab-panel hidden">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="service-card">
+          <div class="text-2xl font-semibold text-[#3c6df0] mb-6" style="font-family:'Fraunces',serif;">01 / 05</div>
+          <i data-lucide="clock" class="w-12 h-12 text-[#3c6df0] mb-4"></i>
+          <h3 class="text-2xl font-bold text-white mb-3" style="font-family:'Inter',sans-serif; font-weight:700;">24-Hour Emergency Responder</h3>
+          <p class="text-white/65 text-base leading-relaxed mb-6">When disaster strikes at 2am, we answer. Our emergency crews are on call around the clock for water, fire, and storm damage across the Atlanta metro.</p>
+          <a href="tel:4044342436" class="arrow-cta text-[#3c6df0] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="text-2xl font-semibold text-[#3c6df0] mb-6" style="font-family:'Fraunces',serif;">02 / 05</div>
+          <i data-lucide="wrench" class="w-12 h-12 text-[#3c6df0] mb-4"></i>
+          <h3 class="text-2xl font-bold text-white mb-3" style="font-family:'Inter',sans-serif; font-weight:700;">Full-Service Restoration, Remodeling &amp; Roofing</h3>
+          <p class="text-white/65 text-base leading-relaxed mb-6">One trusted team for every aspect of your home — restoration, renovation, and roofing under a single contract, simplifying the process and protecting quality.</p>
+          <a href="tel:4044342436" class="arrow-cta text-[#3c6df0] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="text-2xl font-semibold text-[#3c6df0] mb-6" style="font-family:'Fraunces',serif;">03 / 05</div>
+          <i data-lucide="hard-hat" class="w-12 h-12 text-[#3c6df0] mb-4"></i>
+          <h3 class="text-2xl font-bold text-white mb-3" style="font-family:'Inter',sans-serif; font-weight:700;">New Home Construction</h3>
+          <p class="text-white/65 text-base leading-relaxed mb-6">Build your vision from the ground up. We manage the full build process — structural framing, roofing, interior finishes — with transparent timelines and budgets.</p>
+          <a href="tel:4044342436" class="arrow-cta text-[#3c6df0] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="text-2xl font-semibold text-[#3c6df0] mb-6" style="font-family:'Fraunces',serif;">04 / 05</div>
+          <i data-lucide="map-pin" class="w-12 h-12 text-[#3c6df0] mb-4"></i>
+          <h3 class="text-2xl font-bold text-white mb-3" style="font-family:'Inter',sans-serif; font-weight:700;">Contact Information</h3>
+          <p class="text-white/65 text-base leading-relaxed mb-6">Find us at 2625 Piedmont Rd NE Ste 56, Atlanta, GA 30324. Call anytime at (404) 434-2436 — we're available 24/7 for emergencies and open daily for consultations.</p>
+          <a href="tel:4044342436" class="arrow-cta text-[#3c6df0] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="text-2xl font-semibold text-[#3c6df0] mb-6" style="font-family:'Fraunces',serif;">05 / 05</div>
+          <i data-lucide="star" class="w-12 h-12 text-[#3c6df0] mb-4"></i>
+          <h3 class="text-2xl font-bold text-white mb-3" style="font-family:'Inter',sans-serif; font-weight:700;">Reviews</h3>
+          <p class="text-white/65 text-base leading-relaxed mb-6">325 verified Google reviews averaging 4.8 stars. Our reputation is built project by project — read what Atlanta homeowners say about working with our team.</p>
+          <a href="#reviews" class="arrow-cta text-[#3c6df0] text-xs uppercase tracking-widest">Read Reviews <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS STRIP -->
+<div class="bg-[#0E0E0F] py-20 px-4 md:px-8 lg:px-16">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-12">
+      <div class="section-num mb-2">/05</div>
+      <p class="eyebrow-label mb-4">How We Work</p>
+      <h2 class="text-4xl font-extrabold text-white" style="font-family:'Inter',sans-serif; font-weight:800;">
+        The <em style="font-family:'Fraunces',serif; font-style:italic; color:#3c6df0;">Process</em>
+      </h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-0">
+      <div class="process-step pl-8 py-6 pr-6">
+        <div class="text-[#3c6df0] text-5xl font-semibold mb-4" style="font-family:'Fraunces',serif;">01</div>
+        <h4 class="text-white font-bold text-lg mb-2" style="font-family:'Inter',sans-serif;">Free Consultation</h4>
+        <p class="text-white/50 text-sm leading-relaxed">We visit your property, assess the scope, and answer every question — no pressure, no fee.</p>
+      </div>
+      <div class="process-step pl-8 py-6 pr-6">
+        <div class="text-[#3c6df0] text-5xl font-semibold mb-4" style="font-family:'Fraunces',serif;">02</div>
+        <h4 class="text-white font-bold text-lg mb-2" style="font-family:'Inter',sans-serif;">Transparent Estimate</h4>
+        <p class="text-white/50 text-sm leading-relaxed">Line-item pricing with no hidden costs. What we quote is what you pay — unless you change the scope.</p>
+      </div>
+      <div class="process-step pl-8 py-6 pr-6">
+        <div class="text-[#3c6df0] text-5xl font-semibold mb-4" style="font-family:'Fraunces',serif;">03</div>
+        <h4 class="text-white font-bold text-lg mb-2" style="font-family:'Inter',sans-serif;">Expert Execution</h4>
+        <p class="text-white/50 text-sm leading-relaxed">Our licensed crew completes the work with precision and keeps you informed at every milestone.</p>
+      </div>
+      <div class="process-step pl-8 py-6 pr-6">
+        <div class="text-[#3c6df0] text-5xl font-semibold mb-4" style="font-family:'Fraunces',serif;">04</div>
+        <h4 class="text-white font-bold text-lg mb-2" style="font-family:'Inter',sans-serif;">Final Walk-Through</h4>
+        <p class="text-white/50 text-sm leading-relaxed">We don't call it done until you're satisfied. Punch-list items are resolved before we leave your property.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section id="gallery" class="animate-section py-24 md:py-32 bg-[#1C1E1D]">
+  <div class="px-4 md:px-8 lg:px-16 max-w-7xl mx-auto mb-12">
+    <div class="section-num mb-2">/06</div>
+    <p class="eyebrow-label mb-4">Our Work</p>
+    <h2 class="text-5xl font-extrabold text-white" style="font-family:'Inter',sans-serif; font-weight:800;">
+      Project <em style="font-family:'Fraunces',serif; font-style:italic; color:#3c6df0;">Gallery</em>
+    </h2>
+  </div>
+  <!-- Horizontal scroll gallery -->
+  <div class="overflow-x-auto pb-6 px-4 md:px-8 lg:px-16">
+    <div class="flex gap-4" style="width: max-content;">
+
+      <div class="flex-shrink-0 w-72">
+        <div class="img-hover-wrap aspect-[4/5] border border-[#3c6df0]/30">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGSAhQl8BgWfItTCELSc8tzOuX08s3BjndX8lVo6H-l8AqBpm5nYmrf95MNkSxU4IpSCmA7PtM1qRSBDnzYOchZcCHf9y58JYVO3PfFAtIdg95hC3S_sX6C2aRbpXC0dVg9H9Uw3wL5JElHTOa0p1GXrUHS1Ajp94aoTCNAWK-tZSJP5qbk6PLAAtI0GOs4lnNl_fKarstSCSdDvK4UNVtDERMtHr-5lVZ0QKePEJ7-UMkyk0Us6tEMFeggb5HaspomqBhvIkitoPFK5FOmX-ReFi7KEy2Igkjlz7beCuII5Q&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" class="gallery-img w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/roofing-1/800/600'" alt="Roofing project Atlanta">
+        </div>
+        <p class="text-white/40 text-xs mt-2 italic" style="font-family:'Fraunces',serif;">Residential Roofing — Atlanta</p>
+      </div>
+
+      <div class="flex-shrink-0 w-72">
+        <div class="img-hover-wrap aspect-[4/5] border border-[#3c6df0]/30">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGrvlyQaN9m-ynKtEVPMpXGz9lbDOieojf4MVyKB7KTCiAEr418_Lr-lgLXhAopH42cgjElo0C_REvVtJ_jquaTptU_cGbnaBSSMeUznCEJoxEr3ihQPWgwvxaUNpItP13kuTfTDvaESqPnvRPc2QAp0CU12-0ywX3Zy_5l9_qXPqTB7NwnQl1a9Bg8NsN2wkK4DQyoP16KRId0e8LAlNHNqWMbYq5UaSRp6Yi8BO4H5NTFqT0UN88I_tMOPdyOwIoNglElI4Yhw8LX6zPZ50UlmZP7dxxz34_hG1RUYg3IsVSAvxMOyd7cGxKPAtJJc9JQio4jRA_4B7Czprg--HOfiA5knYPX5wod-UW8JnYg2PzJRxsyx6Ea_2vR-MHCduOxBEhV0NBffuzeHjr4oPCgaVzHQDY90C5ibCqeY63wejxQRcKwBKBZAOuaaNBA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" class="gallery-img w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/roofing-2/800/600'" alt="Home remodeling Atlanta">
+        </div>
+        <p class="text-white/40 text-xs mt-2 italic" style="font-family:'Fraunces',serif;">Kitchen Remodel — Buckhead</p>
+      </div>
+
+      <div class="flex-shrink-0 w-72">
+        <div class="img-hover-wrap aspect-[4/5] border border-[#3c6df0]/30">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGEEaAzWId8njIE8RCxwQxeB5O18DGkAxP6E927cLCCoUXdLEEOgsFXLjREGUe2e2AHUEDH57NKojZ315IkTeWfI4SKBO5pP0t3ghji6O3mkSZAPIGFBkuDK-oYNi_UromcLc9XtFyFHUSIyMjQRo2jORjyO0iecRyOoCulVvTbwyvPbFJAmOnNrtHkmS5_3h-fdZmQoU_wunycqaKcOtbdHl7R6J_HV9zZypW2i7ESAaN3xzBOtmEQvl-POYwl13lDzarkOTeHxvcnhpiI3gpvn9dJs3h5IvHV3wri3hFIhw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" class="gallery-img w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/roofing-3/800/600'" alt="Bathroom remodeling">
+        </div>
+        <p class="text-white/40 text-xs mt-2 italic" style="font-family:'Fraunces',serif;">Bathroom Renovation — Midtown</p>
+      </div>
+
+      <div class="flex-shrink-0 w-72">
+        <div class="img-hover-wrap aspect-[4/5] border border-[#3c6df0]/30">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEEmwIZQtI4boBaunrNK3VSA_TIZDkVXneZ3b45AAiPUaAxbIKza75WHAz1mrn1kumzIIVlIPIk1JQjr9yDY8YKU_ibi1hAMcopji3OpC3rzsxpLH9VHPCizeaZ46NJZqsu84Ul6iv4zDDVhAsrP4hn_neikq05eHHso97hIowEq_Y1gOhCvnsRnmJJaUf0yrFdLCczC6P-R0WhIKY1FG0p-PM-wUqnHAh4_zxzfC2-24J_sKz-6-8e5hB70AIRsvOZeuRvEhpfMC0ijxfc4ixWj5vaOGmeTOH_QaR0sTjuCvaUESxqKBAf1EKSW_C5lLtY8iWswSJTaBHKbhRE8ELxoLImler28M0IQlvHOC3hANT2K-JXantuu9N2eTsHJxw9OswjE00vedB6IbSnrPh7RNqsyKVEafDfvnqNMIhiNJtOC&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" class="gallery-img w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/roofing-4/800/600'" alt="Deck construction">
+        </div>
+        <p class="text-white/40 text-xs mt-2 italic" style="font-family:'Fraunces',serif;">Custom Deck — Sandy Springs</p>
+      </div>
+
+      <div class="flex-shrink-0 w-72">
+        <div class="img-hover-wrap aspect-[4/5] border border-[#3c6df0]/30">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEHPsMjNnuDRIRzgoZUWMqe-Db7oyigxG1zOAqvWzvjUTIGm14YWRwsaJD-R3eDzNvi1eQdN-nZMq7IAhelgR5ltLfmBf-ZJn9uriv0-nXEVU4HFqkZvMIqicAskIJ5vIPrLbDayASBKr3oDGNDcn9lVsh_RRWQwufvc1Ik_qSArzYSAsmUu-RzqOWGtRztpu7ypOE-fQwpud7wnDbQK7_oIWH8GqNgtV67Tx4KD8RRQKXmDizG0K-nmKLL4-lQgUhbZZVzpBM2utJ0m-o3uLDGba8uWiS3p1bCk6cIlnFUQxg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" class="gallery-img w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/roofing-5/800/600'" alt="Exterior painting">
+        </div>
+        <p class="text-white/40 text-xs mt-2 italic" style="font-family:'Fraunces',serif;">Exterior Painting — Decatur</p>
+      </div>
+
+      <div class="flex-shrink-0 w-72">
+        <div class="img-hover-wrap aspect-[4/5] border border-[#3c6df0]/30">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGx-n9fEQH9cHNSnF66s51e94RBGyysKsTWKzuWX46PPm8Xyq8YzH1uKnhixNMhoqIO9s7qLpQiib2xDwgiS_kXi2145bxCi3HVmu2plWThqPysFld56qPPawxVY6Y2dg_gk2HlDjBOihusU2sLs9_L5sedWdSlEYu6leJMbvGMZ-A9a0yCo0pMkBuXIAxtU8FBa2KZi_xYSztLCyxVv_CyoQFVUh-y2bxCYybLj3lsN0YNJit7hwbqhIQEbh64-z5dPuOB-cb7ktAd7bTVPHL6bG1rHJAMfDNGVE7Xog6hWQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" class="gallery-img w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/roofing-6/800/600'" alt="Fire restoration">
+        </div>
+        <p class="text-white/40 text-xs mt-2 italic" style="font-family:'Fraunces',serif;">Fire Restoration — Marietta</p>
+      </div>
+
+      <div class="flex-shrink-0 w-72">
+        <div class="img-hover-wrap aspect-[4/5] border border-[#3c6df0]/30">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEFunJS6edHT6IVi9kTxFIjA47t3mUr8TVqdFGxK3SVwyeCxdQuBIMOHq0cbgt_j27nPWuuGsk1ei2o3UT3qbSv1u2_yUremWmJIhGRHaguzzFLoLp3HVYx7EPc6VuEcJE4Znyn-bDYfeIzvIXs3zyIoPWM_00VW0Z4HOQGHyhkmy16aNqFcigQaPBA0Vh_AvzAI2Yhr17CQWJSgw4rDEJc8K9ldy1MPZ3a_3MwIAMxG3uIxZhdzf-tPtKQ7yk7TE8OaOBnDfIFZ2KWMP5dyqb1F0Y3NBlhLfN6pwPojpwzxzA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" class="gallery-img w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/roofing-7/800/600'" alt="New home construction">
+        </div>
+        <p class="text-white/40 text-xs mt-2 italic" style="font-family:'Fraunces',serif;">New Construction — Smyrna</p>
+      </div>
+
+      <div class="flex-shrink-0 w-72">
+        <div class="img-hover-wrap aspect-[4/5] border border-[#3c6df0]/30">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AU_ZVEGo5dtbHbcaDRU7ITXSR3wRjk28KHoOOX2hP3A-dvxp6q-zBhhyAzC01xd7cqOpYCBYJJjwcLks0yJ_lVo-Ctg6t4TWLyqwNZY66IiUIsg-vL32AbZ811IyjDQ_rQQqckvZ-_NyYlS1JEYhdWt66rCRAOnithTB8dSSi6qnupaApM7yOTTpGM8RjAH0fsqVuQ6ZRutcjVKC-9lpPBnDkSkhIgHmRY_UhDDv_vji2dLx8MvVdjVlw2iE24Smcan1uYyV6xP7hlTIncWVb4KXnydQ5K0npBKvWnfc8oAuJUkeLSLCQXtNKf5gQxp-V2-TttXWNuP3EIt1Zv86rTpi12IaTsTI7h1vuhx9kWQbQariQGruH0e_pS2ZHs9OV9KYuvfGp5vbJS71rL167rxRd-iLoH9nmDi0HAVZ0qQY7slzyAQo0lGJn-JjFT1sHQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" loading="lazy" class="gallery-img w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/roofing-8/800/600'" alt="Siding installation">
+        </div>
+        <p class="text-white/40 text-xs mt-2 italic" style="font-family:'Fraunces',serif;">Siding Installation — Dunwoody</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-[#F2F1EC]">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-16">
+      <div class="section-num mb-2">/07</div>
+      <p class="eyebrow-label mb-4">Client Reviews</p>
+      <h2 class="text-5xl font-extrabold text-[#1C1E1D]" style="font-family:'Inter',sans-serif; font-weight:800;">
+        What Atlanta <em style="font-family:'Fraunces',serif; font-style:italic; color:#3c6df0;">Homeowners</em> Say
+      </h2>
+    </div>
+
+    <!-- Hero review -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 pb-12 border-b border-[#D5D7D3]">
+      <div class="lg:col-span-1">
+        <div class="text-7xl font-semibold text-[#3c6df0]/20 leading-none" style="font-family:'Fraunces',serif;">01</div>
+      </div>
+      <div class="lg:col-span-11">
+        <blockquote class="text-3xl md:text-4xl leading-snug text-[#1C1E1D] mb-6" style="font-family:'Fraunces',serif; font-style:italic;">
+          "We recently completed our first remodeling project with Georgia In Home Services to update an outdated primary bath and investigate a possible mold issue. From start to finish the team was professional and honest. Danny answered all of our many questions promptly and patiently (this was our first project, so we had a lot!). Christopher was our project manager and gave honest, helpful feedback about our selections. Ronald and his crew were so nice— Ronald even came back after the job was finished to take care of a couple of minor tile details.
+
+We only went over the original estimate because I chose a different floor tile (which I knew would add cost); everything else stayed within the estimate and there were no unexpected surprises. We appreciate the clear communication and workmanship and..."
+        </blockquote>
+        <div class="flex items-center gap-4">
+          <div>
+            <div class="font-semibold text-[#1C1E1D] text-sm uppercase tracking-widest" style="font-family:'Inter',sans-serif;">Michelle Lem</div>
+            <div class="flex items-center gap-1 mt-1">
+              <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+              <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+              <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+              <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+              <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+              <span class="ml-2 text-xs text-[#1C1E1D]/40 tracking-wide" style="font-family:'Fraunces',serif; font-style:italic;">via Google · 6 months ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reviews 2-5 compact -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+
+      <!-- Review 2 -->
+      <div class="py-8 pr-0 md:pr-12 border-b border-[#D5D7D3] md:border-r">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="text-3xl font-semibold text-[#3c6df0]/20" style="font-family:'Fraunces',serif;">02</div>
+          <div class="flex items-center gap-1">
+            <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+          </div>
+        </div>
+        <blockquote class="text-lg text-[#1C1E1D]/80 mb-4 leading-relaxed" style="font-family:'Fraunces',serif; font-style:italic;">
+          "I recently had the pleasure of working with Danny and Georgia In-Home Services for the renovation of my investment home, and I couldn't be more satisfied with the results. From start to finish, they demonstrated exceptional honesty, reliability, and integrity—qualities that are rare in the home renovation industry. What stood out the most was their transparency throughout the entire process. There were no hidden costs, no surprises—just straightforward, high-quality work from people who genuinely care about their clients and their craft. If you're looking for a renovation team that will treat your property as if it were their own, I wholeheartedly recommend Danny and Georgia In-Home Services. They did a phenomenal job, and I'll absolutely be working with them again on future projects."
+        </blockquote>
+        <div class="font-semibold text-[#1C1E1D] text-xs uppercase tracking-widest" style="font-family:'Inter',sans-serif;">Rachel N Idowu</div>
+        <div class="text-xs text-[#1C1E1D]/40 mt-1 italic" style="font-family:'Fraunces',serif;">via Google · 8 months ago</div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="py-8 pl-0 md:pl-12 border-b border-[#D5D7D3]">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="text-3xl font-semibold text-[#3c6df0]/20" style="font-family:'Fraunces',serif;">03</div>
+          <div class="flex items-center gap-1">
+            <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+          </div>
+        </div>
+        <blockquote class="text-lg text-[#1C1E1D]/80 mb-4 leading-relaxed" style="font-family:'Fraunces',serif; font-style:italic;">
+          "I originally referred by a neighborhood friend to this company for a roof replacement, but it became clear after the initial project that Danny and his team offer far more than just roofing services. Their depth of experience, professionalism, and genuine care for their clients set them apart. Danny helped me navigate a fully covered insurance claim—not just for the roof, but also for interior repairs caused by the leak. His roofing crew was efficient and the lifetime warranty architectural shingles they installed provides my family with confidence that the roof will perform as warrantied. His painters were thorough and clean during the interior paint job. What I value most is the trust I have in Danny and his crew. He's not just a roofing contractor—he's my go-to for any residential rep..."
+        </blockquote>
+        <div class="font-semibold text-[#1C1E1D] text-xs uppercase tracking-widest" style="font-family:'Inter',sans-serif;">Chi Phan</div>
+        <div class="text-xs text-[#1C1E1D]/40 mt-1 italic" style="font-family:'Fraunces',serif;">via Google · 9 months ago</div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="py-8 pr-0 md:pr-12 border-b border-[#D5D7D3] md:border-r md:border-b-0">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="text-3xl font-semibold text-[#3c6df0]/20" style="font-family:'Fraunces',serif;">04</div>
+          <div class="flex items-center gap-1">
+            <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+          </div>
+        </div>
+        <blockquote class="text-lg text-[#1C1E1D]/80 mb-4 leading-relaxed" style="font-family:'Fraunces',serif; font-style:italic;">
+          "Danny and his team are absolutely wonderful. After my home was destroyed in a fire, Danny stepped in and made an incredibly difficult time much easier. His entire team was professional, respectful, and kept me well-informed throughout the process. The new home looks great, and the quality of work speaks for itself. Danny is dependable, responsive, and very reasonable. I would highly recommend him to anyone in need of a trustworthy and skilled builder."
+        </blockquote>
+        <div class="font-semibold text-[#1C1E1D] text-xs uppercase tracking-widest" style="font-family:'Inter',sans-serif;">Wei Ding</div>
+        <div class="text-xs text-[#1C1E1D]/40 mt-1 italic" style="font-family:'Fraunces',serif;">via Google · 12 months ago</div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="py-8 pl-0 md:pl-12">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="text-3xl font-semibold text-[#3c6df0]/20" style="font-family:'Fraunces',serif;">05</div>
+          <div class="flex items-center gap-1">
+            <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+            <i data-lucide="star" class="w-3 h-3 text-[#3c6df0] fill-current"></i>
+          </div>
+        </div>
+        <blockquote class="text-lg text-[#1C1E1D]/80 mb-4 leading-relaxed" style="font-family:'Fraunces',serif; font-style:italic;">
+          "I have so many great things to say about this company. From great communication, professionalism, quick project turnaround and politeness. After water traveled through all 3 levels in my home, I thought repairs would be a nightmare and take forever. My experience was just the complete opposite. Danny and his team put my mind at ease every step of the way and worked so fast! My home looks so beautiful. You could never tell so much damage was there. Thank you a million times over. HIGHLY RECOMMEND!!!"
+        </blockquote>
+        <div class="font-semibold text-[#1C1E1D] text-xs uppercase tracking-widest" style="font-family:'Inter',sans-serif;">Kelly-Ann Evans</div>
+        <div class="text-xs text-[#1C1E1D]/40 mt-1 italic" style="font-family:'Fraunces',serif;">via Google · 3 months ago</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-[#1C1E1D]">
+  <div class="max-w-4xl mx-auto">
+    <div class="mb-16">
+      <div class="section-num mb-2">/08</div>
+      <p class="eyebrow-label mb-4">FAQ</p>
+      <h2 class="text-5xl font-extrabold text-white" style="font-family:'Inter',sans-serif; font-weight:800;">
+        Common <em style="font-family:'Fraunces',serif; font-style:italic; color:#3c6df0;">Questions</em>
+      </h2>
+    </div>
+
+    <div class="space-y-0">
+      <details class="border border-white/10 mb-2 group">
+        <summary class="flex items-center justify-between py-7 px-6 text-xl font-bold text-white" style="font-family:'Inter',sans-serif;">
+          Do you offer 24/7 emergency services for water and fire damage?
+          <i data-lucide="chevron-right" class="w-5 h-5 text-[#3c6df0] transition-transform group-open:rotate-90 flex-shrink-0 ml-4"></i>
+        </summary>
+        <div class="px-6 pb-7 text-white/65 leading-relaxed">
+          Yes — our emergency response team is available 24 hours a day, 7 days a week for water and fire damage situations. When you call (404) 434-2436, a live team member will respond immediately and dispatch a crew to secure and assess your property as quickly as possible. Fast response limits further damage and protects your insurance claim.
+        </div>
+      </details>
+
+      <details class="border border-white/10 mb-2 group">
+        <summary class="flex items-center justify-between py-7 px-6 text-xl font-bold text-white" style="font-family:'Inter',sans-serif;">
+          Are you licensed, bonded, and insured in Georgia?
+          <i data-lucide="chevron-right" class="w-5 h-5 text-[#3c6df0] transition-transform group-open:rotate-90 flex-shrink-0 ml-4"></i>
+        </summary>
+        <div class="px-6 pb-7 text-white/65 leading-relaxed">
+          Absolutely. Georgia In Home Services is fully licensed, bonded, and insured as a general contractor in the state of Georgia. We carry all required coverages to protect both our workers and your property throughout every project. You can request proof of insurance and licensing at any time before work begins.
+        </div>
+      </details>
+
+      <details class="border border-white/10 mb-2 group">
+        <summary class="flex items-center justify-between py-7 px-6 text-xl font-bold text-white" style="font-family:'Inter',sans-serif;">
+          How does your insurance claims process work for roofing?
+          <i data-lucide="chevron-right" class="w-5 h-5 text-[#3c6df0] transition-transform group-open:rotate-90 flex-shrink-0 ml-4"></i>
+        </summary>
+        <div class="px-6 pb-7 text-white/65 leading-relaxed">
+          Our team has extensive experience working directly with insurance adjusters on storm and water damage claims. We'll document the damage thoroughly, meet with your adjuster on-site, and advocate for a fair, comprehensive settlement — not just for the roof but for any related interior repairs as well. Clients frequently receive more coverage than they expected when we're involved in the process.
+        </div>
+      </details>
+
+      <details class="border border-white/10 mb-2 group">
+        <summary class="flex items-center justify-between py-7 px-6 text-xl font-bold text-white" style="font-family:'Inter',sans-serif;">
+          What roofing materials do you install?
+          <i data-lucide="chevron-right" class="w-5 h-5 text-[#3c6df0] transition-transform group-open:rotate-90 flex-shrink-0 ml-4"></i>
+        </summary>
+        <div class="px-6 pb-7 text-white/65 leading-relaxed">
+          We install a wide range of roofing systems including architectural asphalt shingles (including lifetime-warranty products), metal roofing, flat/TPO systems, and impact-resistant options. As a GAF Master Elite certified contractor, we have access to the industry's strongest material warranties and can help you select the right system for Atlanta's climate and your home's architecture.
+        </div>
+      </details>
+
+      <details class="border border-white/10 mb-2 group">
+        <summary class="flex items-center justify-between py-7 px-6 text-xl font-bold text-white" style="font-family:'Inter',sans-serif;">
+          How long does a typical roof replacement take in Atlanta?
+          <i data-lucide="chevron-right" class="w-5 h-5 text-[#3c6df0] transition-transform group-open:rotate-90 flex-shrink-0 ml-4"></i>
+        </summary>
+        <div class="px-6 pb-7 text-white/65 leading-relaxed">
+          Most residential roof replacements in Atlanta can be completed in one to two days, depending on the size and complexity of the roof. We schedule projects to minimize disruption to your daily life, and our crews work efficiently without cutting corners on material installation or cleanup. We'll provide a clear timeline before the project begins.
+        </div>
+      </details>
+
+      <details class="border border-white/10 mb-2 group">
+        <summary class="flex items-center justify-between py-7 px-6 text-xl font-bold text-white" style="font-family:'Inter',sans-serif;">
+          Do you handle both roofing and interior remodeling on the same project?
+          <i data-lucide="chevron-right" class="w-5 h-5 text-[#3c6df0] transition-transform group-open:rotate-90 flex-shrink-0 ml-4"></i>
+        </summary>
+        <div class="px-6 pb-7 text-white/65 leading-relaxed">
+          Yes — this is one of our key differentiators. As a full-service general contractor, we can manage roofing and all related interior repairs (drywall, paint, flooring, structural elements) under a single contract. This simplifies your project management, protects quality continuity, and often accelerates the overall timeline versus hiring multiple specialty contractors.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-[#0E0E0F]">
+  <div class="max-w-5xl mx-auto">
+    <div class="mb-12">
+      <div class="section-num mb-2">/09</div>
+      <p class="eyebrow-label mb-4">Contact</p>
+      <h2 class="text-5xl font-extrabold text-white" style="font-family:'Inter',sans-serif; font-weight:800;">
+        Start Your <em style="font-family:'Fraunces',serif; font-style:italic; color:#3c6df0;">Project</em>
+      </h2>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+      <!-- Left: Map -->
+      <div class="relative min-h-[500px]">
+        <iframe
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k&q=place_id:ChIJ979XiL8Q9YgRVI-DgCi13gY"
+          width="100%"
+          height="100%"
+          style="border:0; min-height:500px; filter: grayscale(30%) contrast(1.1);"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Georgia In Home Services Location"
+          class="w-full h-full"
+        ></iframe>
+        <div class="absolute inset-0 bg-[#3c6df0]/5 pointer-events-none"></div>
+      </div>
+      <!-- Right: Form -->
+      <div class="bg-[#1C1E1D] border border-[#3c6df0]/25 p-10 max-w-md w-full">
+        <div class="text-[11px] tracking-[0.22em] uppercase font-semibold text-[#3c6df0] mb-2">Get Started</div>
+        <h3 class="text-3xl text-white mb-1" style="font-family:'Fraunces',serif; font-style:italic; font-weight:500;">Get a Free Estimate</h3>
+        <p class="text-white/50 text-sm mb-3" style="font-family:'Inter',sans-serif;">We respond the same day — typically within the hour.</p>
+        <!-- Stars -->
+        <div class="flex items-center gap-2 mb-6">
+          <div class="flex items-center gap-0.5">
+            <i data-lucide="star" class="w-4 h-4 text-[#3c6df0] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#3c6df0] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#3c6df0] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#3c6df0] fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 text-[#3c6df0] fill-current"></i>
+          </div>
+          <span class="text-sm text-white/50">4.8 out of 5 · 325 reviews</span>
+        </div>
+        <form action="#" method="POST" class="space-y-0">
+          <div class="border-b border-white/15 focus-within:border-[#3c6df0] transition-colors">
+            <input type="text" name="name" placeholder="Your Name" required class="bg-transparent border-0 py-3 px-0 text-white placeholder-white/35 w-full focus:outline-none text-sm" style="font-family:'Inter',sans-serif;">
+          </div>
+          <div class="border-b border-white/15 focus-within:border-[#3c6df0] transition-colors mt-4">
+            <input type="email" name="email" placeholder="Email Address" required class="bg-transparent border-0 py-3 px-0 text-white placeholder-white/35 w-full focus:outline-none text-sm" style="font-family:'Inter',sans-serif;">
+          </div>
+          <div class="border-b border-white/15 focus-within:border-[#3c6df0] transition-colors mt-4">
+            <input type="tel" name="phone" placeholder="Phone Number" class="bg-transparent border-0 py-3 px-0 text-white placeholder-white/35 w-full focus:outline-none text-sm" style="font-family:'Inter',sans-serif;">
+          </div>
+          <div class="border-b border-white/15 focus-within:border-[#3c6df0] transition-colors mt-4">
+            <select name="service" class="bg-transparent border-0 py-3 px-0 text-white/70 w-full focus:outline-none text-sm appearance-none cursor-pointer" style="font-family:'Inter',sans-serif; background-color: #1C1E1D;">
+              <option value="" disabled selected class="text-white/40 bg-[#1C1E1D]">Select a Service</option>
+              <option value="Decks" class="bg-[#1C1E1D] text-white">Decks</option>
+              <option value="New Construction" class="bg-[#1C1E1D] text-white">New Construction</option>
+              <option value="Painting" class="bg-[#1C1E1D] text-white">Painting</option>
+              <option value="Remodeling" class="bg-[#1C1E1D] text-white">Remodeling</option>
+              <option value="Restoration" class="bg-[#1C1E1D] text-white">Restoration</option>
+            </select>
+          </div>
+          <div class="border-b border-white/15 focus-within:border-[#3c6df0] transition-colors mt-4">
+            <textarea name="message" placeholder="Tell us about your project..." rows="3" class="bg-transparent border-0 py-3 px-0 text-white placeholder-white/35 w-full focus:outline-none text-sm resize-none" style="font-family:'Inter',sans-serif;"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-[#3c6df0] text-white py-4 font-bold uppercase tracking-[0.06em] text-sm mt-6 rounded-sm hover:bg-[#3c6df0]/90 transition-colors" style="font-family:'Inter',sans-serif;">
+            Request Free Estimate
+          </button>
+          <p class="text-xs text-white/25 mt-3 italic" style="font-family:'Inter',sans-serif;">By submitting you agree to be contacted regarding your request.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#0E0E0F] text-white" style="border-top: 4px solid #3c6df0;">
+  <!-- CTA Strip -->
+  <div class="py-16 px-8 flex flex-col md:flex-row justify-between items-center gap-8 border-b border-white/10">
+    <div>
+      <h2 class="text-4xl md:text-5xl text-white" style="font-family:'Fraunces',serif; font-style:italic; font-weight:500;">Ready to build?</h2>
+      <p class="text-white/50 text-sm mt-2" style="font-family:'Inter',sans-serif;">Atlanta's trusted roofing &amp; remodeling team since 1996.</p>
+    </div>
+    <div class="flex flex-wrap gap-4">
+      <a href="#contact" class="btn-premium" style="background:#3c6df0; color:#fff; border-color:#3c6df0; font-family:'Inter',sans-serif; font-weight:700; letter-spacing:0.1em; padding:16px 40px;">
+        Free Quote
+      </a>
+      <a href="tel:4044342436" class="btn-premium btn-premium-ghost" style="font-family:'Inter',sans-serif;">
+        (404) 434-2436
+      </a>
     </div>
   </div>
 
-  <!-- STATS -->
-  <section class="animate-section py-16 px-4 md:px-8 lg:px-16 bg-stone-50">
-    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4">
-      <div class="text-center py-10 border border-stone-200">
-        <div class="text-4xl font-bold text-[#fb8e28]" style="font-family:'Fraunces',serif;" data-count="2" data-suffix="+">2+</div>
-        <div class="text-xs tracking-widest uppercase text-stone-500 mt-2 font-medium">Areas Served</div>
-      </div>
-      <div class="text-center py-10 border-t border-b border-r border-stone-200">
-        <div class="text-4xl font-bold text-[#fb8e28]" style="font-family:'Fraunces',serif;" data-count="325" data-suffix="+">325+</div>
-        <div class="text-xs tracking-widest uppercase text-stone-500 mt-2 font-medium">Atlanta Neighbors</div>
-      </div>
-      <div class="text-center py-10 border-b border-r border-stone-200 md:border-t">
-        <div class="text-4xl font-bold text-[#fb8e28]" style="font-family:'Fraunces',serif;">4.8★</div>
-        <div class="text-xs tracking-widest uppercase text-stone-500 mt-2 font-medium">Google Rating</div>
-      </div>
-      <div class="text-center py-10 border-b border-r border-stone-200 md:border-t border-l md:border-l-0">
-        <div class="text-4xl font-bold text-[#fb8e28]" style="font-family:'Fraunces',serif;" data-count="10" data-suffix="+">10+</div>
-        <div class="text-xs tracking-widest uppercase text-stone-500 mt-2 font-medium">Years Local</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-white">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-      <!-- Left: Image -->
-      <div class="relative img-hover-wrap">
-        <img
-          src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-tZTQLb6xFiHps52HZxUN0nxHGbZ0poP2gCQ-KBzBbCk8wCOWhxKOSd84hyG12p8N5WwwMLICiHwOcynnNnhbOgtfuTb-Ssl-aLrtaomrO1qCdhH2z4TzAZD0rnq1ZkYkmp8HfwEcsWIbPA-jBz0sjHu4bLXHa3KYLISz1olv0uba-y7ONATaGEsx5RiVnL_IQ1GGYgIojgx-YVGW-FpZEA6WWsupqGSvTYTuNvpDq56oujXQh0JTWN0agtvolSSZqULxPvCsLgXlXLO0oFtGKt4DUKdygKN_IZNnrye6ytaaQMJ9uG04CGSbjLH4v6loxeRBgN8dXiDZ2t1qDfD632Zf9hSgqt29a1REysRTcsREHVmp9KhASMbCtzRrkcjzTCxidGBhPEYuwA1EOtAeBKM2RomUSaDz7aQ_U4vEpoEC9VLvJguI0uJQwQX961&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k"
-          alt="Georgia In Home Services Team"
-          class="w-full object-cover"
-          style="aspect-ratio:4/5; filter:grayscale(15%);"
-          loading="lazy"
-          onerror="this.src='https://picsum.photos/seed/roofing-2/800/600'"
-        >
-        <!-- Credential stamp -->
-        <div class="absolute bottom-6 right-6 bg-[#fb8e28] text-white p-4 max-w-[160px]">
-          <p class="text-xs font-semibold tracking-widest uppercase">Est. 1996</p>
-          <p class="text-sm font-bold mt-1" style="font-family:'Fraunces',serif; font-style:italic;">Licensed, Bonded &amp; Insured</p>
-        </div>
-      </div>
-      <!-- Right: Story -->
-      <div>
-        <div class="section-num mb-2">/ 03</div>
-        <p class="eyebrow-label mb-4">Our Story</p>
-        <h2 class="text-5xl font-bold leading-tight text-stone-900 mb-6" style="font-family:'Fraunces',serif; font-style:italic;">
-          Rooted in Atlanta,<br>Built on Trust
-        </h2>
-        <p class="text-base text-stone-600 leading-relaxed mb-4">
-          Established in 1996, Georgia In Home Services has spent nearly three decades earning the trust of Atlanta homeowners. As a licensed, bonded, and insured general contractor, we specialize in home remodeling, kitchen and bathroom renovations, deck building, siding, painting, roofing, and full restoration services.
-        </p>
-        <p class="text-base text-stone-600 leading-relaxed mb-8">
-          What sets us apart is our commitment to transparency — no hidden costs, no surprises, just honest work from people who genuinely care. When disaster strikes, our 24/7 emergency response for water and fire damage means Atlanta neighbors are never left waiting when they need help most.
-        </p>
-        <!-- Pull quote -->
-        <blockquote class="border-l-2 border-[#fb8e28] pl-6 mb-8">
-          <p class="text-xl text-stone-700 italic leading-relaxed" style="font-family:'Fraunces',serif; font-style:italic;">
-            "He's not just a roofing contractor — he's my go-to for any residential repair."
-          </p>
-          <footer class="text-xs text-stone-400 mt-2 font-medium tracking-widest uppercase">— Chi Phan, Atlanta Neighbor</footer>
-        </blockquote>
-        <!-- 3-stat trust row -->
-        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-stone-200">
-          <div>
-            <p class="text-2xl font-bold text-[#fb8e28]" style="font-family:'Fraunces',serif;">24/7</p>
-            <p class="text-xs text-stone-500 mt-1 tracking-widest uppercase">Emergency Ready</p>
-          </div>
-          <div>
-            <p class="text-2xl font-bold text-[#fb8e28]" style="font-family:'Fraunces',serif;">325+</p>
-            <p class="text-xs text-stone-500 mt-1 tracking-widest uppercase">Happy Clients</p>
-          </div>
-          <div>
-            <p class="text-2xl font-bold text-[#fb8e28]" style="font-family:'Fraunces',serif;">28+</p>
-            <p class="text-xs text-stone-500 mt-1 tracking-widest uppercase">Years Serving ATL</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AWARDS -->
-  <section id="awards" class="animate-section py-20 px-4 md:px-8 lg:px-16 bg-stone-50">
-    <div class="max-w-7xl mx-auto">
-      <div class="mb-12">
-        <div class="section-num mb-2">/ 04</div>
-        <p class="eyebrow-label mb-4">Recognition</p>
-        <h2 class="text-4xl font-bold text-stone-900" style="font-family:'Fraunces',serif; font-style:italic;">Awards &amp; Affiliations</h2>
-      </div>
-      <div class="flex flex-wrap justify-center items-center gap-12 mt-12">
-        <div class="flex flex-col items-center">
-          <img src="https://www.georgiainhomeservices.com/wp-content/uploads/2025/10/AAA_Accredited_12_25-300x123.png" alt="AAA Accredited" class="award-badge max-h-[120px] w-auto object-contain" onerror="this.style.display='none'">
-          <p class="text-xs text-stone-500 mt-2 italic font-serif">Certification</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="https://www.georgiainhomeservices.com/wp-content/uploads/2025/10/yelp-badge-300x276.png" alt="Yelp Badge" class="award-badge max-h-[120px] w-auto object-contain" onerror="this.style.display='none'">
-          <p class="text-xs text-stone-500 mt-2 italic font-serif">Certification</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="https://www.georgiainhomeservices.com/wp-content/uploads/2025/10/Icons-IICRC-Certified-002-300x126.png" alt="IICRC Certified" class="award-badge max-h-[120px] w-auto object-contain" onerror="this.style.display='none'">
-          <p class="text-xs text-stone-500 mt-2 italic font-serif">Certification</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="https://www.georgiainhomeservices.com/wp-content/uploads/2025/10/georgia-in-home-services-GAF-Master-Elite-Logo.png" alt="GAF Master Elite" class="award-badge max-h-[120px] w-auto object-contain" onerror="this.style.display='none'">
-          <p class="text-xs text-stone-500 mt-2 italic font-serif">Certification</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-white">
-    <div class="max-w-7xl mx-auto">
-      <div class="mb-12">
-        <div class="section-num mb-2">/ 05</div>
-        <p class="eyebrow-label mb-4">Services</p>
-        <h2 class="text-4xl md:text-5xl font-bold text-stone-900 leading-tight" style="font-family:'Fraunces',serif; font-style:italic;">
-          What We Do Best
-        </h2>
-      </div>
-      <div class="flex flex-wrap gap-2 md:flex-nowrap mb-10 tabs-container">
-        <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-4 py-3 md:px-7 md:py-3.5 rounded-sm font-semibold" data-target="tab-panel-1">Roofing Services</button>
-        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-4 py-3 md:px-7 md:py-3.5 rounded-sm font-semibold" data-target="tab-panel-2">Repairs &amp; Restoration</button>
-        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-4 py-3 md:px-7 md:py-3.5 rounded-sm font-semibold" data-target="tab-panel-3">Specialty Services</button>
-      </div>
-
-      <!-- Tab 1 -->
-      <div id="tab-panel-1" class="tab-panel">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Card 1 -->
-          <div class="border border-[#fb8e28]/20 p-10 hover:border-[#fb8e28]/60 transition-colors">
-            <p class="text-xs font-semibold text-stone-400 mb-4" style="font-family:'Fraunces',serif;">01 / 05</p>
-            <i data-lucide="home" class="w-12 h-12 text-[#fb8e28] mb-4"></i>
-            <h3 class="text-2xl font-bold mb-3 text-stone-900" style="font-family:'Fraunces',serif; font-style:italic;">Decks</h3>
-            <p class="text-base text-stone-600 leading-relaxed mb-6">Custom deck design and construction that extends your Atlanta home's living space. We use quality materials built to withstand Georgia's climate year-round.</p>
-            <a href="tel:4044342436" class="arrow-cta text-sm text-[#fb8e28]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-          <!-- Card 2 -->
-          <div class="border border-[#fb8e28]/20 p-10 hover:border-[#fb8e28]/60 transition-colors">
-            <p class="text-xs font-semibold text-stone-400 mb-4" style="font-family:'Fraunces',serif;">02 / 05</p>
-            <i data-lucide="hammer" class="w-12 h-12 text-[#fb8e28] mb-4"></i>
-            <h3 class="text-2xl font-bold mb-3 text-stone-900" style="font-family:'Fraunces',serif; font-style:italic;">New Construction</h3>
-            <p class="text-base text-stone-600 leading-relaxed mb-6">From foundation to finish, we build new homes with meticulous craftsmanship. Our team manages every phase of construction to deliver your vision on time.</p>
-            <a href="tel:4044342436" class="arrow-cta text-sm text-[#fb8e28]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-          <!-- Card 3 -->
-          <div class="border border-[#fb8e28]/20 p-10 hover:border-[#fb8e28]/60 transition-colors">
-            <p class="text-xs font-semibold text-stone-400 mb-4" style="font-family:'Fraunces',serif;">03 / 05</p>
-            <i data-lucide="sun" class="w-12 h-12 text-[#fb8e28] mb-4"></i>
-            <h3 class="text-2xl font-bold mb-3 text-stone-900" style="font-family:'Fraunces',serif; font-style:italic;">Painting</h3>
-            <p class="text-base text-stone-600 leading-relaxed mb-6">Interior and exterior painting that transforms Atlanta homes. Our painters are thorough, clean, and deliver a flawless finish every time.</p>
-            <a href="tel:4044342436" class="arrow-cta text-sm text-[#fb8e28]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-          <!-- Card 4 -->
-          <div class="border border-[#fb8e28]/20 p-10 hover:border-[#fb8e28]/60 transition-colors">
-            <p class="text-xs font-semibold text-stone-400 mb-4" style="font-family:'Fraunces',serif;">04 / 05</p>
-            <i data-lucide="ruler" class="w-12 h-12 text-[#fb8e28] mb-4"></i>
-            <h3 class="text-2xl font-bold mb-3 text-stone-900" style="font-family:'Fraunces',serif; font-style:italic;">Remodeling</h3>
-            <p class="text-base text-stone-600 leading-relaxed mb-6">Whole-home remodeling, kitchen upgrades, bathroom renovations — we handle every aspect of your project with transparency and craftsmanship.</p>
-            <a href="tel:4044342436" class="arrow-cta text-sm text-[#fb8e28]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-          <!-- Card 5 -->
-          <div class="border border-[#fb8e28]/20 p-10 hover:border-[#fb8e28]/60 transition-colors">
-            <p class="text-xs font-semibold text-stone-400 mb-4" style="font-family:'Fraunces',serif;">05 / 05</p>
-            <i data-lucide="shield-check" class="w-12 h-12 text-[#fb8e28] mb-4"></i>
-            <h3 class="text-2xl font-bold mb-3 text-stone-900" style="font-family:'Fraunces',serif; font-style:italic;">Restoration</h3>
-            <p class="text-base text-stone-600 leading-relaxed mb-6">Expert restoration services that bring damaged homes back to their original beauty. We manage the full scope from assessment to completion.</p>
-            <a href="tel:4044342436" class="arrow-cta text-sm text-[#fb8e28]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab 2 -->
-      <div id="tab-panel-2" class="tab-panel hidden">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="border border-[#fb8e28]/20 p-10 hover:border-[#fb8e28]/60 transition-colors">
-            <p class="text-xs font-semibold text-stone-400 mb-4" style="font-family:'Fraunces',serif;">01 / 05</p>
-            <i data-lucide="cloud-rain" class="w-12 h-12 text-[#fb8e28] mb-4"></i>
-            <h3 class="text-2xl font-bold mb-3 text-stone-900" style="font-family:'Fraunces',serif; font-style:italic;">Roofing Emergency</h3>
-            <p class="text-base text-stone-600 leading-relaxed mb-6">24/7 emergency roofing response for Atlanta homeowners. Storm damage, active leaks, or sudden failures — we respond immediately to protect your home.</p>
-            <a href="tel:4044342436" class="arrow-cta text-sm text-[#fb8e28]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-          <div class="border border-[#fb8e28]/20 p-10 hover:border-[#fb8e28]/60 transition-colors">
-            <p class="text-xs font-semibold text-stone-400 mb-4" style="font-family:'Fraunces',serif;">02 / 05</p>
-            <i data-lucide="home" class="w-12 h-12 text-[#fb8e28] mb-4"></i>
-            <h3 class="text-2xl font-bold mb-3 text-stone-900" style="font-family:'Fraunces',serif; font-style:italic;">Siding</h3>
-            <p class="text-base text-stone-600 leading-relaxed mb-6">Professional siding installation and replacement that protects and beautifies your home. We offer a range of materials suited to Atlanta's climate conditions.</p>
-            <a href="tel:4044342436" class="arrow-cta text-sm text-[#fb8e28]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-          <div class="border border-[#fb8e28]/20 p-10 hover:border-[#fb8e28]/60 transition-colors">
-            <p class="text-xs font-semibold text-stone-400 mb-4" style="font-family:'Fraunces',serif;">03 / 05</p>
-            <i data-lucide="shield-check" class="w-12 h-12 text-[#fb8e28] mb-4"></i>
-            <h3 class="text-2xl font-bold mb-3 text-stone-900" style="font-family:'Fraunces',serif; font-style:italic;">IICRC Certified Water &amp; Fire Restoration</h3>
-            <p class="text-base text-stone-600 leading-relaxed mb-6">As an IICRC certified company, we follow industry-leading protocols for water and fire damage restoration. We work with your insurance every step of the way.</p>
-            <a href="tel:4044342436" class="arrow-cta text-sm text-[#fb8e28]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-          <div class="border border-[#fb8e28]/20 p-10 hover:border-[#fb8e28]/60 transition-colors">
-            <p class="text-xs font-semibold text-stone-400 mb-4" style="font-family:'Fraunces',serif;">04 / 05</p>
-            <i data-lucide="award" class="w-12 h-12 text-[#fb8e28] mb-4"></i>
-            <h3 class="text-2xl font-bold mb-3 text-stone-900" style="font-family:'Fraunces',serif; font-style:italic;">BBB A+ Accredited</h3>
-            <p class="text-base text-stone-600 leading-relaxed mb-6">BBB accredited with an A+ rating for 20 years — a testament to our unwavering commitment to ethical business practices and customer satisfaction in Atlanta.</p>
-            <a href="tel:4044342436" class="arrow-cta text-sm text-[#fb8e28]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-          <div class="border border-[#fb8e28]/20 p-10 hover:border-[#fb8e28]/60 transition-colors">
-            <p class="text-xs font-semibold text-stone-400 mb-4" style="font-family:'Fraunces',serif;">05 / 05</p>
-            <i data-lucide="wrench" class="w-12 h-12 text-[#fb8e28] mb-4"></i>
-            <h3 class="text-2xl font-bold mb-3 text-stone-900" style="font-family:'Fraunces',serif; font-style:italic;">Contact Us</h3>
-            <p class="text-base text-stone-600 leading-relaxed mb-6">Ready to start your project or facing an emergency? Reach our team at (404) 434-2436, available 24/7 for water and fire damage situations.</p>
-            <a href="tel:4044342436" class="arrow-cta text-sm text-[#fb8e28]">Call Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab 3 -->
-      <div id="tab-panel-3" class="tab-panel hidden">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="border border-[#fb8e28]/20 p-10 hover:border-[#fb8e28]/60 transition-colors">
-            <p class="text-xs font-semibold text-stone-400 mb-4" style="font-family:'Fraunces',serif;">01 / 05</p>
-            <i data-lucide="clock" class="w-12 h-12 text-[#fb8e28] mb-4"></i>
-            <h3 class="text-2xl font-bold mb-3 text-stone-900" style="font-family:'Fraunces',serif; font-style:italic;">24-Hour Emergency Responder</h3>
-            <p class="text-base text-stone-600 leading-relaxed mb-6">As an immediate 24-hour emergency responder, we mobilize quickly when water or fire strikes your Atlanta home — minimizing damage and stress.</p>
-            <a href="tel:4044342436" class="arrow-cta text-sm text-[#fb8e28]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-          <div class="border border-[#fb8e28]/20 p-10 hover:border-[#fb8e28]/60 transition-colors">
-            <p class="text-xs font-semibold text-stone-400 mb-4" style="font-family:'Fraunces',serif;">02 / 05</p>
-            <i data-lucide="hammer" class="w-12 h-12 text-[#fb8e28] mb-4"></i>
-            <h3 class="text-2xl font-bold mb-3 text-stone-900" style="font-family:'Fraunces',serif; font-style:italic;">Full-Service Restoration, Remodeling &amp; Roofing</h3>
-            <p class="text-base text-stone-600 leading-relaxed mb-6">One company for every need — from roof replacement to full interior remodeling and emergency restoration. Your single trusted partner in Atlanta.</p>
-            <a href="tel:4044342436" class="arrow-cta text-sm text-[#fb8e28]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-          <div class="border border-[#fb8e28]/20 p-10 hover:border-[#fb8e28]/60 transition-colors">
-            <p class="text-xs font-semibold text-stone-400 mb-4" style="font-family:'Fraunces',serif;">03 / 05</p>
-            <i data-lucide="home" class="w-12 h-12 text-[#fb8e28] mb-4"></i>
-            <h3 class="text-2xl font-bold mb-3 text-stone-900" style="font-family:'Fraunces',serif; font-style:italic;">New Home Construction</h3>
-            <p class="text-base text-stone-600 leading-relaxed mb-6">Building new homes in the Atlanta metro area with precision and care. We manage every phase from design collaboration through final walkthrough.</p>
-            <a href="tel:4044342436" class="arrow-cta text-sm text-[#fb8e28]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-          <div class="border border-[#fb8e28]/20 p-10 hover:border-[#fb8e28]/60 transition-colors">
-            <p class="text-xs font-semibold text-stone-400 mb-4" style="font-family:'Fraunces',serif;">04 / 05</p>
-            <i data-lucide="star" class="w-12 h-12 text-[#fb8e28] mb-4"></i>
-            <h3 class="text-2xl font-bold mb-3 text-stone-900" style="font-family:'Fraunces',serif; font-style:italic;">Reviews</h3>
-            <p class="text-base text-stone-600 leading-relaxed mb-6">With a 4.8-star Google rating from 325 Atlanta neighbors, our reputation speaks for itself. Read real stories from homeowners we've helped across the metro area.</p>
-            <a href="#reviews" class="arrow-cta text-sm text-[#fb8e28]">Read Reviews <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-          <div class="border border-[#fb8e28]/20 p-10 hover:border-[#fb8e28]/60 transition-colors">
-            <p class="text-xs font-semibold text-stone-400 mb-4" style="font-family:'Fraunces',serif;">05 / 05</p>
-            <i data-lucide="map-pin" class="w-12 h-12 text-[#fb8e28] mb-4"></i>
-            <h3 class="text-2xl font-bold mb-3 text-stone-900" style="font-family:'Fraunces',serif; font-style:italic;">Contact Information</h3>
-            <p class="text-base text-stone-600 leading-relaxed mb-6">Visit us at 2625 Piedmont Rd NE Ste 56, Atlanta, GA 30324. Call (404) 434-2436 — available 24/7 for water and fire damage emergencies.</p>
-            <a href="#contact" class="arrow-cta text-sm text-[#fb8e28]">Get in Touch <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-stone-50">
-    <div class="max-w-7xl mx-auto">
-      <div class="mb-12">
-        <div class="section-num mb-2">/ 06</div>
-        <p class="eyebrow-label mb-4">Our Work</p>
-        <h2 class="text-4xl md:text-5xl font-bold text-stone-900 leading-tight" style="font-family:'Fraunces',serif; font-style:italic;">
-          Projects Across Atlanta
-        </h2>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Gallery Item 1 -->
-        <div class="img-hover-wrap group">
-          <div class="overflow-hidden">
-            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-sGHz38kQcodxnZdNDlURukjoadlZGqVPjhmybcoaiXGU2Hacuoi9XeidQ4CqOU2xKOh2PqZ3RzqvnUmcv8VdUBZSIaTwcddCyM5oEzXgtTMFVMeBtCXW_6pcZgfg9x9Z0zssiAq9flJ7vD-DHkwTKP8JjxFqQAY5xjO1Q9pGKQx8BUfdWFvjIiPZhu5WxsE8oRAEAgcqybTuab6hswx-kXDJ28ddmtuWV7iCM2LrvqTW5vQk7D-MB5QeZfN93RFdC_0-HADOoTDUNTmOAsAVkKv0yr4fl0Rwx3JcbQ6jRxSA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Roof Installation Buckhead" class="gallery-img w-full h-64 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-3/800/600'">
-          </div>
-          <p class="text-sm text-stone-500 mt-3 italic" style="font-family:'Fraunces',serif;">Buckhead, GA — Roofing Project</p>
-        </div>
-        <!-- Gallery Item 2 -->
-        <div class="img-hover-wrap group">
-          <div class="overflow-hidden">
-            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-v2p1s2D8bjcU6WkvIJIZzOWlWgK4MQ_xAyogn5ehnMPOHnd1t8LK_SAIjzgymOjH3Q09KKgm9GjUfngjjuldFonGN43XuGa1xKYypooZC5yjjENjWia4vZCDJZgZL0LGjwrxkYYHd40yem49ZEWECbW84mgr_5qW8fsWCjqVKpRau1JGdNS3kVZsjh5Tbs_k7QZ9TtnN_vcnt1hJj_EYZjTIpudGZXryGy4w1fEnFhjO9JITtjPtYOLBgS91xOXpbfdbx8NIfLzEYT6VOghGUio1ldgKJGcaNzcjltiPTHbop9L49WQiaBqMLFW_Tvz7VsBnK-3Uf7pOJqlg7d49HkLTQ8oor3Eb5x_kYECElBekcMQFQlI1r-kxAkGHUQnT3dVXONpVBrfghSz-U-6ViyI2tJbJWDkvL0XqaLLVOF2kYa&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Home Remodel Decatur" class="gallery-img w-full h-64 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-4/800/600'">
-          </div>
-          <p class="text-sm text-stone-500 mt-3 italic" style="font-family:'Fraunces',serif;">Decatur, GA — Spring 2024 Remodel</p>
-        </div>
-        <!-- Gallery Item 3 -->
-        <div class="img-hover-wrap group">
-          <div class="overflow-hidden">
-            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-su2EriAhFLpmaPMsn14a55nbPD9hGG_yJj2XqkIe5yHNBCjrkmXgsjW6zmnA37ed_DBNu_eBTY5jeiQ7h4P3gXjjAdLmc4ixeKVYlOsizR21M8m84Q_BSK_AUXtetOdnG6E6Xb5LrWV7FD6dmy3BsJIeFwev-n5eXwtk98cFg84ArT1iF_zp8FgAhL5ARPGJ8DJLcLDHRL4-3CAzCYT_fg9ct0U9xK3C55sYWFiDOzjUHd5cUm-s9m1S7HnaXnlOAzc2BeGHjX09Zv4q8HoFK-JTk7C0XFAToQubyow89ivQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Restoration Project Sandy Springs" class="gallery-img w-full h-64 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-5/800/600'">
-          </div>
-          <p class="text-sm text-stone-500 mt-3 italic" style="font-family:'Fraunces',serif;">Sandy Springs, GA — Fire Restoration</p>
-        </div>
-        <!-- Gallery Item 4 -->
-        <div class="img-hover-wrap group">
-          <div class="overflow-hidden">
-            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-s-jfkiXWWZXAnf_yxbJYsBiKdIGVjP6WrxDA5oF0uIsqB1CBbFGq1BGEI5nfjmOcL-xYqNfyAF35ez6j_7yO2iXni_vENBu1CsGu3WiHgYi7GU0JMUKjg5wv0zr8Z_gxPnQ0lErpgSs8PFC1I5j95Yv9HbQzvmyQU83RD4LtkkuB_opUkOYqccM6D-wDBfjCAq4sH4I1_JaZpPW1FhwnIwsfuwCaTA2GLt0d445NoyzoExDf-eQcknoqZ9KW0I_RhdGjJIsjMfmZTcxC-DnOo0N0KgpiF3c76C8uPmZahTZA&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Deck Construction Marietta" class="gallery-img w-full h-64 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-6/800/600'">
-          </div>
-          <p class="text-sm text-stone-500 mt-3 italic" style="font-family:'Fraunces',serif;">Marietta, GA — Custom Deck Build</p>
-        </div>
-        <!-- Gallery Item 5 -->
-        <div class="img-hover-wrap group">
-          <div class="overflow-hidden">
-            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-twrbiOPqTzSAGUXLXgy5y5hI008GtoNnCRZoNmTVupEwRwuWME29hs-31eFpzMnbdmawrBr_0c-4gZ568eXU8SHJYDpvNZQrN9MLHUF2kFs3DhK2_07mo4wsjc__KrAp_sm0P6bgUj0gmfBePFwks39a3ZWApS05ajCPwWyXwIRplUrkOiZOgwIibPIxlbJ0khJ9G14JF-vnaIr2kZ_NKTb0OZ3e-V8X4OHEwlAWw9Xtiy0R5ShnPswSNxLD3xhPAX2Faai23NFpXnyqGTygS2ebjPHpnc7eDCE_fGSpBqIg&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Bathroom Remodel Smyrna" class="gallery-img w-full h-64 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-7/800/600'">
-          </div>
-          <p class="text-sm text-stone-500 mt-3 italic" style="font-family:'Fraunces',serif;">Smyrna, GA — Bathroom Renovation</p>
-        </div>
-        <!-- Gallery Item 6 -->
-        <div class="img-hover-wrap group">
-          <div class="overflow-hidden">
-            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-vgkmvuNG2tjyhOz7hORlackE8glBjsuLRcrYDjszSqsd_quCr0cWgtlumpXOheeJfdRfGmrCZivwVDz9OqF1Fzc1aclFe27edwfOHlsdy2ctBYObQUocIjspnN2-a2TktQsS_Sy7S1YR1zQmBOUgJguMwl4XGmLX3oYO_I8tUXdiKJ1rQgSC7PJV9JnNhABIp78ISeECrb6S7F7aL-LGYPWDZvb1BeMDHmk-K8czPHpOsbd-fQ3j26y1Azf-21mBOwwI7T_u_PDuYaK-_09efSJD5YVlcfGnLmpFBkS9tfn1w97jv5CRDfe12jcyDTsVdzVLQhtEGWX8fPo1s1AjrdaAlnz88kjaevFmxblF3VXpoqK-S1IC8QeCrrKz2AWzxR5XpwiGlhc-O2THso1J8tfzCflxZKUbDjBAyL5AjNUkFyf33q_4ZQRjna6A&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Kitchen Remodel Dunwoody" class="gallery-img w-full h-64 object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/roofing-8/800/600'">
-          </div>
-          <p class="text-sm text-stone-500 mt-3 italic" style="font-family:'Fraunces',serif;">Dunwoody, GA — Kitchen Transformation</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REVIEWS -->
-  <section id="reviews" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-white">
-    <div class="max-w-7xl mx-auto">
-      <div class="mb-12">
-        <div class="section-num mb-2">/ 07</div>
-        <p class="eyebrow-label mb-4">Client Reviews</p>
-        <h2 class="text-4xl md:text-5xl font-bold text-stone-900 leading-tight" style="font-family:'Fraunces',serif; font-style:italic;">
-          Atlanta Neighbors Speak
-        </h2>
-      </div>
-
-      <!-- Hero Review -->
-      <div class="border border-stone-200 p-10 md:p-14 mb-6">
-        <div class="flex gap-1 mb-4">
-          <i data-lucide="star" class="w-4 h-4 text-[#fb8e28] fill-current" style="fill:#fb8e28;"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fb8e28] fill-current" style="fill:#fb8e28;"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fb8e28] fill-current" style="fill:#fb8e28;"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fb8e28] fill-current" style="fill:#fb8e28;"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fb8e28] fill-current" style="fill:#fb8e28;"></i>
-        </div>
-        <blockquote class="text-xl text-stone-700 leading-relaxed italic mb-6" style="font-family:'Fraunces',serif; font-style:italic;">
-          "I originally referred by a neighborhood friend to this company for a roof replacement, but it became clear after the initial project that Danny and his team offer far more than just roofing services. Their depth of experience, professionalism, and genuine care for their clients set them apart. Danny helped me navigate a fully covered insurance claim—not just for the roof, but also for interior repairs caused by the leak. His roofing crew was efficient and the lifetime warranty architectural shingles they installed provides my family with confidence that the roof will perform as warrantied. His painters were thorough and clean during the interior paint job. What I value most is the trust I have in Danny and his crew. He's not just a roofing contractor—he's my go-to for any residential rep..."
-        </blockquote>
-        <div class="flex items-center justify-between flex-wrap gap-4">
-          <div>
-            <p class="font-semibold text-stone-900">Chi Phan</p>
-            <p class="text-xs text-stone-400 mt-0.5">9 months ago</p>
-          </div>
-          <span class="text-xs font-semibold tracking-widest uppercase px-3 py-1.5 border border-[#fb8e28]/30 text-[#fb8e28]">via Google · Atlanta</span>
-        </div>
-      </div>
-
-      <!-- Review Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Review 1 -->
-        <div class="border border-stone-200 p-10">
-          <div class="flex gap-1 mb-4">
-            <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-          </div>
-          <blockquote class="text-lg text-stone-700 leading-relaxed italic mb-6" style="font-family:'Fraunces',serif; font-style:italic;">
-            "We recently completed our first remodeling project with Georgia In Home Services to update an outdated primary bath and investigate a possible mold issue. From start to finish the team was professional and honest. Danny answered all of our many questions promptly and patiently (this was our first project, so we had a lot!). Christopher was our project manager and gave honest, helpful feedback about our selections. Ronald and his crew were so nice— Ronald even came back after the job was finished to take care of a couple of minor tile details. We only went over the original estimate because I chose a different floor tile (which I knew would add cost); everything else stayed within the estimate and there were no unexpected surprises. We appreciate the clear communication and workmanship and..."
-          </blockquote>
-          <div class="flex items-center justify-between flex-wrap gap-3 pt-4 border-t border-stone-100">
-            <div>
-              <p class="font-semibold text-stone-900">Michelle Lem</p>
-              <p class="text-xs text-stone-400 mt-0.5">6 months ago</p>
-            </div>
-            <span class="text-xs font-semibold tracking-widest uppercase px-3 py-1 border border-[#fb8e28]/30 text-[#fb8e28]">via Google</span>
-          </div>
-        </div>
-        <!-- Review 2 -->
-        <div class="border border-stone-200 p-10">
-          <div class="flex gap-1 mb-4">
-            <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-          </div>
-          <blockquote class="text-lg text-stone-700 leading-relaxed italic mb-6" style="font-family:'Fraunces',serif; font-style:italic;">
-            "I recently had the pleasure of working with Danny and Georgia In-Home Services for the renovation of my investment home, and I couldn't be more satisfied with the results. From start to finish, they demonstrated exceptional honesty, reliability, and integrity—qualities that are rare in the home renovation industry. What stood out the most was their transparency throughout the entire process. There were no hidden costs, no surprises—just straightforward, high-quality work from people who genuinely care about their clients and their craft. If you're looking for a renovation team that will treat your property as if it were their own, I wholeheartedly recommend Danny and Georgia In-Home Services."
-          </blockquote>
-          <div class="flex items-center justify-between flex-wrap gap-3 pt-4 border-t border-stone-100">
-            <div>
-              <p class="font-semibold text-stone-900">Rachel N Idowu</p>
-              <p class="text-xs text-stone-400 mt-0.5">8 months ago</p>
-            </div>
-            <span class="text-xs font-semibold tracking-widest uppercase px-3 py-1 border border-[#fb8e28]/30 text-[#fb8e28]">via Google</span>
-          </div>
-        </div>
-        <!-- Review 3 -->
-        <div class="border border-stone-200 p-10">
-          <div class="flex gap-1 mb-4">
-            <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-          </div>
-          <blockquote class="text-lg text-stone-700 leading-relaxed italic mb-6" style="font-family:'Fraunces',serif; font-style:italic;">
-            "Danny and his team are absolutely wonderful. After my home was destroyed in a fire, Danny stepped in and made an incredibly difficult time much easier. His entire team was professional, respectful, and kept me well-informed throughout the process. The new home looks great, and the quality of work speaks for itself. Danny is dependable, responsive, and very reasonable. I would highly recommend him to anyone in need of a trustworthy and skilled builder."
-          </blockquote>
-          <div class="flex items-center justify-between flex-wrap gap-3 pt-4 border-t border-stone-100">
-            <div>
-              <p class="font-semibold text-stone-900">Wei Ding</p>
-              <p class="text-xs text-stone-400 mt-0.5">12 months ago</p>
-            </div>
-            <span class="text-xs font-semibold tracking-widest uppercase px-3 py-1 border border-[#fb8e28]/30 text-[#fb8e28]">via Google</span>
-          </div>
-        </div>
-        <!-- Review 4 -->
-        <div class="border border-stone-200 p-10">
-          <div class="flex gap-1 mb-4">
-            <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-            <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-          </div>
-          <blockquote class="text-lg text-stone-700 leading-relaxed italic mb-6" style="font-family:'Fraunces',serif; font-style:italic;">
-            "I have so many great things to say about this company. From great communication, professionalism, quick project turnaround and politeness. After water traveled through all 3 levels in my home, I thought repairs would be a nightmare and take forever. My experience was just the complete opposite. Danny and his team put my mind at ease every step of the way and worked so fast! My home looks so beautiful. You could never tell so much damage was there. Thank you a million times over. HIGHLY RECOMMEND!!!"
-          </blockquote>
-          <div class="flex items-center justify-between flex-wrap gap-3 pt-4 border-t border-stone-100">
-            <div>
-              <p class="font-semibold text-stone-900">Kelly-Ann Evans</p>
-              <p class="text-xs text-stone-400 mt-0.5">3 months ago</p>
-            </div>
-            <span class="text-xs font-semibold tracking-widest uppercase px-3 py-1 border border-[#fb8e28]/30 text-[#fb8e28]">via Google</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-stone-50">
-    <div class="max-w-4xl mx-auto">
-      <div class="mb-12">
-        <div class="section-num mb-2">/ 08</div>
-        <p class="eyebrow-label mb-4">Common Questions</p>
-        <h2 class="text-4xl md:text-5xl font-bold text-stone-900 leading-tight" style="font-family:'Fraunces',serif; font-style:italic;">
-          Frequently Asked
-        </h2>
-      </div>
-      <div class="space-y-0">
-        <details class="group border-b border-stone-200">
-          <summary class="flex items-center justify-between py-6 font-semibold text-lg text-stone-900 gap-4">
-            <span>What areas of Atlanta do you serve?</span>
-            <i data-lucide="chevron-right" class="w-5 h-5 text-[#fb8e28] flex-shrink-0 group-open:rotate-90 transition-transform"></i>
-          </summary>
-          <div class="pb-6 text-stone-600 leading-relaxed">
-            Georgia In Home Services proudly serves Atlanta and the greater metro area including Decatur, Sandy Springs, Marietta, Smyrna, Dunwoody, Roswell, Alpharetta, and Tucker. We're based at 2625 Piedmont Rd NE in Atlanta and serve homeowners across a wide radius. Call us at (404) 434-2436 to confirm service in your area.
-          </div>
-        </details>
-        <details class="group border-b border-stone-200">
-          <summary class="flex items-center justify-between py-6 font-semibold text-lg text-stone-900 gap-4">
-            <span>Do you offer 24/7 emergency roofing and restoration services?</span>
-            <i data-lucide="chevron-right" class="w-5 h-5 text-[#fb8e28] flex-shrink-0 group-open:rotate-90 transition-transform"></i>
-          </summary>
-          <div class="pb-6 text-stone-600 leading-relaxed">
-            Yes. We are a 24-hour immediate emergency responder for water and fire damage situations. Whether a storm tears shingles from your roof at midnight or a pipe bursts and floods multiple floors, our team mobilizes quickly to protect your Atlanta home and minimize damage.
-          </div>
-        </details>
-        <details class="group border-b border-stone-200">
-          <summary class="flex items-center justify-between py-6 font-semibold text-lg text-stone-900 gap-4">
-            <span>How does the insurance claim process work for storm or fire damage?</span>
-            <i data-lucide="chevron-right" class="w-5 h-5 text-[#fb8e28] flex-shrink-0 group-open:rotate-90 transition-transform"></i>
-          </summary>
-          <div class="pb-6 text-stone-600 leading-relaxed">
-            Our team has extensive experience navigating insurance claims alongside Atlanta homeowners. We'll document all damage, work directly with your adjuster, and help you maximize your claim — not just for the visible damage, but for all related repairs. Many of our clients have achieved fully covered claims because of our thorough approach.
-          </div>
-        </details>
-        <details class="group border-b border-stone-200">
-          <summary class="flex items-center justify-between py-6 font-semibold text-lg text-stone-900 gap-4">
-            <span>Are you licensed, bonded, and insured in Georgia?</span>
-            <i data-lucide="chevron-right" class="w-5 h-5 text-[#fb8e28] flex-shrink-0 group-open:rotate-90 transition-transform"></i>
-          </summary>
-          <div class="pb-6 text-stone-600 leading-relaxed">
-            Absolutely. Georgia In Home Services is a fully licensed, bonded, and insured general contractor operating in Georgia. We are also IICRC certified for water and fire restoration, and a GAF Master Elite roofing contractor — ensuring your project meets the highest professional and safety standards.
-          </div>
-        </details>
-        <details class="group border-b border-stone-200">
-          <summary class="flex items-center justify-between py-6 font-semibold text-lg text-stone-900 gap-4">
-            <span>How long does a typical roof replacement take in Atlanta?</span>
-            <i data-lucide="chevron-right" class="w-5 h-5 text-[#fb8e28] flex-shrink-0 group-open:rotate-90 transition-transform"></i>
-          </summary>
-          <div class="pb-6 text-stone-600 leading-relaxed">
-            Most residential roof replacements in Atlanta take one to three days depending on the size of the home, the materials selected, and weather conditions. We work efficiently without cutting corners, and our crews clean up thoroughly at the end of each work day so your property remains presentable throughout the process.
-          </div>
-        </details>
-        <details class="group border-b border-stone-200">
-          <summary class="flex items-center justify-between py-6 font-semibold text-lg text-stone-900 gap-4">
-            <span>Can you handle both roofing and interior remodeling on the same project?</span>
-            <i data-lucide="chevron-right" class="w-5 h-5 text-[#fb8e28] flex-shrink-0 group-open:rotate-90 transition-transform"></i>
-          </summary>
-          <div class="pb-6 text-stone-600 leading-relaxed">
-            Yes — and this is one of our core strengths. As a full-service contractor, we handle everything from roof replacement to kitchen renovations, bathroom remodels, painting, siding, and restoration under one roof. This means you work with a single trusted team, reducing coordination headaches and ensuring consistent quality across your entire project.
-          </div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-white">
-    <div class="max-w-7xl mx-auto">
-      <div class="mb-12">
-        <div class="section-num mb-2">/ 09</div>
-        <p class="eyebrow-label mb-4">Get Started</p>
-        <h2 class="text-4xl md:text-5xl font-bold text-stone-900 leading-tight" style="font-family:'Fraunces',serif; font-style:italic;">
-          Let's Talk About Your Project
-        </h2>
-      </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-5xl mx-auto">
-        <!-- Map -->
-        <div class="w-full h-[480px]">
-          <iframe
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k&q=place_id:ChIJ979XiL8Q9YgRVI-DgCi13gY"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Georgia In Home Services Location"
-          ></iframe>
-        </div>
-        <!-- Form Card -->
-        <div class="border p-10 max-w-md w-full" style="border-color: rgba(251,142,40,0.3);">
-          <p class="text-[11px] font-semibold tracking-[0.22em] uppercase text-[#fb8e28]">Get Started</p>
-          <h3 class="text-3xl font-bold mt-2 text-stone-900" style="font-family:'Fraunces',serif; font-style:italic;">Request a Free Quote</h3>
-          <p class="text-stone-600 text-sm mt-1">We'll respond within 24 hours — or call us directly.</p>
-          <!-- Stars -->
-          <div class="flex items-center gap-2 mt-3">
-            <div class="flex gap-0.5">
-              <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-              <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-              <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-              <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-              <i data-lucide="star" class="w-4 h-4" style="fill:#fb8e28; color:#fb8e28;"></i>
-            </div>
-            <span class="text-sm text-stone-600">4.8 out of 5 · 325 reviews</span>
-          </div>
-          <form onsubmit="return false;">
-            <input type="text" placeholder="Your Full Name" class="bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-[#fb8e28] focus:outline-none py-3 px-4 w-full mt-4 text-sm text-stone-700">
-            <input type="email" placeholder="Email Address" class="bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-[#fb8e28] focus:outline-none py-3 px-4 w-full mt-3 text-sm text-stone-700">
-            <input type="tel" placeholder="Phone Number" class="bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-[#fb8e28] focus:outline-none py-3 px-4 w-full mt-3 text-sm text-stone-700">
-            <select class="bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-[#fb8e28] focus:outline-none py-3 px-4 w-full mt-3 text-sm text-stone-700">
-              <option value="">Select a Service</option>
-              <option>Decks</option>
-              <option>New Construction</option>
-              <option>Painting</option>
-              <option>Remodeling</option>
-              <option>Restoration</option>
-            </select>
-            <textarea rows="3" placeholder="Tell us about your project..." class="bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-[#fb8e28] focus:outline-none py-3 px-4 w-full mt-3 text-sm text-stone-700 resize-none"></textarea>
-            <button type="submit" class="w-full bg-[#fb8e28] text-white py-4 font-bold tracking-wide uppercase text-sm mt-6 hover:brightness-95 transition-all">
-              Send My Request
-            </button>
-          </form>
-          <div class="flex items-center gap-2 mt-3">
-            <i data-lucide="shield-check" class="w-4 h-4 text-stone-400"></i>
-            <span class="text-xs text-stone-500 italic" style="font-family:'Fraunces',serif;">Licensed &amp; Insured · Atlanta Local</span>
-          </div>
-          <p class="text-xs text-stone-400 mt-2 italic">By submitting you agree to be contacted regarding your request.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer style="background-color:#fb8e28;" class="text-white">
-    <!-- Trust Strip -->
-    <div class="border-b py-12 px-4" style="border-color:rgba(255,255,255,0.15);">
-      <div class="max-w-7xl mx-auto flex flex-wrap justify-center gap-10">
-        <div class="flex items-center gap-3">
-          <i data-lucide="shield-check" class="w-5 h-5" style="color:#3c6df0;"></i>
-          <span class="text-xs font-semibold tracking-wider uppercase">Licensed</span>
+  <!-- Main Footer -->
+  <div class="py-20 px-8 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-10">
+    <!-- Col 1: Identity -->
+    <div class="col-span-2">
+      <img src="https://www.georgiainhomeservices.com/#logo" alt="Georgia In Home Services" class="h-12 w-auto object-contain mb-4 max-w-[180px]" onerror="this.outerHTML='<div class=\'text-2xl font-bold mb-4\' style=\'font-family:Inter,sans-serif; color:#3c6df0\'>Georgia In Home Services</div>'">
+      <p class="text-white/50 text-sm italic max-w-sm mt-2" style="font-family:'Inter',sans-serif;">Where craftsmanship meets accountability — Atlanta's premier roofing and remodeling team.</p>
+      <div class="mt-6 space-y-3">
+        <div class="flex items-start gap-3">
+          <i data-lucide="map-pin" class="w-4 h-4 text-[#3c6df0] flex-shrink-0 mt-0.5"></i>
+          <span class="text-white/60 text-sm" style="font-family:'Inter',sans-serif;">2625 Piedmont Rd NE Ste 56<br>Atlanta, GA 30324</span>
         </div>
         <div class="flex items-center gap-3">
-          <i data-lucide="check-circle" class="w-5 h-5" style="color:#3c6df0;"></i>
-          <span class="text-xs font-semibold tracking-wider uppercase">Insured</span>
+          <i data-lucide="phone" class="w-4 h-4 text-[#3c6df0] flex-shrink-0"></i>
+          <a href="tel:4044342436" class="text-white/60 hover:text-white text-sm transition" style="font-family:'Inter',sans-serif;">(404) 434-2436</a>
         </div>
-        <div class="flex items-center gap-3">
-          <i data-lucide="award" class="w-5 h-5" style="color:#3c6df0;"></i>
-          <span class="text-xs font-semibold tracking-wider uppercase">4.8★ Google</span>
-        </div>
-        <div class="flex items-center gap-3">
-          <i data-lucide="home" class="w-5 h-5" style="color:#3c6df0;"></i>
-          <span class="text-xs font-semibold tracking-wider uppercase">Local &amp; Family-Owned</span>
-        </div>
-        <div class="flex items-center gap-3">
-          <i data-lucide="heart" class="w-5 h-5" style="color:#3c6df0;"></i>
-          <span class="text-xs font-semibold tracking-wider uppercase">Community-First</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Proudly Serving Banner -->
-    <div class="border-b py-12 px-4 text-center" style="border-color:rgba(255,255,255,0.15);">
-      <p class="text-xs font-semibold tracking-[0.22em] uppercase" style="color:#3c6df0;">Proudly Serving</p>
-      <h3 class="text-4xl font-bold mt-3 italic" style="font-family:'Fraunces',serif; font-style:italic;">Atlanta &amp; beyond</h3>
-      <div class="flex flex-wrap justify-center gap-2 mt-6">
-        <span class="border px-4 py-2 text-sm" style="border-color:rgba(255,255,255,0.2);">Atlanta</span>
-        <span class="border px-4 py-2 text-sm" style="border-color:rgba(255,255,255,0.2);">Decatur</span>
-        <span class="border px-4 py-2 text-sm" style="border-color:rgba(255,255,255,0.2);">Sandy Springs</span>
-        <span class="border px-4 py-2 text-sm" style="border-color:rgba(255,255,255,0.2);">Marietta</span>
-        <span class="border px-4 py-2 text-sm" style="border-color:rgba(255,255,255,0.2);">Smyrna</span>
-        <span class="border px-4 py-2 text-sm" style="border-color:rgba(255,255,255,0.2);">Dunwoody</span>
-        <span class="border px-4 py-2 text-sm" style="border-color:rgba(255,255,255,0.2);">Roswell</span>
-        <span class="border px-4 py-2 text-sm" style="border-color:rgba(255,255,255,0.2);">Alpharetta</span>
-        <span class="border px-4 py-2 text-sm" style="border-color:rgba(255,255,255,0.2);">Tucker</span>
-        <span class="border px-4 py-2 text-sm" style="border-color:rgba(255,255,255,0.2);">Norcross</span>
-      </div>
-    </div>
-
-    <!-- Main Footer Grid -->
-    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 py-20 px-8">
-      <!-- Col 1: Identity -->
-      <div class="col-span-2 md:col-span-1">
-        <img src="https://www.georgiainhomeservices.com/#logo" alt="Georgia In Home Services" class="h-12 w-auto object-contain mb-4 max-w-[180px]" onerror="this.outerHTML='<div class=\'text-2xl font-bold mb-4\' style=\'font-family:Fraunces,serif;\'>Georgia In Home Services</div>'">
-        <p class="text-sm italic mb-4" style="color:rgba(255,255,255,0.7); font-family:'Fraunces',serif; font-style:italic;">Proudly serving Atlanta since 1996.</p>
-        <div class="space-y-2 mt-4">
-          <a href="tel:4044342436" class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,0.8);">
-            <i data-lucide="phone" class="w-4 h-4"></i> (404) 434-2436
-          </a>
-          <div class="flex items-start gap-2 text-sm" style="color:rgba(255,255,255,0.8);">
-            <i data-lucide="map-pin" class="w-4 h-4 flex-shrink-0 mt-0.5"></i>
-            <span>2625 Piedmont Rd NE Ste 56,<br>Atlanta, GA 30324</span>
-          </div>
-          <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,0.8);">
-            <i data-lucide="clock" class="w-4 h-4"></i>
-            <span>Open 24/7</span>
+        <div class="flex items-start gap-3">
+          <i data-lucide="clock" class="w-4 h-4 text-[#3c6df0] flex-shrink-0 mt-0.5"></i>
+          <div class="text-white/60 text-sm" style="font-family:'Inter',sans-serif;">
+            Open Daily · 24/7 Emergency Response<br>
+            <span id="live-clock" class="text-[#3c6df0] text-xs mt-1 block"></span>
           </div>
         </div>
-        <div id="live-clock" class="text-xs mt-4" style="color:rgba(255,255,255,0.5);"></div>
-      </div>
-      <!-- Col 2: Services -->
-      <div>
-        <p class="text-xs font-semibold tracking-wider uppercase pb-3 border-b mb-4" style="color:#3c6df0; border-color:rgba(60,109,240,0.3);">Services</p>
-        <div class="space-y-1">
-          <a href="#services" class="block py-1 text-sm transition-colors" style="color:rgba(255,255,255,0.8);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Decks</a>
-          <a href="#services" class="block py-1 text-sm transition-colors" style="color:rgba(255,255,255,0.8);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">New Construction</a>
-          <a href="#services" class="block py-1 text-sm transition-colors" style="color:rgba(255,255,255,0.8);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Painting</a>
-          <a href="#services" class="block py-1 text-sm transition-colors" style="color:rgba(255,255,255,0.8);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Remodeling</a>
-          <a href="#services" class="block py-1 text-sm transition-colors" style="color:rgba(255,255,255,0.8);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Restoration</a>
-          <a href="#services" class="block py-1 text-sm transition-colors" style="color:rgba(255,255,255,0.8);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Roofing Emergency</a>
-          <a href="#services" class="block py-1 text-sm transition-colors" style="color:rgba(255,255,255,0.8);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Siding</a>
-          <a href="#services" class="block py-1 text-sm transition-colors" style="color:rgba(255,255,255,0.8);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Water &amp; Fire Restoration</a>
-        </div>
-      </div>
-      <!-- Col 3: Company -->
-      <div>
-        <p class="text-xs font-semibold tracking-wider uppercase pb-3 border-b mb-4" style="color:#3c6df0; border-color:rgba(60,109,240,0.3);">Company</p>
-        <div class="space-y-1">
-          <a href="#home" class="block py-1 text-sm" style="color:rgba(255,255,255,0.8);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Home</a>
-          <a href="#about" class="block py-1 text-sm" style="color:rgba(255,255,255,0.8);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">About</a>
-          <a href="#awards" class="block py-1 text-sm" style="color:rgba(255,255,255,0.8);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Awards</a>
-          <a href="#reviews" class="block py-1 text-sm" style="color:rgba(255,255,255,0.8);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Reviews</a>
-          <a href="#gallery" class="block py-1 text-sm" style="color:rgba(255,255,255,0.8);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Gallery</a>
-          <a href="#faq" class="block py-1 text-sm" style="color:rgba(255,255,255,0.8);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">FAQ</a>
-          <a href="#contact" class="block py-1 text-sm" style="color:rgba(255,255,255,0.8);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Contact</a>
-        </div>
-      </div>
-      <!-- Col 4: Resources -->
-      <div>
-        <p class="text-xs font-semibold tracking-wider uppercase pb-3 border-b mb-4" style="color:#3c6df0; border-color:rgba(60,109,240,0.3);">Resources</p>
-        <div class="space-y-1">
-          <a href="#contact" class="block py-1 text-sm" style="color:rgba(255,255,255,0.8);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Get a Free Quote</a>
-          <a href="#faq" class="block py-1 text-sm" style="color:rgba(255,255,255,0.8);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">FAQ</a>
-          <a href="tel:4044342436" class="block py-1 text-sm" style="color:rgba(255,255,255,0.8);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Emergency Line</a>
-          <span class="block py-1 text-sm" style="color:rgba(255,255,255,0.6);">4.8★ Google Rating</span>
-          <span class="block py-1 text-sm" style="color:rgba(255,255,255,0.6);">Licensed &amp; Insured</span>
-          <span class="block py-1 text-sm" style="color:rgba(255,255,255,0.6);">IICRC Certified</span>
-          <span class="block py-1 text-sm" style="color:rgba(255,255,255,0.6);">GAF Master Elite</span>
-        </div>
       </div>
     </div>
 
-    <!-- Bottom Bar -->
-    <div class="border-t py-8 px-8 flex flex-wrap justify-between items-center gap-4" style="border-color:rgba(255,255,255,0.15);">
-      <p class="text-xs" style="color:rgba(255,255,255,0.6);">© 2025 Georgia In Home Services. All rights reserved. · 2625 Piedmont Rd NE Ste 56, Atlanta, GA 30324</p>
-      <p class="text-xs italic" style="font-family:'Fraunces',serif; font-style:italic; color:#3c6df0;">Proud Atlanta neighbors</p>
-      <div class="flex items-center gap-4">
-        <a href="https://www.facebook.com/georgiainhomeservices/" target="_blank" rel="noopener noreferrer" aria-label="facebook" style="color:rgba(255,255,255,0.7);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">
-          <i data-lucide="facebook" class="w-5 h-5"></i>
-        </a>
-        <a href="https://www.instagram.com/georgia_in_home_services/" target="_blank" rel="noopener noreferrer" aria-label="instagram" style="color:rgba(255,255,255,0.7);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">
-          <i data-lucide="instagram" class="w-5 h-5"></i>
-        </a>
-      </div>
+    <!-- Col 2: Services -->
+    <div>
+      <h4 class="text-xs font-bold tracking-[0.22em] text-[#3c6df0] pb-3 border-b border-[#3c6df0]/30 mb-4 uppercase" style="font-family:'Inter',sans-serif;">Services</h4>
+      <ul class="space-y-2">
+        <li><a href="#services" class="text-white/60 hover:text-white text-sm transition" style="font-family:'Inter',sans-serif;">Roofing</a></li>
+        <li><a href="#services" class="text-white/60 hover:text-white text-sm transition" style="font-family:'Inter',sans-serif;">Decks</a></li>
+        <li><a href="#services" class="text-white/60 hover:text-white text-sm transition" style="font-family:'Inter',sans-serif;">New Construction</a></li>
+        <li><a href="#services" class="text-white/60 hover:text-white text-sm transition" style="font-family:'Inter',sans-serif;">Painting</a></li>
+        <li><a href="#services" class="text-white/60 hover:text-white text-sm transition" style="font-family:'Inter',sans-serif;">Remodeling</a></li>
+        <li><a href="#services" class="text-white/60 hover:text-white text-sm transition" style="font-family:'Inter',sans-serif;">Restoration</a></li>
+        <li><a href="#services" class="text-white/60 hover:text-white text-sm transition" style="font-family:'Inter',sans-serif;">Siding</a></li>
+        <li><a href="#services" class="text-white/60 hover:text-white text-sm transition" style="font-family:'Inter',sans-serif;">Emergency Roofing</a></li>
+      </ul>
     </div>
-  </footer>
 
-  <script>
-  // Nav scroll shadow
-  (function(){
-    const nav = document.querySelector('nav');
-    if (!nav) return;
-    window.addEventListener('scroll', () => nav.classList.toggle('shadow-md', window.scrollY > 50));
-  })();
+    <!-- Col 3: Service Areas -->
+    <div>
+      <h4 class="text-xs font-bold tracking-[0.22em] text-[#3c6df0] pb-3 border-b border-[#3c6df0]/30 mb-4 uppercase" style="font-family:'Inter',sans-serif;">Service Areas</h4>
+      <ul class="space-y-2">
+        <li><span class="text-white/60 text-sm" style="font-family:'Inter',sans-serif;">Atlanta</span></li>
+        <li><span class="text-white/60 text-sm" style="font-family:'Inter',sans-serif;">Buckhead</span></li>
+        <li><span class="text-white/60 text-sm" style="font-family:'Inter',sans-serif;">Decatur</span></li>
+        <li><span class="text-white/60 text-sm" style="font-family:'Inter',sans-serif;">Sandy Springs</span></li>
+        <li><span class="text-white/60 text-sm" style="font-family:'Inter',sans-serif;">Marietta</span></li>
+        <li><span class="text-white/60 text-sm" style="font-family:'Inter',sans-serif;">Smyrna</span></li>
+        <li><span class="text-white/60 text-sm" style="font-family:'Inter',sans-serif;">Dunwoody</span></li>
+        <li><span class="text-white/60 text-sm" style="font-family:'Inter',sans-serif;">Alpharetta</span></li>
+        <li><span class="text-white/60 text-sm" style="font-family:'Inter',sans-serif;">Roswell</span></li>
+        <li><span class="text-white/60 text-sm" style="font-family:'Inter',sans-serif;">Norcross</span></li>
+      </ul>
+    </div>
 
-  // Hamburger
-  (function(){
-    const ham = document.getElementById('hamburger');
-    const menu = document.getElementById('mobile-menu');
-    if (ham && menu) ham.addEventListener('click', () => menu.classList.toggle('hidden'));
-    document.querySelectorAll('.mobile-nav-link').forEach(a => {
-      a.addEventListener('click', () => { if (menu) menu.classList.add('hidden'); });
-    });
-  })();
+    <!-- Col 4: Company + Trust -->
+    <div>
+      <h4 class="text-xs font-bold tracking-[0.22em] text-[#3c6df0] pb-3 border-b border-[#3c6df0]/30 mb-4 uppercase" style="font-family:'Inter',sans-serif;">Company</h4>
+      <ul class="space-y-2 mb-8">
+        <li><a href="#home" class="text-white/60 hover:text-white text-sm transition" style="font-family:'Inter',sans-serif;">Home</a></li>
+        <li><a href="#about" class="text-white/60 hover:text-white text-sm transition" style="font-family:'Inter',sans-serif;">About</a></li>
+        <li><a href="#services" class="text-white/60 hover:text-white text-sm transition" style="font-family:'Inter',sans-serif;">Services</a></li>
+        <li><a href="#gallery" class="text-white/60 hover:text-white text-sm transition" style="font-family:'Inter',sans-serif;">Gallery</a></li>
+        <li><a href="#reviews" class="text-white/60 hover:text-white text-sm transition" style="font-family:'Inter',sans-serif;">Reviews</a></li>
+        <li><a href="#faq" class="text-white/60 hover:text-white text-sm transition" style="font-family:'Inter',sans-serif;">FAQ</a></li>
+        <li><a href="#contact" class="text-white/60 hover:text-white text-sm transition" style="font-family:'Inter',sans-serif;">Contact</a></li>
+      </ul>
+      <h4 class="text-xs font-bold tracking-[0.22em] text-[#3c6df0] pb-3 border-b border-[#3c6df0]/30 mb-4 uppercase" style="font-family:'Inter',sans-serif;">Trust</h4>
+      <ul class="space-y-2">
+        <li><span class="text-white/60 text-sm uppercase tracking-wide" style="font-family:'Inter',sans-serif;">Licensed</span></li>
+        <li><span class="text-white/60 text-sm uppercase tracking-wide" style="font-family:'Inter',sans-serif;">Insured</span></li>
+        <li><span class="text-white/60 text-sm uppercase tracking-wide" style="font-family:'Inter',sans-serif;">Bonded</span></li>
+        <li><span class="text-white/60 text-sm uppercase tracking-wide" style="font-family:'Inter',sans-serif;">GA #Verified</span></li>
+        <li><span class="text-white/60 text-sm uppercase tracking-wide" style="font-family:'Inter',sans-serif;">4.8 Google Rating</span></li>
+        <li><span class="text-white/60 text-sm uppercase tracking-wide" style="font-family:'Inter',sans-serif;">IICRC Certified</span></li>
+        <li><span class="text-white/60 text-sm uppercase tracking-wide" style="font-family:'Inter',sans-serif;">GAF Master Elite</span></li>
+      </ul>
+    </div>
+  </div>
 
-  // TABS
-  (function(){
-    const buttons = Array.from(document.querySelectorAll('.tab-btn'));
-    const panels = Array.from(document.querySelectorAll('.tab-panel'));
-    if (!buttons.length || !panels.length) return;
-    function showByIndex(idx) {
-      panels.forEach(p => p.classList.add('hidden'));
-      buttons.forEach(b => { b.classList.remove('active-tab'); b.classList.add('inactive-tab'); });
-      if (panels[idx]) panels[idx].classList.remove('hidden');
-      if (buttons[idx]) { buttons[idx].classList.add('active-tab'); buttons[idx].classList.remove('inactive-tab'); }
-    }
-    function showById(id) { const i = panels.findIndex(p => p.id === id); if (i >= 0) showByIndex(i); }
-    buttons.forEach((btn, idx) => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const t = btn.getAttribute('data-target');
-        if (t) showById(t); else showByIndex(idx);
-      });
-    });
-    window.showTab = function(id){ showById(id); };
-    if (!panels.some(p => !p.classList.contains('hidden'))) showByIndex(0);
-  })();
+  <!-- Bottom bar -->
+  <div class="py-6 px-8 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 border-t-2 border-[#3c6df0]/30">
+    <p class="text-white/30 text-xs tracking-wide" style="font-family:'Inter',sans-serif;">
+      © 2025 Georgia In Home Services. All rights reserved. · 2625 Piedmont Rd NE Ste 56, Atlanta, GA 30324
+    </p>
+    <div class="flex items-center gap-4">
+      <a href="https://www.facebook.com/georgiainhomeservices/" target="_blank" rel="noopener noreferrer" aria-label="facebook" class="text-white/40 hover:text-[#3c6df0] transition-colors">
+        <i data-lucide="facebook" class="w-5 h-5"></i>
+      </a>
+      <a href="https://www.instagram.com/georgia_in_home_services/" target="_blank" rel="noopener noreferrer" aria-label="instagram" class="text-white/40 hover:text-[#3c6df0] transition-colors">
+        <i data-lucide="instagram" class="w-5 h-5"></i>
+      </a>
+    </div>
+  </div>
+</footer>
 
-  // Counters
-  function animateCount(el, target, suffix) {
-    let start = 0;
-    const duration = 2000, steps = 60, inc = target / steps;
-    const t = setInterval(() => {
-      start += inc;
-      if (start >= target) { el.textContent = target + (suffix || ''); clearInterval(t); }
-      else el.textContent = Math.floor(start) + (suffix || '');
-    }, duration / steps);
+<script>
+// Nav scroll shadow
+(function(){
+  const nav = document.querySelector('nav');
+  if (!nav) return;
+  window.addEventListener('scroll', () => nav.classList.toggle('shadow-md', window.scrollY > 50));
+})();
+
+// Hamburger
+(function(){
+  const ham = document.getElementById('hamburger');
+  const menu = document.getElementById('mobile-menu');
+  if (ham && menu) ham.addEventListener('click', () => menu.classList.toggle('hidden'));
+  document.querySelectorAll('.mobile-nav-link').forEach(a => {
+    a.addEventListener('click', () => { if (menu) menu.classList.add('hidden'); });
+  });
+})();
+
+// TABS
+(function(){
+  const buttons = Array.from(document.querySelectorAll('.tab-btn'));
+  const panels = Array.from(document.querySelectorAll('.tab-panel'));
+  if (!buttons.length || !panels.length) return;
+  function showByIndex(idx) {
+    panels.forEach(p => p.classList.add('hidden'));
+    buttons.forEach(b => { b.classList.remove('active-tab'); b.classList.add('inactive-tab'); });
+    if (panels[idx]) panels[idx].classList.remove('hidden');
+    if (buttons[idx]) { buttons[idx].classList.add('active-tab'); buttons[idx].classList.remove('inactive-tab'); }
   }
-  const statObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const t = parseInt(e.target.dataset.count);
-        const s = e.target.dataset.suffix || '';
-        if (t) animateCount(e.target, t, s);
-        statObs.unobserve(e.target);
+  function showById(id) { const i = panels.findIndex(p => p.id === id); if (i >= 0) showByIndex(i); }
+  buttons.forEach((btn, idx) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const t = btn.getAttribute('data-target');
+      if (t) showById(t); else showByIndex(idx);
+    });
+  });
+  window.showTab = function(id){ showById(id); };
+  if (!panels.some(p => !p.classList.contains('hidden'))) showByIndex(0);
+})();
+
+// Counters
+function animateCount(el, target, suffix) {
+  let start = 0;
+  const duration = 2000, steps = 60, inc = target / steps;
+  const t = setInterval(() => {
+    start += inc;
+    if (start >= target) { el.textContent = target + (suffix || ''); clearInterval(t); }
+    else el.textContent = Math.floor(start) + (suffix || '');
+  }, duration / steps);
+}
+const statObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const t = parseInt(e.target.dataset.count);
+      const s = e.target.dataset.suffix || '';
+      if (t) animateCount(e.target, t, s);
+      statObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('[data-count]').forEach(el => statObs.observe(el));
+
+// Section reveal
+(function(){
+  const sections = document.querySelectorAll('.animate-section');
+  if (!sections.length) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('is-pending');
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.3 });
-  document.querySelectorAll('[data-count]').forEach(el => statObs.observe(el));
-
-  // Section reveal
-  (function(){
-    const sections = document.querySelectorAll('.animate-section');
-    if (!sections.length) return;
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.remove('is-pending');
-          entry.target.classList.add('is-visible');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-    sections.forEach(el => {
-      const r = el.getBoundingClientRect();
-      const inView = r.top < window.innerHeight && r.bottom > 0;
-      if (inView) el.classList.add('is-visible');
-      else { el.classList.add('is-pending'); obs.observe(el); }
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  sections.forEach(el => {
+    const r = el.getBoundingClientRect();
+    const inView = r.top < window.innerHeight && r.bottom > 0;
+    if (inView) el.classList.add('is-visible');
+    else { el.classList.add('is-pending'); obs.observe(el); }
+  });
+  setTimeout(() => {
+    document.querySelectorAll('.animate-section.is-pending').forEach(el => {
+      el.classList.remove('is-pending'); el.classList.add('is-visible');
     });
-    setTimeout(() => {
-      document.querySelectorAll('.animate-section.is-pending').forEach(el => {
-        el.classList.remove('is-pending'); el.classList.add('is-visible');
-      });
-    }, 2500);
-  })();
+  }, 2500);
+})();
 
-  // Hash-click reveal
-  (function(){
-    function revealTarget() {
-      const hash = window.location.hash;
-      if (!hash || hash.length < 2) return;
-      try {
-        const target = document.querySelector(hash);
-        if (target && target.classList.contains('animate-section')) {
-          target.classList.remove('is-pending');
-          target.classList.add('is-visible');
-        }
-      } catch(e) {}
-    }
-    window.addEventListener('hashchange', revealTarget);
-    setTimeout(revealTarget, 100);
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', () => {
-        const hash = a.getAttribute('href');
-        if (hash && hash.length > 1) {
-          try {
-            const target = document.querySelector(hash);
-            if (target && target.classList.contains('animate-section')) {
-              target.classList.remove('is-pending');
-              target.classList.add('is-visible');
-            }
-          } catch(e) {}
-        }
-      });
-    });
-  })();
-
-  // Live clock
-  function updateClock() {
-    const el = document.getElementById('live-clock');
-    if (el) el.textContent = 'Atlanta - ' + new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+// Hash-click reveal
+(function(){
+  function revealTarget() {
+    const hash = window.location.hash;
+    if (!hash || hash.length < 2) return;
+    try {
+      const target = document.querySelector(hash);
+      if (target && target.classList.contains('animate-section')) {
+        target.classList.remove('is-pending');
+        target.classList.add('is-visible');
+      }
+    } catch(e) {}
   }
-  updateClock();
-  setInterval(updateClock, 1000);
+  window.addEventListener('hashchange', revealTarget);
+  setTimeout(revealTarget, 100);
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', () => {
+      const hash = a.getAttribute('href');
+      if (hash && hash.length > 1) {
+        try {
+          const target = document.querySelector(hash);
+          if (target && target.classList.contains('animate-section')) {
+            target.classList.remove('is-pending');
+            target.classList.add('is-visible');
+          }
+        } catch(e) {}
+      }
+    });
+  });
+})();
 
-  // Lucide
-  (function(){
-    const render = () => { if (window.lucide) window.lucide.createIcons(); };
-    if (window.lucide) render();
-    else document.addEventListener('DOMContentLoaded', render);
-    setTimeout(render, 500);
-    setTimeout(render, 1500);
-  })();
-  </script>
+// Live clock
+function updateClock() {
+  const el = document.getElementById('live-clock');
+  if (el) el.textContent = 'Atlanta - ' + new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+}
+updateClock();
+setInterval(updateClock, 1000);
+
+// Lucide
+(function(){
+  const render = () => { if (window.lucide) window.lucide.createIcons(); };
+  if (window.lucide) render();
+  else document.addEventListener('DOMContentLoaded', render);
+  setTimeout(render, 500);
+  setTimeout(render, 1500);
+})();
+</script>
 </body>
 </html>

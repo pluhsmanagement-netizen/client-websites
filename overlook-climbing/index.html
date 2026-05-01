@@ -3,908 +3,1210 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Overlook Climbing  | Home Services in Atlanta, GA</title>
-<meta name="description" content="Overlook Climbing  provides professional home services services in Atlanta, Georgia. Rated 4.4 stars by 584+ customers. Licensed, insured, and trusted by local homeowners. Call  for a free estimate.">
-<meta name="keywords" content="home services, Atlanta home services, Atlanta GA, contact us employment opportunities, customer experience waiver, customer portal">
-<meta name="robots" content="index, follow">
-<meta name="author" content="Overlook Climbing ">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Overlook Climbing  | Home Services in Atlanta, GA">
-<meta property="og:description" content="Professional home services services in Atlanta.">
-<meta property="og:image" content="https://overlookclimbing.com/wp-content/uploads/2021/12/cropped-190619_The-Overlook_LOGOS_print_transparent-background-03-1-180x180.png">
-<meta property="og:locale" content="en_US">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Overlook Climbing  | Atlanta Home Services">
-<meta name="twitter:description" content="Professional home services services in Atlanta, GA.">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/lucide@latest"></script>
-<link href="https://fonts.googleapis.com/css2?family=Bowlby+One:wght@400&family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght,ital@9..144,300..900,0;9..144,300..900,1&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Overlook Climbing ",
-  "image": "https://overlookclimbing.com/wp-content/uploads/2021/12/cropped-190619_The-Overlook_LOGOS_print_transparent-background-03-1-180x180.png",
-  "telephone": "",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Mainkai, 63067 Offenbach am Main, Germany",
-    "addressLocality": "Atlanta",
-    "addressRegion": "GA",
-    "addressCountry": "US"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.4",
-    "reviewCount": "584"
-  },
-  "priceRange": "$$",
-  "areaServed": [],
-  "description": "Professional home services services in Atlanta, Georgia."
-}
-</script>
+<title>The Overlook — Indoor Rock Climbing on the Atlanta BeltLine</title>
+<meta name="description" content="The Overlook is Atlanta's premier indoor rock climbing gym, located on the BeltLine at 1030 White St SW. Climbing classes, youth camps, fitness, and community.">
+<link rel="icon" type="image/png" href="assets/overlook-logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght,ital@9..144,300..900,0;9..144,300..900,1&display=swap" rel="stylesheet">
+
 <style>
+  /* ============ TOKENS ============ */
+  :root {
+    --black: #0A0A0A;
+    --ink: #141414;
+    --paper: #F4F1E8;
+    --paper-dim: #E8E4D6;
+    --yellow: #D4D900;       /* The Overlook brand yellow, slightly tuned for screen */
+    --yellow-bright: #E5EB1F;
+    --chalk: #FFFFFF;
+    --rule: rgba(255,255,255,0.08);
+    --rule-dark: rgba(20,20,20,0.10);
+    --max: 1440px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { overflow-x: hidden; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; -webkit-font-smoothing: antialiased; color: #1C1E1D; }
-  h1,h2,h3,h4,h5,h6,.heading { font-family: 'Bowlby One', 'Fraunces', Georgia, serif; }
-  .display-font { font-family: 'Bowlby One', 'Fraunces', Georgia, serif; }
-  .serif-display, .italic-display { font-family: 'Fraunces', Georgia, serif; font-style: italic; }
-  ::selection { background: #ff6900; color: #fff; }
-  .ticker-track { display: flex; animation: ticker 40s linear infinite; white-space: nowrap; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--black);
+    color: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+
+  ::selection { background: var(--yellow); color: var(--black); }
+
+  /* ============ TYPE ============ */
+  .display, h1, h2, h3 {
+    font-family: 'Archivo Black', 'Inter', sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 0.92;
+    text-transform: uppercase;
+  }
+
+  .serif-italic {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    text-transform: none;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--yellow);
+  }
+
+  .num-marker {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--yellow);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+  }
+
+  /* ============ LAYOUT HELPERS ============ */
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+  @media (min-width: 768px) { .wrap { padding: 0 56px; } }
+  .hairline { height: 1px; background: var(--rule); border: 0; }
+  .hairline-dark { height: 1px; background: var(--rule-dark); border: 0; }
+
+  /* ============ TICKER ============ */
+  .ticker {
+    background: var(--yellow);
+    color: var(--black);
+    padding: 9px 0;
+    overflow: hidden;
+    border-bottom: 1px solid var(--black);
+    position: relative;
+    z-index: 60;
+  }
+  .ticker-track {
+    display: flex; gap: 40px; white-space: nowrap;
+    animation: ticker 50s linear infinite;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.28em; text-transform: uppercase;
+  }
+  .ticker-track span { display: inline-flex; align-items: center; gap: 40px; }
+  .ticker-track .dot { width: 4px; height: 4px; background: var(--black); border-radius: 50%; display: inline-block; }
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  .marquee-track { display: flex; animation: marquee 40s linear infinite; }
-  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  details summary { list-style: none; cursor: pointer; }
-  details summary::-webkit-details-marker { display: none; }
-  .tab-btn { cursor: pointer; transition: all 0.2s ease; letter-spacing: 0.04em; }
-  .tab-btn.active-tab { background-color: #ff6900; color: white; }
-  .tab-btn.inactive-tab { background-color: white; color: #5A5F5C; border: 1px solid #D5D7D3; }
-  .tab-panel { display: block; }
-  .tab-panel.hidden { display: none !important; }
-  .img-hover-wrap { overflow: hidden; }
-  .img-hover-wrap img { transition: transform 0.7s ease; }
-  .img-hover-wrap:hover img { transform: scale(1.04); }
-  .arrow-cta { border-bottom: 1px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.25s ease; font-weight: 500; }
-  .arrow-cta:hover { gap: 14px; }
-  .dotted-leader { flex: 1; border-bottom: 1px dotted currentColor; margin: 0 1rem; opacity: 0.25; align-self: end; padding-bottom: 0.5rem; }
-  .hairline-rule { border-top: 1px solid #D5D7D3; }
-  .section-num { font-family: 'Fraunces', serif; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; color: #ff6900; }
-  .eyebrow-label { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #ff6900; }
-  section { scroll-margin-top: 96px; }
-  .animate-section { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
-  .animate-section.is-pending { opacity: 0; transform: translateY(24px); }
-  .animate-section.is-visible { opacity: 1; transform: none; }
-  .animate-section:target,
-  .animate-section.is-pending:target { opacity: 1 !important; transform: none !important; }
-  .award-badge { filter: grayscale(100%); transition: filter 0.3s ease; }
-  .award-badge:hover { filter: grayscale(0%); }
-  .btn-premium { display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; border: 2px solid transparent; cursor: pointer; transition: all 0.25s ease; }
-  .btn-premium-primary { background: #ff6900; color: #fff; border-color: #ff6900; }
-  .btn-premium-primary:hover { background: #ff6900; transform: translateY(-2px); filter: brightness(0.9); }
-  .btn-premium-ghost { background: transparent; color: #fff; border-color: #fff; }
-  .btn-premium-ghost:hover { background: #fff; color: #1C1E1D; }
-  .stat-border { border-left: 1px solid #cf2e2e; }
-  .service-card { border: 1px solid rgba(207,46,46,0.25); background: #1C1E1D; transition: border-color 0.3s ease; }
-  .service-card:hover { border-color: #cf2e2e; }
-  details[open] summary { border-left: 3px solid #cf2e2e; background: rgba(207,46,46,0.04); padding-left: 16px; }
-  .footer-accent { border-top: 4px solid #cf2e2e; }
-  .nav-link { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; opacity: 0.8; transition: opacity 0.2s; }
-  .nav-link:hover { opacity: 1; }
-  .review-num { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 5rem; line-height: 1; color: rgba(207,46,46,0.18); font-weight: 700; }
-  .hero-stamp { border: 1px solid rgba(255,255,255,0.3); }
-  @media (max-width: 767px) {
-    .ticker-track { animation-duration: 25s; }
+
+  /* ============ NAV ============ */
+  nav.main {
+    background: var(--black);
+    border-bottom: 1px solid var(--rule);
+    position: sticky; top: 0; z-index: 50;
+  }
+  .nav-inner {
+    max-width: var(--max); margin: 0 auto;
+    padding: 18px 28px;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  }
+  @media (min-width: 768px) { .nav-inner { padding: 22px 56px; } }
+
+  .logo-mark { height: 38px; width: auto; display: block; }
+  @media (min-width: 768px) { .logo-mark { height: 44px; } }
+
+  .nav-links {
+    display: none;
+    align-items: center; gap: 28px;
+  }
+  @media (min-width: 1100px) { .nav-links { display: flex; } }
+
+  .nav-item { position: relative; }
+  .nav-item > a {
+    color: var(--paper); text-decoration: none;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    padding: 10px 0; display: inline-flex; align-items: center; gap: 6px;
+    transition: color 0.2s;
+  }
+  .nav-item:hover > a, .nav-item > a.active { color: var(--yellow); }
+  .nav-item > a .caret { font-size: 8px; opacity: 0.6; transition: transform 0.2s; }
+  .nav-item:hover > a .caret { transform: rotate(180deg); opacity: 1; }
+
+  .dropdown {
+    position: absolute; top: 100%; left: -16px;
+    background: var(--ink);
+    border: 1px solid var(--rule);
+    min-width: 240px;
+    padding: 8px 0;
+    opacity: 0; visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+  }
+  .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+  .dropdown a {
+    display: block; padding: 11px 20px;
+    color: var(--paper); text-decoration: none;
+    font-size: 12px; letter-spacing: 0.04em;
+    border-left: 2px solid transparent;
+    transition: all 0.15s;
+  }
+  .dropdown a:hover { color: var(--yellow); border-left-color: var(--yellow); background: rgba(212,217,0,0.04); }
+
+  .nav-cta {
+    display: none;
+    background: var(--yellow); color: var(--black);
+    padding: 12px 22px;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--yellow);
+    transition: all 0.2s;
+  }
+  @media (min-width: 768px) { .nav-cta { display: inline-block; } }
+  .nav-cta:hover { background: transparent; color: var(--yellow); }
+
+  .hamburger {
+    display: inline-flex; flex-direction: column; gap: 5px;
+    width: 32px; padding: 8px; background: none; border: 0; cursor: pointer;
+  }
+  @media (min-width: 1100px) { .hamburger { display: none; } }
+  .hamburger span { width: 100%; height: 1.5px; background: var(--paper); display: block; }
+
+  .mobile-menu {
+    display: none;
+    background: var(--ink);
+    border-top: 1px solid var(--rule);
+    padding: 12px 0;
+  }
+  .mobile-menu.open { display: block; }
+  .mobile-menu .group { border-bottom: 1px solid var(--rule); }
+  .mobile-menu .group > .label {
+    padding: 16px 28px; color: var(--yellow);
+    font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+  }
+  .mobile-menu .group a {
+    display: block; padding: 10px 28px 10px 44px;
+    color: var(--paper); text-decoration: none; font-size: 13px;
+  }
+  .mobile-menu .group a:hover { color: var(--yellow); }
+
+  /* ============ HERO ============ */
+  .hero {
+    position: relative;
+    background: var(--black);
+    min-height: calc(100vh - 90px);
+    display: flex; align-items: center;
+    overflow: hidden;
+    padding: 80px 0 100px;
+  }
+
+  /* Background grid */
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(244,241,232,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(244,241,232,0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+  }
+
+  /* Giant outline word behind everything */
+  .hero-bg-word {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(180px, 28vw, 480px);
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(244,241,232,0.06);
+    letter-spacing: -0.03em;
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+    z-index: 1;
+  }
+
+  .hero-grid {
+    position: relative; z-index: 5;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+  }
+  @media (min-width: 1024px) {
+    .hero-grid { grid-template-columns: 1.1fr 1fr; gap: 40px; }
+  }
+
+  .hero-content {
+    position: relative;
+  }
+
+  .hero-meta {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 40px;
+  }
+  .hero-meta .line { width: 60px; height: 1px; background: var(--yellow); }
+  .hero-meta .text { font-size: 11px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--paper); opacity: 0.7; }
+
+  .hero-title {
+    font-size: clamp(56px, 8vw, 120px);
+    margin-bottom: 36px;
+  }
+  .hero-title .accent {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--yellow);
+    text-transform: none;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-sub {
+    max-width: 480px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(244,241,232,0.7);
+    margin-bottom: 48px;
+    font-weight: 300;
+  }
+
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 28px;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    text-decoration: none; cursor: pointer; border: 1px solid;
+    transition: all 0.25s ease;
+  }
+  .btn-yellow { background: var(--yellow); color: var(--black); border-color: var(--yellow); }
+  .btn-yellow:hover { background: transparent; color: var(--yellow); }
+  .btn-ghost { background: transparent; color: var(--paper); border-color: rgba(244,241,232,0.3); }
+  .btn-ghost:hover { border-color: var(--paper); color: var(--paper); }
+  .btn .arrow { transition: transform 0.25s; }
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  /* HOLD STAGE */
+  .hold-stage {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* Glow ring behind hold */
+  .hold-stage::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 70%; height: 70%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(212,217,0,0.18) 0%, transparent 65%);
+    filter: blur(40px);
+    pointer-events: none;
+    animation: pulse 4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
+  }
+
+  /* Concentric rings */
+  .hold-rings {
+    position: absolute; inset: 0;
+    pointer-events: none;
+  }
+  .hold-rings::before, .hold-rings::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    border: 1px solid rgba(212,217,0,0.15);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .hold-rings::before { width: 80%; height: 80%; }
+  .hold-rings::after { width: 95%; height: 95%; border-color: rgba(212,217,0,0.08); }
+
+  /* The hold itself with 3D tilt + slow rotate */
+  .hold-img {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 86%;
+    transform: translate(-50%, -50%) rotate(-6deg);
+    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.7)) drop-shadow(0 0 80px rgba(212,217,0,0.15));
+    transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1);
+    z-index: 2;
+    cursor: grab;
+    will-change: transform;
+  }
+  .hold-stage:hover .hold-img { transform: translate(-50%, -50%) rotate(-3deg) scale(1.04); }
+  .hold-img:active { cursor: grabbing; }
+
+  /* Chalk particle layer */
+  .chalk-layer {
+    position: absolute; inset: 0;
+    pointer-events: none;
+    z-index: 3;
+  }
+  .chalk {
+    position: absolute;
+    width: 6px; height: 6px;
+    background: var(--chalk);
+    border-radius: 50%;
+    opacity: 0;
+    filter: blur(1px);
+    box-shadow: 0 0 8px rgba(255,255,255,0.6);
+  }
+
+  /* Each chalk particle has a unique animation */
+  .chalk:nth-child(1)  { left: 30%; top: 45%; animation: chalk-rise-a 3.5s ease-out infinite; animation-delay: 0.0s; }
+  .chalk:nth-child(2)  { left: 50%; top: 40%; animation: chalk-rise-b 4.2s ease-out infinite; animation-delay: 0.4s; }
+  .chalk:nth-child(3)  { left: 60%; top: 50%; animation: chalk-rise-a 3.8s ease-out infinite; animation-delay: 0.9s; width: 4px; height: 4px; }
+  .chalk:nth-child(4)  { left: 38%; top: 55%; animation: chalk-rise-c 4.5s ease-out infinite; animation-delay: 1.3s; }
+  .chalk:nth-child(5)  { left: 55%; top: 48%; animation: chalk-rise-b 3.2s ease-out infinite; animation-delay: 1.7s; width: 3px; height: 3px; }
+  .chalk:nth-child(6)  { left: 45%; top: 52%; animation: chalk-rise-a 4s ease-out infinite; animation-delay: 2.1s; }
+  .chalk:nth-child(7)  { left: 65%; top: 45%; animation: chalk-rise-c 3.6s ease-out infinite; animation-delay: 2.5s; width: 5px; height: 5px; }
+  .chalk:nth-child(8)  { left: 35%; top: 48%; animation: chalk-rise-b 4.4s ease-out infinite; animation-delay: 0.2s; width: 4px; height: 4px; }
+  .chalk:nth-child(9)  { left: 58%; top: 55%; animation: chalk-rise-a 3.9s ease-out infinite; animation-delay: 1.0s; }
+  .chalk:nth-child(10) { left: 42%; top: 42%; animation: chalk-rise-c 4.1s ease-out infinite; animation-delay: 1.5s; width: 3px; height: 3px; }
+  .chalk:nth-child(11) { left: 50%; top: 50%; animation: chalk-rise-b 3.7s ease-out infinite; animation-delay: 2.0s; }
+  .chalk:nth-child(12) { left: 48%; top: 45%; animation: chalk-rise-a 4.3s ease-out infinite; animation-delay: 0.7s; width: 5px; height: 5px; }
+
+  @keyframes chalk-rise-a {
+    0%   { opacity: 0; transform: translate(0, 0) scale(0.5); }
+    15%  { opacity: 0.9; }
+    100% { opacity: 0; transform: translate(-30px, -120px) scale(1.8); }
+  }
+  @keyframes chalk-rise-b {
+    0%   { opacity: 0; transform: translate(0, 0) scale(0.5); }
+    20%  { opacity: 0.7; }
+    100% { opacity: 0; transform: translate(20px, -140px) scale(2); }
+  }
+  @keyframes chalk-rise-c {
+    0%   { opacity: 0; transform: translate(0, 0) scale(0.5); }
+    18%  { opacity: 0.8; }
+    100% { opacity: 0; transform: translate(-10px, -100px) scale(1.6); }
+  }
+
+  /* Stamp top-right of hero */
+  .hero-stamp {
+    position: absolute;
+    top: 32px; right: 28px;
+    border: 1px solid rgba(244,241,232,0.2);
+    padding: 14px 18px;
+    text-align: right;
+    z-index: 4;
+    background: rgba(10,10,10,0.6);
+    backdrop-filter: blur(6px);
+    display: none;
+  }
+  @media (min-width: 768px) { .hero-stamp { display: block; right: 56px; } }
+  .hero-stamp .label { font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--yellow); margin-bottom: 4px; font-weight: 600; }
+  .hero-stamp .value { font-family: 'Fraunces', serif; font-style: italic; font-size: 22px; color: var(--paper); }
+
+  /* ============ INFO BAR ============ */
+  .info-bar {
+    background: var(--yellow);
+    color: var(--black);
+    padding: 18px 0;
+    border-top: 1px solid var(--black);
+    border-bottom: 1px solid var(--black);
+  }
+  .info-bar-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 28px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+  }
+  @media (min-width: 768px) {
+    .info-bar-inner { grid-template-columns: repeat(4, 1fr); padding: 0 56px; }
+  }
+  .info-bar-inner > div { display: flex; align-items: center; gap: 10px; }
+  .info-bar-inner svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+  /* ============ SECTIONS ============ */
+  section.row { padding: 100px 0; position: relative; }
+  @media (min-width: 768px) { section.row { padding: 140px 0; } }
+
+  .row-head { margin-bottom: 64px; max-width: 720px; }
+  .row-head .num-marker { display: block; margin-bottom: 16px; }
+  .row-head .eyebrow { display: block; margin-bottom: 20px; }
+  .row-head h2 {
+    font-size: clamp(40px, 6vw, 88px);
+  }
+  .row-head h2 .accent {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+    color: var(--yellow); text-transform: none;
+  }
+
+  /* ============ ABOUT ============ */
+  .about {
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .about .eyebrow, .about .num-marker { color: var(--ink); }
+  .about .eyebrow { color: var(--ink); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  @media (min-width: 1024px) {
+    .about-grid { grid-template-columns: 1fr 1.2fr; gap: 100px; }
+  }
+
+  .about-img-block {
+    position: relative;
+  }
+  .about-img-block .frame {
+    position: relative;
+    aspect-ratio: 4/5;
+    background: var(--ink);
+    overflow: hidden;
+  }
+  .about-img-block .frame img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: grayscale(0.3) contrast(1.05);
+    transition: transform 0.8s ease;
+  }
+  .about-img-block:hover .frame img { transform: scale(1.04); }
+  .about-img-block .badge {
+    position: absolute; bottom: 24px; left: 24px;
+    background: var(--yellow);
+    padding: 12px 16px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .about-body p {
+    font-size: 17px; line-height: 1.7; margin-bottom: 24px;
+    color: rgba(20,20,20,0.75);
+    font-weight: 300;
+  }
+  .about-quote {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+    font-size: 28px; line-height: 1.3; letter-spacing: -0.01em;
+    color: var(--ink);
+    border-left: 2px solid var(--yellow);
+    padding-left: 24px;
+    margin: 40px 0;
+  }
+  .about-features {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(20,20,20,0.1);
+  }
+  .feat {
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .feat .num {
+    font-family: 'Fraunces', serif; font-style: italic;
+    color: var(--yellow);
+    font-size: 18px; line-height: 1; padding-top: 2px;
+    flex-shrink: 0;
+  }
+  .feat .txt { font-size: 14px; line-height: 1.5; color: var(--ink); font-weight: 500; }
+
+  /* ============ PROGRAMS / SERVICES GRID ============ */
+  .programs { background: var(--black); color: var(--paper); }
+
+  .program-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-top: 1px solid var(--rule);
+  }
+  @media (min-width: 768px) { .program-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .program-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .program-card {
+    border-bottom: 1px solid var(--rule);
+    border-right: 1px solid var(--rule);
+    padding: 48px 36px;
+    position: relative;
+    transition: background 0.3s;
+    display: flex; flex-direction: column;
+    min-height: 320px;
+  }
+  .program-card:hover { background: rgba(212,217,0,0.04); }
+
+  .program-card .top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 32px;
+  }
+  .program-card .ix {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+    color: var(--yellow); font-size: 13px; letter-spacing: 0.1em;
+  }
+  .program-card .tag {
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(244,241,232,0.4); font-weight: 600;
+  }
+  .program-card h3 {
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
+  .program-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(244,241,232,0.6);
+    font-weight: 300;
+    margin-bottom: 28px;
+    flex-grow: 1;
+  }
+  .program-card .link {
+    color: var(--yellow); text-decoration: none;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: gap 0.25s;
+    align-self: flex-start;
+  }
+  .program-card .link:hover { gap: 14px; }
+
+  /* ============ STATS STRIP ============ */
+  .stats {
+    background: var(--paper);
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 60px 0;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    text-align: center;
+  }
+  @media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+  .stats-grid .stat .n {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(48px, 6vw, 88px);
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stats-grid .stat .l {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--ink); opacity: 0.5;
+  }
+
+  /* ============ COMMUNITY / GALLERY STRIP ============ */
+  .community { background: var(--black); }
+  .gallery-strip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  @media (min-width: 768px) { .gallery-strip { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
+  .g-cell {
+    position: relative;
+    aspect-ratio: 3/4;
+    background: var(--ink);
+    overflow: hidden;
+  }
+  .g-cell:nth-child(1), .g-cell:nth-child(3) { aspect-ratio: 3/4; }
+  .g-cell:nth-child(2), .g-cell:nth-child(4) { aspect-ratio: 3/4; transform: translateY(40px); }
+  .g-cell img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s; }
+  .g-cell:hover img { transform: scale(1.05); }
+  .g-cell .cap {
+    position: absolute; bottom: 12px; left: 12px;
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 13px; color: var(--paper); font-weight: 300;
+  }
+
+  /* ============ CONTACT / VISIT ============ */
+  .visit { background: var(--paper); color: var(--ink); }
+  .visit .eyebrow, .visit .num-marker { color: var(--ink); }
+
+  .visit-grid {
+    display: grid; grid-template-columns: 1fr; gap: 48px;
+  }
+  @media (min-width: 1024px) { .visit-grid { grid-template-columns: 1fr 1fr; gap: 80px; } }
+
+  .visit-info { }
+  .info-block {
+    border-top: 1px solid rgba(20,20,20,0.15);
+    padding: 24px 0;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+  .info-block:last-child { border-bottom: 1px solid rgba(20,20,20,0.15); }
+  .info-block .k {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--ink); opacity: 0.5;
+    padding-top: 4px;
+  }
+  .info-block .v {
+    font-size: 15px;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .info-block .v strong { font-weight: 600; }
+  .hours-row { display: flex; justify-content: space-between; padding: 4px 0; font-size: 14px; }
+  .hours-row.dim { opacity: 0.5; }
+  .hours-row .day { letter-spacing: 0.04em; }
+
+  .map-frame {
+    position: relative;
+    aspect-ratio: 4/5;
+    background: var(--ink);
+    border: 1px solid rgba(20,20,20,0.15);
+  }
+  .map-frame iframe {
+    width: 100%; height: 100%; border: 0;
+    filter: grayscale(0.4) contrast(1.05);
+  }
+  .map-frame .pin {
+    position: absolute; top: 20px; left: 20px;
+    background: var(--yellow);
+    padding: 10px 14px;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink);
+    z-index: 2;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 80px 0 0;
+    border-top: 4px solid var(--yellow);
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    margin-bottom: 60px;
+  }
+  @media (min-width: 768px) {
+    .foot-grid { grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; }
+  }
+  .foot-brand img { height: 56px; margin-bottom: 24px; }
+  .foot-brand p {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+    font-size: 16px; line-height: 1.5;
+    color: rgba(244,241,232,0.6);
+    max-width: 280px;
+  }
+  .foot-col h4 {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .foot-col ul { list-style: none; }
+  .foot-col li { margin-bottom: 10px; }
+  .foot-col a {
+    color: rgba(244,241,232,0.7);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+  .foot-col a:hover { color: var(--yellow); }
+
+  .foot-bottom {
+    border-top: 1px solid var(--rule);
+    padding: 28px 0;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+    font-size: 11px;
+    color: rgba(244,241,232,0.4);
+    letter-spacing: 0.04em;
+  }
+  .foot-bottom .socials { display: flex; gap: 12px; }
+  .foot-bottom .socials a {
+    width: 32px; height: 32px;
+    border: 1px solid rgba(244,241,232,0.2);
+    display: inline-flex; align-items: center; justify-content: center;
+    color: rgba(244,241,232,0.6);
+    transition: all 0.2s;
+  }
+  .foot-bottom .socials a:hover { border-color: var(--yellow); color: var(--yellow); }
+  .foot-bottom .socials svg { width: 14px; height: 14px; }
+
+  /* ============ ANIMATIONS ============ */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    .chalk { display: none; }
   }
 </style>
 </head>
-<body class="bg-[#F2F1EC]">
+<body>
 
-<!-- TICKER BAND — TOP -->
-<div class="bg-[#1C1E1D] text-white py-3 overflow-hidden relative z-50">
+<!-- TICKER -->
+<div class="ticker">
   <div class="ticker-track">
-    <span class="inline-flex items-center gap-6 px-6 text-xs font-semibold tracking-[0.22em] uppercase">
-      QUALITY WORK <span class="text-[#cf2e2e]">·</span> TRUSTED PROFESSIONALS <span class="text-[#cf2e2e]">·</span> ATLANTA AREA <span class="text-[#cf2e2e]">·</span> CALL NOW <span class="text-[#cf2e2e]">·</span> INDOOR ROCK CLIMBING <span class="text-[#cf2e2e]">·</span> ATLANTA BELTLINE <span class="text-[#cf2e2e]">·</span> OPEN 24 HOURS <span class="text-[#cf2e2e]">·</span> 584+ HAPPY CLIMBERS <span class="text-[#cf2e2e]">·</span> QUALITY WORK <span class="text-[#cf2e2e]">·</span> TRUSTED PROFESSIONALS <span class="text-[#cf2e2e]">·</span> ATLANTA AREA <span class="text-[#cf2e2e]">·</span> CALL NOW <span class="text-[#cf2e2e]">·</span> INDOOR ROCK CLIMBING <span class="text-[#cf2e2e]">·</span> ATLANTA BELTLINE <span class="text-[#cf2e2e]">·</span> OPEN 24 HOURS <span class="text-[#cf2e2e]">·</span> 584+ HAPPY CLIMBERS <span class="text-[#cf2e2e]">·</span>
-    </span>
+    <span>The Overlook <span class="dot"></span> Indoor Rock Climbing <span class="dot"></span> Atlanta BeltLine <span class="dot"></span> 1030 White St SW <span class="dot"></span> 678.973.2460 <span class="dot"></span> Summer Camp Registration Live <span class="dot"></span></span>
+    <span>The Overlook <span class="dot"></span> Indoor Rock Climbing <span class="dot"></span> Atlanta BeltLine <span class="dot"></span> 1030 White St SW <span class="dot"></span> 678.973.2460 <span class="dot"></span> Summer Camp Registration Live <span class="dot"></span></span>
   </div>
 </div>
 
-<!-- NAV -->
-<nav class="fixed top-8 left-0 right-0 z-40 bg-[#1C1E1D]/95 backdrop-blur-sm border-b border-white/10 transition-shadow duration-300">
-  <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-16 md:h-20">
-    <a href="#home" class="flex items-center gap-3"><img src="https://overlookclimbing.com/wp-content/uploads/2021/12/cropped-190619_The-Overlook_LOGOS_print_transparent-background-03-1-180x180.png" alt="Overlook Climbing " class="h-12 md:h-14 w-auto object-contain max-w-[200px]"></a>
-    <div class="hidden md:flex items-center gap-8">
-      <a href="#home" class="nav-link">Home</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#gallery" class="nav-link">Gallery</a>
-      <a href="#reviews" class="nav-link">Reviews</a>
-      <a href="#faq" class="nav-link">FAQ</a>
-      <a href="#contact" class="nav-link">Contact</a>
+<!-- NAV — real Overlook structure -->
+<nav class="main">
+  <div class="nav-inner">
+    <a href="#home" aria-label="The Overlook home">
+      <img src="assets/overlook-logo.png" alt="The Overlook" class="logo-mark">
+    </a>
+
+    <div class="nav-links">
+      <div class="nav-item"><a href="#about">About Us</a></div>
+
+      <div class="nav-item">
+        <a href="#contact">Contact Us <span class="caret">▼</span></a>
+        <div class="dropdown">
+          <a href="#contact">Employment Opportunities</a>
+          <a href="#contact">Request More Info</a>
+          <a href="#contact">Membership Change Requests</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="#experience">Customer Experience <span class="caret">▼</span></a>
+        <div class="dropdown">
+          <a href="#experience">Waiver</a>
+          <a href="#experience">Customer Portal</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="#programs">Programs <span class="caret">▼</span></a>
+        <div class="dropdown">
+          <a href="#programs">Climbing Classes</a>
+          <a href="#programs">Private 1:1 Instruction</a>
+          <a href="#programs">Crash Pad Rentals</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="#fitness">Fitness <span class="caret">▼</span></a>
+        <div class="dropdown">
+          <a href="#fitness">Yoga and Fitness Classes</a>
+          <a href="#fitness">Fitness Class Instructors</a>
+          <a href="#fitness">Fitness Equipment</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="#youth">Youth <span class="caret">▼</span></a>
+        <div class="dropdown">
+          <a href="#youth">Youth Climbing Teams</a>
+          <a href="#youth">Youth Climbing Camps – Camp Overlook</a>
+          <a href="#youth">Overlook Youth Calendar</a>
+          <a href="#youth">Youth Birthday</a>
+        </div>
+      </div>
+
+      <div class="nav-item"><a href="#community">Community</a></div>
+      <div class="nav-item"><a href="#deals">Deals</a></div>
     </div>
-    <a href="#contact" class="hidden md:inline-flex btn-premium btn-premium-primary text-xs py-3 px-6">Get Started</a>
-    <button id="hamburger" class="md:hidden text-white p-2" aria-label="Open menu">
-      <i data-lucide="menu" class="w-6 h-6"></i>
+
+    <a href="#visit" class="nav-cta">Climb Today</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
     </button>
   </div>
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden bg-[#1C1E1D] border-t border-white/10">
-    <a href="#home" class="mobile-nav-link block py-4 px-4 border-b border-white/10 text-white/80 text-sm font-semibold tracking-widest uppercase">Home</a>
-    <a href="#about" class="mobile-nav-link block py-4 px-4 border-b border-white/10 text-white/80 text-sm font-semibold tracking-widest uppercase">About</a>
-    <a href="#services" class="mobile-nav-link block py-4 px-4 border-b border-white/10 text-white/80 text-sm font-semibold tracking-widest uppercase">Services</a>
-    <a href="#gallery" class="mobile-nav-link block py-4 px-4 border-b border-white/10 text-white/80 text-sm font-semibold tracking-widest uppercase">Gallery</a>
-    <a href="#reviews" class="mobile-nav-link block py-4 px-4 border-b border-white/10 text-white/80 text-sm font-semibold tracking-widest uppercase">Reviews</a>
-    <a href="#faq" class="mobile-nav-link block py-4 px-4 border-b border-white/10 text-white/80 text-sm font-semibold tracking-widest uppercase">FAQ</a>
-    <a href="#contact" class="mobile-nav-link block py-4 px-4 text-white/80 text-sm font-semibold tracking-widest uppercase">Contact</a>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="group"><a href="#about" class="label" style="color:var(--yellow);">About Us</a></div>
+    <div class="group">
+      <div class="label">Contact Us</div>
+      <a href="#contact">Employment Opportunities</a>
+      <a href="#contact">Request More Info</a>
+      <a href="#contact">Membership Change Requests</a>
+    </div>
+    <div class="group">
+      <div class="label">Customer Experience</div>
+      <a href="#experience">Waiver</a>
+      <a href="#experience">Customer Portal</a>
+    </div>
+    <div class="group">
+      <div class="label">Programs</div>
+      <a href="#programs">Climbing Classes</a>
+      <a href="#programs">Private 1:1 Instruction</a>
+      <a href="#programs">Crash Pad Rentals</a>
+    </div>
+    <div class="group">
+      <div class="label">Fitness</div>
+      <a href="#fitness">Yoga &amp; Fitness Classes</a>
+      <a href="#fitness">Fitness Class Instructors</a>
+      <a href="#fitness">Fitness Equipment</a>
+    </div>
+    <div class="group">
+      <div class="label">Youth</div>
+      <a href="#youth">Youth Climbing Teams</a>
+      <a href="#youth">Camp Overlook</a>
+      <a href="#youth">Youth Calendar</a>
+      <a href="#youth">Youth Birthday</a>
+    </div>
+    <div class="group"><a href="#community" class="label" style="color:var(--yellow);">Community</a></div>
+    <div class="group"><a href="#deals" class="label" style="color:var(--yellow);">Deals</a></div>
   </div>
 </nav>
 
 <!-- HERO -->
-<section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-24">
-  <!-- Background Image -->
-  <div class="absolute inset-0 z-0">
-    <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-tOx-IuiM6oYNm-enaxvodDyfQTAOnKUNzVB_wSmpRfV7QKZfSiD6LZt0iLpaBy5esDngOZOOPbaauEW4s2OxJGH6sv9BnptXWpdtm0V6kihCWUEKaGj5nSMAtVEJrTiC9ouJviR1bq2RF9OtLynzxvZSqPRX0xNxgDLbiC6bMk9kBYmMQc0uCCsQJcAywc-aNUA-nXt9Z5ximK64ZFI_SjWOLA9DJTQagHCFy-dKDtvFaCL0M1t2bMC49aiGiisjkkvueoCWbKlNYonLlDu8A43OufCPf0ACoa5bQkmEh78S-YMnHADL8IakZE1m08nytXil9rlPPVKRE8uE6LmI0hSWAHriHLS4jpzA53znjayUMWXgra2DtVVV6wA5gIcOlFmbgqjQ8r3oF8qGpRv40CQTizFto2VjF2J4bcJlVh1A&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Overlook Climbing indoor rock climbing facility on the Atlanta BeltLine" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/contractor-1/1600/900'">
-    <div class="absolute inset-0 bg-[#1C1E1D]/70"></div>
-    <!-- Split right accent overlay -->
-    <div class="absolute right-0 top-0 bottom-0 w-1/3 bg-[#cf2e2e]/10 hidden lg:block"></div>
+<section class="hero" id="home">
+  <div class="hero-bg-word">CLIMB</div>
+
+  <div class="hero-stamp">
+    <div class="label">Atlanta BeltLine</div>
+    <div class="value">est. 2016</div>
   </div>
 
-  <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-16 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-16 md:py-24">
-    <!-- Left Content — 7 cols -->
-    <div class="lg:col-span-7">
-      <!-- Eyebrow -->
-      <div class="flex items-center gap-4 mb-8">
-        <div class="w-0.5 h-10 bg-[#cf2e2e]"></div>
-        <span class="text-xs font-semibold tracking-[0.22em] uppercase text-white/80">EST. 2016 — ATLANTA, GA</span>
-      </div>
-
-      <h1 class="text-5xl md:text-7xl lg:text-8xl text-white leading-[0.95] mb-8">
-        CLIMB<br>
-        <span class="italic-display text-[#cf2e2e]">Higher</span><br>
-        ON THE<br>
-        BELTLINE
-      </h1>
-
-      <p class="text-lg text-white/80 max-w-xl mb-10 font-normal leading-relaxed">
-        Come enjoy some indoor rock climbing on the Atlanta BeltLine — Atlanta's premier vertical experience, open every day for climbers of all levels.
-      </p>
-
-      <div class="flex flex-wrap gap-4">
-        <a href="#contact" class="btn-premium btn-premium-primary">
-          <i data-lucide="sparkles" class="w-4 h-4"></i>
-          Get Started
-        </a>
-        <a href="#services" class="btn-premium btn-premium-ghost">
-          <i data-lucide="chevron-right" class="w-4 h-4"></i>
-          Our Services
-        </a>
-      </div>
-
-      <!-- Live clock -->
-      <div class="mt-10 flex items-center gap-2 text-white/50 text-xs tracking-widest uppercase">
-        <i data-lucide="clock" class="w-3 h-3"></i>
-        <span id="live-clock">Atlanta</span>
-        <span class="mx-2 text-[#cf2e2e]">·</span>
-        <span>Open 24 Hours</span>
-      </div>
-    </div>
-
-    <!-- Right stamp — 5 cols -->
-    <div class="lg:col-span-5 hidden lg:flex flex-col items-end justify-center gap-6">
-      <div class="hero-stamp p-8 text-right max-w-xs">
-        <div class="text-[#cf2e2e] text-xs tracking-[0.22em] uppercase mb-3 font-semibold">Rated by Atlanta</div>
-        <div class="flex items-center justify-end gap-1 mb-2">
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-meta">
+          <span class="line"></span>
+          <span class="text">Indoor Rock Climbing · Atlanta, GA</span>
         </div>
-        <div class="text-white text-3xl font-bold mb-1">4.4 / 5</div>
-        <div class="text-white/60 text-sm">584+ verified reviews</div>
-        <div class="mt-4 pt-4 border-t border-white/20">
-          <div class="text-white/80 text-xs leading-relaxed italic font-light">"Very romantic place with a great view — should be visited."</div>
-          <div class="text-white/40 text-xs mt-2">— Dennis Rein, Google</div>
+
+        <h1 class="display hero-title">
+          Find your<br>
+          <span class="accent">grip.</span><br>
+          Climb<br>
+          higher.
+        </h1>
+
+        <p class="hero-sub">
+          A premier climbing facility on the Atlanta BeltLine. Classes, camps, fitness, and a community that meets you wherever you are on the wall — V0 to V-anything.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#programs" class="btn btn-yellow">
+            Start Climbing
+            <span class="arrow">→</span>
+          </a>
+          <a href="#visit" class="btn btn-ghost">
+            Plan a Visit
+          </a>
+        </div>
+      </div>
+
+      <!-- HOLD STAGE -->
+      <div class="hold-stage" aria-hidden="true">
+        <div class="hold-rings"></div>
+
+        <img src="assets/climbing-hold.png" alt="" class="hold-img" id="holdImg">
+
+        <div class="chalk-layer">
+          <span class="chalk"></span><span class="chalk"></span><span class="chalk"></span>
+          <span class="chalk"></span><span class="chalk"></span><span class="chalk"></span>
+          <span class="chalk"></span><span class="chalk"></span><span class="chalk"></span>
+          <span class="chalk"></span><span class="chalk"></span><span class="chalk"></span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- STATS BAND -->
-<section class="bg-[#1C1E1D] py-20 animate-section">
-  <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-0 divide-x divide-[#cf2e2e]/20">
-      <div class="stat-border pl-8 pr-6 py-4">
-        <div class="text-5xl md:text-6xl font-bold text-[#cf2e2e] display-font mb-2" data-count="584" data-suffix="+">584+</div>
-        <div class="text-xs tracking-[0.22em] uppercase text-white/60 font-semibold">Happy Climbers</div>
-      </div>
-      <div class="pl-8 pr-6 py-4">
-        <div class="text-5xl md:text-6xl font-bold text-[#cf2e2e] display-font mb-2" data-count="4" data-suffix=".4★">4.4★</div>
-        <div class="text-xs tracking-[0.22em] uppercase text-white/60 font-semibold">Star Rating</div>
-      </div>
-      <div class="pl-8 pr-6 py-4">
-        <div class="text-5xl md:text-6xl font-bold text-[#cf2e2e] display-font mb-2" data-count="24" data-suffix="/7">24/7</div>
-        <div class="text-xs tracking-[0.22em] uppercase text-white/60 font-semibold">Open Daily</div>
-      </div>
-      <div class="pl-8 pr-6 py-4">
-        <div class="text-5xl md:text-6xl font-bold text-[#cf2e2e] display-font mb-2" data-count="2016" data-suffix="">2016</div>
-        <div class="text-xs tracking-[0.22em] uppercase text-white/60 font-semibold">Est. Atlanta, GA</div>
-      </div>
+<!-- INFO BAR -->
+<div class="info-bar">
+  <div class="info-bar-inner">
+    <div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span>1030 White St SW</span>
+    </div>
+    <div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span>Mon — Sun</span>
+    </div>
+    <div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      <span>678.973.2460</span>
+    </div>
+    <div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      <span>All Levels Welcome</span>
     </div>
   </div>
-</section>
+</div>
 
 <!-- ABOUT -->
-<section id="about" class="animate-section bg-[#1C1E1D] py-24 md:py-32 px-4 md:px-8 lg:px-16">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-    <!-- Left image -->
-    <div class="relative img-hover-wrap" style="aspect-ratio:4/5; max-height:640px;">
-      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-u0nga3uotzaqPEDifVKdUZMF8YKI0VWnlmpfXLwdgSkugBhA3wRgViwFTWsBzR6hAxidd-Eb82sMWO6ztsXNUjGyWISPRyMri6_jTosWvcGCpuTFQxkBJeKTiGLKukGD4niAvIxymCnw_Lc6kdgKHr615GKoxE3QvoTYJkBBgoEO2JDRlrjcGmRpb5sVsDWWLlrOcQdk6-MNk0soJhCRsP1UJc67qEZrV5LTNgEejV8Y7wAmfl800snA_q6HtVSfZVnr7PpZbkARdXZhHJlu90xQiVWO25inKuFZdvd2NKCcmCEbdjtT3zj0WPzMkJVMUDRrOr4qhu1G4_JxK1qUwN_LfcY_F3N4KOPIjJl5dJMRmkcZ9SobCq3qaj4LETWVWqnILw7J4E9dXSq1NZhl-rS4PPEgOQRdlZBdqiYP4&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Overlook Climbing interior showing climbing walls and routes" class="w-full h-full object-cover" style="aspect-ratio:4/5;" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-2/800/1000'">
-      <div class="absolute inset-0 bg-[#cf2e2e]/8"></div>
-      <div class="absolute bottom-6 left-6 right-6">
-        <div class="bg-[#1C1E1D]/80 backdrop-blur-sm p-4 border border-[#cf2e2e]/30">
-          <div class="text-[#cf2e2e] text-xs tracking-[0.22em] uppercase font-semibold">Atlanta BeltLine</div>
-          <div class="text-white text-sm mt-1 font-medium">Premier Indoor Climbing Destination</div>
-        </div>
-      </div>
+<section class="row about reveal" id="about">
+  <div class="wrap">
+    <div class="row-head">
+      <span class="num-marker">/01 — About Us</span>
+      <span class="eyebrow">Built for climbers</span>
+      <h2>Atlanta's<br>climbing<br><span class="accent">home.</span></h2>
     </div>
 
-    <!-- Right content -->
-    <div>
-      <div class="section-num mb-2">/03</div>
-      <p class="eyebrow-label mb-4">About Us</p>
-      <h2 class="text-4xl md:text-5xl text-white mb-6 leading-tight">BUILT FOR CLIMBERS,<br><span class="italic-display text-[#cf2e2e]">By Climbers</span></h2>
-
-      <p class="text-white/70 text-base leading-relaxed mb-5">
-        Overlook Climbing is Atlanta's dedicated indoor rock climbing facility, nestled right on the iconic BeltLine — where community, fitness, and vertical adventure converge for climbers of every skill level. From first-timers to seasoned athletes, we've built an environment that challenges and inspires.
-      </p>
-      <p class="text-white/70 text-base leading-relaxed mb-8">
-        We offer world-class climbing programs, youth camps, fitness classes, and private instruction — all designed to foster skill development, community connection, and a lifelong love of climbing in the heart of Atlanta, Georgia.
-      </p>
-
-      <!-- Pull quote -->
-      <div class="border-l-2 border-[#cf2e2e] pl-6 mb-10">
-        <p class="italic-display text-white text-xl leading-relaxed">"A place where every hold brings you closer to the top — and to something greater than yourself."</p>
+    <div class="about-grid">
+      <div class="about-img-block">
+        <div class="frame">
+          <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=800&q=80" alt="Climber on indoor bouldering wall">
+        </div>
+        <div class="badge">Camp Overlook · Live</div>
       </div>
 
-      <!-- Differentiators -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div class="flex items-start gap-3">
-          <i data-lucide="check-circle" class="w-5 h-5 text-[#cf2e2e] flex-shrink-0 mt-0.5"></i>
-          <span class="text-white/80 text-sm">All-levels welcome, beginner to expert</span>
-        </div>
-        <div class="flex items-start gap-3">
-          <i data-lucide="shield-check" class="w-5 h-5 text-[#cf2e2e] flex-shrink-0 mt-0.5"></i>
-          <span class="text-white/80 text-sm">Safety-first certified instruction</span>
-        </div>
-        <div class="flex items-start gap-3">
-          <i data-lucide="heart" class="w-5 h-5 text-[#cf2e2e] flex-shrink-0 mt-0.5"></i>
-          <span class="text-white/80 text-sm">Vibrant community culture & events</span>
-        </div>
-        <div class="flex items-start gap-3">
-          <i data-lucide="map-pin" class="w-5 h-5 text-[#cf2e2e] flex-shrink-0 mt-0.5"></i>
-          <span class="text-white/80 text-sm">Prime BeltLine location, open 24/7</span>
+      <div class="about-body">
+        <p>
+          The Overlook is a climbing community on Atlanta's BeltLine — a place where first-timers and seasoned crushers share the same mats, the same chalk, and the same problems on the wall.
+        </p>
+        <p>
+          We run climbing classes, youth teams, summer camps, fitness sessions, and private instruction. Whatever brought you in, we'll help you stay.
+        </p>
+
+        <p class="about-quote">
+          "Every hold is a question. Every climb is the answer you weren't expecting."
+        </p>
+
+        <div class="about-features">
+          <div class="feat"><span class="num">i.</span><span class="txt">Bouldering, top-rope, and lead climbing</span></div>
+          <div class="feat"><span class="num">ii.</span><span class="txt">Certified instruction, all skill levels</span></div>
+          <div class="feat"><span class="num">iii.</span><span class="txt">Yoga, strength, and conditioning classes</span></div>
+          <div class="feat"><span class="num">iv.</span><span class="txt">Youth teams &amp; Camp Overlook summers</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS STRIP -->
-<section class="animate-section bg-[#F2F1EC] py-16 px-4 md:px-8 lg:px-16 border-y border-[#D5D7D3]">
-  <div class="max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-      <div class="flex flex-col items-start">
-        <div class="text-[#cf2e2e] text-xs tracking-[0.22em] uppercase font-semibold mb-3">01</div>
-        <i data-lucide="home" class="w-8 h-8 text-[#1C1E1D] mb-3"></i>
-        <h3 class="text-lg text-[#1C1E1D] mb-2">Visit Us</h3>
-        <p class="text-[#1C1E1D]/60 text-sm leading-relaxed">Walk in or book ahead — we're on the Atlanta BeltLine, open every day.</p>
+<!-- STATS -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat"><div class="n">2016</div><div class="l">Established</div></div>
+      <div class="stat"><div class="n">V12</div><div class="l">Hardest Set</div></div>
+      <div class="stat"><div class="n">7</div><div class="l">Days a Week</div></div>
+      <div class="stat"><div class="n">1</div><div class="l">BeltLine Address</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAMS / FITNESS / YOUTH / EXPERIENCE — single grid -->
+<section class="row programs reveal" id="programs">
+  <div class="wrap">
+    <div class="row-head">
+      <span class="num-marker">/02 — Programs</span>
+      <span class="eyebrow">What we offer</span>
+      <h2>Pick your<br><span class="accent">path.</span></h2>
+    </div>
+
+    <div class="program-grid">
+      <!-- PROGRAMS -->
+      <div class="program-card">
+        <div class="top"><span class="ix">i.</span><span class="tag">Programs</span></div>
+        <h3>Climbing Classes</h3>
+        <p>Group sessions for beginners through advanced. Learn movement, technique, and safe falling on real walls with certified coaches.</p>
+        <a href="#" class="link">Browse Classes →</a>
       </div>
-      <div class="flex flex-col items-start">
-        <div class="text-[#cf2e2e] text-xs tracking-[0.22em] uppercase font-semibold mb-3">02</div>
-        <i data-lucide="sparkles" class="w-8 h-8 text-[#1C1E1D] mb-3"></i>
-        <h3 class="text-lg text-[#1C1E1D] mb-2">Choose Your Path</h3>
-        <p class="text-[#1C1E1D]/60 text-sm leading-relaxed">Select from open climbing, classes, private instruction, or youth programs.</p>
+
+      <div class="program-card">
+        <div class="top"><span class="ix">ii.</span><span class="tag">Programs</span></div>
+        <h3>Private 1:1 Instruction</h3>
+        <p>One-on-one coaching tailored to your goals. Project a grade, build a training plan, or sharpen your footwork — your call.</p>
+        <a href="#" class="link">Book a Session →</a>
       </div>
-      <div class="flex flex-col items-start">
-        <div class="text-[#cf2e2e] text-xs tracking-[0.22em] uppercase font-semibold mb-3">03</div>
-        <i data-lucide="wrench" class="w-8 h-8 text-[#1C1E1D] mb-3"></i>
-        <h3 class="text-lg text-[#1C1E1D] mb-2">Gear Up</h3>
-        <p class="text-[#1C1E1D]/60 text-sm leading-relaxed">Rent crash pads and equipment or bring your own — we've got everything you need.</p>
+
+      <div class="program-card">
+        <div class="top"><span class="ix">iii.</span><span class="tag">Programs</span></div>
+        <h3>Crash Pad Rentals</h3>
+        <p>Heading outdoors? Rent crash pads from the gym before you hit the rocks. Quick checkout, fair daily and weekend rates.</p>
+        <a href="#" class="link">Reserve Now →</a>
       </div>
-      <div class="flex flex-col items-start">
-        <div class="text-[#cf2e2e] text-xs tracking-[0.22em] uppercase font-semibold mb-3">04</div>
-        <i data-lucide="award" class="w-8 h-8 text-[#1C1E1D] mb-3"></i>
-        <h3 class="text-lg text-[#1C1E1D] mb-2">Reach New Heights</h3>
-        <p class="text-[#1C1E1D]/60 text-sm leading-relaxed">Join our community, track your progress, and keep climbing higher every visit.</p>
+
+      <!-- FITNESS -->
+      <div class="program-card" id="fitness">
+        <div class="top"><span class="ix">iv.</span><span class="tag">Fitness</span></div>
+        <h3>Yoga &amp; Fitness Classes</h3>
+        <p>Balance the wall with floor work. Climbing-specific yoga, mobility, strength, and conditioning on a rotating schedule.</p>
+        <a href="#" class="link">View Schedule →</a>
+      </div>
+
+      <div class="program-card">
+        <div class="top"><span class="ix">v.</span><span class="tag">Fitness</span></div>
+        <h3>Class Instructors</h3>
+        <p>Meet the coaches behind every session — climbers, yogis, and trainers who know what your body needs to keep showing up.</p>
+        <a href="#" class="link">Meet the Team →</a>
+      </div>
+
+      <div class="program-card">
+        <div class="top"><span class="ix">vi.</span><span class="tag">Fitness</span></div>
+        <h3>Fitness Equipment</h3>
+        <p>Hangboards, campus boards, free weights, and a dedicated training area. Everything you need to make your off-wall days count.</p>
+        <a href="#" class="link">Tour the Gym →</a>
+      </div>
+
+      <!-- YOUTH -->
+      <div class="program-card" id="youth">
+        <div class="top"><span class="ix">vii.</span><span class="tag">Youth</span></div>
+        <h3>Youth Climbing Teams</h3>
+        <p>Competitive and recreational teams for kids and teens. Skill development, confidence building, and a community of climbing peers.</p>
+        <a href="#" class="link">Join a Team →</a>
+      </div>
+
+      <div class="program-card">
+        <div class="top"><span class="ix">viii.</span><span class="tag">Youth</span></div>
+        <h3>Camp Overlook</h3>
+        <p>Our flagship summer climbing camp — week-long sessions packed with climbing, games, and BeltLine adventures. <strong style="color:var(--yellow);">Registration is live.</strong></p>
+        <a href="#" class="link">Register Now →</a>
+      </div>
+
+      <div class="program-card">
+        <div class="top"><span class="ix">ix.</span><span class="tag">Youth</span></div>
+        <h3>Youth Birthday</h3>
+        <p>Throw a birthday on the walls. We handle the climbing, the staff, and the cleanup — you bring the kids, the cake, and the candles.</p>
+        <a href="#" class="link">Book a Party →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-[#1C1E1D]">
-  <div class="max-w-7xl mx-auto">
-    <div class="mb-12">
-      <div class="section-num mb-2">/01</div>
-      <p class="eyebrow-label mb-4">Services</p>
-      <h2 class="text-4xl md:text-5xl text-white leading-tight">EVERYTHING YOU<br><span class="italic-display text-[#cf2e2e]">Need to Climb</span></h2>
+<!-- COMMUNITY / GALLERY -->
+<section class="row community reveal" id="community">
+  <div class="wrap">
+    <div class="row-head">
+      <span class="num-marker">/03 — Community</span>
+      <span class="eyebrow">In the gym</span>
+      <h2>The wall<br>is just the<br><span class="accent">beginning.</span></h2>
     </div>
 
-    <div class="flex flex-wrap gap-2 md:flex-nowrap mb-10 tabs-container">
-      <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-4 py-3 md:px-7 md:py-3.5 rounded-sm font-semibold" data-target="tab-panel-1">Our Services</button>
-      <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-4 py-3 md:px-7 md:py-3.5 rounded-sm font-semibold" data-target="tab-panel-2">Specialty Work</button>
-      <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-4 py-3 md:px-7 md:py-3.5 rounded-sm font-semibold" data-target="tab-panel-3">Additional Services</button>
-    </div>
-
-    <!-- Tab Panel 1 -->
-    <div id="tab-panel-1" class="tab-panel">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Card 1 -->
-        <div class="service-card p-10">
-          <div class="text-[#cf2e2e] text-sm tracking-[0.14em] uppercase font-semibold mb-6">01 / 04</div>
-          <i data-lucide="phone" class="w-12 h-12 text-[#cf2e2e] mb-6"></i>
-          <h3 class="text-2xl text-white font-bold mb-3">Contact &amp; Employment</h3>
-          <p class="text-white/70 text-base leading-relaxed mb-6">Reach out to our team for job opportunities, partnership inquiries, or any questions about Overlook Climbing. We're always looking for passionate climbers to join our staff.</p>
-          <a href="#contact" class="arrow-cta text-[#cf2e2e] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-        <!-- Card 2 -->
-        <div class="service-card p-10">
-          <div class="text-[#cf2e2e] text-sm tracking-[0.14em] uppercase font-semibold mb-6">02 / 04</div>
-          <i data-lucide="shield-check" class="w-12 h-12 text-[#cf2e2e] mb-6"></i>
-          <h3 class="text-2xl text-white font-bold mb-3">Customer Experience Waiver</h3>
-          <p class="text-white/70 text-base leading-relaxed mb-6">Complete your safety waiver before your first visit to ensure a seamless check-in experience. Our digital waiver process is quick, secure, and valid for all future visits.</p>
-          <a href="#contact" class="arrow-cta text-[#cf2e2e] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-        <!-- Card 3 -->
-        <div class="service-card p-10">
-          <div class="text-[#cf2e2e] text-sm tracking-[0.14em] uppercase font-semibold mb-6">03 / 04</div>
-          <i data-lucide="home" class="w-12 h-12 text-[#cf2e2e] mb-6"></i>
-          <h3 class="text-2xl text-white font-bold mb-3">Customer Portal</h3>
-          <p class="text-white/70 text-base leading-relaxed mb-6">Manage your membership, book classes, and track your climbing progress all in one place through our dedicated online customer portal, available anytime.</p>
-          <a href="#contact" class="arrow-cta text-[#cf2e2e] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-        <!-- Card 4 -->
-        <div class="service-card p-10">
-          <div class="text-[#cf2e2e] text-sm tracking-[0.14em] uppercase font-semibold mb-6">04 / 04</div>
-          <i data-lucide="sparkles" class="w-12 h-12 text-[#cf2e2e] mb-6"></i>
-          <h3 class="text-2xl text-white font-bold mb-3">Consultation</h3>
-          <p class="text-white/70 text-base leading-relaxed mb-6">Not sure where to start? Our expert team offers one-on-one consultations to help you find the right program, membership plan, or training path for your goals.</p>
-          <a href="#contact" class="arrow-cta text-[#cf2e2e] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
+    <div class="gallery-strip">
+      <div class="g-cell">
+        <img src="https://images.unsplash.com/photo-1522163733003-69f6e94d8c34?auto=format&fit=crop&w=600&q=80" alt="Climber chalking up">
+        <div class="cap">Chalk up</div>
       </div>
-    </div>
-
-    <!-- Tab Panel 2 -->
-    <div id="tab-panel-2" class="tab-panel hidden">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="service-card p-10">
-          <div class="text-[#cf2e2e] text-sm tracking-[0.14em] uppercase font-semibold mb-6">01 / 04</div>
-          <i data-lucide="star" class="w-12 h-12 text-[#cf2e2e] mb-6"></i>
-          <h3 class="text-2xl text-white font-bold mb-3">Facebook Community</h3>
-          <p class="text-white/70 text-base leading-relaxed mb-6">Join our active Facebook community to stay informed about events, route updates, special sessions, and the latest news from Overlook Climbing's growing Atlanta family.</p>
-          <a href="https://www.facebook.com/climbtheoverlook" class="arrow-cta text-[#cf2e2e] text-xs uppercase tracking-widest" target="_blank" rel="noopener">Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-        <div class="service-card p-10">
-          <div class="text-[#cf2e2e] text-sm tracking-[0.14em] uppercase font-semibold mb-6">02 / 04</div>
-          <i data-lucide="shield-check" class="w-12 h-12 text-[#cf2e2e] mb-6"></i>
-          <h3 class="text-2xl text-white font-bold mb-3">Privacy Policy</h3>
-          <p class="text-white/70 text-base leading-relaxed mb-6">We take your data seriously. Our comprehensive privacy policy outlines exactly how your information is used, stored, and protected when you interact with our services and platforms.</p>
-          <a href="#contact" class="arrow-cta text-[#cf2e2e] text-xs uppercase tracking-widest">Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-        <div class="service-card p-10">
-          <div class="text-[#cf2e2e] text-sm tracking-[0.14em] uppercase font-semibold mb-6">03 / 04</div>
-          <i data-lucide="wrench" class="w-12 h-12 text-[#cf2e2e] mb-6"></i>
-          <h3 class="text-2xl text-white font-bold mb-3">Specialty Work</h3>
-          <p class="text-white/70 text-base leading-relaxed mb-6">From corporate team-building events to specialized climbing clinics, we offer tailored specialty sessions crafted to meet your group's unique needs and skill levels.</p>
-          <a href="#contact" class="arrow-cta text-[#cf2e2e] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-        <div class="service-card p-10">
-          <div class="text-[#cf2e2e] text-sm tracking-[0.14em] uppercase font-semibold mb-6">04 / 04</div>
-          <i data-lucide="check-circle" class="w-12 h-12 text-[#cf2e2e] mb-6"></i>
-          <h3 class="text-2xl text-white font-bold mb-3">Custom Projects</h3>
-          <p class="text-white/70 text-base leading-relaxed mb-6">Have a unique vision? Our team collaborates on custom climbing and fitness projects — whether it's a private event, branded partnership, or a bespoke training program.</p>
-          <a href="#contact" class="arrow-cta text-[#cf2e2e] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
+      <div class="g-cell">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80" alt="Bouldering session">
+        <div class="cap">Bouldering</div>
       </div>
-    </div>
-
-    <!-- Tab Panel 3 -->
-    <div id="tab-panel-3" class="tab-panel hidden">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="service-card p-10">
-          <div class="text-[#cf2e2e] text-sm tracking-[0.14em] uppercase font-semibold mb-6">01 / 04</div>
-          <i data-lucide="clock" class="w-12 h-12 text-[#cf2e2e] mb-6"></i>
-          <h3 class="text-2xl text-white font-bold mb-3">Maintenance Plans</h3>
-          <p class="text-white/70 text-base leading-relaxed mb-6">Keep your climbing skills sharp year-round with our structured maintenance plans. Regular sessions, route refreshers, and skill assessments keep you progressing consistently.</p>
-          <a href="#contact" class="arrow-cta text-[#cf2e2e] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-        <div class="service-card p-10">
-          <div class="text-[#cf2e2e] text-sm tracking-[0.14em] uppercase font-semibold mb-6">02 / 04</div>
-          <i data-lucide="shield-check" class="w-12 h-12 text-[#cf2e2e] mb-6"></i>
-          <h3 class="text-2xl text-white font-bold mb-3">Warranty Coverage</h3>
-          <p class="text-white/70 text-base leading-relaxed mb-6">All rental equipment and facility services come with our commitment to quality. If something isn't right, we make it right — every single time, no questions asked.</p>
-          <a href="#contact" class="arrow-cta text-[#cf2e2e] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-        <div class="service-card p-10">
-          <div class="text-[#cf2e2e] text-sm tracking-[0.14em] uppercase font-semibold mb-6">03 / 04</div>
-          <i data-lucide="check-circle" class="w-12 h-12 text-[#cf2e2e] mb-6"></i>
-          <h3 class="text-2xl text-white font-bold mb-3">Inspections</h3>
-          <p class="text-white/70 text-base leading-relaxed mb-6">Safety is our foundation. Regular facility and equipment inspections are conducted by certified professionals to ensure every climb is performed in a secure environment.</p>
-          <a href="#contact" class="arrow-cta text-[#cf2e2e] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-        <div class="service-card p-10">
-          <div class="text-[#cf2e2e] text-sm tracking-[0.14em] uppercase font-semibold mb-6">04 / 04</div>
-          <i data-lucide="phone" class="w-12 h-12 text-[#cf2e2e] mb-6"></i>
-          <h3 class="text-2xl text-white font-bold mb-3">Emergency Service</h3>
-          <p class="text-white/70 text-base leading-relaxed mb-6">Our team is always on call. Whether you need urgent assistance with your membership, a facility issue, or safety concern, we respond swiftly and professionally.</p>
-          <a href="#contact" class="arrow-cta text-[#cf2e2e] text-xs uppercase tracking-widest">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
+      <div class="g-cell">
+        <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?auto=format&fit=crop&w=600&q=80" alt="Top rope climbing">
+        <div class="cap">Top rope</div>
+      </div>
+      <div class="g-cell">
+        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80" alt="Youth climbing class">
+        <div class="cap">Youth team</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
-<section id="gallery" class="animate-section py-24 md:py-32 bg-[#F2F1EC] overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 mb-12">
-    <div class="section-num mb-2">/04</div>
-    <p class="eyebrow-label mb-4">Gallery</p>
-    <h2 class="text-4xl md:text-5xl text-[#1C1E1D] leading-tight">THE OVERLOOK<br><span class="italic-display text-[#cf2e2e]">In Action</span></h2>
-  </div>
-
-  <div class="flex gap-5 overflow-x-auto pb-8 px-4 md:px-8 lg:px-16" style="scrollbar-width:thin;scrollbar-color:#cf2e2e #F2F1EC;">
-    <!-- Photo 1 -->
-    <div class="flex-shrink-0 w-72 md:w-80">
-      <div class="img-hover-wrap border border-[#D5D7D3]" style="aspect-ratio:4/5;">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-tOx-IuiM6oYNm-enaxvodDyfQTAOnKUNzVB_wSmpRfV7QKZfSiD6LZt0iLpaBy5esDngOZOOPbaauEW4s2OxJGH6sv9BnptXWpdtm0V6kihCWUEKaGj5nSMAtVEJrTiC9ouJviR1bq2RF9OtLynzxvZSqPRX0xNxgDLbiC6bMk9kBYmMQc0uCCsQJcAywc-aNUA-nXt9Z5ximK64ZFI_SjWOLA9DJTQagHCFy-dKDtvFaCL0M1t2bMC49aiGiisjkkvueoCWbKlNYonLlDu8A43OufCPf0ACoa5bQkmEh78S-YMnHADL8IakZE1m08nytXil9rlPPVKRE8uE6LmI0hSWAHriHLS4jpzA53znjayUMWXgra2DtVVV6wA5gIcOlFmbgqjQ8r3oF8qGpRv40CQTizFto2VjF2J4bcJlVh1A&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Overlook Climbing aerial view of climbing facility and surrounding BeltLine area" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-11/800/1000'">
-      </div>
-      <p class="italic-display text-[#1C1E1D]/60 text-sm mt-3">BeltLine panoramic view</p>
-    </div>
-    <!-- Photo 2 -->
-    <div class="flex-shrink-0 w-72 md:w-80">
-      <div class="img-hover-wrap border border-[#D5D7D3]" style="aspect-ratio:4/5;">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-u0nga3uotzaqPEDifVKdUZMF8YKI0VWnlmpfXLwdgSkugBhA3wRgViwFTWsBzR6hAxidd-Eb82sMWO6ztsXNUjGyWISPRyMri6_jTosWvcGCpuTFQxkBJeKTiGLKukGD4niAvIxymCnw_Lc6kdgKHr615GKoxE3QvoTYJkBBgoEO2JDRlrjcGmRpb5sVsDWWLlrOcQdk6-MNk0soJhCRsP1UJc67qEZrV5LTNgEejV8Y7wAmfl800snA_q6HtVSfZVnr7PpZbkARdXZhHJlu90xQiVWO25inKuFZdvd2NKCcmCEbdjtT3zj0WPzMkJVMUDRrOr4qhu1G4_JxK1qUwN_LfcY_F3N4KOPIjJl5dJMRmkcZ9SobCq3qaj4LETWVWqnILw7J4E9dXSq1NZhl-rS4PPEgOQRdlZBdqiYP4&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Indoor climbing walls with colorful routes at Overlook Climbing Atlanta" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-12/800/1000'">
-      </div>
-      <p class="italic-display text-[#1C1E1D]/60 text-sm mt-3">Vertical challenges await</p>
-    </div>
-    <!-- Photo 3 -->
-    <div class="flex-shrink-0 w-72 md:w-80">
-      <div class="img-hover-wrap border border-[#D5D7D3]" style="aspect-ratio:4/5;">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-sx1WVPgQG2Rwq3bAtyMga3ApP0IhoqP3JuRmmh-f7-htUc2Utc6XCvJcKuugetcjyHo8_5HA6eW8lgqbpcatxYqCls6Gnpb3ureSkesz9rymZoJO41nuylc4rcMh-nA_z0JK4K9qDf36Uhb0nM14fEAIxXOiL1TzbU_0Q-23moPeEQMd4ePap72ivE_6E4V4mXViubicqE5IM4D5TUt1v6ihPqoGTcyG2UIsx4G5otg0u-VLmfFHqv5CKxZwfGCtlXH7OZCfqQ1oJ2z4X0GDSifchZlvqLq6BgEPsh2T_obfQLvvQZkSfmbt5mL49stXhRKCPMrq1I7g2ArspuqS6BNDwoAGuN8oO6GIiQz20bfW8puj6VOkd9-aTFgZ_KkZNxO05UeQMbuWF0uVCuEvhwBWsgAmmsg5QU-Gnr6juljbQ&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Community climbing event at Overlook Climbing on the Atlanta BeltLine" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-13/800/1000'">
-      </div>
-      <p class="italic-display text-[#1C1E1D]/60 text-sm mt-3">Community in motion</p>
-    </div>
-    <!-- Photo 4 -->
-    <div class="flex-shrink-0 w-72 md:w-80">
-      <div class="img-hover-wrap border border-[#D5D7D3]" style="aspect-ratio:4/5;">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-va6Mxz-_olvXnDdaMEiv7WNTX1xMcQY9j-Y8TR7HjRi0ObC_fm8Qglti64CoNzh9Vv_E6QFT4VBbSmucj9xr_COHO2IyF3zUamSUI7dEBi6jJ-mDsWQjrXNivezOzsZsGpHgPH-v4cJOD5yOe7swmOYQHr6rNG65ZLh-_tBo3ZjP0tYMBoZjJCL057zk6heJ6WA38wlWNs1vcVFdYmSSTjYb3tOZjEwnKqoRq5RQfeOmem9_hVw7Z1CBdEvP8eSyvv_YEh2oT3qzBbeo9EdU4uB20VcbtkbA-2xGkv1AxA2RRoknNq-xY4A1Hh5zHohCgXPAnlPiBYZ5nLR460_QwufdZT3Er7hBHC74GBDcf0_xvBKWr_ROD8jaAzzK3XcCxf-g0klN8UB5v-yp24t6UNY-tOhFfJmU2kI80rdYucPF-W&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Evening view from Overlook Climbing platform overlooking Atlanta skyline" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-14/800/1000'">
-      </div>
-      <p class="italic-display text-[#1C1E1D]/60 text-sm mt-3">Skyline at golden hour</p>
-    </div>
-    <!-- Photo 5 -->
-    <div class="flex-shrink-0 w-72 md:w-80">
-      <div class="img-hover-wrap border border-[#D5D7D3]" style="aspect-ratio:4/5;">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-tRNjN3u3wsoa3w8cnv3Hi7ktVOrTqZDi8ZRcFRjMVbl4AkQ8QK5mpUafBWIxtcPldpM-Ka6v3yi_UR3q1x7fOkIhUWvCeGwQNHh5enp6eQOlCIUIVz3xmdtDPvNaEFWCG4HR-guyI0eZsAqWBbnSiW2AndVqlnEukMgCH8g5J-VrPLcmg4HyY-zn2qKD_95ohHpOwJLfEsSyC7wj7aZbk79F1vaz__lSy3yW_uXo_ZbSiiAh6WqkZPuDhErFZqtlCiZt4Ycjfh0c5FJXVOcf7rg7aUrA3yaQbzQ-IMp6cDx0xfQBQ-vW8vAujeo9XNZ_zz4mlaeA3uqItEAL1VIoet1FygY87brUgzz-sHvgd9jeDgyFULiBGzQXClN7tM0g5i4csX7FPwEixJ5lV5MGVbhR7dvZsEWxkSVJbbz1HYjIud&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Climbers scaling bouldering wall at Overlook Climbing Atlanta" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-15/800/1000'">
-      </div>
-      <p class="italic-display text-[#1C1E1D]/60 text-sm mt-3">Bouldering wall challenge</p>
-    </div>
-    <!-- Photo 6 -->
-    <div class="flex-shrink-0 w-72 md:w-80">
-      <div class="img-hover-wrap border border-[#D5D7D3]" style="aspect-ratio:4/5;">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-uLJmlov1l5eYtLOqnB3pDvhgFk5o0czqAjWwn0B-XOnIFi3jxUa9_tVQFTozkL-M7cBp9Q_7qLrDSZDS1z7_cpPBSjst0Rk6YM61WFKKP8Wp5uZTUH0F7z4KuRQHo5e25YM1lPgaqrk_qBuDiaOfXxDJ0iYKCwzNCKv7m7cUdyQEnOWViX72_TZ4Whf-_jKCM91H-9lKjjk22KQzQBR-ube1lHjK6azrZu4_XuEfMRXxodQDs5bPxTWbXgdW5EXQl69NZrYIw-Ezf0rnO-gz6WRnupGkotLnRlCseqCsMFGxG7wglPibkHf4RxYRvmBNTGkaxlHtN8Fx7vs9PG4OoOKJyjAMjKA4kbOMPM2mHkuQ9l0xT07dbR2zP9om3XSTzHJ4cgFo0-qyRuQlCAnujlO2J3oRE7RKzV7NqKuPWLjQd4jszBMHJbDGtSDHSS&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Youth climbing camp session at Overlook Climbing facility" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-16/800/1000'">
-      </div>
-      <p class="italic-display text-[#1C1E1D]/60 text-sm mt-3">Youth camp in session</p>
-    </div>
-    <!-- Photo 7 -->
-    <div class="flex-shrink-0 w-72 md:w-80">
-      <div class="img-hover-wrap border border-[#D5D7D3]" style="aspect-ratio:4/5;">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-u-XmBLmEBb3c7tv8nlbfbWULDyV9Et7K-QClqABfK5CyrPk5KyWh-rv3p67cLbVFjg2bcb8_MbJaaF6wCqxB1LaqpgFvi8oOkX77u7GEk5OQCcB0nps1Oce2GCw_ZjE6dlLcWMcw485G2gyfMqCctprqWLikaSKy6i_RXOQ6nN4nhkIEQ2mUH7fpscLjrcf1KxUns1V4vH_3Xv8oVNk2BDm4DQoQDkh1cNAQzb0-zKAOu0c1oTVJz9lvQlecQWLgVfA0uiMBQAFuc6_q1xRd02agSSjHVVxGuzSVSeVNHP37Apb6g91JVMXspyE64zGFDYtE5Qdt-6HsJeqEZaJXuPcDwX8L_B9m2pVo7QrcDemfQpqU9TUucb1va1HQPYFUlGSMmLVrS4gCvWNvvQ1t2vN5vrIjWCSu15fh7fs-_C2w&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Fitness yoga class at Overlook Climbing studio space Atlanta" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-17/800/1000'">
-      </div>
-      <p class="italic-display text-[#1C1E1D]/60 text-sm mt-3">Fitness & yoga studio</p>
-    </div>
-    <!-- Photo 8 -->
-    <div class="flex-shrink-0 w-72 md:w-80">
-      <div class="img-hover-wrap border border-[#D5D7D3]" style="aspect-ratio:4/5;">
-        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=Ab43m-vjSOct1xB5Dtu_rIRT-JsXU-bU9GFkybAQ7eL6wBDFKLE8p5PvkwbSQmq9fXzQAKJuM4XCPxWhHHNOFtAj9RPLqg57RqYLKKBm4ScIcQt7i-0b84AEaTc0gciTxYDpBHGr_mcS7TDW32b0kcjRsP1MYzL5y-3gTyvGpOBDfyQqWMdGJx-jk9Oq7zIn0IZbquzxgfWh16AyGNJzr6y7I7txJet8YArDZAPsSh3r3NT6TVQQChOmVW9qciXgk5Ix1fhKeLlWXfo_CRaPkG6PphDEDQVBkg5a3VGDkbBfr0lWbF9SBseJ5ON3A7NmApV5XQacMYmhozxsovnkQzb510Sg2pvILZSwbrCEtnD2T9JhQyJgslFv9oM6iX8OnVGrqmsCcWhzC-UjguRZomEcfvLNHHK1rVTJ5ElvO6KKl8ltBw&key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k" alt="Private climbing instruction session at Overlook Climbing Atlanta Georgia" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://picsum.photos/seed/contractor-18/800/1000'">
-      </div>
-      <p class="italic-display text-[#1C1E1D]/60 text-sm mt-3">Private instruction session</p>
-    </div>
-  </div>
-</section>
-
-<!-- REVIEWS -->
-<section id="reviews" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-[#F2F1EC]">
-  <div class="max-w-7xl mx-auto">
-    <div class="mb-16">
-      <div class="section-num mb-2">/05</div>
-      <p class="eyebrow-label mb-4">Reviews</p>
-      <h2 class="text-4xl md:text-5xl text-[#1C1E1D] leading-tight">WHAT PEOPLE<br><span class="italic-display text-[#cf2e2e]">Are Saying</span></h2>
+<!-- VISIT / CONTACT -->
+<section class="row visit reveal" id="visit">
+  <div class="wrap">
+    <div class="row-head">
+      <span class="num-marker">/04 — Visit</span>
+      <span class="eyebrow">Find us</span>
+      <h2>1030 White St,<br><span class="accent">come by.</span></h2>
     </div>
 
-    <!-- Hero review -->
-    <div class="border-t border-[#D5D7D3] pt-12 mb-16">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <div class="lg:col-span-2">
-          <div class="review-num">01</div>
+    <div class="visit-grid">
+      <div class="visit-info">
+        <div class="info-block">
+          <div class="k">Location</div>
+          <div class="v"><strong>1030 White St SW</strong><br>Atlanta, GA 30310</div>
         </div>
-        <div class="lg:col-span-10">
-          <div class="flex gap-1 mb-6">
-            <i data-lucide="star" class="w-5 h-5 text-[#fcb900] fill-current"></i>
-            <i data-lucide="star" class="w-5 h-5 text-[#fcb900] fill-current"></i>
-            <i data-lucide="star" class="w-5 h-5 text-[#fcb900] fill-current"></i>
-            <i data-lucide="star" class="w-5 h-5 text-[#fcb900] fill-current"></i>
-            <i data-lucide="star" class="w-5 h-5 text-[#fcb900] fill-current"></i>
-          </div>
-          <blockquote class="italic-display text-3xl md:text-4xl text-[#1C1E1D] leading-tight max-w-4xl mb-8">"Big blue crane down by the river Maine in Hafeninsel, Offenbach. A small viewing platform gives a view down the river towards Frankfurt...and into the windows of the new apartments across the water! Nice at night, though kids often hanging out drinking. Occasional events underneath (exercise class on Saturday, a string orchestra once!)"</blockquote>
-          <div class="flex items-center gap-4">
-            <div>
-              <div class="font-semibold text-[#1C1E1D] tracking-wide">Chris Rapier</div>
-              <div class="flex items-center gap-2 mt-1">
-                <span class="text-xs font-semibold tracking-[0.18em] uppercase bg-[#cf2e2e]/10 text-[#cf2e2e] px-3 py-1">Google</span>
-                <span class="text-[#1C1E1D]/40 text-xs">7 years ago</span>
-              </div>
-            </div>
+
+        <div class="info-block">
+          <div class="k">Phone</div>
+          <div class="v"><a href="tel:6789732460" style="color:var(--ink); text-decoration: underline; text-decoration-color: var(--yellow); text-underline-offset: 4px;">678.973.2460</a></div>
+        </div>
+
+        <div class="info-block">
+          <div class="k">Hours</div>
+          <div class="v" style="width: 100%;">
+            <div class="hours-row"><span class="day">Monday</span><span>6 AM — 10 PM</span></div>
+            <div class="hours-row"><span class="day">Tuesday</span><span>6 AM — 10 PM</span></div>
+            <div class="hours-row"><span class="day">Wednesday</span><span>6 AM — 10 PM</span></div>
+            <div class="hours-row"><span class="day">Thursday</span><span>6 AM — 10 PM</span></div>
+            <div class="hours-row"><span class="day">Friday</span><span>10 AM — 10 PM</span></div>
+            <div class="hours-row"><span class="day">Saturday</span><span>10 AM — 8 PM</span></div>
+            <div class="hours-row"><span class="day">Sunday</span><span>10 AM — 8 PM</span></div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Grid reviews -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-[#D5D7D3]">
-      <!-- Review 2 -->
-      <div class="border-b md:border-r border-[#D5D7D3] p-8 lg:p-10">
-        <div class="review-num text-5xl mb-4">02</div>
-        <div class="flex gap-1 mb-4">
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-        </div>
-        <blockquote class="italic-display text-xl text-[#1C1E1D] leading-relaxed mb-6">"Beautiful crane with a great observatory platform from which you have a great view of the new construction in Offenbach's harbor area."</blockquote>
-        <div class="font-semibold text-[#1C1E1D] text-sm tracking-wide">Nils Paellmann</div>
-        <div class="flex items-center gap-2 mt-1">
-          <span class="text-xs font-semibold tracking-[0.18em] uppercase bg-[#cf2e2e]/10 text-[#cf2e2e] px-2 py-0.5">Google</span>
-          <span class="text-[#1C1E1D]/40 text-xs">7 months ago</span>
+        <div class="info-block">
+          <div class="k">First Visit</div>
+          <div class="v">Sign your <strong>waiver</strong> online before you come in to skip the front-desk paperwork. New climbers should plan an extra 15 minutes for an intro tour.</div>
         </div>
       </div>
-      <!-- Review 3 -->
-      <div class="border-b lg:border-r border-[#D5D7D3] p-8 lg:p-10">
-        <div class="review-num text-5xl mb-4">03</div>
-        <div class="flex gap-1 mb-4">
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-        </div>
-        <blockquote class="italic-display text-xl text-[#1C1E1D] leading-relaxed mb-6">"you can climb on this crane and see the view. Great place to walk with kids"</blockquote>
-        <div class="font-semibold text-[#1C1E1D] text-sm tracking-wide">viorel</div>
-        <div class="flex items-center gap-2 mt-1">
-          <span class="text-xs font-semibold tracking-[0.18em] uppercase bg-[#cf2e2e]/10 text-[#cf2e2e] px-2 py-0.5">Google</span>
-          <span class="text-[#1C1E1D]/40 text-xs">2 years ago</span>
-        </div>
-      </div>
-      <!-- Review 4 -->
-      <div class="border-b border-[#D5D7D3] p-8 lg:p-10">
-        <div class="review-num text-5xl mb-4">04</div>
-        <div class="flex gap-1 mb-4">
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#1C1E1D]/20 fill-current"></i>
-        </div>
-        <blockquote class="italic-display text-xl text-[#1C1E1D] leading-relaxed mb-6">"A cool remnant of the past. It is great that you can climb up"</blockquote>
-        <div class="font-semibold text-[#1C1E1D] text-sm tracking-wide">E K</div>
-        <div class="flex items-center gap-2 mt-1">
-          <span class="text-xs font-semibold tracking-[0.18em] uppercase bg-[#cf2e2e]/10 text-[#cf2e2e] px-2 py-0.5">Google</span>
-          <span class="text-[#1C1E1D]/40 text-xs">6 years ago</span>
-        </div>
-      </div>
-      <!-- Review 5 -->
-      <div class="border-[#D5D7D3] p-8 lg:p-10 md:col-span-2 lg:col-span-3 border-b">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          <div class="lg:col-span-2">
-            <div class="review-num text-5xl">05</div>
-          </div>
-          <div class="lg:col-span-10">
-            <div class="flex gap-1 mb-4">
-              <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-            </div>
-            <blockquote class="italic-display text-2xl md:text-3xl text-[#1C1E1D] leading-relaxed mb-6 max-w-3xl">"Very romantic place with a view at Frankfurt skyline. Should be visited when nobody else is there e.x. during the week late at night."</blockquote>
-            <div class="font-semibold text-[#1C1E1D] text-sm tracking-wide">Dennis Rein</div>
-            <div class="flex items-center gap-2 mt-1">
-              <span class="text-xs font-semibold tracking-[0.18em] uppercase bg-[#cf2e2e]/10 text-[#cf2e2e] px-2 py-0.5">Google</span>
-              <span class="text-[#1C1E1D]/40 text-xs">7 years ago</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Rating summary -->
-    <div class="mt-12 flex items-center gap-6">
-      <div class="flex gap-1">
-        <i data-lucide="star" class="w-6 h-6 text-[#fcb900] fill-current"></i>
-        <i data-lucide="star" class="w-6 h-6 text-[#fcb900] fill-current"></i>
-        <i data-lucide="star" class="w-6 h-6 text-[#fcb900] fill-current"></i>
-        <i data-lucide="star" class="w-6 h-6 text-[#fcb900] fill-current"></i>
-        <i data-lucide="star" class="w-6 h-6 text-[#fcb900] fill-current"></i>
-      </div>
-      <span class="text-[#1C1E1D] font-semibold">4.4 out of 5</span>
-      <span class="text-[#1C1E1D]/50 text-sm">584 reviews on Google</span>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-[#1C1E1D]">
-  <div class="max-w-4xl mx-auto">
-    <div class="mb-16">
-      <div class="section-num mb-2">/06</div>
-      <p class="eyebrow-label mb-4">FAQ</p>
-      <h2 class="text-4xl md:text-5xl text-white leading-tight">COMMON<br><span class="italic-display text-[#cf2e2e]">Questions</span></h2>
-    </div>
-
-    <div class="space-y-0">
-      <details class="border border-white/10 mb-2">
-        <summary class="Inter font-bold text-white text-lg py-7 px-6 flex items-center justify-between transition-all duration-200">
-          <span>Do I need experience to visit Overlook Climbing?</span>
-          <i data-lucide="chevron-right" class="w-5 h-5 text-[#cf2e2e] flex-shrink-0 transition-transform duration-200 details-icon"></i>
-        </summary>
-        <div class="px-6 pb-7 text-white/70 text-base leading-relaxed border-t border-white/10 pt-5">
-          Not at all — Overlook Climbing welcomes climbers of every skill level, from complete beginners to advanced athletes. Our facility has routes for all grades, and our staff is always available to help newcomers get started safely and confidently. First-timers are encouraged to try our intro sessions designed specifically to build foundational skills.
-        </div>
-      </details>
-
-      <details class="border border-white/10 mb-2">
-        <summary class="Inter font-bold text-white text-lg py-7 px-6 flex items-center justify-between transition-all duration-200">
-          <span>What are your hours of operation?</span>
-          <i data-lucide="chevron-right" class="w-5 h-5 text-[#cf2e2e] flex-shrink-0 transition-transform duration-200 details-icon"></i>
-        </summary>
-        <div class="px-6 pb-7 text-white/70 text-base leading-relaxed border-t border-white/10 pt-5">
-          We're open 24 hours a day, 7 days a week — including holidays. Whether you prefer an early morning session before work or a late-night climb after dinner, Overlook Climbing is always ready for you. Special events and private bookings may have specific time windows; check our calendar for details.
-        </div>
-      </details>
-
-      <details class="border border-white/10 mb-2">
-        <summary class="Inter font-bold text-white text-lg py-7 px-6 flex items-center justify-between transition-all duration-200">
-          <span>Do you offer youth climbing programs and summer camps?</span>
-          <i data-lucide="chevron-right" class="w-5 h-5 text-[#cf2e2e] flex-shrink-0 transition-transform duration-200 details-icon"></i>
-        </summary>
-        <div class="px-6 pb-7 text-white/70 text-base leading-relaxed border-t border-white/10 pt-5">
-          Yes! We offer a full range of youth programs including climbing teams, weekly classes, and our popular Camp Overlook summer camp. Our youth programs are designed to build strength, confidence, and problem-solving skills in a fun, safe environment. Summer camp registration opens each spring — check our website for current availability.
-        </div>
-      </details>
-
-      <details class="border border-white/10 mb-2">
-        <summary class="Inter font-bold text-white text-lg py-7 px-6 flex items-center justify-between transition-all duration-200">
-          <span>Can I rent climbing gear at your facility?</span>
-          <i data-lucide="chevron-right" class="w-5 h-5 text-[#cf2e2e] flex-shrink-0 transition-transform duration-200 details-icon"></i>
-        </summary>
-        <div class="px-6 pb-7 text-white/70 text-base leading-relaxed border-t border-white/10 pt-5">
-          Absolutely. Overlook Climbing offers crash pad rentals and full equipment packages so you can climb without needing to invest in your own gear right away. All rental equipment is regularly inspected and maintained to the highest safety standards. Our staff will help you select the right gear for your session.
-        </div>
-      </details>
-
-      <details class="border border-white/10 mb-2">
-        <summary class="Inter font-bold text-white text-lg py-7 px-6 flex items-center justify-between transition-all duration-200">
-          <span>How do I sign up for a membership or private instruction?</span>
-          <i data-lucide="chevron-right" class="w-5 h-5 text-[#cf2e2e] flex-shrink-0 transition-transform duration-200 details-icon"></i>
-        </summary>
-        <div class="px-6 pb-7 text-white/70 text-base leading-relaxed border-t border-white/10 pt-5">
-          You can sign up for a membership or book private 1:1 instruction directly through our customer portal on the website, or by contacting our team in person or via our contact form. Membership options include monthly and annual plans with different access levels. Private instruction is bookable in single or multi-session packages.
-        </div>
-      </details>
-
-      <details class="border border-white/10 mb-2">
-        <summary class="Inter font-bold text-white text-lg py-7 px-6 flex items-center justify-between transition-all duration-200">
-          <span>Do you host birthday parties and private events?</span>
-          <i data-lucide="chevron-right" class="w-5 h-5 text-[#cf2e2e] flex-shrink-0 transition-transform duration-200 details-icon"></i>
-        </summary>
-        <div class="px-6 pb-7 text-white/70 text-base leading-relaxed border-t border-white/10 pt-5">
-          Yes — Overlook Climbing is an incredible venue for youth birthday parties, corporate team-building, and private group events. We offer customizable packages that include facility access, instruction, and equipment rental. Contact us to discuss availability and book your special event with our dedicated events team.
-        </div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-[#F2F1EC]">
-  <div class="max-w-7xl mx-auto">
-    <div class="mb-16">
-      <div class="section-num mb-2">/07</div>
-      <p class="eyebrow-label mb-4">Contact</p>
-      <h2 class="text-4xl md:text-5xl text-[#1C1E1D] leading-tight">GET IN<br><span class="italic-display text-[#cf2e2e]">Touch</span></h2>
-    </div>
-
-    <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-      <!-- Left: Map -->
-      <div class="relative min-h-[500px]">
+      <div class="map-frame">
+        <div class="pin">📍 The Overlook</div>
         <iframe
-          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k&q=place_id:ChIJ4Tk7WxIOvUcRveqhdrWepPM"
-          class="w-full h-full min-h-[500px] border border-[#D5D7D3]"
-          style="border:none;"
-          allowfullscreen=""
+          src="https://www.google.com/maps?q=1030+White+St+SW,+Atlanta,+GA+30310&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          title="Overlook Climbing location map">
-        </iframe>
-        <div class="absolute inset-0 bg-[#cf2e2e]/5 pointer-events-none"></div>
-      </div>
-
-      <!-- Right: Form -->
-      <div class="bg-[#1C1E1D] border border-[#cf2e2e]/40 p-10 max-w-md w-full">
-        <p class="text-[11px] tracking-[0.22em] uppercase text-[#cf2e2e] font-semibold">GET STARTED</p>
-        <h3 class="italic-display text-3xl text-white mt-2">Start Your Climb</h3>
-        <p class="text-white/60 text-sm mt-1 leading-relaxed">Reach out to our team and we'll respond within 24 hours.</p>
-
-        <div class="flex items-center gap-2 mt-4">
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-          <i data-lucide="star" class="w-4 h-4 text-[#fcb900] fill-current"></i>
-          <span class="text-white/60 text-sm ml-1">4.4 out of 5 · 584 reviews</span>
-        </div>
-
-        <form class="mt-6" onsubmit="event.preventDefault(); this.innerHTML='<div class=\'text-[#cf2e2e] font-semibold text-center py-8\'>Thank you! We\'ll be in touch shortly.</div>';">
-          <div class="mb-4">
-            <input type="text" placeholder="Full Name" required class="bg-transparent border-0 border-b border-white/15 focus:border-[#cf2e2e] focus:outline-none py-3 px-0 text-white placeholder-white/40 w-full text-sm transition-colors duration-200">
-          </div>
-          <div class="mb-4">
-            <input type="email" placeholder="Email Address" required class="bg-transparent border-0 border-b border-white/15 focus:border-[#cf2e2e] focus:outline-none py-3 px-0 text-white placeholder-white/40 w-full text-sm transition-colors duration-200">
-          </div>
-          <div class="mb-4">
-            <input type="tel" placeholder="Phone Number" class="bg-transparent border-0 border-b border-white/15 focus:border-[#cf2e2e] focus:outline-none py-3 px-0 text-white placeholder-white/40 w-full text-sm transition-colors duration-200">
-          </div>
-          <div class="mb-4">
-            <select class="bg-[#1C1E1D] border-0 border-b border-white/15 focus:border-[#cf2e2e] focus:outline-none py-3 px-0 text-white/60 w-full text-sm transition-colors duration-200 appearance-none" style="background-color:#1C1E1D;">
-              <option value="" disabled selected>Select a Service</option>
-              <option value="contact-employment">Contact Us Employment Opportunities</option>
-              <option value="waiver">Customer Experience Waiver</option>
-              <option value="portal">Customer Portal</option>
-              <option value="consultation">Consultation</option>
-            </select>
-          </div>
-          <div class="mb-4">
-            <textarea placeholder="Tell us about your goals..." rows="3" class="bg-transparent border-0 border-b border-white/15 focus:border-[#cf2e2e] focus:outline-none py-3 px-0 text-white placeholder-white/40 w-full text-sm transition-colors duration-200 resize-none"></textarea>
-          </div>
-          <p class="text-white/30 text-xs mb-4">By submitting you agree to be contacted regarding your request.</p>
-          <button type="submit" class="w-full bg-[#cf2e2e] text-white py-4 font-bold uppercase tracking-[0.06em] text-sm hover:bg-[#b02020] transition-colors duration-200">
-            Send Message
-          </button>
-        </form>
+          title="The Overlook Climbing — Atlanta map"></iframe>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-[#0E0E0F] text-white footer-accent">
-  <!-- CTA Strip -->
-  <div class="border-b border-white/10 py-16 px-4 md:px-8 lg:px-16">
-    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
-      <div>
-        <div class="eyebrow-label mb-3" style="color:#cf2e2e;">Ready to Climb?</div>
-        <h2 class="italic-display text-4xl md:text-5xl text-white leading-tight">Come enjoy some indoor<br>rock climbing on the<br><span style="color:#cf2e2e;">Atlanta BeltLine</span></h2>
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/overlook-logo.png" alt="The Overlook">
+        <p>Indoor rock climbing on the Atlanta BeltLine. Come climb with us.</p>
       </div>
-      <div class="flex flex-wrap gap-4">
-        <a href="#contact" class="btn-premium" style="background:#cf2e2e;color:#fff;border-color:#cf2e2e;">
-          <i data-lucide="phone" class="w-4 h-4"></i>
-          Free Quote
-        </a>
-        <a href="#about" class="btn-premium btn-premium-ghost">
-          Learn More
-        </a>
+
+      <div class="foot-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="#programs">Climbing Classes</a></li>
+          <li><a href="#programs">Private 1:1</a></li>
+          <li><a href="#programs">Crash Pad Rentals</a></li>
+          <li><a href="#youth">Camp Overlook</a></li>
+          <li><a href="#youth">Youth Teams</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Members</h4>
+        <ul>
+          <li><a href="#experience">Waiver</a></li>
+          <li><a href="#experience">Customer Portal</a></li>
+          <li><a href="#contact">Membership Changes</a></li>
+          <li><a href="#contact">Request Info</a></li>
+          <li><a href="#contact">Careers</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="#visit">1030 White St SW</a></li>
+          <li><a href="#visit">Atlanta, GA 30310</a></li>
+          <li><a href="tel:6789732460">678.973.2460</a></li>
+          <li><a href="#visit">Hours</a></li>
+          <li><a href="#deals">Deals</a></li>
+        </ul>
       </div>
     </div>
-  </div>
 
-  <!-- Main Footer -->
-  <div class="py-20 px-4 md:px-8 lg:px-16">
-    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-10">
-      <!-- Col 1: Brand -->
-      <div class="col-span-2">
-        <img src="https://overlookclimbing.com/wp-content/uploads/2021/12/cropped-190619_The-Overlook_LOGOS_print_transparent-background-03-1-180x180.png" alt="Overlook Climbing " class="h-12 w-auto object-contain mb-4 max-w-[180px]" onerror="this.outerHTML='<div class=\'text-2xl font-bold mb-4\' style=\'color:#cf2e2e;\'>Overlook Climbing </div>'">
-        <div class="font-bold text-2xl mb-2" style="color:#cf2e2e;">Overlook Climbing</div>
-        <p class="text-white/60 text-sm italic max-w-xs mb-6 leading-relaxed">Come enjoy some indoor rock climbing on the Atlanta BeltLine — your vertical adventure awaits.</p>
-        <div class="space-y-3">
-          <div class="flex items-start gap-3">
-            <i data-lucide="map-pin" class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:#cf2e2e;"></i>
-            <span class="text-white/70 text-sm">Atlanta BeltLine, Atlanta, GA</span>
-          </div>
-          <div class="flex items-start gap-3">
-            <i data-lucide="clock" class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:#cf2e2e;"></i>
-            <span class="text-white/70 text-sm">Open 24 Hours, 7 Days a Week</span>
-          </div>
-          <div class="flex items-start gap-3">
-            <i data-lucide="mail" class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:#cf2e2e;"></i>
-            <a href="#contact" class="text-white/70 text-sm hover:text-white transition-colors">Contact Us Online</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Col 2: Services -->
-      <div>
-        <div class="font-bold tracking-[0.22em] text-xs pb-3 border-b mb-4" style="color:#cf2e2e;border-color:rgba(207,46,46,0.4);">SERVICES</div>
-        <ul class="space-y-2">
-          <li><a href="#services" class="text-white/70 hover:text-white text-sm transition-colors">Employment Opportunities</a></li>
-          <li><a href="#services" class="text-white/70 hover:text-white text-sm transition-colors">Customer Waiver</a></li>
-          <li><a href="#services" class="text-white/70 hover:text-white text-sm transition-colors">Customer Portal</a></li>
-          <li><a href="#services" class="text-white/70 hover:text-white text-sm transition-colors">Consultation</a></li>
-          <li><a href="#services" class="text-white/70 hover:text-white text-sm transition-colors">Specialty Work</a></li>
-          <li><a href="#services" class="text-white/70 hover:text-white text-sm transition-colors">Custom Projects</a></li>
-          <li><a href="#services" class="text-white/70 hover:text-white text-sm transition-colors">Maintenance Plans</a></li>
-          <li><a href="#services" class="text-white/70 hover:text-white text-sm transition-colors">Emergency Service</a></li>
-        </ul>
-      </div>
-
-      <!-- Col 3: Service Areas -->
-      <div>
-        <div class="font-bold tracking-[0.22em] text-xs pb-3 border-b mb-4" style="color:#cf2e2e;border-color:rgba(207,46,46,0.4);">SERVICE AREAS</div>
-        <ul class="space-y-2">
-          <li><span class="text-white/70 text-sm">Atlanta, GA</span></li>
-          <li><span class="text-white/70 text-sm">Decatur, GA</span></li>
-          <li><span class="text-white/70 text-sm">Marietta, GA</span></li>
-          <li><span class="text-white/70 text-sm">Smyrna, GA</span></li>
-          <li><span class="text-white/70 text-sm">Sandy Springs, GA</span></li>
-          <li><span class="text-white/70 text-sm">Dunwoody, GA</span></li>
-          <li><span class="text-white/70 text-sm">Roswell, GA</span></li>
-          <li><span class="text-white/70 text-sm">Brookhaven, GA</span></li>
-          <li><span class="text-white/70 text-sm">East Point, GA</span></li>
-        </ul>
-      </div>
-
-      <!-- Col 4: Navigation -->
-      <div>
-        <div class="font-bold tracking-[0.22em] text-xs pb-3 border-b mb-4" style="color:#cf2e2e;border-color:rgba(207,46,46,0.4);">NAVIGATE</div>
-        <ul class="space-y-2">
-          <li><a href="#home" class="text-white/70 hover:text-white text-sm transition-colors">Home</a></li>
-          <li><a href="#about" class="text-white/70 hover:text-white text-sm transition-colors">About</a></li>
-          <li><a href="#services" class="text-white/70 hover:text-white text-sm transition-colors">Services</a></li>
-          <li><a href="#gallery" class="text-white/70 hover:text-white text-sm transition-colors">Gallery</a></li>
-          <li><a href="#reviews" class="text-white/70 hover:text-white text-sm transition-colors">Reviews</a></li>
-          <li><a href="#faq" class="text-white/70 hover:text-white text-sm transition-colors">FAQ</a></li>
-          <li><a href="#contact" class="text-white/70 hover:text-white text-sm transition-colors">Contact</a></li>
-        </ul>
-        <div class="mt-6">
-          <div class="font-bold tracking-[0.22em] text-xs pb-3 border-b mb-4" style="color:#cf2e2e;border-color:rgba(207,46,46,0.4);">TRUST</div>
-          <div class="flex items-center gap-2 mb-2">
-            <i data-lucide="shield-check" class="w-4 h-4" style="color:#cf2e2e;"></i>
-            <span class="text-white/70 text-xs">Safety Certified</span>
-          </div>
-          <div class="flex items-center gap-2 mb-2">
-            <i data-lucide="star" class="w-4 h-4" style="color:#cf2e2e;"></i>
-            <span class="text-white/70 text-xs">4.4★ Rated · 584 Reviews</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <i data-lucide="check-circle" class="w-4 h-4" style="color:#cf2e2e;"></i>
-            <span class="text-white/70 text-xs">Open Every Day</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bottom bar -->
-  <div class="border-t-2 py-6 px-4 md:px-8 lg:px-16" style="border-color:#cf2e2e;">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-white/40 text-xs">&copy; 2024 Overlook Climbing. All rights reserved. Atlanta, GA.</p>
-      <div class="flex items-center gap-4">
-        <a href="https://www.facebook.com/climbtheoverlook" target="_blank" rel="noopener noreferrer" aria-label="Overlook Climbing on Facebook" class="text-white/50 hover:text-white transition-colors">
-          <i data-lucide="facebook" class="w-5 h-5"></i>
+    <div class="foot-bottom">
+      <div>© 2019 — 2026 The Overlook · All rights reserved</div>
+      <div class="socials">
+        <a href="https://www.instagram.com/climbtheoverlook" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         </a>
-        <a href="https://www.instagram.com/climbtheoverlook" target="_blank" rel="noopener noreferrer" aria-label="Overlook Climbing on Instagram" class="text-white/50 hover:text-white transition-colors">
-          <i data-lucide="instagram" class="w-5 h-5"></i>
+        <a href="https://www.facebook.com/climbtheoverlook" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
         </a>
       </div>
     </div>
@@ -912,143 +1214,63 @@
 </footer>
 
 <script>
-(function(){
-  const nav = document.querySelector('nav');
-  if (!nav) return;
-  window.addEventListener('scroll', () => nav.classList.toggle('shadow-md', window.scrollY > 50));
-})();
-
-(function(){
+  // Mobile menu toggle
   const ham = document.getElementById('hamburger');
-  const menu = document.getElementById('mobile-menu');
-  if (ham && menu) ham.addEventListener('click', () => menu.classList.toggle('hidden'));
-  document.querySelectorAll('.mobile-nav-link').forEach(a => {
-    a.addEventListener('click', () => { if (menu) menu.classList.add('hidden'); });
-  });
-})();
+  const mob = document.getElementById('mobile-menu');
+  ham?.addEventListener('click', () => mob.classList.toggle('open'));
+  mob?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
 
-(function(){
-  const buttons = Array.from(document.querySelectorAll('.tab-btn'));
-  const panels = Array.from(document.querySelectorAll('.tab-panel'));
-  if (!buttons.length || !panels.length) return;
-  function showByIndex(idx) {
-    panels.forEach(p => p.classList.add('hidden'));
-    buttons.forEach(b => { b.classList.remove('active-tab'); b.classList.add('inactive-tab'); });
-    if (panels[idx]) panels[idx].classList.remove('hidden');
-    if (buttons[idx]) { buttons[idx].classList.add('active-tab'); buttons[idx].classList.remove('inactive-tab'); }
-  }
-  function showById(id) { const i = panels.findIndex(p => p.id === id); if (i >= 0) showByIndex(i); }
-  buttons.forEach((btn, idx) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const t = btn.getAttribute('data-target');
-      if (t) showById(t); else showByIndex(idx);
+  // Scroll reveal
+  const reveal = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        reveal.unobserve(e.target);
+      }
     });
-  });
-  window.showTab = function(id){ showById(id); };
-  if (!panels.some(p => !p.classList.contains('hidden'))) showByIndex(0);
-})();
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => reveal.observe(el));
 
-function animateCount(el, target, suffix) {
-  let start = 0;
-  const duration = 2000, steps = 60, inc = target / steps;
-  const t = setInterval(() => {
-    start += inc;
-    if (start >= target) { el.textContent = target + (suffix || ''); clearInterval(t); }
-    else el.textContent = Math.floor(start) + (suffix || '');
-  }, duration / steps);
-}
-const statObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const t = parseInt(e.target.dataset.count);
-      const s = e.target.dataset.suffix || '';
-      if (t) animateCount(e.target, t, s);
-      statObs.unobserve(e.target);
+  // 3D tilt on the climbing hold — pointer follows
+  const hold = document.getElementById('holdImg');
+  const stage = hold?.closest('.hold-stage');
+  let raf = null, currentX = -6, currentY = 0, targetX = -6, targetY = 0;
+
+  function animate() {
+    currentX += (targetX - currentX) * 0.08;
+    currentY += (targetY - currentY) * 0.08;
+    if (hold) {
+      hold.style.transform = `translate(-50%, -50%) rotate(${currentX}deg) rotateX(${currentY}deg)`;
     }
-  });
-}, { threshold: 0.3 });
-document.querySelectorAll('[data-count]').forEach(el => statObs.observe(el));
-
-(function(){
-  const sections = document.querySelectorAll('.animate-section');
-  if (!sections.length) return;
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove('is-pending');
-        entry.target.classList.add('is-visible');
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  sections.forEach(el => {
-    const r = el.getBoundingClientRect();
-    const inView = r.top < window.innerHeight && r.bottom > 0;
-    if (inView) el.classList.add('is-visible');
-    else { el.classList.add('is-pending'); obs.observe(el); }
-  });
-  setTimeout(() => {
-    document.querySelectorAll('.animate-section.is-pending').forEach(el => {
-      el.classList.remove('is-pending'); el.classList.add('is-visible');
-    });
-  }, 2500);
-})();
-
-(function(){
-  function revealTarget() {
-    const hash = window.location.hash;
-    if (!hash || hash.length < 2) return;
-    try {
-      const target = document.querySelector(hash);
-      if (target && target.classList.contains('animate-section')) {
-        target.classList.remove('is-pending');
-        target.classList.add('is-visible');
-      }
-    } catch(e) {}
+    raf = requestAnimationFrame(animate);
   }
-  window.addEventListener('hashchange', revealTarget);
-  setTimeout(revealTarget, 100);
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', () => {
-      const hash = a.getAttribute('href');
-      if (hash && hash.length > 1) {
-        try {
-          const target = document.querySelector(hash);
-          if (target && target.classList.contains('animate-section')) {
-            target.classList.remove('is-pending');
-            target.classList.add('is-visible');
-          }
-        } catch(e) {}
+
+  if (stage && hold) {
+    stage.addEventListener('pointermove', (e) => {
+      const r = stage.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      targetX = -6 + px * 14;
+      targetY = -py * 12;
+    });
+    stage.addEventListener('pointerleave', () => { targetX = -6; targetY = 0; });
+    animate();
+  }
+
+  // Active nav highlighting
+  const sections = document.querySelectorAll('section[id]');
+  const navObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.getAttribute('id');
+        document.querySelectorAll('.nav-item > a').forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+        });
       }
     });
-  });
-})();
-
-function updateClock() {
-  const el = document.getElementById('live-clock');
-  if (el) el.textContent = 'Atlanta - ' + new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-}
-updateClock();
-setInterval(updateClock, 1000);
-
-(function(){
-  const render = () => { if (window.lucide) window.lucide.createIcons(); };
-  if (window.lucide) render();
-  else document.addEventListener('DOMContentLoaded', render);
-  setTimeout(render, 500);
-  setTimeout(render, 1500);
-})();
-
-// FAQ chevron rotation
-document.querySelectorAll('details').forEach(details => {
-  details.addEventListener('toggle', () => {
-    const icon = details.querySelector('.details-icon');
-    if (icon) {
-      icon.style.transform = details.open ? 'rotate(90deg)' : 'rotate(0deg)';
-    }
-  });
-});
+  }, { rootMargin: '-50% 0px -45% 0px' });
+  sections.forEach(s => navObs.observe(s));
 </script>
+
 </body>
 </html>

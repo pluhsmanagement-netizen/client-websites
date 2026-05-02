@@ -288,6 +288,7 @@
   .btn-ghost:hover { border-color: var(--paper); color: var(--paper); }
   .btn .arrow { transition: transform 0.25s; }
   .btn:hover .arrow { transform: translateX(4px); }
+  .btn .icn { stroke-width: 1.6; }
 
   /* HOLD STAGE */
   .hold-stage {
@@ -989,7 +990,9 @@
     letter-spacing: 0.28em; text-transform: uppercase;
     color: var(--ink); opacity: 0.5;
     padding-top: 4px;
+    display: inline-flex; align-items: center; gap: 8px;
   }
+  .info-block .k .icn { stroke-width: 1.6; opacity: 0.85; }
   .info-block .v {
     font-size: 15px;
     color: var(--ink);
@@ -1088,9 +1091,139 @@
     *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
     .chalk { display: none; }
   }
+
+  /* ============ PREMIUM ICONS ============ */
+  .icn {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+    vertical-align: middle;
+  }
+  .icn-sm { width: 14px; height: 14px; stroke-width: 1.6; }
+  .icn-md { width: 22px; height: 22px; stroke-width: 1.4; }
+  .icn-lg { width: 32px; height: 32px; stroke-width: 1.25; }
+
+  /* Icon-paired label rows */
+  .icn-row { display: inline-flex; align-items: center; gap: 10px; }
+
+  /* Program list icon styling */
+  .prog-icn-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px; height: 36px;
+    border: 1px solid var(--rule);
+    color: rgba(244,241,232,0.5);
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    margin-right: 16px;
+  }
+  .prog-row:hover .prog-icn-wrap {
+    color: var(--yellow);
+    border-color: rgba(212,217,0,0.5);
+    background: rgba(212,217,0,0.06);
+  }
+
+  /* Update prog-row grid to accommodate icon */
+  .prog-row {
+    grid-template-columns: 36px 60px 1fr auto;
+  }
+  @media (min-width: 768px) {
+    .prog-row {
+      grid-template-columns: 36px 100px 280px 1fr auto;
+    }
+  }
+
+  /* Info-block icons in visit section */
+  .info-block .k-row {
+    display: flex; align-items: center; gap: 10px;
+    color: var(--ink);
+  }
+  .info-block .k-row .icn {
+    color: var(--ink); opacity: 0.45;
+    width: 14px; height: 14px;
+  }
+
+  /* About features icons */
+  .feat .feat-icn {
+    width: 22px; height: 22px;
+    color: var(--yellow);
+    stroke-width: 1.4;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* Footer column heading icons */
+  .foot-col h4 .icn {
+    width: 12px; height: 12px;
+    margin-right: 8px;
+    vertical-align: -1px;
+  }
 </style>
 </head>
 <body>
+
+<!-- ICON SPRITE (hidden) — premium custom icons, referenced via <use> -->
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
+  <defs>
+    <!-- Mountain / climb -->
+    <symbol id="i-mountain" viewBox="0 0 24 24"><path d="M3 20l5.5-9 4 6.5 2-3L21 20H3z"/><circle cx="16" cy="6" r="1.5"/></symbol>
+    <!-- Target / aim -->
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></symbol>
+    <!-- Shield / protection -->
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.5 8-8 9-4.5-1-8-4.5-8-9V6l8-3z"/></symbol>
+    <!-- Lotus / yoga -->
+    <symbol id="i-lotus" viewBox="0 0 24 24"><path d="M12 19c-4 0-7-2.5-7-6 1.5 0 3 1 3.5 2.5C9 14 10 12 12 12c2 0 3 2 3.5 3.5C16 14 17.5 13 19 13c0 3.5-3 6-7 6z"/><path d="M12 12c-1.5-2.5-1.5-5.5 0-8 1.5 2.5 1.5 5.5 0 8z"/><path d="M12 12c-3-1.5-4.5-3.5-5-6.5 3 .5 4.5 2.5 5 6.5z"/><path d="M12 12c3-1.5 4.5-3.5 5-6.5-3 .5-4.5 2.5-5 6.5z"/></symbol>
+    <!-- Dumbbell / fitness -->
+    <symbol id="i-dumbbell" viewBox="0 0 24 24"><path d="M3 9v6M6 7v10M18 7v10M21 9v6M6 12h12"/></symbol>
+    <!-- People / coaches -->
+    <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.2"/><path d="M3 19c0-3 2.5-5 6-5s6 2 6 5"/><path d="M15 19c0-2 1.5-3.5 3.5-3.5s3.5 1.5 3.5 3.5"/></symbol>
+    <!-- Users / kids team -->
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M5 19c0-3.5 3-6 7-6s7 2.5 7 6"/></symbol>
+    <!-- Sun / camp -->
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4l1.4-1.4M17 7l1.4-1.4"/></symbol>
+    <!-- Cake / birthday -->
+    <symbol id="i-cake" viewBox="0 0 24 24"><path d="M4 19h16M5 19v-6h14v6"/><path d="M5 13c0-1.5 1.5-3 3-3s3 1.5 3 3M11 13c0-1.5 1.5-3 3-3s3 1.5 3 3"/><path d="M8 7v3M12 5v5M16 7v3"/></symbol>
+    <!-- Pin / location -->
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21c-4-4-7-7.5-7-11a7 7 0 0 1 14 0c0 3.5-3 7-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <!-- Phone -->
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 17v3a2 2 0 0 1-2.2 2 19 19 0 0 1-8.3-3 18.7 18.7 0 0 1-6-6A19 19 0 0 1 2.4 4.2 2 2 0 0 1 4.4 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.7.6a2 2 0 0 1 1.7 2z"/></symbol>
+    <!-- Clock / hours -->
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <!-- Sparkle / first-time -->
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.8 5.5L19 10l-5.2 1.5L12 17l-1.8-5.5L5 10l5.2-1.5L12 3z"/><path d="M19 17l.8 2 2 .8-2 .8L19 23l-.8-2-2-.8 2-.8L19 17z" stroke-width="1.2"/></symbol>
+    <!-- Check -->
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></symbol>
+    <!-- Heart -->
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9-9.5C1.5 7 5 4 8 5c2 .7 3 2.5 4 4 1-1.5 2-3.3 4-4 3-1 6.5 2 5 6.5-2 5-9 9.5-9 9.5z"/></symbol>
+    <!-- Map / area -->
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2V6z"/><path d="M9 4v14M15 6v14"/></symbol>
+    <!-- Star -->
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.7 5.5 6.3.9-4.5 4.4 1 6.2L12 17l-5.5 3 1-6.2L3 9.4l6.3-.9L12 3z"/></symbol>
+    <!-- Calendar -->
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <!-- Compass / explore -->
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2 6-6 2 2-6 6-2z" fill="currentColor" fill-opacity="0.15"/></symbol>
+    <!-- Tag / deals -->
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8L3 12z"/><circle cx="8" cy="9" r="1.5" fill="currentColor"/></symbol>
+    <!-- Document / waiver -->
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6z"/><path d="M14 3v6h6M9 14h6M9 18h4"/></symbol>
+    <!-- Mail -->
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+    <!-- Arrow Right -->
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <!-- Instagram -->
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></symbol>
+    <!-- Facebook -->
+    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M16 8h-2.5a1.5 1.5 0 0 0-1.5 1.5V12H10v3h2v6h3v-6h2.5l.5-3H15v-2a.5.5 0 0 1 .5-.5H17V8z"/></symbol>
+  </defs>
+</svg>
 
 <!-- TICKER -->
 <div class="ticker">
@@ -1234,9 +1367,10 @@
         <div class="hero-actions">
           <a href="#programs" class="btn btn-yellow">
             Start Climbing
-            <span class="arrow">→</span>
+            <svg class="icn icn-sm arrow"><use href="#i-arrow"/></svg>
           </a>
           <a href="#visit" class="btn btn-ghost">
+            <svg class="icn icn-sm"><use href="#i-pin"/></svg>
             Plan a Visit
           </a>
         </div>
@@ -1270,19 +1404,19 @@
 <div class="info-bar">
   <div class="info-bar-inner">
     <div>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <svg class="icn icn-sm"><use href="#i-pin"/></svg>
       <span>1030 White St SW</span>
     </div>
     <div>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <svg class="icn icn-sm"><use href="#i-clock"/></svg>
       <span>Mon — Sun</span>
     </div>
     <div>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      <svg class="icn icn-sm"><use href="#i-phone"/></svg>
       <span>678.973.2460</span>
     </div>
     <div>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      <svg class="icn icn-sm"><use href="#i-check"/></svg>
       <span>All Levels Welcome</span>
     </div>
   </div>
@@ -1311,10 +1445,10 @@
         </p>
 
         <div class="about-features">
-          <div class="feat"><span class="num">i.</span><span class="txt">7,300 sq ft of climbable surface, walls up to 60° overhang</span></div>
-          <div class="feat"><span class="num">ii.</span><span class="txt">Bouldering for every level — V0 through V12+</span></div>
-          <div class="feat"><span class="num">iii.</span><span class="txt">Yoga, strength &amp; conditioning, free weights, hangboards</span></div>
-          <div class="feat"><span class="num">iv.</span><span class="txt">Youth teams, Camp Overlook, &amp; community programs</span></div>
+          <div class="feat"><svg class="feat-icn"><use href="#i-mountain"/></svg><span class="txt">7,300 sq ft of climbable surface, walls up to 60° overhang</span></div>
+          <div class="feat"><svg class="feat-icn"><use href="#i-target"/></svg><span class="txt">Bouldering for every level — V0 through V12+</span></div>
+          <div class="feat"><svg class="feat-icn"><use href="#i-dumbbell"/></svg><span class="txt">Yoga, strength &amp; conditioning, free weights, hangboards</span></div>
+          <div class="feat"><svg class="feat-icn"><use href="#i-users"/></svg><span class="txt">Youth teams, Camp Overlook, &amp; community programs</span></div>
         </div>
       </div>
     </div>
@@ -1351,7 +1485,9 @@
       <ul class="prog-list">
         <li>
           <a href="#" class="prog-row">
-            <span class="prog-num">i.</span>
+            <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-mountain"/></svg></span>
+
+                      <span class="prog-num">i.</span>
             <span class="prog-title">Climbing Classes</span>
             <span class="prog-desc">Group sessions, beginner to advanced. Movement and technique with certified coaches.</span>
             <span class="prog-arrow">→</span>
@@ -1359,7 +1495,9 @@
         </li>
         <li>
           <a href="#" class="prog-row">
-            <span class="prog-num">ii.</span>
+            <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-target"/></svg></span>
+
+                      <span class="prog-num">ii.</span>
             <span class="prog-title">Private 1:1 Instruction</span>
             <span class="prog-desc">One-on-one coaching tailored to your goals — projecting, training, footwork.</span>
             <span class="prog-arrow">→</span>
@@ -1367,7 +1505,9 @@
         </li>
         <li>
           <a href="#" class="prog-row">
-            <span class="prog-num">iii.</span>
+            <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-shield"/></svg></span>
+
+                      <span class="prog-num">iii.</span>
             <span class="prog-title">Crash Pad Rentals</span>
             <span class="prog-desc">Heading outdoors? Rent crash pads before you hit the rocks. Fair daily rates.</span>
             <span class="prog-arrow">→</span>
@@ -1383,7 +1523,9 @@
       <ul class="prog-list">
         <li>
           <a href="#" class="prog-row">
-            <span class="prog-num">iv.</span>
+            <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-lotus"/></svg></span>
+
+                      <span class="prog-num">iv.</span>
             <span class="prog-title">Yoga &amp; Fitness Classes</span>
             <span class="prog-desc">Climbing-specific yoga, mobility, and strength on a rotating weekly schedule.</span>
             <span class="prog-arrow">→</span>
@@ -1391,7 +1533,9 @@
         </li>
         <li>
           <a href="#" class="prog-row">
-            <span class="prog-num">v.</span>
+            <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-people"/></svg></span>
+
+                      <span class="prog-num">v.</span>
             <span class="prog-title">Class Instructors</span>
             <span class="prog-desc">Climbers, yogis, and trainers who know what your body needs.</span>
             <span class="prog-arrow">→</span>
@@ -1399,7 +1543,9 @@
         </li>
         <li>
           <a href="#" class="prog-row">
-            <span class="prog-num">vi.</span>
+            <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-dumbbell"/></svg></span>
+
+                      <span class="prog-num">vi.</span>
             <span class="prog-title">Fitness Equipment</span>
             <span class="prog-desc">Hangboards, campus boards, free weights, dedicated training area.</span>
             <span class="prog-arrow">→</span>
@@ -1415,7 +1561,9 @@
       <ul class="prog-list">
         <li>
           <a href="#" class="prog-row">
-            <span class="prog-num">vii.</span>
+            <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-users"/></svg></span>
+
+                      <span class="prog-num">vii.</span>
             <span class="prog-title">Climbing Teams</span>
             <span class="prog-desc">Competitive and recreational teams for kids and teens. Skill, confidence, crew.</span>
             <span class="prog-arrow">→</span>
@@ -1423,7 +1571,9 @@
         </li>
         <li>
           <a href="#" class="prog-row">
-            <span class="prog-num">viii.</span>
+            <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-sun"/></svg></span>
+
+                      <span class="prog-num">viii.</span>
             <span class="prog-title">Camp Overlook<span class="prog-live">Live</span></span>
             <span class="prog-desc">Flagship summer camp — week-long sessions of climbing, games, and BeltLine adventures.</span>
             <span class="prog-arrow">→</span>
@@ -1431,7 +1581,9 @@
         </li>
         <li>
           <a href="#" class="prog-row">
-            <span class="prog-num">ix.</span>
+            <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-cake"/></svg></span>
+
+                      <span class="prog-num">ix.</span>
             <span class="prog-title">Birthday Parties</span>
             <span class="prog-desc">Throw a birthday on the walls. We handle climbing, staff, and cleanup.</span>
             <span class="prog-arrow">→</span>
@@ -1595,17 +1747,17 @@
     <div class="visit-grid">
       <div class="visit-info">
         <div class="info-block">
-          <div class="k">Location</div>
+          <div class="k"><svg class="icn icn-sm"><use href="#i-pin"/></svg> Location</div>
           <div class="v"><strong>1030 White St SW</strong><br>Atlanta, GA 30310</div>
         </div>
 
         <div class="info-block">
-          <div class="k">Phone</div>
+          <div class="k"><svg class="icn icn-sm"><use href="#i-phone"/></svg> Phone</div>
           <div class="v"><a href="tel:6789732460" style="color:var(--ink); text-decoration: underline; text-decoration-color: var(--yellow); text-underline-offset: 4px;">678.973.2460</a></div>
         </div>
 
         <div class="info-block">
-          <div class="k">Hours</div>
+          <div class="k"><svg class="icn icn-sm"><use href="#i-clock"/></svg> Hours</div>
           <div class="v" style="width: 100%;">
             <div class="hours-row"><span class="day">Monday</span><span>6 AM — 10 PM</span></div>
             <div class="hours-row"><span class="day">Tuesday</span><span>6 AM — 10 PM</span></div>
@@ -1618,7 +1770,7 @@
         </div>
 
         <div class="info-block">
-          <div class="k">First Visit</div>
+          <div class="k"><svg class="icn icn-sm"><use href="#i-sparkle"/></svg> First Visit</div>
           <div class="v">Sign your <strong>waiver</strong> online before you come in to skip the front-desk paperwork. New climbers should plan an extra 15 minutes for an intro tour.</div>
         </div>
       </div>
@@ -1645,7 +1797,7 @@
       </div>
 
       <div class="foot-col">
-        <h4>Programs</h4>
+        <h4><svg class="icn"><use href="#i-mountain"/></svg>Programs</h4>
         <ul>
           <li><a href="#programs">Climbing Classes</a></li>
           <li><a href="#programs">Private 1:1</a></li>
@@ -1656,7 +1808,7 @@
       </div>
 
       <div class="foot-col">
-        <h4>Members</h4>
+        <h4><svg class="icn"><use href="#i-doc"/></svg>Members</h4>
         <ul>
           <li><a href="#experience">Waiver</a></li>
           <li><a href="#experience">Customer Portal</a></li>
@@ -1667,7 +1819,7 @@
       </div>
 
       <div class="foot-col">
-        <h4>Visit</h4>
+        <h4><svg class="icn"><use href="#i-pin"/></svg>Visit</h4>
         <ul>
           <li><a href="#visit">1030 White St SW</a></li>
           <li><a href="#visit">Atlanta, GA 30310</a></li>
@@ -1682,10 +1834,10 @@
       <div>© 2019 — 2026 The Overlook · All rights reserved</div>
       <div class="socials">
         <a href="https://www.instagram.com/climbtheoverlook" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <svg class="icn"><use href="#i-ig"/></svg>
         </a>
         <a href="https://www.facebook.com/climbtheoverlook" target="_blank" rel="noopener" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          <svg class="icn"><use href="#i-fb"/></svg>
         </a>
       </div>
     </div>

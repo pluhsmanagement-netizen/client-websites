@@ -1261,9 +1261,13 @@
     50%      { opacity: 0.95; transform: translate(-50%, -50%) scale(1.08); }
   }
 
-  /* Concentric rings — same family as hero hold */
+  /* Concentric rings — anchored to the same center as the heart */
   .heart-rings {
-    position: absolute; inset: 0;
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 80%;
+    aspect-ratio: 3 / 2;
+    transform: translate(-50%, -50%);
     pointer-events: none;
   }
   .heart-rings::before, .heart-rings::after {
@@ -1274,8 +1278,8 @@
     border-radius: 50%;
     transform: translate(-50%, -50%);
   }
-  .heart-rings::before { width: 70%; height: 92%; }
-  .heart-rings::after  { width: 88%; height: 100%; border-color: rgba(20,20,20,0.04); }
+  .heart-rings::before { width: 90%; height: 115%; }
+  .heart-rings::after  { width: 110%; height: 135%; border-color: rgba(20,20,20,0.04); }
 
   /* The heart itself, floating + tilted */
   .heart-img {

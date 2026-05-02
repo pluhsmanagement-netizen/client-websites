@@ -559,63 +559,130 @@
   }
   .feat .txt { font-size: 14px; line-height: 1.5; color: var(--ink); font-weight: 500; }
 
-  /* ============ PROGRAMS / SERVICES GRID ============ */
+  /* ============ PROGRAMS — minimal list ============ */
   .programs { background: var(--black); color: var(--paper); }
 
-  .program-grid {
+  /* Category label rows */
+  .prog-category {
+    border-top: 1px solid var(--rule);
+    padding: 28px 0 12px;
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 0;
+    grid-template-columns: 100px 1fr;
+    gap: 24px;
+    align-items: baseline;
+  }
+  .prog-category .cat-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    padding-top: 4px;
+  }
+  .prog-category .cat-title {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(20px, 2.4vw, 28px);
+    color: rgba(244,241,232,0.6);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  /* Item rows — clean list */
+  .prog-list {
+    list-style: none;
+    margin: 0 0 32px;
+    padding: 0;
     border-top: 1px solid var(--rule);
   }
-  @media (min-width: 640px)  { .program-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1024px) { .program-grid { grid-template-columns: repeat(3, 1fr); } }
-
-  .program-card {
+  .prog-list li {
     border-bottom: 1px solid var(--rule);
-    border-right: 1px solid var(--rule);
-    padding: 28px 24px;
+  }
+  .prog-row {
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    gap: 24px;
+    padding: 22px 0 22px 8px;
+    align-items: baseline;
+    text-decoration: none;
+    color: var(--paper);
+    transition: background 0.25s, padding 0.25s;
     position: relative;
-    transition: background 0.3s;
-    display: flex; flex-direction: column;
-    min-height: 200px;
   }
-  .program-card:hover { background: rgba(212,217,0,0.04); }
+  @media (min-width: 768px) {
+    .prog-row {
+      grid-template-columns: 100px 280px 1fr auto;
+    }
+  }
+  .prog-row:hover {
+    background: rgba(212,217,0,0.05);
+    padding-left: 18px;
+  }
+  .prog-row:hover::before {
+    transform: scaleY(1);
+  }
+  .prog-row::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: var(--yellow);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease;
+  }
 
-  .program-card .top {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    margin-bottom: 18px;
-  }
-  .program-card .ix {
-    font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
-    color: var(--yellow); font-size: 12px; letter-spacing: 0.1em;
-  }
-  .program-card .tag {
-    font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
-    color: rgba(244,241,232,0.4); font-weight: 600;
-  }
-  .program-card h3 {
-    font-size: 17px;
-    margin-bottom: 10px;
-    line-height: 1.05;
-  }
-  .program-card p {
-    font-size: 13px;
-    line-height: 1.55;
-    color: rgba(244,241,232,0.6);
+  .prog-row .prog-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
     font-weight: 300;
-    margin-bottom: 18px;
-    flex-grow: 1;
+    color: var(--yellow);
+    font-size: 14px;
+    letter-spacing: 0.06em;
   }
-  .program-card .link {
-    color: var(--yellow); text-decoration: none;
-    font-size: 10px; font-weight: 700;
-    letter-spacing: 0.22em; text-transform: uppercase;
-    display: inline-flex; align-items: center; gap: 8px;
-    transition: gap 0.25s;
-    align-self: flex-start;
+  .prog-row .prog-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(15px, 1.6vw, 18px);
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
   }
-  .program-card .link:hover { gap: 14px; }
+  .prog-row .prog-desc {
+    display: none;
+    font-size: 13px;
+    color: rgba(244,241,232,0.55);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+  @media (min-width: 768px) {
+    .prog-row .prog-desc { display: block; }
+  }
+  .prog-row .prog-arrow {
+    color: rgba(244,241,232,0.3);
+    font-size: 18px;
+    transition: transform 0.3s, color 0.3s;
+  }
+  .prog-row:hover .prog-arrow {
+    color: var(--yellow);
+    transform: translateX(6px);
+  }
+
+  /* "Live" highlight for Camp Overlook */
+  .prog-row .prog-live {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    background: var(--yellow);
+    color: var(--black);
+    padding: 3px 8px;
+    margin-left: 12px;
+    vertical-align: middle;
+    line-height: 1;
+  }
 
   /* ============ STATS STRIP ============ */
   .stats {
@@ -636,9 +703,9 @@
     .stats-grid.stats-3 { grid-template-columns: repeat(3, 1fr); gap: 20px; }
   }
 
-  /* Logo-as-stat — match the height of the numbers visually */
+  /* Logo-as-stat — match height of stat numbers visually */
   .stat-logo .logo-n {
-    height: clamp(48px, 6vw, 88px);
+    height: clamp(44px, 5.5vw, 72px);
     display: flex; align-items: center; justify-content: center;
     margin-bottom: 8px;
   }
@@ -648,8 +715,8 @@
     width: auto;
     height: auto;
     object-fit: contain;
-    /* Tint to ink color so it reads as part of the stats palette on paper bg */
-    filter: brightness(0) saturate(100%) invert(8%) sepia(11%) saturate(290%) hue-rotate(75deg) brightness(95%) contrast(85%);
+    /* Slight darken so the brand yellow reads on cream paper */
+    filter: brightness(0.78) saturate(1.2);
   }
   .stats-grid .stat .n {
     font-family: 'Archivo Black', sans-serif;
@@ -1274,72 +1341,104 @@
       <h2>Pick your<br><span class="accent">path.</span></h2>
     </div>
 
-    <div class="program-grid">
+    <div class="prog-content">
+
       <!-- PROGRAMS -->
-      <div class="program-card">
-        <div class="top"><span class="ix">i.</span><span class="tag">Programs</span></div>
-        <h3>Climbing Classes</h3>
-        <p>Group sessions, beginner to advanced. Movement, technique, and safe falling with certified coaches.</p>
-        <a href="#" class="link">Browse Classes →</a>
+      <div class="prog-category">
+        <div class="cat-label">Programs</div>
+        <div class="cat-title">On the wall.</div>
       </div>
-
-      <div class="program-card">
-        <div class="top"><span class="ix">ii.</span><span class="tag">Programs</span></div>
-        <h3>Private 1:1 Instruction</h3>
-        <p>One-on-one coaching tailored to your goals — projecting, training plans, footwork. Your call.</p>
-        <a href="#" class="link">Book a Session →</a>
-      </div>
-
-      <div class="program-card">
-        <div class="top"><span class="ix">iii.</span><span class="tag">Programs</span></div>
-        <h3>Crash Pad Rentals</h3>
-        <p>Heading outdoors? Rent crash pads before you hit the rocks. Quick checkout, fair daily rates.</p>
-        <a href="#" class="link">Reserve Now →</a>
-      </div>
+      <ul class="prog-list">
+        <li>
+          <a href="#" class="prog-row">
+            <span class="prog-num">i.</span>
+            <span class="prog-title">Climbing Classes</span>
+            <span class="prog-desc">Group sessions, beginner to advanced. Movement and technique with certified coaches.</span>
+            <span class="prog-arrow">→</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="prog-row">
+            <span class="prog-num">ii.</span>
+            <span class="prog-title">Private 1:1 Instruction</span>
+            <span class="prog-desc">One-on-one coaching tailored to your goals — projecting, training, footwork.</span>
+            <span class="prog-arrow">→</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="prog-row">
+            <span class="prog-num">iii.</span>
+            <span class="prog-title">Crash Pad Rentals</span>
+            <span class="prog-desc">Heading outdoors? Rent crash pads before you hit the rocks. Fair daily rates.</span>
+            <span class="prog-arrow">→</span>
+          </a>
+        </li>
+      </ul>
 
       <!-- FITNESS -->
-      <div class="program-card" id="fitness">
-        <div class="top"><span class="ix">iv.</span><span class="tag">Fitness</span></div>
-        <h3>Yoga &amp; Fitness Classes</h3>
-        <p>Climbing-specific yoga, mobility, strength, and conditioning on a rotating weekly schedule.</p>
-        <a href="#" class="link">View Schedule →</a>
+      <div class="prog-category" id="fitness">
+        <div class="cat-label">Fitness</div>
+        <div class="cat-title">Off the wall.</div>
       </div>
-
-      <div class="program-card">
-        <div class="top"><span class="ix">v.</span><span class="tag">Fitness</span></div>
-        <h3>Class Instructors</h3>
-        <p>Climbers, yogis, and trainers who know what your body needs to keep showing up.</p>
-        <a href="#" class="link">Meet the Team →</a>
-      </div>
-
-      <div class="program-card">
-        <div class="top"><span class="ix">vi.</span><span class="tag">Fitness</span></div>
-        <h3>Fitness Equipment</h3>
-        <p>Hangboards, campus boards, free weights, and a dedicated training area for your off-wall days.</p>
-        <a href="#" class="link">Tour the Gym →</a>
-      </div>
+      <ul class="prog-list">
+        <li>
+          <a href="#" class="prog-row">
+            <span class="prog-num">iv.</span>
+            <span class="prog-title">Yoga &amp; Fitness Classes</span>
+            <span class="prog-desc">Climbing-specific yoga, mobility, and strength on a rotating weekly schedule.</span>
+            <span class="prog-arrow">→</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="prog-row">
+            <span class="prog-num">v.</span>
+            <span class="prog-title">Class Instructors</span>
+            <span class="prog-desc">Climbers, yogis, and trainers who know what your body needs.</span>
+            <span class="prog-arrow">→</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="prog-row">
+            <span class="prog-num">vi.</span>
+            <span class="prog-title">Fitness Equipment</span>
+            <span class="prog-desc">Hangboards, campus boards, free weights, dedicated training area.</span>
+            <span class="prog-arrow">→</span>
+          </a>
+        </li>
+      </ul>
 
       <!-- YOUTH -->
-      <div class="program-card" id="youth">
-        <div class="top"><span class="ix">vii.</span><span class="tag">Youth</span></div>
-        <h3>Youth Climbing Teams</h3>
-        <p>Competitive and recreational teams for kids and teens. Skill, confidence, and a climbing crew.</p>
-        <a href="#" class="link">Join a Team →</a>
+      <div class="prog-category" id="youth">
+        <div class="cat-label">Youth</div>
+        <div class="cat-title">Next generation.</div>
       </div>
+      <ul class="prog-list">
+        <li>
+          <a href="#" class="prog-row">
+            <span class="prog-num">vii.</span>
+            <span class="prog-title">Climbing Teams</span>
+            <span class="prog-desc">Competitive and recreational teams for kids and teens. Skill, confidence, crew.</span>
+            <span class="prog-arrow">→</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="prog-row">
+            <span class="prog-num">viii.</span>
+            <span class="prog-title">Camp Overlook<span class="prog-live">Live</span></span>
+            <span class="prog-desc">Flagship summer camp — week-long sessions of climbing, games, and BeltLine adventures.</span>
+            <span class="prog-arrow">→</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="prog-row">
+            <span class="prog-num">ix.</span>
+            <span class="prog-title">Birthday Parties</span>
+            <span class="prog-desc">Throw a birthday on the walls. We handle climbing, staff, and cleanup.</span>
+            <span class="prog-arrow">→</span>
+          </a>
+        </li>
+      </ul>
 
-      <div class="program-card">
-        <div class="top"><span class="ix">viii.</span><span class="tag">Youth</span></div>
-        <h3>Camp Overlook</h3>
-        <p>Our flagship summer camp — week-long sessions of climbing, games, and BeltLine adventures. <strong style="color:var(--yellow);">Live now.</strong></p>
-        <a href="#" class="link">Register Now →</a>
-      </div>
-
-      <div class="program-card">
-        <div class="top"><span class="ix">ix.</span><span class="tag">Youth</span></div>
-        <h3>Youth Birthday</h3>
-        <p>Throw a birthday on the walls. We handle climbing, staff, and cleanup — you bring the cake.</p>
-        <a href="#" class="link">Book a Party →</a>
-      </div>
     </div>
   </div>
 </section>

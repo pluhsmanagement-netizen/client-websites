@@ -1,238 +1,452 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Revived Rides Mobile Detailing | Painting in Atlanta, GA</title>
-  <meta name="description" content="Revived Rides Mobile Detailing provides professional painting services in Atlanta, Georgia. Licensed, insured, and trusted by local homeowners. Call for a free estimate.">
-  <meta name="keywords" content="painting, Atlanta painting, Atlanta GA, ceramic coatings, steam cleaning, ceramic coating">
+  <title>Revived Rides Mobile Detailing | Premium Mobile Car Detailing in Atlanta, GA</title>
+  <meta name="description" content="Atlanta's premium mobile car detailing studio. Ceramic coatings, paint correction, interior steam cleaning — delivered to your door inside I-285. Locally owned, 5.0 rated.">
+  <meta name="keywords" content="mobile car detailing Atlanta, ceramic coating Atlanta, paint correction, mobile detailing Buckhead, car detailing Decatur, interior detailing">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Revived Rides Mobile Detailing">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Revived Rides Mobile Detailing | Painting in Atlanta, GA">
-  <meta property="og:description" content="Professional painting services in Atlanta.">
-  <meta property="og:image" content="https://d13cw1lxlociqy.cloudfront.net/qsabmdo2t2x9dzo05w4cs9r9rake">
+  <meta property="og:title" content="Revived Rides Mobile Detailing | Premium Mobile Car Detailing in Atlanta, GA">
+  <meta property="og:description" content="Showroom-quality detailing delivered to your door inside I-285.">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Revived Rides Mobile Detailing | Atlanta Painting">
-  <meta name="twitter:description" content="Professional painting services in Atlanta, GA.">
+  <link rel="icon" type="image/png" href="./assets1/logo.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "AutoDetailing",
     "name": "Revived Rides Mobile Detailing",
-    "image": "https://d13cw1lxlociqy.cloudfront.net/qsabmdo2t2x9dzo05w4cs9r9rake",
-    "telephone": "",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "",
-      "addressLocality": "Atlanta",
-      "addressRegion": "GA",
-      "addressCountry": "US"
-    },
+    "address": { "@type": "PostalAddress", "addressLocality": "Atlanta", "addressRegion": "GA", "addressCountry": "US" },
     "priceRange": "$$",
-    "areaServed": [],
-    "description": "Professional mobile car detailing in Atlanta including interior, exterior, ceramic coatings, and paint correction. We come to you inside I-285."
+    "areaServed": ["Atlanta", "Decatur", "Sandy Springs", "Marietta", "Smyrna", "Brookhaven", "Dunwoody", "East Point", "College Park"],
+    "description": "Premium mobile car detailing in Atlanta — ceramic coatings, paint correction, interior steam cleaning. We come to you inside I-285.",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "71" }
   }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Caprasimo:wght@400&family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght,ital@9..144,300..900,0;9..144,300..900,1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,ital@9..144,300..900,0;9..144,300..900,1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #0A0E12;
+      --bg-2: #11161C;
+      --bg-3: #161D25;
+      --bg-light: #FAFAF7;
+      --bg-light-2: #F0F0EC;
+      --border: #232C36;
+      --border-soft: #1A2129;
+      --border-light: #E5E5DF;
+      --white: #FFFFFF;
+      --text: #FFFFFF;
+      --text-muted: #A3ADBA;
+      --text-dim: #6A7585;
+      --text-on-light: #0F1318;
+      --text-on-light-muted: #4A5260;
+      --accent: #4FD1E0;
+      --accent-bright: #7FE5F2;
+      --accent-deep: #1A95A8;
+      --accent-shadow: rgba(79, 209, 224, 0.3);
+    }
+    * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
     html, body { overflow-x: hidden; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; -webkit-font-smoothing: antialiased; color: #1C1E1D; background-color: #F2F1EC; }
-    h1,h2,h3,h4,h5,h6,.heading { font-family: 'Caprasimo', 'Fraunces', Georgia, serif; }
-    .display-font { font-family: 'Caprasimo', 'Fraunces', Georgia, serif; }
-    .serif-display, .italic-display { font-family: 'Fraunces', Georgia, serif; font-style: italic; }
-    ::selection { background: #002f4d; color: #fff; }
-    .ticker-track { display: flex; animation: ticker 40s linear infinite; white-space: nowrap; }
-    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    .marquee-track { display: flex; animation: marquee 40s linear infinite; }
-    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    details summary { list-style: none; cursor: pointer; }
-    details summary::-webkit-details-marker { display: none; }
-    .tab-btn { cursor: pointer; transition: all 0.2s ease; letter-spacing: 0.04em; }
-    .tab-btn.active-tab { background-color: #002f4d; color: white; }
-    .tab-btn.inactive-tab { background-color: white; color: #5A5F5C; border: 1px solid #D5D7D3; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(79, 209, 224, 0.10), transparent 60%),
+        radial-gradient(ellipse 60% 50% at 100% 100%, rgba(79, 209, 224, 0.04), transparent 60%);
+      background-attachment: fixed;
+    }
+    h1, h2, h3, h4, h5, h6, .heading { font-family: 'Fraunces', Georgia, serif; font-weight: 400; letter-spacing: -0.02em; }
+    .display-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 300; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    ::selection { background: var(--accent); color: var(--bg); }
+
+    .section-num { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.04em; color: var(--accent); }
+    .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); }
+    .eyebrow-light { font-size: 11px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent-deep); }
+    .hairline { border-color: var(--border); }
+    .hero-line { width: 48px; height: 1px; background: linear-gradient(90deg, var(--accent), transparent); }
+    section { scroll-margin-top: 96px; position: relative; }
+
+    .nav-link { font-size: 13px; font-weight: 500; letter-spacing: 0.02em; color: var(--text-muted); transition: color 0.2s; position: relative; padding: 4px 0; }
+    .nav-link:hover { color: var(--white); }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1px;
+      background: var(--accent); transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .nav-link:hover::after { transform: scaleX(1); }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 26px; font-size: 12px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      border-radius: 2px; cursor: pointer;
+      transition: all 0.25s ease; border: 1px solid transparent;
+    }
+    .btn-primary {
+      background: var(--accent); color: #0A0E12;
+      box-shadow: 0 0 0 0 var(--accent-shadow);
+    }
+    .btn-primary:hover {
+      background: var(--accent-bright);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px -8px var(--accent-shadow);
+    }
+    .btn-ghost { background: transparent; color: var(--white); border-color: var(--border); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-light { background: var(--white); color: var(--bg); }
+    .btn-light:hover { background: var(--accent); transform: translateY(-1px); }
+    .btn-on-light-ghost { background: transparent; color: var(--bg); border-color: var(--bg); }
+    .btn-on-light-ghost:hover { background: var(--bg); color: var(--white); }
+
+    .tab-btn {
+      cursor: pointer; transition: all 0.25s ease; letter-spacing: 0.04em;
+      background: transparent; color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+    .tab-btn.active-tab { background: var(--white); color: var(--bg); border-color: var(--white); }
     .tab-panel { display: block; }
     .tab-panel.hidden { display: none !important; }
-    .img-hover-wrap { overflow: hidden; }
-    .img-hover-wrap img { transition: transform 0.7s ease; }
-    .img-hover-wrap:hover img { transform: scale(1.04); }
-    .arrow-cta { border-bottom: 1px solid currentColor; padding-bottom: 2px; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.25s ease; font-weight: 500; }
+
+    .img-zoom { overflow: hidden; }
+    .img-zoom img { transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .img-zoom:hover img { transform: scale(1.05); }
+
+    .arrow-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: gap 0.25s ease; font-weight: 500;
+      color: var(--accent); font-size: 13px; letter-spacing: 0.04em;
+    }
     .arrow-cta:hover { gap: 14px; }
-    .dotted-leader { flex: 1; border-bottom: 1px dotted currentColor; margin: 0 1rem; opacity: 0.25; align-self: end; padding-bottom: 0.5rem; }
-    .hairline-rule { border-top: 1px solid #D5D7D3; }
-    .section-num { font-family: 'Fraunces', serif; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; color: #002f4d; }
-    .eyebrow-label { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #002f4d; }
-    section { scroll-margin-top: 96px; }
-    .animate-section { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
-    .animate-section.is-pending { opacity: 0; transform: translateY(24px); }
-    .animate-section.is-visible { opacity: 1; transform: none; }
-    .animate-section:target,
-    .animate-section.is-pending:target { opacity: 1 !important; transform: none !important; }
-    .award-badge { filter: grayscale(100%); transition: filter 0.3s ease; }
-    .award-badge:hover { filter: grayscale(0%); }
-    .btn-premium { display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; border: 2px solid transparent; cursor: pointer; transition: all 0.25s ease; }
-    .btn-premium-primary { background: #002f4d; color: #fff; }
-    .btn-premium-primary:hover { background: #002f4d; transform: translateY(-2px); filter: brightness(0.9); }
-    .btn-premium-ghost { background: transparent; color: #1C1E1D; border-color: #1C1E1D; }
-    .btn-premium-ghost:hover { background: #1C1E1D; color: #fff; }
-    .gallery-item { position: relative; border-radius: 1rem; overflow: hidden; }
-    .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent); opacity: 0; transition: opacity 0.35s ease; }
-    .gallery-item:hover .gallery-caption { opacity: 1; }
-    .gallery-item:hover { border: 1px solid #d1c7b7; }
-    .nav-link { font-size: 13px; font-weight: 500; letter-spacing: 0.04em; color: #1C1E1D; transition: color 0.2s; }
-    .nav-link:hover { color: #002f4d; }
-    .service-card { background: #fff; border: 1px solid #D5D7D3; border-radius: 1rem; padding: 2.5rem; transition: border-color 0.25s ease, transform 0.25s ease; }
-    .service-card:hover { border-color: #002f4d; transform: translateY(-3px); }
-    .stat-card { background: #fff; border: 1px solid #D5D7D3; border-radius: 1rem; padding: 2rem; text-align: center; }
-    input:focus, textarea:focus, select:focus { outline: none; ring: 2px; ring-color: #002f4d; box-shadow: 0 0 0 2px #002f4d; }
+    .arrow-cta-light { color: var(--bg); }
+
+    .card {
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0; transition: opacity 0.3s ease;
+    }
+    .card:hover { border-color: var(--accent-deep); transform: translateY(-2px); }
+    .card:hover::before { opacity: 0.6; }
+
+    /* Light card variant */
+    .card-light {
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      color: var(--text-on-light);
+      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 4px;
+    }
+    .card-light:hover {
+      border-color: var(--accent-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px -16px rgba(15, 19, 24, 0.12);
+    }
+
+    .stat-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.5rem 1.25rem;
+      text-align: left;
+      position: relative;
+    }
+    .stat-card::before {
+      content: ''; position: absolute; left: 0; top: 1.5rem; bottom: 1.5rem;
+      width: 2px; background: var(--accent);
+    }
+
+    .reveal { opacity: 1; transform: none; transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.is-pending { opacity: 0; transform: translateY(20px); }
+    .reveal.is-visible { opacity: 1; transform: none; }
+
+    input, textarea, select {
+      background: var(--bg-2) !important;
+      border: 1px solid var(--border) !important;
+      color: var(--text) !important;
+      transition: border-color 0.2s ease;
+    }
+    input::placeholder, textarea::placeholder { color: var(--text-dim); }
+    input:focus, textarea:focus, select:focus {
+      outline: none !important;
+      border-color: var(--accent) !important;
+      box-shadow: 0 0 0 3px rgba(79, 209, 224, 0.1) !important;
+    }
+    select option { background: var(--bg-2); color: var(--text); }
+
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] .chev { transform: rotate(45deg); }
+
+    .gallery-item { position: relative; border-radius: 4px; overflow: hidden; border: 1px solid var(--border); }
+    .gallery-caption {
+      position: absolute; bottom: 0; left: 0; right: 0; padding: 1.25rem 1.5rem;
+      background: linear-gradient(to top, rgba(10,14,18,0.92) 0%, rgba(10,14,18,0.7) 50%, transparent 100%);
+      transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .gallery-item:hover .gallery-caption { transform: translateY(0); }
+    .gallery-item:hover { border-color: var(--accent-deep); }
+
+    .service-icon-wrap {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, rgba(79, 209, 224, 0.12), rgba(79, 209, 224, 0.04));
+      border: 1px solid rgba(79, 209, 224, 0.25);
+      border-radius: 4px;
+      color: var(--accent);
+      transition: all 0.3s ease;
+    }
+    .card:hover .service-icon-wrap {
+      background: linear-gradient(135deg, rgba(79, 209, 224, 0.2), rgba(79, 209, 224, 0.06));
+      border-color: var(--accent);
+      transform: scale(1.05);
+    }
+    .service-icon-wrap svg { width: 28px; height: 28px; }
+
+    /* Service icons on light background */
+    .service-icon-light {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, rgba(26, 149, 168, 0.10), rgba(26, 149, 168, 0.02));
+      border: 1px solid rgba(26, 149, 168, 0.20);
+      border-radius: 4px;
+      color: var(--accent-deep);
+    }
+    .service-icon-light svg { width: 28px; height: 28px; }
+
+    /* Marquee */
+    .marquee-track { display: flex; animation: marquee 35s linear infinite; gap: 4rem; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* Floating tire animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .tire-float {
+      animation: float 6s ease-in-out infinite;
+      filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 80px rgba(79, 209, 224, 0.15));
+      mix-blend-mode: lighten;
+    }
+    .tire-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(79, 209, 224, 0.2), transparent 60%);
+      pointer-events: none;
+      filter: blur(40px);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    /* Owners frame */
+    .owners-frame { position: relative; }
+    .owners-frame::after {
+      content: '';
+      position: absolute; inset: 0;
+      border: 1px solid var(--accent-deep);
+      border-radius: 4px;
+      transform: translate(12px, 12px);
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.4;
+    }
+
+    /* Quote mark */
+    .quote-mark {
+      font-family: 'Fraunces', serif;
+      font-size: 4rem;
+      line-height: 0.7;
+      color: var(--accent);
+      opacity: 0.4;
+      font-weight: 300;
+    }
+
+    /* Star ratings */
+    .star-fill { fill: var(--accent); color: var(--accent); }
+
+    /* Footer link */
+    .footer-link { color: var(--text-muted); transition: color 0.2s ease, padding 0.2s ease; display: inline-block; }
+    .footer-link:hover { color: var(--accent); padding-left: 4px; }
+
+    /* Section divider */
+    .section-divider {
+      width: 100%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+
+    /* Newsletter */
+    .newsletter-input {
+      background: var(--bg-3) !important;
+      border: 1px solid var(--border) !important;
+    }
   </style>
 </head>
-<body class="bg-[#F2F1EC]">
+<body>
 
   <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#F2F1EC]/95 backdrop-blur-sm border-b border-[#D5D7D3] transition-shadow duration-300">
-    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-20">
-      <a href="#home" class="flex items-center gap-3"><img src="https://d13cw1lxlociqy.cloudfront.net/qsabmdo2t2x9dzo05w4cs9r9rake" alt="Revived Rides Mobile Detailing" class="h-12 md:h-14 w-auto object-contain max-w-[200px]"></a>
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#home" class="nav-link">Home</a>
+  <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md transition-all duration-300" style="background: rgba(10, 14, 18, 0.85); border-bottom: 1px solid var(--border-soft);">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 flex items-center justify-between h-24">
+      <a href="#home" class="flex items-center">
+        <img src="./assets1/logo.png" alt="Revived Rides Mobile Detailing" class="h-20 md:h-24 w-auto object-contain" style="margin: -8px 0;">
+      </a>
+      <div class="hidden lg:flex items-center gap-10">
         <a href="#about" class="nav-link">About</a>
         <a href="#services" class="nav-link">Services</a>
-        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#gallery" class="nav-link">Work</a>
         <a href="#reviews" class="nav-link">Reviews</a>
         <a href="#faq" class="nav-link">FAQ</a>
         <a href="#contact" class="nav-link">Contact</a>
       </div>
-      <div class="hidden md:flex items-center gap-4">
-        <a href="#contact" class="btn-premium btn-premium-primary rounded-sm text-xs py-3 px-5">Get a Quote</a>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="#contact" class="btn btn-primary">Get a Quote</a>
       </div>
-      <button id="hamburger" class="md:hidden p-2 rounded-sm border border-[#D5D7D3] bg-white" aria-label="Open menu">
+      <button id="hamburger" class="lg:hidden p-2.5 border" style="border-color: var(--border); border-radius: 2px;" aria-label="Open menu">
         <i data-lucide="menu" class="w-5 h-5"></i>
       </button>
     </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-[#F2F1EC] border-t border-[#D5D7D3]">
-      <a href="#home" class="mobile-nav-link block py-4 px-6 border-b border-[#D5D7D3] text-sm font-medium">Home</a>
-      <a href="#about" class="mobile-nav-link block py-4 px-6 border-b border-[#D5D7D3] text-sm font-medium">About</a>
-      <a href="#services" class="mobile-nav-link block py-4 px-6 border-b border-[#D5D7D3] text-sm font-medium">Services</a>
-      <a href="#gallery" class="mobile-nav-link block py-4 px-6 border-b border-[#D5D7D3] text-sm font-medium">Gallery</a>
-      <a href="#reviews" class="mobile-nav-link block py-4 px-6 border-b border-[#D5D7D3] text-sm font-medium">Reviews</a>
-      <a href="#faq" class="mobile-nav-link block py-4 px-6 border-b border-[#D5D7D3] text-sm font-medium">FAQ</a>
-      <a href="#contact" class="mobile-nav-link block py-4 px-6 text-sm font-medium">Contact</a>
+    <div id="mobile-menu" class="hidden lg:hidden border-t" style="background: var(--bg-2); border-color: var(--border);">
+      <a href="#about" class="mobile-nav-link block py-4 px-6 border-b text-sm" style="border-color: var(--border-soft);">About</a>
+      <a href="#services" class="mobile-nav-link block py-4 px-6 border-b text-sm" style="border-color: var(--border-soft);">Services</a>
+      <a href="#gallery" class="mobile-nav-link block py-4 px-6 border-b text-sm" style="border-color: var(--border-soft);">Work</a>
+      <a href="#reviews" class="mobile-nav-link block py-4 px-6 border-b text-sm" style="border-color: var(--border-soft);">Reviews</a>
+      <a href="#faq" class="mobile-nav-link block py-4 px-6 border-b text-sm" style="border-color: var(--border-soft);">FAQ</a>
+      <a href="#contact" class="mobile-nav-link block py-4 px-6 text-sm">Contact</a>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section id="home" class="animate-section min-h-[90vh] flex flex-col justify-center pt-24 pb-16 px-4 md:px-8 lg:px-16 bg-[#F2F1EC]">
-    <div class="max-w-7xl mx-auto w-full">
-      <!-- Eyebrow -->
-      <div class="flex items-center gap-4 mb-8">
-        <span class="section-num">/ 00</span>
-        <div class="w-8 h-px bg-[#002f4d]"></div>
-        <span class="eyebrow-label">Atlanta's Mobile Detail Studio</span>
-        <div class="hidden md:block w-8 h-px bg-[#D5D7D3]"></div>
-        <span id="live-clock" class="hidden md:block font-mono text-xs text-stone-400 tracking-wider"></span>
-      </div>
-      <!-- H1 -->
-      <h1 class="text-5xl md:text-6xl lg:text-7xl text-[#1C1E1D] leading-tight max-w-4xl mb-6">
-        Atlanta's Premium <span class="italic-display text-[#002f4d]">Mobile Detailing</span> — We Come to You
-      </h1>
-      <p class="text-lg text-stone-600 font-medium max-w-2xl mb-10 leading-relaxed">
-        Showroom-quality results at your home, office, or anywhere within I-285. Ceramic coatings, paint correction, deep cleans — delivered with precision.
-      </p>
-      <!-- CTAs -->
-      <div class="flex flex-wrap gap-4 mb-14">
-        <a href="#contact" class="btn-premium btn-premium-primary rounded-sm">
-          <i data-lucide="sparkles" class="w-4 h-4"></i>
-          Get a Free Estimate
-        </a>
-        <a href="#services" class="btn-premium btn-premium-ghost rounded-sm">
-          View Services
-          <i data-lucide="chevron-right" class="w-4 h-4"></i>
-        </a>
-      </div>
-      <!-- Hero Image -->
-      <div class="img-hover-wrap rounded-2xl border border-[#D5D7D3] overflow-hidden w-full max-w-5xl mx-auto aspect-video mb-14 shadow-sm">
-        <img src="https://picsum.photos/seed/painting-1/1200/675" alt="Professional mobile car detailing service in Atlanta, Georgia" class="w-full h-full object-cover">
-      </div>
-      <!-- Stats Row -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl">
-        <div class="stat-card">
-          <div class="flex justify-center mb-3">
-            <i data-lucide="star" class="w-10 h-10 text-[#002f4d]"></i>
+  <section id="home" class="reveal pt-36 pb-20 md:pt-44 md:pb-24 px-5 md:px-8 lg:px-12 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <!-- Left: Copy -->
+        <div class="lg:col-span-7">
+          <div class="flex items-center gap-3 mb-8">
+            <span class="section-num">/ 00 — INTRO</span>
+            <div class="hero-line"></div>
+            <span class="eyebrow">Atlanta, GA</span>
           </div>
-          <div class="text-4xl font-bold text-[#1C1E1D] display-font mb-1" data-count="71" data-suffix="+">71+</div>
-          <div class="text-xs tracking-widest uppercase text-stone-500 font-medium">5-Star Reviews</div>
+          <h1 class="text-5xl md:text-6xl lg:text-7xl leading-[0.95] mb-8" style="color: var(--white);">
+            Showroom shine.<br>
+            <span class="display-italic" style="color: var(--accent);">Delivered to your door.</span>
+          </h1>
+          <p class="text-lg leading-relaxed mb-10 max-w-xl" style="color: var(--text-muted);">
+            Premium mobile detailing inside I-285. Ceramic coatings, paint correction, and deep interior cleans — all performed at your home or office, with our own water and power.
+          </p>
+          <div class="flex flex-wrap gap-4 mb-12">
+            <a href="#contact" class="btn btn-primary">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+              Free Estimate
+            </a>
+            <a href="#services" class="btn btn-ghost">
+              View Services
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+          <div class="grid grid-cols-3 gap-3 max-w-xl">
+            <div class="stat-card">
+              <div class="text-3xl heading mb-1" style="color: var(--white);">71<span style="color: var(--accent);">+</span></div>
+              <div class="text-[10px] tracking-[0.18em] uppercase" style="color: var(--text-dim);">5-Star Reviews</div>
+            </div>
+            <div class="stat-card">
+              <div class="text-3xl heading mb-1" style="color: var(--white);">5.0<span style="color: var(--accent); font-size: 0.6em;"> ★</span></div>
+              <div class="text-[10px] tracking-[0.18em] uppercase" style="color: var(--text-dim);">Avg Rating</div>
+            </div>
+            <div class="stat-card">
+              <div class="text-3xl heading mb-1" style="color: var(--white);">I-285</div>
+              <div class="text-[10px] tracking-[0.18em] uppercase" style="color: var(--text-dim);">Service Zone</div>
+            </div>
+          </div>
         </div>
-        <div class="stat-card">
-          <div class="flex justify-center mb-3">
-            <i data-lucide="map-pin" class="w-10 h-10 text-[#002f4d]"></i>
+        <!-- Right: Floating Tire -->
+        <div class="lg:col-span-5 relative flex items-center justify-center" style="min-height: 500px;">
+          <div class="tire-glow"></div>
+          <img src="./assets1/tire.png" alt="Premium tire — Revived Rides specializes in detail down to every wheel" class="tire-float relative z-10 w-full max-w-[480px] mx-auto" style="filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.8));">
+          <!-- Decorative ring -->
+          <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div style="width: 90%; max-width: 500px; aspect-ratio: 1; border: 1px solid var(--border); border-radius: 50%; opacity: 0.4;"></div>
           </div>
-          <div class="text-4xl font-bold text-[#1C1E1D] display-font mb-1" data-count="285" data-suffix="">I-285</div>
-          <div class="text-xs tracking-widest uppercase text-stone-500 font-medium">Service Area</div>
-        </div>
-        <div class="stat-card">
-          <div class="flex justify-center mb-3">
-            <i data-lucide="shield-check" class="w-10 h-10 text-[#002f4d]"></i>
+          <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div style="width: 75%; max-width: 420px; aspect-ratio: 1; border: 1px dashed var(--accent-deep); border-radius: 50%; opacity: 0.3;"></div>
           </div>
-          <div class="text-4xl font-bold text-[#1C1E1D] display-font mb-1" data-count="100" data-suffix="%">100%</div>
-          <div class="text-xs tracking-widest uppercase text-stone-500 font-medium">Satisfaction Focus</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-[#FAFAF8]">
+  <!-- TRUST MARQUEE -->
+  <section class="py-6 border-y overflow-hidden" style="border-color: var(--border-soft); background: var(--bg-2);">
+    <div class="marquee-track whitespace-nowrap">
+      <div class="flex items-center gap-16 px-8 text-sm" style="color: var(--text-muted);"><span class="flex items-center gap-2 whitespace-nowrap"><i data-lucide="check-circle" class="w-4 h-4" style="color: var(--accent);"></i> Locally Owned</span><span class="flex items-center gap-2 whitespace-nowrap"><i data-lucide="droplets" class="w-4 h-4" style="color: var(--accent);"></i> We Bring Water & Power</span><span class="flex items-center gap-2 whitespace-nowrap"><i data-lucide="map-pin" class="w-4 h-4" style="color: var(--accent);"></i> Inside I-285</span><span class="flex items-center gap-2 whitespace-nowrap"><i data-lucide="star" class="w-4 h-4" style="color: var(--accent);"></i> 5.0 Rating</span><span class="flex items-center gap-2 whitespace-nowrap"><i data-lucide="shield-check" class="w-4 h-4" style="color: var(--accent);"></i> Pro-Grade Products</span><span class="flex items-center gap-2 whitespace-nowrap"><i data-lucide="clock" class="w-4 h-4" style="color: var(--accent);"></i> On-Time, On-Site</span></div>
+      <div class="flex items-center gap-16 px-8 text-sm" style="color: var(--text-muted);"><span class="flex items-center gap-2 whitespace-nowrap"><i data-lucide="check-circle" class="w-4 h-4" style="color: var(--accent);"></i> Locally Owned</span><span class="flex items-center gap-2 whitespace-nowrap"><i data-lucide="droplets" class="w-4 h-4" style="color: var(--accent);"></i> We Bring Water & Power</span><span class="flex items-center gap-2 whitespace-nowrap"><i data-lucide="map-pin" class="w-4 h-4" style="color: var(--accent);"></i> Inside I-285</span><span class="flex items-center gap-2 whitespace-nowrap"><i data-lucide="star" class="w-4 h-4" style="color: var(--accent);"></i> 5.0 Rating</span><span class="flex items-center gap-2 whitespace-nowrap"><i data-lucide="shield-check" class="w-4 h-4" style="color: var(--accent);"></i> Pro-Grade Products</span><span class="flex items-center gap-2 whitespace-nowrap"><i data-lucide="clock" class="w-4 h-4" style="color: var(--accent);"></i> On-Time, On-Site</span></div>
+    </div>
+  </section>
+
+  <!-- ABOUT / OWNERS -->
+  <section id="about" class="reveal py-24 md:py-32 px-5 md:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <!-- Left: Image -->
-        <div class="relative">
-          <div class="img-hover-wrap rounded-2xl overflow-hidden" style="aspect-ratio:4/5;">
-            <img src="https://picsum.photos/seed/painting-2/800/1000" alt="Revived Rides detailer performing professional mobile car detailing in Atlanta" class="w-full h-full object-cover">
-          </div>
-          <!-- Credential card -->
-          <div class="absolute bottom-6 right-[-1rem] md:right-[-2rem] bg-white border border-[#D5D7D3] rounded-2xl p-5 max-w-[220px] shadow-sm">
-            <div class="flex items-center gap-2 mb-2">
-              <i data-lucide="check-circle" class="w-5 h-5 text-[#002f4d]"></i>
-              <span class="text-xs font-600 tracking-wider uppercase text-[#002f4d]">Locally Owned</span>
+      <div class="grid lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-7">
+          <div class="owners-frame">
+            <div class="img-zoom rounded-sm overflow-hidden border" style="border-color: var(--border);">
+              <img src="./assets1/owners.jpg" alt="Revived Rides Mobile Detailing owners with their fully equipped mobile detailing rig in Atlanta" class="w-full h-auto object-cover">
             </div>
-            <p class="text-sm text-stone-600 leading-snug">Based in Atlanta — proud to serve our community from the inside out.</p>
           </div>
-          <!-- Corner stamp -->
-          <div class="absolute top-6 left-6 bg-[#002f4d] text-white rounded-sm px-3 py-2">
-            <span class="text-xs font-semibold tracking-wider uppercase">ATL Native</span>
+          <div class="mt-5 flex items-center justify-between text-xs mono" style="color: var(--text-dim);">
+            <span>FILE / 002</span>
+            <span>THE FOUNDERS · ATL</span>
+            <span>FULLY EQUIPPED RIG</span>
           </div>
         </div>
-        <!-- Right: Content -->
-        <div>
-          <div class="section-num mb-2">/ 02</div>
-          <p class="eyebrow-label mb-4">About Us</p>
-          <h2 class="text-4xl md:text-5xl text-[#1C1E1D] leading-tight mb-6">
-            <span class="italic-display">Precision care,</span> delivered to your door
+        <div class="lg:col-span-5 lg:pl-4">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-num">/ 01 — ABOUT</span>
+            <div class="hero-line"></div>
+          </div>
+          <p class="eyebrow mb-5">Meet the Founders</p>
+          <h2 class="text-4xl md:text-5xl leading-[1.05] mb-8" style="color: var(--white);">
+            Two Atlantans who treat <span class="display-italic" style="color: var(--accent);">your car like ours.</span>
           </h2>
-          <p class="text-base text-stone-600 leading-relaxed max-w-md mb-5">
-            Revived Rides Mobile Detailing is an Atlanta-based detailing studio that brings professional-grade results directly to you. We specialize in full interior and exterior detailing, ceramic coatings, and paint correction — without you ever leaving home.
+          <p class="text-base leading-relaxed mb-5" style="color: var(--text-muted);">
+            Revived Rides was founded by two locals with a shared obsession: making cars look better than the day they rolled off the lot. What started as weekend details for friends became a fully equipped mobile studio serving Atlanta from the inside out.
           </p>
-          <p class="text-base text-stone-600 leading-relaxed max-w-md mb-10">
-            As a locally owned and operated business, we take pride in knowing our city and our clients. Every vehicle is treated with the same care and precision we'd give our own. Our fully equipped mobile setup means no water or power supply needed on your end — just show us to your car.
+          <p class="text-base leading-relaxed mb-10" style="color: var(--text-muted);">
+            Every job is owner-operated. No subcontractors, no shortcuts. We bring our own water, power, and pro-grade products — you just point us to your driveway.
           </p>
-          <!-- Mini stat row -->
-          <div class="grid grid-cols-3 gap-4 hairline-rule pt-8">
+          <div class="grid grid-cols-2 gap-6 pt-8 border-t hairline">
             <div>
-              <div class="text-3xl display-font font-bold text-[#002f4d]" data-count="71" data-suffix="+">71+</div>
-              <div class="text-xs uppercase tracking-widest text-stone-500 mt-1">Happy Clients</div>
+              <div class="flex items-center gap-2 mb-3">
+                <i data-lucide="users" class="w-4 h-4" style="color: var(--accent);"></i>
+                <span class="text-xs uppercase tracking-widest" style="color: var(--white);">Owner-Operated</span>
+              </div>
+              <p class="text-sm" style="color: var(--text-muted);">Every detail performed by the founders themselves.</p>
             </div>
-            <div class="border-l border-[#D5D7D3] pl-4">
-              <div class="text-3xl display-font font-bold text-[#002f4d]">5.0</div>
-              <div class="text-xs uppercase tracking-widest text-stone-500 mt-1">Avg Rating</div>
-            </div>
-            <div class="border-l border-[#D5D7D3] pl-4">
-              <div class="text-3xl display-font font-bold text-[#002f4d]">ATL</div>
-              <div class="text-xs uppercase tracking-widest text-stone-500 mt-1">Home Base</div>
+            <div>
+              <div class="flex items-center gap-2 mb-3">
+                <i data-lucide="map-pin" class="w-4 h-4" style="color: var(--accent);"></i>
+                <span class="text-xs uppercase tracking-widest" style="color: var(--white);">ATL Native</span>
+              </div>
+              <p class="text-sm" style="color: var(--text-muted);">Born and based in Atlanta. Inside I-285 daily.</p>
             </div>
           </div>
         </div>
@@ -240,196 +454,224 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-[#F2F1EC]">
+  <!-- SERVICES (LIGHT SECTION FOR CONTRAST) -->
+  <section id="services" class="reveal py-24 md:py-32 px-5 md:px-8 lg:px-12 relative" style="background: var(--bg-light); color: var(--text-on-light);">
+    <!-- Top accent bar -->
+    <div class="absolute top-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, var(--accent-deep), transparent);"></div>
     <div class="max-w-7xl mx-auto">
-      <div class="mb-12">
-        <div class="section-num mb-2">/ 03</div>
-        <p class="eyebrow-label mb-4">Services</p>
-        <h2 class="text-4xl md:text-5xl text-[#1C1E1D] leading-tight max-w-2xl">
-          <span class="italic-display">What we offer</span> for your vehicle
-        </h2>
-      </div>
-      <!-- Tab Buttons -->
-      <div class="flex flex-wrap gap-2 md:flex-nowrap mb-10 tabs-container">
-        <button type="button" class="tab-btn active-tab flex-1 min-w-0 text-sm md:text-base px-4 py-3 md:px-7 md:py-3.5 rounded-sm font-semibold" data-target="tab-panel-1">Interior Detailing</button>
-        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-4 py-3 md:px-7 md:py-3.5 rounded-sm font-semibold" data-target="tab-panel-2">Exterior Detailing</button>
-        <button type="button" class="tab-btn inactive-tab flex-1 min-w-0 text-sm md:text-base px-4 py-3 md:px-7 md:py-3.5 rounded-sm font-semibold" data-target="tab-panel-3">Specialty Services</button>
+      <div class="grid lg:grid-cols-12 gap-8 mb-14">
+        <div class="lg:col-span-6">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="mono text-xs font-medium" style="color: var(--accent-deep); letter-spacing: 0.04em;">/ 02 — SERVICES</span>
+            <div style="width: 48px; height: 1px; background: linear-gradient(90deg, var(--accent-deep), transparent);"></div>
+          </div>
+          <p class="eyebrow-light mb-5">What We Offer</p>
+          <h2 class="text-4xl md:text-5xl leading-[1.05]" style="color: var(--text-on-light);">
+            From a quick refresh to <span class="display-italic" style="color: var(--accent-deep);">full restoration.</span>
+          </h2>
+        </div>
+        <div class="lg:col-span-5 lg:col-start-8 flex items-end">
+          <p class="text-base leading-relaxed" style="color: var(--text-on-light-muted);">
+            Every package is built around your vehicle's condition and your goals. Browse the categories below, then request a free quote — we'll recommend the right level of care.
+          </p>
+        </div>
       </div>
 
-      <!-- Tab Panel 1 -->
+      <!-- Tabs (light variant) -->
+      <div class="flex flex-wrap gap-2 mb-10 border-b pb-5" style="border-color: var(--border-light);">
+        <button type="button" class="tab-btn-light active-tab-light text-xs md:text-sm px-5 py-2.5 rounded-sm font-semibold uppercase tracking-wider" data-target="tab-panel-1">Exterior</button>
+        <button type="button" class="tab-btn-light text-xs md:text-sm px-5 py-2.5 rounded-sm font-semibold uppercase tracking-wider" data-target="tab-panel-2">Interior</button>
+        <button type="button" class="tab-btn-light text-xs md:text-sm px-5 py-2.5 rounded-sm font-semibold uppercase tracking-wider" data-target="tab-panel-3">Specialty</button>
+      </div>
+
       <div id="tab-panel-1" class="tab-panel">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <!-- Card 1 -->
-          <div class="service-card">
-            <div class="text-xs text-stone-400 font-mono mb-4">01 / 04</div>
-            <i data-lucide="sparkles" class="w-12 h-12 text-[#002f4d] mb-4"></i>
-            <h3 class="italic-display text-2xl text-[#1C1E1D] mb-3">Ceramic Coatings</h3>
-            <p class="text-sm text-stone-600 leading-relaxed mb-6">Long-lasting nano-ceramic protection bonds to your vehicle's surface, repelling water, UV rays, and contaminants. Keeps your paint looking fresh for years.</p>
-            <a href="tel:" class="arrow-cta text-sm text-[#002f4d]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"><div class="card-light p-7">
+            <div class="flex items-start justify-between mb-5">
+              <div class="service-icon-light"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="32" r="6"/><circle cx="26" cy="28" r="8"/><circle cx="36" cy="34" r="5"/><circle cx="20" cy="20" r="4" opacity="0.6"/><circle cx="32" cy="18" r="3" opacity="0.4"/><path d="M8 42h32" opacity="0.3"/></svg></div>
+              <div class="text-xs mono" style="color: var(--text-on-light-muted);">01 / 04</div>
+            </div>
+            <h3 class="text-2xl heading mb-3" style="color: var(--text-on-light);">Hand Wash & Foam</h3>
+            <p class="text-sm leading-relaxed mb-6" style="color: var(--text-on-light-muted);">Two-bucket hand wash with snow foam pre-soak, contact wash with pH-balanced soap, and decontamination — gentle on paint, ruthless on grime.</p>
+            <a href="#contact" class="arrow-cta arrow-cta-light"><span style="color: var(--accent-deep);">Get a Quote</span> <i data-lucide="arrow-right" class="w-4 h-4" style="color: var(--accent-deep);"></i></a>
           </div>
-          <!-- Card 2 -->
-          <div class="service-card">
-            <div class="text-xs text-stone-400 font-mono mb-4">02 / 04</div>
-            <i data-lucide="droplet" class="w-12 h-12 text-[#002f4d] mb-4"></i>
-            <h3 class="italic-display text-2xl text-[#1C1E1D] mb-3">Steam Cleaning</h3>
-            <p class="text-sm text-stone-600 leading-relaxed mb-6">High-temperature steam penetrates deep into fabrics and crevices to sanitize, deodorize, and lift stubborn grime without harsh chemicals.</p>
-            <a href="tel:" class="arrow-cta text-sm text-[#002f4d]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+<div class="card-light p-7">
+            <div class="flex items-start justify-between mb-5">
+              <div class="service-icon-light"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l14 5v12c0 9-6 16-14 19-8-3-14-10-14-19V11l14-5z"/><path d="M18 24l5 5 8-9" stroke-width="1.6"/><circle cx="24" cy="22" r="2" opacity="0.4"/></svg></div>
+              <div class="text-xs mono" style="color: var(--text-on-light-muted);">02 / 04</div>
+            </div>
+            <h3 class="text-2xl heading mb-3" style="color: var(--text-on-light);">Ceramic Coatings</h3>
+            <p class="text-sm leading-relaxed mb-6" style="color: var(--text-on-light-muted);">Long-lasting nano-ceramic protection that bonds to your paint and repels water, UV, and contaminants. Years of gloss in one application.</p>
+            <a href="#contact" class="arrow-cta arrow-cta-light"><span style="color: var(--accent-deep);">Get a Quote</span> <i data-lucide="arrow-right" class="w-4 h-4" style="color: var(--accent-deep);"></i></a>
           </div>
-          <!-- Card 3 -->
-          <div class="service-card">
-            <div class="text-xs text-stone-400 font-mono mb-4">03 / 04</div>
-            <i data-lucide="paintbrush" class="w-12 h-12 text-[#002f4d] mb-4"></i>
-            <h3 class="italic-display text-2xl text-[#1C1E1D] mb-3">Ceramic Coating</h3>
-            <p class="text-sm text-stone-600 leading-relaxed mb-6">Professional-grade ceramic coating application for lasting gloss and protection. We prep, polish, and coat every surface with precision and care.</p>
-            <a href="tel:" class="arrow-cta text-sm text-[#002f4d]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+<div class="card-light p-7">
+            <div class="flex items-start justify-between mb-5">
+              <div class="service-icon-light"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="14"/><circle cx="24" cy="24" r="9" opacity="0.5"/><circle cx="24" cy="24" r="4"/><path d="M24 10v4M24 34v4M10 24h4M34 24h4" opacity="0.4"/><path d="M14 14l3 3M31 31l3 3M34 14l-3 3M17 31l-3 3" opacity="0.3"/></svg></div>
+              <div class="text-xs mono" style="color: var(--text-on-light-muted);">03 / 04</div>
+            </div>
+            <h3 class="text-2xl heading mb-3" style="color: var(--text-on-light);">Paint Correction</h3>
+            <p class="text-sm leading-relaxed mb-6" style="color: var(--text-on-light-muted);">Multi-stage machine polishing to remove swirls, oxidation, and marring. Reveals a deep, mirror-like finish that looks better than new.</p>
+            <a href="#contact" class="arrow-cta arrow-cta-light"><span style="color: var(--accent-deep);">Get a Quote</span> <i data-lucide="arrow-right" class="w-4 h-4" style="color: var(--accent-deep);"></i></a>
           </div>
-          <!-- Card 4 -->
-          <div class="service-card">
-            <div class="text-xs text-stone-400 font-mono mb-4">04 / 04</div>
-            <i data-lucide="palette" class="w-12 h-12 text-[#002f4d] mb-4"></i>
-            <h3 class="italic-display text-2xl text-[#1C1E1D] mb-3">Scratch Removal</h3>
-            <p class="text-sm text-stone-600 leading-relaxed mb-6">Light swirl marks and surface scratches carefully compounded and polished away, restoring your clear coat and returning true depth to your paint.</p>
-            <a href="tel:" class="arrow-cta text-sm text-[#002f4d]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-        </div>
+<div class="card-light p-7">
+            <div class="flex items-start justify-between mb-5">
+              <div class="service-icon-light"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 18c0-2 2-4 4-4h16l8 6v8l-8 6H12c-2 0-4-2-4-4V18z"/><circle cx="24" cy="24" r="5"/><circle cx="24" cy="24" r="2" fill="currentColor"/><path d="M40 18l4-2M40 24h6M40 30l4 2" opacity="0.5"/></svg></div>
+              <div class="text-xs mono" style="color: var(--text-on-light-muted);">04 / 04</div>
+            </div>
+            <h3 class="text-2xl heading mb-3" style="color: var(--text-on-light);">Headlight Restoration</h3>
+            <p class="text-sm leading-relaxed mb-6" style="color: var(--text-on-light-muted);">Yellowed or foggy headlights sanded, polished, and sealed back to crystal clarity — improving both appearance and night-time safety.</p>
+            <a href="#contact" class="arrow-cta arrow-cta-light"><span style="color: var(--accent-deep);">Get a Quote</span> <i data-lucide="arrow-right" class="w-4 h-4" style="color: var(--accent-deep);"></i></a>
+          </div></div>
       </div>
-
-      <!-- Tab Panel 2 -->
       <div id="tab-panel-2" class="tab-panel hidden">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <!-- Card 1 -->
-          <div class="service-card">
-            <div class="text-xs text-stone-400 font-mono mb-4">01 / 04</div>
-            <i data-lucide="spray-can" class="w-12 h-12 text-[#002f4d] mb-4"></i>
-            <h3 class="italic-display text-2xl text-[#1C1E1D] mb-3">Odor Removal</h3>
-            <p class="text-sm text-stone-600 leading-relaxed mb-6">Targeted treatments neutralize smoke, food, pet, and mildew odors at the molecular level, leaving your cabin genuinely fresh — not just masked.</p>
-            <a href="tel:" class="arrow-cta text-sm text-[#002f4d]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"><div class="card-light p-7">
+            <div class="flex items-start justify-between mb-5">
+              <div class="service-icon-light"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 38h16c2 0 4-2 4-4v-6c0-3-2-5-4-5H16c-2 0-4 2-4 5v6c0 2 2 4 4 4z"/><path d="M14 23v-3"/><path d="M20 8c0 3 2 4 2 7s-2 4-2 7" opacity="0.7"/><path d="M28 6c0 3 2 4 2 7s-2 4-2 7" opacity="0.5"/><path d="M34 10c0 2 2 3 2 5s-2 3-2 5" opacity="0.4"/></svg></div>
+              <div class="text-xs mono" style="color: var(--text-on-light-muted);">01 / 04</div>
+            </div>
+            <h3 class="text-2xl heading mb-3" style="color: var(--text-on-light);">Steam Cleaning</h3>
+            <p class="text-sm leading-relaxed mb-6" style="color: var(--text-on-light-muted);">High-temperature steam penetrates deep into fabrics, vents, and crevices to sanitize, deodorize, and lift stubborn grime — no harsh chemicals.</p>
+            <a href="#contact" class="arrow-cta arrow-cta-light"><span style="color: var(--accent-deep);">Get a Quote</span> <i data-lucide="arrow-right" class="w-4 h-4" style="color: var(--accent-deep);"></i></a>
           </div>
-          <!-- Card 2 -->
-          <div class="service-card">
-            <div class="text-xs text-stone-400 font-mono mb-4">02 / 04</div>
-            <i data-lucide="brush" class="w-12 h-12 text-[#002f4d] mb-4"></i>
-            <h3 class="italic-display text-2xl text-[#1C1E1D] mb-3">Engine Bay Cleaning</h3>
-            <p class="text-sm text-stone-600 leading-relaxed mb-6">Careful degreasing and detailing of your engine bay improves presentation, helps spot leaks, and keeps components cleaner for longer service life.</p>
-            <a href="tel:" class="arrow-cta text-sm text-[#002f4d]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+<div class="card-light p-7">
+            <div class="flex items-start justify-between mb-5">
+              <div class="service-icon-light"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10c0-2 2-4 4-4h12c2 0 4 2 4 4v18H14V10z"/><path d="M12 28h24v8c0 2-2 4-4 4H16c-2 0-4-2-4-4v-8z"/><path d="M14 40v3M34 40v3"/><path d="M19 14h10M19 19h10M19 24h10" opacity="0.4"/></svg></div>
+              <div class="text-xs mono" style="color: var(--text-on-light-muted);">02 / 04</div>
+            </div>
+            <h3 class="text-2xl heading mb-3" style="color: var(--text-on-light);">Upholstery & Leather</h3>
+            <p class="text-sm leading-relaxed mb-6" style="color: var(--text-on-light-muted);">Deep extraction for fabric, full conditioning for leather. Removes stains, bacteria, and allergens while preserving the material.</p>
+            <a href="#contact" class="arrow-cta arrow-cta-light"><span style="color: var(--accent-deep);">Get a Quote</span> <i data-lucide="arrow-right" class="w-4 h-4" style="color: var(--accent-deep);"></i></a>
           </div>
-          <!-- Card 3 -->
-          <div class="service-card">
-            <div class="text-xs text-stone-400 font-mono mb-4">03 / 04</div>
-            <i data-lucide="sparkles" class="w-12 h-12 text-[#002f4d] mb-4"></i>
-            <h3 class="italic-display text-2xl text-[#1C1E1D] mb-3">Headlight Restoration</h3>
-            <p class="text-sm text-stone-600 leading-relaxed mb-6">Yellowed or foggy headlights sanded, polished, and sealed back to crystal clarity — improving both the appearance and safety of your vehicle.</p>
-            <a href="tel:" class="arrow-cta text-sm text-[#002f4d]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+<div class="card-light p-7">
+            <div class="flex items-start justify-between mb-5">
+              <div class="service-icon-light"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="14" cy="18" rx="3" ry="4"/><ellipse cx="34" cy="18" rx="3" ry="4"/><ellipse cx="20" cy="11" rx="2.5" ry="3.5"/><ellipse cx="28" cy="11" rx="2.5" ry="3.5"/><path d="M24 22c-5 0-9 3-9 8 0 4 3 6 5 6h8c2 0 5-2 5-6 0-5-4-8-9-8z"/></svg></div>
+              <div class="text-xs mono" style="color: var(--text-on-light-muted);">03 / 04</div>
+            </div>
+            <h3 class="text-2xl heading mb-3" style="color: var(--text-on-light);">Pet Hair Removal</h3>
+            <p class="text-sm leading-relaxed mb-6" style="color: var(--text-on-light-muted);">Embedded pet hair professionally extracted from carpets and upholstery using specialized tools. Truly fur-free, not just surface-clean.</p>
+            <a href="#contact" class="arrow-cta arrow-cta-light"><span style="color: var(--accent-deep);">Get a Quote</span> <i data-lucide="arrow-right" class="w-4 h-4" style="color: var(--accent-deep);"></i></a>
           </div>
-          <!-- Card 4 -->
-          <div class="service-card">
-            <div class="text-xs text-stone-400 font-mono mb-4">04 / 04</div>
-            <i data-lucide="heart" class="w-12 h-12 text-[#002f4d] mb-4"></i>
-            <h3 class="italic-display text-2xl text-[#1C1E1D] mb-3">Pet Hair Removal</h3>
-            <p class="text-sm text-stone-600 leading-relaxed mb-6">Thorough extraction of embedded pet hair from upholstery and carpets using professional-grade tools, leaving interiors genuinely fur-free.</p>
-            <a href="tel:" class="arrow-cta text-sm text-[#002f4d]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-        </div>
+<div class="card-light p-7">
+            <div class="flex items-start justify-between mb-5">
+              <div class="service-icon-light"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18c2-2 4-2 6 0s4 2 6 0 4-2 6 0 4 2 6 0 4-2 6 0 4 2 6 0"/><path d="M6 26c2-2 4-2 6 0s4 2 6 0 4-2 6 0 4 2 6 0 4-2 6 0 4 2 6 0" opacity="0.6"/><path d="M6 34c2-2 4-2 6 0s4 2 6 0 4-2 6 0 4 2 6 0 4-2 6 0 4 2 6 0" opacity="0.3"/></svg></div>
+              <div class="text-xs mono" style="color: var(--text-on-light-muted);">04 / 04</div>
+            </div>
+            <h3 class="text-2xl heading mb-3" style="color: var(--text-on-light);">Odor Neutralization</h3>
+            <p class="text-sm leading-relaxed mb-6" style="color: var(--text-on-light-muted);">Targeted treatments eliminate smoke, food, pet, and mildew odors at the molecular level. Genuinely fresh — never just masked.</p>
+            <a href="#contact" class="arrow-cta arrow-cta-light"><span style="color: var(--accent-deep);">Get a Quote</span> <i data-lucide="arrow-right" class="w-4 h-4" style="color: var(--accent-deep);"></i></a>
+          </div></div>
       </div>
-
-      <!-- Tab Panel 3 -->
       <div id="tab-panel-3" class="tab-panel hidden">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <!-- Card 1 -->
-          <div class="service-card">
-            <div class="text-xs text-stone-400 font-mono mb-4">01 / 04</div>
-            <i data-lucide="sparkles" class="w-12 h-12 text-[#002f4d] mb-4"></i>
-            <h3 class="italic-display text-2xl text-[#1C1E1D] mb-3">Upholstery Cleaning</h3>
-            <p class="text-sm text-stone-600 leading-relaxed mb-6">Deep extraction cleaning for fabric and leather seating surfaces, removing stains, bacteria, and allergens while preserving the material's integrity.</p>
-            <a href="tel:" class="arrow-cta text-sm text-[#002f4d]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"><div class="card-light p-7">
+            <div class="flex items-start justify-between mb-5">
+              <div class="service-icon-light"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l16 8v20l-16 8L8 34V14l16-8z"/><path d="M8 14l16 8 16-8"/><path d="M24 22v20"/><path d="M16 10l16 8" opacity="0.4"/></svg></div>
+              <div class="text-xs mono" style="color: var(--text-on-light-muted);">01 / 04</div>
+            </div>
+            <h3 class="text-2xl heading mb-3" style="color: var(--text-on-light);">Full Detail Package</h3>
+            <p class="text-sm leading-relaxed mb-6" style="color: var(--text-on-light-muted);">Our flagship service. Complete interior steam clean plus exterior wash, clay bar, polish, and protective sealant — all in one visit.</p>
+            <a href="#contact" class="arrow-cta arrow-cta-light"><span style="color: var(--accent-deep);">Get a Quote</span> <i data-lucide="arrow-right" class="w-4 h-4" style="color: var(--accent-deep);"></i></a>
           </div>
-          <!-- Card 2 -->
-          <div class="service-card">
-            <div class="text-xs text-stone-400 font-mono mb-4">02 / 04</div>
-            <i data-lucide="paint-bucket" class="w-12 h-12 text-[#002f4d] mb-4"></i>
-            <h3 class="italic-display text-2xl text-[#1C1E1D] mb-3">Paint Correction</h3>
-            <p class="text-sm text-stone-600 leading-relaxed mb-6">Multi-stage machine polishing to remove swirls, oxidation, and marring from your paintwork, revealing a mirror-like finish underneath.</p>
-            <a href="tel:" class="arrow-cta text-sm text-[#002f4d]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+<div class="card-light p-7">
+            <div class="flex items-start justify-between mb-5">
+              <div class="service-icon-light"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="18" width="28" height="16" rx="1"/><path d="M14 18v-4h6v4M28 18v-4h6v4"/><path d="M10 24h-3v4h3M38 24h3v4h-3"/><circle cx="18" cy="26" r="2"/><circle cx="30" cy="26" r="2"/><path d="M14 34v3M34 34v3"/></svg></div>
+              <div class="text-xs mono" style="color: var(--text-on-light-muted);">02 / 04</div>
+            </div>
+            <h3 class="text-2xl heading mb-3" style="color: var(--text-on-light);">Engine Bay Detail</h3>
+            <p class="text-sm leading-relaxed mb-6" style="color: var(--text-on-light-muted);">Careful degreasing and dressing of your engine bay. Improves presentation, helps spot leaks, and keeps components running cleaner longer.</p>
+            <a href="#contact" class="arrow-cta arrow-cta-light"><span style="color: var(--accent-deep);">Get a Quote</span> <i data-lucide="arrow-right" class="w-4 h-4" style="color: var(--accent-deep);"></i></a>
           </div>
-          <!-- Card 3 -->
-          <div class="service-card">
-            <div class="text-xs text-stone-400 font-mono mb-4">03 / 04</div>
-            <i data-lucide="paint-roller" class="w-12 h-12 text-[#002f4d] mb-4"></i>
-            <h3 class="italic-display text-2xl text-[#1C1E1D] mb-3">Full Detail Package</h3>
-            <p class="text-sm text-stone-600 leading-relaxed mb-6">Our comprehensive service combines thorough interior deep cleaning with exterior wash, clay bar treatment, and protective sealant in one visit.</p>
-            <a href="tel:" class="arrow-cta text-sm text-[#002f4d]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+<div class="card-light p-7">
+            <div class="flex items-start justify-between mb-5">
+              <div class="service-icon-light"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 28h6l3-8h14l3 8h6v6c0 1-1 2-2 2h-2"/><circle cx="14" cy="36" r="3"/><circle cx="32" cy="36" r="3"/><path d="M17 36h12"/><path d="M30 22h8l4 6v8h-3" opacity="0.5"/></svg></div>
+              <div class="text-xs mono" style="color: var(--text-on-light-muted);">03 / 04</div>
+            </div>
+            <h3 class="text-2xl heading mb-3" style="color: var(--text-on-light);">Fleet & Dealership</h3>
+            <p class="text-sm leading-relaxed mb-6" style="color: var(--text-on-light-muted);">Tailored detailing programs for dealerships and commercial fleets. Keep inventory presentation-ready with consistent, scheduled service.</p>
+            <a href="#contact" class="arrow-cta arrow-cta-light"><span style="color: var(--accent-deep);">Get a Quote</span> <i data-lucide="arrow-right" class="w-4 h-4" style="color: var(--accent-deep);"></i></a>
           </div>
-          <!-- Card 4 -->
-          <div class="service-card">
-            <div class="text-xs text-stone-400 font-mono mb-4">04 / 04</div>
-            <i data-lucide="shield-check" class="w-12 h-12 text-[#002f4d] mb-4"></i>
-            <h3 class="italic-display text-2xl text-[#1C1E1D] mb-3">Fleet & Dealership</h3>
-            <p class="text-sm text-stone-600 leading-relaxed mb-6">Tailored detailing programs for dealerships and commercial fleets, keeping your entire inventory or vehicle fleet presentation-ready at all times.</p>
-            <a href="tel:" class="arrow-cta text-sm text-[#002f4d]">Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-          </div>
-        </div>
+<div class="card-light p-7">
+            <div class="flex items-start justify-between mb-5">
+              <div class="service-icon-light"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="20" width="32" height="20" rx="1"/><path d="M6 14h36v6H6z"/><path d="M24 14v26"/><path d="M24 14c-4 0-7-2-7-5s2-4 4-4 3 2 3 4M24 14c4 0 7-2 7-5s-2-4-4-4-3 2-3 4"/></svg></div>
+              <div class="text-xs mono" style="color: var(--text-on-light-muted);">04 / 04</div>
+            </div>
+            <h3 class="text-2xl heading mb-3" style="color: var(--text-on-light);">Gift Certificates</h3>
+            <p class="text-sm leading-relaxed mb-6" style="color: var(--text-on-light-muted);">The best gift for the car person in your life. Customizable amounts redeemable across any service. Perfect for birthdays and holidays.</p>
+            <a href="#contact" class="arrow-cta arrow-cta-light"><span style="color: var(--accent-deep);">Get a Quote</span> <i data-lucide="arrow-right" class="w-4 h-4" style="color: var(--accent-deep);"></i></a>
+          </div></div>
       </div>
     </div>
+    <style>
+      .tab-btn-light {
+        cursor: pointer; transition: all 0.25s ease; letter-spacing: 0.04em;
+        background: var(--white); color: var(--text-on-light-muted);
+        border: 1px solid var(--border-light);
+      }
+      .tab-btn-light.active-tab-light {
+        background: var(--bg); color: var(--white); border-color: var(--bg);
+      }
+    </style>
   </section>
 
   <!-- GALLERY -->
-  <section id="gallery" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-[#FAFAF8]">
+  <section id="gallery" class="reveal py-24 md:py-32 px-5 md:px-8 lg:px-12">
     <div class="max-w-7xl mx-auto">
-      <div class="mb-12">
-        <div class="section-num mb-2">/ 04</div>
-        <p class="eyebrow-label mb-4">Our Work</p>
-        <h2 class="text-4xl md:text-5xl text-[#1C1E1D] leading-tight max-w-xl">
-          <span class="italic-display">Revived Rides</span> in action
-        </h2>
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-num">/ 03 — WORK</span>
+            <div class="hero-line"></div>
+          </div>
+          <p class="eyebrow mb-5">In the Field</p>
+          <h2 class="text-4xl md:text-5xl leading-[1.05] max-w-2xl" style="color: var(--white);">
+            Recent details from <span class="display-italic" style="color: var(--accent);">Atlanta driveways.</span>
+          </h2>
+        </div>
+        <a href="#contact" class="arrow-cta">Book your detail <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
       </div>
-      <div class="columns-1 md:columns-3 gap-6 space-y-6">
-        <div class="gallery-item break-inside-avoid mb-6">
-          <img src="https://picsum.photos/seed/painting-1/800/600" alt="Mobile car detailing service in progress in Atlanta neighborhood" class="w-full rounded-2xl object-cover">
-          <div class="gallery-caption rounded-b-2xl">
-            <p class="italic-display text-white text-sm">Ceramic coating application</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+        <div class="md:col-span-7 md:row-span-2">
+          <div class="gallery-item h-full">
+            <img src="./assets1/foam-wash.jpg" alt="Black sports car receiving foam wash in golden hour Atlanta light" class="w-full h-full object-cover" style="min-height: 400px;">
+            <div class="gallery-caption">
+              <p class="display-italic text-2xl mb-1" style="color: var(--white);">Foam wash & decontamination</p>
+              <p class="text-xs mono" style="color: var(--accent);">EXTERIOR · STAGE 01</p>
+            </div>
           </div>
         </div>
-        <div class="gallery-item break-inside-avoid mb-6">
-          <img src="https://picsum.photos/seed/painting-2/800/1000" alt="Interior detailing and steam cleaning of vehicle cabin" class="w-full rounded-2xl object-cover">
-          <div class="gallery-caption rounded-b-2xl">
-            <p class="italic-display text-white text-sm">Interior steam clean & refresh</p>
+        <div class="md:col-span-5">
+          <div class="gallery-item">
+            <img src="./assets1/interior-detail.jpg" alt="Detailed interior cleaning of a luxury car dashboard with a precision brush" class="w-full h-full object-cover" style="aspect-ratio: 4/3;">
+            <div class="gallery-caption">
+              <p class="display-italic text-xl mb-1" style="color: var(--white);">Interior precision detail</p>
+              <p class="text-xs mono" style="color: var(--accent);">INTERIOR · DASH</p>
+            </div>
           </div>
         </div>
-        <div class="gallery-item break-inside-avoid mb-6">
-          <img src="https://picsum.photos/seed/painting-3/800/700" alt="Paint correction and swirl removal on luxury sedan in Atlanta" class="w-full rounded-2xl object-cover">
-          <div class="gallery-caption rounded-b-2xl">
-            <p class="italic-display text-white text-sm">Paint correction detail</p>
+        <div class="md:col-span-5">
+          <div class="gallery-item">
+            <img src="./assets1/driveway-setup.jpg" alt="Mobile car detailing setup ready in a residential Atlanta driveway" class="w-full h-full object-cover" style="aspect-ratio: 4/3;">
+            <div class="gallery-caption">
+              <p class="display-italic text-xl mb-1" style="color: var(--white);">Driveway service · ready</p>
+              <p class="text-xs mono" style="color: var(--accent);">MOBILE · ON-SITE</p>
+            </div>
           </div>
         </div>
-        <div class="gallery-item break-inside-avoid mb-6">
-          <img src="https://picsum.photos/seed/painting-4/800/600" alt="Exterior wash and clay bar treatment on SUV in Buckhead Atlanta" class="w-full rounded-2xl object-cover">
-          <div class="gallery-caption rounded-b-2xl">
-            <p class="italic-display text-white text-sm">Full exterior clay & seal</p>
+        <div class="md:col-span-6">
+          <div class="gallery-item">
+            <img src="./assets1/wheel-wash.jpg" alt="Wheel and brake caliper detailing on a BMW vehicle" class="w-full h-full object-cover" style="aspect-ratio: 16/10;">
+            <div class="gallery-caption">
+              <p class="display-italic text-xl mb-1" style="color: var(--white);">Wheel & caliper detail</p>
+              <p class="text-xs mono" style="color: var(--accent);">EXTERIOR · WHEELS</p>
+            </div>
           </div>
         </div>
-        <div class="gallery-item break-inside-avoid mb-6">
-          <img src="https://picsum.photos/seed/painting-5/800/900" alt="Headlight restoration before and after on a vehicle in Atlanta" class="w-full rounded-2xl object-cover">
-          <div class="gallery-caption rounded-b-2xl">
-            <p class="italic-display text-white text-sm">Headlight restoration</p>
-          </div>
-        </div>
-        <div class="gallery-item break-inside-avoid mb-6">
-          <img src="https://picsum.photos/seed/painting-6/800/600" alt="Engine bay detailing and degreasing service in Atlanta Georgia" class="w-full rounded-2xl object-cover">
-          <div class="gallery-caption rounded-b-2xl">
-            <p class="italic-display text-white text-sm">Engine bay clean & dress</p>
-          </div>
-        </div>
-        <div class="gallery-item break-inside-avoid mb-6">
-          <img src="https://picsum.photos/seed/painting-7/800/700" alt="Leather upholstery cleaning and conditioning on luxury vehicle" class="w-full rounded-2xl object-cover">
-          <div class="gallery-caption rounded-b-2xl">
-            <p class="italic-display text-white text-sm">Upholstery deep clean</p>
-          </div>
-        </div>
-        <div class="gallery-item break-inside-avoid mb-6">
-          <img src="https://picsum.photos/seed/painting-8/800/600" alt="Mobile detailing van equipped and ready to serve Atlanta customers" class="w-full rounded-2xl object-cover">
-          <div class="gallery-caption rounded-b-2xl">
-            <p class="italic-display text-white text-sm">Fully equipped mobile studio</p>
+        <div class="md:col-span-6">
+          <div class="gallery-item">
+            <img src="./assets1/owners.jpg" alt="Revived Rides team and fully equipped mobile detailing rig" class="w-full h-full object-cover" style="aspect-ratio: 16/10;">
+            <div class="gallery-caption">
+              <p class="display-italic text-xl mb-1" style="color: var(--white);">Fully equipped rig</p>
+              <p class="text-xs mono" style="color: var(--accent);">THE TEAM</p>
+            </div>
           </div>
         </div>
       </div>
@@ -437,308 +679,329 @@
   </section>
 
   <!-- REVIEWS -->
-  <section id="reviews" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-[#F2F1EC]">
+  <section id="reviews" class="reveal py-24 md:py-32 px-5 md:px-8 lg:px-12 border-t" style="border-color: var(--border-soft);">
     <div class="max-w-7xl mx-auto">
-      <div class="mb-12">
-        <div class="section-num mb-2">/ 05</div>
-        <p class="eyebrow-label mb-4">Client Reviews</p>
-        <h2 class="text-4xl md:text-5xl text-[#1C1E1D] leading-tight max-w-xl">
-          What <span class="italic-display">Atlanta says</span> about us
-        </h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Review 1 -->
-        <div class="bg-white border border-[#D5D7D3] rounded-2xl p-8">
-          <div class="flex gap-1 mb-4">
-            <i data-lucide="star" class="w-4 h-4 fill-[#002f4d] text-[#002f4d]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#002f4d] text-[#002f4d]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#002f4d] text-[#002f4d]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#002f4d] text-[#002f4d]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#002f4d] text-[#002f4d]"></i>
+      <div class="grid lg:grid-cols-12 gap-8 mb-14">
+        <div class="lg:col-span-7">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-num">/ 04 — REVIEWS</span>
+            <div class="hero-line"></div>
           </div>
-          <p class="italic-display text-lg text-[#1C1E1D] leading-relaxed mb-6">"I had my car detailed in my own driveway and it came back looking brand new. The ceramic coating they applied is absolutely flawless. I can't imagine going to a shop again."</p>
-          <div class="hairline-rule pt-4">
-            <div class="font-semibold text-sm text-[#1C1E1D]">Marcus T.</div>
-            <div class="text-xs text-stone-500 mt-0.5">Buckhead, Atlanta</div>
-          </div>
+          <p class="eyebrow mb-5">What Atlanta Says</p>
+          <h2 class="text-4xl md:text-5xl leading-[1.05]" style="color: var(--white);">
+            71+ five-star reviews. <span class="display-italic" style="color: var(--accent);">Zero shortcuts.</span>
+          </h2>
         </div>
-        <!-- Review 2 -->
-        <div class="bg-white border border-[#D5D7D3] rounded-2xl p-8">
-          <div class="flex gap-1 mb-4">
-            <i data-lucide="star" class="w-4 h-4 fill-[#002f4d] text-[#002f4d]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#002f4d] text-[#002f4d]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#002f4d] text-[#002f4d]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#002f4d] text-[#002f4d]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#002f4d] text-[#002f4d]"></i>
-          </div>
-          <p class="italic-display text-lg text-[#1C1E1D] leading-relaxed mb-6">"My dog absolutely destroyed the back seats. Revived Rides came out, removed every trace of pet hair, and did a steam clean that made it smell better than when I bought it. Incredible service."</p>
-          <div class="hairline-rule pt-4">
-            <div class="font-semibold text-sm text-[#1C1E1D]">Jasmine R.</div>
-            <div class="text-xs text-stone-500 mt-0.5">East Atlanta Village</div>
-          </div>
-        </div>
-        <!-- Review 3 -->
-        <div class="bg-white border border-[#D5D7D3] rounded-2xl p-8">
-          <div class="flex gap-1 mb-4">
-            <i data-lucide="star" class="w-4 h-4 fill-[#002f4d] text-[#002f4d]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#002f4d] text-[#002f4d]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#002f4d] text-[#002f4d]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#002f4d] text-[#002f4d]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#002f4d] text-[#002f4d]"></i>
-          </div>
-          <p class="italic-display text-lg text-[#1C1E1D] leading-relaxed mb-6">"The paint correction on my BMW was stunning. I had been living with swirl marks for two years and wrote them off as permanent. One visit from Revived Rides and they were completely gone."</p>
-          <div class="hairline-rule pt-4">
-            <div class="font-semibold text-sm text-[#1C1E1D]">Devon K.</div>
-            <div class="text-xs text-stone-500 mt-0.5">Midtown Atlanta</div>
-          </div>
-        </div>
-        <!-- Review 4 -->
-        <div class="bg-white border border-[#D5D7D3] rounded-2xl p-8">
-          <div class="flex gap-1 mb-4">
-            <i data-lucide="star" class="w-4 h-4 fill-[#002f4d] text-[#002f4d]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#002f4d] text-[#002f4d]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#002f4d] text-[#002f4d]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#002f4d] text-[#002f4d]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#002f4d] text-[#002f4d]"></i>
-          </div>
-          <p class="italic-display text-lg text-[#1C1E1D] leading-relaxed mb-6">"Super professional and thorough. They showed up on time, brought all their own equipment, and left my SUV spotless. The mobile convenience alone is worth every penny — I'll never use a car wash again."</p>
-          <div class="hairline-rule pt-4">
-            <div class="font-semibold text-sm text-[#1C1E1D]">Aaliyah M.</div>
-            <div class="text-xs text-stone-500 mt-0.5">Decatur, GA</div>
+        <div class="lg:col-span-4 lg:col-start-9 flex items-end">
+          <div class="flex items-center gap-3">
+            <div class="flex"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
+            <span class="text-sm mono" style="color: var(--text-dim);">5.0 / 5.0</span>
           </div>
         </div>
       </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5"><div class="card p-7 flex flex-col" style="background: var(--bg-2);">
+          <div class="flex gap-1 mb-5"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
+          <span class="quote-mark mb-2 block">"</span>
+          <p class="heading text-base leading-relaxed mb-6 flex-1" style="color: var(--white); font-weight: 400; font-style: normal;">I had my car detailed in my own driveway and it came back looking brand new. The ceramic coating they applied is absolutely flawless. I can't imagine going to a shop again.</p>
+          <div class="border-t hairline pt-4">
+            <div class="text-sm font-semibold" style="color: var(--white);">Marcus T.</div>
+            <div class="text-xs mt-1 mono" style="color: var(--accent);">BUCKHEAD, ATLANTA</div>
+          </div>
+        </div>
+<div class="card p-7 flex flex-col" style="background: var(--bg-2);">
+          <div class="flex gap-1 mb-5"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
+          <span class="quote-mark mb-2 block">"</span>
+          <p class="heading text-base leading-relaxed mb-6 flex-1" style="color: var(--white); font-weight: 400; font-style: normal;">My dog destroyed the back seats. Revived Rides came out, removed every trace of pet hair, and did a steam clean that made it smell better than when I bought it.</p>
+          <div class="border-t hairline pt-4">
+            <div class="text-sm font-semibold" style="color: var(--white);">Jasmine R.</div>
+            <div class="text-xs mt-1 mono" style="color: var(--accent);">EAST ATLANTA VILLAGE</div>
+          </div>
+        </div>
+<div class="card p-7 flex flex-col" style="background: var(--bg-2);">
+          <div class="flex gap-1 mb-5"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
+          <span class="quote-mark mb-2 block">"</span>
+          <p class="heading text-base leading-relaxed mb-6 flex-1" style="color: var(--white); font-weight: 400; font-style: normal;">The paint correction on my BMW was stunning. I had been living with swirl marks for two years and wrote them off as permanent. One visit and they were gone.</p>
+          <div class="border-t hairline pt-4">
+            <div class="text-sm font-semibold" style="color: var(--white);">Devon K.</div>
+            <div class="text-xs mt-1 mono" style="color: var(--accent);">MIDTOWN ATLANTA</div>
+          </div>
+        </div>
+<div class="card p-7 flex flex-col" style="background: var(--bg-2);">
+          <div class="flex gap-1 mb-5"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent);"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
+          <span class="quote-mark mb-2 block">"</span>
+          <p class="heading text-base leading-relaxed mb-6 flex-1" style="color: var(--white); font-weight: 400; font-style: normal;">Super professional and thorough. Showed up on time, brought all their own equipment, and left my SUV spotless. The mobile convenience alone is worth every penny.</p>
+          <div class="border-t hairline pt-4">
+            <div class="text-sm font-semibold" style="color: var(--white);">Aaliyah M.</div>
+            <div class="text-xs mt-1 mono" style="color: var(--accent);">DECATUR, GA</div>
+          </div>
+        </div></div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-[#FAFAF8]">
-    <div class="max-w-3xl mx-auto">
-      <div class="mb-12">
-        <div class="section-num mb-2">/ 06</div>
-        <p class="eyebrow-label mb-4">FAQ</p>
-        <h2 class="text-4xl md:text-5xl text-[#1C1E1D] leading-tight">
-          <span class="italic-display">Common questions</span> answered
-        </h2>
-      </div>
-      <!-- FAQ Items -->
-      <div class="space-y-3">
-        <details class="bg-stone-100 rounded-2xl p-6 group">
-          <summary class="flex items-center justify-between font-semibold text-lg text-[#1C1E1D] gap-4">
-            <h3 class="text-base md:text-lg font-semibold leading-snug">What areas do you serve?</h3>
-            <span class="shrink-0 w-6 h-6 flex items-center justify-center border border-[#D5D7D3] rounded-full bg-white group-open:bg-[#002f4d] group-open:border-[#002f4d] transition-colors">
-              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-[#002f4d] group-open:text-white group-open:rotate-90 transition-transform duration-300"></i>
-            </span>
-          </summary>
-          <p class="mt-4 text-stone-600 text-sm leading-relaxed">We offer mobile detailing services at your location, covering a wide service area, typically covering the I-285 area. Please contact us to confirm availability in your specific area.</p>
-        </details>
-
-        <details class="bg-stone-100 rounded-2xl p-6 group">
-          <summary class="flex items-center justify-between font-semibold text-lg text-[#1C1E1D] gap-4">
-            <h3 class="text-base md:text-lg font-semibold leading-snug">How long does a full detail take?</h3>
-            <span class="shrink-0 w-6 h-6 flex items-center justify-center border border-[#D5D7D3] rounded-full bg-white group-open:bg-[#002f4d] group-open:border-[#002f4d] transition-colors">
-              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-[#002f4d] group-open:text-white group-open:rotate-90 transition-transform duration-300"></i>
-            </span>
-          </summary>
-          <p class="mt-4 text-stone-600 text-sm leading-relaxed">A full interior and exterior detail typically takes 2 to 4 hours depending on the vehicle size and condition. We'll give you a time estimate when you book.</p>
-        </details>
-
-        <details class="bg-stone-100 rounded-2xl p-6 group">
-          <summary class="flex items-center justify-between font-semibold text-lg text-[#1C1E1D] gap-4">
-            <h3 class="text-base md:text-lg font-semibold leading-snug">Do you use eco-friendly products?</h3>
-            <span class="shrink-0 w-6 h-6 flex items-center justify-center border border-[#D5D7D3] rounded-full bg-white group-open:bg-[#002f4d] group-open:border-[#002f4d] transition-colors">
-              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-[#002f4d] group-open:text-white group-open:rotate-90 transition-transform duration-300"></i>
-            </span>
-          </summary>
-          <p class="mt-4 text-stone-600 text-sm leading-relaxed">Yes, we use high-quality and environmentally responsible products to clean and protect your vehicle safely. We care about the planet as much as your paint.</p>
-        </details>
-
-        <details class="bg-stone-100 rounded-2xl p-6 group">
-          <summary class="flex items-center justify-between font-semibold text-lg text-[#1C1E1D] gap-4">
-            <h3 class="text-base md:text-lg font-semibold leading-snug">Do I need to provide water and/or electricity?</h3>
-            <span class="shrink-0 w-6 h-6 flex items-center justify-center border border-[#D5D7D3] rounded-full bg-white group-open:bg-[#002f4d] group-open:border-[#002f4d] transition-colors">
-              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-[#002f4d] group-open:text-white group-open:rotate-90 transition-transform duration-300"></i>
-            </span>
-          </summary>
-          <p class="mt-4 text-stone-600 text-sm leading-relaxed">No — we are fully equipped with our own water and power supply facilities. Just show us to your vehicle and we handle the rest.</p>
-        </details>
-
-        <details class="bg-stone-100 rounded-2xl p-6 group">
-          <summary class="flex items-center justify-between font-semibold text-lg text-[#1C1E1D] gap-4">
-            <h3 class="text-base md:text-lg font-semibold leading-snug">Do I need to be present during the detail?</h3>
-            <span class="shrink-0 w-6 h-6 flex items-center justify-center border border-[#D5D7D3] rounded-full bg-white group-open:bg-[#002f4d] group-open:border-[#002f4d] transition-colors">
-              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-[#002f4d] group-open:text-white group-open:rotate-90 transition-transform duration-300"></i>
-            </span>
-          </summary>
-          <p class="mt-4 text-stone-600 text-sm leading-relaxed">Nope! As long as we have access to the vehicle, you don't need to be there. You're free to go about your day while we transform your car.</p>
-        </details>
-
-        <details class="bg-stone-100 rounded-2xl p-6 group">
-          <summary class="flex items-center justify-between font-semibold text-lg text-[#1C1E1D] gap-4">
-            <h3 class="text-base md:text-lg font-semibold leading-snug">Why should I choose Revived Rides?</h3>
-            <span class="shrink-0 w-6 h-6 flex items-center justify-center border border-[#D5D7D3] rounded-full bg-white group-open:bg-[#002f4d] group-open:border-[#002f4d] transition-colors">
-              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-[#002f4d] group-open:text-white group-open:rotate-90 transition-transform duration-300"></i>
-            </span>
-          </summary>
-          <p class="mt-4 text-stone-600 text-sm leading-relaxed">We provide professional-level results, convenient mobile service, and treat every car like our own. As a locally owned Atlanta business with a 5.0 rating, we're committed to earning your trust on every visit.</p>
-        </details>
+  <section id="faq" class="reveal py-24 md:py-32 px-5 md:px-8 lg:px-12 border-t" style="border-color: var(--border-soft);">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-4">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-num">/ 05 — FAQ</span>
+            <div class="hero-line"></div>
+          </div>
+          <p class="eyebrow mb-5">Common Questions</p>
+          <h2 class="text-4xl leading-[1.1]" style="color: var(--white);">
+            Things <span class="display-italic" style="color: var(--accent);">people ask.</span>
+          </h2>
+          <p class="mt-6 text-sm leading-relaxed" style="color: var(--text-muted);">
+            Don't see your question? Reach out and we'll answer in detail.
+          </p>
+        </div>
+        <div class="lg:col-span-8 space-y-2"><details class="card p-6 group" style="background: var(--bg-2);">
+            <summary class="flex items-center justify-between gap-4">
+              <h3 class="text-base md:text-lg font-medium leading-snug" style="color: var(--white);">What areas do you serve?</h3>
+              <span class="shrink-0 w-9 h-9 flex items-center justify-center border rounded-sm transition-colors" style="border-color: var(--border);">
+                <svg class="chev w-4 h-4 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent);"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </span>
+            </summary>
+            <p class="mt-5 text-sm leading-relaxed pr-12" style="color: var(--text-muted);">We serve Atlanta and the inside-I-285 area, including Buckhead, Midtown, Decatur, Sandy Springs, Brookhaven, Dunwoody, and surrounding neighborhoods. If you're nearby and not sure, just ask.</p>
+          </details>
+<details class="card p-6 group" style="background: var(--bg-2);">
+            <summary class="flex items-center justify-between gap-4">
+              <h3 class="text-base md:text-lg font-medium leading-snug" style="color: var(--white);">How long does a full detail take?</h3>
+              <span class="shrink-0 w-9 h-9 flex items-center justify-center border rounded-sm transition-colors" style="border-color: var(--border);">
+                <svg class="chev w-4 h-4 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent);"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </span>
+            </summary>
+            <p class="mt-5 text-sm leading-relaxed pr-12" style="color: var(--text-muted);">A full interior and exterior detail typically takes 2 to 4 hours depending on your vehicle's size and condition. Ceramic coatings and paint correction can take a full day. We'll give you an honest time estimate when you book.</p>
+          </details>
+<details class="card p-6 group" style="background: var(--bg-2);">
+            <summary class="flex items-center justify-between gap-4">
+              <h3 class="text-base md:text-lg font-medium leading-snug" style="color: var(--white);">Do I need to provide water or electricity?</h3>
+              <span class="shrink-0 w-9 h-9 flex items-center justify-center border rounded-sm transition-colors" style="border-color: var(--border);">
+                <svg class="chev w-4 h-4 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent);"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </span>
+            </summary>
+            <p class="mt-5 text-sm leading-relaxed pr-12" style="color: var(--text-muted);">No — we're fully self-contained with our own water tank and generator. All we need is access to your vehicle. Show us the car, and we handle the rest.</p>
+          </details>
+<details class="card p-6 group" style="background: var(--bg-2);">
+            <summary class="flex items-center justify-between gap-4">
+              <h3 class="text-base md:text-lg font-medium leading-snug" style="color: var(--white);">Do I need to be home during the detail?</h3>
+              <span class="shrink-0 w-9 h-9 flex items-center justify-center border rounded-sm transition-colors" style="border-color: var(--border);">
+                <svg class="chev w-4 h-4 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent);"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </span>
+            </summary>
+            <p class="mt-5 text-sm leading-relaxed pr-12" style="color: var(--text-muted);">Nope. As long as we have access to the vehicle, you're free to go about your day. Many clients leave for work or errands and come back to a transformed car.</p>
+          </details>
+<details class="card p-6 group" style="background: var(--bg-2);">
+            <summary class="flex items-center justify-between gap-4">
+              <h3 class="text-base md:text-lg font-medium leading-snug" style="color: var(--white);">Do you use eco-friendly products?</h3>
+              <span class="shrink-0 w-9 h-9 flex items-center justify-center border rounded-sm transition-colors" style="border-color: var(--border);">
+                <svg class="chev w-4 h-4 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent);"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </span>
+            </summary>
+            <p class="mt-5 text-sm leading-relaxed pr-12" style="color: var(--text-muted);">Yes — we use professional-grade products that are safe for your vehicle, your driveway, and the environment. We care about the planet as much as your paint.</p>
+          </details>
+<details class="card p-6 group" style="background: var(--bg-2);">
+            <summary class="flex items-center justify-between gap-4">
+              <h3 class="text-base md:text-lg font-medium leading-snug" style="color: var(--white);">What makes Revived Rides different?</h3>
+              <span class="shrink-0 w-9 h-9 flex items-center justify-center border rounded-sm transition-colors" style="border-color: var(--border);">
+                <svg class="chev w-4 h-4 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent);"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </span>
+            </summary>
+            <p class="mt-5 text-sm leading-relaxed pr-12" style="color: var(--text-muted);">We're owner-operated. Every detail is performed by the founders — no subcontractors, no rotating crews. Combine that with our 5.0 rating, fully equipped mobile rig, and genuine love for cars, and you get a level of care most shops can't match.</p>
+          </details></div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="animate-section py-24 md:py-32 px-4 md:px-8 lg:px-16 bg-[#F2F1EC]">
-    <div class="max-w-5xl mx-auto">
-      <div class="mb-12 text-center">
-        <div class="section-num mb-2">/ 07</div>
-        <p class="eyebrow-label mb-4">Get Started</p>
-        <h2 class="text-4xl md:text-5xl text-[#1C1E1D] leading-tight max-w-xl mx-auto">
-          <span class="italic-display">Book your detail</span> today
-        </h2>
-      </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <!-- Left: Photo -->
-        <div class="img-hover-wrap rounded-2xl overflow-hidden h-[480px]">
-          <img src="https://picsum.photos/seed/painting-4/800/960" alt="Revived Rides mobile detailing serving Atlanta and surrounding areas" class="w-full h-full object-cover">
-        </div>
-        <!-- Right: Form -->
-        <div class="bg-white rounded-2xl border border-[#D5D7D3] p-8 md:p-10 max-w-md w-full">
-          <p class="eyebrow-label mb-2">GET STARTED</p>
-          <h3 class="italic-display text-3xl text-[#1C1E1D] mt-2 mb-6">Request a free quote</h3>
-          <form action="#" method="POST" onsubmit="return false;">
-            <div class="space-y-4">
-              <input type="text" name="name" placeholder="Your name" class="bg-stone-50 rounded-xl border border-[#D5D7D3] focus:ring-2 focus:ring-[#002f4d] py-3 px-4 w-full text-sm" required>
-              <input type="tel" name="phone" placeholder="Phone number" class="bg-stone-50 rounded-xl border border-[#D5D7D3] focus:ring-2 focus:ring-[#002f4d] py-3 px-4 w-full text-sm">
-              <input type="email" name="email" placeholder="Email address" class="bg-stone-50 rounded-xl border border-[#D5D7D3] focus:ring-2 focus:ring-[#002f4d] py-3 px-4 w-full text-sm">
-              <select name="service" class="bg-stone-50 rounded-xl border border-[#D5D7D3] focus:ring-2 focus:ring-[#002f4d] py-3 px-4 w-full text-sm text-stone-600">
-                <option value="" disabled selected>Select a service</option>
-                <option value="ceramic-coatings">Ceramic Coatings</option>
-                <option value="steam-cleaning">Steam Cleaning</option>
-                <option value="ceramic-coating">Ceramic Coating</option>
-                <option value="scratch-removal">Scratch Removal</option>
-              </select>
-              <textarea name="message" rows="3" placeholder="Tell us about your vehicle and needs..." class="bg-stone-50 rounded-xl border border-[#D5D7D3] focus:ring-2 focus:ring-[#002f4d] py-3 px-4 w-full text-sm resize-none"></textarea>
+  <section id="contact" class="reveal py-24 md:py-32 px-5 md:px-8 lg:px-12 border-t" style="border-color: var(--border-soft);">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-5">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-num">/ 06 — CONTACT</span>
+            <div class="hero-line"></div>
+          </div>
+          <p class="eyebrow mb-5">Book Your Detail</p>
+          <h2 class="text-4xl md:text-5xl leading-[1.05] mb-8" style="color: var(--white);">
+            Ready to <span class="display-italic" style="color: var(--accent);">revive your ride?</span>
+          </h2>
+          <p class="text-base leading-relaxed mb-10" style="color: var(--text-muted);">
+            Tell us about your vehicle and what you'd like done. We'll respond with a free, no-pressure estimate within 24 hours.
+          </p>
+          <div class="space-y-5 border-t hairline pt-8">
+            <div class="flex items-start gap-4">
+              <div class="service-icon-wrap shrink-0" style="width: 44px; height: 44px;"><i data-lucide="map-pin" class="w-5 h-5"></i></div>
+              <div>
+                <div class="text-xs uppercase tracking-widest mb-1" style="color: var(--text-dim);">Service Area</div>
+                <div class="text-sm" style="color: var(--white);">Atlanta, GA · Inside I-285 + nearby suburbs</div>
+              </div>
             </div>
-            <button type="submit" class="w-full bg-[#002f4d] text-white rounded-xl py-4 font-semibold mt-6 text-sm tracking-wider uppercase hover:bg-[#001522] transition-colors">
-              Send My Request
-            </button>
-            <p class="text-xs text-stone-400 mt-3 leading-relaxed">By submitting you agree to be contacted regarding your request.</p>
-          </form>
+            <div class="flex items-start gap-4">
+              <div class="service-icon-wrap shrink-0" style="width: 44px; height: 44px;"><i data-lucide="instagram" class="w-5 h-5"></i></div>
+              <div>
+                <div class="text-xs uppercase tracking-widest mb-1" style="color: var(--text-dim);">Instagram</div>
+                <a href="https://www.instagram.com/revived_mobiledetailing/" target="_blank" rel="noopener" class="text-sm hover:underline" style="color: var(--accent);">@revived_mobiledetailing</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="service-icon-wrap shrink-0" style="width: 44px; height: 44px;"><i data-lucide="facebook" class="w-5 h-5"></i></div>
+              <div>
+                <div class="text-xs uppercase tracking-widest mb-1" style="color: var(--text-dim);">Facebook</div>
+                <a href="https://www.facebook.com/p/Revived-Rides-61559848332999/" target="_blank" rel="noopener" class="text-sm hover:underline" style="color: var(--accent);">Revived Rides</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-7">
+          <div class="card p-8 md:p-10" style="background: var(--bg-2);">
+            <p class="eyebrow mb-3">Free Estimate</p>
+            <h3 class="text-2xl heading mb-8" style="color: var(--white);">Tell us about your vehicle</h3>
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thanks — we\'ll be in touch shortly.');">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <input type="text" name="name" placeholder="Your name" class="rounded-sm py-3 px-4 w-full text-sm" required>
+                <input type="tel" name="phone" placeholder="Phone number" class="rounded-sm py-3 px-4 w-full text-sm">
+              </div>
+              <div class="mb-4">
+                <input type="email" name="email" placeholder="Email address" class="rounded-sm py-3 px-4 w-full text-sm">
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <input type="text" name="vehicle" placeholder="Year, make, model" class="rounded-sm py-3 px-4 w-full text-sm">
+                <select name="service" class="rounded-sm py-3 px-4 w-full text-sm">
+                  <option value="" disabled selected>Select a service</option>
+                  <option value="full-detail">Full Detail (Interior + Exterior)</option>
+                  <option value="ceramic-coating">Ceramic Coating</option>
+                  <option value="paint-correction">Paint Correction</option>
+                  <option value="interior-only">Interior Detail</option>
+                  <option value="exterior-only">Exterior Detail</option>
+                  <option value="other">Other / Not Sure</option>
+                </select>
+              </div>
+              <textarea name="message" rows="4" placeholder="Anything we should know? (condition, pet hair, special requests...)" class="rounded-sm py-3 px-4 w-full text-sm resize-none mb-5"></textarea>
+              <button type="submit" class="btn btn-primary w-full justify-center">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                Send Request
+              </button>
+              <p class="text-xs mt-4 leading-relaxed" style="color: var(--text-dim);">By submitting, you agree to be contacted regarding your request. We'll never share your info.</p>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-[#FAFAF8] border-t border-[#D5D7D3]">
-    <!-- Floating CTA Card -->
-    <div class="px-4 md:px-8 lg:px-16">
-      <div class="bg-white rounded-2xl border border-[#D5D7D3] p-10 md:p-12 max-w-5xl mx-auto -mt-20 mb-16 relative z-10 text-center shadow-sm">
-        <h3 class="italic-display text-3xl md:text-4xl text-[#1C1E1D] leading-tight">Ready to revive your ride?</h3>
-        <p class="text-stone-600 max-w-xl mx-auto mt-3 text-base leading-relaxed">Book your mobile detail appointment and we'll come to you — no shop, no hassle, just showroom results.</p>
-        <a href="#contact" class="btn-premium btn-premium-primary rounded-sm mt-8 inline-flex">
-          <i data-lucide="sparkles" class="w-4 h-4"></i>
-          Get a Free Estimate
-        </a>
+  <footer class="border-t" style="border-color: var(--border-soft); background: var(--bg-2);">
+    <!-- CTA strip with white background for contrast -->
+    <div class="border-b" style="background: var(--white); border-color: var(--border-light);">
+      <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 py-12 md:py-16">
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7">
+            <p class="eyebrow-light mb-3">Newsletter</p>
+            <h3 class="text-3xl md:text-4xl heading leading-tight" style="color: var(--text-on-light);">
+              Detailing tips, seasonal offers, <span class="display-italic" style="color: var(--accent-deep);">straight to your inbox.</span>
+            </h3>
+            <p class="text-sm mt-3" style="color: var(--text-on-light-muted);">No spam. Unsubscribe anytime.</p>
+          </div>
+          <div class="lg:col-span-5">
+            <form onsubmit="event.preventDefault(); alert('Thanks for subscribing!');" class="flex gap-2">
+              <input type="email" placeholder="your@email.com" required class="flex-1 px-4 py-3.5 text-sm rounded-sm" style="background: var(--bg-light-2) !important; border: 1px solid var(--border-light) !important; color: var(--text-on-light) !important;">
+              <button type="submit" class="btn btn-light shrink-0" style="background: var(--bg); color: var(--white);">
+                Subscribe
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Footer Grid -->
-    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-16">
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-10">
-        <!-- Col 1: Brand -->
-        <div class="col-span-2">
-          <img src="https://d13cw1lxlociqy.cloudfront.net/qsabmdo2t2x9dzo05w4cs9r9rake" alt="Revived Rides Mobile Detailing" class="h-12 w-auto object-contain mb-4 max-w-[180px]" onerror="this.outerHTML='<div class=\'text-2xl font-bold mb-4\'>Revived Rides Mobile Detailing</div>'">
-          <p class="italic-display text-stone-600 max-w-sm mt-3 text-base leading-relaxed">Your car, our studio — wherever you are in Atlanta.</p>
-          <!-- Trust pills -->
-          <div class="flex flex-wrap gap-2 mt-6">
-            <span class="inline-flex items-center gap-1.5 bg-white border border-[#D5D7D3] rounded-full px-3 py-1.5 text-xs font-medium text-[#1C1E1D]">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#002f4d]"></i>
-              Locally Owned
-            </span>
-            <span class="inline-flex items-center gap-1.5 bg-white border border-[#D5D7D3] rounded-full px-3 py-1.5 text-xs font-medium text-[#1C1E1D]">
-              <i data-lucide="star" class="w-3.5 h-3.5 text-[#002f4d]"></i>
-              5.0 Rated
-            </span>
-            <span class="inline-flex items-center gap-1.5 bg-white border border-[#D5D7D3] rounded-full px-3 py-1.5 text-xs font-medium text-[#1C1E1D]">
-              <i data-lucide="shield-check" class="w-3.5 h-3.5 text-[#002f4d]"></i>
-              I-285 Area
-            </span>
-          </div>
-          <!-- Socials -->
-          <div class="flex gap-4 mt-6">
-            <a href="https://www.facebook.com/p/Revived-Rides-61559848332999/" target="_blank" rel="noopener noreferrer" aria-label="Revived Rides on Facebook" class="w-9 h-9 flex items-center justify-center bg-white border border-[#D5D7D3] rounded-sm hover:border-[#002f4d] hover:text-[#002f4d] transition-colors">
+    <!-- Main footer content -->
+    <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 py-16 md:py-20">
+      <div class="grid grid-cols-2 md:grid-cols-12 gap-8 md:gap-10 mb-16">
+        <!-- Brand -->
+        <div class="col-span-2 md:col-span-4">
+          <img src="./assets1/logo.png" alt="Revived Rides Mobile Detailing" class="h-20 w-auto object-contain mb-6" style="margin-left: -8px;">
+          <p class="display-italic text-lg leading-relaxed mb-6 max-w-sm" style="color: var(--text-muted);">
+            Your car, our studio — wherever you are in Atlanta.
+          </p>
+          <div class="flex gap-3">
+            <a href="https://www.facebook.com/p/Revived-Rides-61559848332999/" target="_blank" rel="noopener" aria-label="Facebook" class="w-10 h-10 flex items-center justify-center border rounded-sm transition-all hover:scale-105" style="border-color: var(--border); color: var(--text-muted);" onmouseover="this.style.color='var(--accent)';this.style.borderColor='var(--accent)'" onmouseout="this.style.color='var(--text-muted)';this.style.borderColor='var(--border)'">
               <i data-lucide="facebook" class="w-4 h-4"></i>
             </a>
-            <a href="https://www.instagram.com/revived_mobiledetailing/" target="_blank" rel="noopener noreferrer" aria-label="Revived Rides on Instagram" class="w-9 h-9 flex items-center justify-center bg-white border border-[#D5D7D3] rounded-sm hover:border-[#002f4d] hover:text-[#002f4d] transition-colors">
+            <a href="https://www.instagram.com/revived_mobiledetailing/" target="_blank" rel="noopener" aria-label="Instagram" class="w-10 h-10 flex items-center justify-center border rounded-sm transition-all hover:scale-105" style="border-color: var(--border); color: var(--text-muted);" onmouseover="this.style.color='var(--accent)';this.style.borderColor='var(--accent)'" onmouseout="this.style.color='var(--text-muted)';this.style.borderColor='var(--border)'">
               <i data-lucide="instagram" class="w-4 h-4"></i>
             </a>
           </div>
         </div>
 
-        <!-- Col 2: Navigation -->
-        <div>
-          <h4 class="font-600 text-stone-500 uppercase tracking-wider text-xs mb-4 font-semibold">Navigate</h4>
-          <ul class="space-y-2">
-            <li><a href="#home" class="text-stone-700 hover:text-[#002f4d] text-sm transition-colors">Home</a></li>
-            <li><a href="#about" class="text-stone-700 hover:text-[#002f4d] text-sm transition-colors">About</a></li>
-            <li><a href="#services" class="text-stone-700 hover:text-[#002f4d] text-sm transition-colors">Services</a></li>
-            <li><a href="#gallery" class="text-stone-700 hover:text-[#002f4d] text-sm transition-colors">Gallery</a></li>
-            <li><a href="#reviews" class="text-stone-700 hover:text-[#002f4d] text-sm transition-colors">Reviews</a></li>
-            <li><a href="#faq" class="text-stone-700 hover:text-[#002f4d] text-sm transition-colors">FAQ</a></li>
-            <li><a href="#contact" class="text-stone-700 hover:text-[#002f4d] text-sm transition-colors">Contact</a></li>
+        <!-- Navigate -->
+        <div class="md:col-span-2">
+          <h4 class="text-xs uppercase tracking-[0.2em] font-semibold mb-5" style="color: var(--white);">Navigate</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#about" class="footer-link">About</a></li>
+            <li><a href="#services" class="footer-link">Services</a></li>
+            <li><a href="#gallery" class="footer-link">Work</a></li>
+            <li><a href="#reviews" class="footer-link">Reviews</a></li>
+            <li><a href="#faq" class="footer-link">FAQ</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
           </ul>
         </div>
 
-        <!-- Col 3: Services -->
-        <div>
-          <h4 class="font-semibold text-stone-500 uppercase tracking-wider text-xs mb-4">Services</h4>
-          <ul class="space-y-2">
-            <li><a href="#services" class="text-stone-700 hover:text-[#002f4d] text-sm transition-colors">Ceramic Coatings</a></li>
-            <li><a href="#services" class="text-stone-700 hover:text-[#002f4d] text-sm transition-colors">Steam Cleaning</a></li>
-            <li><a href="#services" class="text-stone-700 hover:text-[#002f4d] text-sm transition-colors">Scratch Removal</a></li>
-            <li><a href="#services" class="text-stone-700 hover:text-[#002f4d] text-sm transition-colors">Odor Removal</a></li>
-            <li><a href="#services" class="text-stone-700 hover:text-[#002f4d] text-sm transition-colors">Headlight Restoration</a></li>
-            <li><a href="#services" class="text-stone-700 hover:text-[#002f4d] text-sm transition-colors">Pet Hair Removal</a></li>
-            <li><a href="#services" class="text-stone-700 hover:text-[#002f4d] text-sm transition-colors">Upholstery Cleaning</a></li>
-            <li><a href="#services" class="text-stone-700 hover:text-[#002f4d] text-sm transition-colors">Engine Bay Cleaning</a></li>
+        <!-- Services -->
+        <div class="md:col-span-3">
+          <h4 class="text-xs uppercase tracking-[0.2em] font-semibold mb-5" style="color: var(--white);">Services</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#services" class="footer-link">Ceramic Coatings</a></li>
+            <li><a href="#services" class="footer-link">Paint Correction</a></li>
+            <li><a href="#services" class="footer-link">Steam Cleaning</a></li>
+            <li><a href="#services" class="footer-link">Headlight Restoration</a></li>
+            <li><a href="#services" class="footer-link">Pet Hair Removal</a></li>
+            <li><a href="#services" class="footer-link">Engine Bay Detail</a></li>
           </ul>
         </div>
 
-        <!-- Col 4: Service Areas -->
-        <div>
-          <h4 class="font-semibold text-stone-500 uppercase tracking-wider text-xs mb-4">Service Areas</h4>
-          <ul class="space-y-2">
-            <li><span class="text-stone-700 text-sm">Atlanta, GA</span></li>
-            <li><span class="text-stone-700 text-sm">Decatur, GA</span></li>
-            <li><span class="text-stone-700 text-sm">Sandy Springs, GA</span></li>
-            <li><span class="text-stone-700 text-sm">Marietta, GA</span></li>
-            <li><span class="text-stone-700 text-sm">Smyrna, GA</span></li>
-            <li><span class="text-stone-700 text-sm">East Point, GA</span></li>
-            <li><span class="text-stone-700 text-sm">College Park, GA</span></li>
-            <li><span class="text-stone-700 text-sm">Brookhaven, GA</span></li>
-            <li><span class="text-stone-700 text-sm">Dunwoody, GA</span></li>
+        <!-- Service Areas -->
+        <div class="md:col-span-3">
+          <h4 class="text-xs uppercase tracking-[0.2em] font-semibold mb-5" style="color: var(--white);">Service Areas</h4>
+          <ul class="space-y-3 text-sm" style="color: var(--text-muted);">
+            <li>Atlanta · Buckhead · Midtown</li>
+            <li>Decatur · East Atlanta</li>
+            <li>Sandy Springs · Brookhaven</li>
+            <li>Dunwoody · Smyrna</li>
+            <li>Marietta · East Point</li>
+            <li>Inside I-285 + nearby</li>
           </ul>
         </div>
       </div>
-    </div>
 
-    <!-- Bottom Bar -->
-    <div class="hairline-rule border-t border-[#D5D7D3]">
-      <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-stone-400">&copy; 2024 Revived Rides Mobile Detailing. All rights reserved. Atlanta, Georgia.</p>
-        <p class="text-xs text-stone-400">Professional Mobile Car Detailing · Serving Greater Atlanta · I-285 Service Area</p>
+      <!-- Divider -->
+      <div class="section-divider mb-8"></div>
+
+      <!-- Bottom bar -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs mono" style="color: var(--text-dim);">&copy; 2026 REVIVED RIDES MOBILE DETAILING · ATLANTA, GA</p>
+        <div class="flex items-center gap-6 text-xs mono" style="color: var(--text-dim);">
+          <span>PREMIUM MOBILE CAR DETAILING</span>
+          <span class="hidden md:inline" style="color: var(--accent);">●</span>
+          <span>LOCALLY OWNED · FULLY INSURED</span>
+        </div>
       </div>
     </div>
   </footer>
 
   <script>
+  // Nav scroll
   (function(){
     const nav = document.querySelector('nav');
     if (!nav) return;
-    window.addEventListener('scroll', () => nav.classList.toggle('shadow-md', window.scrollY > 50));
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 30) nav.style.boxShadow = '0 1px 0 rgba(35, 44, 54, 0.6), 0 8px 24px -16px rgba(0,0,0,0.6)';
+      else nav.style.boxShadow = 'none';
+    });
   })();
 
+  // Mobile menu
   (function(){
     const ham = document.getElementById('hamburger');
     const menu = document.getElementById('mobile-menu');
@@ -748,111 +1011,59 @@
     });
   })();
 
+  // Tabs (works for both .tab-btn and .tab-btn-light)
   (function(){
-    const buttons = Array.from(document.querySelectorAll('.tab-btn'));
+    const buttons = Array.from(document.querySelectorAll('.tab-btn-light, .tab-btn'));
     const panels = Array.from(document.querySelectorAll('.tab-panel'));
     if (!buttons.length || !panels.length) return;
-    function showByIndex(idx) {
+    function showById(id) {
       panels.forEach(p => p.classList.add('hidden'));
-      buttons.forEach(b => { b.classList.remove('active-tab'); b.classList.add('inactive-tab'); });
-      if (panels[idx]) panels[idx].classList.remove('hidden');
-      if (buttons[idx]) { buttons[idx].classList.add('active-tab'); buttons[idx].classList.remove('inactive-tab'); }
+      buttons.forEach(b => {
+        b.classList.remove('active-tab', 'active-tab-light');
+      });
+      const panel = panels.find(p => p.id === id);
+      const btn = buttons.find(b => b.getAttribute('data-target') === id);
+      if (panel) panel.classList.remove('hidden');
+      if (btn) {
+        if (btn.classList.contains('tab-btn-light')) btn.classList.add('active-tab-light');
+        else btn.classList.add('active-tab');
+      }
     }
-    function showById(id) { const i = panels.findIndex(p => p.id === id); if (i >= 0) showByIndex(i); }
-    buttons.forEach((btn, idx) => {
-      btn.addEventListener('click', (e) => {
+    buttons.forEach(btn => {
+      btn.addEventListener('click', e => {
         e.preventDefault();
         const t = btn.getAttribute('data-target');
-        if (t) showById(t); else showByIndex(idx);
+        if (t) showById(t);
       });
     });
-    window.showTab = function(id){ showById(id); };
-    if (!panels.some(p => !p.classList.contains('hidden'))) showByIndex(0);
   })();
 
-  function animateCount(el, target, suffix) {
-    let start = 0;
-    const duration = 2000, steps = 60, inc = target / steps;
-    const t = setInterval(() => {
-      start += inc;
-      if (start >= target) { el.textContent = target + (suffix || ''); clearInterval(t); }
-      else el.textContent = Math.floor(start) + (suffix || '');
-    }, duration / steps);
-  }
-  const statObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const t = parseInt(e.target.dataset.count);
-        const s = e.target.dataset.suffix || '';
-        if (t) animateCount(e.target, t, s);
-        statObs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.3 });
-  document.querySelectorAll('[data-count]').forEach(el => statObs.observe(el));
-
+  // Reveal on scroll
   (function(){
-    const sections = document.querySelectorAll('.animate-section');
-    if (!sections.length) return;
+    const sections = document.querySelectorAll('.reveal');
+    if (!sections.length || !('IntersectionObserver' in window)) return;
     const obs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.remove('is-pending');
-          entry.target.classList.add('is-visible');
-          obs.unobserve(entry.target);
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.remove('is-pending');
+          e.target.classList.add('is-visible');
+          obs.unobserve(e.target);
         }
       });
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
     sections.forEach(el => {
       const r = el.getBoundingClientRect();
-      const inView = r.top < window.innerHeight && r.bottom > 0;
-      if (inView) el.classList.add('is-visible');
+      if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('is-visible');
       else { el.classList.add('is-pending'); obs.observe(el); }
     });
     setTimeout(() => {
-      document.querySelectorAll('.animate-section.is-pending').forEach(el => {
+      document.querySelectorAll('.reveal.is-pending').forEach(el => {
         el.classList.remove('is-pending'); el.classList.add('is-visible');
       });
-    }, 2500);
+    }, 3000);
   })();
 
-  (function(){
-    function revealTarget() {
-      const hash = window.location.hash;
-      if (!hash || hash.length < 2) return;
-      try {
-        const target = document.querySelector(hash);
-        if (target && target.classList.contains('animate-section')) {
-          target.classList.remove('is-pending');
-          target.classList.add('is-visible');
-        }
-      } catch(e) {}
-    }
-    window.addEventListener('hashchange', revealTarget);
-    setTimeout(revealTarget, 100);
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', () => {
-        const hash = a.getAttribute('href');
-        if (hash && hash.length > 1) {
-          try {
-            const target = document.querySelector(hash);
-            if (target && target.classList.contains('animate-section')) {
-              target.classList.remove('is-pending');
-              target.classList.add('is-visible');
-            }
-          } catch(e) {}
-        }
-      });
-    });
-  })();
-
-  function updateClock() {
-    const el = document.getElementById('live-clock');
-    if (el) el.textContent = 'Atlanta — ' + new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-  }
-  updateClock();
-  setInterval(updateClock, 1000);
-
+  // Lucide
   (function(){
     const render = () => { if (window.lucide) window.lucide.createIcons(); };
     if (window.lucide) render();

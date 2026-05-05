@@ -7,7 +7,7 @@
 <meta name="description" content="The Overlook is Atlanta's premier indoor rock climbing gym, located on the BeltLine at 1030 White St SW. Climbing classes, youth camps, fitness, and community.">
 <link rel="icon" type="image/png" href="assets/overlook-logo.png">
 
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght,ital@9..144,300..900,0;9..144,300..900,1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght,ital@9..144,300..900,0;9..144,300..900,1&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
 
 <style>
   /* ============ TOKENS ============ */
@@ -48,7 +48,7 @@
   }
 
   .serif-italic {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Cormorant Garamond', Georgia, serif;
     font-style: italic;
     font-weight: 300;
     letter-spacing: -0.01em;
@@ -64,7 +64,7 @@
   }
 
   .num-marker {
-    font-family: 'Fraunces', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 300;
     color: var(--yellow);
@@ -166,11 +166,75 @@
   .nav-cta:hover { background: transparent; color: var(--yellow); }
 
   .hamburger {
-    display: inline-flex; flex-direction: column; gap: 5px;
-    width: 32px; padding: 8px; background: none; border: 0; cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    background: transparent;
+    border: 1px solid rgba(244,241,232,0.18);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    position: relative;
   }
   @media (min-width: 1100px) { .hamburger { display: none; } }
-  .hamburger span { width: 100%; height: 1.5px; background: var(--paper); display: block; }
+
+  /* The three lines, now stacked inside a flex */
+  .hamburger .ham-icon-stack {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 22px;
+  }
+  .hamburger span {
+    width: 100%;
+    height: 1.5px;
+    background: var(--paper);
+    display: block;
+    transition: transform 0.3s ease, width 0.3s ease, background 0.25s;
+  }
+  /* Wrapper itself shouldn't get those rules */
+  .hamburger .ham-icon-stack {
+    height: auto;
+    background: transparent;
+    transition: none;
+  }
+  /* Top, middle, bottom — varied widths give an "asymmetric, hand-drawn" feel */
+  .hamburger .ham-icon-stack span:nth-child(1) { width: 100%; }
+  .hamburger .ham-icon-stack span:nth-child(2) { width: 70%; align-self: flex-end; }
+  .hamburger .ham-icon-stack span:nth-child(3) { width: 85%; }
+
+  .hamburger .ham-label {
+    font-style: normal;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--paper);
+    transition: color 0.25s;
+  }
+
+  /* Hover state — yellow takeover, lines align */
+  .hamburger:hover {
+    border-color: var(--yellow);
+    background: rgba(212,217,0,0.08);
+  }
+  .hamburger:hover .ham-icon-stack span {
+    background: var(--yellow);
+    width: 100%;
+  }
+  .hamburger:hover .ham-label { color: var(--yellow); }
+
+  /* Open state — animate to an X */
+  .hamburger.is-open {
+    border-color: var(--yellow);
+    background: var(--yellow);
+  }
+  .hamburger.is-open .ham-icon-stack span { background: var(--black); width: 100%; }
+  .hamburger.is-open .ham-icon-stack span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .hamburger.is-open .ham-icon-stack span:nth-child(2) { opacity: 0; }
+  .hamburger.is-open .ham-icon-stack span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  .hamburger.is-open .ham-label { color: var(--black); }
 
   .mobile-menu {
     display: none;
@@ -200,14 +264,13 @@
     padding: 80px 0 100px;
   }
 
-  /* Background grid */
+  /* Background — soft radial vignette anchored to the right side where the hold sits */
   .hero::before {
     content: '';
     position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(244,241,232,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(244,241,232,0.03) 1px, transparent 1px);
-    background-size: 80px 80px;
+    background:
+      radial-gradient(ellipse 60% 70% at 75% 50%, rgba(212,217,0,0.08) 0%, transparent 55%),
+      radial-gradient(ellipse 100% 80% at 50% 50%, rgba(20,20,20,0) 0%, rgba(0,0,0,0.6) 100%);
     pointer-events: none;
   }
 
@@ -252,16 +315,128 @@
   .hero-meta .text { font-size: 11px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--paper); opacity: 0.7; }
 
   .hero-title {
-    font-size: clamp(56px, 8vw, 120px);
-    margin-bottom: 36px;
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
-  .hero-title .accent {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
+  .hero-title .ht-line {
+    display: block;
+    line-height: 0.9;
+  }
+
+  /* Line 1 — "Find your" — small caption, lowercase-feeling */
+  .hero-title .ht-1 {
+    font-family: 'Inter', sans-serif;
     font-weight: 300;
+    font-size: clamp(15px, 1.4vw, 18px);
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    color: rgba(244,241,232,0.55);
+    margin-bottom: -8px;
+    margin-left: 14px;
+  }
+
+  /* Line 2 — "grip." — the showpiece, oversized italic, glowing */
+  .hero-title .ht-2 {
+    margin-left: -0.05em;
+    margin-bottom: -0.08em;
+    z-index: 2;
+    position: relative;
+  }
+  .hero-title .ht-2 .accent {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
     color: var(--yellow);
     text-transform: none;
+    letter-spacing: -0.04em;
+    font-size: clamp(110px, 18vw, 240px);
+    line-height: 0.85;
+    text-shadow: 0 0 80px rgba(212,217,0,0.18);
+    display: inline-block;
+  }
+
+  /* Line 3 — "Climb" */
+  .hero-title .ht-3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-weight: 900;
+    font-size: clamp(48px, 7vw, 100px);
     letter-spacing: -0.02em;
+    text-transform: uppercase;
+    line-height: 0.95;
+    margin-top: 10px;
+    color: var(--paper);
+  }
+
+  /* Line 4 — "higher." — slightly smaller, period in yellow */
+  .hero-title .ht-4 {
+    font-family: 'Archivo Black', sans-serif;
+    font-weight: 900;
+    font-size: clamp(48px, 7vw, 100px);
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    line-height: 0.95;
+    color: var(--paper);
+    margin-left: 12px;
+  }
+  .hero-title .ht-4::after {
+    content: '.';
+    color: var(--yellow);
+  }
+  .hero-title .ht-4 {
+    /* Strip the period from the rendered text — it's added via ::after with color */
+  }
+
+  /* Hero aside — paragraph + actions in a divided block */
+  .hero-aside {
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(244,241,232,0.12);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 540px;
+  }
+
+  /* Hero tagline — sits right under "higher.", small dot + meta line */
+  .hero-tagline {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 18px;
+    margin-left: 12px;
+  }
+  .hero-tagline .ht-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--yellow);
+    flex-shrink: 0;
+    animation: tagline-dot 2.5s ease-in-out infinite;
+  }
+  .hero-tagline .ht-text {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(244,241,232,0.7);
+  }
+  @keyframes tagline-dot {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+  @media (min-width: 720px) {
+    .hero-aside {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      max-width: 560px;
+    }
+  }
+  .hero-aside .hero-sub {
+    margin-bottom: 0;
+    font-size: 15px;
+    line-height: 1.6;
   }
 
   .hero-sub {
@@ -452,7 +627,7 @@
   }
   @media (min-width: 768px) { .hero-stamp { display: block; right: 56px; } }
   .hero-stamp .label { font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--yellow); margin-bottom: 4px; font-weight: 600; }
-  .hero-stamp .value { font-family: 'Fraunces', serif; font-style: italic; font-size: 22px; color: var(--paper); }
+  .hero-stamp .value { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; color: var(--paper); }
 
   /* ============ INFO BAR ============ */
   .info-bar {
@@ -489,7 +664,7 @@
     font-size: clamp(36px, 5vw, 72px);
   }
   .row-head h2 .accent {
-    font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+    font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300;
     color: var(--yellow); text-transform: none;
   }
 
@@ -535,7 +710,7 @@
     font-weight: 300;
   }
   .about-quote {
-    font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+    font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300;
     font-size: 28px; line-height: 1.3; letter-spacing: -0.01em;
     color: var(--ink);
     border-left: 2px solid var(--yellow);
@@ -553,7 +728,7 @@
     display: flex; gap: 14px; align-items: flex-start;
   }
   .feat .num {
-    font-family: 'Fraunces', serif; font-style: italic;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
     color: var(--yellow);
     font-size: 18px; line-height: 1; padding-top: 2px;
     flex-shrink: 0;
@@ -564,12 +739,12 @@
   .programs { background: var(--black); color: var(--paper); }
 
   .prog-acc {
-    border-top: 1px solid var(--rule);
+    border-top: 1px solid rgba(244,241,232,0.12);
   }
 
   /* Each accordion item */
   .acc {
-    border-bottom: 1px solid var(--rule);
+    border-bottom: 1px solid rgba(244,241,232,0.12);
   }
   /* Hide native disclosure marker */
   .acc summary { list-style: none; }
@@ -581,7 +756,7 @@
     grid-template-columns: auto 1fr auto auto;
     gap: 16px;
     align-items: center;
-    padding: 22px 4px;
+    padding: 26px 12px;
     cursor: pointer;
     transition: background 0.25s, padding 0.25s;
     position: relative;
@@ -589,56 +764,71 @@
   }
   @media (min-width: 768px) {
     .acc-head {
-      grid-template-columns: 200px 1fr auto auto;
+      grid-template-columns: 220px 1fr auto auto;
       gap: 28px;
-      padding: 26px 8px;
+      padding: 30px 16px;
     }
   }
   .acc-head:hover {
+    background: rgba(212,217,0,0.05);
+    padding-left: 22px;
+  }
+  /* Open state — soft yellow tint to show what's active */
+  .acc[open] > .acc-head {
     background: rgba(212,217,0,0.04);
-    padding-left: 14px;
   }
   .acc-head::before {
     content: '';
     position: absolute;
     left: 0; top: 0; bottom: 0;
-    width: 2px;
+    width: 3px;
     background: var(--yellow);
     transform: scaleY(0);
     transform-origin: top;
     transition: transform 0.3s ease;
   }
   .acc[open] > .acc-head::before { transform: scaleY(1); }
+  .acc-head:hover::before { transform: scaleY(1); }
 
   /* Header internals */
   .acc-meta {
     display: inline-flex;
     align-items: baseline;
-    gap: 12px;
+    gap: 14px;
     min-width: 0;
   }
   .acc-num {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 300;
-    color: var(--yellow);
-    font-size: 13px;
-    letter-spacing: 0.06em;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--paper);
+    font-size: 22px;
+    letter-spacing: 0.02em;
+    opacity: 0.8;
+    transition: opacity 0.25s, color 0.25s;
   }
+  @media (min-width: 768px) {
+    .acc-num { font-size: 26px; }
+  }
+  .acc-head:hover .acc-num,
+  .acc[open] > .acc-head .acc-num { opacity: 1; }
   .acc-label {
     font-family: 'Archivo Black', sans-serif;
-    font-size: clamp(15px, 1.6vw, 18px);
+    font-size: clamp(17px, 1.8vw, 22px);
     text-transform: uppercase;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.005em;
     color: var(--paper);
     line-height: 1;
+    transition: color 0.25s;
   }
+  .acc-head:hover .acc-label,
+  .acc[open] > .acc-head .acc-label { color: var(--yellow); }
   .acc-title {
-    font-family: 'Fraunces', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-weight: 300;
-    font-size: clamp(14px, 1.4vw, 18px);
-    color: rgba(244,241,232,0.5);
+    font-weight: 500;
+    font-size: clamp(15px, 1.5vw, 19px);
+    color: rgba(244,241,232,0.85);
     line-height: 1.2;
     letter-spacing: -0.01em;
     /* Hide on small mobile; the label alone is enough */
@@ -648,39 +838,82 @@
     .acc-title { display: inline; }
   }
   .acc-count {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 300;
-    color: rgba(244,241,232,0.4);
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    border: 1px solid var(--rule);
-    padding: 4px 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: var(--yellow);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    border: 1px solid rgba(212,217,0,0.4);
+    background: rgba(212,217,0,0.08);
+    padding: 6px 12px;
     line-height: 1;
-    min-width: 28px;
+    min-width: 32px;
     text-align: center;
+    transition: all 0.25s;
+  }
+  .acc-head:hover .acc-count,
+  .acc[open] > .acc-head .acc-count {
+    background: var(--yellow);
+    color: var(--black);
+    border-color: var(--yellow);
   }
   .acc-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 32px; height: 32px;
-    border: 1px solid var(--rule);
-    color: rgba(244,241,232,0.6);
-    transition: transform 0.35s ease, color 0.25s, border-color 0.25s, background 0.25s;
-    /* Down-pointing arrow when closed (rotate the right-arrow icn 90°) */
-    transform: rotate(90deg);
-  }
-  .acc[open] > .acc-head .acc-toggle {
-    /* Up-pointing when open */
-    transform: rotate(-90deg);
-    color: var(--yellow);
-    border-color: rgba(212,217,0,0.5);
+    width: 56px; height: 44px;
+    border: 1px solid rgba(212,217,0,0.35);
     background: rgba(212,217,0,0.06);
+    color: var(--yellow);
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s, border-color 0.25s, background 0.25s, box-shadow 0.25s;
+    /* Subtle glow to draw the eye */
+    box-shadow: 0 0 0 0 rgba(212,217,0,0);
+    /* Pulse animation only when CLOSED — calls attention */
+    animation: toggle-pulse 2.4s ease-in-out infinite;
+    will-change: transform, box-shadow;
+  }
+  .acc-toggle .icn {
+    width: 30px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    /* Arrow points DOWN when closed (rotated from horizontal default) */
+    transform: rotate(90deg);
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  /* Open state — arrow points UP, button fills yellow */
+  .acc[open] > .acc-head .acc-toggle {
+    animation: none;
+    color: var(--black);
+    border-color: var(--yellow);
+    background: var(--yellow);
+    box-shadow: 0 0 24px rgba(212,217,0,0.35);
+  }
+  .acc[open] > .acc-head .acc-toggle .icn {
+    transform: rotate(-90deg);
   }
   .acc-head:hover .acc-toggle {
-    color: var(--yellow);
-    border-color: rgba(212,217,0,0.5);
+    color: var(--black);
+    border-color: var(--yellow);
+    background: var(--yellow);
+    box-shadow: 0 0 16px rgba(212,217,0,0.3);
+    animation: none;
+  }
+  .acc-head:hover .acc-toggle .icn {
+    /* Slight nudge so the arrow feels like it wants to go */
+    transform: rotate(90deg) translateX(3px);
+  }
+
+  /* Gentle pulse so closed toggles breathe and read as tappable */
+  @keyframes toggle-pulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(212,217,0,0.18);
+    }
+    50% {
+      transform: scale(1.06);
+      box-shadow: 0 0 0 6px rgba(212,217,0,0);
+    }
   }
 
   /* Accordion body */
@@ -709,7 +942,7 @@
   .prog-list li:last-child { border-bottom: 0; }
   .prog-row {
     display: grid;
-    grid-template-columns: 60px 1fr auto;
+    grid-template-columns: 36px 1fr auto;
     gap: 24px;
     padding: 22px 0 22px 8px;
     align-items: baseline;
@@ -720,7 +953,7 @@
   }
   @media (min-width: 768px) {
     .prog-row {
-      grid-template-columns: 100px 280px 1fr auto;
+      grid-template-columns: 36px 280px 1fr auto;
     }
   }
   .prog-row:hover {
@@ -742,7 +975,7 @@
   }
 
   .prog-row .prog-num {
-    font-family: 'Fraunces', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 300;
     color: var(--yellow);
@@ -863,7 +1096,11 @@
     max-height: 720px;
     overflow: hidden;
     background: var(--ink);
-    border: 1px solid var(--rule);
+    border: 1px solid var(--yellow);
+    box-shadow:
+      0 0 0 1px rgba(212,217,0,0.4),
+      0 0 24px 4px rgba(212,217,0,0.18),
+      0 0 60px 8px rgba(212,217,0,0.08);
   }
   @media (max-width: 768px) {
     .slideshow { aspect-ratio: 4 / 5; }
@@ -898,7 +1135,7 @@
     z-index: 2;
   }
   .slide-cap .num {
-    font-family: 'Fraunces', serif; font-style: italic;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
     color: var(--yellow);
     font-size: 13px; letter-spacing: 0.1em;
     margin-bottom: 6px;
@@ -1025,7 +1262,7 @@
     pointer-events: auto;
   }
   .quote-card .qmark {
-    font-family: 'Fraunces', serif; font-style: italic;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
     color: var(--yellow);
     font-size: 100px;
     line-height: 0.4;
@@ -1034,7 +1271,7 @@
     display: block;
   }
   .quote-card .qtext {
-    font-family: 'Fraunces', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 300;
     font-size: clamp(24px, 3.2vw, 38px);
@@ -1097,31 +1334,38 @@
 
   .visit-info { }
   .info-block {
-    border-top: 1px solid rgba(20,20,20,0.15);
-    padding: 24px 0;
+    border-top: 1px solid rgba(20,20,20,0.12);
+    padding: 28px 0;
     display: grid;
-    grid-template-columns: 110px 1fr;
-    gap: 20px;
+    grid-template-columns: 90px 1fr;
+    gap: 24px;
     align-items: start;
   }
-  .info-block:last-child { border-bottom: 1px solid rgba(20,20,20,0.15); }
+  .info-block:last-child { border-bottom: 1px solid rgba(20,20,20,0.12); }
   .info-block .k {
-    font-size: 10px; font-weight: 700;
-    letter-spacing: 0.28em; text-transform: uppercase;
-    color: var(--ink); opacity: 0.5;
-    padding-top: 4px;
-    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--ink); opacity: 0.4;
+    padding-top: 6px;
+    display: inline-flex; align-items: center; gap: 6px;
   }
-  .info-block .k .icn { stroke-width: 1.6; opacity: 0.85; }
+  .info-block .k .icn { stroke-width: 1.6; opacity: 0.75; width: 12px; height: 12px; }
   .info-block .v {
-    font-size: 15px;
+    font-size: 16px;
     color: var(--ink);
     font-weight: 400;
+    line-height: 1.5;
   }
   .info-block .v strong { font-weight: 600; }
-  .hours-row { display: flex; justify-content: space-between; padding: 4px 0; font-size: 14px; }
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-size: 14px;
+    color: rgba(20,20,20,0.7);
+  }
   .hours-row.dim { opacity: 0.5; }
-  .hours-row .day { letter-spacing: 0.04em; }
+  .hours-row .day { letter-spacing: 0.04em; font-weight: 500; color: var(--ink); }
 
   /* Hours grid — days | open sign | times */
   .hours-grid {
@@ -1173,7 +1417,7 @@
   }
 
   .hours-sign-cap {
-    font-family: 'Fraunces', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 300;
     font-size: 11px;
@@ -1207,7 +1451,7 @@
   .mission { background: var(--paper); color: var(--ink); position: relative; overflow: hidden; }
   .mission .num-marker, .mission .eyebrow { color: var(--ink); }
   .mission .row-head h2 .accent {
-    font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+    font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300;
     color: var(--yellow); text-transform: none;
     text-shadow: 0 1px 0 rgba(0,0,0,0.04);
   }
@@ -1313,7 +1557,7 @@
   }
   .mission-body p:last-child { margin-bottom: 0; }
   .mission-body strong {
-    font-family: 'Fraunces', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 400;
     font-size: 1.08em;
@@ -1348,7 +1592,7 @@
   }
   .foot-brand img { height: 56px; margin-bottom: 24px; }
   .foot-brand p {
-    font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+    font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300;
     font-size: 16px; line-height: 1.5;
     color: rgba(244,241,232,0.6);
     max-width: 280px;
@@ -1437,13 +1681,13 @@
     background: rgba(212,217,0,0.06);
   }
 
-  /* Update prog-row grid to accommodate icon */
+  /* Prog row grid: icon, title, desc, arrow */
   .prog-row {
-    grid-template-columns: 36px 60px 1fr auto;
+    grid-template-columns: 36px 1fr auto;
   }
   @media (min-width: 768px) {
     .prog-row {
-      grid-template-columns: 36px 100px 280px 1fr auto;
+      grid-template-columns: 36px 280px 1fr auto;
     }
   }
 
@@ -1529,6 +1773,32 @@
     <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></symbol>
     <!-- Facebook -->
     <symbol id="i-fb" viewBox="0 0 24 24"><path d="M16 8h-2.5a1.5 1.5 0 0 0-1.5 1.5V12H10v3h2v6h3v-6h2.5l.5-3H15v-2a.5.5 0 0 1 .5-.5H17V8z"/></symbol>
+    <!-- Climbing hold — organic blob with bolt hole, designed to read at 18-24px -->
+    <symbol id="i-hold" viewBox="0 0 24 24">
+      <!-- Outer organic shape: an asymmetric pinch/jug profile -->
+      <path d="M5.5 9.5
+               C 5.5 6, 8 4.5, 11 4.8
+               C 14 5, 17 5.5, 18.5 8
+               C 20 10.5, 19.5 14, 17.5 16
+               C 15.5 18, 12 19, 9 18
+               C 6 17, 4.5 14.5, 5 12
+               Z"
+            stroke-linejoin="round"/>
+      <!-- Bolt hole (the metal screw insert in the center) -->
+      <circle cx="11.8" cy="11.5" r="1.6"/>
+      <circle cx="11.8" cy="11.5" r="0.6" fill="currentColor" stroke="none"/>
+      <!-- Texture pocket / dimple suggesting an undercling lip -->
+      <path d="M14.2 14.5 C 13 15.2, 11.8 15, 11 14" stroke-linecap="round"/>
+    </symbol>
+    <!-- Custom expressive arrow — long shaft, oversized head, tail dot for character -->
+    <symbol id="i-arrow-x" viewBox="0 0 32 24">
+      <!-- Tail dot — small accent at the start of the arrow -->
+      <circle cx="3" cy="12" r="1.4" fill="currentColor" stroke="none"/>
+      <!-- Long thin shaft -->
+      <path d="M6.5 12 H 24" stroke-linecap="round" stroke-width="1.6"/>
+      <!-- Oversized arrowhead, slightly open angle for an editorial feel -->
+      <path d="M19 5.5 L 27.5 12 L 19 18.5" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.6" fill="none"/>
+    </symbol>
     <!-- Open sign / hanging shop sign -->
     <symbol id="i-open" viewBox="0 0 64 48">
       <!-- Bracket arm and chains -->
@@ -1585,48 +1855,63 @@
       </div>
 
       <div class="nav-item">
-        <a href="#experience">Customer Experience <span class="caret">▼</span></a>
+        <a href="#">Customer Experience <span class="caret">▼</span></a>
         <div class="dropdown">
-          <a href="#experience">Waiver</a>
-          <a href="#experience">Customer Portal</a>
+          <a href="#">Waiver</a>
+          <a href="#">Customer Portal</a>
         </div>
       </div>
 
       <div class="nav-item">
-        <a href="#programs">Programs <span class="caret">▼</span></a>
+        <a href="#">Programs <span class="caret">▼</span></a>
         <div class="dropdown">
-          <a href="#programs">Climbing Classes</a>
-          <a href="#programs">Private 1:1 Instruction</a>
-          <a href="#programs">Crash Pad Rentals</a>
+          <a href="#">Climbing Classes</a>
+          <a href="#">Private 1:1 Instruction</a>
+          <a href="#">Crash Pad Rentals</a>
         </div>
       </div>
 
       <div class="nav-item">
-        <a href="#fitness">Fitness <span class="caret">▼</span></a>
+        <a href="#">Fitness <span class="caret">▼</span></a>
         <div class="dropdown">
-          <a href="#fitness">Yoga and Fitness Classes</a>
-          <a href="#fitness">Fitness Class Instructors</a>
-          <a href="#fitness">Fitness Equipment</a>
+          <a href="#">Yoga and Fitness Classes</a>
+          <a href="#">Fitness Class Instructors</a>
+          <a href="#">Fitness Equipment</a>
         </div>
       </div>
 
       <div class="nav-item">
-        <a href="#youth">Youth <span class="caret">▼</span></a>
+        <a href="#">Youth <span class="caret">▼</span></a>
         <div class="dropdown">
-          <a href="#youth">Youth Climbing Teams</a>
-          <a href="#youth">Youth Climbing Camps – Camp Overlook</a>
-          <a href="#youth">Overlook Youth Calendar</a>
-          <a href="#youth">Youth Birthday</a>
+          <a href="#">Youth Climbing Teams</a>
+          <a href="#">Youth Climbing Camps – Camp Overlook</a>
+          <a href="#">Overlook Youth Calendar</a>
+          <a href="#">Youth Birthday</a>
         </div>
       </div>
 
-      <div class="nav-item"><a href="#community">Community</a></div>
-      <div class="nav-item"><a href="#deals">Deals</a></div>
+      <div class="nav-item">
+        <a href="#">Community <span class="caret">▼</span></a>
+        <div class="dropdown">
+          <a href="#">Adult Boulder League</a>
+          <a href="#">Group Events @ The Overlook</a>
+          <a href="#">Calendar of Events</a>
+          <a href="#">Art at The Overlook</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#">Deals <span class="caret">▼</span></a>
+        <div class="dropdown">
+          <a href="#">Deals at The Overlook</a>
+        </div>
+      </div>
     </div>
 
-    <a href="#visit" class="nav-cta">Climb Today</a>
     <button class="hamburger" id="hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
+      <span class="ham-icon-stack">
+        <span></span><span></span><span></span>
+      </span>
+      <em class="ham-label">Menu</em>
     </button>
   </div>
 
@@ -1641,37 +1926,44 @@
     </div>
     <div class="group">
       <div class="label">Customer Experience</div>
-      <a href="#experience">Waiver</a>
-      <a href="#experience">Customer Portal</a>
+      <a href="#">Waiver</a>
+      <a href="#">Customer Portal</a>
     </div>
     <div class="group">
       <div class="label">Programs</div>
-      <a href="#programs">Climbing Classes</a>
-      <a href="#programs">Private 1:1 Instruction</a>
-      <a href="#programs">Crash Pad Rentals</a>
+      <a href="#">Climbing Classes</a>
+      <a href="#">Private 1:1 Instruction</a>
+      <a href="#">Crash Pad Rentals</a>
     </div>
     <div class="group">
       <div class="label">Fitness</div>
-      <a href="#fitness">Yoga &amp; Fitness Classes</a>
-      <a href="#fitness">Fitness Class Instructors</a>
-      <a href="#fitness">Fitness Equipment</a>
+      <a href="#">Yoga &amp; Fitness Classes</a>
+      <a href="#">Fitness Class Instructors</a>
+      <a href="#">Fitness Equipment</a>
     </div>
     <div class="group">
       <div class="label">Youth</div>
-      <a href="#youth">Youth Climbing Teams</a>
-      <a href="#youth">Camp Overlook</a>
-      <a href="#youth">Youth Calendar</a>
-      <a href="#youth">Youth Birthday</a>
+      <a href="#">Youth Climbing Teams</a>
+      <a href="#">Camp Overlook</a>
+      <a href="#">Youth Calendar</a>
+      <a href="#">Youth Birthday</a>
     </div>
-    <div class="group"><a href="#community" class="label" style="color:var(--yellow);">Community</a></div>
-    <div class="group"><a href="#deals" class="label" style="color:var(--yellow);">Deals</a></div>
+    <div class="group">
+      <div class="label">Community</div>
+      <a href="#">Adult Boulder League</a>
+      <a href="#">Group Events @ The Overlook</a>
+      <a href="#">Calendar of Events</a>
+      <a href="#">Art at The Overlook</a>
+    </div>
+    <div class="group">
+      <div class="label">Deals</div>
+      <a href="#">Deals at The Overlook</a>
+    </div>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-bg-word">CLIMB</div>
-
   <div class="hero-stamp">
     <div class="label">Atlanta BeltLine</div>
     <div class="value">est. 2016</div>
@@ -1680,35 +1972,37 @@
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-content">
-        <div class="hero-meta">
-          <span class="line"></span>
-          <span class="text">Indoor Rock Climbing · Atlanta, GA</span>
-        </div>
-
         <h1 class="display hero-title">
-          Find your<br>
-          <span class="accent">grip.</span><br>
-          Climb<br>
-          higher.
+          <span class="ht-line ht-1">Find your</span>
+          <span class="ht-line ht-2"><span class="accent">grip.</span></span>
+          <span class="ht-line ht-3">Climb</span>
+          <span class="ht-line ht-4">higher</span>
         </h1>
 
-        <p class="hero-sub">
-          A premier climbing facility on the Atlanta BeltLine. Classes, camps, fitness, and a community that meets you wherever you are on the wall — V0 to V-anything.
-        </p>
+        <div class="hero-tagline">
+          <span class="ht-dot"></span>
+          <span class="ht-text">Indoor Rock Climbing · Atlanta, GA</span>
+        </div>
 
-        <div class="hero-actions">
-          <a href="#programs" class="btn btn-yellow">
-            Start Climbing
-            <svg class="icn icn-sm arrow"><use href="#i-arrow"/></svg>
-          </a>
-          <a href="#" class="btn btn-ghost">
-            <svg class="icn icn-sm"><use href="#i-doc"/></svg>
-            Sign a Waiver
-          </a>
-          <a href="#visit" class="btn btn-ghost">
-            <svg class="icn icn-sm"><use href="#i-pin"/></svg>
-            Plan a Visit
-          </a>
+        <div class="hero-aside">
+          <p class="hero-sub">
+            A premier climbing facility on the Atlanta BeltLine. Classes, camps, fitness, and a community that meets you wherever you are on the wall.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#about" class="btn btn-yellow">
+              Start Climbing
+              <svg class="icn icn-sm arrow"><use href="#i-arrow"/></svg>
+            </a>
+            <a href="#" class="btn btn-ghost">
+              <svg class="icn icn-sm"><use href="#i-doc"/></svg>
+              Sign a Waiver
+            </a>
+            <a href="#visit" class="btn btn-ghost">
+              <svg class="icn icn-sm"><use href="#i-pin"/></svg>
+              Plan a Visit
+            </a>
+          </div>
         </div>
       </div>
 
@@ -1770,7 +2064,7 @@
     <div class="about-grid">
       <div class="about-body">
         <p>
-          The Overlook is a climbing community on Atlanta's BeltLine — a place where first-timers and seasoned crushers share the same mats, the same chalk, and the same problems on the wall.
+          The Overlook is a climbing community on Atlanta's BeltLine. A place where first-timers and seasoned crushers share the same mats, the same chalk, and the same problems on the wall.
         </p>
         <p>
           We run climbing classes, youth teams, summer camps, fitness sessions, and private instruction. Whatever brought you in, we'll help you stay.
@@ -1782,7 +2076,7 @@
 
         <div class="about-features">
           <div class="feat"><svg class="feat-icn"><use href="#i-mountain"/></svg><span class="txt">7,300 sq ft of climbable surface, walls up to 60° overhang</span></div>
-          <div class="feat"><svg class="feat-icn"><use href="#i-target"/></svg><span class="txt">Bouldering for every level — V0 through V12+</span></div>
+          <div class="feat"><svg class="feat-icn"><use href="#i-target"/></svg><span class="txt">Bouldering for every level, V0 through V12+</span></div>
           <div class="feat"><svg class="feat-icn"><use href="#i-dumbbell"/></svg><span class="txt">Yoga, strength &amp; conditioning, free weights, hangboards</span></div>
           <div class="feat"><svg class="feat-icn"><use href="#i-users"/></svg><span class="txt">Youth teams, Camp Overlook, &amp; community programs</span></div>
         </div>
@@ -1801,316 +2095,12 @@
   </div>
 </div>
 
-<!-- PROGRAMS / FITNESS / YOUTH / EXPERIENCE / COMMUNITY / DEALS — accordion -->
-<section class="row programs reveal" id="programs">
-  <div class="wrap">
-    <div class="row-head">
-      <span class="num-marker">/02 — Programs</span>
-      <span class="eyebrow">What we offer</span>
-      <h2>Pick your<br><span class="accent">path.</span></h2>
-    </div>
-
-    <div class="prog-acc">
-
-      <!-- ABOUT (open by default) -->
-      <details class="acc" open>
-        <summary class="acc-head">
-          <span class="acc-meta">
-            <span class="acc-num">/01</span>
-            <span class="acc-label">About</span>
-          </span>
-          <span class="acc-title">Who we are.</span>
-          <span class="acc-count">3</span>
-          <span class="acc-toggle" aria-hidden="true">
-            <svg class="icn icn-sm"><use href="#i-arrow"/></svg>
-          </span>
-        </summary>
-        <ul class="prog-list">
-          <li>
-            <a href="#mission" class="prog-row">
-              <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-heart"/></svg></span>
-              <span class="prog-num">i.</span>
-              <span class="prog-title">Mission Statement</span>
-              <span class="prog-desc">The three principles The Overlook was founded on — climbing, community, and connection.</span>
-              <span class="prog-arrow"><svg class="icn icn-sm"><use href="#i-arrow"/></svg></span>
-            </a>
-          </li>
-          <li>
-            <a href="#visit" class="prog-row">
-              <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-pin"/></svg></span>
-              <span class="prog-num">ii.</span>
-              <span class="prog-title">Rates / Hours / Location</span>
-              <span class="prog-desc">Day passes, memberships, weekly hours, and how to find us at 1030 White St SW.</span>
-              <span class="prog-arrow"><svg class="icn icn-sm"><use href="#i-arrow"/></svg></span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="prog-row">
-              <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-doc"/></svg></span>
-              <span class="prog-num">iii.</span>
-              <span class="prog-title">FAQs</span>
-              <span class="prog-desc">First-visit questions, gear, age policies, parking, and everything else new climbers ask.</span>
-              <span class="prog-arrow"><svg class="icn icn-sm"><use href="#i-arrow"/></svg></span>
-            </a>
-          </li>
-        </ul>
-      </details>
-
-      <!-- PROGRAMS -->
-      <details class="acc">
-        <summary class="acc-head">
-          <span class="acc-meta">
-            <span class="acc-num">/02</span>
-            <span class="acc-label">Programs</span>
-          </span>
-          <span class="acc-title">On the wall.</span>
-          <span class="acc-count">3</span>
-          <span class="acc-toggle" aria-hidden="true">
-            <svg class="icn icn-sm"><use href="#i-arrow"/></svg>
-          </span>
-        </summary>
-        <ul class="prog-list">
-          <li>
-            <a href="#" class="prog-row">
-              <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-mountain"/></svg></span>
-              <span class="prog-num">iv.</span>
-              <span class="prog-title">Climbing Classes</span>
-              <span class="prog-desc">Group sessions, beginner to advanced. Movement and technique with certified coaches.</span>
-              <span class="prog-arrow"><svg class="icn icn-sm"><use href="#i-arrow"/></svg></span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="prog-row">
-              <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-target"/></svg></span>
-              <span class="prog-num">v.</span>
-              <span class="prog-title">Private 1:1 Instruction</span>
-              <span class="prog-desc">One-on-one coaching tailored to your goals — projecting, training, footwork.</span>
-              <span class="prog-arrow"><svg class="icn icn-sm"><use href="#i-arrow"/></svg></span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="prog-row">
-              <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-shield"/></svg></span>
-              <span class="prog-num">vi.</span>
-              <span class="prog-title">Crash Pad Rentals</span>
-              <span class="prog-desc">Heading outdoors? Rent crash pads before you hit the rocks. Fair daily rates.</span>
-              <span class="prog-arrow"><svg class="icn icn-sm"><use href="#i-arrow"/></svg></span>
-            </a>
-          </li>
-        </ul>
-      </details>
-
-      <!-- FITNESS -->
-      <details class="acc" id="fitness">
-        <summary class="acc-head">
-          <span class="acc-meta">
-            <span class="acc-num">/03</span>
-            <span class="acc-label">Fitness</span>
-          </span>
-          <span class="acc-title">Off the wall.</span>
-          <span class="acc-count">3</span>
-          <span class="acc-toggle" aria-hidden="true">
-            <svg class="icn icn-sm"><use href="#i-arrow"/></svg>
-          </span>
-        </summary>
-        <ul class="prog-list">
-          <li>
-            <a href="#" class="prog-row">
-              <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-lotus"/></svg></span>
-              <span class="prog-num">vii.</span>
-              <span class="prog-title">Yoga &amp; Fitness Classes</span>
-              <span class="prog-desc">Climbing-specific yoga, mobility, and strength on a rotating weekly schedule.</span>
-              <span class="prog-arrow"><svg class="icn icn-sm"><use href="#i-arrow"/></svg></span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="prog-row">
-              <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-people"/></svg></span>
-              <span class="prog-num">viii.</span>
-              <span class="prog-title">Class Instructors</span>
-              <span class="prog-desc">Climbers, yogis, and trainers who know what your body needs.</span>
-              <span class="prog-arrow"><svg class="icn icn-sm"><use href="#i-arrow"/></svg></span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="prog-row">
-              <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-dumbbell"/></svg></span>
-              <span class="prog-num">ix.</span>
-              <span class="prog-title">Fitness Equipment</span>
-              <span class="prog-desc">Hangboards, campus boards, free weights, dedicated training area.</span>
-              <span class="prog-arrow"><svg class="icn icn-sm"><use href="#i-arrow"/></svg></span>
-            </a>
-          </li>
-        </ul>
-      </details>
-
-      <!-- YOUTH -->
-      <details class="acc" id="youth">
-        <summary class="acc-head">
-          <span class="acc-meta">
-            <span class="acc-num">/04</span>
-            <span class="acc-label">Youth</span>
-          </span>
-          <span class="acc-title">Next generation.</span>
-          <span class="acc-count">3</span>
-          <span class="acc-toggle" aria-hidden="true">
-            <svg class="icn icn-sm"><use href="#i-arrow"/></svg>
-          </span>
-        </summary>
-        <ul class="prog-list">
-          <li>
-            <a href="#" class="prog-row">
-              <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-users"/></svg></span>
-              <span class="prog-num">x.</span>
-              <span class="prog-title">Climbing Teams</span>
-              <span class="prog-desc">Competitive and recreational teams for kids and teens. Skill, confidence, crew.</span>
-              <span class="prog-arrow"><svg class="icn icn-sm"><use href="#i-arrow"/></svg></span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="prog-row">
-              <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-sun"/></svg></span>
-              <span class="prog-num">xi.</span>
-              <span class="prog-title">Camp Overlook<span class="prog-live">Live</span></span>
-              <span class="prog-desc">Flagship summer camp — week-long sessions of climbing, games, and BeltLine adventures.</span>
-              <span class="prog-arrow"><svg class="icn icn-sm"><use href="#i-arrow"/></svg></span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="prog-row">
-              <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-cake"/></svg></span>
-              <span class="prog-num">xii.</span>
-              <span class="prog-title">Birthday Parties</span>
-              <span class="prog-desc">Throw a birthday on the walls. We handle climbing, staff, and cleanup.</span>
-              <span class="prog-arrow"><svg class="icn icn-sm"><use href="#i-arrow"/></svg></span>
-            </a>
-          </li>
-        </ul>
-      </details>
-
-      <!-- EXPERIENCE -->
-      <details class="acc" id="experience">
-        <summary class="acc-head">
-          <span class="acc-meta">
-            <span class="acc-num">/05</span>
-            <span class="acc-label">Experience</span>
-          </span>
-          <span class="acc-title">Member essentials.</span>
-          <span class="acc-count">2</span>
-          <span class="acc-toggle" aria-hidden="true">
-            <svg class="icn icn-sm"><use href="#i-arrow"/></svg>
-          </span>
-        </summary>
-        <ul class="prog-list">
-          <li>
-            <a href="#" class="prog-row">
-              <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-doc"/></svg></span>
-              <span class="prog-num">xiii.</span>
-              <span class="prog-title">Sign a Waiver</span>
-              <span class="prog-desc">Required for every climber. Sign online before you visit to skip the front-desk paperwork.</span>
-              <span class="prog-arrow"><svg class="icn icn-sm"><use href="#i-arrow"/></svg></span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="prog-row">
-              <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-shield"/></svg></span>
-              <span class="prog-num">xiv.</span>
-              <span class="prog-title">Customer Portal</span>
-              <span class="prog-desc">Manage your membership, register for classes, and view your account in one place.</span>
-              <span class="prog-arrow"><svg class="icn icn-sm"><use href="#i-arrow"/></svg></span>
-            </a>
-          </li>
-        </ul>
-      </details>
-
-      <!-- COMMUNITY -->
-      <details class="acc" id="community-prog">
-        <summary class="acc-head">
-          <span class="acc-meta">
-            <span class="acc-num">/06</span>
-            <span class="acc-label">Community</span>
-          </span>
-          <span class="acc-title">Beyond the walls.</span>
-          <span class="acc-count">4</span>
-          <span class="acc-toggle" aria-hidden="true">
-            <svg class="icn icn-sm"><use href="#i-arrow"/></svg>
-          </span>
-        </summary>
-        <ul class="prog-list">
-          <li>
-            <a href="#" class="prog-row">
-              <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-people"/></svg></span>
-              <span class="prog-num">xv.</span>
-              <span class="prog-title">Adult Boulder League</span>
-              <span class="prog-desc">Recurring league for adults — friendly comps, weekly sets, and a real crew that shows up.</span>
-              <span class="prog-arrow"><svg class="icn icn-sm"><use href="#i-arrow"/></svg></span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="prog-row">
-              <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-users"/></svg></span>
-              <span class="prog-num">xvi.</span>
-              <span class="prog-title">Group Events @ The Overlook</span>
-              <span class="prog-desc">Team builders, corporate outings, school groups — climbing as a shared experience.</span>
-              <span class="prog-arrow"><svg class="icn icn-sm"><use href="#i-arrow"/></svg></span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="prog-row">
-              <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-calendar"/></svg></span>
-              <span class="prog-num">xvii.</span>
-              <span class="prog-title">Calendar of Events</span>
-              <span class="prog-desc">Comps, meetups, free yoga, queer climb nights, route-set parties. See what's coming up.</span>
-              <span class="prog-arrow"><svg class="icn icn-sm"><use href="#i-arrow"/></svg></span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="prog-row">
-              <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-sparkle"/></svg></span>
-              <span class="prog-num">xviii.</span>
-              <span class="prog-title">Art at The Overlook</span>
-              <span class="prog-desc">Local artists rotate through the gym. We're a climbing space and a gallery.</span>
-              <span class="prog-arrow"><svg class="icn icn-sm"><use href="#i-arrow"/></svg></span>
-            </a>
-          </li>
-        </ul>
-      </details>
-
-      <!-- DEALS -->
-      <details class="acc" id="deals">
-        <summary class="acc-head">
-          <span class="acc-meta">
-            <span class="acc-num">/07</span>
-            <span class="acc-label">Deals</span>
-          </span>
-          <span class="acc-title">Better rates.</span>
-          <span class="acc-count">1</span>
-          <span class="acc-toggle" aria-hidden="true">
-            <svg class="icn icn-sm"><use href="#i-arrow"/></svg>
-          </span>
-        </summary>
-        <ul class="prog-list">
-          <li>
-            <a href="#" class="prog-row">
-              <span class="prog-icn-wrap"><svg class="icn icn-sm"><use href="#i-tag"/></svg></span>
-              <span class="prog-num">xix.</span>
-              <span class="prog-title">Deals at The Overlook</span>
-              <span class="prog-desc">Day-pass discounts, student rates, group pricing, and seasonal membership offers.</span>
-              <span class="prog-arrow"><svg class="icn icn-sm"><use href="#i-arrow"/></svg></span>
-            </a>
-          </li>
-        </ul>
-      </details>
-
-    </div>
-  </div>
-</section>
 
 <!-- INSIDE THE WALLS — slideshow + cycling reviews -->
 <section class="row inside reveal" id="community">
   <div class="wrap">
     <div class="row-head">
-      <span class="num-marker">/03 — Inside the Walls</span>
+      <span class="num-marker">/02 — Inside the Walls</span>
       <span class="eyebrow">A look around</span>
       <h2>Inside<br>the<br><span class="accent">walls.</span></h2>
     </div>
@@ -2185,7 +2175,7 @@
       <div class="quote-stage" id="quoteStage">
       <div class="quote-card active" data-quote="0">
         <span class="qmark">"</span>
-        <p class="qtext">An amazing facility on the BeltLine for climbing or working out. Clean, friendly — overall I'd give this place a 10.</p>
+        <p class="qtext">An amazing facility on the BeltLine for climbing or working out. Clean, friendly. Overall I'd give this place a 10.</p>
         <div class="qmeta">
           <span class="who">— Sara H.</span>
           <span class="divider"></span>
@@ -2194,7 +2184,7 @@
       </div>
       <div class="quote-card" data-quote="1">
         <span class="qmark">"</span>
-        <p class="qtext">Drove over from North Alabama to spend the day. We were not disappointed — tons of problems, great staff, easily 5 hours in.</p>
+        <p class="qtext">Drove over from North Alabama to spend the day. We were not disappointed. Tons of problems, great staff, easily 5 hours in.</p>
         <div class="qmeta">
           <span class="who">— Travis R.</span>
           <span class="divider"></span>
@@ -2203,7 +2193,7 @@
       </div>
       <div class="quote-card" data-quote="2">
         <span class="qmark">"</span>
-        <p class="qtext">Love the variety of wall angles. Their slab set is excellent. Friendly staff and owners — perfect spot for a few hours.</p>
+        <p class="qtext">Love the variety of wall angles. Their slab set is excellent. Friendly staff and owners. Perfect spot for a few hours.</p>
         <div class="qmeta">
           <span class="who">— Jamie L.</span>
           <span class="divider"></span>
@@ -2251,21 +2241,20 @@
   <div class="wrap">
     <div class="mission-top">
       <div class="row-head" style="margin-bottom:0;">
-        <span class="num-marker">/04 — Mission</span>
+        <span class="num-marker">/03 — Mission</span>
         <span class="eyebrow">What we stand for</span>
         <h2>Climbing,<br>community<br>&amp; <span class="accent">connection.</span></h2>
       </div>
 
       <!-- Heart hold floating in the empty space -->
       <div class="mission-heart" aria-hidden="true">
-        <div class="heart-rings"></div>
         <img src="assets/heart-hold.png" alt="" class="heart-img">
       </div>
     </div>
 
     <div class="mission-body">
       <p>
-        The Overlook was founded on three principles. We <strong>love to climb</strong> and we live to climb, and we're dedicated to making climbing accessible to everyone — first-timers and seasoned crushers alike. Climbing is the foundation, but <strong>community is the heart</strong> — an all-inclusive space where members are empowered to use their strengths to reach collective goals, across race, age, sex, orientation, ability, and background.
+        The Overlook was founded on three principles. We <strong>love to climb</strong> and we live to climb, and we're dedicated to making climbing accessible to everyone. First-timers and seasoned crushers alike. Climbing is the foundation, but <strong>community is the heart</strong>. We strive for an all-inclusive space where members are empowered to use their strengths to reach collective goals, across race, age, sex, orientation, ability, and background.
       </p>
       <p>
         Through our passion for the sport and our focus on people, we <strong>connect</strong> climbers through excellence in route setting, instruction, creative programs, outreach, and safety. The goal: a place where Atlanta's beautifully diverse cultures come together as one.
@@ -2278,7 +2267,7 @@
 <section class="row visit reveal section-divided" id="visit">
   <div class="wrap">
     <div class="row-head">
-      <span class="num-marker">/05 — Visit</span>
+      <span class="num-marker">/04 — Visit</span>
       <span class="eyebrow">Find us</span>
       <h2>1030 White St,<br><span class="accent">come by.</span></h2>
     </div>
@@ -2297,33 +2286,14 @@
 
         <div class="info-block">
           <div class="k"><svg class="icn icn-sm"><use href="#i-clock"/></svg> Hours</div>
-          <div class="v hours-grid">
-            <div class="hours-days">
-              <div class="hours-row"><span class="day">Monday</span></div>
-              <div class="hours-row"><span class="day">Tuesday</span></div>
-              <div class="hours-row"><span class="day">Wednesday</span></div>
-              <div class="hours-row"><span class="day">Thursday</span></div>
-              <div class="hours-row"><span class="day">Friday</span></div>
-              <div class="hours-row"><span class="day">Saturday</span></div>
-              <div class="hours-row"><span class="day">Sunday</span></div>
-            </div>
-
-            <div class="hours-sign" aria-hidden="true">
-              <svg viewBox="0 0 36 48" class="open-sign">
-                <use href="#i-open"/>
-              </svg>
-              <span class="hours-sign-cap">Open daily</span>
-            </div>
-
-            <div class="hours-times">
-              <div class="hours-row"><span>6 AM — 10 PM</span></div>
-              <div class="hours-row"><span>6 AM — 10 PM</span></div>
-              <div class="hours-row"><span>6 AM — 10 PM</span></div>
-              <div class="hours-row"><span>6 AM — 10 PM</span></div>
-              <div class="hours-row"><span>10 AM — 10 PM</span></div>
-              <div class="hours-row"><span>10 AM — 8 PM</span></div>
-              <div class="hours-row"><span>10 AM — 8 PM</span></div>
-            </div>
+          <div class="v" style="width: 100%;">
+            <div class="hours-row"><span class="day">Monday</span><span>6 AM — 10 PM</span></div>
+            <div class="hours-row"><span class="day">Tuesday</span><span>6 AM — 10 PM</span></div>
+            <div class="hours-row"><span class="day">Wednesday</span><span>6 AM — 10 PM</span></div>
+            <div class="hours-row"><span class="day">Thursday</span><span>6 AM — 10 PM</span></div>
+            <div class="hours-row"><span class="day">Friday</span><span>10 AM — 10 PM</span></div>
+            <div class="hours-row"><span class="day">Saturday</span><span>10 AM — 8 PM</span></div>
+            <div class="hours-row"><span class="day">Sunday</span><span>10 AM — 8 PM</span></div>
           </div>
         </div>
 
@@ -2357,19 +2327,19 @@
       <div class="foot-col">
         <h4><svg class="icn"><use href="#i-mountain"/></svg>Programs</h4>
         <ul>
-          <li><a href="#programs">Climbing Classes</a></li>
-          <li><a href="#programs">Private 1:1</a></li>
-          <li><a href="#programs">Crash Pad Rentals</a></li>
-          <li><a href="#youth">Camp Overlook</a></li>
-          <li><a href="#youth">Youth Teams</a></li>
+          <li><a href="#">Climbing Classes</a></li>
+          <li><a href="#">Private 1:1</a></li>
+          <li><a href="#">Crash Pad Rentals</a></li>
+          <li><a href="#">Camp Overlook</a></li>
+          <li><a href="#">Youth Teams</a></li>
         </ul>
       </div>
 
       <div class="foot-col">
         <h4><svg class="icn"><use href="#i-doc"/></svg>Members</h4>
         <ul>
-          <li><a href="#experience">Waiver</a></li>
-          <li><a href="#experience">Customer Portal</a></li>
+          <li><a href="#">Waiver</a></li>
+          <li><a href="#">Customer Portal</a></li>
           <li><a href="#contact">Membership Changes</a></li>
           <li><a href="#contact">Request Info</a></li>
           <li><a href="#contact">Careers</a></li>
@@ -2383,7 +2353,7 @@
           <li><a href="#visit">Atlanta, GA 30310</a></li>
           <li><a href="tel:6789732460">678.973.2460</a></li>
           <li><a href="#visit">Hours</a></li>
-          <li><a href="#deals">Deals</a></li>
+          <li><a href="#">Deals</a></li>
         </ul>
       </div>
     </div>
@@ -2406,8 +2376,14 @@
   // Mobile menu toggle
   const ham = document.getElementById('hamburger');
   const mob = document.getElementById('mobile-menu');
-  ham?.addEventListener('click', () => mob.classList.toggle('open'));
-  mob?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+  ham?.addEventListener('click', () => {
+    mob.classList.toggle('open');
+    ham.classList.toggle('is-open');
+  });
+  mob?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mob.classList.remove('open');
+    ham.classList.remove('is-open');
+  }));
 
   // Scroll reveal
   const reveal = new IntersectionObserver((entries) => {

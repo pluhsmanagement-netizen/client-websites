@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Layaly — Mediterranean Restaurant</title>
-<meta name="description" content="Layaly is a Mediterranean restaurant offering classic mezze, grilled specialties, and a warm, intimate dining experience.">
+<meta name="description" content="Informal eatery with patio seating offering dishes from the Mediterranean and Greek regions. Located in Chamblee, GA.">
 <meta name="theme-color" content="#2D4A36">
 <meta property="og:title" content="Layaly — Mediterranean Restaurant">
 <meta property="og:description" content="Classic mezze, grilled specialties, and a warm dining experience.">
 <meta property="og:type" content="restaurant">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Restaurant","name":"Layaly","servesCuisine":["Mediterranean","Lebanese","Middle Eastern"],"priceRange":"$$","url":"https://layaly.co"}
+{"@context":"https://schema.org","@type":"Restaurant","name":"Layaly Mediterranean Restaurant","servesCuisine":["Mediterranean","Lebanese","Greek","Middle Eastern"],"priceRange":"$$","url":"https://layaly.co","telephone":"+1-770-559-9136","address":{"@type":"PostalAddress","streetAddress":"3711 Clairmont Rd","addressLocality":"Chamblee","addressRegion":"GA","postalCode":"30341","addressCountry":"US"},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Outdoor seating","value":true},{"@type":"LocationFeatureSpecification","name":"Great cocktails","value":true},{"@type":"LocationFeatureSpecification","name":"Vegan options","value":true}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -145,8 +145,10 @@ section{scroll-margin-top:80px}
 
 /* OWNER */
 .owner{background:var(--cream);padding:120px 2rem;position:relative}
-.owner-grid{display:grid;grid-template-columns:0.85fr 1fr;gap:5rem;align-items:center;max-width:1200px;margin:0 auto}
+.owner-grid{display:grid;grid-template-columns:0.95fr 1fr;gap:5rem;align-items:center;max-width:1200px;margin:0 auto}
+.owner-image-stack{display:grid;grid-template-columns:1fr;gap:1rem}
 .owner-image{aspect-ratio:4/5;background:var(--sage);overflow:hidden;position:relative}
+.owner-image-wide{aspect-ratio:5/4}
 .owner-image img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
 .owner-image:hover img{transform:scale(1.03)}
 .owner-text h2{font-size:clamp(2.2rem,4vw,3.2rem);margin:.5rem 0 .5rem;color:var(--ink)}
@@ -240,7 +242,7 @@ footer{background:#0E1A12;color:rgba(255,255,255,.7);padding:80px 2rem 30px}
     <img src="assets3/layaly%20logo.PNG" alt="Layaly — Mediterranean Restaurant">
   </div>
   <p class="hero-tagline">Where every evening tastes of the sea, the olive grove, and home.</p>
-  <p class="hero-sub">Mediterranean · Cuisine · Hospitality</p>
+  <p class="hero-sub">Mediterranean · Greek · Patio Dining</p>
   <div class="hero-actions">
     <a href="#menu" class="btn btn-primary">Explore Menu</a>
     <a href="#visit" class="btn btn-outline">Reserve a Table</a>
@@ -621,8 +623,8 @@ footer{background:#0E1A12;color:rgba(255,255,255,.7);padding:80px 2rem 30px}
         <div class="visit-row">
           <i data-lucide="map-pin" class="icon" style="width:22px;height:22px;"></i>
           <div>
-            <div class="label">Location</div>
-            <div class="value">Visit us — address coming soon<br><a href="https://layaly.co" target="_blank" rel="noopener">layaly.co</a></div>
+            <div class="label">Address</div>
+            <div class="value"><a href="https://maps.google.com/?q=3711+Clairmont+Rd+Chamblee+GA+30341" target="_blank" rel="noopener">3711 Clairmont Rd<br>Chamblee, GA 30341</a></div>
           </div>
         </div>
         <div class="visit-row">
@@ -635,6 +637,13 @@ footer{background:#0E1A12;color:rgba(255,255,255,.7);padding:80px 2rem 30px}
         <div class="visit-row">
           <i data-lucide="phone" class="icon" style="width:22px;height:22px;"></i>
           <div>
+            <div class="label">Phone</div>
+            <div class="value"><a href="tel:+17705599136">(770) 559-9136</a></div>
+          </div>
+        </div>
+        <div class="visit-row">
+          <i data-lucide="mail" class="icon" style="width:22px;height:22px;"></i>
+          <div>
             <div class="label">Reservations</div>
             <div class="value"><a href="mailto:hello@layaly.co">hello@layaly.co</a></div>
           </div>
@@ -643,13 +652,33 @@ footer{background:#0E1A12;color:rgba(255,255,255,.7);padding:80px 2rem 30px}
           <i data-lucide="utensils" class="icon" style="width:22px;height:22px;"></i>
           <div>
             <div class="label">Cuisine</div>
-            <div class="value">Mediterranean · Lebanese · Halal</div>
+            <div class="value">Mediterranean · Greek · Lebanese · Halal</div>
           </div>
         </div>
-        <a href="mailto:hello@layaly.co" class="btn btn-ghost" style="margin-top:1rem;">Make a Reservation</a>
+        <a href="tel:+17705599136" class="btn btn-ghost" style="margin-top:1rem;">Call to Reserve</a>
       </div>
       <div class="visit-map">
-        <iframe title="Layaly map" src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDoFQTvPU-4jokYuQgsrPR6P7YKXZZDp-k&q=mediterranean+restaurant" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe title="Layaly Mediterranean Restaurant — 3711 Clairmont Rd, Chamblee GA" src="https://maps.google.com/maps?q=3711+Clairmont+Rd+Chamblee+GA+30341&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <!-- Service options strip -->
+    <div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:center;flex-wrap:wrap;gap:2.5rem 3rem;">
+      <div style="display:flex;align-items:center;gap:.75rem;color:rgba(255,255,255,.85);font-size:.95rem;">
+        <i data-lucide="sun" style="width:22px;height:22px;color:var(--sage);"></i>
+        <span>Outdoor seating</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:.75rem;color:rgba(255,255,255,.85);font-size:.95rem;">
+        <i data-lucide="wine" style="width:22px;height:22px;color:var(--sage);"></i>
+        <span>Great cocktails</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:.75rem;color:rgba(255,255,255,.85);font-size:.95rem;">
+        <i data-lucide="leaf" style="width:22px;height:22px;color:var(--sage);"></i>
+        <span>Vegan options</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:.75rem;color:rgba(255,255,255,.85);font-size:.95rem;">
+        <i data-lucide="circle-check" style="width:22px;height:22px;color:var(--sage);"></i>
+        <span>Halal kitchen</span>
       </div>
     </div>
   </div>
@@ -676,8 +705,9 @@ footer{background:#0E1A12;color:rgba(255,255,255,.7);padding:80px 2rem 30px}
 <!-- OWNER -->
 <section id="owner" class="owner">
   <div class="owner-grid">
-    <div class="owner-image">
-      <img src="assets3/paul.jpeg" alt="Paul Jaraysi — Owner of Layaly" loading="lazy">
+    <div class="owner-image-stack">
+      <div class="owner-image"><img src="assets3/paul.jpeg" alt="Paul Jaraysi — Owner of Layaly" loading="lazy"></div>
+      <div class="owner-image owner-image-wide"><img src="assets3/FatherSon.jpg" alt="Paul Jaraysi with his father at Layaly" loading="lazy"></div>
     </div>
     <div class="owner-text">
       <p class="eyebrow">Meet the Owner</p>
@@ -701,10 +731,12 @@ footer{background:#0E1A12;color:rgba(255,255,255,.7);padding:80px 2rem 30px}
     <div class="footer-grid">
       <div class="footer-col">
         <h4>Visit</h4>
-        <p>Open seven days a week<br>11:00 AM – 10:00 PM</p>
+        <p>3711 Clairmont Rd<br>Chamblee, GA 30341</p>
+        <p>Open daily<br>11:00 AM – 10:00 PM</p>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
+        <a href="tel:+17705599136">(770) 559-9136</a>
         <a href="mailto:hello@layaly.co">hello@layaly.co</a>
         <a href="https://layaly.co" target="_blank" rel="noopener">layaly.co</a>
       </div>

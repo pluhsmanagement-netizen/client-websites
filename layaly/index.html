@@ -6,7 +6,6 @@
 <title>Layaly — Mediterranean Restaurant</title>
 <meta name="description" content="Layaly is a Mediterranean restaurant offering classic mezze, grilled specialties, and a warm, intimate dining experience.">
 <meta name="theme-color" content="#2D4A36">
-<link rel="icon" href="assets/favicon.webp">
 <meta property="og:title" content="Layaly — Mediterranean Restaurant">
 <meta property="og:description" content="Classic mezze, grilled specialties, and a warm dining experience.">
 <meta property="og:type" content="restaurant">
@@ -33,21 +32,13 @@
 *{box-sizing:border-box}
 html,body{overflow-x:hidden;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
-  -webkit-font-smoothing:antialiased;
-  color:var(--ink);
-  background:#fff;
-  font-weight:400;
-  line-height:1.6;
-}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;color:var(--ink);background:#fff;font-weight:400;line-height:1.6}
 h1,h2,h3,h4,h5,h6,.serif{font-family:'Cormorant Garamond','Playfair Display',Georgia,serif;font-weight:500;letter-spacing:-0.01em;line-height:1.1}
 .italic{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400}
 ::selection{background:var(--green);color:#fff}
 
-.eyebrow{font-size:11px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--green);}
-.eyebrow-light{font-size:11px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.7);}
-
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--green)}
+.eyebrow-light{font-size:11px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.7)}
 .divider-leaf{display:flex;align-items:center;justify-content:center;gap:1rem;margin:1.5rem 0;color:var(--green)}
 .divider-leaf::before,.divider-leaf::after{content:"";height:1px;background:var(--line);flex:1;max-width:80px}
 
@@ -108,7 +99,20 @@ section{scroll-margin-top:80px}
 .menu-panel{display:none;animation:fadeIn .4s ease}
 .menu-panel.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem 4rem;max-width:1000px;margin:0 auto}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:1200px;margin:0 auto}
+.menu-card{background:#fff;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease}
+.menu-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(26,45,32,.1)}
+.menu-card-img{aspect-ratio:4/3;overflow:hidden;background:var(--sage)}
+.menu-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.menu-card:hover .menu-card-img img{transform:scale(1.06)}
+.menu-card-placeholder{background:var(--cream-warm);display:flex;align-items:center;justify-content:center;color:var(--sage);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;text-align:center;padding:1rem}
+.menu-card-body{padding:1.5rem 1.5rem 1.75rem;flex:1;display:flex;flex-direction:column}
+.menu-card-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:.5rem}
+.menu-card-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem;font-weight:500;color:var(--ink);margin:0;letter-spacing:.01em}
+.menu-card-price{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.2rem;color:var(--green);font-weight:500;white-space:nowrap}
+.menu-card-desc{font-size:.92rem;color:var(--muted);line-height:1.6;margin:0;font-style:italic}
+
+.menu-grid-text{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem 4rem;max-width:1000px;margin:0 auto}
 .menu-item{padding:0;border-bottom:1px solid var(--line);padding-bottom:1.5rem}
 .menu-item-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:.5rem}
 .menu-item-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem;font-weight:500;color:var(--ink);margin:0;letter-spacing:.01em}
@@ -116,7 +120,7 @@ section{scroll-margin-top:80px}
 .menu-item-price{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.2rem;color:var(--green);font-weight:500;white-space:nowrap}
 .menu-item-desc{font-size:.92rem;color:var(--muted);line-height:1.6;margin:0;font-style:italic}
 
-/* EXPERIENCE / VALUES */
+/* EXPERIENCE */
 .values{background:#fff}
 .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem}
 .value-card{text-align:center;padding:0 1rem}
@@ -154,7 +158,6 @@ section{scroll-margin-top:80px}
 .visit{background:var(--green-deep);color:#fff;padding:120px 2rem}
 .visit .section-head h2{color:#fff}
 .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1000px;margin:0 auto;align-items:center}
-.visit-info{}
 .visit-row{display:flex;gap:1.25rem;margin-bottom:2rem;align-items:flex-start}
 .visit-row .icon{color:var(--sage);flex-shrink:0;margin-top:4px}
 .visit-row .label{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--sage);margin-bottom:.4rem;font-weight:500}
@@ -184,17 +187,19 @@ footer{background:#0E1A12;color:rgba(255,255,255,.7);padding:80px 2rem 30px}
   .about-grid{grid-template-columns:1fr;gap:3rem}
   .about-stats{grid-template-columns:1fr 1fr}
   .menu-grid{grid-template-columns:1fr;gap:2rem}
+  .menu-grid-text{grid-template-columns:1fr;gap:2rem}
   .values-grid{grid-template-columns:1fr;gap:2.5rem}
   .gallery-grid{grid-template-columns:repeat(2,1fr)}
   .gallery-item.tall{grid-row:span 1;aspect-ratio:1}
   .visit-grid{grid-template-columns:1fr;gap:3rem}
   .footer-grid{grid-template-columns:1fr;gap:2.5rem;text-align:center}
   .section{padding:80px 1.5rem}
-  .visit{padding:80px 1.5rem}
-  .owner{padding:80px 1.5rem}
-  .video-section{padding:80px 1.5rem}
+  .visit,.owner,.video-section{padding:80px 1.5rem}
   .owner-grid{grid-template-columns:1fr;gap:3rem}
   .hero{padding:100px 1.5rem 60px}
+}
+@media (min-width:901px) and (max-width:1100px){
+  .menu-grid{grid-template-columns:repeat(2,1fr)}
 }
 .mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:1.5rem 2rem;flex-direction:column;gap:1rem;z-index:49}
 .mobile-menu.open{display:flex}
@@ -232,7 +237,7 @@ footer{background:#0E1A12;color:rgba(255,255,255,.7);padding:80px 2rem 30px}
 <!-- HERO -->
 <section id="home" class="hero">
   <div class="hero-logo">
-    <img src="assets/logo.png" alt="Layaly — Mediterranean Restaurant" onerror="this.style.display='none'">
+    <img src="assets3/layaly%20logo.PNG" alt="Layaly — Mediterranean Restaurant">
   </div>
   <p class="hero-tagline">Where every evening tastes of the sea, the olive grove, and home.</p>
   <p class="hero-sub">Mediterranean · Cuisine · Hospitality</p>
@@ -250,7 +255,7 @@ footer{background:#0E1A12;color:rgba(255,255,255,.7);padding:80px 2rem 30px}
   <div class="section-inner">
     <div class="about-grid">
       <div class="about-image">
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1000&q=80" alt="Layaly dining room" loading="lazy" onerror="this.src='https://picsum.photos/seed/lay-amb/800/1000'">
+        <img src="assets3/Mezze%20Trio.jpg" alt="Layaly signature dish" loading="lazy">
       </div>
       <div class="about-text">
         <p class="eyebrow">Our Story</p>
@@ -258,18 +263,9 @@ footer{background:#0E1A12;color:rgba(255,255,255,.7);padding:80px 2rem 30px}
         <p>Layaly was born from a simple devotion: to bring the soul of Mediterranean cooking — its olive oils, its slow-simmered stews, its bright herbs and warm spices — to a single, intimate table.</p>
         <p>Every plate is built on family recipes carried across generations and the freshest seasonal produce. From hand-rolled grape leaves to fire-grilled kababs and signature knafeh, we cook the way our grandmothers did: with patience, with care, and with love.</p>
         <div class="about-stats">
-          <div>
-            <div class="stat-num">36+</div>
-            <div class="stat-label">House Dishes</div>
-          </div>
-          <div>
-            <div class="stat-num">100%</div>
-            <div class="stat-label">Halal Kitchen</div>
-          </div>
-          <div>
-            <div class="stat-num">7</div>
-            <div class="stat-label">Days a Week</div>
-          </div>
+          <div><div class="stat-num">36+</div><div class="stat-label">House Dishes</div></div>
+          <div><div class="stat-num">100%</div><div class="stat-label">Halal Kitchen</div></div>
+          <div><div class="stat-num">7</div><div class="stat-label">Days a Week</div></div>
         </div>
       </div>
     </div>
@@ -284,300 +280,289 @@ footer{background:#0E1A12;color:rgba(255,255,255,.7);padding:80px 2rem 30px}
       <h2>From our kitchen <span class="italic">to your table</span></h2>
       <p class="lead">A seasonal selection of mezze, grills, and signature dishes — rooted in tradition, served with intention.</p>
     </div>
-    <div class="menu-nav"><button class="menu-tab active" data-target="panel-appetizers">Appetizers</button><button class="menu-tab" data-target="panel-soup-and-salads">Soup & Salads</button><button class="menu-tab" data-target="panel-entrees">Entrées</button><button class="menu-tab" data-target="panel-sides">Sides</button><button class="menu-tab" data-target="panel-desserts">Desserts</button><button class="menu-tab" data-target="panel-extras">Extras</button></div>
-    <div id="panel-appetizers" class="menu-panel active"><div class="menu-grid">
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Mezze Trio</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$22</span>
+    <div class="menu-nav">
+      <button class="menu-tab active" data-target="panel-appetizers">Appetizers</button>
+      <button class="menu-tab" data-target="panel-soup-and-salads">Soup &amp; Salads</button>
+      <button class="menu-tab" data-target="panel-entrees">Entrées</button>
+      <button class="menu-tab" data-target="panel-sides">Sides</button>
+      <button class="menu-tab" data-target="panel-desserts">Desserts</button>
+      <button class="menu-tab" data-target="panel-extras">Extras</button>
+    </div>
+
+    <!-- APPETIZERS -->
+    <div id="panel-appetizers" class="menu-panel active">
+      <div class="menu-grid">
+        <div class="menu-card">
+          <div class="menu-card-img"><img src="assets3/Mezze%20Trio.jpg" alt="Mezze Trio" loading="lazy"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Mezze Trio</h3><span class="menu-card-price">$22</span></div>
+            <p class="menu-card-desc">Our sampler plate features hummus, baba ghanoush, and labneh. Served with crudités.</p>
           </div>
-          <p class="menu-item-desc">Our sampler plate features hummus, baba ghanoush, and labneh. Served with crudités.</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Hummus</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$10</span>
+        <div class="menu-card">
+          <div class="menu-card-img"><img src="assets3/hummus.jpg" alt="Hummus" loading="lazy"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Hummus</h3><span class="menu-card-price">$10</span></div>
+            <p class="menu-card-desc">chickpea, tahini, lemon, evoo</p>
           </div>
-          <p class="menu-item-desc">chickpea, tahini, lemon, evoo</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Baba Ghanoush</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$11</span>
+        <div class="menu-card">
+          <div class="menu-card-img"><img src="assets3/baba%20ganoush.jpg" alt="Baba Ghanoush" loading="lazy"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Baba Ghanoush</h3><span class="menu-card-price">$11</span></div>
+            <p class="menu-card-desc">eggplant, tahini, yogurt, evoo</p>
           </div>
-          <p class="menu-item-desc">eggplant, tahini, yogurt, evoo</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Labneh</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$12</span>
+        <div class="menu-card">
+          <div class="menu-card-img menu-card-placeholder">Labneh</div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Labneh</h3><span class="menu-card-price">$12</span></div>
+            <p class="menu-card-desc">strained yogurt, za'atar, mint, evoo</p>
           </div>
-          <p class="menu-item-desc">strained yogurt, za'atar, mint, evoo</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Falafel</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$12</span>
+        <div class="menu-card">
+          <div class="menu-card-img"><img src="assets3/Falafel.jpg" alt="Falafel" loading="lazy"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Falafel</h3><span class="menu-card-price">$12</span></div>
+            <p class="menu-card-desc">crispy chickpea fritters</p>
           </div>
-          <p class="menu-item-desc">crispy chickpea fritters</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Grape Leaves</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$16</span>
+        <div class="menu-card">
+          <div class="menu-card-img"><img src="assets3/grape%20leaves.jpg" alt="Grape Leaves" loading="lazy"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Grape Leaves</h3><span class="menu-card-price">$16</span></div>
+            <p class="menu-card-desc">ground lamb, rice, tomato sauce</p>
           </div>
-          <p class="menu-item-desc">ground lamb, rice, tomato sauce</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Kibbeh</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$14</span>
+        <div class="menu-card">
+          <div class="menu-card-img"><img src="assets3/kibbeh.jpg" alt="Kibbeh" loading="lazy"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Kibbeh</h3><span class="menu-card-price">$14</span></div>
+            <p class="menu-card-desc">bulgur shells, beef, onions</p>
           </div>
-          <p class="menu-item-desc">bulgur shells, beef, onions</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Musakhan Rolls</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$12</span>
+        <div class="menu-card">
+          <div class="menu-card-img menu-card-placeholder">Musakhan Rolls</div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Musakhan Rolls</h3><span class="menu-card-price">$12</span></div>
+            <p class="menu-card-desc">braised chicken, caramelized onions, sumac, phyllo dough</p>
           </div>
-          <p class="menu-item-desc">braised chicken, caramelized onions, sumac, phyllo dough</p>
-        </div></div></div><div id="panel-soup-and-salads" class="menu-panel"><div class="menu-grid">
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Lentil Soup</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$8</span>
-          </div>
-          <p class="menu-item-desc">lentils, potato, carrot, onion, warm spices</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Fattoush Salad</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$12</span>
+      </div>
+    </div>
+
+    <!-- SOUP AND SALADS -->
+    <div id="panel-soup-and-salads" class="menu-panel">
+      <div class="menu-grid">
+        <div class="menu-card">
+          <div class="menu-card-img"><img src="assets3/lentil%20soup.jpg" alt="Lentil Soup" loading="lazy"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Lentil Soup</h3><span class="menu-card-price">$8</span></div>
+            <p class="menu-card-desc">lentils, potato, carrot, onion, warm spices</p>
           </div>
-          <p class="menu-item-desc">crispy pita, romaine, tomato, cucumber, onions, sumac pomegranate vinaigrette</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Tabouleh</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$12</span>
+        <div class="menu-card">
+          <div class="menu-card-img"><img src="assets3/fattoush%20salad.jpg" alt="Fattoush Salad" loading="lazy"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Fattoush Salad</h3><span class="menu-card-price">$12</span></div>
+            <p class="menu-card-desc">crispy pita, romaine, tomato, cucumber, onions, sumac pomegranate vinaigrette</p>
           </div>
-          <p class="menu-item-desc">parsley, bulgur, tomato, tossed in a lemon olive oil dressing</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Arabic Salad</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$12</span>
+        <div class="menu-card">
+          <div class="menu-card-img"><img src="assets3/Tabouleh.jpg" alt="Tabouleh" loading="lazy"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Tabouleh</h3><span class="menu-card-price">$12</span></div>
+            <p class="menu-card-desc">parsley, bulgur, tomato, tossed in a lemon olive oil dressing</p>
           </div>
-          <p class="menu-item-desc">cucumber, tomato, red onion, parsley, lemon-olive oil dressing</p>
-        </div></div></div><div id="panel-entrees" class="menu-panel"><div class="menu-grid">
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Chicken Kabab</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$22</span>
-          </div>
-          <p class="menu-item-desc">tender chicken breast morsels, marinated in spices and herbs, basmati rice</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Lamb Kabab</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$28</span>
+        <div class="menu-card">
+          <div class="menu-card-img menu-card-placeholder">Arabic Salad</div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Arabic Salad</h3><span class="menu-card-price">$12</span></div>
+            <p class="menu-card-desc">cucumber, tomato, red onion, parsley, lemon-olive oil dressing</p>
           </div>
-          <p class="menu-item-desc">lamb sirloin, rosemary, spices</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Kafta Kabab</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$24</span>
+      </div>
+    </div>
+
+    <!-- ENTREES -->
+    <div id="panel-entrees" class="menu-panel">
+      <div class="menu-grid">
+        <div class="menu-card">
+          <div class="menu-card-img"><img src="assets3/Chicekn%20Kebab.jpg" alt="Chicken Kabab" loading="lazy"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Chicken Kabab</h3><span class="menu-card-price">$22</span></div>
+            <p class="menu-card-desc">tender chicken breast morsels, marinated in spices and herbs, basmati rice</p>
           </div>
-          <p class="menu-item-desc">ground lamb & beef, herbs, spices</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Kousa Mahshi</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$24</span>
+        <div class="menu-card">
+          <div class="menu-card-img"><img src="assets3/Lamb%20kebab.png" alt="Lamb Kabab" loading="lazy"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Lamb Kabab</h3><span class="menu-card-price">$28</span></div>
+            <p class="menu-card-desc">lamb sirloin, rosemary, spices</p>
           </div>
-          <p class="menu-item-desc">squash stuffed with rice and lamb, simmered in a tomato sauce</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Lamb Shank</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$26</span>
+        <div class="menu-card">
+          <div class="menu-card-img"><img src="assets3/Kafta%20Kabab.jpg" alt="Kafta Kabab" loading="lazy"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Kafta Kabab</h3><span class="menu-card-price">$24</span></div>
+            <p class="menu-card-desc">ground lamb &amp; beef, herbs, spices</p>
           </div>
-          <p class="menu-item-desc">lamb, chickpeas, tomato sauce</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Saffron Salmon</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$28</span>
+        <div class="menu-card">
+          <div class="menu-card-img"><img src="assets3/Kousa%20Mahshi.jpg" alt="Kousa Mahshi" loading="lazy"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Kousa Mahshi</h3><span class="menu-card-price">$24</span></div>
+            <p class="menu-card-desc">squash stuffed with rice and lamb, simmered in a tomato sauce</p>
           </div>
-          <p class="menu-item-desc">grilled salmon, saffron marinade, lemon</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Oyster Mushrooms</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$22</span>
+        <div class="menu-card">
+          <div class="menu-card-img"><img src="assets3/lamb%20shank.webp" alt="Lamb Shank" loading="lazy"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Lamb Shank</h3><span class="menu-card-price">$26</span></div>
+            <p class="menu-card-desc">lamb, chickpeas, tomato sauce</p>
           </div>
-          <p class="menu-item-desc">oyster mushrooms, lemon, garlic, herbs</p>
-        </div></div></div><div id="panel-sides" class="menu-panel"><div class="menu-grid">
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Lebanese Rice</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$7</span>
-          </div>
-          <p class="menu-item-desc">basmati rice, vermicelli noodles</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Za'atar Fries</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$9</span>
+        <div class="menu-card">
+          <div class="menu-card-img"><img src="assets3/Rosemary%20%26%20Za'atar%20Chicken.jpg" alt="Rosemary &amp; Za'atar Chicken" loading="lazy"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Rosemary &amp; Za'atar Chicken</h3><span class="menu-card-price">$24</span></div>
+            <p class="menu-card-desc">roasted chicken, rosemary, za'atar, lemon</p>
           </div>
-          <p class="menu-item-desc">crispy fries with aromatic seasoning</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Batata Harrah</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$9</span>
+        <div class="menu-card">
+          <div class="menu-card-img menu-card-placeholder">Saffron Salmon</div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Saffron Salmon</h3><span class="menu-card-price">$28</span></div>
+            <p class="menu-card-desc">grilled salmon, saffron marinade, lemon</p>
           </div>
-          <p class="menu-item-desc">spicy fried potatoes</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">House Salad</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$7</span>
+        <div class="menu-card">
+          <div class="menu-card-img menu-card-placeholder">Oyster Mushrooms</div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Oyster Mushrooms</h3><span class="menu-card-price">$22</span></div>
+            <p class="menu-card-desc">oyster mushrooms, lemon, garlic, herbs</p>
           </div>
-          <p class="menu-item-desc">romaine lettuce, tomatoes, cucumbers, lemon-olive oil dressing</p>
-        </div></div></div><div id="panel-desserts" class="menu-panel"><div class="menu-grid">
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Baklava</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$12</span>
-          </div>
-          <p class="menu-item-desc">layered phyllo, pistachios, honey syrup</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Knafeh</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$14</span>
+      </div>
+    </div>
+
+    <!-- SIDES -->
+    <div id="panel-sides" class="menu-panel">
+      <div class="menu-grid">
+        <div class="menu-card">
+          <div class="menu-card-img"><img src="assets3/Lebanese%20Rice.jpg" alt="Lebanese Rice" loading="lazy"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Lebanese Rice</h3><span class="menu-card-price">$7</span></div>
+            <p class="menu-card-desc">basmati rice, vermicelli noodles</p>
           </div>
-          <p class="menu-item-desc">sweet, cheesy, and crunchy — our signature dessert</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Baklava Ice Cream</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$10</span>
+        <div class="menu-card">
+          <div class="menu-card-img"><img src="assets3/Za'atar%20Fries.jpg" alt="Za'atar Fries" loading="lazy"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Za'atar Fries</h3><span class="menu-card-price">$9</span></div>
+            <p class="menu-card-desc">crispy fries with aromatic seasoning</p>
           </div>
-          <p class="menu-item-desc">crispy baklava meets creamy ice cream in every bite</p>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Apple Pear Sorbet</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$7</span>
+        <div class="menu-card">
+          <div class="menu-card-img"><img src="assets3/Batata%20Harrah.jpg" alt="Batata Harrah" loading="lazy"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Batata Harrah</h3><span class="menu-card-price">$9</span></div>
+            <p class="menu-card-desc">spicy fried potatoes</p>
           </div>
-          
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Strawberry Sorbet</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$7</span>
+        <div class="menu-card">
+          <div class="menu-card-img menu-card-placeholder">House Salad</div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">House Salad</h3><span class="menu-card-price">$7</span></div>
+            <p class="menu-card-desc">romaine lettuce, tomatoes, cucumbers, lemon-olive oil dressing</p>
           </div>
-          
-        </div></div></div><div id="panel-extras" class="menu-panel"><div class="menu-grid">
-        <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Harissa</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$3</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESSERTS -->
+    <div id="panel-desserts" class="menu-panel">
+      <div class="menu-grid">
+        <div class="menu-card">
+          <div class="menu-card-img"><img src="assets3/Baklva.jpg" alt="Baklava" loading="lazy"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Baklava</h3><span class="menu-card-price">$12</span></div>
+            <p class="menu-card-desc">layered phyllo, pistachios, honey syrup</p>
           </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-img menu-card-placeholder">Knafeh</div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Knafeh</h3><span class="menu-card-price">$14</span></div>
+            <p class="menu-card-desc">sweet, cheesy, and crunchy — our signature dessert</p>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-img"><img src="assets3/Baklava%20Ice%20Cream.jpg" alt="Baklava Ice Cream" loading="lazy"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Baklava Ice Cream</h3><span class="menu-card-price">$10</span></div>
+            <p class="menu-card-desc">crispy baklava meets creamy ice cream in every bite</p>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-img menu-card-placeholder">Apple Pear Sorbet</div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Apple Pear Sorbet</h3><span class="menu-card-price">$7</span></div>
+            <p class="menu-card-desc">light and refreshing</p>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-img menu-card-placeholder">Strawberry Sorbet</div>
+          <div class="menu-card-body">
+            <div class="menu-card-head"><h3 class="menu-card-name">Strawberry Sorbet</h3><span class="menu-card-price">$7</span></div>
+            <p class="menu-card-desc">bright and fruit-forward</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXTRAS (text list) -->
+    <div id="panel-extras" class="menu-panel">
+      <div class="menu-grid-text">
+        <div class="menu-item">
+          <div class="menu-item-head"><h3 class="menu-item-name">Harissa</h3><span class="menu-item-dots"></span><span class="menu-item-price">$3</span></div>
           <p class="menu-item-desc">spicy north african chili paste</p>
         </div>
         <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Honey Harissa</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$3</span>
-          </div>
+          <div class="menu-item-head"><h3 class="menu-item-name">Honey Harissa</h3><span class="menu-item-dots"></span><span class="menu-item-price">$3</span></div>
           <p class="menu-item-desc">spicy north african chili paste and honey</p>
         </div>
         <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Khyar bi Laban</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$3</span>
-          </div>
+          <div class="menu-item-head"><h3 class="menu-item-name">Khyar bi Laban</h3><span class="menu-item-dots"></span><span class="menu-item-price">$3</span></div>
           <p class="menu-item-desc">traditional levantine cucumber-yogurt sauce</p>
         </div>
         <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Tahini</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$3</span>
-          </div>
+          <div class="menu-item-head"><h3 class="menu-item-name">Tahini</h3><span class="menu-item-dots"></span><span class="menu-item-price">$3</span></div>
           <p class="menu-item-desc">garlic, olive oil, lemon</p>
         </div>
         <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Pickled Cucumbers</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$3</span>
-          </div>
-          
+          <div class="menu-item-head"><h3 class="menu-item-name">Pickled Cucumbers</h3><span class="menu-item-dots"></span><span class="menu-item-price">$3</span></div>
+          <p class="menu-item-desc">house-made</p>
         </div>
         <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Cucumbers</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$3</span>
-          </div>
+          <div class="menu-item-head"><h3 class="menu-item-name">Cucumbers</h3><span class="menu-item-dots"></span><span class="menu-item-price">$3</span></div>
           <p class="menu-item-desc">fresh, crisp cucumber slices</p>
         </div>
         <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Crudité</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$7</span>
-          </div>
-          
+          <div class="menu-item-head"><h3 class="menu-item-name">Crudité</h3><span class="menu-item-dots"></span><span class="menu-item-price">$7</span></div>
+          <p class="menu-item-desc">seasonal raw vegetables</p>
         </div>
         <div class="menu-item">
-          <div class="menu-item-head">
-            <h3 class="menu-item-name">Ketchup</h3>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">$2</span>
-          </div>
-          
-        </div></div></div>
+          <div class="menu-item-head"><h3 class="menu-item-name">Ketchup</h3><span class="menu-item-dots"></span><span class="menu-item-price">$2</span></div>
+          <p class="menu-item-desc">on the side</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- EXPERIENCE / VALUES -->
+<!-- EXPERIENCE -->
 <section id="experience" class="section values">
   <div class="section-inner">
     <div class="section-head">
@@ -612,14 +597,14 @@ footer{background:#0E1A12;color:rgba(255,255,255,.7);padding:80px 2rem 30px}
       <h2>A glimpse <span class="italic">inside</span></h2>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item tall"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80" alt="Dining ambiance" loading="lazy" onerror="this.src='https://picsum.photos/seed/lay-g1/800/1000'"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1540914124281-342587941389?w=800&q=80" alt="Mediterranean dish" loading="lazy" onerror="this.src='https://picsum.photos/seed/lay-g2/600/600'"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1593504049359-74330189a345?w=800&q=80" alt="Meze spread" loading="lazy" onerror="this.src='https://picsum.photos/seed/lay-g3/600/600'"></div>
-      <div class="gallery-item wide"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1400&q=80" alt="House specialty" loading="lazy" onerror="this.src='https://picsum.photos/seed/lay-g4/1200/600'"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Restaurant interior" loading="lazy" onerror="this.src='https://picsum.photos/seed/lay-g5/600/600'"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80" alt="Interior detail" loading="lazy" onerror="this.src='https://picsum.photos/seed/lay-g6/600/600'"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=800&q=80" alt="Plated dish" loading="lazy" onerror="this.src='https://picsum.photos/seed/lay-g7/600/600'"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Hospitality" loading="lazy" onerror="this.src='https://picsum.photos/seed/lay-g8/600/600'"></div>
+      <div class="gallery-item tall"><img src="assets3/Mezze%20Trio.jpg" alt="Mezze trio" loading="lazy"></div>
+      <div class="gallery-item"><img src="assets3/Chicekn%20Kebab.jpg" alt="Chicken kabab" loading="lazy"></div>
+      <div class="gallery-item"><img src="assets3/Kafta%20Kabab.jpg" alt="Kafta kabab" loading="lazy"></div>
+      <div class="gallery-item wide"><img src="assets3/lamb%20shank.webp" alt="Lamb shank" loading="lazy"></div>
+      <div class="gallery-item"><img src="assets3/grape%20leaves.jpg" alt="Grape leaves" loading="lazy"></div>
+      <div class="gallery-item"><img src="assets3/fattoush%20salad.jpg" alt="Fattoush salad" loading="lazy"></div>
+      <div class="gallery-item"><img src="assets3/Baklava%20Ice%20Cream.jpg" alt="Baklava ice cream" loading="lazy"></div>
+      <div class="gallery-item"><img src="assets3/Kousa%20Mahshi.jpg" alt="Kousa mahshi" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -679,8 +664,8 @@ footer{background:#0E1A12;color:rgba(255,255,255,.7);padding:80px 2rem 30px}
     </div>
     <div class="video-wrap">
       <div class="video-frame">
-        <video controls preload="metadata" playsinline poster="assets/video-poster.jpg">
-          <source src="assets/owner-video.mp4" type="video/mp4">
+        <video controls preload="metadata" playsinline>
+          <source src="assets3/%F0%9F%8E%AC%20A%20Short%20Feature-%20%E2%80%9CThe%20Best%20in%20Town%E2%80%9DWe're%20nervous%20yet%20excited%20to%20showcase%20our%20new%20series%20of%20l.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
@@ -692,7 +677,7 @@ footer{background:#0E1A12;color:rgba(255,255,255,.7);padding:80px 2rem 30px}
 <section id="owner" class="owner">
   <div class="owner-grid">
     <div class="owner-image">
-      <img src="assets/paul.jpg" alt="Paul Jaraysi — Owner of Layaly" loading="lazy">
+      <img src="assets3/paul.jpeg" alt="Paul Jaraysi — Owner of Layaly" loading="lazy">
     </div>
     <div class="owner-text">
       <p class="eyebrow">Meet the Owner</p>
@@ -736,36 +721,12 @@ footer{background:#0E1A12;color:rgba(255,255,255,.7);padding:80px 2rem 30px}
 </footer>
 
 <script>
-// Mobile menu
-const hb = document.getElementById('hamburger');
-const mm = document.getElementById('mobileMenu');
-if(hb&&mm){
-  hb.addEventListener('click',()=>mm.classList.toggle('open'));
-  mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mm.classList.remove('open')));
-}
-
-// Menu tabs
-document.querySelectorAll('.menu-tab').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const target=btn.dataset.target;
-    document.querySelectorAll('.menu-tab').forEach(b=>b.classList.remove('active'));
-    document.querySelectorAll('.menu-panel').forEach(p=>p.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById(target).classList.add('active');
-  });
-});
-
-// Nav scroll effect
-const nav=document.querySelector('.site-nav');
-window.addEventListener('scroll',()=>{
-  if(window.scrollY>40) nav.style.background='rgba(255,255,255,.98)';
-  else nav.style.background='rgba(255,255,255,.92)';
-});
-
-// Lucide icons
+const hb=document.getElementById('hamburger'),mm=document.getElementById('mobileMenu');
+if(hb&&mm){hb.addEventListener('click',()=>mm.classList.toggle('open'));mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mm.classList.remove('open')));}
+document.querySelectorAll('.menu-tab').forEach(btn=>{btn.addEventListener('click',()=>{const target=btn.dataset.target;document.querySelectorAll('.menu-tab').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.menu-panel').forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById(target).classList.add('active');});});
+const nav=document.querySelector('.site-nav');window.addEventListener('scroll',()=>{nav.style.background=window.scrollY>40?'rgba(255,255,255,.98)':'rgba(255,255,255,.92)';});
 const renderIcons=()=>{if(window.lucide)window.lucide.createIcons();};
-if(window.lucide)renderIcons();
-else document.addEventListener('DOMContentLoaded',renderIcons);
+if(window.lucide)renderIcons();else document.addEventListener('DOMContentLoaded',renderIcons);
 setTimeout(renderIcons,500);
 </script>
 

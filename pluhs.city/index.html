@@ -127,7 +127,7 @@
     width: min(520px, 80vw);
     aspect-ratio: 1;
     margin-bottom: -3rem;
-    z-index: 5;
+    z-index: 1;
   }
 
   .head-glow {
@@ -159,7 +159,7 @@
     50% { transform: translateY(-22px) rotate(1deg); }
   }
 
-  /* big wordmark behind head */
+  /* big wordmark in front of head */
   .wordmark {
     position: absolute;
     top: 38%;
@@ -172,9 +172,9 @@
     line-height: 0.85;
     letter-spacing: -0.02em;
     color: var(--ink);
-    opacity: 0.35;
+    opacity: 0.75;
     pointer-events: none;
-    z-index: 1;
+    z-index: 5;
     white-space: nowrap;
   }
 

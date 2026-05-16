@@ -1,1202 +1,556 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pluhs Management Agency — Web Design for Service Businesses</title>
-<meta name="description" content="Custom landing page redesigns for service businesses. Built in days, not months. Atlanta, GA.">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>pluhs / listen</title>
+<meta name="description" content="pluhs. music. listen on soundcloud, watch on tiktok, follow on instagram." />
 
-<!-- Open Graph -->
-<meta property="og:title" content="Pluhs Management Agency">
-<meta property="og:description" content="Custom landing page redesigns for service businesses. Built in days, not months.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://pluhs.city">
-
-<!-- Schema.org -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Pluhs Management Agency",
-  "description": "Custom landing page redesigns for service businesses",
-  "url": "https://pluhs.city",
-  "email": "pluhsmanagement@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Atlanta",
-    "addressRegion": "GA",
-    "addressCountry": "US"
-  },
-  "founder": {
-    "@type": "Person",
-    "name": "Christian Olmo"
-  }
-}
-</script>
-
-<!-- Fonts: Fraunces (display serif) + Inter Tight (body) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    --paper: #F5F2EB;
-    --paper-deep: #EDE8DD;
-    --ink: #161412;
-    --ink-soft: #2A2620;
-    --ink-mute: #6B6359;
-    --rule: rgba(22, 20, 18, 0.12);
-    --accent: #C8501C;
-    --accent-deep: #9F3F15;
+    --bg: #fafaf7;
+    --bg-soft: #f2f1ec;
+    --ink: #0a0a0a;
+    --ink-dim: #6a6a6a;
+    --ink-faint: #b8b6b0;
+    --accent: #0a0a0a;
+    --accent-soft: #2a2a2a;
+    --line: rgba(10, 10, 10, 0.1);
+    --grain-opacity: 0.03;
   }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  html {
-    scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  body {
-    font-family: 'Inter Tight', sans-serif;
-    background: var(--paper);
+  html, body {
+    background: var(--bg);
     color: var(--ink);
-    font-size: 16px;
-    line-height: 1.55;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
     overflow-x: hidden;
-    font-feature-settings: 'ss01', 'cv11';
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
   }
 
-  ::selection { background: var(--ink); color: var(--paper); }
-
-  /* === SUBTLE GRAIN OVERLAY === */
+  /* film grain overlay */
   body::before {
     content: '';
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
+    inset: 0;
     pointer-events: none;
     z-index: 100;
-    opacity: 0.035;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: var(--grain-opacity);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
-  /* === TYPOGRAPHY === */
-  .display {
-    font-family: 'Fraunces', serif;
-    font-weight: 400;
-    letter-spacing: -0.025em;
-    font-feature-settings: 'ss01', 'ss02';
-    font-variation-settings: 'opsz' 144, 'SOFT' 50;
-  }
-  .display-italic { font-style: italic; font-feature-settings: 'ss01'; }
-  .display-tight { letter-spacing: -0.04em; }
-
-  .eyebrow {
-    font-family: 'Inter Tight', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-  }
-
-  .num-mono {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 400;
-    color: var(--accent);
-    font-size: 13px;
-    letter-spacing: 0.04em;
-  }
-
-  /* === PAGE FRAME === */
-  .page-frame {
+  /* soft radial wash behind everything */
+  body::after {
+    content: '';
     position: fixed;
+    inset: 0;
     pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(10, 10, 10, 0.04) 0%, transparent 65%);
+  }
+
+  /* ========== HEADER ========== */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
     z-index: 50;
-  }
-  .page-frame.top { top: 24px; left: 0; right: 0; height: 1px; background: var(--rule); }
-  .page-frame.bottom { bottom: 24px; left: 0; right: 0; height: 1px; background: var(--rule); }
-  .page-frame.left { left: 24px; top: 0; bottom: 0; width: 1px; background: var(--rule); }
-  .page-frame.right { right: 24px; top: 0; bottom: 0; width: 1px; background: var(--rule); }
-
-  @media (max-width: 768px) {
-    .page-frame.top { top: 12px; }
-    .page-frame.bottom { bottom: 12px; }
-    .page-frame.left { left: 12px; }
-    .page-frame.right { right: 12px; }
-  }
-
-  /* === NAV === */
-  nav {
-    position: fixed;
-    top: 24px; left: 24px; right: 24px;
-    height: 52px;
-    z-index: 60;
+    padding: 1.5rem 2rem;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0 28px;
-    background: rgba(245, 242, 235, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--rule);
-  }
-  nav .logo {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-    text-decoration: none;
-    color: var(--ink);
-  }
-  nav .logo .mark {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 22px;
-    letter-spacing: -0.03em;
-    color: var(--ink);
-  }
-  nav .logo .domain {
-    font-family: 'Inter Tight', sans-serif;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-  }
-  nav .nav-links {
-    display: flex;
     align-items: center;
-    gap: 28px;
-  }
-  nav .nav-links a {
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--ink-soft);
-    text-decoration: none;
-    position: relative;
-    transition: color 0.3s ease;
-  }
-  nav .nav-links a:hover { color: var(--accent); }
-  nav .nav-links .cta-btn {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 8px 16px;
-    border-radius: 2px;
-    font-size: 11px;
-    transition: background 0.3s ease;
-  }
-  nav .nav-links .cta-btn:hover {
-    background: var(--accent);
-    color: var(--paper);
-  }
-  @media (max-width: 768px) {
-    nav { left: 12px; right: 12px; padding: 0 18px; height: 46px; }
-    nav .nav-links a:not(.cta-btn) { display: none; }
+    color: var(--ink-dim);
   }
 
-  /* === HERO === */
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1.8rem;
+    letter-spacing: 0;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .header-meta {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+  .header-meta span::before {
+    content: '◉';
+    color: var(--accent);
+    margin-right: 0.5rem;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* ========== HERO ========== */
   .hero {
+    position: relative;
     min-height: 100vh;
-    padding: 110px 80px 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: relative;
-  }
-  @media (max-width: 768px) {
-    .hero { padding: 90px 32px 40px; }
+    align-items: center;
+    padding: 8rem 2rem 4rem;
+    z-index: 1;
   }
 
-  .hero-frame {
-    max-width: 1280px;
-    margin: 0 auto;
+  .hero-stack {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
+    max-width: 1200px;
   }
 
-  .hero-meta {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 24px;
-    margin-bottom: 80px;
-    padding-bottom: 22px;
-    border-bottom: 1px solid var(--rule);
-    animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  }
-  .hero-meta .meta-item .lbl {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-    margin-bottom: 6px;
-  }
-  .hero-meta .meta-item .val {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 14px;
-    color: var(--ink);
-  }
-  @media (max-width: 768px) {
-    .hero-meta { grid-template-columns: 1fr; gap: 14px; margin-bottom: 50px; }
-  }
-
-  .hero h1 {
-    font-family: 'Fraunces', serif;
-    font-weight: 400;
-    font-size: clamp(64px, 11vw, 168px);
-    line-height: 0.92;
-    letter-spacing: -0.05em;
-    color: var(--ink);
-    margin-bottom: 40px;
-    font-variation-settings: 'opsz' 144, 'SOFT' 50;
-  }
-  .hero h1 .accent-word {
-    font-style: italic;
-    color: var(--accent);
-    font-weight: 300;
-    letter-spacing: -0.04em;
-  }
-  .hero h1 .small-cap {
-    display: inline-block;
-    font-size: 0.55em;
-    font-style: normal;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    vertical-align: middle;
-    color: var(--ink-mute);
-    margin: 0 0.1em;
-    font-family: 'Inter Tight', sans-serif;
-  }
-  .hero h1 .word-1 { animation: fadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s both; display: inline-block; }
-  .hero h1 .word-2 { animation: fadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.25s both; display: inline-block; }
-  .hero h1 .word-3 { animation: fadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s both; display: inline-block; }
-
-  .hero-sub-row {
-    display: grid;
-    grid-template-columns: 1.15fr 1fr;
-    gap: 60px;
-    align-items: end;
-    animation: fadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.55s both;
-  }
-  @media (max-width: 768px) {
-    .hero-sub-row { grid-template-columns: 1fr; gap: 30px; }
-  }
-
-  .hero-subtitle {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: clamp(20px, 2.4vw, 28px);
-    line-height: 1.4;
-    color: var(--ink-soft);
-    max-width: 26ch;
-    font-weight: 400;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  @media (max-width: 768px) {
-    .hero-actions { justify-content: flex-start; }
-  }
-
-  .btn-primary {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 16px 28px;
-    border-radius: 2px;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-    border: 1px solid var(--ink);
-  }
-  .btn-primary:hover {
-    background: var(--accent);
-    border-color: var(--accent);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(200, 80, 28, 0.2);
-  }
-  .btn-primary svg {
-    width: 14px; height: 14px;
-    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-  }
-  .btn-primary:hover svg { transform: translateX(4px); }
-
-  .btn-secondary {
-    background: transparent;
-    color: var(--ink);
-    padding: 16px 24px;
-    border-radius: 2px;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.4s ease;
-    border: 1px solid var(--rule);
-  }
-  .btn-secondary:hover {
-    border-color: var(--ink);
-    background: var(--paper-deep);
-  }
-
-  /* HERO ORNAMENT */
-  .hero-ornament {
-    position: absolute;
-    right: 80px; top: 50%;
-    transform: translateY(-50%);
-    width: 320px; height: 320px;
-    pointer-events: none;
-    opacity: 0.7;
-    animation: rotateSlow 60s linear infinite, fadeIn 2s ease 1s both;
-  }
-  .hero-ornament svg { width: 100%; height: 100%; }
-  @media (max-width: 1200px) {
-    .hero-ornament { display: none; }
-  }
-
-  /* === SECTION === */
-  section {
-    padding: 140px 80px;
+  /* floating head */
+  .head-wrap {
     position: relative;
-  }
-  @media (max-width: 768px) {
-    section { padding: 80px 32px; }
+    width: min(520px, 80vw);
+    aspect-ratio: 1;
+    margin-bottom: -3rem;
+    z-index: 2;
   }
 
-  .section-frame {
-    max-width: 1280px;
+  .head-glow {
+    position: absolute;
+    inset: -15%;
+    background: radial-gradient(circle, rgba(10, 10, 10, 0.18) 0%, transparent 55%);
+    filter: blur(50px);
+    z-index: -1;
+    animation: glowPulse 6s ease-in-out infinite;
+  }
+
+  @keyframes glowPulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.08); }
+  }
+
+  .head {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.25)) drop-shadow(0 60px 80px rgba(0, 0, 0, 0.15));
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-22px) rotate(1deg); }
+  }
+
+  /* big wordmark behind head */
+  .wordmark {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(8rem, 22vw, 22rem);
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+    white-space: nowrap;
+  }
+
+  /* tagline strip */
+  .tagline {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    margin-top: 3rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+    line-height: 1.25;
+    color: var(--ink);
+    max-width: 640px;
+    letter-spacing: 0;
+  }
+  .tagline em {
+    color: var(--accent);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .sublabel {
+    margin-top: 1.75rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.7rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+  .sublabel::before, .sublabel::after {
+    content: '';
+  }
+
+  /* ========== LISTEN SECTION ========== */
+  .listen-section {
+    position: relative;
+    z-index: 1;
+    padding: 6rem 2rem 4rem;
+    max-width: 900px;
     margin: 0 auto;
   }
 
-  .section-head {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 60px;
-    margin-bottom: 80px;
-    padding-bottom: 28px;
-    border-bottom: 1px solid var(--rule);
-  }
-  .section-head .section-num {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-  }
-  .section-head .section-num .num-big {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 300;
-    color: var(--accent);
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -0.04em;
-  }
-  .section-head .section-num .label-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .section-head .section-num .label-stack .eyebrow { font-size: 10px; }
-  .section-head .section-num .label-stack .small-label {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    color: var(--ink-mute);
-    font-size: 13px;
-  }
-  .section-head h2 {
-    font-family: 'Fraunces', serif;
+  .section-label {
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: clamp(36px, 5.5vw, 72px);
-    line-height: 0.98;
-    letter-spacing: -0.035em;
-    color: var(--ink);
-    font-variation-settings: 'opsz' 144, 'SOFT' 50;
-  }
-  .section-head h2 .accent-italic {
-    font-style: italic;
-    font-weight: 300;
-    color: var(--accent);
-  }
-  @media (max-width: 768px) {
-    .section-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 50px; }
-    .section-head .section-num .num-big { font-size: 44px; }
-  }
-
-  /* === WHAT WE DO — three column === */
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border-top: 1px solid var(--rule);
-  }
-  @media (max-width: 900px) {
-    .services-grid { grid-template-columns: 1fr; }
-  }
-
-  .service-card {
-    padding: 50px 40px 50px 0;
-    border-right: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-    position: relative;
-    background: transparent;
-    transition: background 0.4s ease;
-  }
-  .service-card:last-child { border-right: none; }
-  @media (max-width: 900px) {
-    .service-card {
-      border-right: none;
-      padding: 40px 0;
-    }
-  }
-  .service-card:hover { background: var(--paper-deep); }
-  .service-card .icon-frame {
-    width: 64px; height: 64px;
-    border: 1px solid var(--rule);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 32px;
-    background: var(--paper);
-    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-  }
-  .service-card:hover .icon-frame {
-    border-color: var(--accent);
-    background: var(--paper);
-    transform: scale(1.05);
-  }
-  .service-card .icon-frame svg {
-    width: 28px; height: 28px;
-    stroke: var(--ink);
-    fill: none;
-    stroke-width: 1.25;
-    transition: stroke 0.4s ease;
-  }
-  .service-card:hover .icon-frame svg { stroke: var(--accent); }
-  .service-card h3 {
-    font-family: 'Fraunces', serif;
-    font-weight: 400;
-    font-size: 26px;
-    letter-spacing: -0.025em;
-    line-height: 1.05;
-    margin-bottom: 14px;
-    color: var(--ink);
-  }
-  .service-card h3 em {
-    font-style: italic;
-    color: var(--accent);
-    font-weight: 300;
-  }
-  .service-card p {
-    font-size: 14px;
-    line-height: 1.65;
-    color: var(--ink-mute);
-    max-width: 32ch;
-  }
-  .service-card .num-corner {
-    position: absolute;
-    top: 32px; right: 24px;
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    color: var(--ink-mute);
-    font-size: 13px;
-    letter-spacing: 0.04em;
-    opacity: 0.5;
-  }
-  @media (max-width: 900px) {
-    .service-card .num-corner { right: 0; top: 24px; }
-  }
-
-  /* === PROCESS === */
-  .process-section { background: var(--paper-deep); }
-
-  .process-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-  .process-step {
-    display: grid;
-    grid-template-columns: 80px 1fr 1.5fr 0.5fr;
-    align-items: center;
-    gap: 40px;
-    padding: 36px 0;
-    border-bottom: 1px solid var(--rule);
-    cursor: default;
-    transition: background 0.4s ease;
-  }
-  .process-step:hover { background: rgba(22, 20, 18, 0.02); }
-  .process-step:last-child { border-bottom: none; }
-
-  .process-step .step-num {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 300;
-    color: var(--accent);
-    font-size: 36px;
-    letter-spacing: -0.04em;
-    line-height: 1;
-  }
-  .process-step h4 {
-    font-family: 'Fraunces', serif;
-    font-weight: 400;
-    font-size: 26px;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    color: var(--ink);
-  }
-  .process-step h4 em {
-    font-style: italic;
-    color: var(--accent);
-    font-weight: 300;
-  }
-  .process-step p {
-    font-size: 14px;
-    line-height: 1.65;
-    color: var(--ink-mute);
-    max-width: 40ch;
-  }
-  .process-step .step-time {
-    text-align: right;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.16em;
+    font-size: 0.7rem;
+    letter-spacing: 0.32em;
     text-transform: uppercase;
-    color: var(--ink-mute);
+    color: var(--ink-dim);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
-  .process-step .step-time .time-val {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 18px;
-    letter-spacing: -0.02em;
-    color: var(--ink);
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: clamp(3rem, 6.5vw, 5rem);
+    line-height: 1;
+    letter-spacing: -0.015em;
+    margin-bottom: 3rem;
     text-transform: none;
-    margin-top: 4px;
+  }
+  .section-title em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+  }
+
+  /* soundcloud embed wrapper */
+  .sc-wrap {
+    position: relative;
+    border: 1px solid var(--line);
+    background: var(--bg-soft);
+    padding: 1.5rem;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .sc-wrap::before {
+    content: 'SOUNDCLOUD / PLUHS';
+    position: absolute;
+    top: 0.6rem;
+    right: 0.85rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.6rem;
+    letter-spacing: 0.28em;
+    color: var(--ink-faint);
+  }
+  .sc-wrap iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+    border-radius: 2px;
     display: block;
   }
-  @media (max-width: 900px) {
-    .process-step {
-      grid-template-columns: 60px 1fr;
-      gap: 16px;
-      padding: 28px 0;
-    }
-    .process-step .step-num { font-size: 28px; }
-    .process-step p, .process-step .step-time {
-      grid-column: 2 / 3;
-      max-width: none;
-      text-align: left;
-    }
-    .process-step h4 { font-size: 22px; }
-  }
 
-  /* === PRICING TEASER === */
-  .pricing-section {
-    background: var(--ink);
-    color: var(--paper);
-  }
-  .pricing-section .section-head { border-bottom-color: rgba(245, 242, 235, 0.12); }
-  .pricing-section .eyebrow { color: rgba(245, 242, 235, 0.55); }
-  .pricing-section h2 { color: var(--paper); }
-  .pricing-section h2 .accent-italic { color: #E8A876; }
-
-  .pricing-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
-  @media (max-width: 768px) {
-    .pricing-cards { grid-template-columns: 1fr; }
-  }
-
-  .pricing-card {
-    border: 1px solid rgba(245, 242, 235, 0.18);
-    padding: 40px 36px;
-    border-radius: 2px;
+  /* ========== LINKS GRID ========== */
+  .links-section {
     position: relative;
-    transition: border-color 0.4s ease;
-  }
-  .pricing-card:hover { border-color: rgba(245, 242, 235, 0.4); }
-  .pricing-card.featured {
-    background: rgba(232, 168, 118, 0.08);
-    border-color: #E8A876;
-  }
-  .pricing-card .tag {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border: 1px solid rgba(245, 242, 235, 0.35);
-    margin-bottom: 22px;
-    color: rgba(245, 242, 235, 0.7);
-  }
-  .pricing-card.featured .tag {
-    background: #E8A876;
-    color: var(--ink);
-    border-color: #E8A876;
-  }
-  .pricing-card h3 {
-    font-family: 'Fraunces', serif;
-    font-weight: 400;
-    font-size: 28px;
-    letter-spacing: -0.025em;
-    line-height: 1.1;
-    color: var(--paper);
-    margin-bottom: 24px;
-  }
-  .pricing-card .price-display {
-    padding: 20px 0;
-    border-top: 1px solid rgba(245, 242, 235, 0.12);
-    border-bottom: 1px solid rgba(245, 242, 235, 0.12);
-    margin-bottom: 24px;
-  }
-  .pricing-card .price-num {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-style: italic;
-    font-size: 56px;
-    line-height: 1;
-    letter-spacing: -0.04em;
-    color: var(--paper);
-    font-variation-settings: 'opsz' 144;
-  }
-  .pricing-card .price-suffix {
-    font-size: 12px;
-    font-weight: 400;
-    color: rgba(245, 242, 235, 0.6);
-    margin-left: 8px;
-    letter-spacing: 0.04em;
-  }
-  .pricing-card .price-monthly {
-    font-size: 13px;
-    color: rgba(245, 242, 235, 0.7);
-    margin-top: 8px;
-  }
-  .pricing-card .price-monthly strong {
-    color: var(--paper);
-    font-weight: 600;
-  }
-  .pricing-card ul {
-    list-style: none;
-    margin-top: 24px;
-  }
-  .pricing-card ul li {
-    padding: 8px 0 8px 22px;
-    position: relative;
-    font-size: 14px;
-    line-height: 1.55;
-    color: rgba(245, 242, 235, 0.85);
-  }
-  .pricing-card ul li::before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: rgba(245, 242, 235, 0.5);
-  }
-  .pricing-card.featured ul li::before { color: #E8A876; }
-
-  /* === CONTACT === */
-  .contact-section { padding: 160px 80px 100px; }
-  @media (max-width: 768px) {
-    .contact-section { padding: 100px 32px 60px; }
-  }
-
-  .contact-frame {
-    max-width: 1080px;
+    z-index: 1;
+    padding: 4rem 2rem 6rem;
+    max-width: 1100px;
     margin: 0 auto;
-    text-align: center;
   }
 
-  .contact-eyebrow { margin-bottom: 32px; display: inline-block; }
+  .links-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+  }
 
-  .contact-frame h2 {
-    font-family: 'Fraunces', serif;
+  .link-card {
+    position: relative;
+    border: 1px solid var(--line);
+    background: var(--bg-soft);
+    padding: 2.5rem 2rem;
+    text-decoration: none;
+    color: var(--ink);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: 220px;
+  }
+
+  .link-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 0;
+  }
+
+  .link-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+  }
+  .link-card:hover::before {
+    transform: translateY(0);
+  }
+  .link-card:hover .link-platform,
+  .link-card:hover .link-handle,
+  .link-card:hover .link-arrow {
+    color: var(--bg);
+  }
+  .link-card:hover .link-num {
+    color: rgba(250, 250, 247, 0.5);
+  }
+
+  .link-card > * {
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+  }
+
+  .link-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .link-num {
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: clamp(56px, 9vw, 130px);
-    line-height: 0.94;
-    letter-spacing: -0.045em;
-    color: var(--ink);
-    margin-bottom: 32px;
-    font-variation-settings: 'opsz' 144, 'SOFT' 50;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    color: var(--ink-faint);
   }
-  .contact-frame h2 .accent-word {
-    font-style: italic;
-    color: var(--accent);
+  .link-arrow {
+    font-family: 'Inter', sans-serif;
     font-weight: 300;
+    font-size: 1.2rem;
+    color: var(--ink-dim);
+    transform: rotate(-45deg);
+    transition: transform 0.4s ease, color 0.3s ease;
   }
-  .contact-frame .lead {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: clamp(18px, 2.2vw, 24px);
-    line-height: 1.45;
-    color: var(--ink-soft);
-    max-width: 38ch;
-    margin: 0 auto 48px;
+  .link-card:hover .link-arrow {
+    transform: rotate(0deg);
   }
 
-  .contact-cta {
-    display: inline-flex;
-    gap: 14px;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .contact-email {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 18px;
-    color: var(--ink);
-    text-decoration: none;
-    padding: 14px 22px;
-    border-bottom: 1px solid var(--ink);
-    transition: all 0.3s ease;
-  }
-  .contact-email:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-  }
-  .contact-email svg {
-    width: 16px; height: 16px;
+  .link-platform {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 1;
+    letter-spacing: -0.015em;
+    text-transform: none;
+    margin-top: auto;
   }
 
-  .contact-social {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 18px;
-    color: var(--ink);
-    text-decoration: none;
-    padding: 14px 22px;
-    border-bottom: 1px solid var(--ink);
-    transition: all 0.3s ease;
-  }
-  .contact-social:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-  }
-  .contact-social svg {
-    width: 16px; height: 16px;
+  .link-handle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin-top: 0.5rem;
   }
 
-  /* === FOOTER === */
+  /* ========== FOOTER ========== */
   footer {
-    border-top: 1px solid var(--rule);
-    padding: 36px 80px;
+    position: relative;
+    z-index: 1;
+    padding: 3rem 2rem 2rem;
+    border-top: 1px solid var(--line);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
   }
-  @media (max-width: 768px) {
-    footer { padding: 30px 32px; flex-direction: column; align-items: flex-start; gap: 12px; }
-  }
-  footer .footer-left {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-  }
-  footer .footer-left .logo-mark {
-    font-family: 'Fraunces', serif;
+  footer .foot-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
     font-style: italic;
-    font-size: 18px;
-    color: var(--ink);
+    font-size: 1.1rem;
+    letter-spacing: 0;
+    color: var(--ink-dim);
+    text-transform: none;
   }
-  footer .footer-left .footer-meta {
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-  }
-  footer .footer-right {
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-  }
-  footer .footer-center {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    color: var(--ink-mute);
-  }
-  footer .footer-link {
-    color: var(--ink-soft);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: color 0.3s ease;
-  }
-  footer .footer-link:hover { color: var(--accent); }
-  footer .footer-social-link svg {
-    width: 13px; height: 13px;
-  }
-  footer .footer-divider {
-    color: var(--ink-mute);
-    opacity: 0.5;
-  }
+
+  /* ========== MOBILE ========== */
   @media (max-width: 768px) {
-    footer .footer-center {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 8px;
+    header { padding: 1rem 1.25rem; }
+    .header-meta { gap: 1rem; }
+    .header-meta span:nth-child(2) { display: none; }
+
+    .hero { padding: 6rem 1.25rem 3rem; }
+    .head-wrap { width: min(380px, 85vw); margin-bottom: -1rem; }
+    .tagline { font-size: 1.3rem; margin-top: 1.5rem; }
+    .sublabel::before, .sublabel::after { display: none; }
+
+    .listen-section, .links-section { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .sc-wrap iframe { height: 380px; }
+
+    .links-grid {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
     }
-    footer .footer-divider { display: none; }
+    .link-card { min-height: 160px; padding: 1.5rem 1.25rem; }
+    .link-platform { font-size: 1.8rem; }
+
+    footer {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+      padding: 2rem 1.25rem;
+    }
   }
 
-  /* === ANIMATIONS === */
-  @keyframes fadeUp {
-    0% { opacity: 0; transform: translateY(24px); }
-    100% { opacity: 1; transform: translateY(0); }
+  /* entrance animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
-  @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 0.7; }
-  }
-  @keyframes rotateSlow {
-    0% { transform: translateY(-50%) rotate(0deg); }
-    100% { transform: translateY(-50%) rotate(360deg); }
-  }
+  .reveal.d1 { animation-delay: 0.2s; }
+  .reveal.d2 { animation-delay: 0.5s; }
+  .reveal.d3 { animation-delay: 0.8s; }
+  .reveal.d4 { animation-delay: 1.1s; }
 
-  /* On-scroll reveal — only animate if JS class added */
-  .js-reveal-enabled .reveal { opacity: 0; transform: translateY(32px); transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
-  .js-reveal-enabled .reveal.visible { opacity: 1; transform: translateY(0); }
-
+  @keyframes revealUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
 </style>
 </head>
 <body>
 
-<!-- Page frame lines -->
-<div class="page-frame top"></div>
-<div class="page-frame bottom"></div>
-<div class="page-frame left"></div>
-<div class="page-frame right"></div>
-
-<!-- NAV -->
-<nav>
-  <a href="#" class="logo">
-    <span class="mark">Pluhs</span>
-    <span class="domain">Management Agency</span>
-  </a>
-  <div class="nav-links">
-    <a href="#services">Services</a>
-    <a href="#process">Process</a>
-    <a href="#pricing">Pricing</a>
-    <a href="mailto:pluhsmanagement@gmail.com" class="cta-btn">Get in Touch</a>
+<header>
+  <a href="#" class="logo">PLUHS</a>
+  <div class="header-meta">
+    <span>now playing</span>
+    <span>atl // 2026</span>
   </div>
-</nav>
+</header>
 
-<!-- HERO -->
+<!-- ========== HERO ========== -->
 <section class="hero">
-  <div class="hero-frame">
-    <div class="hero-meta">
-      <div class="meta-item">
-        <div class="lbl">Studio</div>
-        <div class="val">Pluhs Management Agency</div>
-      </div>
-      <div class="meta-item">
-        <div class="lbl">Based in</div>
-        <div class="val">Atlanta, Georgia</div>
-      </div>
-      <div class="meta-item">
-        <div class="lbl">Established</div>
-        <div class="val">Two Thousand Twenty-Five</div>
-      </div>
+  <div class="hero-stack">
+    <div class="wordmark">pluhs</div>
+
+    <div class="head-wrap reveal">
+      <div class="head-glow"></div>
+      <img src="assets/floating-head.png" alt="pluhs" class="head" />
     </div>
 
-    <h1>
-      <span class="word-1">Websites</span><br>
-      <span class="word-2">that look like</span><br>
-      <span class="word-3"><span class="accent-word">the business</span><br>you've built.</span>
+    <h1 class="tagline reveal d2">
+      sound from <em>somewhere</em><br/>
+      between the static
     </h1>
 
-    <div class="hero-sub-row">
-      <p class="hero-subtitle">
-        Custom landing page redesigns for service businesses. Built in days, not months — without disrupting the systems you already run.
-      </p>
-      <div class="hero-actions">
-        <a href="#pricing" class="btn-primary">
-          See Pricing
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ornamental rotating SVG -->
-  <div class="hero-ornament">
-    <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <path id="circle-path" d="M 160, 160 m -130, 0 a 130,130 0 1,1 260,0 a 130,130 0 1,1 -260,0" />
-      </defs>
-      <circle cx="160" cy="160" r="155" fill="none" stroke="rgba(22,20,18,0.15)" stroke-width="0.5"/>
-      <circle cx="160" cy="160" r="130" fill="none" stroke="rgba(22,20,18,0.2)" stroke-width="0.5"/>
-      <circle cx="160" cy="160" r="100" fill="none" stroke="rgba(22,20,18,0.15)" stroke-width="0.5"/>
-      <line x1="160" y1="5" x2="160" y2="315" stroke="rgba(22,20,18,0.08)" stroke-width="0.5"/>
-      <line x1="5" y1="160" x2="315" y2="160" stroke="rgba(22,20,18,0.08)" stroke-width="0.5"/>
-      <text font-family="Fraunces, serif" font-size="11" fill="rgba(22,20,18,0.55)" font-style="italic" letter-spacing="3">
-        <textPath href="#circle-path" startOffset="0">Pluhs Management Agency · est. MMXXV · Atlanta, GA · Pluhs Management Agency · est. MMXXV · </textPath>
-      </text>
-      <circle cx="160" cy="160" r="3" fill="#C8501C"/>
-    </svg>
+    <div class="sublabel reveal d3">Producer // Vocalist // Atlanta</div>
   </div>
 </section>
 
-<!-- WHAT WE DO -->
-<section id="services">
-  <div class="section-frame">
-    <div class="section-head reveal">
-      <div class="section-num">
-        <span class="num-big">01</span>
-        <div class="label-stack">
-          <span class="eyebrow">What We Do</span>
-          <span class="small-label">Three things, well.</span>
-        </div>
-      </div>
-      <h2>We rebuild the <span class="accent-italic">front door</span> of service businesses.</h2>
-    </div>
+<!-- ========== LISTEN ========== -->
+<section class="listen-section">
+  <div class="section-label">01 // Latest</div>
+  <h2 class="section-title">Press <em>play.</em></h2>
 
-    <div class="services-grid reveal">
-
-      <div class="service-card">
-        <div class="num-corner">i.</div>
-        <div class="icon-frame">
-          <!-- Custom precision icon: layered pages -->
-          <svg viewBox="0 0 32 32">
-            <rect x="6" y="6" width="16" height="20" rx="0.5"/>
-            <rect x="10" y="10" width="16" height="20" rx="0.5"/>
-            <line x1="14" y1="16" x2="22" y2="16"/>
-            <line x1="14" y1="20" x2="22" y2="20"/>
-            <line x1="14" y1="24" x2="20" y2="24"/>
-          </svg>
-        </div>
-        <h3>Landing Page <em>Redesigns</em></h3>
-        <p>One bespoke page that looks like the business you actually are. Mobile-first, fast-loading, integrated with the tools you already use.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="num-corner">ii.</div>
-        <div class="icon-frame">
-          <!-- Cloud-arrow icon: deploy -->
-          <svg viewBox="0 0 32 32">
-            <path d="M9 22a5 5 0 1 1 1.5-9.8 7 7 0 0 1 13.5 2.3A4 4 0 0 1 23 22"/>
-            <path d="M16 14v10"/>
-            <path d="M12 18l4-4 4 4"/>
-          </svg>
-        </div>
-        <h3>Hosting <em>&amp; Maintenance</em></h3>
-        <p>We deploy on Vercel, monitor uptime, and handle the small monthly content updates so you never have to think about your website again.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="num-corner">iii.</div>
-        <div class="icon-frame">
-          <!-- Workflow / nodes icon: automation -->
-          <svg viewBox="0 0 32 32">
-            <circle cx="9" cy="9" r="3"/>
-            <circle cx="23" cy="9" r="3"/>
-            <circle cx="9" cy="23" r="3"/>
-            <circle cx="23" cy="23" r="3"/>
-            <line x1="12" y1="9" x2="20" y2="9"/>
-            <line x1="9" y1="12" x2="9" y2="20"/>
-            <line x1="23" y1="12" x2="23" y2="20"/>
-            <line x1="11.5" y1="11.5" x2="20.5" y2="20.5"/>
-          </svg>
-        </div>
-        <h3>Automation <em>Pipelines</em></h3>
-        <p>For agencies and ops teams: custom n8n workflows that find leads, score them, and turn them into deployed assets — built quietly in the background.</p>
-      </div>
-
-    </div>
+  <div class="sc-wrap">
+    <iframe
+      allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pluhs&color=%23222222&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true">
+    </iframe>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section id="process" class="process-section">
-  <div class="section-frame">
-    <div class="section-head reveal">
-      <div class="section-num">
-        <span class="num-big">02</span>
-        <div class="label-stack">
-          <span class="eyebrow">How It Works</span>
-          <span class="small-label">From "yes" to live.</span>
-        </div>
+<!-- ========== LINKS ========== -->
+<section class="links-section">
+  <div class="section-label">02 // Channels</div>
+  <h2 class="section-title">Find me <em>elsewhere.</em></h2>
+
+  <div class="links-grid">
+
+    <a href="https://soundcloud.com/pluhs" target="_blank" rel="noopener" class="link-card">
+      <div class="link-top">
+        <span class="link-num">001</span>
+        <span class="link-arrow">↗</span>
       </div>
-      <h2>Five steps. <span class="accent-italic">One week.</span></h2>
-    </div>
-
-    <div class="process-list reveal">
-
-      <div class="process-step">
-        <div class="step-num">i.</div>
-        <h4>Discovery <em>call</em></h4>
-        <p>We map your existing tools — bookings, payments, customer accounts — and identify the URLs the redesign needs to integrate with.</p>
-        <div class="step-time">Time<span class="time-val">Day 0</span></div>
+      <div>
+        <div class="link-platform">SoundCloud</div>
+        <div class="link-handle">/pluhs</div>
       </div>
-
-      <div class="process-step">
-        <div class="step-num">ii.</div>
-        <h4>Mockup <em>delivered</em></h4>
-        <p>A custom-designed mockup deployed to a staging URL. Real, working, ready to review on your phone.</p>
-        <div class="step-time">Time<span class="time-val">Day 2</span></div>
-      </div>
-
-      <div class="process-step">
-        <div class="step-num">iii.</div>
-        <h4>Two rounds of <em>revisions</em></h4>
-        <p>We refine based on your feedback. Two full rounds included so the final version feels right.</p>
-        <div class="step-time">Time<span class="time-val">Day 3–5</span></div>
-      </div>
-
-      <div class="process-step">
-        <div class="step-num">iv.</div>
-        <h4>Domain <em>pointing</em></h4>
-        <p>Two simple DNS records. We send the instructions, you click save, the new site is live at your domain.</p>
-        <div class="step-time">Time<span class="time-val">Day 6</span></div>
-      </div>
-
-      <div class="process-step">
-        <div class="step-num">v.</div>
-        <h4>Live <em>&amp; supported</em></h4>
-        <p>14 days of bug-fix support included. Optional ongoing maintenance keeps your site updated without a phone call.</p>
-        <div class="step-time">Time<span class="time-val">Day 7+</span></div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing" class="pricing-section">
-  <div class="section-frame">
-    <div class="section-head reveal">
-      <div class="section-num">
-        <span class="num-big" style="color: #E8A876;">03</span>
-        <div class="label-stack">
-          <span class="eyebrow">Investment</span>
-          <span class="small-label" style="color: rgba(245,242,235,0.55);">Two ways to do this.</span>
-        </div>
-      </div>
-      <h2>Pricing made <span class="accent-italic">simple.</span></h2>
-    </div>
-
-    <div class="pricing-cards reveal">
-
-      <div class="pricing-card">
-        <span class="tag">Track A</span>
-        <h3>Project-Only</h3>
-        <div class="price-display">
-          <span class="price-num">$3,500</span>
-          <span class="price-suffix">one-time</span>
-        </div>
-        <ul>
-          <li>Full custom build, mobile + desktop</li>
-          <li>All third-party URLs integrated</li>
-          <li>Code handoff (HTML + assets)</li>
-          <li>14 days post-launch bug-fix support</li>
-          <li>You arrange your own hosting after</li>
-        </ul>
-      </div>
-
-      <div class="pricing-card featured">
-        <span class="tag">★ Recommended</span>
-        <h3>Build + Hosting/Maintenance</h3>
-        <div class="price-display">
-          <span class="price-num">$2,500</span>
-          <span class="price-suffix">build</span>
-          <div class="price-monthly">+ <strong>$99/month</strong> hosting &amp; updates</div>
-        </div>
-        <ul>
-          <li>Everything in Track A</li>
-          <li>Hosted on PMA's Vercel — zero hosting work for you</li>
-          <li>Two small content updates per month</li>
-          <li>Just text or email — we handle it</li>
-          <li>Cancel anytime with 30 days notice</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact-section">
-  <div class="contact-frame">
-    <span class="eyebrow contact-eyebrow">04 — Get in Touch</span>
-    <h2>Ready to <span class="accent-word">begin?</span></h2>
-    <p class="lead">Send a quick email. Tell us about your business, your existing tools, and what you'd like the site to feel like. We'll respond within one business day.</p>
-    <div class="contact-cta">
-      <a href="mailto:pluhsmanagement@gmail.com" class="contact-email">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16v12H4zM4 6l8 7 8-7"/></svg>
-        pluhsmanagement@gmail.com
-      </a>
-      <a href="https://www.instagram.com/itspluhs" target="_blank" rel="noopener" class="contact-social" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
-        @itspluhs
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-left">
-    <span class="logo-mark">Pluhs</span>
-    <span class="footer-meta">Management Agency · Atlanta, GA</span>
-  </div>
-  <div class="footer-center">
-    <a href="mailto:pluhsmanagement@gmail.com" class="footer-link">pluhsmanagement@gmail.com</a>
-    <span class="footer-divider">·</span>
-    <a href="https://www.instagram.com/itspluhs" target="_blank" rel="noopener" class="footer-link footer-social-link" aria-label="Instagram">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
-      @itspluhs
     </a>
+
+    <a href="https://tiktok.com/@pluhs" target="_blank" rel="noopener" class="link-card">
+      <div class="link-top">
+        <span class="link-num">002</span>
+        <span class="link-arrow">↗</span>
+      </div>
+      <div>
+        <div class="link-platform">TikTok</div>
+        <div class="link-handle">@pluhs</div>
+      </div>
+    </a>
+
+    <a href="https://instagram.com/itspluhs" target="_blank" rel="noopener" class="link-card">
+      <div class="link-top">
+        <span class="link-num">003</span>
+        <span class="link-arrow">↗</span>
+      </div>
+      <div>
+        <div class="link-platform">Instagram</div>
+        <div class="link-handle">@itspluhs</div>
+      </div>
+    </a>
+
   </div>
-  <div class="footer-right">© MMXXV · Christian Olmo</div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <span class="foot-mark">PLUHS © 2026</span>
+  <span>all rights // all wrongs</span>
 </footer>
-
-<script>
-  // Progressive enhancement — only enable reveal animations if IntersectionObserver supported
-  if ('IntersectionObserver' in window) {
-    document.documentElement.classList.add('js-reveal-enabled');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  }
-</script>
 
 </body>
 </html>

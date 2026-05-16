@@ -12,15 +12,15 @@
 
 <style>
   :root {
-    --bg: #fafaf7;
-    --bg-soft: #f2f1ec;
-    --ink: #0a0a0a;
-    --ink-dim: #6a6a6a;
-    --ink-faint: #b8b6b0;
-    --accent: #0a0a0a;
-    --accent-soft: #2a2a2a;
-    --line: rgba(10, 10, 10, 0.1);
-    --grain-opacity: 0.03;
+    --bg: #0a0a0a;
+    --bg-soft: #161616;
+    --ink: #fafaf7;
+    --ink-dim: #8a8682;
+    --ink-faint: #4a4742;
+    --accent: #fafaf7;
+    --accent-soft: #d8d6d2;
+    --line: rgba(250, 250, 247, 0.1);
+    --grain-opacity: 0.04;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -53,7 +53,7 @@
     inset: 0;
     pointer-events: none;
     z-index: 0;
-    background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(10, 10, 10, 0.04) 0%, transparent 65%);
+    background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(250, 250, 247, 0.04) 0%, transparent 65%);
   }
 
   /* ========== HEADER ========== */
@@ -133,7 +133,7 @@
   .head-glow {
     position: absolute;
     inset: -15%;
-    background: radial-gradient(circle, rgba(10, 10, 10, 0.18) 0%, transparent 55%);
+    background: radial-gradient(circle, rgba(250, 250, 247, 0.08) 0%, transparent 55%);
     filter: blur(50px);
     z-index: -1;
     animation: glowPulse 6s ease-in-out infinite;
@@ -141,7 +141,7 @@
 
   @keyframes glowPulse {
     0%, 100% { opacity: 0.5; transform: scale(1); }
-    50% { opacity: 0.8; transform: scale(1.08); }
+    50% { opacity: 0.9; transform: scale(1.08); }
   }
 
   .head {
@@ -149,7 +149,7 @@
     height: 100%;
     object-fit: contain;
     animation: float 6s ease-in-out infinite;
-    filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.25)) drop-shadow(0 60px 80px rgba(0, 0, 0, 0.15));
+    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 80px rgba(250, 250, 247, 0.05));
     user-select: none;
     -webkit-user-drag: none;
   }
@@ -337,7 +337,7 @@
     color: var(--bg);
   }
   .link-card:hover .link-num {
-    color: rgba(250, 250, 247, 0.5);
+    color: rgba(10, 10, 10, 0.5);
   }
 
   .link-card > * {
@@ -498,7 +498,7 @@
   <div class="sc-wrap">
     <iframe
       allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pluhs&color=%23222222&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true">
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pluhs&color=%23fafaf7&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true">
     </iframe>
   </div>
 </section>
